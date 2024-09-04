@@ -2,7 +2,7 @@
   "name": "seanbetts",
   "repo": "https://seanbetts.github.io/seanbetts",
   "homepage": "https://www.seanbetts.com",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
