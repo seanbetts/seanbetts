@@ -8,16 +8,16 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.socialLinks}>
         <a href="https://linkedin.com/in/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn Profile">
-          <LinkedinLogo size={24} />
+          <LinkedinLogo size={36} />
         </a>
         <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
-          <GithubLogo size={24} />
+          <GithubLogo size={36} />
         </a>
         <a href="https://x.com/seanbetts" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="X (Twitter) Profile">
-          <TwitterLogo size={24} />
+          <TwitterLogo size={36} />
         </a>
         <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="The Blueprint Blog">
-          <Newspaper size={24} />
+          <Newspaper size={36} />
         </a>
       </div>
       <p className={styles.copyright}>&copy; {new Date().getFullYear()} Sean Betts. All rights reserved.</p>

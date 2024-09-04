@@ -1,14 +1,69 @@
 /* src/pages/Contact.module.css */
 .contact {
-  padding: 2rem 0;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  padding: 2rem;
+}
+
+.socialMedia {
+  margin-bottom: 2rem;
+}
+
+.lockup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Should be the same as width for a perfect circle */
+  object-fit: cover;
+  border-radius: 50%; /* This makes the image circular */
+  margin-right: 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: none;
+  border: 1px solid var(--color-primary);
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: background-color 0.3s ease;
+}
+
+.socialLink:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.socialLink span {
+  margin-left: 0.5rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-secondary);
+  margin: 2rem 0;
 }
 
 .chatContainer {
   background-color: var(--color-box-bg);
   border: 2px solid var(--color-primary);
   border-radius: 10px;
+  margin-top: 2rem;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(234, 0, 217, 0.1);
 }

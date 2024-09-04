@@ -8,6 +8,13 @@
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'Iosevka';
+    src: url('./fonts/Iosevka-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
   
   /* Define color variables */
   :root {
@@ -17,7 +24,7 @@
   }
   
   body {
-    font-family: 'Departure Mono', monospace;
+    font-family: 'Iosevka', monospace;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
   }
@@ -39,7 +46,6 @@
     color: var(--color-text);
   }
   
-  /* Update styles for boxes/cards */
   .card, .section, .project, .article {
     background-color: var(--color-box-bg);
     border: 2px solid var(--color-primary);
@@ -54,6 +60,8 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Departure Mono', monospace;
+    text-transform: uppercase;
     color: var(--color-primary);
     margin-top: 1em;
     margin-bottom: 0.5em;

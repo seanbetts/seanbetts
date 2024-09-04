@@ -23,9 +23,12 @@ const Home = () => {
       
       <section className={styles.intro}>
         <p>
-          Visionary technology leader with 20+ years in marketing, now driving innovation at the intersection of AI and business. 
-          Specializing in responsible AI development and its application in marketing, I'm passionate about AI interpretability, 
-          ethics, and unlocking AI's transformative potential across industries.
+        As a visionary product and technology leader with over 20 years of experience in marketing, 
+        I'm now focussing my career on AI-driven innovation at the intersection of technology and business.
+        </p>
+        <p>
+        My role as an independent AI researcher and developer complements my position as Chief Product & Technology Officer 
+        at Omnicom Media Group UK, where I'm committed to driving responsible AI development and its practical application in marketing.
         </p>
       </section>
       

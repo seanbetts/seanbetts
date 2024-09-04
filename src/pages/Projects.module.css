@@ -14,8 +14,15 @@
   background-color: var(--color-box-bg);
   border: 2px solid var(--color-primary);
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 2rem;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  justify-content: space-between;
 }
 
 .project:hover {
@@ -23,28 +30,40 @@
   box-shadow: 0 5px 15px rgba(234, 0, 217, 0.3);
 }
 
-.project h2 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  color: var(--color-primary);
-}
-
-.project a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.project a:hover {
-  color: var(--color-secondary);
-}
-
 .icon {
-  margin-right: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
   color: var(--color-secondary);
+}
+
+.project h2 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.25em;
 }
 
 .project p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.typeIcon {
+  margin-top: auto;
   color: var(--color-text);
+  opacity: 0.7;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .projectList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projects h1 {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }

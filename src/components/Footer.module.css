@@ -1,5 +1,6 @@
 /* src/components/Footer.module.css */
 .footer {
+  font-family: 'Departure Mono', monospace;
   background-color: var(--color-background);
   color: var(--color-text);
   padding: 1rem 0;

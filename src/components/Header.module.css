@@ -1,5 +1,6 @@
 /* src/components/Header.module.css */
 .header {
+  font-family: 'Departure Mono', monospace;
   background-color: var(--color-background);
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -58,6 +59,17 @@
 .themeToggle {
   display: flex;
   align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.versionNumber {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  margin-left: 0rem;
 }
 
 @media (max-width: 768px) {

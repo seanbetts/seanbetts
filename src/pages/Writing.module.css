@@ -9,7 +9,7 @@
 
 .articleList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -63,4 +63,10 @@
 .blueprintLink .icon {
   margin-right: 0.5rem;
   color: var(--color-background);
+}
+
+@media (max-width: 768px) {
+  .articleList {
+    grid-template-columns: 1fr;
+  }
 }

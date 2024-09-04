@@ -1,0 +1,128 @@
+.projectPage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-secondary);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
+.projectHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.projectHeader svg {
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.projectHeader h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.projectImage {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.projectInfo {
+  background-color: var(--color-box-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.infoSection {
+  margin-bottom: 2rem;
+}
+
+.infoSection h2 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.infoSection p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.infoSection ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.infoSection li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.infoSection li::before {
+  content: '•';
+  color: var(--color-secondary);;
+  position: absolute;
+  left: 0;
+}
+
+.projectLink {
+  display: inline-block;
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.projectLink:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+@media (max-width: 768px) {
+  .projectPage {
+    padding: 1rem;
+  }
+
+  .projectInfo {
+    padding: 1.5rem;
+  }
+
+  .projectHeader h1 {
+    font-size: 2rem;
+  }
+}
