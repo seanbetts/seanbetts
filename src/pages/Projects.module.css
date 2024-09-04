@@ -1,0 +1,50 @@
+/* src/pages/Projects.module.css */
+.projects {
+  padding: 2rem 0;
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project {
+  background-color: var(--color-box-bg);
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(234, 0, 217, 0.3);
+}
+
+.project h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.project a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project a:hover {
+  color: var(--color-secondary);
+}
+
+.icon {
+  margin-right: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.project p {
+  color: var(--color-text);
+}

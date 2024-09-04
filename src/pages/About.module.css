@@ -1,0 +1,54 @@
+/* src/pages/About.module.css */
+.about {
+    padding: 2rem 0;
+  }
+  
+  .intro {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 2rem 0;
+  }
+  
+  .experience, .webinars {
+    margin-bottom: 3rem;
+  }
+  
+  .experience h2, .webinars h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .experience h2 svg, .webinars h2 svg {
+    margin-right: 0.5rem;
+  }
+  
+  .experience ul, .webinars ul {
+    list-style-type: none;
+    padding-left: 1rem;
+  }
+  
+  .experience li, .webinars li {
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  
+  .experience li::before, .webinars li::before {
+    content: '•';
+    color: var(--color-primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
+  .experience a, .webinars a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .experience a:hover, .webinars a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }

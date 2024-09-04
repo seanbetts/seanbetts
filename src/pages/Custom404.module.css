@@ -1,0 +1,110 @@
+/* src/pages/Custom404.module.css */
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .heroIcon {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+  
+  .titleIcon {
+    margin-right: 0.5rem;
+  }
+  
+  .message {
+    font-size: 1.2em;
+    margin-bottom: 2rem;
+  }
+  
+  .iconLine {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .icon {
+    color: var(--color-secondary);
+  }
+  
+  .explanation {
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+  }
+  
+  .list {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .list li svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+    color: var(--color-primary);
+  }
+  
+  .apology {
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+  
+  .homeLink {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .homeLink:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  .homeLink svg {
+    margin-right: 0.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    .iconLine {
+      gap: 1rem;
+    }
+    
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .heroIcon svg {
+      width: 80px;
+      height: 80px;
+    }
+  }

@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useContext, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ThemeProvider, ThemeContext } from './ThemeContext';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Writing from './pages/Writing';
+import Contact from './pages/Contact';
+import Custom404 from './pages/Custom404';
+
+const AppContent = () => {
+  const { darkMode } = useContext(ThemeContext);
+
+  useEffect(() => {
+    document.body.className = darkMode ? 'dark-mode' : 'light-mode';
+  }, [darkMode]);
+
+  return (
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/writing" element={<Writing />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Custom404 />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

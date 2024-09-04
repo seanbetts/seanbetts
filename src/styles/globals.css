@@ -1,0 +1,90 @@
+/* src/styles/globals.css */
+
+/* Import Departure Mono font */
+@font-face {
+    font-family: 'Departure Mono';
+    src: url('./fonts/DepartureMono-Regular.woff2') format('woff2'),
+         url('./fonts/DepartureMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Define color variables */
+  :root {
+    --color-primary: #EA00D9;
+    --color-secondary: #0ABDC6;
+    --color-accent: #711C91;
+  }
+  
+  body {
+    font-family: 'Departure Mono', monospace;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.light-mode {
+    --color-background: #F0F8FF;
+    --color-text: #091833;
+    --color-box-bg: #E6F3FF;
+  }
+  
+  body.dark-mode {
+    --color-background: #091833;
+    --color-text: #0ABDC6;
+    --color-box-bg: rgba(234, 0, 217, 0.1);
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+  
+  /* Update styles for boxes/cards */
+  .card, .section, .project, .article {
+    background-color: var(--color-box-bg);
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover, .section:hover, .project:hover, .article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(234, 0, 217, 0.3);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 2em;
+  }
+  
+  h3 {
+    font-size: 1.75em;
+  }
+  
+  a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: var(--color-primary);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  

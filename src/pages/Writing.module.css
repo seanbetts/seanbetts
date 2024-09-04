@@ -1,0 +1,66 @@
+/* src/pages/Blog.module.css */
+.blog {
+  padding: 2rem 0;
+}
+
+.featuredArticles, .blueprint, .aiLessons {
+  margin-bottom: 3rem;
+}
+
+.articleList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.article {
+  background-color: var(--color-box-bg);
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(234, 0, 217, 0.3);
+}
+
+.icon {
+  margin-right: 1rem;
+  color: var(--color-secondary);
+}
+
+.article a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.article a:hover {
+  color: var(--color-primary);
+}
+
+.blueprintLink, .aiLessonsLink {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.blueprintLink:hover, .aiLessonsLink:hover {
+  background-color: var(--color-secondary);
+}
+
+.blueprintLink .icon {
+  margin-right: 0.5rem;
+  color: var(--color-background);
+}
