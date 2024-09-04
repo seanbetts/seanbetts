@@ -9,6 +9,12 @@
     margin: 2rem 0;
   }
   
+  .divider {
+    border: none;
+    border-top: 1px solid var(--color-secondary);
+    margin: 2rem 0;
+  }
+
   .experience, .webinars {
     margin-bottom: 3rem;
   }

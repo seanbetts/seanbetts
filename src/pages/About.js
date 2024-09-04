@@ -26,6 +26,8 @@ const About = () => {
           </section>
         </div>
       </div>
+
+      <hr className={styles.divider} />
       
       <section className={styles.experience}>
         <h2><Briefcase size={24} /> Professional Experience</h2>
@@ -49,6 +51,8 @@ const About = () => {
           driving innovation, and setting new industry standards.
         </p>
       </section>
+
+      <hr className={styles.divider} />
       
       <section className={styles.aiProjects}>
         <h2><Robot size={24} /> AI Research & Development</h2>
@@ -69,6 +73,8 @@ const About = () => {
               the potential of more personalized AI interactions in marketing contexts</li>
         </ul>
       </section>
+
+      <hr className={styles.divider} />
       
       <section className={styles.speaking}>
         <h2><Megaphone size={24} /> Speaking & Advocacy</h2>
