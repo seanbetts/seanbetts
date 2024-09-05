@@ -72,20 +72,33 @@
   margin-left: 0rem;
 }
 
+.hamburgerMenu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
 @media (max-width: 768px) {
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
-  .logoLink {
-    margin-bottom: 1rem;
+  .hamburgerMenu {
+    display: block;
+    order: 1;
   }
 
   .navList {
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 1rem;
+    width: 100%;
+    order: 3;
+  }
+
+  .navList.open {
+    display: flex;
   }
 
   .navItem {
@@ -93,6 +106,10 @@
   }
 
   .themeToggle {
-    align-self: flex-end;
+    order: 2;
+  }
+
+  .logoContainer {
+    flex-grow: 1;
   }
 }
