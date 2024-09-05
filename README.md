@@ -1,90 +1,62 @@
-# Sean Betts Personal Website
+# Sean Betts
 
-## Overview
+👋 Hi there! I'm Sean Betts, a visionary technology leader with a passion for AI and its applications in marketing.
 
-This project is a personal website for Sean Betts, showcasing his work as a Chief Product & Technology Officer, AI researcher, and developer. The website is built using React and features a modern, responsive design with a dark/light mode toggle.
+## 🚀 About Me
 
-## Features
+- 🧠 Chief Product & Technology Officer at Omnicom Media Group UK
+- 🤖 AI Researcher & Developer
+- 🤔 Thought Leader in AI and Marketing
+- 🗣️ Neurodiversity Speaker
 
-- Responsive design
-- Dark/light mode toggle
-- Project showcase
-- Writing/blog section
-- About page
-- Contact form
-- Social media links
+With over 20 years of experience in marketing, I'm focused on AI-driven innovation at the intersection of technology and business. My expertise lies in transforming complex AI concepts into practical business solutions and responsible, ethical AI product development.
 
-## Technologies Used
+## 🔭 Current Projects
 
-- React
-- React Router
-- CSS Modules
-- Phosphor Icons
+### AI Brand Detection
 
-## Getting Started
+_Coming soon..._
 
-### Prerequisites
+### GenAI Marketing Benchmarks
 
-- Node.js (v14 or later)
-- npm (v6 or later)
+A comprehensive project to create benchmark tests for evaluating the marketing capabilities of Large Language Models (LLMs) and other GenAI technologies.
 
-### Installation
+- 🔬 2,800+ multiple-choice questions across various marketing disciplines
+- 📊 Evaluates marketing knowledge, understanding, and capabilities of AI models
+- 🌐 Supports testing of multiple LLMs including OpenAI, Anthropic, Google, Meta, and Mistral models
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/seanbetts/seanbetts.git
-   ```
+[View Project](https://github.com/seanbetts/genai-marketing-benchmarks)
 
-2. Navigate to the project directory:
-   ```
-   cd seanbetts
-   ```
+### GenAI Timeline
 
-3. Install dependencies:
-   ```
-   npm install
-   ```
+An interactive timeline showcasing the evolution and key milestones in Generative AI.
 
-### Running the Development Server
+- 📅 Comprehensive database of GenAI events from 1948 to present
+- 🔍 Searchable interface for easy exploration of AI history
+- 🖼️ Visual representation of AI's progression over time
+- 🔗 Links to source materials and further reading for each event
 
-To start the development server, run:
+[View Project](https://www.the-blueprint.ai)
 
-```
-npm start
-```
+### 🐼 panda.ai
 
-The site will be available at `http://localhost:3000`.
+An artificial intelligence personal assistant designed to learn from you and adapt to your unique needs.
 
-### Building for Production
+- 🧠 Personalized AI chat assistant
+- 🔒 User data management and privacy controls
+- 🔗 Integration with various APIs (YouTube, Google Maps, Wikipedia, Spotify, etc.)
+- 💼 Subscription plans with different tiers
 
-To create a production build, run:
+[View Project](https://github.com/yourusername/panda-ai)
 
-```
-npm run build
-```
+## 📫 Get in Touch
 
-The built files will be in the `build` directory.
+- LinkedIn: [linkedin.com/in/seanbetts](https://www.linkedin.com/in/seanbetts)
+- Website: [seanbetts.com](https://www.seanbetts.com)
+- Newsletter: [The Blueprint](https://www.the-blueprint.ai)
 
-## Project Structure
+Feel free to reach out if you'd like to collaborate on AI projects, discuss marketing technology, or chat about neurodiversity in tech!
 
-- `src/`: Source code
-  - `components/`: Reusable React components
-  - `pages/`: Individual page components
-  - `styles/`: Global styles
-  - `data/`: Static data files
-  - `utils/`: Utility functions
-- `public/`: Public assets
+---
 
-## Deployment
-
-This project is set up for deployment on GitHub Pages. To deploy:
-
-1. Update the `homepage` field in `package.json` with your GitHub Pages URL.
-2. Run the deployment script:
-   ```
-   npm run deploy
-   ```
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+"The future is already here – it's just not evenly distributed." - William Gibson
