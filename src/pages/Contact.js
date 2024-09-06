@@ -6,11 +6,12 @@ import profileImage from '../assets/sean-betts-profile.png';
 const Contact = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [isChatEnabled, setIsChatEnabled] = useState(false); // Control whether chat is active
+  // eslint-disable-next-line no-unused-vars
+  const [isChatEnabled, setIsChatEnabled] = useState(false); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isChatEnabled && input.trim()) { // Prevent message submission if chat is disabled
+    if (isChatEnabled && input.trim()) {
       setMessages([...messages, { text: input, sender: 'user' }]);
       setTimeout(() => {
         setMessages(messages => [...messages, { 
@@ -72,12 +73,12 @@ const Contact = () => {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message here..."
             className={styles.input}
-            disabled={!isChatEnabled} // Disable input field if chat is disabled
+            disabled={!isChatEnabled} 
           />
           <button 
             type="submit" 
             className={styles.sendButton} 
-            disabled={!isChatEnabled} // Disable send button if chat is disabled
+            disabled={!isChatEnabled} 
           >
             <PaperPlaneTilt size={24} />
           </button>
