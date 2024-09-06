@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Robot, Megaphone } from "@phosphor-icons/react";
+import { Briefcase, Robot, Megaphone, LinkedinLogo, GithubLogo } from "@phosphor-icons/react";
 import styles from './About.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
 
@@ -30,7 +30,13 @@ const About = () => {
       <hr className={styles.divider} />
       
       <section className={styles.experience}>
-        <h2><Briefcase size={24} /> Professional Experience</h2>
+        <div className={styles.experienceHeader}>
+          <h3><Briefcase size={36} /></h3>
+          <h2>Professional Experience</h2>
+          <a href="https://linkedin.com/in/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn Profile">
+            <LinkedinLogo size={36} />
+          </a>
+        </div>
         <h3>Chief Product & Technology Officer @ OMG UK (2020 - Present)</h3>
         <p>
           In my role at OMG UK, I lead the group-wide product and technology strategy, overseeing a team 
@@ -55,7 +61,13 @@ const About = () => {
       <hr className={styles.divider} />
       
       <section className={styles.aiProjects}>
-        <h2><Robot size={24} /> AI Research & Development</h2>
+        <div className={styles.developerHeader}>
+          <h3><Robot size={36} /></h3>
+          <h2>AI Research & Development</h2>
+          <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
+            <GithubLogo size={36} />
+          </a>
+        </div>
         <p>
           As an independent AI researcher and developer, I'm actively engaged in several projects that 
           deepen my understanding of artificial intelligence and contribute to the field:
@@ -77,7 +89,10 @@ const About = () => {
       <hr className={styles.divider} />
       
       <section className={styles.speaking}>
-        <h2><Megaphone size={24} /> Speaking & Advocacy</h2>
+        <div className={styles.speakingHeader}>
+          <h3><Megaphone size={36} /></h3>
+          <h2>Speaking & Advocacy</h2>
+        </div>
         <p>
           As an advocate for neurodiversity and mental health awareness, I frequently speak about these topics. 
           My late-life autism diagnosis has given me a unique perspective on problem-solving and innovation in the AI space.

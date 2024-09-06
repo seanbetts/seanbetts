@@ -15,6 +15,22 @@
     margin: 2rem 0;
   }
 
+  .experienceHeader, .developerHeader, .speakingHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .experienceHeader h3, .developerHeader h3, .speakingHeader h3 {
+    margin-top: 2.5rem;
+    margin-right: 1rem;
+  }
+
+  .experienceHeader a, .developerHeader a, .speakingHeader a {
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+  }
+
   .experience, .webinars {
     margin-bottom: 3rem;
   }
@@ -79,4 +95,8 @@
   
   .headerContent h1 {
     margin-top: 0; /* Removes any top margin from the heading */
+  }
+
+  .speaking h2 {
+    margin-top: 2rem;
   }
