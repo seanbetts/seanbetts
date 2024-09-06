@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Robot, Megaphone, LinkedinLogo, GithubLogo } from "@phosphor-icons/react";
+import { Briefcase, Robot, Megaphone, LinkedinLogo, GithubLogo, EnvelopeSimple } from "@phosphor-icons/react";
 import styles from './About.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
 
@@ -92,6 +92,9 @@ const About = () => {
         <div className={styles.speakingHeader}>
           <h3><Megaphone size={36} /></h3>
           <h2>Speaking & Advocacy</h2>
+          <a href="/contact" rel="noopener noreferrer" className={styles.socialLink} aria-label="Email">
+            <EnvelopeSimple size={36} />
+          </a>
         </div>
         <p>
           As an advocate for neurodiversity and mental health awareness, I frequently speak about these topics. 
