@@ -19,7 +19,7 @@ const ArticlePreview = ({ article }) => {
     <div className={styles.articlePreview}>
       <a href={article.url} target="_blank" rel="noopener noreferrer">
         <div className={`${styles.imageContainer} ${!article.image ? styles.fallbackImage : ''}`}>
-          {article.image && (
+          {article.image ? (
             <img 
               src={article.image} 
               alt={article.title} 
@@ -28,10 +28,11 @@ const ArticlePreview = ({ article }) => {
                 e.target.parentNode.classList.add(styles.fallbackImage);
               }}
             />
-          )}
+          ) : null}
+          {!article.image && <div className={styles.loadingOverlay}>LOADING...</div>}
         </div>
         <h3>{article.title}</h3>
-        <p>{article.description || 'No description available.'}</p>
+        <p>{article.description || 'LOADING...'}</p>
       </a>
       <p className={styles.domain}>{formatDomain(article.url)}</p>
     </div>

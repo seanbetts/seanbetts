@@ -1,4 +1,3 @@
-// src/pages/Contact.js
 import React, { useState } from 'react';
 import { Newspaper, PaperPlaneTilt, LinkedinLogo, TwitterLogo, GithubLogo } from "@phosphor-icons/react";
 import styles from './Contact.module.css';
@@ -7,13 +6,12 @@ import profileImage from '../assets/sean-betts-profile.png';
 const Contact = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [isChatEnabled, setIsChatEnabled] = useState(false); // Control whether chat is active
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.trim()) {
+    if (isChatEnabled && input.trim()) { // Prevent message submission if chat is disabled
       setMessages([...messages, { text: input, sender: 'user' }]);
-      // Here you would typically send the message to a backend
-      // For now, we'll just simulate a response
       setTimeout(() => {
         setMessages(messages => [...messages, { 
           text: "Thanks for your message! I'll get back to you soon.", 
@@ -26,11 +24,11 @@ const Contact = () => {
 
   return (
     <div className={styles.contact}>
-        <div className={styles.lockup}>
-          <img src={profileImage} alt="Sean Betts" className={styles.logo} />
-          <h1>Contact Me</h1>
-        </div>
-      
+      <div className={styles.lockup}>
+        <img src={profileImage} alt="Sean Betts" className={styles.logo} />
+        <h1>Contact Me</h1>
+      </div>
+
       <section className={styles.socialMedia}>
         <p>You can subscribe to my newsletter, connect with me on social media, or check out my work using the links below:</p>
         <div className={styles.socialLinks}>
@@ -51,9 +49,15 @@ const Contact = () => {
 
       <hr className={styles.divider} />
 
-      <h2>Send a Message</h2>
-      <p>If you'd like to get in touch with me directly, please use the chat box below to send me a message:</p>
+      <h2>Send me a Message</h2>
+      <p>If you'd like to get in touch with me directly, please use the chat box below to send me a message.</p>
+
       <div className={styles.chatContainer}>
+        {/* Coming Soon message inside chat container */}
+        <div className={styles.comingSoonMessage}>
+          <img src={profileImage} alt="Sean Betts" className={styles.chatLogo} />
+          <p>The chat feature is coming soon!</p>
+        </div>
         <div className={styles.messages}>
           {messages.map((message, index) => (
             <div key={index} className={`${styles.message} ${styles[message.sender]}`}>
@@ -68,8 +72,13 @@ const Contact = () => {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message here..."
             className={styles.input}
+            disabled={!isChatEnabled} // Disable input field if chat is disabled
           />
-          <button type="submit" className={styles.sendButton}>
+          <button 
+            type="submit" 
+            className={styles.sendButton} 
+            disabled={!isChatEnabled} // Disable send button if chat is disabled
+          >
             <PaperPlaneTilt size={24} />
           </button>
         </form>
