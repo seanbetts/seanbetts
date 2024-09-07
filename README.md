@@ -1,4 +1,5 @@
 # Sean Betts
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ce515832-0750-4747-af9c-159c739384e9/deploy-status)](https://app.netlify.com/sites/seanbetts/deploys)
 
 👋 Hi there! I'm Sean Betts, a visionary technology leader with a passion for AI and its applications in marketing.
 
