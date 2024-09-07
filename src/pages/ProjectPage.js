@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Helmet } from 'react-helmet';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from "@phosphor-icons/react";
 import { GithubLogo, Article, Globe, Video } from "@phosphor-icons/react";
@@ -80,16 +79,47 @@ const ProjectPage = ({ projects }) => {
     }
   };
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": project.name,
+    "description": project.description,
+    "applicationCategory": "AI & Marketing",
+    "operatingSystem": "Web",
+    "author": {
+      "@type": "Person",
+      "name": "Sean Betts",
+      "url": "https://www.seanbetts.com"
+    },
+    "datePublished": project.date,
+    "url": `https://www.seanbetts.com/projects/${project.id}`,
+    "image": project.heroImage || "/images/sean-betts-profile.png",
+    "softwareVersion": project.status,
+    "keywords": project.technologies?.join(", ")
+  };
+
   return (
     <div className={styles.projectPage}>
       <Helmet>
         <title>{`${project.name} - Sean Betts' Projects`}</title>
+        <link rel="canonical" href={`https://www.seanbetts.com/projects/${project.id}`} />
         <meta name="description" content={`Explore ${project.name}, an ${project.type} project by Sean Betts. ${project.description.slice(0, 150)}...`} />
         <meta name="keywords" content={`Sean Betts, ${project.name}, ${project.type}, ${project.technologies?.join(', ')}`} />
         <meta property="og:title" content={`${project.name} - Sean Betts' Projects`} />
         <meta property="og:description" content={`Discover ${project.name}, a ${project.type} project by Sean Betts. ${project.description.slice(0, 200)}...`} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+        <meta property="og:url" content={`https://www.seanbetts.com/projects/${project.id}`} />
+        <meta property="og:image" content={project.heroImage || "/images/sean-betts-profile.png"} />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@seanbetts" />
+        <meta name="twitter:title" content={`${project.name} - Sean Betts' Projects`} />
+        <meta name="twitter:description" content={`Discover ${project.name}, a ${project.type} project by Sean Betts. ${project.description.slice(0, 200)}...`} />
+        <meta name="twitter:image" content={project.heroImage || "/images/sean-betts-profile.png"} />
+        <script type="application/ld+json">
+          {JSON.stringify(projectSchema)}
+        </script>
       </Helmet>
 
     <Link to="/projects" className={styles.backLink}>

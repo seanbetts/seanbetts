@@ -5,16 +5,48 @@ import styles from './About.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
 
 const About = () => {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sean Betts",
+    "jobTitle": "Chief Product & Technology Officer",
+    "description": "AI Researcher & Developer, Neurodiversity Advocate",
+    "url": "https://www.seanbetts.com/about",
+    "image": "https://www.seanbetts.com/images/sean-betts-profile.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/seanbetts/",
+      "https://github.com/seanbetts",
+      "https://twitter.com/seanbetts"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Omnicom Media Group UK"
+    }
+  };
+
   return (
     <div className={styles.about}>
       <Helmet>
         <title>About Sean Betts - AI Researcher and Marketing Technology Leader</title>
+        <link rel="canonical" href="https://www.seanbetts.com/about" />
         <meta name="description" content="Learn about Sean Betts: 20+ years in marketing, AI researcher, and neurodiversity advocate. Discover his work in responsible AI development and marketing innovation." />
         <meta name="keywords" content="Sean Betts, AI research, marketing technology, neurodiversity, OMG UK, professional experience" />
+        <meta property="og:site_name" content="Sean Betts" />
+        <meta property="og:url" content="https://www.seanbetts.com/about" />
         <meta property="og:title" content="About Sean Betts - AI Researcher and Marketing Technology Leader" />
         <meta property="og:description" content="Explore Sean Betts' journey in AI research, marketing technology leadership, and neurodiversity advocacy." />
         <meta property="og:type" content="profile" />
-        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+        <meta property="og:image" content="/images/sean-betts-profile.png" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@seanbetts" />
+        <meta name="twitter:title" content="About Sean Betts - AI Researcher and Marketing Technology Leader" />
+        <meta name="twitter:description" content="Explore Sean Betts' journey in AI research, marketing technology leadership, and neurodiversity advocacy." />
+        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
+        <script type="application/ld+json">
+          {JSON.stringify(personSchema)}
+        </script>
       </Helmet>
 
       <div className={styles.header}>

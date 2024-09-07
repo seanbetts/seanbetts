@@ -7,16 +7,59 @@ import styles from './Home.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
 
 const Home = () => {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sean Betts",
+    "url": "https://www.seanbetts.com",
+    "description": "Sean Betts: AI Researcher, Marketing Technology Leader, and Neurodiversity Advocate",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.seanbetts.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sean Betts",
+    "jobTitle": "Chief Product & Technology Officer",
+    "description": "AI Researcher & Developer, Neurodiversity Advocate",
+    "url": "https://www.seanbetts.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/seanbetts/",
+      "https://github.com/seanbetts",
+      "https://twitter.com/seanbetts"
+    ]
+  };
+
   return (
     <div className={styles.home}>
       <Helmet>
         <title>Sean Betts - AI Innovation in Marketing and Technology</title>
+        <link rel="canonical" href="https://www.seanbetts.com/" />
         <meta name="description" content="Sean Betts: Chief Product & Technology Officer, AI Researcher & Developer, and Neurodiversity Advocate. Explore AI-driven innovation in marketing and technology." />
         <meta name="keywords" content="Sean Betts, AI, marketing, technology, neurodiversity, product leadership" />
+        <meta property="og:site_name" content="Sean Betts" />
+        <meta property="og:url" content="https://www.seanbetts.com/" />
         <meta property="og:title" content="Sean Betts - AI Innovation in Marketing and Technology" />
         <meta property="og:description" content="Explore Sean Betts' work in AI-driven innovation, marketing technology, and neurodiversity advocacy." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+        <meta property="og:image" content="/images/sean-betts-profile.png" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@seanbetts" />
+        <meta name="twitter:title" content="Sean Betts - AI Innovation in Marketing and Technology" />
+        <meta name="twitter:description" content="Explore Sean Betts' work in AI-driven innovation, marketing technology, and neurodiversity advocacy." />
+        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(personSchema)}
+        </script>
       </Helmet>
 
       <section className={styles.hero}>

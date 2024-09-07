@@ -8,7 +8,7 @@ const Contact = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   // eslint-disable-next-line no-unused-vars
-  const [isChatEnabled, setIsChatEnabled] = useState(false); 
+  const [isChatEnabled, setIsChatEnabled] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,16 +24,46 @@ const Contact = () => {
     }
   };
 
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Sean Betts",
+    "description": "Get in touch with Sean Betts for insights on AI, marketing, and technology.",
+    "url": "https://www.seanbetts.com/contact",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Sean Betts",
+      "sameAs": [
+        "https://www.linkedin.com/in/seanbetts/",
+        "https://github.com/seanbetts",
+        "https://twitter.com/seanbetts"
+      ]
+    }
+  };
+
   return (
     <div className={styles.contact}>
       <Helmet>
         <title>Contact Sean Betts - AI and Marketing Expert</title>
+        <link rel="canonical" href="https://www.seanbetts.com/contact" />
         <meta name="description" content="Connect with Sean Betts. Subscribe to his newsletter, follow on social media, or send a direct message to discuss AI, marketing, and technology." />
         <meta name="keywords" content="contact Sean Betts, AI discussion, marketing expertise, technology insights" />
+        <meta property="og:site_name" content="Sean Betts" />
+        <meta property="og:url" content="https://www.seanbetts.com/contact" />
         <meta property="og:title" content="Contact Sean Betts - AI and Marketing Expert" />
         <meta property="og:description" content="Get in touch with Sean Betts for insights on AI, marketing, and technology. Connect via social media or send a message." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+        <meta property="og:image" content="/images/sean-betts-profile.png" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@seanbetts" />
+        <meta name="twitter:title" content="Contact Sean Betts - AI and Marketing Expert" />
+        <meta name="twitter:description" content="Get in touch with Sean Betts for insights on AI, marketing, and technology. Connect via social media or send a message." />
+        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
+        <script type="application/ld+json">
+          {JSON.stringify(contactPageSchema)}
+        </script>
       </Helmet>
 
       <div className={styles.lockup}>
