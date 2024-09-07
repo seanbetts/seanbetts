@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Newspaper, PaperPlaneTilt, LinkedinLogo, TwitterLogo, GithubLogo } from "@phosphor-icons/react";
 import styles from './Contact.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
@@ -25,6 +26,16 @@ const Contact = () => {
 
   return (
     <div className={styles.contact}>
+      <Helmet>
+        <title>Contact Sean Betts - AI and Marketing Expert</title>
+        <meta name="description" content="Connect with Sean Betts. Subscribe to his newsletter, follow on social media, or send a direct message to discuss AI, marketing, and technology." />
+        <meta name="keywords" content="contact Sean Betts, AI discussion, marketing expertise, technology insights" />
+        <meta property="og:title" content="Contact Sean Betts - AI and Marketing Expert" />
+        <meta property="og:description" content="Get in touch with Sean Betts for insights on AI, marketing, and technology. Connect via social media or send a message." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+      </Helmet>
+
       <div className={styles.lockup}>
         <img src={profileImage} alt="Sean Betts" className={styles.logo} />
         <h1>Contact Me</h1>

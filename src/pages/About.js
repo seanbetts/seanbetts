@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Briefcase, Robot, Megaphone, LinkedinLogo, GithubLogo, EnvelopeSimple } from "@phosphor-icons/react";
 import styles from './About.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
@@ -6,6 +7,16 @@ import profileImage from '../assets/sean-betts-profile.png';
 const About = () => {
   return (
     <div className={styles.about}>
+      <Helmet>
+        <title>About Sean Betts - AI Researcher and Marketing Technology Leader</title>
+        <meta name="description" content="Learn about Sean Betts: 20+ years in marketing, AI researcher, and neurodiversity advocate. Discover his work in responsible AI development and marketing innovation." />
+        <meta name="keywords" content="Sean Betts, AI research, marketing technology, neurodiversity, OMG UK, professional experience" />
+        <meta property="og:title" content="About Sean Betts - AI Researcher and Marketing Technology Leader" />
+        <meta property="og:description" content="Explore Sean Betts' journey in AI research, marketing technology leadership, and neurodiversity advocacy." />
+        <meta property="og:type" content="profile" />
+        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+      </Helmet>
+
       <div className={styles.header}>
         <img src={profileImage} alt="Sean Betts" className={styles.profileImage} />
         <div className={styles.headerContent}>

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from "@phosphor-icons/react";
 import { GithubLogo, Article, Globe, Video } from "@phosphor-icons/react";
@@ -80,6 +82,16 @@ const ProjectPage = ({ projects }) => {
 
   return (
     <div className={styles.projectPage}>
+      <Helmet>
+        <title>{`${project.name} - Sean Betts' Projects`}</title>
+        <meta name="description" content={`Explore ${project.name}, an ${project.type} project by Sean Betts. ${project.description.slice(0, 150)}...`} />
+        <meta name="keywords" content={`Sean Betts, ${project.name}, ${project.type}, ${project.technologies?.join(', ')}`} />
+        <meta property="og:title" content={`${project.name} - Sean Betts' Projects`} />
+        <meta property="og:description" content={`Discover ${project.name}, a ${project.type} project by Sean Betts. ${project.description.slice(0, 200)}...`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+      </Helmet>
+
     <Link to="/projects" className={styles.backLink}>
       <ArrowLeft size={24} /> Back to Projects
     </Link>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Helmet } from 'react-helmet';
 import { Newspaper } from "@phosphor-icons/react";
 import styles from './Writing.module.css';
 import ArticlePreview from '../components/ArticlePreview';
@@ -53,6 +54,16 @@ const Writing = () => {
 
   return (
     <div className={styles.blog}>
+      <Helmet>
+        <title>Sean Betts' Writing - AI and Marketing Insights</title>
+        <meta name="description" content="Read Sean Betts' insights on AI, marketing, and technology. Explore 'The Blueprint' blog and featured articles on generative AI and industry trends." />
+        <meta name="keywords" content="Sean Betts, AI blog, marketing insights, The Blueprint, technology writing" />
+        <meta property="og:title" content="Sean Betts' Writing - AI and Marketing Insights" />
+        <meta property="og:description" content="Explore Sean Betts' blog 'The Blueprint' and featured articles on AI, marketing, and technology trends." />
+        <meta property="og:type" content="blog" />
+        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+      </Helmet>
+
       <h1>Writing</h1>
 
       <section className={styles.blueprint}>

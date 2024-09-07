@@ -1,5 +1,6 @@
 // src/pages/Home.js
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Laptop, Robot, Brain, Microphone, FolderOpen, Article, User } from "@phosphor-icons/react";
 import styles from './Home.module.css';
@@ -8,6 +9,16 @@ import profileImage from '../assets/sean-betts-profile.png';
 const Home = () => {
   return (
     <div className={styles.home}>
+      <Helmet>
+        <title>Sean Betts - AI Innovation in Marketing and Technology</title>
+        <meta name="description" content="Sean Betts: Chief Product & Technology Officer, AI Researcher & Developer, and Neurodiversity Advocate. Explore AI-driven innovation in marketing and technology." />
+        <meta name="keywords" content="Sean Betts, AI, marketing, technology, neurodiversity, product leadership" />
+        <meta property="og:title" content="Sean Betts - AI Innovation in Marketing and Technology" />
+        <meta property="og:description" content="Explore Sean Betts' work in AI-driven innovation, marketing technology, and neurodiversity advocacy." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+      </Helmet>
+
       <section className={styles.hero}>
         <img src={profileImage} alt="Sean Betts" className={styles.profileImage} />
         <div className={styles.heroContent}>

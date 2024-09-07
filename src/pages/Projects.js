@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { GithubLogo, Article, Globe, Video } from "@phosphor-icons/react";
 import styles from './Projects.module.css';
@@ -20,6 +21,16 @@ const Projects = () => {
 
   return (
     <div className={styles.projects}>
+      <Helmet>
+        <title>Sean Betts' AI and Marketing Projects</title>
+        <meta name="description" content="Explore Sean Betts' innovative AI and marketing projects. Discover cutting-edge applications of AI in business and responsible development practices." />
+        <meta name="keywords" content="AI projects, marketing innovation, responsible AI, Sean Betts, technology leadership" />
+        <meta property="og:title" content="Sean Betts' AI and Marketing Projects" />
+        <meta property="og:description" content="Discover innovative AI and marketing projects by Sean Betts, showcasing practical applications and responsible development." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+      </Helmet>
+
       <h1>Projects</h1>
       <p>Welcome to my projects page. Here, you'll find a collection of my work exploring AI and marketing. From developing AI benchmarks to creating educational resources, these projects showcase practical applications of AI in the business world. Each initiative aims to push boundaries while focusing on responsible AI development. Feel free to explore and discover how I think AI is reshaping the marketing landscape.</p>
       <div className={styles.projectList}>

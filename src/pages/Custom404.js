@@ -1,5 +1,6 @@
 // src/pages/Custom404.js
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { 
   Robot, 
@@ -17,6 +18,16 @@ import styles from './Custom404.module.css';
 const Custom404 = () => {
   return (
     <div className={styles.container}>
+      <Helmet>
+        <title>404: AI Malfunction - Sean Betts</title>
+        <meta name="description" content="Oops! Our AI has wandered off. Explore this playful 404 page on Sean Betts' website, blending humor with AI concepts." />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="404: AI Malfunction - Sean Betts" />
+        <meta property="og:description" content="Discover a unique 404 page where AI meets humor. Our digital explorer is momentarily lost in the vast web universe." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://github.com/seanbetts/seanbetts/blob/afbf46d811138cec479b66d741aab0a9e23bbdd5/public/images/sean-betts-profile.png" />
+      </Helmet>
+
       <div className={styles.heroIcon}>
         <Bandaids size={180} weight="thin" />
       </div>
