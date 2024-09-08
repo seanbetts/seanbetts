@@ -49,10 +49,10 @@ const About = () => {
         </script>
       </Helmet>
 
+      <h1>About</h1>
       <div className={styles.header}>
         <img src={profileImage} alt="Sean Betts" className={styles.profileImage} />
         <div className={styles.headerContent}>
-          <h1>About</h1>
           <section className={styles.intro}>
             <p>
               As a visionary product and technology leader with over 20 years of experience in marketing, 
@@ -72,15 +72,15 @@ const About = () => {
 
       <hr className={styles.divider} />
       
-      <section className={styles.experience}>
-        <div className={styles.experienceHeader}>
-          <h3><Briefcase size={36} /></h3>
-          <h2>Professional Experience</h2>
+      <section className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <h2><Briefcase size={36} /></h2>
+          <h3>Professional Experience</h3>
           <a href="https://linkedin.com/in/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn Profile">
             <LinkedinLogo size={36} />
           </a>
         </div>
-        <h3>Chief Product & Technology Officer @ OMG UK (2020 - Present)</h3>
+        <h4>Chief Product & Technology Officer @ OMG UK</h4>
         <p>
           In my role at OMG UK, I lead the group-wide product and technology strategy, overseeing a team 
           of 150 professionals across various disciplines. We're dedicated to developing and deploying 
@@ -103,10 +103,10 @@ const About = () => {
 
       <hr className={styles.divider} />
       
-      <section className={styles.aiProjects}>
-        <div className={styles.developerHeader}>
-          <h3><Robot size={36} /></h3>
-          <h2>AI Research & Development</h2>
+      <section className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <h2><Robot size={36} /></h2>
+          <h3>AI Research & Development</h3>
           <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
             <GithubLogo size={36} />
           </a>
@@ -131,10 +131,10 @@ const About = () => {
 
       <hr className={styles.divider} />
       
-      <section className={styles.speaking}>
-        <div className={styles.speakingHeader}>
-          <h3><Megaphone size={36} /></h3>
-          <h2>Speaking & Advocacy</h2>
+      <section className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <h2><Megaphone size={36} /></h2>
+          <h3>Speaking & Advocacy</h3>
           <a href="/contact" rel="noopener noreferrer" className={styles.socialLink} aria-label="Email">
             <EnvelopeSimple size={36} />
           </a>

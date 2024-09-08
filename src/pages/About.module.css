@@ -1,102 +1,214 @@
 /* src/pages/About.module.css */
 .about {
-    padding: 2rem 0;
-  }
-  
-  .intro {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 2rem 0;
-  }
-  
-  .divider {
-    border: none;
-    border-top: 1px solid var(--color-secondary);
-    margin: 2rem 0;
-  }
+  padding: 1rem 0;
+}
 
-  .experienceHeader, .developerHeader, .speakingHeader {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
+.about h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-  .experienceHeader h3, .developerHeader h3, .speakingHeader h3 {
-    margin-top: 2.5rem;
-    margin-right: 1rem;
-  }
+.intro {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 2rem 0;
+}
 
-  .experienceHeader a, .developerHeader a, .speakingHeader a {
-    margin-left: 1rem;
-    margin-top: 1.5rem;
-  }
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-secondary);
+  margin: 2rem 0;
+}
 
-  .experience, .webinars {
-    margin-bottom: 3rem;
-  }
-  
-  .experience h2, .webinars h2 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .experience h2 svg, .webinars h2 svg {
-    margin-right: 0.5rem;
-  }
-  
-  .experience ul, .webinars ul {
-    list-style-type: none;
-    padding-left: 1rem;
-  }
-  
-  .experience li, .webinars li {
-    margin-bottom: 0.5rem;
-    position: relative;
-  }
-  
-  .experience li::before, .webinars li::before {
-    content: '•';
-    color: var(--color-primary);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-  }
-  
-  .experience a, .webinars a {
-    color: var(--color-secondary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .experience a:hover, .webinars a:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
-  }
-  
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+}
+
+.sectionHeader h2 {
+  margin-bottom: 1.2rem  ;
+ }
+
+.sectionHeader h3 {
+  margin: 0;
+  margin-top: 0;
+  flex: 0 0 auto;
+}
+
+.section h4 {
+  font-size: 1.5rem;
+}
+
+.sectionHeader a {
+  flex: 0 0 auto;
+}
+
+.experience, .webinars {
+  margin-bottom: 3rem;
+}
+
+.experience h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.experience h2 svg {
+  margin-right: 0.5rem;
+}
+
+.experience ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.experience li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.experience li::before {
+  content: '•';
+  color: var(--color-primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.experience a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.experience a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  align-items: center; /* Changed from flex-start to center */
+  margin-bottom: 2rem;
+}
+
+.profileImage {
+  width: 350px; /* Adjust as needed */
+  height: 350px; /* Set a fixed height to match the width */
+  margin-right: 2rem;
+  border-radius: 10px; /* Optional: if you want rounded corners */
+  object-fit: cover; /* This ensures the image covers the area without distortion */
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.headerContent h1 {
+  margin-top: 0; /* Removes any top margin from the heading */
+}
+
+@media (max-width: 768px) {
   .header {
     display: flex;
-    align-items: center; /* Changed from flex-start to center */
-    margin-bottom: 2rem;
-  }
-  
-  .profileImage {
-    width: 350px; /* Adjust as needed */
-    height: 350px; /* Set a fixed height to match the width */
-    margin-right: 2rem;
-    border-radius: 10px; /* Optional: if you want rounded corners */
-    object-fit: cover; /* This ensures the image covers the area without distortion */
-  }
-  
-  .headerContent {
-    flex: 1;
-  }
-  
-  .headerContent h1 {
-    margin-top: 0; /* Removes any top margin from the heading */
+    flex-direction: column;
+    align-items: center;
   }
 
-  .speaking h2 {
-    margin-top: 2rem;
+  .divider {
+    margin: 0;
   }
+
+  .profileImage {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .headerContent h1 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  .sectionHeader {
+    flex-direction: row;
+  }
+
+  .sectionHeader h3 {
+    font-size: 1.5rem;
+  }
+
+  .section h4 {
+    font-size: 1.2rem;
+  }
+
+  .intro {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .intro p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  /* .about {
+    margin: 0;
+    padding: 0;
+  } */
+
+  .profileImage {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .headerContent h1 {
+    font-size: 2rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 1rem; 
+    margin-bottom: 0.2rem;
+  }
+
+  .sectionHeader h3 {
+    margin-top: 1rem; 
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    max-width: 60%;
+  }
+
+  .section h4 {
+    font-size: 1rem;
+  }
+
+  .section p {
+    font-size: 1rem;
+  }
+
+  .sectionHeader a {
+    margin-top: 1rem;
+    margin-left: auto; 
+  }
+
+  .intro p {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .experience h3 {
+    font-size: 1.2rem;
+  }
+
+  .experienceHeader h2 {
+    font-size: 1.5rem;
+    flex-wrap: nowrap;
+  }
+}
