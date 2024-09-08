@@ -101,14 +101,14 @@ const Writing = () => {
         <meta property="og:site_name" content="Sean Betts" />
         <meta property="og:url" content="https://www.seanbetts.com/writing" />
         <meta property="og:title" content="Sean Betts' Writing - AI and Marketing Insights" />
-        <meta property="og:description" content="Explore Sean Betts' blog 'The Blueprint' and featured articles on AI, marketing, and technology trends." />
+        <meta property="og:description" content="Explore Sean Betts' blog, The Blueprint, and featured articles on AI, marketing, and technology trends." />
         <meta property="og:type" content="blog" />
         <meta property="og:image" content="/images/sean-betts-profile.png" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="800" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="Sean Betts' Writing - AI and Marketing Insights" />
+        <meta name="twitter:title" content="Sean Betts' Writing - AI & Marketing Insights" />
         <meta name="twitter:description" content="Explore Sean Betts' blog 'The Blueprint' and featured articles on AI, marketing, and technology trends." />
         <meta name="twitter:image" content="/images/sean-betts-profile.png" />
         <script type="application/ld+json">

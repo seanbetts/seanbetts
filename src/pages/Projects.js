@@ -40,7 +40,7 @@ const Projects = () => {
         <meta name="keywords" content="AI projects, marketing innovation, responsible AI, Sean Betts, technology leadership" />
         <meta property="og:site_name" content="Sean Betts" />
         <meta property="og:url" content="https://www.seanbetts.com/projects" />
-        <meta property="og:title" content="Sean Betts' AI and Marketing Projects" />
+        <meta property="og:title" content="Sean Betts' AI & Marketing Projects" />
         <meta property="og:description" content="Discover innovative AI and marketing projects by Sean Betts, showcasing practical applications and responsible development." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/images/sean-betts-profile.png" />

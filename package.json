@@ -1,7 +1,7 @@
 {
   "name": "seanbetts",
   "repo": "https://seanbetts.github.io/seanbetts",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "private": true,
   "dependencies": {
     "@sendgrid/mail": "^8.1.3",

@@ -58,7 +58,7 @@ const Contact = () => {
         <meta property="og:image:height" content="800" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="Contact Sean Betts - AI and Marketing Expert" />
+        <meta name="twitter:title" content="Contact Sean Betts - AI & Marketing Expert" />
         <meta name="twitter:description" content="Get in touch with Sean Betts for insights on AI, marketing, and technology. Connect via social media or send a message." />
         <meta name="twitter:image" content="/images/sean-betts-profile.png" />
         <script type="application/ld+json">
