@@ -123,7 +123,7 @@ const Writing = () => {
 
       <section className={styles.blueprint}>
         <h2>The Blueprint</h2>
-        <p>Check out my blog 'The Blueprint' where I write about generative AI and share a weekly newsletter.</p>
+        <p>Check out my blog, The Blueprint, where I write about generative AI and share a weekly newsletter.</p>
         <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer" className={styles.blueprintLink}>
           <Newspaper size={24} className={styles.icon} />
           Visit The Blueprint
@@ -132,6 +132,7 @@ const Writing = () => {
       
       <section className={styles.featuredArticles}>
         <h2>Featured Articles</h2>
+        <p>Below are some featured articles, showcasing the best of my writing on AI and marketing over the past few years:</p>
         <div className={styles.articleList}>
           {articles.map((article, index) => (
             <ArticlePreview key={index} article={article} />
