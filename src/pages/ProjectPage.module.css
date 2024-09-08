@@ -230,6 +230,26 @@
   color: var(--color-background);
 }
 
+@media (max-width: 920px) {
+  .projectHero {
+    overflow-x: none; 
+    min-height: 0px;
+  }
+
+  .projectHero .projectImage img {
+    width: 100%;
+  }
+
+  .projectHero .projectVideo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .projectHero .projectVideo iframe {
+    margin-top: 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .projectPage {
     padding: 1rem;
@@ -242,10 +262,27 @@
   .projectHeader h1 {
     font-size: 2rem;
   }
+
+  .projectHero .projectVideo iframe {
+    margin-top: 0.1rem;
+    margin-left: -0.7rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .projectHero .projectVideo iframe {
+    margin-top: -0.2rem;
+    margin-left: -1rem;
+  }
 }
 
 @media (max-width: 440px) {
   .typeInfo {
     display: none;
+  }
+
+  .projectHero .projectVideo iframe {
+    margin-top: -0.3rem;
+    margin-left: -1.5rem;
   }
 }
