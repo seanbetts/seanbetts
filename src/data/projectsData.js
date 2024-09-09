@@ -1,4 +1,4 @@
-import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb } from "@phosphor-icons/react";
+import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar } from "@phosphor-icons/react";
 
 const projectsData = [
   {
@@ -85,6 +85,26 @@ const projectsData = [
     futureImprovements: "Expand the question database, integrate with more LLMs as they become available, and develop phases for testing marketing understanding and capabilities.",
     status: "Ongoing",
     heroImage: "/images/projects/genai-marketing-benchmarks-hero.png"
+  },
+  {
+    id: "genai-newsletter",
+    name: "Weekly GenAI Newsletter",
+    description: "A curated weekly newsletter covering the latest developments, breakthroughs, and applications in Generative AI.",
+    icon: <Calendar size={48} />,
+    url: "https://www.the-blueprint.ai",
+    type: "blog",
+    date: "July 2023 onwards",
+    features: [
+      "Weekly roundup of key GenAI news and developments",
+      "In-depth analysis of emerging GenAI trends and technologies",
+      "Curated list of must-read long-read articles",
+      "Spotlight on innovative AI applications across industries",
+      "Expert commentary on AI ethics and policy developments"
+    ],
+    challenges: "Staying up-to-date with the rapidly evolving GenAI landscape, distilling complex technical information into accessible insights, and maintaining a consistent publishing schedule while ensuring high-quality, relevant content.",
+    futureImprovements: "Implement personalized content recommendations based on reader interests, expand to include interactive elements such as polls or Q&A sessions, and develop a community platform for subscribers to discuss and share insights.",
+    status: "Ongoing",
+    heroImage: "/images/projects/genai-newsletter-hero.png"
   },
   {
     id: "genai-timeline",
