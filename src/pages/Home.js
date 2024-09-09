@@ -93,7 +93,7 @@ const Home = () => {
           <p>Explore my AI and marketing projects</p>
         </Link>
         
-        <Link to="/blog" className={styles.section}>
+        <Link to="/writing" className={styles.section}>
           <Article size={48} />
           <h2>Writing</h2>
           <p>Read my latest thoughts and articles</p>
