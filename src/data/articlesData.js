@@ -1,5 +1,9 @@
 const articlesData = [
     {
+      title: "o1: The Next Step in Conversational AI",
+      url: "https://www.the-blueprint.ai/p/o1-the-next-step-in-conversational"
+    },
+    {
       title: "Scared and Excited",
       url: "https://www.infosum.com/podcast/sean-betts-omg-scared-and-excited"
     },
