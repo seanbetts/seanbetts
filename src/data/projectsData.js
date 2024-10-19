@@ -33,7 +33,7 @@ const projectsData = [
     icon: <Lightbulb size={48} />,
     url: "https://www.the-blueprint.ai/p/beyond-chatbots",
     type: "blog",
-    date: "July 2024 onwards",
+    date: "July - October 2024",
     features: [
       "In-depth analysis of current LLM limitations",
       "Vision for the future of digital companions",
