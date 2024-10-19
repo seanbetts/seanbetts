@@ -46,8 +46,7 @@ const projectsData = [
       "Proactive AI assistance",
       "Adaptive AI personalities",
       "Fact-checking and information verification",
-      "Human-AI collaboration",
-      "Customisation of AI interfaces"
+      "Human-AI collaboration"
     ],
     challenges: "Addressing technical hurdles in continuous learning and contextual understanding. Navigating ethical considerations such as privacy, data security, and the risk of over-reliance on AI. Balancing the benefits of AI assistance with the need to maintain human autonomy and critical thinking skills.",
     futureImprovements: "Expand the series with practical case studies. Develop prototypes or proof-of-concepts for key features discussed. Create interactive demonstrations of potential digital companion functionalities.",
