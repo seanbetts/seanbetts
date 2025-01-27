@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Newspaper, PaperPlaneTilt, LinkedinLogo, TwitterLogo, GithubLogo } from "@phosphor-icons/react";
+import { Newspaper, PaperPlaneTilt, LinkedinLogo, Butterfly, GithubLogo } from "@phosphor-icons/react";
 import styles from './Contact.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
 
@@ -36,7 +36,8 @@ const Contact = () => {
       "sameAs": [
         "https://www.linkedin.com/in/seanbetts/",
         "https://github.com/seanbetts",
-        "https://twitter.com/seanbetts"
+        "https://twitter.com/seanbetts",
+        "https://bsky.app/profile/seanbetts.com"
       ]
     }
   };
@@ -83,8 +84,8 @@ const Contact = () => {
           <a href="https://github.com/seanbetts" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
             <GithubLogo size={24} /> <span>GitHub</span>
           </a>
-          <a href="https://twitter.com/seanbetts" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-            <TwitterLogo size={24} /> <span>Twitter</span>
+          <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+            <Butterfly size={24} /> <span>Bluesky</span>
           </a>
         </div>
       </section>

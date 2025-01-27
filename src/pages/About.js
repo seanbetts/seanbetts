@@ -16,7 +16,8 @@ const About = () => {
     "sameAs": [
       "https://www.linkedin.com/in/seanbetts/",
       "https://github.com/seanbetts",
-      "https://twitter.com/seanbetts"
+      "https://twitter.com/seanbetts",
+      "https://bsky.app/profile/seanbetts.com"
     ],
     "worksFor": {
       "@type": "Organization",

@@ -1,6 +1,6 @@
 // src/components/Footer.js
 import React from 'react';
-import { LinkedinLogo, GithubLogo, TwitterLogo, Newspaper } from "@phosphor-icons/react";
+import { LinkedinLogo, GithubLogo, Butterfly, Newspaper } from "@phosphor-icons/react";
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -13,8 +13,8 @@ const Footer = () => {
         <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
           <GithubLogo size={36} />
         </a>
-        <a href="https://x.com/seanbetts" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="X (Twitter) Profile">
-          <TwitterLogo size={36} />
+        <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Bluesky Profile">
+          <Butterfly size={36} />
         </a>
         <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="The Blueprint Blog">
           <Newspaper size={36} />
