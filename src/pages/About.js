@@ -82,18 +82,19 @@ const About = () => {
         </div>
         <h4>Chief AI & Innovation Officer @ OMG UK</h4>
         <p>
-          In my role at OMG UK, I lead the group-wide product and technology strategy, overseeing a team 
-          of 150 professionals across various disciplines. We're dedicated to developing and deploying 
-          transformational products, advanced cloud technology, and innovative operational processes.
+          In my role at OMG UK, I spearhead our organisation's AI strategy and business transformation initiatives, 
+          leading the AI Centre of Excellence to develop cutting-edge solutions that reshape how we operate and serve our clients. 
         </p>
         <p>
           Key responsibilities include:
         </p>
         <ul>
-          <li>Spearheading OMG UK's Artificial Intelligence strategy</li>
-          <li>Developing cutting-edge marketing applications</li>
-          <li>Establishing our data privacy & ethics practices</li>
-          <li>Fostering a culture of continuous learning & improvement</li>
+          <li>Being a prominent industry thought leader on AI and its impact on marketing and advertising on a 2–5-year horizon.</li>
+          <li>Identifying opportunities for innovation and adoption of new technologies.</li>
+          <li>Leading research efforts to identify emerging capabilities four our business and our clients.</li>
+          <li>Providing strategic guidance and consultancy to OMG UK agencies and clients on how to leverage AI solutions.</li>
+          <li>Leading the creation and deployment of AI-focused L&D programs for our internal teams and clients.</li>
+          <li>Providing OMG UK board with insights and direction on AI’s role in business growth, client services, and internal operations.</li>
         </ul>
         <p>
           My focus on AI education is enabling OMG UK to navigate the rapidly evolving technology landscape, 
