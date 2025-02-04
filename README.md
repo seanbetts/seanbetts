@@ -5,7 +5,7 @@
 
 ## 🚀 About Me
 
-- 🧠 Chief Product & Technology Officer at Omnicom Media Group UK
+- 🧠 Chief AI & Innovation Officer at Omnicom Media Group UK
 - 🤖 AI Researcher & Developer
 - 🤔 Thought Leader in AI and Marketing
 - 🗣️ Neurodiversity Speaker
