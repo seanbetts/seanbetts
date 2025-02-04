@@ -56,10 +56,9 @@ const About = () => {
         <div className={styles.headerContent}>
           <section className={styles.intro}>
             <p>
-              As a visionary product and technology leader with over 20 years of experience in marketing, 
+              As a visionary AI and innovation leader with over 20 years of experience in marketing, 
               I'm now focussing my career on AI-driven innovation at the intersection of technology and business. 
-              My role as an independent AI researcher and developer complements my position as Chief Product & 
-              Technology Officer at Omnicom Media Group UK, where I'm committed to driving responsible AI 
+              My role as an independent AI researcher and developer complements my position at Omnicom Media Group UK, where I'm committed to driving responsible AI 
               development and its practical application in marketing.
             </p>
             <p>
@@ -81,7 +80,7 @@ const About = () => {
             <LinkedinLogo size={36} />
           </a>
         </div>
-        <h4>Chief Product & Technology Officer @ OMG UK</h4>
+        <h4>Chief AI & Innovation Officer @ OMG UK</h4>
         <p>
           In my role at OMG UK, I lead the group-wide product and technology strategy, overseeing a team 
           of 150 professionals across various disciplines. We're dedicated to developing and deploying 
