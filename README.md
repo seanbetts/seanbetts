@@ -14,9 +14,21 @@ With over 20 years of experience in marketing, I'm focused on AI-driven innovati
 
 ## 🔭 Current Projects
 
+### YouTube SDG Analysis
+
+Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.
+
+- 📹 YouTube video transcription
+- 📊 Channel analysis
+- 🌍 SDG mapping
+
 ### AI Brand Detection
 
-_Coming soon..._
+A project to develop AI techniques to detect brands and products in videos.
+
+- 📹 Brand and product detection in video content
+- 🌐 Multi-brand support
+- 📊 Integration with marketing analytics
 
 ### GenAI Marketing Benchmarks
 
