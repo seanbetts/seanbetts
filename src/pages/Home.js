@@ -24,7 +24,7 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Sean Betts",
-    "jobTitle": "Chief Product & Technology Officer",
+    "jobTitle": "Chief AI & Innovation Officer",
     "description": "AI Researcher & Developer, Neurodiversity Advocate",
     "url": "https://www.seanbetts.com",
     "sameAs": [
@@ -40,7 +40,7 @@ const Home = () => {
       <Helmet>
         <title>Sean Betts - AI Innovation in Marketing and Technology</title>
         <link rel="canonical" href="https://www.seanbetts.com/" />
-        <meta name="description" content="Sean Betts: Chief Product & Technology Officer, AI Researcher & Developer, and Neurodiversity Advocate. Explore AI-driven innovation in marketing and technology." />
+        <meta name="description" content="Sean Betts: Chief AI & Innovation Officer, AI Researcher & Developer, and Neurodiversity Advocate. Explore AI-driven innovation in marketing and technology." />
         <meta name="keywords" content="Sean Betts, AI, marketing, technology, neurodiversity, product leadership" />
         <meta property="og:site_name" content="Sean Betts" />
         <meta property="og:url" content="https://www.seanbetts.com/" />
@@ -68,7 +68,7 @@ const Home = () => {
         <div className={styles.heroContent}>
           <h1>Sean Betts</h1>
           <p className={styles.summary}>
-            <span><Laptop size={20} /> Chief Product & Technology Officer</span>
+            <span><Laptop size={20} /> Chief AI & Innovation Officer</span>
             <span><Robot size={20} /> AI Researcher & Developer</span>
             <span><Brain size={20} /> Autistic Thought Leader</span>
             <span><Microphone size={20} /> Neurodiversity & Mental Health Speaker</span>
@@ -82,7 +82,7 @@ const Home = () => {
         I'm now focussing my career on AI-driven innovation at the intersection of technology and business.
         </p>
         <p>
-        My role as an independent AI researcher and developer complements my position as Chief Product & Technology Officer 
+        My role as an independent AI researcher and developer complements my position as Chief AI & Innovation Officer 
         at Omnicom Media Group UK, where I'm committed to driving responsible AI development and its practical application in marketing.
         </p>
       </section>

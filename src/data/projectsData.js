@@ -2,11 +2,30 @@ import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightb
 
 const projectsData = [
   {
+    id: "youtube-sdg-analysis",
+    name: "YouTube SDG Analysis",
+    description: "Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.",
+    icon: <Video size={48} />,
+    url: "#",
+    type: "github",
+    date: "January 2025 onwards",
+    technologies: [
+        "Python",
+        "YouTube Data API",
+        "OpenAI API"
+      ],
+    features: ["YouTube video transcription", "Channel analysis", "SDG mapping"],
+    challenges: "Developing an accurate model that can map SDGs to video content and scaling the analysis to over 2.5m videos.",
+    futureImprovements: "Develop visual reporting and more robust scaling methods",
+    status: "Ongoing",
+    heroImage: "/images/projects/xxx.jpg"
+  },
+  {
     id: "ai-brand-detection",
     name: "AI Brand Detection",
     description: "Developing AI techniques to detect brands and products in videos.",
     icon: <Video size={48} />,
-    url: "#",
+    url: "https://github.com/seanbetts/product-placement",
     type: "github",
     date: "August 2024 onwards",
     technologies: [
@@ -20,10 +39,10 @@ const projectsData = [
         "Google Cloud Vision API",
         "Segment Anything Model 2"
       ],
-    features: ["Brand and productdetection", "Multi-brand support", "Integration with marketing analytics"],
+    features: ["Brand and product detection", "Multi-brand support", "Integration with marketing analytics"],
     challenges: "Developing an accurate model that can detect brands in various contexts and lighting conditions.",
     futureImprovements: "Implement object tracking with SAM 2, expanding the database of recognizable brands and improving detection speeds and efficiency.",
-    status: "In development",
+    status: "Completed",
     heroImage: "/images/projects/xxx.jpg"
   },
   {
@@ -50,7 +69,7 @@ const projectsData = [
     ],
     challenges: "Addressing technical hurdles in continuous learning and contextual understanding. Navigating ethical considerations such as privacy, data security, and the risk of over-reliance on AI. Balancing the benefits of AI assistance with the need to maintain human autonomy and critical thinking skills.",
     futureImprovements: "Expand the series with practical case studies. Develop prototypes or proof-of-concepts for key features discussed. Create interactive demonstrations of potential digital companion functionalities.",
-    status: "Ongoing",
+    status: "Completed",
     heroImage: "/images/projects/beyond-chatbots-hero.png"
   },
   {
