@@ -1,5 +1,9 @@
 const articlesData = [
   {
+    title:"Omnicom Media Group’s AI Chief on What Star Wars Teaches Us About AI",
+    url:"https://futureweek.com/omnicoms-ai-chief-on-what-star-wars-teaches-us-about-ai/"
+  },
+  {
     title: "Nuclear Waste Kids",
     url: "https://www.the-blueprint.ai/p/nuclear-waste-kids"
   },
