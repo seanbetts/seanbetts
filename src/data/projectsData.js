@@ -1,6 +1,32 @@
-import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar } from "@phosphor-icons/react";
+import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar, Globe } from "@phosphor-icons/react";
 
 const projectsData = [
+  {
+    "id": "genai-explorer",
+    "name": "Generative AI Explorer",
+    "description": "An interactive web application that visualizes the landscape of generative AI companies, models, benchmarks, and capabilities.",
+    "icon": <Globe size={48} />,
+    "url": "https://explorer.the-blueprint.ai/",
+    "type": "website",
+    "date": "May 2025 onwards",
+    "technologies": [
+      "React 19",
+      "Next.js 15.3",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "features": [
+      "Model explorer by category",
+      "Benchmark comparisons",
+      "Rich media galleries",
+      "Company profiles",
+      "Model comparison tool"
+    ],
+    "challenges": "Creating a structured data model to represent the complex AI ecosystem and enabling meaningful comparisons across diverse model types.",
+    "futureImprovements": "Chat interface for intuitive exploration, expanded benchmark database, and real-time data updates",
+    "status": "Active",
+    "heroImage": "/images/projects/xxx.jpg"
+  },
   {
     id: "youtube-sdg-analysis",
     name: "YouTube SDG Analysis",
