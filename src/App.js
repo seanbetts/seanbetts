@@ -9,7 +9,6 @@ import Projects from './pages/Projects';
 import ProjectPage from './pages/ProjectPage';
 import Writing from './pages/Writing';
 import Contact from './pages/Contact';
-import ContactTest from './pages/ContactTest';
 import Custom404 from './pages/Custom404';
 import projectsData from './data/projectsData';
 
@@ -30,7 +29,6 @@ const AppContent = () => {
           <Route path="/projects/:id" element={<ProjectPage projects={projectsData} />} />
           <Route path="/writing" element={<Writing />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/contact-test" element={<ContactTest />} />
           <Route path="*" element={<Custom404 />} />
         </Routes>
       </Layout>
