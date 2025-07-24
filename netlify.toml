@@ -6,7 +6,7 @@
 
 # Prerender SPA for better SEO
 [[plugins]]
-  package = "@netlify/plugin-prerender-spa"
+  package = "netlify-plugin-prerender-spa"
 
   [plugins.inputs]
     # Add all your routes that need to be prerendered
