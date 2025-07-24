@@ -9,21 +9,4 @@
   package = "netlify-plugin-prerender-spa"
 
   [plugins.inputs]
-    # Add all your routes that need to be prerendered
-    routes = [
-      "/",
-      "/about",
-      "/projects", 
-      "/projects/genai-explorer",
-      "/projects/genai-timeline",
-      "/projects/genai-marketing-benchmarks",
-      "/projects/youtube-sdg-analysis",
-      "/projects/ai-brand-detection",
-      "/projects/beyond-chatbots",
-      "/projects/genai-newsletter",
-      "/projects/ai-chat-experience", 
-      "/projects/genai-webinar-series",
-      "/projects/little-ai-lessons",
-      "/writing",
-      "/contact"
-    ]
+    source = "build"
