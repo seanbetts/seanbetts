@@ -1,5 +1,17 @@
 const articlesData = [
   {
+    title:"Disruptive AI: Sean Betts on Agentic AI and Synthetic Data",
+    url:"https://www.youtube.com/watch?v=aLl0vT3TFVE"
+  },
+  {
+    title:"Clicks Are Dead",
+    url:"https://www.the-blueprint.ai/p/clicks-are-dead"
+  },
+  {
+    title: "I really miss Steve Jobs",
+    url: "https://www.the-blueprint.ai/p/i-really-miss-steve-jobs"
+  },
+  {
     title:"Omnicom Media Group’s AI Chief on What Star Wars Teaches Us About AI",
     url:"https://futureweek.com/omnicoms-ai-chief-on-what-star-wars-teaches-us-about-ai/"
   },
@@ -10,10 +22,6 @@ const articlesData = [
   {
     title: "Your brand must be available physically, mentally and now for the AI algorithm",
     url: "https://www.thedrum.com/opinion/2025/04/01/your-brand-must-be-available-physically-mentally-and-now-the-ai-algorithm"
-  },
-  {
-    title: "I really miss Steve Jobs",
-    url: "https://www.the-blueprint.ai/p/i-really-miss-steve-jobs"
   },
   {
     title: "Web 4.0 - The Rise of the Agentic Web",
