@@ -89,43 +89,6 @@ const Contact = () => {
           </a>
         </div>
       </section>
-
-      <hr className={styles.divider} />
-
-      <h2>Send me a Message</h2>
-      <p>If you'd like to get in touch with me directly, please use the chat box below to send me a message.</p>
-
-      <div className={styles.chatContainer}>
-        {/* Coming Soon message inside chat container */}
-        <div className={styles.comingSoonMessage}>
-          <img src={profileImage} alt="Sean Betts" className={styles.chatLogo} />
-          <p>The chat feature is coming soon!</p>
-        </div>
-        <div className={styles.messages}>
-          {messages.map((message, index) => (
-            <div key={index} className={`${styles.message} ${styles[message.sender]}`}>
-              {message.text}
-            </div>
-          ))}
-        </div>
-        <form onSubmit={handleSubmit} className={styles.inputForm}>
-          <input 
-            type="text" 
-            value={input} 
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message here..."
-            className={styles.input}
-            disabled={!isChatEnabled} 
-          />
-          <button 
-            type="submit" 
-            className={styles.sendButton} 
-            disabled={!isChatEnabled} 
-          >
-            <PaperPlaneTilt size={24} />
-          </button>
-        </form>
-      </div>
     </div>
   );
 };
