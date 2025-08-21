@@ -1,28 +1,9 @@
-import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Newspaper, PaperPlaneTilt, LinkedinLogo, Butterfly, GithubLogo } from "@phosphor-icons/react";
+import { Newspaper, LinkedinLogo, Butterfly, GithubLogo } from "@phosphor-icons/react";
 import styles from './Contact.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
 
 const Contact = () => {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
-  // eslint-disable-next-line no-unused-vars
-  const [isChatEnabled, setIsChatEnabled] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isChatEnabled && input.trim()) {
-      setMessages([...messages, { text: input, sender: 'user' }]);
-      setTimeout(() => {
-        setMessages(messages => [...messages, { 
-          text: "Thanks for your message! I'll get back to you soon.", 
-          sender: 'bot' 
-        }]);
-      }, 1000);
-      setInput('');
-    }
-  };
 
   const contactPageSchema = {
     "@context": "https://schema.org",
