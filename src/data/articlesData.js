@@ -1,5 +1,9 @@
 const articlesData = [
   {
+    title:"Web 4.0: From Human-Centric to Agent-Mediated",
+    url:"https://aijourn.com/web-4-0-from-human-centric-to-agent-mediated/"
+  },
+    {
     title:"Disruptive AI: Sean Betts on Agentic AI and Synthetic Data",
     url:"https://www.youtube.com/watch?v=aLl0vT3TFVE"
   },
