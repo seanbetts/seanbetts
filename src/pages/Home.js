@@ -88,10 +88,10 @@ const Home = () => {
       </section>
       
       <div className={styles.sections}>
-        <Link to="/projects" className={styles.section}>
+        <Link to="/building" className={styles.section}>
           <FolderOpen size={48} />
-          <h2>Projects</h2>
-          <p>Explore my AI and marketing projects</p>
+          <h2>Building</h2>
+          <p>Explore what I'm building in AI and marketing</p>
         </Link>
         
         <Link to="/writing" className={styles.section}>
@@ -99,7 +99,13 @@ const Home = () => {
           <h2>Writing</h2>
           <p>Read my latest thoughts and articles</p>
         </Link>
-        
+
+        <Link to="/speaking" className={styles.section}>
+          <Microphone size={48} />
+          <h2>Speaking</h2>
+          <p>View my keynotes and conference talks</p>
+        </Link>
+
         <Link to="/about" className={styles.section}>
           <User size={48} />
           <h2>About</h2>

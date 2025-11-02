@@ -92,7 +92,7 @@ const ProjectPage = ({ projects }) => {
       "url": "https://www.seanbetts.com"
     },
     "datePublished": project.date,
-    "url": `https://www.seanbetts.com/projects/${project.id}`,
+    "url": `https://www.seanbetts.com/building/${project.id}`,
     "image": project.heroImage || "/images/sean-betts-profile.png",
     "softwareVersion": project.status,
     "keywords": project.technologies?.join(", ")
@@ -101,20 +101,20 @@ const ProjectPage = ({ projects }) => {
   return (
     <div className={styles.projectPage}>
       <Helmet>
-        <title>{`${project.name} - Sean Betts' Projects`}</title>
-        <link rel="canonical" href={`https://www.seanbetts.com/projects/${project.id}`} />
+        <title>{`${project.name} - What Sean Betts is Building`}</title>
+        <link rel="canonical" href={`https://www.seanbetts.com/building/${project.id}`} />
         <meta name="description" content={`Explore ${project.name}, an ${project.type} project by Sean Betts. ${project.description.slice(0, 150)}...`} />
         <meta name="keywords" content={`Sean Betts, ${project.name}, ${project.type}, ${project.technologies?.join(', ')}`} />
-        <meta property="og:title" content={`${project.name} - Sean Betts' Projects`} />
+        <meta property="og:title" content={`${project.name} - What Sean Betts is Building`} />
         <meta property="og:description" content={`Discover ${project.name}, a ${project.type} project by Sean Betts. ${project.description.slice(0, 200)}...`} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://www.seanbetts.com/projects/${project.id}`} />
+        <meta property="og:url" content={`https://www.seanbetts.com/building/${project.id}`} />
         <meta property="og:image" content={project.heroImage || "/images/sean-betts-profile.png"} />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="800" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content={`${project.name} - Sean Betts' Projects`} />
+        <meta name="twitter:title" content={`${project.name} - What Sean Betts is Building`} />
         <meta name="twitter:description" content={`Discover ${project.name}, a ${project.type} project by Sean Betts. ${project.description.slice(0, 200)}...`} />
         <meta name="twitter:image" content={project.heroImage || "/images/sean-betts-profile.png"} />
         <script type="application/ld+json">
@@ -122,8 +122,8 @@ const ProjectPage = ({ projects }) => {
         </script>
       </Helmet>
 
-    <Link to="/projects" className={styles.backLink}>
-      <ArrowLeft size={24} /> Back to Projects
+    <Link to="/building" className={styles.backLink}>
+      <ArrowLeft size={24} /> Back to Building
     </Link>
     <div className={styles.projectHeader}>
       {React.cloneElement(project.icon, { size: 48 })}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { House, User, FolderOpen, Article, EnvelopeSimple, List } from "@phosphor-icons/react";
+import { House, User, FolderOpen, Article, Microphone, EnvelopeSimple, List } from "@phosphor-icons/react";
 import ToggleTheme from './ToggleTheme';
 import styles from './Header.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
@@ -27,8 +27,9 @@ const Header = () => {
         </button>
         <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ''}`}>
           <li className={styles.navItem}><Link to="/" className={styles.navLink} onClick={toggleMenu}><House size={24} /> Home</Link></li>
-          <li className={styles.navItem}><Link to="/projects" className={styles.navLink} onClick={toggleMenu}><FolderOpen size={24} /> Projects</Link></li>
+          <li className={styles.navItem}><Link to="/building" className={styles.navLink} onClick={toggleMenu}><FolderOpen size={24} /> Building</Link></li>
           <li className={styles.navItem}><Link to="/writing" className={styles.navLink} onClick={toggleMenu}><Article size={24} /> Writing</Link></li>
+          <li className={styles.navItem}><Link to="/speaking" className={styles.navLink} onClick={toggleMenu}><Microphone size={24} /> Speaking</Link></li>
           <li className={styles.navItem}><Link to="/about" className={styles.navLink} onClick={toggleMenu}><User size={24} /> About</Link></li>
           <li className={styles.navItem}><Link to="/contact" className={styles.navLink} onClick={toggleMenu}><EnvelopeSimple size={24} /> Contact</Link></li>
         </ul>

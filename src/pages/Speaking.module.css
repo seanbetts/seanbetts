@@ -1,0 +1,162 @@
+/* src/pages/Speaking.module.css */
+.speaking {
+  padding: 2rem 0;
+}
+
+.intro {
+  margin-bottom: 3rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.talksList {
+  margin-top: 2rem;
+}
+
+.talks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.talkCard {
+  background-color: var(--color-box-bg);
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.talkCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(234, 0, 217, 0.3);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageContainer img.containImage {
+  object-fit: contain;
+}
+
+.fallbackImage {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.talkContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.talkContent h2 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--color-primary);
+  flex: 1;
+}
+
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-top: 0.25rem;
+}
+
+.typeBadge.keynote {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.typeBadge.panel {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+}
+
+.talkMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.conference {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.date {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.location {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.description {
+  line-height: 1.6;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .talks {
+    grid-template-columns: 1fr;
+  }
+
+  .imageContainer {
+    height: 180px;
+  }
+
+  .titleContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .typeBadge {
+    margin-top: 0;
+  }
+}

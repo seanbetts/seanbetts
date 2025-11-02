@@ -5,9 +5,10 @@ import { ThemeProvider, ThemeContext } from './ThemeContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
-import Projects from './pages/Projects';
+import Building from './pages/Building';
 import ProjectPage from './pages/ProjectPage';
 import Writing from './pages/Writing';
+import Speaking from './pages/Speaking';
 import Contact from './pages/Contact';
 import Custom404 from './pages/Custom404';
 import projectsData from './data/projectsData';
@@ -25,9 +26,10 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectPage projects={projectsData} />} />
+          <Route path="/building" element={<Building />} />
+          <Route path="/building/:id" element={<ProjectPage projects={projectsData} />} />
           <Route path="/writing" element={<Writing />} />
+          <Route path="/speaking" element={<Speaking />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Custom404 />} />
         </Routes>
