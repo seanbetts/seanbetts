@@ -113,7 +113,7 @@ const speakingData = [
   {
     id: "futureweek-forum-2025",
     title: "FutureWeek Forum",
-    type: "keynote",
+    type: "panel",
     description: "Discussing the future of technology and innovation with industry leaders.",
     date: "5 March 2025",
     location: "London, UK",
