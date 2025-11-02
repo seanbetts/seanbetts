@@ -1,3 +1,7 @@
+# Redirect old Projects URLs to Building
+/projects /building 301
+/projects/* /building/:splat 301
+
 # Handle client-side routing
 /* /index.html 200
 

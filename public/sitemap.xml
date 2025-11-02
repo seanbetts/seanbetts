@@ -2,91 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.seanbetts.com/</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.seanbetts.com/about</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.seanbetts.com/writing</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.seanbetts.com/speaking</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.seanbetts.com/contact</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/genai-explorer</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/genai-explorer</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/youtube-sdg-analysis</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/youtube-sdg-analysis</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/ai-brand-detection</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/ai-brand-detection</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/beyond-chatbots</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/beyond-chatbots</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/genai-marketing-benchmarks</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/genai-marketing-benchmarks</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/genai-newsletter</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/genai-newsletter</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/genai-timeline</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/genai-timeline</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/ai-chat-experience</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/ai-chat-experience</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/genai-webinar-series</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/genai-webinar-series</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/projects/little-ai-lessons</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.seanbetts.com/building/little-ai-lessons</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
