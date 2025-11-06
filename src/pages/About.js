@@ -9,7 +9,7 @@ const About = () => {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Sean Betts",
-    "jobTitle": "Chief Product & Technology Officer",
+    "jobTitle": "Chief AI & Innovation Officer",
     "description": "AI Researcher & Developer, Neurodiversity Advocate",
     "url": "https://www.seanbetts.com/about",
     "image": "https://www.seanbetts.com/images/sean-betts-profile.png",

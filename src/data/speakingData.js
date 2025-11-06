@@ -1,6 +1,16 @@
 const speakingData = [
   // 2025
   {
+    id: "future-media-talk-2025",
+    title: "Web 4.0: Building Authority",
+    type: "talk",
+    description: "Exploring the evolution of the web into its fourth generation, examining the rise of agentic AI and the transformation of digital experiences.",
+    date: "5 November 2025",
+    location: "London, UK",
+    conference: "Future of Media 2025",
+    image: "/images/speaking/future-of-media-2025.jpg"
+  },
+  {
     id: "gcs-inside-media-2026",
     title: "Web 4.0: Building Authority",
     type: "keynote",
@@ -13,7 +23,7 @@ const speakingData = [
   {
     id: "aop-publishing-tech-2025",
     title: "Embedding AI In Your Organisation",
-    type: "keynote",
+    type: "talk",
     description: "Exploring how publishing organisations can integrate AI processes throughout their operations to enhance efficiency and innovation.",
     date: "8 October 2025",
     location: "London, UK",
@@ -23,7 +33,7 @@ const speakingData = [
   {
     id: "brunel-salesforce-ai-2025",
     title: "Managing AI Adoption & Change",
-    type: "keynote",
+    type: "panel",
     description: "Discussing practical, responsible adoption of generative AI from leadership strategy to hands-on experimentation - and its impact across industries.",
     date: "1 October 2025",
     location: "London, UK",
@@ -81,9 +91,19 @@ const speakingData = [
     image: "/images/speaking/barclays.svg"
   },
   {
+    id: "ai-adoption-podcast-2025",
+    title: "Disruptive AI: Sean Betts on Agentic AI and Synthetic Data",
+    type: "podcast",
+    description: "Discussing how generative and agentic AI are reshaping the industry, from producing campaign content to designing synthetic research panels that simulate consumer behavior, the emerging capabilities of using synthetic data, the evolution of agentic AI, and potential societal and business model disruptions.",
+    date: "21 August 2025",
+    location: "Virtual",
+    conference: "The AI Adoption Podcast",
+    image: "/images/speaking/ai-adoption-podcast-2024.jpg"
+  },
+  {
     id: "dmwf-london-2025",
     title: "Simulating Britain - AI That Thinks Like Us",
-    type: "keynote",
+    type: "talk",
     description: "Presenting insights on how AI can be developed to understand and reflect human behaviour and cultural nuances.",
     date: "24 June 2025",
     location: "London, UK",
@@ -165,7 +185,7 @@ const speakingData = [
   {
     id: "isba-procurement-2024",
     title: "Does AI Know More About Advertising Than You?",
-    type: "keynote",
+    type: "talk",
     description: "Presenting findings from the generative AI marketing benchmark project, evaluating LLMs' marketing knowledge and capabilities.",
     date: "8 November 2024",
     location: "London, UK",
@@ -179,13 +199,13 @@ const speakingData = [
     description: "Panel exploring significant digital shifts including cookie deprecation, retail media, clean rooms, and AI/ML technologies transforming advertising strategy.",
     date: "9 October 2024",
     location: "London, UK",
-    conference: "Future of Media",
+    conference: "Future of Media 2024",
     image: "/images/speaking/fom-2024.jpg"
   },
   {
     id: "future-media-talk-2024",
     title: "Does AI Know More About Advertising Than You?",
-    type: "keynote",
+    type: "talk",
     description: "Presenting preliminary results from testing AI models on marketing knowledge, including key findings and implications for different marketing disciplines.",
     date: "9 October 2024",
     location: "London, UK",
@@ -203,6 +223,16 @@ const speakingData = [
     image: "/images/speaking/gcs.png"
   },
   {
+    id: "identity-architects-podcast-2024",
+    title: "Scared and Excited",
+    type: "podcast",
+    description: "Discussing generative AI's disruptive impact on marketing, advertising, and media, data privacy, the future of search technology and AI-powered personal assistants, publisher revenue models, synthetic data applications, and brand safety.",
+    date: "5 September 2024",
+    location: "Virtual",
+    conference: "Identity Architects Podcast (InfoSum)",
+    image: "/images/speaking/infosum-2024.jpg"
+  },
+  {
     id: "programmatic-pioneers-2024",
     title: "Revolutionising Creative With AI",
     type: "keynote",
@@ -215,7 +245,7 @@ const speakingData = [
   {
     id: "media-360-2024",
     title: "AI & Media Innovation",
-    type: "keynote",
+    type: "panel",
     description: "Exploring AI-driven innovation in media and advertising.",
     date: "22 May 2024",
     location: "Brighton, UK",
@@ -275,13 +305,13 @@ const speakingData = [
     image: "/images/speaking/middlesex-2023.png"
   },
   {
-    id: "gcs-inside-media-2023",
+    id: "gcs-inside-media-2024",
     title: "AI & Communications",
     type: "keynote",
     description: "Exploring AI and its impact on government communications.",
     date: "28 November 2023",
     location: "London, UK",
-    conference: "Government Communications Service Inside Media 2023",
+    conference: "Government Communications Service Inside Media 2024",
     image: "/images/speaking/gcs.png"
   },
   {
@@ -307,7 +337,7 @@ const speakingData = [
   {
     id: "cheq-breakfast-briefing-2023",
     title: "Generative AI's Impact on Marketing, Security, and Privacy",
-    type: "keynote",
+    type: "talk",
     description: "Conversation on Generative AI's impact on marketing, security, and privacy, discussing opportunities and associated risks shaping Go-to-Market strategies.",
     date: "1 October 2023",
     location: "London, UK",

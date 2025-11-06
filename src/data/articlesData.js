@@ -7,10 +7,6 @@ const articlesData = [
     title:"Web 4.0: From Human-Centric to Agent-Mediated",
     url:"https://aijourn.com/web-4-0-from-human-centric-to-agent-mediated/"
   },
-    {
-    title:"Disruptive AI: Sean Betts on Agentic AI and Synthetic Data",
-    url:"https://www.youtube.com/watch?v=aLl0vT3TFVE"
-  },
   {
     title:"Clicks Are Dead",
     url:"https://www.the-blueprint.ai/p/clicks-are-dead"
@@ -38,10 +34,6 @@ const articlesData = [
   {
     title: "o1: The Next Step in Conversational AI",
     url: "https://www.the-blueprint.ai/p/o1-the-next-step-in-conversational"
-  },
-  {
-    title: "Scared and Excited",
-    url: "https://www.infosum.com/podcast/sean-betts-omg-scared-and-excited"
   },
   {
     title: "Beyond Chatbots: A Blueprint for LLMs",

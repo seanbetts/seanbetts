@@ -112,6 +112,16 @@
   color: var(--color-background);
 }
 
+.typeBadge.talk {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+.typeBadge.podcast {
+  background-color: #1E90FF;
+  color: var(--color-background);
+}
+
 .talkMeta {
   display: flex;
   flex-direction: column;

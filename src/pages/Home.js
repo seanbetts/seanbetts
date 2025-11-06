@@ -103,7 +103,7 @@ const Home = () => {
         <Link to="/speaking" className={styles.section}>
           <Microphone size={48} />
           <h2>Speaking</h2>
-          <p>View my keynotes and conference talks</p>
+          <p>View my keynotes, panels, talks, and podcasts</p>
         </Link>
 
         <Link to="/about" className={styles.section}>
