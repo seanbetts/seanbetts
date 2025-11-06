@@ -1,5 +1,9 @@
 const articlesData = [
   {
+    title:"Judge of the Day: Omnicom’s Sean Betts maps the future of AI in digital experience",
+    url:"https://www.thedrum.com/news/judge-of-the-day-omnicoms-sean-betts-maps-the-future-of-ai-in-digital-experience"
+  },
+  {
     title:"Web 4.0: From Human-Centric to Agent-Mediated",
     url:"https://aijourn.com/web-4-0-from-human-centric-to-agent-mediated/"
   },
