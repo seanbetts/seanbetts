@@ -7,7 +7,7 @@ const speakingData = [
     description: "Panel discussion on AEO/GEO strategies, architecting for AI discoverability vs human engagement, zero-click search impact on performance marketing, and rethinking success metrics when traffic no longer equals sales.",
     date: "19 November 2025",
     location: "London, UK",
-    conference: "Profound Zero Click London",
+    conference: "Profound's Zero Click London 2025",
     image: "/images/speaking/profound-zero-click-london-2025.jpg"
   },
   {
@@ -18,13 +18,13 @@ const speakingData = [
     date: "5 November 2025",
     location: "London, UK",
     conference: "Future of Media 2025",
-    image: "/images/speaking/future-of-media-2025.jpg"
+    image: "/images/speaking/fom-2025.png"
   },
   {
     id: "gcs-inside-media-2026",
     title: "Web 4.0: Building Authority",
     type: "keynote",
-    description: "Discussing Web 4.0 - the shift to an AI-mediated internet - zero-click search, browsing and purchasing, and how brands build authority in AI platforms and measure impact.",
+    description: "Exploring the evolution of the web into its fourth generation, examining the rise of agentic AI and the transformation of digital experiences.",
     date: "5 November 2025",
     location: "London, UK",
     conference: "Government Communications Service Inside Media 2026",
