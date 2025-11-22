@@ -1,6 +1,38 @@
-import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar, Globe } from "@phosphor-icons/react";
+import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar, Globe, MagnifyingGlass } from "@phosphor-icons/react";
 
 const projectsData = [
+  {
+    "id": "llm-search-analysis",
+    "name": "LLM Search Analysis",
+    "description": "A comparative analysis tool for evaluating web search capabilities across OpenAI, Google Gemini, and Anthropic Claude models with interactive testing and batch analysis.",
+    "icon": <MagnifyingGlass size={48} />,
+    "url": "https://github.com/seanbetts/llm-search-analysis",
+    "type": "github",
+    "date": "November 2025",
+    "technologies": [
+      "Python",
+      "Streamlit",
+      "SQLite",
+      "SQLAlchemy",
+      "OpenAI API",
+      "Google AI API",
+      "Anthropic API",
+      "pandas"
+    ],
+    "features": [
+      "Multi-provider support (OpenAI, Google Gemini, Anthropic Claude)",
+      "9 AI models with web search capabilities",
+      "3-tab interface (Interactive, Batch Analysis, Query History)",
+      "Database integration with full interaction persistence",
+      "Rank tracking for search result citations",
+      "CSV export for batch analysis results",
+      "Real-time search query and source analysis"
+    ],
+    "challenges": "Integrating three different provider APIs with varying search implementations, implementing accurate rank tracking for cited sources, and creating a unified interface for comparing search behaviors across models.",
+    "futureImprovements": "Add visualization dashboards for search pattern analysis, implement A/B testing framework for prompt optimization, and expand to include more AI providers.",
+    "status": "Completed",
+    "heroImage": "/images/projects/llm-search-analysis-hero.png"
+  },
   {
     "id": "genai-explorer",
     "name": "Generative AI Explorer",
