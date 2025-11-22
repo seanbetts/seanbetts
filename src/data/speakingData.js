@@ -1,6 +1,16 @@
 const speakingData = [
   // 2025
   {
+    id: "profound-zero-click-london-2025",
+    title: "Zero Click Agency Panel",
+    type: "panel",
+    description: "Panel discussion on AEO/GEO strategies, architecting for AI discoverability vs human engagement, zero-click search impact on performance marketing, and rethinking success metrics when traffic no longer equals sales.",
+    date: "19 November 2025",
+    location: "London, UK",
+    conference: "Profound Zero Click London",
+    image: "/images/speaking/profound-zero-click-london-2025.jpg"
+  },
+  {
     id: "future-media-talk-2025",
     title: "Web 4.0: Building Authority",
     type: "talk",
