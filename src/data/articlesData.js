@@ -1,5 +1,9 @@
 const articlesData = [
   {
+    title:"Why authority, not clicks, decides who conquers Web 4.0",
+    url:"https://uk.themedialeader.com/why-authority-not-clicks-decides-who-conquers-web-4-0/"
+  },
+  {
     title:"Judge of the Day: Omnicom’s Sean Betts maps the future of AI in digital experience",
     url:"https://www.thedrum.com/news/judge-of-the-day-omnicoms-sean-betts-maps-the-future-of-ai-in-digital-experience"
   },
