@@ -2,6 +2,26 @@ import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightb
 
 const projectsData = [
   {
+    id: "pointilism",
+    name: "Pointilism",
+    description: "A calm, monochrome surface to explore. Dots drift, breathe, snap, and drop to reveal different states—always readable, always minimal.",
+    icon: <MagnifyingGlass size={48} />,
+    url: "https://pointilism.seanbetts.com",
+    type: "website",
+    date: "December 2025",
+    technologies: ["HTML", "CSS", "Vanilla JavaScript", "Canvas 2D"],
+    features: [
+      "Monochrome dot-field with light/dark mode",
+      "Presets + mobile-friendly controls panel",
+      "Breathing + grid snap + gravity drop interactions",
+      "Freeze and export the dot field as a PNG"
+    ],
+    challenges: "Balancing a strict no-overlap layout with fluid motion and interactions across devices, while keeping the UI readable over a dynamic canvas layer.",
+    futureImprovements: "Add more curated presets/themes, refine mobile interactions, and expand the single-page into a richer interactive homepage while keeping the minimal aesthetic.",
+    status: "Active",
+    heroImage: "/images/projects/pointilism-hero.png"
+  },
+  {
     "id": "llm-search-analysis",
     "name": "LLM Search Analysis",
     "description": "A comparative analysis tool for evaluating web search capabilities across OpenAI, Google Gemini, and Anthropic Claude models with interactive testing and batch analysis.",
