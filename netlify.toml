@@ -4,9 +4,10 @@
 [dev]
   port = 8888
 
-# Prerender SPA for better SEO
-[[plugins]]
-  package = "netlify-plugin-prerender-spa"
-
-  [plugins.inputs]
-    source = "build"
+# Prerender SPA plugin disabled due to build timeouts
+# SEO handled via react-helmet and proper meta tags
+# [[plugins]]
+#   package = "netlify-plugin-prerender-spa"
+#
+#   [plugins.inputs]
+#     source = "build"
