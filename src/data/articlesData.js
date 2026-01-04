@@ -1,5 +1,9 @@
 const articlesData = [
   {
+    title:"Predictions for 2026: How Media and Marketing Agencies See the AI Shift Unfolding",
+    url:"https://futureweek.com/predictions-for-2026-how-media-and-marketing-agencies-see-the-ai-shift-unfolding/"
+  },
+  {
     title:"Why authority, not clicks, decides who conquers Web 4.0",
     url:"https://uk.themedialeader.com/why-authority-not-clicks-decides-who-conquers-web-4-0/"
   },
