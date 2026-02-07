@@ -1,4 +1,15 @@
 const speakingData = [
+  // 2026
+  {
+    id: "lead-2026",
+    title: "Advertising And Trust In The Time Of AI Panel",
+    type: "panel",
+    description: "Panel discussion on the changing advertising landscape and whether ads cretaed by machines can still be trusted by humans.",
+    date: "5 February 2026",
+    location: "London, UK",
+    conference: "LEAD 2026",
+    image: "/images/speaking/lead-2026.jpg"
+  },
   // 2025
   {
     id: "profound-zero-click-london-2025",
