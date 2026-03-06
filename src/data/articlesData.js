@@ -1,5 +1,9 @@
 const articlesData = [
   {
+    title:"Advertising Inside The Model – Advertising Week",
+    url:"https://advertisingweek.com/advertising-inside-the-model/"
+  },
+  {
     title:"Predictions for 2026: How Media and Marketing Agencies See the AI Shift Unfolding",
     url:"https://futureweek.com/predictions-for-2026-how-media-and-marketing-agencies-see-the-ai-shift-unfolding/"
   },
