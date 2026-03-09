@@ -1,6 +1,16 @@
 const speakingData = [
   // 2026
   {
+    id: "iab-leadership-summit-2026",
+    title: "Leading with Autism",
+    type: "talk",
+    description: "TED-style talk on how I lead with autism and the leadership lessons I've learnt along the way.",
+    date: "5 March 2026",
+    location: "London, UK",
+    conference: "IAB Leadership Summit 2026",
+    image: "/images/speaking/iab-leadership-summit-2026.jpg"
+  },
+  {
     id: "lead-2026",
     title: "Advertising And Trust In The Time Of AI Panel",
     type: "panel",
