@@ -6,6 +6,8 @@ import ArticlePreview from '../components/ArticlePreview';
 import fetchUrlMetadata from '../utils/fetchUrlMetadata';
 import articlesData from '../data/articlesData';
 
+const FALLBACK_DESCRIPTION = 'Preview unavailable';
+
 const Writing = () => {
   const [articles, setArticles] = useState(articlesData.map(article => ({ ...article, loading: true })));
 
@@ -25,7 +27,7 @@ const Writing = () => {
           const metadata = await fetchUrlMetadata(article.url);
           const newData = { 
             ...article, 
-            description: metadata?.description || '',
+            description: metadata?.description || FALLBACK_DESCRIPTION,
             image: metadata?.image || '',
             loading: false
           };

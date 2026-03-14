@@ -5,7 +5,6 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const fetchUrlMetadata = async (url) => {
   const apiKey = process.env.REACT_APP_LINKPREVIEW_API_KEY;
   if (!apiKey) {
-    console.error('LinkPreview API key is not set');
     return null;
   }
 

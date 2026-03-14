@@ -1,6 +1,29 @@
-import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar, Globe, MagnifyingGlass } from "@phosphor-icons/react";
+import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar, Globe, MagnifyingGlass, Brain } from "@phosphor-icons/react";
 
 const projectsData = [
+  {
+    id: "sidebar",
+    name: "sideBar",
+    description:
+      "A unified AI assistant for iPhone, iPad, Mac, and web that keeps your notes, tasks, files, and saved websites in one context-aware workspace, with chat, skills, and personalization woven throughout every surface.",
+    icon: <Brain size={48} />,
+    url: "https://trysidebar.ai",
+    type: "cross-platform app",
+    date: "March 2026",
+    technologies: ["SvelteKit", "FastAPI", "TypeScript", "Python", "Supabase"],
+    features: [
+      "Streaming chat that surfaces skills, attachments, and the context from recent notes, tasks, and files.",
+      "Notes + tasks + projects that stay in sync with skills so sideBar can organise, search, and act on your content.",
+      "Websites + files ingestion with pinning, archiving, and indexed retrieval so saved pages and uploads are instantly available in conversation.",
+      "Skills system (required, standard, and installable store skills) that lets sideBar chain capabilities automatically while keeping availability visible in Settings."
+    ],
+    challenges:
+      "Giving the assistant seamless access to everything you’ve created while honoring real-time sync, soft deletes, and your encrypted API keys across iPhone, iPad, Mac, and the browser.",
+    futureImprovements:
+      "Expand the Skills Store/OAuth coverage, harden the planned skill guard UI states, and keep building richer presets and automations while the interface stays minimal and readable.",
+    status: "Active",
+    heroImage: "/images/projects/overview.png"
+  },
   {
     id: "pointilism",
     name: "Pointilism",
@@ -84,7 +107,7 @@ const projectsData = [
     name: "YouTube SDG Analysis",
     description: "Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.",
     icon: <Video size={48} />,
-    url: "#",
+    url: "https://github.com/TheGoodNet/YouTube-Scripts",
     type: "github",
     date: "January 2025 onwards",
     technologies: [
@@ -95,7 +118,7 @@ const projectsData = [
     features: ["YouTube video transcription", "Channel analysis", "SDG mapping"],
     challenges: "Developing an accurate model that can map SDGs to video content and scaling the analysis to over 2.5m videos.",
     futureImprovements: "Develop visual reporting and more robust scaling methods",
-    status: "Ongoing",
+    status: "Completed",
     heroImage: "/images/projects/xxx.jpg"
   },
   {
