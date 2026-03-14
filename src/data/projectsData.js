@@ -9,7 +9,7 @@ const projectsData = [
     icon: <Brain size={48} />,
     url: "https://trysidebar.ai",
     type: "cross-platform app",
-    date: "March 2026",
+    date: "December 2025 onwards",
     technologies: ["SvelteKit", "FastAPI", "TypeScript", "Python", "Supabase"],
     features: [
       "Streaming chat that surfaces skills, attachments, and the context from recent notes, tasks, and files.",
@@ -41,18 +41,18 @@ const projectsData = [
     ],
     challenges: "Balancing a strict no-overlap layout with fluid motion and interactions across devices, while keeping the UI readable over a dynamic canvas layer.",
     futureImprovements: "Add more curated presets/themes, refine mobile interactions, and expand the single-page into a richer interactive homepage while keeping the minimal aesthetic.",
-    status: "Active",
+    status: "Completed",
     heroImage: "/images/projects/pointilism-hero.png"
   },
   {
-    "id": "llm-search-analysis",
-    "name": "LLM Search Analysis",
-    "description": "A comparative analysis tool for evaluating web search capabilities across OpenAI, Google Gemini, and Anthropic Claude models with interactive testing and batch analysis.",
-    "icon": <MagnifyingGlass size={48} />,
-    "url": "https://github.com/seanbetts/llm-search-analysis",
-    "type": "github",
-    "date": "November 2025",
-    "technologies": [
+    id: "llm-search-analysis",
+    name: "LLM Search Analysis",
+    description: "A comparative analysis tool for evaluating web search capabilities across OpenAI, Google Gemini, and Anthropic Claude models with interactive testing and batch analysis.",
+    icon: <MagnifyingGlass size={48} />,
+    url: "https://github.com/seanbetts/llm-search-analysis",
+    type: "github",
+    date: "November 2025",
+    technologies: [
       "Python",
       "Streamlit",
       "SQLite",
@@ -62,7 +62,7 @@ const projectsData = [
       "Anthropic API",
       "pandas"
     ],
-    "features": [
+    features: [
       "Multi-provider support (OpenAI, Google Gemini, Anthropic Claude)",
       "9 AI models with web search capabilities",
       "3-tab interface (Interactive, Batch Analysis, Query History)",
@@ -71,36 +71,36 @@ const projectsData = [
       "CSV export for batch analysis results",
       "Real-time search query and source analysis"
     ],
-    "challenges": "Integrating three different provider APIs with varying search implementations, implementing accurate rank tracking for cited sources, and creating a unified interface for comparing search behaviors across models.",
-    "futureImprovements": "Add visualization dashboards for search pattern analysis, implement A/B testing framework for prompt optimization, and expand to include more AI providers.",
-    "status": "Completed",
-    "heroImage": "/images/projects/llm-search-analysis-hero.png"
+    challenges: "Integrating three different provider APIs with varying search implementations, implementing accurate rank tracking for cited sources, and creating a unified interface for comparing search behaviors across models.",
+    futureImprovements: "Add visualization dashboards for search pattern analysis, implement A/B testing framework for prompt optimization, and expand to include more AI providers.",
+    status: "Completed",
+    heroImage: "/images/projects/llm-search-analysis-hero.png"
   },
   {
-    "id": "genai-explorer",
-    "name": "Generative AI Explorer",
-    "description": "An interactive web application that visualizes the landscape of generative AI companies, models, benchmarks, and capabilities.",
-    "icon": <Globe size={48} />,
-    "url": "https://explorer.the-blueprint.ai/",
-    "type": "website",
-    "date": "May 2025 onwards",
-    "technologies": [
+    id: "genai-explorer",
+    name: "Generative AI Explorer",
+    description: "An interactive web application that visualizes the landscape of generative AI companies, models, benchmarks, and capabilities.",
+    icon: <Globe size={48} />,
+    url: "https://explorer.the-blueprint.ai/",
+    type: "website",
+    date: "May 2025 onwards",
+    technologies: [
       "React 19",
       "Next.js 15.3",
       "TypeScript",
       "Tailwind CSS"
     ],
-    "features": [
+    features: [
       "Model explorer by category",
       "Benchmark comparisons",
       "Rich media galleries",
       "Company profiles",
       "Model comparison tool"
     ],
-    "challenges": "Creating a structured data model to represent the complex AI ecosystem and enabling meaningful comparisons across diverse model types.",
-    "futureImprovements": "Chat interface for intuitive exploration, expanded benchmark database, and real-time data updates",
-    "status": "Active",
-    "heroImage": "/images/projects/xxx.jpg"
+    challenges: "Creating a structured data model to represent the complex AI ecosystem and enabling meaningful comparisons across diverse model types.",
+    futureImprovements: "Chat interface for intuitive exploration, expanded benchmark database, and real-time data updates",
+    status: "Active",
+    heroImage: "/images/projects/xxx.jpg"
   },
   {
     id: "youtube-sdg-analysis",
@@ -109,7 +109,7 @@ const projectsData = [
     icon: <Video size={48} />,
     url: "https://github.com/TheGoodNet/YouTube-Scripts",
     type: "github",
-    date: "January 2025 onwards",
+    date: "January 2025 to December 2025",
     technologies: [
         "Python",
         "YouTube Data API",
@@ -128,7 +128,7 @@ const projectsData = [
     icon: <Video size={48} />,
     url: "https://github.com/seanbetts/product-placement",
     type: "github",
-    date: "August 2024 onwards",
+    date: "August 2024 to December 2024",
     technologies: [
         "React",
         "Python",
@@ -180,7 +180,7 @@ const projectsData = [
     icon: <Ruler size={48} />,
     url: "https://github.com/seanbetts/genai-marketing-benchmarks",
     type: "github",
-    date: "June 2024 onwards",
+    date: "June 2024 to December 2024",
     technologies: [
       "Python",
       "SQLite",
@@ -202,7 +202,7 @@ const projectsData = [
     ],
     challenges: "Creating a diverse and representative set of marketing questions that cover various aspects and difficulty levels. Ensuring the integrity of the benchmark by preventing the questions from being included in future LLM training datasets.",
     futureImprovements: "Expand the question database, integrate with more LLMs as they become available, and develop phases for testing marketing understanding and capabilities.",
-    status: "Ongoing",
+    status: "Completed",
     heroImage: "/images/projects/genai-marketing-benchmarks-hero.png"
   },
   {
