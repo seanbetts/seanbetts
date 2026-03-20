@@ -1,6 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Briefcase, Robot, Megaphone, LinkedinLogo, GithubLogo, EnvelopeSimple } from "@phosphor-icons/react";
+import InternalLink from '../components/InternalLink';
+import Seo from '../components/Seo';
 import styles from './About.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
 
@@ -27,28 +28,23 @@ const About = () => {
 
   return (
     <div className={styles.about}>
-      <Helmet>
-        <title>About Sean Betts - AI Researcher and Marketing Technology Leader</title>
-        <link rel="canonical" href="https://www.seanbetts.com/about" />
-        <meta name="description" content="Learn about Sean Betts: 20+ years in marketing, AI researcher, and neurodiversity advocate. Discover his work in responsible AI development and marketing innovation." />
-        <meta name="keywords" content="Sean Betts, AI research, marketing technology, neurodiversity, OMG UK, professional experience" />
-        <meta property="og:site_name" content="Sean Betts" />
-        <meta property="og:url" content="https://www.seanbetts.com/about" />
-        <meta property="og:title" content="About Sean Betts - AI Researcher and Marketing Technology Leader" />
-        <meta property="og:description" content="Explore Sean Betts' journey in AI research, marketing technology leadership, and neurodiversity advocacy." />
-        <meta property="og:type" content="profile" />
-        <meta property="og:image" content="/images/sean-betts-profile.png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="About Sean Betts - AI Researcher and Marketing Technology Leader" />
-        <meta name="twitter:description" content="Explore Sean Betts' journey in AI research, marketing technology leadership, and neurodiversity advocacy." />
-        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
-        <script type="application/ld+json">
-          {JSON.stringify(personSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title="About Sean Betts | Chief AI & Innovation Officer, Researcher and Builder"
+        description="Learn about Sean Betts, Chief AI & Innovation Officer at Omnicom Media Group UK, independent AI researcher and builder focused on AI strategy, product innovation and business transformation."
+        keywords={[
+          'Sean Betts',
+          'AI strategy',
+          'generative AI',
+          'AI innovation',
+          'product innovation',
+          'business transformation',
+          'Omnicom Media Group UK'
+        ]}
+        canonicalPath="/about"
+        imagePath="/images/sean-betts-profile.png"
+        ogType="profile"
+        jsonLd={personSchema}
+      />
 
       <h1>About</h1>
       <div className={styles.header}>
@@ -56,15 +52,16 @@ const About = () => {
         <div className={styles.headerContent}>
           <section className={styles.intro}>
             <p>
-              As a visionary AI and innovation leader with over 20 years of experience in marketing, 
-              I'm now focussing my career on AI-driven innovation at the intersection of technology and business. 
-              My role as an independent AI researcher and developer complements my position at Omnicom Media Group UK, where I'm committed to driving responsible AI 
-              development and its practical application in marketing.
+              I’m an AI leader, researcher and builder working at the intersection of AI, product innovation and business transformation.
             </p>
             <p>
-              My unique blend of marketing expertise and technological acumen allows me to bridge the gap 
-              between AI's potential and its real-world applications. I'm passionate about transforming 
-              complex AI concepts into practical solutions that enhance human capabilities rather than replace them.
+              Alongside my role as Chief AI & Innovation Officer at Omnicom Media UK, I design and build independent AI products, benchmarks
+              and applied systems to better understand how emerging technologies are reshaping products, knowledge work and consumer experiences.
+            </p>
+            <p>
+              My work combines strategic leadership with hands-on technical exploration, from AI strategy and organisational transformation to
+              prototyping, evaluation and product development. I’m particularly interested in turning complex advances in AI into practical tools,
+              capabilities and ideas that create real value for people and organisations.
             </p>
           </section>
         </div>
@@ -80,26 +77,32 @@ const About = () => {
             <LinkedinLogo size={36} />
           </a>
         </div>
-        <h4>Chief AI & Innovation Officer @ OMG UK</h4>
+        <h4>Chief AI & Innovation Officer @ OM UK</h4>
         <p>
-          In my role at OMG UK, I spearhead our organisation's AI strategy and business transformation initiatives, 
-          leading the AI Centre of Excellence to develop cutting-edge solutions that reshape how we operate and serve our clients. 
+          At Omnicom Media UK, I lead AI strategy, innovation and transformation across the business, helping shape how our agencies, teams
+          and clients respond to the rapid evolution of artificial intelligence.
         </p>
         <p>
-          Key responsibilities include:
+          My role spans AI strategy and governance, client consultancy, capability building, product innovation and organisational change. I lead
+          our AI Centre of Excellence, sit on the OM UK board and work closely with agency leadership, to identify where emerging AI capabilities
+          can create real operational and commercial value.
+        </p>
+        <p>
+          A key part of my role is translating fast-moving technical change into practical action. That includes advising client boards and internal
+          teams on AI adoption, developing new use cases and solutions, building AI readiness across the organisation, and helping position OMG UK
+          for a future increasingly shaped by AI.
+        </p>
+        <p>
+          Areas of focus:
         </p>
         <ul>
-          <li>Being a prominent industry thought leader on AI and its impact on marketing and advertising on a 2–5-year horizon.</li>
-          <li>Identifying opportunities for innovation and adoption of new technologies.</li>
-          <li>Leading research efforts to identify emerging capabilities four our business and our clients.</li>
-          <li>Providing strategic guidance and consultancy to OMG UK agencies and clients on how to leverage AI solutions.</li>
-          <li>Leading the creation and deployment of AI-focused L&D programs for our internal teams and clients.</li>
-          <li>Providing OMG UK board with insights and direction on AI’s role in business growth, client services, and internal operations.</li>
+          <li>Leading AI strategy and transformation across OM UK.</li>
+          <li>Advising agencies and client boards on practical AI adoption and use cases.</li>
+          <li>Building AI capability, readiness and learning programmes.</li>
+          <li>Identifying emerging technologies and their commercial implications.</li>
+          <li>Shaping board-level thinking on AI, innovation and business change.</li>
+          <li>Supporting product and solution development across internal and client contexts.</li>
         </ul>
-        <p>
-          My focus on AI education is enabling OMG UK to navigate the rapidly evolving technology landscape, 
-          driving innovation, and setting new industry standards.
-        </p>
       </section>
 
       <hr className={styles.divider} />
@@ -113,21 +116,19 @@ const About = () => {
           </a>
         </div>
         <p>
-          As an independent AI researcher and developer, I'm actively engaged in several projects that 
-          deepen my understanding of artificial intelligence and contribute to the field:
+          As an independent AI researcher and developer, I build practical AI products, benchmarks and experiments to better understand the capabilities
+          and limitations of emerging technologies.
         </p>
-        <ul>
-          <li>Developing comprehensive benchmarks to assess marketing capabilities of LLMs, including a 
-              database of 2,800+ multiple-choice questions across various marketing disciplines</li>
-          <li>Exploring how we can develop important product features that will evolve generative AI chatbots into 
-              more personalised digital companions</li>
-          <li>Active participant in the Advertising Association's AI taskforce and key contributor to 
-              industry principles for generative AI in advertising</li>
-          <li>Author of a weekly AI newsletter, The Blueprint, focusing on AI developments and their 
-              impact on society</li>
-          <li>Creator of a proof-of-concept generative AI chatbot with memory capabilities, exploring 
-              the potential of more personalized AI interactions in marketing contexts</li>
-        </ul>
+        <p>
+          My work includes building <InternalLink to="/building/sidebar" state={{ fromLabel: 'About', fromPath: '/about' }}>sideBar</InternalLink>, a cross-platform AI assistant that explores personal knowledge, memory and
+          tool use; creating a <InternalLink to="/building/genai-marketing-benchmarks" state={{ fromLabel: 'About', fromPath: '/about' }}>benchmarking framework</InternalLink> with 2,800+ questions across 20 marketing
+          disciplines to assess LLM performance; and developing applied AI workflows spanning <InternalLink to="/building/ai-brand-detection" state={{ fromLabel: 'About', fromPath: '/about' }}>OCR</InternalLink>,
+          transcription, automated classification and <InternalLink to="/building/youtube-sdg-analysis" state={{ fromLabel: 'About', fromPath: '/about' }}>large-scale content analysis</InternalLink>.
+        </p>
+        <p>
+          I also write <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer">The Blueprint</a>, a weekly newsletter on AI
+          developments and their broader implications, and contribute to industry discussions on the future of generative AI and its responsible use.
+        </p>
       </section>
 
       <hr className={styles.divider} />
@@ -136,9 +137,9 @@ const About = () => {
         <div className={styles.sectionHeader}>
           <h2><Megaphone size={36} /></h2>
           <h3>Speaking & Advocacy</h3>
-          <a href="/contact" rel="noopener noreferrer" className={styles.socialLink} aria-label="Email">
+          <InternalLink to="/contact" className={styles.socialLink} aria-label="Email">
             <EnvelopeSimple size={36} />
-          </a>
+          </InternalLink>
         </div>
         <p>
           As an advocate for neurodiversity and mental health awareness, I frequently speak about these topics. 

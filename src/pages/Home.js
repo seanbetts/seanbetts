@@ -1,8 +1,8 @@
 // src/pages/Home.js
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Laptop, Robot, Brain, Microphone, FolderOpen, Article, User } from "@phosphor-icons/react";
+import Seo from '../components/Seo';
 import styles from './Home.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
 
@@ -12,7 +12,7 @@ const Home = () => {
     "@type": "WebSite",
     "name": "Sean Betts",
     "url": "https://www.seanbetts.com",
-    "description": "Sean Betts: AI Researcher, Marketing Technology Leader, and Neurodiversity Advocate",
+    "description": "Sean Betts: Chief AI & Innovation Officer, AI researcher and builder focused on AI strategy, product innovation and business transformation.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://www.seanbetts.com/search?q={search_term_string}",
@@ -37,31 +37,23 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <Helmet>
-        <title>Sean Betts - AI Innovation in Marketing and Technology</title>
-        <link rel="canonical" href="https://www.seanbetts.com/" />
-        <meta name="description" content="Sean Betts: Chief AI & Innovation Officer, AI Researcher & Developer, and Neurodiversity Advocate. Explore AI-driven innovation in marketing and technology." />
-        <meta name="keywords" content="Sean Betts, AI, marketing, technology, neurodiversity, product leadership" />
-        <meta property="og:site_name" content="Sean Betts" />
-        <meta property="og:url" content="https://www.seanbetts.com/" />
-        <meta property="og:title" content="Sean Betts - AI Innovation in Marketing and Technology" />
-        <meta property="og:description" content="Explore Sean Betts' work in AI-driven innovation, marketing technology, and neurodiversity advocacy." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/sean-betts-profile.png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="Sean Betts - AI Innovation in Marketing and Technology" />
-        <meta name="twitter:description" content="Explore Sean Betts' work in AI-driven innovation, marketing technology, and neurodiversity advocacy." />
-        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
-        <script type="application/ld+json">
-          {JSON.stringify(websiteSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(personSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title="Sean Betts | AI Strategy, Transformation & Product Innovation"
+        description="Sean Betts is Chief AI & Innovation Officer at Omnicom Media Group UK, an independent AI researcher and builder focused on AI strategy, product innovation and business transformation."
+        keywords={[
+          'Sean Betts',
+          'AI strategy',
+          'product innovation',
+          'business transformation',
+          'marketing technology',
+          'generative AI',
+          'Omnicom Media Group UK'
+        ]}
+        canonicalPath="/"
+        imagePath="/images/sean-betts-profile.png"
+        ogType="website"
+        jsonLd={[websiteSchema, personSchema]}
+      />
 
       <section className={styles.hero}>
         <img src={profileImage} alt="Sean Betts" className={styles.profileImage} />
@@ -69,21 +61,20 @@ const Home = () => {
           <h1>Sean Betts</h1>
           <p className={styles.summary}>
             <span><Laptop size={20} /> Chief AI & Innovation Officer</span>
-            <span><Robot size={20} /> AI Researcher & Developer</span>
-            <span><Brain size={20} /> Autistic Thought Leader</span>
-            <span><Microphone size={20} /> Neurodiversity & Mental Health Speaker</span>
+            <span><Robot size={20} /> Hands-On AI Leader</span>
+            <span><Brain size={20} /> AI Strategy, Transformation & Product Innovation</span>
+            <span><Microphone size={20} /> Autistic Neurodiversity & Mental Health Speaker</span>
           </p>
         </div>
       </section>
       
       <section className={styles.intro}>
         <p>
-        As a visionary product and technology leader with over 20 years of experience in marketing, 
-        I'm now focussing my career on AI-driven innovation at the intersection of technology and business.
+        I’m a hands-on AI leader, researcher and builder working at the intersection of AI, product innovation and business transformation.
         </p>
         <p>
-        My role as an independent AI researcher and developer complements my position as Chief AI & Innovation Officer 
-        at Omnicom Media Group UK, where I'm committed to driving responsible AI development and its practical application in marketing.
+        Alongside my role as Chief AI & Innovation Officer at Omnicom Media UK, I design and build independent AI products, benchmarks
+        and applied systems to better understand how emerging technologies will reshape platforms, knowledge work and consumer experiences.
         </p>
       </section>
       

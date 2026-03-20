@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Microphone, Users, ChatsCircle, Headphones } from "@phosphor-icons/react";
+import Seo from '../components/Seo';
 import styles from './Speaking.module.css';
 import speakingData from '../data/speakingData';
 
@@ -31,28 +31,23 @@ const Speaking = () => {
 
   return (
     <div className={styles.speaking}>
-      <Helmet>
-        <title>Sean Betts' Speaking - Keynotes, Talks, Panels & Podcasts</title>
-        <link rel="canonical" href="https://www.seanbetts.com/speaking" />
-        <meta name="description" content="Keynote presentations, talks, panels, and podcast appearances by Sean Betts on AI, marketing, and technology innovation." />
-        <meta name="keywords" content="Sean Betts, keynote speaker, AI conferences, marketing talks, technology presentations, podcast guest" />
-        <meta property="og:site_name" content="Sean Betts" />
-        <meta property="og:url" content="https://www.seanbetts.com/speaking" />
-        <meta property="og:title" content="Sean Betts' Speaking - Keynotes, Talks, Panels & Podcasts" />
-        <meta property="og:description" content="Keynote presentations, talks, panels, and podcast appearances on AI, marketing, and technology innovation." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/sean-betts-profile.png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="Sean Betts' Speaking - Keynotes, Talks & Podcasts" />
-        <meta name="twitter:description" content="Keynote presentations, talks, panels, and podcast appearances on AI, marketing, and technology innovation." />
-        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
-        <script type="application/ld+json">
-          {JSON.stringify(speakingPageSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title="Sean Betts Speaking | AI, Marketing and Neurodiversity Talks"
+        description="Explore Sean Betts' keynote talks, panels, podcasts and speaking appearances on AI, marketing innovation, technology and neurodiversity."
+        keywords={[
+          'Sean Betts',
+          'keynote speaker',
+          'AI talks',
+          'marketing innovation',
+          'neurodiversity',
+          'panels',
+          'podcasts'
+        ]}
+        canonicalPath="/speaking"
+        imagePath="/images/sean-betts-profile.png"
+        ogType="website"
+        jsonLd={speakingPageSchema}
+      />
 
       <h1>Speaking</h1>
 

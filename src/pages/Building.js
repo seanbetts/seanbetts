@@ -1,7 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { GithubLogo, Article, Globe, Video } from "@phosphor-icons/react";
+import Seo from '../components/Seo';
 import styles from './Building.module.css';
 import projectsData from '../data/projectsData';
 
@@ -33,34 +33,34 @@ const Building = () => {
 
   return (
     <div className={styles.projects}>
-      <Helmet>
-        <title>What Sean Betts is Building - AI and Marketing Innovation</title>
-        <link rel="canonical" href="https://www.seanbetts.com/building" />
-        <meta name="description" content="Explore what Sean Betts is building in AI and marketing. Discover cutting-edge applications of AI in business and responsible development practices." />
-        <meta name="keywords" content="AI projects, marketing innovation, responsible AI, Sean Betts, technology leadership" />
-        <meta property="og:site_name" content="Sean Betts" />
-        <meta property="og:url" content="https://www.seanbetts.com/building" />
-        <meta property="og:title" content="What Sean Betts is Building - AI & Marketing" />
-        <meta property="og:description" content="Discover what Sean Betts is building in AI and marketing, showcasing practical applications and responsible development." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/sean-betts-profile.png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="What Sean Betts is Building - AI and Marketing" />
-        <meta name="twitter:description" content="Discover what Sean Betts is building in AI and marketing, showcasing practical applications and responsible development." />
-        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
-        <script type="application/ld+json">
-          {JSON.stringify(projectListSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title="What Sean Betts is Building | AI Products, Benchmarks and Experiments"
+        description="Explore AI products, benchmarks and experiments Sean Betts is building, including sideBar, evaluation frameworks, content analysis tools and applied AI workflows."
+        keywords={[
+          'Sean Betts',
+          'AI products',
+          'AI benchmarks',
+          'applied AI',
+          'content analysis',
+          'sideBar',
+          'generative AI'
+        ]}
+        canonicalPath="/building"
+        imagePath="/images/sean-betts-profile.png"
+        ogType="website"
+        jsonLd={projectListSchema}
+      />
 
       <h1>Building</h1>
       <p>Here's what I'm building. You'll find a collection of my work exploring AI and marketing. From developing AI benchmarks to creating educational resources, these projects showcase practical applications of AI in the business world. Each initiative aims to push boundaries while focusing on responsible AI development. Feel free to explore and discover how I think AI is reshaping the marketing landscape.</p>
       <div className={styles.projectList}>
         {projectsData.map((project, index) => (
-          <Link key={index} to={`/building/${project.id}`} className={styles.project}>
+          <Link
+            key={index}
+            to={`/building/${project.id}`}
+            state={{ fromLabel: 'Building', fromPath: '/building' }}
+            className={styles.project}
+          >
             <div className={styles.icon}>{project.icon}</div>
             <h2>{project.name}</h2>
             <p>{project.description}</p>

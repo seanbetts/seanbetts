@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { useParams, Link } from 'react-router-dom';
+import { useLocation, useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from "@phosphor-icons/react";
 import { GithubLogo, Article, Globe, Video } from "@phosphor-icons/react";
+import Seo from '../components/Seo';
 import styles from './ProjectPage.module.css';
 
 const ProjectPage = ({ projects }) => {
   const { id } = useParams();
+  const location = useLocation();
   const project = projects.find(p => p.id === id);
   const [imageError, setImageError] = useState(false);
 
@@ -17,6 +18,9 @@ const ProjectPage = ({ projects }) => {
   const handleImageError = () => {
     setImageError(true);
   };
+
+  const backLinkLabel = location.state?.fromLabel || 'Building';
+  const backLinkTo = location.state?.fromPath || '/building';
 
   const getTypeIcon = (type) => {
     switch (type) {
@@ -100,30 +104,23 @@ const ProjectPage = ({ projects }) => {
 
   return (
     <div className={styles.projectPage}>
-      <Helmet>
-        <title>{`${project.name} - What Sean Betts is Building`}</title>
-        <link rel="canonical" href={`https://www.seanbetts.com/building/${project.id}`} />
-        <meta name="description" content={`Explore ${project.name}, an ${project.type} project by Sean Betts. ${project.description.slice(0, 150)}...`} />
-        <meta name="keywords" content={`Sean Betts, ${project.name}, ${project.type}, ${project.technologies?.join(', ')}`} />
-        <meta property="og:title" content={`${project.name} - What Sean Betts is Building`} />
-        <meta property="og:description" content={`Discover ${project.name}, a ${project.type} project by Sean Betts. ${project.description.slice(0, 200)}...`} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://www.seanbetts.com/building/${project.id}`} />
-        <meta property="og:image" content={project.heroImage || "/images/sean-betts-profile.png"} />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content={`${project.name} - What Sean Betts is Building`} />
-        <meta name="twitter:description" content={`Discover ${project.name}, a ${project.type} project by Sean Betts. ${project.description.slice(0, 200)}...`} />
-        <meta name="twitter:image" content={project.heroImage || "/images/sean-betts-profile.png"} />
-        <script type="application/ld+json">
-          {JSON.stringify(projectSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title={`${project.name} | What Sean Betts is Building`}
+        description={`Explore ${project.name}, a ${project.type} project by Sean Betts. ${project.description}`}
+        keywords={[
+          'Sean Betts',
+          project.name,
+          project.type,
+          ...(project.technologies || [])
+        ]}
+        canonicalPath={`/building/${project.id}`}
+        imagePath={project.heroImage || '/images/sean-betts-profile.png'}
+        ogType="article"
+        jsonLd={projectSchema}
+      />
 
-    <Link to="/building" className={styles.backLink}>
-      <ArrowLeft size={24} /> Back to Building
+    <Link to={backLinkTo} className={styles.backLink}>
+      <ArrowLeft size={24} /> Back to {backLinkLabel}
     </Link>
     <div className={styles.projectHeader}>
       {React.cloneElement(project.icon, { size: 48 })}

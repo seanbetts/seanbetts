@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Helmet } from 'react-helmet';
 import { Newspaper } from "@phosphor-icons/react";
+import Seo from '../components/Seo';
 import styles from './Writing.module.css';
 import ArticlePreview from '../components/ArticlePreview';
 import fetchUrlMetadata from '../utils/fetchUrlMetadata';
@@ -95,31 +95,22 @@ const Writing = () => {
 
   return (
     <div className={styles.blog}>
-      <Helmet>
-        <title>Sean Betts' Writing - AI and Marketing Insights</title>
-        <link rel="canonical" href="https://www.seanbetts.com/writing" />
-        <meta name="description" content="Read Sean Betts' insights on AI, marketing, and technology. Explore 'The Blueprint' blog and featured articles on generative AI and industry trends." />
-        <meta name="keywords" content="Sean Betts, AI blog, marketing insights, The Blueprint, technology writing" />
-        <meta property="og:site_name" content="Sean Betts" />
-        <meta property="og:url" content="https://www.seanbetts.com/writing" />
-        <meta property="og:title" content="Sean Betts' Writing - AI and Marketing Insights" />
-        <meta property="og:description" content="Explore Sean Betts' blog, The Blueprint, and featured articles on AI, marketing, and technology trends." />
-        <meta property="og:type" content="blog" />
-        <meta property="og:image" content="/images/sean-betts-profile.png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="Sean Betts' Writing - AI & Marketing Insights" />
-        <meta name="twitter:description" content="Explore Sean Betts' blog 'The Blueprint' and featured articles on AI, marketing, and technology trends." />
-        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
-        <script type="application/ld+json">
-          {JSON.stringify(writingPageSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(articleListSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title="Sean Betts Writing | AI, Marketing and Technology Insights"
+        description="Read Sean Betts' writing on AI, marketing and technology, including The Blueprint newsletter and featured essays on generative AI and industry trends."
+        keywords={[
+          'Sean Betts',
+          'AI writing',
+          'marketing insights',
+          'The Blueprint',
+          'generative AI',
+          'technology essays'
+        ]}
+        canonicalPath="/writing"
+        imagePath="/images/sean-betts-profile.png"
+        ogType="blog"
+        jsonLd={[writingPageSchema, articleListSchema]}
+      />
 
       <h1>Writing</h1>
 

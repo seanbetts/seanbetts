@@ -1,7 +1,7 @@
 // src/pages/Custom404.js
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import Seo from '../components/Seo';
 import { 
   Robot, 
   MagnifyingGlass, 
@@ -26,28 +26,17 @@ const Custom404 = () => {
 
   return (
     <div className={styles.container}>
-      <Helmet>
-        <title>404: AI Malfunction - Sean Betts</title>
-        <link rel="canonical" href="https://www.seanbetts.com/404" />
-        <meta name="description" content="Oops! Our AI has wandered off. Explore this playful 404 page on Sean Betts' website, blending humor with AI concepts." />
-        <meta name="robots" content="noindex, follow" />
-        <meta property="og:site_name" content="Sean Betts" />
-        <meta property="og:url" content="https://www.seanbetts.com/404" />
-        <meta property="og:title" content="404: AI Malfunction - Sean Betts" />
-        <meta property="og:description" content="Discover a unique 404 page where AI meets humor. Our digital explorer is momentarily lost in the vast web universe." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/sean-betts-profile.png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="404: AI Malfunction - Sean Betts" />
-        <meta name="twitter:description" content="Discover a unique 404 page where AI meets humor. Our digital explorer is momentarily lost in the vast web universe." />
-        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
-        <script type="application/ld+json">
-          {JSON.stringify(notFoundSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title="404: Page Not Found | Sean Betts"
+        description="This page could not be found. Return to Sean Betts' site and keep exploring AI strategy, transformation and product innovation."
+        keywords={['Sean Betts', '404', 'page not found']}
+        canonicalPath="/404"
+        imagePath="/images/sean-betts-profile.png"
+        ogType="website"
+        twitterCard="summary"
+        noindex
+        jsonLd={notFoundSchema}
+      />
 
       <div className={styles.heroIcon}>
         <Bandaids size={180} weight="thin" />

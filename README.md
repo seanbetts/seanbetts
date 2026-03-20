@@ -1,74 +1,84 @@
 # Sean Betts
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ce515832-0750-4747-af9c-159c739384e9/deploy-status)](https://app.netlify.com/sites/seanbetts/deploys)
 
-👋 Hi there! I'm Sean Betts, a visionary technology leader with a passion for AI and its applications in marketing.
+Hi, I'm Sean Betts. I work at the intersection of AI strategy, transformation, product innovation, and business change.
 
 ## 🚀 About Me
 
 - 🧠 Chief AI & Innovation Officer at Omnicom Media Group UK
-- 🤖 AI Researcher & Developer
-- 🤔 Thought Leader in AI and Marketing
-- 🗣️ Neurodiversity Speaker
+- 🤖 Independent AI Researcher and Builder
+- 🛠️ Focused on AI Strategy, Transformation, and Product Innovation
+- 🗣️ Neurodiversity and Mental Health Speaker
 
-With over 20 years of experience in marketing, I'm focused on AI-driven innovation at the intersection of technology and business. My expertise lies in transforming complex AI concepts into practical business solutions and responsible, ethical AI product development.
+With more than 20 years of experience in marketing and innovation, I focus on turning fast-moving advances in AI into practical tools, products, and capabilities that create real value for people and organisations. Alongside my role at Omnicom Media Group UK, I design and build independent AI products, benchmarks, and applied systems to better understand how emerging technologies are reshaping products, knowledge work, and consumer experiences.
 
 ## 🔭 Current Projects
 
-### YouTube SDG Analysis
+### sideBar
 
-Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.
+A unified AI assistant for iPhone, iPad, Mac, and web that keeps notes, tasks, files, and saved websites in one context-aware workspace.
 
-- 📹 YouTube video transcription
-- 📊 Channel analysis
-- 🌍 SDG mapping
+- 🧠 Context-aware chat across your personal knowledge
+- 📂 Notes, tasks, files, and saved websites in one system
+- 🔧 Skills, attachments, and personalisation across every surface
 
-### AI Brand Detection
-
-A project to develop AI techniques to detect brands and products in videos.
-
-- 📹 Brand and product detection in video content
-- 🌐 Multi-brand support
-- 📊 Integration with marketing analytics
+[View Project](https://trysidebar.ai)
 
 ### GenAI Marketing Benchmarks
 
-A comprehensive project to create benchmark tests for evaluating the marketing capabilities of Large Language Models (LLMs) and other GenAI technologies.
+A benchmarking framework with 2,800+ questions across 20 marketing disciplines designed to assess the knowledge and performance of large language models.
 
-- 🔬 2,800+ multiple-choice questions across various marketing disciplines
-- 📊 Evaluates marketing knowledge, understanding, and capabilities of AI models
-- 🌐 Supports testing of multiple LLMs including OpenAI, Anthropic, Google, Meta, and Mistral models
+- 🔬 Large-scale benchmark design for marketing capability testing
+- 📊 Comparative evaluation across multiple LLM providers
+- 🧪 Practical framework for model analysis and benchmarking workflows
 
 [View Project](https://github.com/seanbetts/genai-marketing-benchmarks)
 
-### GenAI Timeline
+### YouTube SDG Analysis
 
-An interactive timeline showcasing the evolution and key milestones in Generative AI.
+Applied AI workflows to map YouTube channels and video content to the UN Sustainable Development Goals at scale.
 
-- 📅 Comprehensive database of GenAI events from 1948 to present
-- 🔍 Searchable interface for easy exploration of AI history
-- 🖼️ Visual representation of AI's progression over time
-- 🔗 Links to source materials and further reading for each event
+- 📹 Video transcription and channel analysis
+- 🌍 SDG classification and mapping
+- 📊 Large-scale content analysis across millions of videos
+
+### AI Brand Detection
+
+AI techniques for detecting brands and products in video content using multimodal analysis workflows.
+
+- 👁️ OCR and vision-based brand detection
+- 🏷️ Product and brand recognition across varied contexts
+- 📈 Workflows designed for downstream analytics and insight generation
+
+### The Blueprint
+
+A weekly newsletter covering AI developments, product shifts, and the broader implications of generative AI.
+
+- ✍️ Weekly writing on AI, technology, and industry change
+- 🔎 Analysis of new models, tools, and platform moves
+- 🧭 Commentary on how AI is reshaping products and knowledge work
 
 [View Project](https://www.the-blueprint.ai)
 
-### 🐼 panda.ai
+### GenAI Timeline
 
-An artificial intelligence personal assistant designed to learn from you and adapt to your unique needs.
+An interactive timeline tracking key milestones and developments across the history of generative AI.
 
-- 🧠 Personalized AI chat assistant
-- 🔒 User data management and privacy controls
-- 🔗 Integration with various APIs (YouTube, Google Maps, Wikipedia, Spotify, etc.)
-- 💼 Subscription plans with different tiers
+- 📅 Major events and releases across the AI landscape
+- 🔍 Searchable exploration of how the field has evolved
+- 🔗 Context and references for deeper research
 
-[View Project](https://github.com/yourusername/panda-ai)
+[View Project](https://timeline.the-blueprint.ai)
 
 ## 📫 Get in Touch
 
 - LinkedIn: [linkedin.com/in/seanbetts](https://www.linkedin.com/in/seanbetts)
 - Website: [seanbetts.com](https://www.seanbetts.com)
 - Newsletter: [The Blueprint](https://www.the-blueprint.ai)
+- GitHub: [github.com/seanbetts](https://github.com/seanbetts)
+- Bluesky: [bsky.app/profile/seanbetts.com](https://bsky.app/profile/seanbetts.com)
 
-Feel free to reach out if you'd like to collaborate on AI projects, discuss marketing technology, or chat about neurodiversity in tech!
+Feel free to reach out if you'd like to collaborate on AI products, discuss AI strategy and transformation, or talk about neurodiversity and mental health in tech.
 
 ---
 

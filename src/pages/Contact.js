@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import Seo from '../components/Seo';
 import { Newspaper, LinkedinLogo, Butterfly, GithubLogo } from "@phosphor-icons/react";
 import styles from './Contact.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
@@ -25,28 +25,22 @@ const Contact = () => {
 
   return (
     <div className={styles.contact}>
-      <Helmet>
-        <title>Contact Sean Betts - AI and Marketing Expert</title>
-        <link rel="canonical" href="https://www.seanbetts.com/contact" />
-        <meta name="description" content="Connect with Sean Betts. Subscribe to his newsletter, follow on social media, or send a direct message to discuss AI, marketing, and technology." />
-        <meta name="keywords" content="contact Sean Betts, AI discussion, marketing expertise, technology insights" />
-        <meta property="og:site_name" content="Sean Betts" />
-        <meta property="og:url" content="https://www.seanbetts.com/contact" />
-        <meta property="og:title" content="Contact Sean Betts - AI and Marketing Expert" />
-        <meta property="og:description" content="Get in touch with Sean Betts for insights on AI, marketing, and technology. Connect via social media or send a message." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/sean-betts-profile.png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@seanbetts" />
-        <meta name="twitter:title" content="Contact Sean Betts - AI & Marketing Expert" />
-        <meta name="twitter:description" content="Get in touch with Sean Betts for insights on AI, marketing, and technology. Connect via social media or send a message." />
-        <meta name="twitter:image" content="/images/sean-betts-profile.png" />
-        <script type="application/ld+json">
-          {JSON.stringify(contactPageSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title="Contact Sean Betts | Newsletter, Socials and Collaboration"
+        description="Get in touch with Sean Betts via The Blueprint, social profiles or direct contact to discuss AI, marketing, technology and collaboration."
+        keywords={[
+          'contact Sean Betts',
+          'newsletter',
+          'LinkedIn',
+          'GitHub',
+          'Bluesky',
+          'AI collaboration'
+        ]}
+        canonicalPath="/contact"
+        imagePath="/images/sean-betts-profile.png"
+        ogType="website"
+        jsonLd={contactPageSchema}
+      />
 
       <div className={styles.lockup}>
         <img src={profileImage} alt="Sean Betts" className={styles.logo} />
