@@ -57,7 +57,7 @@
   
   .list li {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 0.75rem;
   }
   
@@ -76,7 +76,7 @@
   
   .homeLink {
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
     background-color: var(--color-primary);
     color: var(--color-background);
     padding: 0.75rem 1.5rem;

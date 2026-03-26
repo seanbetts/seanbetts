@@ -6,7 +6,7 @@
 
 .backLink {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   color: var(--color-secondary);
   text-decoration: none;
   margin-bottom: 1rem;
@@ -116,12 +116,13 @@
 
 .typeInfo {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   font-size: 1rem;
   margin-top: -1rem;
 }
 
 .typeInfo svg {
+  flex-shrink: 0;
   margin-right: 0.5rem;
 }
 

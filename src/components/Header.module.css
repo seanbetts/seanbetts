@@ -41,7 +41,7 @@
 
 .navLink {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   color: var(--color-text);
   text-decoration: none;
   font-size: 1rem;
@@ -53,6 +53,7 @@
 }
 
 .navLink svg {
+  flex-shrink: 0;
   margin-right: 0.5rem;
 }
 
