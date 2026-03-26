@@ -39,8 +39,12 @@
 
 .summary span {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.5rem;
+}
+
+.summary span svg {
+  flex-shrink: 0;
 }
 
 .intro {
