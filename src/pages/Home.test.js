@@ -12,7 +12,7 @@ test('renders the homepage authority section copy', () => {
 
   expect(
     screen.getByRole('heading', {
-      name: /brands i've delivered ai thought leadership to/i,
+      name: /ai thought leadership for global brands/i,
       level: 2,
     })
   ).toBeInTheDocument();

@@ -80,7 +80,7 @@ const Home = () => {
       </section>
 
       <section className={styles.brandProof} aria-labelledby="brand-proof-heading">
-        <h2 id="brand-proof-heading">Brands I&apos;ve Delivered AI Thought Leadership To</h2>
+        <h2 id="brand-proof-heading">AI Thought Leadership for Global Brands</h2>
         <p className={styles.brandProofSummary}>
           Providing strategic perspectives to global brands on how AI is rewiring discovery, consumer behaviour, and digital marketing strategies.
         </p>
