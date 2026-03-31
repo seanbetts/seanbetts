@@ -53,6 +53,83 @@
   margin: 2rem auto;
 }
 
+.brandProof {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background-color: var(--color-box-bg);
+  border-radius: 10px;
+}
+
+.brandProof h2 {
+  margin-top: 0;
+}
+
+.brandProofSummary {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.logoGrid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.logoTile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+  border-radius: 8px;
+  background-color: color-mix(in srgb, var(--color-box-bg) 85%, var(--color-background));
+  margin: 0;
+  outline: none;
+}
+
+.logoTile:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-secondary);
+}
+
+.logoImage {
+  width: 100%;
+  max-width: 140px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.logoTooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.75rem);
+  transform: translateX(-50%) translateY(4px);
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Departure Mono', monospace;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.logoTile:hover .logoTooltip,
+.logoTile:focus-visible .logoTooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 .sections {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -107,6 +184,10 @@
 
   .summary {
     align-items: center;
+  }
+
+  .brandProof {
+    padding: 1.5rem;
   }
 
   .sections {

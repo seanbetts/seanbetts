@@ -5,6 +5,7 @@ import { Laptop, Robot, Brain, Microphone, FolderOpen, Article, User } from "@ph
 import Seo from '../components/Seo';
 import styles from './Home.module.css';
 import profileImage from '../assets/sean-betts-profile.png';
+import brandLogos from '../data/brandLogos';
 
 const Home = () => {
   const websiteSchema = {
@@ -76,6 +77,35 @@ const Home = () => {
         Alongside my role as Chief AI & Innovation Officer at Omnicom Media UK, I design and build independent AI products, benchmarks
         and applied systems to better understand how emerging technologies will reshape platforms, knowledge work and consumer experiences.
         </p>
+      </section>
+
+      <section className={styles.brandProof} aria-labelledby="brand-proof-heading">
+        <h2 id="brand-proof-heading">Brands I&apos;ve Delivered AI Thought Leadership To</h2>
+        <p className={styles.brandProofSummary}>
+          Providing strategic perspectives to global brands on how AI is rewiring discovery, consumer behaviour, and digital marketing strategies.
+        </p>
+
+        {brandLogos.length > 0 ? (
+          <ul className={styles.logoGrid} aria-label="Global brand logos">
+            {brandLogos.map(({ name, src, width }) => (
+              <li key={name}>
+                <figure
+                  className={styles.logoTile}
+                  tabIndex="0"
+                  aria-label={name}
+                >
+                  <img
+                    src={src}
+                    alt={`${name} logo`}
+                    className={styles.logoImage}
+                    style={width ? { maxWidth: `${width}px` } : undefined}
+                  />
+                  <figcaption className={styles.logoTooltip}>{name}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </section>
       
       <div className={styles.sections}>
