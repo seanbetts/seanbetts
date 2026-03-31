@@ -89,7 +89,7 @@
   padding: 1rem;
   border: 1px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
   border-radius: 8px;
-  background-color: color-mix(in srgb, var(--color-box-bg) 85%, var(--color-background));
+  background-color: rgba(248, 250, 252, 0.96);
   margin: 0;
   outline: none;
 }
