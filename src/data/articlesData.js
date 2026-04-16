@@ -1,6 +1,10 @@
 const articlesData = [
   {
-    title:"Advertising Inside The Model – Advertising Week",
+    title:"How to get chosen by AI platforms that control search",
+    url:"https://www.decisionmarketing.co.uk/views/how-to-get-chosen-by-ai-platforms-that-control-search"
+  },
+  {
+    title:"Advertising Inside The Model",
     url:"https://advertisingweek.com/advertising-inside-the-model/"
   },
   {
