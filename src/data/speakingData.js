@@ -3,7 +3,7 @@ const speakingData = [
   {
     id: "future-of-brands-2026",
     title: "How AI is Rewiriing the Internet",
-    type: "talk",
+    type: "keynote",
     description: "A keynote presentation on how AI is transforming the internet into an AI-mediated ecosystem, reshaping how consumers discover, evaluate and purchase, and what brands must do to remain visible within it.",
     date: "29th April 2026",
     location: "London, UK",
