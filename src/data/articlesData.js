@@ -1,5 +1,9 @@
 const articlesData = [
   {
+    title:"AI can fix advertising’s relevance problem – if we stop feeding into the hype",
+    url:"https://the-ipa.shorthandstories.com/ipai-forum-june-2026/future-of-the-industry/ai-can-fix-advertisings-relevance-problem/index.html"
+  },
+  {
     title:"How to get chosen by AI platforms that control search",
     url:"https://www.decisionmarketing.co.uk/views/how-to-get-chosen-by-ai-platforms-that-control-search"
   },
