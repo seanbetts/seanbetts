@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:www.seanbetts.com)",
+      "WebFetch(domain:www.seanbetts.com)",
+      "WebFetch(domain:www.seanbetts.com)",
+      "Bash(git push:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.infosum.com)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebSearch",
+      "WebFetch(domain:www.iheart.com)",
+      "Bash(tree:*)",
+      "Bash(git remote get-url:*)",
+      "Bash(grep -E \"\\\\.\\(js|jsx\\)$\")",
+      "Bash(wc -l /Users/sean/Coding/seanbetts/src/**/*.js)"
+    ],
+    "deny": []
+  }
+}

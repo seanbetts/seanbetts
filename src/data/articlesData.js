@@ -1,5 +1,9 @@
 const articlesData = [
   {
+    title:"OMG UK’s Chief AI Officer on Why GEO Is Not SEO for AI",
+    url:"https://futureweek.com/omg-uks-chief-ai-officer-on-why-geo-is-not-seo-for-ai/"
+  },
+  {
     title:"AI can fix advertising’s relevance problem – if we stop feeding into the hype",
     url:"https://the-ipa.shorthandstories.com/ipai-forum-june-2026/future-of-the-industry/ai-can-fix-advertisings-relevance-problem/index.html"
   },
