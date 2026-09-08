@@ -74,10 +74,10 @@ export default function GameShell({ children }) {
     <footer className={styles.footer}>
       <span>© {new Date().getFullYear()} Sean Betts</span>
       <div>
-        <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={30} aria-hidden="true" /></a>
-        <a href="https://github.com/seanbetts" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={30} aria-hidden="true" /></a>
-        <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noreferrer" aria-label="Bluesky" title="Bluesky"><Butterfly size={30} aria-hidden="true" /></a>
-        <a href="https://www.the-blueprint.ai" target="_blank" rel="noreferrer" aria-label="The Blueprint" title="The Blueprint"><Newspaper size={30} aria-hidden="true" /></a>
+        <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={23} aria-hidden="true" /></a>
+        <a href="https://github.com/seanbetts" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={23} aria-hidden="true" /></a>
+        <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noreferrer" aria-label="Bluesky" title="Bluesky"><Butterfly size={23} aria-hidden="true" /></a>
+        <a href="https://www.the-blueprint.ai" target="_blank" rel="noreferrer" aria-label="The Blueprint" title="The Blueprint"><Newspaper size={23} aria-hidden="true" /></a>
       </div>
     </footer>
   </div>;
