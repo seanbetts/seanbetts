@@ -9,7 +9,7 @@ export default function ThoughtLeadership() {
   return <div className={styles.page}>
     <Seo title="AI Thought Leadership for Global Brands | Sean Betts" description="Strategic perspectives on how AI is rewiring discovery, consumer behaviour and digital marketing strategies." canonicalPath="/thought-leadership" />
     <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Back to the cover</Link>
-    <header className={styles.hero}>
+    <header className={`${styles.hero} game-art`}>
       <SceneArt scene="speaking" />
       <div className={styles.heroCopy}>
         <span className={styles.eyebrow}>Ideas with real-world impact</span>

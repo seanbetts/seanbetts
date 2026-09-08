@@ -1,7 +1,7 @@
 .page{max-width:1440px;margin:0 auto;padding-bottom:40px}
 .back{display:inline-flex;align-items:center;gap:9px;font:600 17px var(--game-ui);text-transform:uppercase;min-height:44px;margin:4px 0 14px}
 .back:hover{color:var(--game-accent)}
-.hero{position:relative;isolation:isolate;min-height:390px;overflow:hidden;display:flex;align-items:flex-end;border-bottom:11px solid #110818}
+.hero{position:relative;isolation:isolate;min-height:390px;overflow:hidden;display:flex;align-items:flex-end;border:var(--game-frame) solid var(--game-ink)}
 .hero [data-art]{left:35%}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#201229 15%,#201229d9 42%,#20122908 100%);z-index:1}
 .heroCopy{position:relative;z-index:2;padding:40px 44px}
@@ -9,16 +9,16 @@
 .heroCopy h1{font-size:clamp(56px,7vw,100px);line-height:.92;margin:18px 0 20px}
 .heroCopy h1 span{color:var(--game-accent)}
 .heroCopy p{font:600 23px var(--game-ui)}
-.brands{padding:42px 0}
+.brands{padding:32px;margin:24px 0;border:var(--game-frame) solid var(--game-ink);background:var(--game-surface)}
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-bottom:28px}
 .intro h2{font-size:clamp(30px,3vw,42px)}
 .intro p{max-width:590px;color:var(--game-muted);line-height:1.65;font-size:16px}
 .logoGrid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;background:#110818;border:2px solid #110818}
 .logoGrid li{display:flex;align-items:center;justify-content:center;height:114px;padding:22px;background:#fff}
 .logoGrid img{width:100%;max-height:64px;height:auto;object-fit:contain}
-.next{display:grid;grid-template-columns:1fr 1fr;gap:11px;background:#110818}
-.next a{background:#2b1b30;padding:28px;transition:background .2s}
-.next a:hover{background:#3b2540}
+.next{border:var(--game-frame) solid var(--game-ink);display:grid;grid-template-columns:1fr 1fr;gap:var(--game-frame);background:var(--game-ink)}
+.next a{background:var(--game-surface);padding:28px;transition:background .2s}
+.next a:hover{background:var(--game-hover)}
 .next span{font:600 16px var(--game-ui);text-transform:uppercase;color:var(--game-muted)}
 .next h2{font-size:28px;margin-top:8px;display:flex;justify-content:space-between;gap:15px}
 .next svg{color:var(--game-accent);flex-shrink:0}

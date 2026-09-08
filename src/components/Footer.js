@@ -2,6 +2,7 @@
 import React from 'react';
 import { LinkedinLogo, GithubLogo, Butterfly, Newspaper } from "@phosphor-icons/react";
 import styles from './Footer.module.css';
+import MadeWith from './MadeWith';
 
 const Footer = () => {
   return (
@@ -20,6 +21,7 @@ const Footer = () => {
           <Newspaper size={36} />
         </a>
       </div>
+      <MadeWith className={styles.credit} />
       <p className={styles.copyright}>&copy; {new Date().getFullYear()} Sean Betts. All rights reserved.</p>
     </footer>
   );

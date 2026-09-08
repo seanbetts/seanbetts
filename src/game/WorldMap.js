@@ -106,7 +106,7 @@ export default function WorldMap() {
         <div><p className={styles.eyebrow}>02 / Explore the map</p><h1>Choose your next stop.</h1></div>
         <p className={styles.intro}>A few different worlds.<br />One curious mind.</p>
       </header>
-      <div className={styles.mapFrame}>
+      <div className={`${styles.mapFrame} game-art`}>
         <div className={styles.mapTop}><span>Sean’s world</span><span>4 destinations / London inspired</span></div>
         <div className={styles.destinationChoices} role="group" aria-label="Destination choices">
           {destinations.map((item) => <button type="button" key={item.id} aria-label={`Select ${item.name}`} aria-pressed={selected === item.id} aria-controls="map-destination-detail" onClick={() => selectDestination(item)}>{item.name}</button>)}

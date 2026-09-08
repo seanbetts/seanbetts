@@ -1,13 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ArrowUpRight, Butterfly, GithubLogo, LinkedinLogo, List, MapTrifold, Newspaper, X } from '@phosphor-icons/react';
+import { ArrowUpRight, Butterfly, GithubLogo, LinkedinLogo, List, MapTrifold, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
 import styles from './GameShell.module.css';
 import packageJson from '../../package.json';
 import './game.css';
+import { ThemeContext } from '../ThemeContext';
+import MadeWith from '../components/MadeWith';
 
 const links = [['/', 'Home'], ['/building', 'Building'], ['/writing', 'Writing'], ['/speaking', 'Speaking'], ['/thought-leadership', 'Thought leadership'], ['/about', 'About'], ['/contact', 'Contact']];
 
 export default function GameShell({ children }) {
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   const [open, setOpen] = useState(false);
   const trigger = useRef(null);
   const menu = useRef(null);
@@ -54,7 +57,7 @@ export default function GameShell({ children }) {
     };
   }, [open]);
 
-  return <div className="game">
+  return <div className={`game ${darkMode ? 'game-dark' : 'game-light'}`}>
     <a className={styles.skip} href="#game-content">Skip to content</a>
     <header className={styles.header}>
       <div className={styles.brandGroup}>
@@ -66,6 +69,9 @@ export default function GameShell({ children }) {
       <div className={styles.tools}>
         <NavLink to="/map" onClick={closeNavigation} className={({ isActive }) => `${styles.tool} ${isActive ? styles.active : ''}`}><MapTrifold size={18} /> Map</NavLink>
         <Link to="/contact" onClick={closeNavigation} className={`${styles.tool} ${styles.contact}`}>Contact <ArrowUpRight size={17} /></Link>
+        <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+          {darkMode ? <Sun size={23} aria-hidden="true" /> : <Moon size={23} aria-hidden="true" />}
+        </button>
         <button ref={trigger} className={styles.menuButton} onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="game-navigation" aria-label={open ? 'Close navigation' : 'Open navigation'}>
           {open ? <X size={26} /> : <List size={26} />}
         </button>
@@ -77,7 +83,8 @@ export default function GameShell({ children }) {
     <main id="game-content" ref={main} tabIndex={-1} className={styles.main} key={pathname}>{children}</main>
     <footer className={styles.footer}>
       <span>© {new Date().getFullYear()} Sean Betts</span>
-      <div>
+      <MadeWith className={styles.credit} />
+      <div className={styles.socials}>
         <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={23} aria-hidden="true" /></a>
         <a href="https://github.com/seanbetts" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={23} aria-hidden="true" /></a>
         <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noreferrer" aria-label="Bluesky" title="Bluesky"><Butterfly size={23} aria-hidden="true" /></a>

@@ -20,7 +20,7 @@ export default function GameBuilding() {
         <div><h1>Building<span>.</span></h1></div>
         <p>Products, prototypes and experiments.<br />Exploring what AI can do in the real world.</p>
       </header>
-      <section className={styles.featured} aria-label="Featured projects">
+      <section className={`${styles.featured} game-art`} aria-label="Featured projects">
         <Link to={`/building/${primary.id}`} state={origin} aria-label={`Open ${primary.name} project`} className={styles.primary}>
           <SceneArt scene="building" />
           <div className={styles.primaryWash} />

@@ -2,16 +2,17 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import GameShell from './GameShell';
 import GameHome from './GameHome';
+import { ThemeProvider } from '../ThemeContext';
 
-beforeEach(() => { jest.spyOn(window, 'scrollTo').mockImplementation(() => {}); });
+beforeEach(() => { localStorage.clear(); jest.spyOn(window, 'scrollTo').mockImplementation(() => {}); });
 afterEach(() => { jest.restoreAllMocks(); });
 
 function mount(pathname = '/') {
-  return render(<MemoryRouter initialEntries={[pathname]}><GameShell><Routes>
+  return render(<ThemeProvider><MemoryRouter initialEntries={[pathname]}><GameShell><Routes>
     <Route path="/" element={<GameHome />} />
     <Route path="/building" element={<h1>Project collection</h1>} />
     <Route path="/map" element={<h1>World map</h1>} />
-  </Routes></GameShell></MemoryRouter>);
+  </Routes></GameShell></MemoryRouter></ThemeProvider>);
 }
 
 test('cover Building panel navigates to the real collection route', () => {
@@ -78,4 +79,20 @@ test('social icon links retain accessible platform names and destinations', () =
     expect(link).toHaveTextContent('');
     expect(link.querySelector('svg')).toBeInTheDocument();
   }
+});
+
+
+test('theme toggle updates the palette and heart and remembers the choice', () => {
+  const view = mount();
+  expect(screen.getByRole('img', { name: 'love' })).toHaveTextContent('🩷');
+  fireEvent.click(screen.getByRole('button', { name: 'Switch to light mode' }));
+  expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeInTheDocument();
+  expect(screen.getByRole('img', { name: 'love' })).toHaveTextContent('💜');
+  expect(localStorage.getItem('darkMode')).toBe('false');
+  view.unmount();
+  mount('/building');
+  expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Switch to dark mode' }));
+  expect(localStorage.getItem('darkMode')).toBe('true');
+  expect(screen.getByRole('img', { name: 'love' })).toHaveTextContent('🩷');
 });

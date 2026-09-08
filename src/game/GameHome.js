@@ -47,7 +47,7 @@ export default function GameHome() {
       ogType="website"
       jsonLd={homeSchema}
     />
-    <div className={styles.cover}>
+    <div className={`${styles.cover} game-art`}>
       <Link to="/about" className={`${styles.panel} ${styles.portrait}`} aria-label="About Sean Betts">
         <img className={styles.portraitImage} src="/images/game/portrait.webp" alt="" fetchpriority="high" width="1024" height="1536" />
         <div className={styles.identity}>

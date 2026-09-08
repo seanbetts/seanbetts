@@ -1,4 +1,4 @@
-.cover{position:relative;background:#110818;height:calc(100svh - 139px);min-height:710px;max-height:1100px;isolation:isolate;overflow:hidden}
+.cover{position:relative;border:var(--game-frame) solid var(--game-ink);background:#110818;height:calc(100svh - 139px);min-height:710px;max-height:1100px;isolation:isolate;overflow:hidden}
 .panel{position:absolute;overflow:hidden;transition:filter .25s ease;isolation:isolate;background:#110818}
 .panel [data-art]{transition:transform .55s cubic-bezier(.2,.6,.2,1)}
 .panel:hover [data-art],.panel:focus-visible [data-art]{transform:scale(1.045)}
@@ -23,7 +23,7 @@
 .leadership [data-art]{filter:hue-rotate(-18deg);transform:scale(1.15)}
 .leadership:hover [data-art]{transform:scale(1.2)}
 .dividers{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;overflow:visible}
-.dividers path{fill:none;stroke:#110818;stroke-width:11px;vector-effect:non-scaling-stroke;stroke-linecap:square;stroke-linejoin:round}
+.dividers path{fill:none;stroke:#110818;stroke-width:var(--game-frame);vector-effect:non-scaling-stroke;stroke-linecap:square;stroke-linejoin:round}
 .caption{position:absolute;left:0;bottom:0;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:58px 20px 24px;background:linear-gradient(transparent,#100b18db 47%,#100b18f5);z-index:2}
 .caption h2{font-size:clamp(24px,2.2vw,35px);text-transform:uppercase}
 .caption p{font-family:var(--game-ui);font-size:clamp(15px,1.2vw,19px);line-height:1.15;margin-top:4px}
@@ -33,7 +33,7 @@
 @media(min-width:1700px){.cover{min-height:780px}}
 @media(max-width:1000px) and (min-width:701px){.cover{height:750px;min-height:0}.caption{padding-left:12px;padding-right:12px}.caption svg{width:20px}.writing .caption{padding-right:22px}.caption p{font-size:15px}.building .caption{padding-left:25px}.leadership .caption{padding-left:20px;padding-right:15px}.leadership .caption svg{display:none}.identity{padding-left:3%;padding-right:3%}.identity .role{font-size:21px}}
 @media(max-width:700px){
- .cover{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;gap:10px;background:#110818;overflow:hidden}
+ .cover{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;gap:var(--game-frame);background:#110818;overflow:hidden}
  .panel{position:relative;left:auto;right:auto;top:auto;width:100%;height:265px;clip-path:none}
  .portrait{height:660px;order:0}
  .portraitImage{object-position:50% 24%}

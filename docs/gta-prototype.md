@@ -33,7 +33,7 @@ The new treatment covers Home, About, Thought Leadership, Building, project page
 
 The approved cover composition is recorded in `superpowers/specs/2026-09-08-gta-prototype.md`; verification and deliberate adaptations are recorded in the plan. Artwork provenance is in `public/images/game/README.md`. The Pricedown wordmark is fixed vector art, not an embedded font.
 
-Verified: 41 tests / 14 suites; successful optimized build; desktop and mobile browser navigation; clean core production console; independent review and regression fixes.
+Verified: 42 tests / 14 suites; successful optimized build; desktop and mobile browser navigation; clean core production console; independent review and regression fixes.
 
 ## Cover refinements
 
@@ -42,3 +42,9 @@ The cover uses matching polygon boundaries and a single SVG overlay for consiste
 ## About page
 
 About now uses the portfolio shell, an illustrated portrait introduction, chapter shortcuts and three illustrated reading sections. The original biography, four contextual project links and profile metadata are retained. Section actions lead to Thought Leadership, Building and Speaking, with Contact available from the header and advocacy email icon. Project links preserve the return-to-About journey. The panels share sloping black dividers, with angled image edges and upright text. Phone layouts stack short illustration banners above the text. Social icons have no decorative borders; the bottom contact box is removed. New artwork remains a later pass.
+
+## Daylight and night modes
+
+The header sun/moon control restores the shared, saved theme preference. Night is the default for a new visitor; a previous explicit choice is respected immediately. Daylight uses cream reading surfaces, plum text and a darker pink accent. Illustrated overlays and the map retain their dark artwork palette for legibility. The footer credit is centred using equal outer grid columns, with a centred second row on phones: pink heart at night, purple in daylight. Footer social icons remain 23px; About icons remain 36px.
+
+Structural blocks now use a shared near-black outer frame as well as internal dividers (11px desktop, 8px mobile). Home, About, Thought Leadership, the project collections/dossiers and Map use the same frame token; adjoining About chapters share a single horizontal edge.

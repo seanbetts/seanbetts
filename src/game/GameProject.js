@@ -31,7 +31,7 @@ function ProjectDossier({ project, index, origin }) {
       <header className={styles.heading}><div><h1>{project.name}</h1></div><span className={styles.status}>{project.status}</span></header>
       <div className={styles.dossier}>
         <div className={styles.mediaColumn}>
-          <div className={`${styles.media} ${project.heroVideo ? styles.video : ''}`}>
+          <div className={`${styles.media} game-art ${project.heroVideo ? styles.video : ''}`}>
             <SceneArt scene="building" className={styles.workshopArt} />
             <div className={styles.mediaWash} />
             {project.heroVideo ? <iframe src={project.heroVideo} title={`${project.name} demo`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /> : heroImage && !imageFailed ? <img src={heroImage} alt={`${project.name} project screenshot`} onError={() => setImageFailed(true)} /> : <div className={styles.fallback}><span aria-hidden="true">{project.icon}</span><p>From the workshop</p><strong>{project.name}</strong></div>}

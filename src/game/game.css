@@ -1,6 +1,6 @@
 @font-face{font-family:Barlow Condensed;src:url('../../public/fonts/BarlowCondensed-SemiBold.ttf') format('truetype');font-display:swap;font-weight:600}
 body.game-mode{margin:0;background:#16051f;color:#fffaf4}
-.game{--game-bg:#16051f;--game-surface:#211329;--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-border:#49354e;--game-ui:'Barlow Condensed','Arial Narrow',sans-serif;font-family:Arial,Helvetica,sans-serif;background:var(--game-bg);color:var(--game-text);min-height:100svh;line-height:1.5;color-scheme:dark}
+.game{--game-frame:11px;--game-ink:#110818;--game-bg:#16051f;--game-surface:#211329;--game-surface-alt:#24162d;--game-surface-deep:#1d1428;--game-hover:#3b2540;--game-body:#ded5e2;--game-button-text:#16051f;--game-status:#b7ffda;--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-border:#49354e;--game-ui:'Barlow Condensed','Arial Narrow',sans-serif;font-family:Arial,Helvetica,sans-serif;background:var(--game-bg);color:var(--game-text);min-height:100svh;line-height:1.5;color-scheme:dark}
 .game *{box-sizing:border-box}
 .game h1,.game h2,.game h3,.game h4{font-family:var(--game-ui);font-weight:600;color:var(--game-text);line-height:1.04;margin:0;letter-spacing:.005em}
 .game p{margin:0}
@@ -15,3 +15,10 @@ body.game-mode{margin:0;background:#16051f;color:#fffaf4}
 .game ::selection{background:var(--game-accent);color:var(--game-bg)}
 .game .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(prefers-reduced-motion:reduce){.game *,.game *::before,.game *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+body.game-mode.light-mode{background:#f6eee5;color:#27142f}
+.game.game-light{--game-bg:#f6eee5;--game-surface:#fff8ef;--game-surface-alt:#efe3d8;--game-surface-deep:#f4e8e0;--game-hover:#e8d5cc;--game-text:#27142f;--game-muted:#675565;--game-body:#4d3c50;--game-accent:#a82958;--game-border:#cebabd;--game-button-text:#fffaf4;--game-status:#226645;color-scheme:light}
+/* Artwork keeps its ink-and-sunset palette in either reading mode. */
+.game .game-art{--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-button-text:#16051f;color:#fffaf4}
+
+@media(max-width:700px){.game{--game-frame:8px}}

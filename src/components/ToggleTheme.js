@@ -8,7 +8,7 @@ const ToggleTheme = () => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
 
   return (
-    <button onClick={toggleDarkMode} className={styles.toggleButton}>
+    <button aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} onClick={toggleDarkMode} className={styles.toggleButton}>
       {darkMode ? <Sun size={24} /> : <Moon size={24} />}
     </button>
   );
