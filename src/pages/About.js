@@ -47,9 +47,10 @@ const About = () => {
       />
 
       <InternalLink to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Home</InternalLink>
+      <div className={styles.panels}>
       <header className={styles.hero}>
         <div className={styles.portrait}>
-          <img src="/images/game/portrait.webp" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" />
+          <div className={styles.imageWindow}><img src="/images/game/portrait.webp" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
         </div>
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>AI leader · Researcher · Builder</span>
@@ -77,7 +78,7 @@ const About = () => {
       </header>
 
       <section id="professional" className={styles.chapter} aria-labelledby="professional-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><SceneArt scene="building" /><span>01 / Strategy into practice</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><SceneArt scene="building" /></div><span>01 / Strategy into practice</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="professional-heading">Professional<br />experience<span>.</span></h2></div>
@@ -116,7 +117,7 @@ const About = () => {
       </section>
 
       <section id="research" className={`${styles.chapter} ${styles.reverse}`} aria-labelledby="research-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><SceneArt scene="writing" /><span>02 / Learn by building</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><SceneArt scene="writing" /></div><span>02 / Learn by building</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="research-heading">AI research<br />&amp; development<span>.</span></h2></div>
@@ -143,7 +144,7 @@ const About = () => {
       </section>
 
       <section id="advocacy" className={styles.chapter} aria-labelledby="advocacy-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><SceneArt scene="about" /><span>03 / A personal perspective</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><SceneArt scene="about" /></div><span>03 / A personal perspective</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>
@@ -167,6 +168,7 @@ const About = () => {
           <InternalLink to="/speaking" className={styles.action}>Keynote Presentations <ArrowUpRight size={20} aria-hidden="true" /></InternalLink>
         </div>
       </section>
+      </div>
     </div>
   );
 };

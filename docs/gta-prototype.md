@@ -45,10 +45,12 @@ About now uses the portfolio shell, an illustrated portrait introduction, chapte
 
 ## Daylight and night modes
 
-The header sun/moon control restores the shared, saved theme preference. Night is the default for a new visitor; a previous explicit choice is respected immediately. Daylight uses a pastel pink canvas with lavender, sunset-pink and pale turquoise reading surfaces, deep purple text and a vivid berry accent. Illustrated overlays and the map retain their dark artwork palette for legibility. The footer credit is centred using equal outer grid columns, with a centred second row on phones: pink heart at night, purple in daylight. Footer social icons remain 23px; About icons remain 36px.
+The header sun/moon control restores the shared, saved theme preference. Night is the default for a new visitor; a previous explicit choice is respected immediately. Daylight uses a pastel pink canvas with consistent pale-lilac reading surfaces, deep purple text and a vivid berry accent. Illustrated overlays and the map retain their dark artwork palette for legibility. The footer credit is centred using equal outer grid columns, with a centred second row on phones: pink heart at night, purple in daylight. Footer social icons remain 23px; About icons remain 36px.
 
 Structural blocks now use a shared near-black outer frame as well as internal dividers (22px desktop, 16px mobile). Home, About, Thought Leadership, the project collections/dossiers and Map use the same frame token; adjoining About chapters share a single horizontal edge.
 
 The homepage panels use their full clickable artwork and captions without link arrows. The theme toggle and navigation menu share a compact control group with adjacent 44px click targets.
 
 The footer credit inherits the surrounding footer typography while remaining centred. The homepage profile line reads “Autistic · Neurodiversity & Mental Health Speaker”. Map is available at desktop widths (1024px and above); narrower viewports omit all map links, use Home as the Building breadcrumb, and redirect direct map visits to Home. Resizing an open map below the cutoff also returns Home.
+
+About now uses one continuous ink frame around all four rows. Image windows clip diagonal seams inside that frame, replacing individually skewed image borders; text and artwork remain upright. Mobile footer rows are copyright, a single centred social icon row, then the centred credit. Map and Contact are icon-only links alongside the theme and menu controls, with accessible labels and 44px click targets; Contact remains visible on mobile.

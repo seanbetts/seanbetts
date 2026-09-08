@@ -17,7 +17,7 @@ body.game-mode{margin:0;background:#16051f;color:#fffaf4}
 @media(prefers-reduced-motion:reduce){.game *,.game *::before,.game *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 body.game-mode.light-mode{background:#f8d8ed;color:#28133e}
-.game.game-light{--game-bg:#f8d8ed;--game-surface:#eee2ff;--game-surface-alt:#ffd5e5;--game-surface-deep:#d9f3f0;--game-hover:#dfcbf5;--game-text:#28133e;--game-muted:#624571;--game-body:#443153;--game-accent:#9f2460;--game-border:#ba8dbb;--game-button-text:#fffaf4;--game-status:#17665f;color-scheme:light}
+.game.game-light{--game-bg:#f8d8ed;--game-surface:#f3ebfa;--game-surface-alt:#f3ebfa;--game-surface-deep:#f3ebfa;--game-hover:#e6d8f2;--game-text:#28133e;--game-muted:#624571;--game-body:#443153;--game-accent:#9f2460;--game-border:#ba8dbb;--game-button-text:#fffaf4;--game-status:#17665f;color-scheme:light}
 /* Artwork keeps its ink-and-sunset palette in either reading mode. */
 .game .game-art{--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-button-text:#16051f;color:#fffaf4}
 

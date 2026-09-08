@@ -43,31 +43,37 @@
 @media(max-width:700px){.hero,.chapter,.reverse{display:flex;flex-direction:column}.portrait{min-height:390px;border-right:0;border-bottom:var(--game-frame) solid var(--game-ink)}.portrait img{object-position:50% 25%}.heroCopy{padding:28px 22px}.about .heroCopy h1{font-size:clamp(48px,16vw,64px);margin-bottom:24px}.about .intro p:first-child{font-size:19px}.chapters{margin-top:22px;gap:0 18px}.chapterArt,.reverse .chapterArt{min-height:230px;border:0;border-bottom:var(--game-frame) solid var(--game-ink)}.chapterArt [data-art]{inset:-30% 0}.chapterArt>span{bottom:20px;font-size:21px}.chapterCopy{padding:28px 22px 34px}.about .sectionHeader h2{font-size:clamp(30px,9.5vw,37px)}.about .chapterCopy h3{font-size:23px}.chapterCopy p,.chapterCopy li{font-size:16px}}
 @media(prefers-reduced-motion:no-preference){.socialLink,.action,.chapterCopy p a{transition:color .2s,background .2s}}
 
-/* Shared sloping edges keep the black gutters uniform. Counter-skew the
-   contents so illustrations and reading text remain upright. */
-.about{--panel-angle:-1.4deg;--content-angle:1.4deg}
-.hero,.chapter{transform:skewY(var(--panel-angle));transform-origin:top left;overflow:hidden}
-.hero{margin-top:30px}
+/* One continuous ink canvas owns the outside frame and the shared row gutters.
+   Image masks cut the diagonal seam from that same ink, without skewed borders. */
+.panels{--panel-angle:-1.4deg;--content-angle:1.4deg;--image-slant:36px;margin-top:30px;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--panel-angle));transform-origin:top left;overflow:hidden}
+.hero,.chapter{border:0;overflow:hidden;position:relative}
+.hero::after,.chapter::after{content:"";position:absolute;inset:0;pointer-events:none;border-top:1px solid var(--game-ink);border-bottom:1px solid var(--game-ink);z-index:3}
+.chapter{margin-top:var(--game-frame)}
 .heroCopy,.chapterCopy{transform:skewY(var(--content-angle))}
-.portrait{transform:skewX(3deg);transform-origin:bottom right}
-.portrait img{transform:skewX(-3deg) skewY(var(--content-angle)) scale(1.12)}
-.chapterArt{transform:skewX(-3deg);transform-origin:bottom left}
-.chapterArt [data-art]{transform:skewX(3deg) skewY(var(--content-angle)) scale(1.12)}
-.chapterArt>span{transform:skewX(3deg) skewY(var(--content-angle))}
-.reverse .chapterArt{transform:skewX(3deg);transform-origin:bottom right}
-.reverse .chapterArt [data-art]{transform:skewX(-3deg) skewY(var(--content-angle)) scale(1.12)}
-.reverse .chapterArt>span{transform:skewX(-3deg) skewY(var(--content-angle))}
+.heroCopy,.reverse .chapterCopy{padding-left:calc(clamp(24px,3.7vw,56px) + var(--image-slant))}
+.chapter:not(.reverse) .chapterCopy{padding-right:calc(clamp(24px,3.7vw,56px) + var(--image-slant))}
+.portrait,.chapterArt,.reverse .chapterArt{width:calc(100% + var(--image-slant));border:0;background:var(--game-ink);isolation:isolate}
+.chapterArt{margin-left:calc(-1 * var(--image-slant));clip-path:polygon(var(--image-slant) 0,100% 0,100% 100%,0 100%)}
+.portrait,.reverse .chapterArt{margin-left:0;margin-right:calc(-1 * var(--image-slant));clip-path:polygon(0 0,calc(100% - var(--image-slant)) 0,100% 100%,0 100%)}
+.imageWindow{position:absolute;inset:0;overflow:hidden;clip-path:polygon(calc(var(--image-slant) + var(--game-frame)) 0,100% 0,100% 100%,var(--game-frame) 100%)}
+.portrait .imageWindow,.reverse .imageWindow{clip-path:polygon(0 0,calc(100% - var(--image-slant) - var(--game-frame)) 0,calc(100% - var(--game-frame)) 100%,0 100%)}
+.imageWindow img,.imageWindow [data-art]{transform:skewY(var(--content-angle)) scale(1.08)}
+.chapterArt::after{display:none}
+.chapterArt .imageWindow::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 60%,#170c20ed)}
+.chapterArt>span{left:calc(var(--game-frame) + 28px);right:28px;transform:skewY(var(--content-angle));color:#fffaf4}
+.reverse .chapterArt>span{left:28px;right:calc(var(--game-frame) + 28px)}
 @media(max-width:1000px) and (min-width:701px){
- .reverse .chapterArt{transform:skewX(-3deg);transform-origin:bottom left}
- .reverse .chapterArt [data-art]{transform:skewX(3deg) skewY(var(--content-angle)) scale(1.12)}
- .reverse .chapterArt>span{transform:skewX(3deg) skewY(var(--content-angle))}
+ .panels{--image-slant:24px}
+ .heroCopy{padding-left:50px}
+ .chapterCopy,.reverse .chapterCopy{padding-left:26px;padding-right:50px}
+ .reverse .chapterArt{margin-right:0;margin-left:calc(-1 * var(--image-slant));clip-path:polygon(var(--image-slant) 0,100% 0,100% 100%,0 100%)}
+ .reverse .imageWindow{clip-path:polygon(calc(var(--image-slant) + var(--game-frame)) 0,100% 0,100% 100%,var(--game-frame) 100%)}
+ .reverse .chapterArt>span{left:calc(var(--game-frame) + 28px);right:28px}
 }
 @media(max-width:700px){
- .about{--panel-angle:-2deg;--content-angle:2deg}
- .hero{margin-top:10px}
- .portrait,.chapterArt,.reverse .chapterArt{transform:none}
- .portrait img,.chapterArt [data-art],.reverse .chapterArt [data-art]{transform:skewY(var(--content-angle)) scale(1.06)}
- .chapterArt>span,.reverse .chapterArt>span{transform:skewY(var(--content-angle))}
+ .panels{--panel-angle:-2deg;--content-angle:2deg;margin-top:10px}
+ .portrait,.chapterArt,.reverse .chapterArt{width:100%;margin:0;clip-path:none;border:0;border-bottom:var(--game-frame) solid var(--game-ink)}
+ .imageWindow,.portrait .imageWindow,.reverse .imageWindow{clip-path:none}
+ .heroCopy,.chapterCopy,.reverse .chapterCopy,.chapter:not(.reverse) .chapterCopy{padding-left:22px;padding-right:22px}
+ .chapterArt>span,.reverse .chapterArt>span{left:20px;right:20px}
 }
-
-.chapterArt>span{color:#fffaf4}
