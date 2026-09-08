@@ -1,0 +1,26 @@
+.page{max-width:1440px;margin:0 auto;padding-bottom:40px}
+.back{display:inline-flex;align-items:center;gap:9px;font:600 17px var(--game-ui);text-transform:uppercase;min-height:44px;margin:4px 0 14px}
+.back:hover{color:var(--game-accent)}
+.hero{position:relative;isolation:isolate;min-height:390px;overflow:hidden;display:flex;align-items:flex-end;border-bottom:11px solid #110818}
+.hero [data-art]{left:35%}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#201229 15%,#201229d9 42%,#20122908 100%);z-index:1}
+.heroCopy{position:relative;z-index:2;padding:40px 44px}
+.eyebrow{font:600 16px var(--game-ui);text-transform:uppercase;letter-spacing:.12em;color:var(--game-accent)}
+.heroCopy h1{font-size:clamp(56px,7vw,100px);line-height:.92;margin:18px 0 20px}
+.heroCopy h1 span{color:var(--game-accent)}
+.heroCopy p{font:600 23px var(--game-ui)}
+.brands{padding:42px 0}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-bottom:28px}
+.intro h2{font-size:clamp(30px,3vw,42px)}
+.intro p{max-width:590px;color:var(--game-muted);line-height:1.65;font-size:16px}
+.logoGrid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;background:#110818;border:2px solid #110818}
+.logoGrid li{display:flex;align-items:center;justify-content:center;height:114px;padding:22px;background:#fff}
+.logoGrid img{width:100%;max-height:64px;height:auto;object-fit:contain}
+.next{display:grid;grid-template-columns:1fr 1fr;gap:11px;background:#110818}
+.next a{background:#2b1b30;padding:28px;transition:background .2s}
+.next a:hover{background:#3b2540}
+.next span{font:600 16px var(--game-ui);text-transform:uppercase;color:var(--game-muted)}
+.next h2{font-size:28px;margin-top:8px;display:flex;justify-content:space-between;gap:15px}
+.next svg{color:var(--game-accent);flex-shrink:0}
+@media(max-width:1000px){.logoGrid{grid-template-columns:repeat(4,minmax(0,1fr))}.intro{gap:25px}}
+@media(max-width:700px){.hero{min-height:375px}.heroCopy{padding:28px 20px}.heroCopy h1{font-size:clamp(48px,15.9vw,62px)}.heroCopy p{font-size:20px;max-width:230px}.hero [data-art]{left:0}.hero::after{background:linear-gradient(90deg,#201229e8,#2012296b)}.intro{grid-template-columns:1fr;gap:16px}.brands{padding:28px 8px}.intro p{font-size:15px}.logoGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.logoGrid li{height:92px;padding:18px}.next{grid-template-columns:1fr}.next a{padding:24px 20px}.next h2{font-size:25px}}

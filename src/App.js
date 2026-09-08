@@ -13,13 +13,17 @@ import GameHome from './game/GameHome';
 import GameBuilding from './game/GameBuilding';
 import GameProject from './game/GameProject';
 import WorldMap from './game/WorldMap';
+import ThoughtLeadership from './game/ThoughtLeadership';
 
 function SiteRoutes() {
   const { pathname } = useLocation();
-  const gameRoute = pathname === '/' || pathname === '/map' || pathname === '/building' || pathname.startsWith('/building/');
+  // Match React Router's case-insensitive and optional trailing-slash behaviour.
+  const routePath = pathname.toLowerCase().replace(/\/+$/, '') || '/';
+  const gameRoute = ['/', '/map', '/thought-leadership', '/building'].includes(routePath) || routePath.startsWith('/building/');
   const Shell = gameRoute ? GameShell : Layout;
   return <Shell><Routes>
     <Route path="/" element={<GameHome />} />
+    <Route path="/thought-leadership" element={<ThoughtLeadership />} />
     <Route path="/map" element={<WorldMap />} />
     <Route path="/building" element={<GameBuilding />} />
     <Route path="/building/:id" element={<GameProject />} />

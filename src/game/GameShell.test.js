@@ -54,8 +54,28 @@ test.each([
   expect(window.scrollTo).not.toHaveBeenCalled();
 });
 
-test('map panel is a normal link and the name is an accessible heading', () => {
+test('cover links to thought leadership and About while Map stays in navigation', () => {
   mount();
   expect(screen.getByRole('heading', { name: 'Sean Betts', level: 1 })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: /Explore the map Projects/i })).toHaveAttribute('href', '/map');
+  expect(screen.getByRole('link', { name: /Thought leadership AI perspectives/i })).toHaveAttribute('href', '/thought-leadership');
+  expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
+  expect(screen.getByRole('link', { name: 'About Sean Betts' })).toHaveAttribute('href', '/about');
+  expect(screen.queryByRole('link', { name: /Explore the map/i })).not.toBeInTheDocument();
+});
+
+
+test('social icon links retain accessible platform names and destinations', () => {
+  mount();
+  for (const [name, href] of [
+    ['LinkedIn', 'https://www.linkedin.com/in/seanbetts/'],
+    ['GitHub', 'https://github.com/seanbetts'],
+    ['Bluesky', 'https://bsky.app/profile/seanbetts.com'],
+    ['The Blueprint', 'https://www.the-blueprint.ai'],
+  ]) {
+    const link = screen.getByRole('link', { name, exact: true });
+    expect(link).toHaveAttribute('href', href);
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveTextContent('');
+    expect(link.querySelector('svg')).toBeInTheDocument();
+  }
 });

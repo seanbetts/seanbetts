@@ -25,10 +25,16 @@ npm run build
 1. Select Building on the cover, then sideBar.
 2. Try Overview, Features and Tech; arrow keys work between tabs.
 3. Open Map, select destinations and try zoom/reset.
-4. Try the menu, Escape and the stacked mobile panels.
+4. Open Thought Leadership from the cover for the existing global-brand proof, then Writing or Speaking.
+5. Click the main portrait or wordmark to open About.
+6. Try the menu, Escape, social icons and the stacked mobile panels.
 
-The new treatment covers Home, Building, project pages and Map. Writing, Speaking, About and Contact keep their existing layouts for the next iteration. Audio is deferred. All original project records are used.
+The new treatment covers Home, Thought Leadership, Building, project pages and Map. Writing, Speaking, About and Contact keep their existing layouts for the next iteration. Audio is deferred. All original project records are used.
 
 The approved cover composition is recorded in `superpowers/specs/2026-09-08-gta-prototype.md`; verification and deliberate adaptations are recorded in the plan. Artwork provenance is in `public/images/game/README.md`. The Pricedown wordmark is fixed vector art, not an embedded font.
 
-Verified: 30 tests / 12 suites; successful optimized build; desktop and mobile browser navigation; clean core production console; independent review and regression fixes.
+Verified: 35 tests / 13 suites; successful optimized build; desktop and mobile browser navigation; clean core production console; independent review and regression fixes.
+
+## Cover refinements
+
+The cover uses matching polygon boundaries and a single SVG overlay for consistent 11px diagonal dividers. Mobile panels use straight 10px gaps for a clean vertical reading order. Thought Leadership replaces the map tile; Map remains in the header. The main portrait is one About link with the four profile points beneath the fixed wordmark. Social icons retain accessible names and 44px targets. The Thought Leadership page reuses the original global-brand copy and all 21 logos.

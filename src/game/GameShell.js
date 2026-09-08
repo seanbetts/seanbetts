@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ArrowUpRight, List, MapTrifold, X } from '@phosphor-icons/react';
+import { ArrowUpRight, Butterfly, GithubLogo, LinkedinLogo, List, MapTrifold, Newspaper, X } from '@phosphor-icons/react';
 import styles from './GameShell.module.css';
 import './game.css';
 
-const links = [['/', 'Home'], ['/building', 'Building'], ['/writing', 'Writing'], ['/speaking', 'Speaking'], ['/about', 'About'], ['/contact', 'Contact']];
+const links = [['/', 'Home'], ['/building', 'Building'], ['/writing', 'Writing'], ['/speaking', 'Speaking'], ['/thought-leadership', 'Thought leadership'], ['/about', 'About'], ['/contact', 'Contact']];
 
 export default function GameShell({ children }) {
   const [open, setOpen] = useState(false);
@@ -71,6 +71,14 @@ export default function GameShell({ children }) {
       </nav>}
     </header>
     <main id="game-content" ref={main} tabIndex={-1} className={styles.main} key={pathname}>{children}</main>
-    <footer className={styles.footer}><span>© {new Date().getFullYear()} Sean Betts</span><div><a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={13} /></a><a href="https://github.com/seanbetts" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={13} /></a><a href="https://www.the-blueprint.ai" target="_blank" rel="noreferrer">The Blueprint <ArrowUpRight size={13} /></a></div></footer>
+    <footer className={styles.footer}>
+      <span>© {new Date().getFullYear()} Sean Betts</span>
+      <div>
+        <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={23} aria-hidden="true" /></a>
+        <a href="https://github.com/seanbetts" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={23} aria-hidden="true" /></a>
+        <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noreferrer" aria-label="Bluesky" title="Bluesky"><Butterfly size={23} aria-hidden="true" /></a>
+        <a href="https://www.the-blueprint.ai" target="_blank" rel="noreferrer" aria-label="The Blueprint" title="The Blueprint"><Newspaper size={23} aria-hidden="true" /></a>
+      </div>
+    </footer>
   </div>;
 }

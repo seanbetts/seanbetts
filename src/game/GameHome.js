@@ -29,8 +29,8 @@ const homeSchema = [
   },
 ];
 
-function CoverPanel({ scene, title, description, to }) {
-  return <Link to={to} className={`${styles.panel} ${styles[scene]}`}>
+function CoverPanel({ scene, title, description, to, panel = scene }) {
+  return <Link to={to} className={`${styles.panel} ${styles[panel]}`}>
     <SceneArt scene={scene} />
     <div className={styles.caption}><div><h2>{title}</h2><p>{description}</p></div><ArrowRight size={34} weight="bold" /></div>
   </Link>;
@@ -48,19 +48,24 @@ export default function GameHome() {
       jsonLd={homeSchema}
     />
     <div className={styles.cover}>
-      <div className={styles.portrait}><img src="/images/game/portrait.webp" alt="" fetchpriority="high" width="1024" height="1536" /></div>
-      <div className={styles.identity}>
-        <h1><span className="sr-only">Sean Betts</span><img src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
-        <p>AI leader. Researcher. Builder.</p>
-      </div>
+      <Link to="/about" className={`${styles.panel} ${styles.portrait}`} aria-label="About Sean Betts">
+        <img className={styles.portraitImage} src="/images/game/portrait.webp" alt="" fetchpriority="high" width="1024" height="1536" />
+        <div className={styles.identity}>
+          <h1><span className="sr-only">Sean Betts</span><img src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
+          <p className={styles.role}>Chief AI &amp; Innovation Officer</p>
+          <p className={styles.handsOn}>Hands-on AI leader</p>
+          <p className={styles.expertise}>AI strategy, transformation<br />&amp; product innovation</p>
+          <p className={styles.advocacy}><span>Autistic</span> · Neurodiversity<br />&amp; mental health speaker</p>
+        </div>
+      </Link>
       <CoverPanel scene="building" title="Building" description="Products, prototypes & experiments" to="/building" />
       <CoverPanel scene="writing" title="Writing" description="The Blueprint & beyond" to="/writing" />
       <CoverPanel scene="speaking" title="Speaking" description="Keynotes, panels & conversations" to="/speaking" />
       <CoverPanel scene="about" title="About" description="The story so far" to="/about" />
-      <Link to="/map" className={`${styles.panel} ${styles.map}`}>
-        <div className={styles.mapArt} aria-hidden="true"><img src="/images/game/map.svg" alt="" /></div>
-        <div className={styles.caption}><div><h2>Explore the map</h2><p>Projects, places & ideas</p></div><ArrowRight size={34} weight="bold" /></div>
-      </Link>
+      <CoverPanel scene="speaking" panel="leadership" title="Thought leadership" description="AI perspectives for global brands" to="/thought-leadership" />
+      <svg className={styles.dividers} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M22 0L25 100 M56 0L59 100 M0 46L23.44 48 M57.41 47L100 43 M78 45.066L77 100" />
+      </svg>
     </div>
   </>;
 }
