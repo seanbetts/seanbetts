@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Butterfly, GithubLogo, LinkedinLogo, List, MapTrifold, Newspaper, X } from '@phosphor-icons/react';
 import styles from './GameShell.module.css';
+import packageJson from '../../package.json';
 import './game.css';
 
 const links = [['/', 'Home'], ['/building', 'Building'], ['/writing', 'Writing'], ['/speaking', 'Speaking'], ['/thought-leadership', 'Thought leadership'], ['/about', 'About'], ['/contact', 'Contact']];
@@ -56,9 +57,12 @@ export default function GameShell({ children }) {
   return <div className="game">
     <a className={styles.skip} href="#game-content">Skip to content</a>
     <header className={styles.header}>
-      <Link to="/" onClick={closeNavigation} className={styles.brand} aria-label="Sean Betts home">
-        <img src="/images/game/sean-betts-inline.svg" alt="Sean Betts" width="132" height="28" />
-      </Link>
+      <div className={styles.brandGroup}>
+        <Link to="/" onClick={closeNavigation} className={styles.brand} aria-label="Sean Betts home">
+          <img src="/images/game/sean-betts-inline.svg" alt="Sean Betts" width="132" height="28" />
+        </Link>
+        <span className={styles.version}>v{packageJson.version}</span>
+      </div>
       <div className={styles.tools}>
         <NavLink to="/map" onClick={closeNavigation} className={({ isActive }) => `${styles.tool} ${isActive ? styles.active : ''}`}><MapTrifold size={18} /> Map</NavLink>
         <Link to="/contact" onClick={closeNavigation} className={`${styles.tool} ${styles.contact}`}>Contact <ArrowUpRight size={17} /></Link>
