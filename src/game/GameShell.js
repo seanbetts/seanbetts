@@ -69,19 +69,19 @@ export default function GameShell({ children }) {
         <span className={styles.version}>v{packageJson.version}</span>
       </div>
       <div className={styles.tools}>
-        {isDesktop && <NavLink to="/map" aria-label="Map" title="Map" onClick={closeNavigation} className={({ isActive }) => `${styles.tool} ${isActive ? styles.active : ''}`}><MapTrifold size={23} aria-hidden="true" /></NavLink>}
-        <Link to="/contact" onClick={closeNavigation} className={styles.tool} aria-label="Contact" title="Contact"><EnvelopeSimple size={23} aria-hidden="true" /></Link>
+        {isDesktop && <NavLink to="/map" aria-label="Map" title="Map" onClick={closeNavigation} className={({ isActive }) => `${styles.tool} ${isActive ? styles.active : ''}`}><MapTrifold size={23} weight="bold" aria-hidden="true" /></NavLink>}
+        <Link to="/contact" onClick={closeNavigation} className={styles.tool} aria-label="Contact" title="Contact"><EnvelopeSimple size={23} weight="bold" aria-hidden="true" /></Link>
         <div className={styles.controls}>
           <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
-            {darkMode ? <Sun size={23} aria-hidden="true" /> : <Moon size={23} aria-hidden="true" />}
+            {darkMode ? <Sun size={23} weight="bold" aria-hidden="true" /> : <Moon size={23} weight="bold" aria-hidden="true" />}
           </button>
           <button ref={trigger} className={styles.menuButton} onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="game-navigation" aria-label={open ? 'Close navigation' : 'Open navigation'}>
-            {open ? <X size={26} /> : <List size={26} />}
+            {open ? <X size={26} weight="bold" /> : <List size={26} weight="bold" />}
           </button>
         </div>
       </div>
       {open && <nav ref={menu} id="game-navigation" className={styles.menu} aria-label="Primary navigation">
-        {links.map(([to, label]) => <NavLink key={to} to={to} onClick={closeNavigation} end className={({ isActive }) => isActive ? styles.selected : undefined}>{label}<ArrowUpRight size={21} /></NavLink>)}
+        {links.map(([to, label]) => <NavLink key={to} to={to} onClick={closeNavigation} end className={({ isActive }) => isActive ? styles.selected : undefined}>{label}<ArrowUpRight size={21} weight="bold" /></NavLink>)}
       </nav>}
     </header>
     <main id="game-content" ref={main} tabIndex={-1} className={styles.main} key={pathname}>{children}</main>
@@ -89,10 +89,10 @@ export default function GameShell({ children }) {
       <span>© {new Date().getFullYear()} Sean Betts</span>
       <MadeWith className={styles.credit} />
       <div className={styles.socials}>
-        <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={23} aria-hidden="true" /></a>
-        <a href="https://github.com/seanbetts" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={23} aria-hidden="true" /></a>
-        <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noreferrer" aria-label="Bluesky" title="Bluesky"><Butterfly size={23} aria-hidden="true" /></a>
-        <a href="https://www.the-blueprint.ai" target="_blank" rel="noreferrer" aria-label="The Blueprint" title="The Blueprint"><Newspaper size={23} aria-hidden="true" /></a>
+        <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={23} weight="bold" aria-hidden="true" /></a>
+        <a href="https://github.com/seanbetts" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={23} weight="bold" aria-hidden="true" /></a>
+        <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noreferrer" aria-label="Bluesky" title="Bluesky"><Butterfly size={23} weight="bold" aria-hidden="true" /></a>
+        <a href="https://www.the-blueprint.ai" target="_blank" rel="noreferrer" aria-label="The Blueprint" title="The Blueprint"><Newspaper size={23} weight="bold" aria-hidden="true" /></a>
       </div>
     </footer>
   </div>;

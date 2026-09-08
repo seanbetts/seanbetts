@@ -6,14 +6,16 @@
 .tools{display:flex;align-items:center;gap:0}
 .controls{display:flex;align-items:center;gap:0}
 .tool{display:grid;place-items:center;min-width:44px;min-height:44px}
-.tool:hover,.active{color:var(--game-accent)!important}
+.tool:hover,.tool:focus-visible,.active{color:var(--game-accent)!important}
 .menuButton{border:0;background:transparent;color:inherit;display:grid;place-items:center;min-width:44px;min-height:44px}
+.menuButton:hover,.menuButton:focus-visible{color:var(--game-accent)}
+@media(prefers-reduced-motion:no-preference){.tool,.menuButton,.socials a{transition:color .15s ease}}
 .menu{position:absolute;right:0;top:64px;min-width:280px;padding:12px;background:var(--game-surface);border:1px solid var(--game-border);box-shadow:0 20px 50px #0009}
 .menu a{padding:13px 18px;display:flex;align-items:center;justify-content:space-between;font:600 25px var(--game-ui);text-transform:uppercase}
 .menu a:hover,.menu .selected{background:var(--game-accent);color:var(--game-button-text)}
 .main{padding:12px 28px 0;outline:0;animation:enter .3s ease both}
 .footer{padding:7px 24px 6px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;font:600 12px var(--game-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--game-muted)}
-.footer .socials{display:flex;gap:6px;justify-self:end}.footer a{display:grid;place-items:center;min-width:44px;min-height:44px}.footer a:hover{color:var(--game-accent)}
+.footer .socials{display:flex;gap:6px;justify-self:end;color:var(--game-text)}.footer a{display:grid;place-items:center;min-width:44px;min-height:44px}.footer a:hover,.footer a:focus-visible{color:var(--game-accent)}
 .skip{position:fixed;top:-80px;left:20px;z-index:100;background:var(--game-accent);color:var(--game-button-text)!important;padding:12px 18px}.skip:focus{top:10px}
 @keyframes enter{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:none}}
 @media(min-width:1800px){.header,.main,.footer{max-width:1860px;margin-left:auto;margin-right:auto}}

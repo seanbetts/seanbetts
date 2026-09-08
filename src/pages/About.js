@@ -46,7 +46,7 @@ const About = () => {
         jsonLd={personSchema}
       />
 
-      <InternalLink to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Home</InternalLink>
+      <InternalLink to="/" className={styles.back}><ArrowLeft size={17} weight="bold" aria-hidden="true" /> Home</InternalLink>
       <div className={styles.panels}>
       <header className={styles.hero}>
         <div className={styles.portrait}>
@@ -70,9 +70,9 @@ const About = () => {
             </p>
           </section>
           <nav className={styles.chapters} aria-label="About chapters">
-            <a href="#professional"><span>Professional Experience</span><ArrowRight size={17} aria-hidden="true" /></a>
-            <a href="#research"><span>AI Research &amp; Development</span><ArrowRight size={17} aria-hidden="true" /></a>
-            <a href="#advocacy"><span>Speaking &amp; Advocacy</span><ArrowRight size={17} aria-hidden="true" /></a>
+            <a href="#professional"><span>Professional Experience</span><ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
+            <a href="#research"><span>AI Research &amp; Development</span><ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
+            <a href="#advocacy"><span>Speaking &amp; Advocacy</span><ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
           </nav>
         </div>
       </header>
@@ -83,7 +83,7 @@ const About = () => {
           <div className={styles.sectionHeader}>
             <div><h2 id="professional-heading">Professional<br />experience<span>.</span></h2></div>
             <a href="https://linkedin.com/in/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn Profile">
-              <LinkedinLogo size={36} aria-hidden="true" />
+              <LinkedinLogo size={36} weight="bold" aria-hidden="true" />
             </a>
           </div>
           <h3>Chief AI &amp; Innovation Officer <span>Omnicom Media UK</span></h3>
@@ -112,7 +112,7 @@ const About = () => {
             <li>Shaping board-level thinking on AI, innovation and business change.</li>
             <li>Supporting product and solution development across internal and client contexts.</li>
           </ul>
-          <InternalLink to="/thought-leadership" className={styles.action}>Thought leadership for global brands <ArrowUpRight size={20} aria-hidden="true" /></InternalLink>
+          <InternalLink to="/thought-leadership" className={styles.action}>Thought leadership for global brands <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></InternalLink>
         </div>
       </section>
 
@@ -122,7 +122,7 @@ const About = () => {
           <div className={styles.sectionHeader}>
             <div><h2 id="research-heading">AI research<br />&amp; development<span>.</span></h2></div>
             <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
-              <GithubLogo size={36} aria-hidden="true" />
+              <GithubLogo size={36} weight="bold" aria-hidden="true" />
             </a>
           </div>
           <p>
@@ -139,7 +139,7 @@ const About = () => {
             I also write <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer">The Blueprint</a>, a weekly newsletter on AI
             developments and their broader implications, and contribute to industry discussions on the future of generative AI and its responsible use.
           </p>
-          <InternalLink to="/building" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} aria-hidden="true" /></InternalLink>
+          <InternalLink to="/building" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></InternalLink>
         </div>
       </section>
 
@@ -149,7 +149,7 @@ const About = () => {
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>
             <InternalLink to="/contact" className={styles.socialLink} aria-label="Email">
-              <EnvelopeSimple size={36} aria-hidden="true" />
+              <EnvelopeSimple size={36} weight="bold" aria-hidden="true" />
             </InternalLink>
           </div>
           <p>
@@ -165,7 +165,7 @@ const About = () => {
             My autism diagnosis in 2022 has further enriched my advocacy work, allowing me to share insights
             on both mental health and autistic experiences.
           </p>
-          <InternalLink to="/speaking" className={styles.action}>Keynote Presentations <ArrowUpRight size={20} aria-hidden="true" /></InternalLink>
+          <InternalLink to="/speaking" className={styles.action}>Keynote Presentations <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></InternalLink>
         </div>
       </section>
       </div>
