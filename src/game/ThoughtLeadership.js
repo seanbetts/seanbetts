@@ -4,6 +4,7 @@ import Seo from '../components/Seo';
 import brandLogos from '../data/brandLogos';
 import SceneArt from './SceneArt';
 import BrandStreet from './BrandStreet';
+import BrandScenes from './BrandScenes';
 import styles from './ThoughtLeadership.module.css';
 
 export default function ThoughtLeadership() {
@@ -27,6 +28,7 @@ export default function ThoughtLeadership() {
           <p>Providing strategic perspectives to global brands on how AI is rewiring discovery, consumer behaviour, and digital marketing strategies.</p>
         </div>
         <BrandStreet />
+        <BrandScenes />
         <details className={styles.brandDirectory}>
           <summary>View all {brandLogos.length} brands</summary>
           <ul className={styles.brandNames} aria-label="Global brands">

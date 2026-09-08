@@ -1,6 +1,6 @@
 # Thought Leadership: illustrated brand cover
 
-Status: proposed art direction for review. No new images generated or page changes made as part of this plan.
+Status: art direction approved. The first McDonald's portrait and Warner Bros. landscape are generated and fitted with their original SVG logos beneath the retained high street. The temporary two-panel row lets this first pair be reviewed together before producing Halfords and Lidl and assembling the full five-panel layout.
 
 ## Intent
 

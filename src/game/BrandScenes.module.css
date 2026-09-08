@@ -1,0 +1,15 @@
+/* The shared ink canvas owns the gap: both sides follow the same diagonal. */
+.panels{display:grid;grid-template-columns:3fr 8fr;aspect-ratio:22/9;margin-top:var(--game-frame);background:var(--game-ink)}
+.panel{position:relative;overflow:hidden;min-width:0;margin:0}
+.takeaway{clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%)}
+.film-set{clip-path:polygon(var(--game-frame) 0,100% 0,100% 100%,calc(var(--game-frame) - 16px) 100%)}
+.art{position:absolute;inset:0;transform:skewY(var(--counter-angle)) scaleY(1.12);transform-origin:center}
+.environment{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.logo{position:absolute;object-fit:contain;pointer-events:none}
+@media(max-width:700px){
+ .panels{display:flex;flex-direction:column;gap:var(--game-frame);aspect-ratio:auto}
+ .panel{clip-path:none}
+ .takeaway{aspect-ratio:2/3}
+ .film-set{aspect-ratio:16/9}
+ .art{transform:skewY(var(--counter-angle)) scaleY(1.14)}
+}
