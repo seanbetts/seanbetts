@@ -1,6 +1,6 @@
 .header{height:70px;display:flex;align-items:center;justify-content:space-between;margin:0 28px;position:relative;border-bottom:1px solid #ffffff21;z-index:20}
-.brandGroup{display:flex;align-items:center;gap:12px;flex-shrink:0}
-.version{font:600 13px var(--game-ui);color:var(--game-muted);white-space:nowrap}
+.brandGroup{display:flex;align-items:flex-end;gap:12px;flex-shrink:0}
+.version{font:600 13px/1 var(--game-ui);color:var(--game-muted);white-space:nowrap}
 .brand{display:flex;align-items:center;width:132px}
 .brand img{width:132px;height:auto}
 .tools{display:flex;align-items:center;gap:32px}
