@@ -46,7 +46,7 @@ const About = () => {
         jsonLd={personSchema}
       />
 
-      <InternalLink to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Back to the cover</InternalLink>
+      <InternalLink to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Home</InternalLink>
       <header className={styles.hero}>
         <div className={styles.portrait}>
           <img src="/images/game/portrait.webp" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" />
@@ -69,9 +69,9 @@ const About = () => {
             </p>
           </section>
           <nav className={styles.chapters} aria-label="About chapters">
-            <a href="#professional">01 <span>Professional</span><ArrowRight size={17} aria-hidden="true" /></a>
-            <a href="#research">02 <span>Research &amp; building</span><ArrowRight size={17} aria-hidden="true" /></a>
-            <a href="#advocacy">03 <span>Speaking &amp; advocacy</span><ArrowRight size={17} aria-hidden="true" /></a>
+            <a href="#professional"><span>Professional Experience</span><ArrowRight size={17} aria-hidden="true" /></a>
+            <a href="#research"><span>AI Research &amp; Development</span><ArrowRight size={17} aria-hidden="true" /></a>
+            <a href="#advocacy"><span>Speaking &amp; Advocacy</span><ArrowRight size={17} aria-hidden="true" /></a>
           </nav>
         </div>
       </header>
@@ -164,7 +164,7 @@ const About = () => {
             My autism diagnosis in 2022 has further enriched my advocacy work, allowing me to share insights
             on both mental health and autistic experiences.
           </p>
-          <InternalLink to="/speaking" className={styles.action}>Speaking &amp; conversations <ArrowUpRight size={20} aria-hidden="true" /></InternalLink>
+          <InternalLink to="/speaking" className={styles.action}>Keynote Presentations <ArrowUpRight size={20} aria-hidden="true" /></InternalLink>
         </div>
       </section>
     </div>

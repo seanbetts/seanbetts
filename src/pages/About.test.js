@@ -7,7 +7,7 @@ const mount = () => render(<MemoryRouter><About /></MemoryRouter>);
 test('chapter shortcuts reach named sections with biography and project links preserved', () => {
   mount();
   const navigation = screen.getByRole('navigation', { name: 'About chapters' });
-  for (const [name, section] of [['Professional', 'professional'], ['Research & building', 'research'], ['Speaking & advocacy', 'advocacy']]) {
+  for (const [name, section] of [['Professional Experience', 'professional'], ['AI Research & Development', 'research'], ['Speaking & Advocacy', 'advocacy']]) {
     const link = within(navigation).getByRole('link', { name: new RegExp(name) });
     expect(link).toHaveAttribute('href', `#${section}`);
     expect(document.getElementById(section)).toHaveAttribute('aria-labelledby', `${section}-heading`);
