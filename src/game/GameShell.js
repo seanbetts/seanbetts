@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ArrowUpRight, Butterfly, EnvelopeSimple, GithubLogo, LinkedinLogo, List, MapTrifold, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
+import { ArrowUpRight, Butterfly, EnvelopeSimple, GithubLogo, Heart, LinkedinLogo, List, MapTrifold, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
 import styles from './GameShell.module.css';
 import packageJson from '../../package.json';
 import './game.css';
@@ -87,7 +87,7 @@ export default function GameShell({ children }) {
     <main id="game-content" ref={main} tabIndex={-1} className={styles.main} key={pathname}>{children}</main>
     <footer className={styles.footer}>
       <span>© {new Date().getFullYear()} Sean Betts</span>
-      <MadeWith className={styles.credit} />
+      <MadeWith className={styles.credit} heart={<Heart size={14} weight="bold" className={styles.heart} aria-hidden="true" />} />
       <div className={styles.socials}>
         <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={23} weight="bold" aria-hidden="true" /></a>
         <a href="https://github.com/seanbetts" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={23} weight="bold" aria-hidden="true" /></a>

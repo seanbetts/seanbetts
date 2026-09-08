@@ -82,17 +82,19 @@ test('social icon links retain accessible platform names and destinations', () =
 });
 
 
-test('theme toggle updates the palette and heart and remembers the choice', () => {
+test('theme toggle updates the palette, preserves the accessible heart and remembers the choice', () => {
   const view = mount();
-  expect(screen.getByRole('img', { name: 'love' })).toHaveTextContent('🩷');
+  expect(view.container.firstChild).toHaveClass('game-dark');
+  expect(screen.getByRole('img', { name: 'love' }).querySelector('svg')).toHaveAttribute('aria-hidden', 'true');
   fireEvent.click(screen.getByRole('button', { name: 'Switch to light mode' }));
   expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeInTheDocument();
-  expect(screen.getByRole('img', { name: 'love' })).toHaveTextContent('💜');
+  expect(view.container.firstChild).toHaveClass('game-light');
+  expect(screen.getByRole('img', { name: 'love' })).toBeInTheDocument();
   expect(localStorage.getItem('darkMode')).toBe('false');
   view.unmount();
   mount('/building');
   expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeInTheDocument();
   fireEvent.click(screen.getByRole('button', { name: 'Switch to dark mode' }));
   expect(localStorage.getItem('darkMode')).toBe('true');
-  expect(screen.getByRole('img', { name: 'love' })).toHaveTextContent('🩷');
+  expect(screen.getByRole('img', { name: 'love' })).toBeInTheDocument();
 });
