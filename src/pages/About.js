@@ -168,10 +168,6 @@ const About = () => {
           <InternalLink to="/speaking" className={styles.action}>Speaking &amp; conversations <ArrowUpRight size={20} aria-hidden="true" /></InternalLink>
         </div>
       </section>
-      <aside className={styles.contact} aria-label="Get in touch">
-        <div><span className={styles.eyebrow}>Continue the conversation</span><h2>Let’s talk<span>.</span></h2></div>
-        <InternalLink to="/contact">Get in touch <ArrowUpRight size={24} aria-hidden="true" /></InternalLink>
-      </aside>
     </div>
   );
 };

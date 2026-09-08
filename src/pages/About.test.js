@@ -18,7 +18,8 @@ test('chapter shortcuts reach named sections with biography and project links pr
   expect(screen.getByText(/My autism diagnosis in 2022/)).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'benchmarking framework' })).toHaveAttribute('href', '/building/genai-marketing-benchmarks');
   expect(screen.getByRole('link', { name: 'Thought leadership for global brands' })).toHaveAttribute('href', '/thought-leadership');
-  expect(screen.getByRole('link', { name: 'Get in touch' })).toHaveAttribute('href', '/contact');
+  expect(screen.queryByRole('complementary', { name: 'Get in touch' })).not.toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Email' })).toHaveAttribute('href', '/contact');
 });
 
 test('retains the About canonical URL and profile structured data', async () => {

@@ -8,7 +8,7 @@
 .heroCopy{padding:44px clamp(24px,3.7vw,56px);align-self:center}
 .eyebrow{display:block;font:600 15px/1.4 var(--game-ui);text-transform:uppercase;letter-spacing:.1em;color:var(--game-accent)}
 .about .heroCopy h1{font-size:clamp(56px,6.5vw,94px);line-height:.95;text-transform:uppercase;margin:16px 0 28px}
-.about .heroCopy h1 span,.about .contact h2 span{color:var(--game-accent)}
+.about .heroCopy h1 span{color:var(--game-accent)}
 .about .intro p{font-size:16px;line-height:1.7;color:#ded5e2;margin-top:16px}
 .about .intro p:first-child{font-size:20px;line-height:1.55;color:var(--game-text);margin-top:0}
 .chapters{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:30px;border-top:1px solid var(--game-border);padding-top:18px}
@@ -24,8 +24,8 @@
 .chapterCopy{grid-column:1;grid-row:1;padding:42px clamp(24px,3.7vw,56px);min-width:0}
 .sectionHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:24px}
 .about .sectionHeader h2{font-size:clamp(34px,3.4vw,49px);text-transform:uppercase;margin-top:12px}
-.socialLink{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid #6b526f;color:var(--game-text);flex-shrink:0}
-.socialLink:hover{background:var(--game-accent);color:var(--game-bg)}
+.socialLink{display:grid;place-items:center;min-width:44px;min-height:44px;color:var(--game-text);flex-shrink:0}
+.socialLink:hover{color:var(--game-accent)}
 .about .chapterCopy h3{font-size:24px;line-height:1.2;margin-bottom:20px}
 .about .chapterCopy h3 span{display:block;font-size:18px;color:var(--game-accent);margin-top:6px}
 .chapterCopy p,.chapterCopy li{font-size:16px;line-height:1.75;color:#ded5e2}
@@ -40,10 +40,34 @@
 .reverse{grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);background:#1d1428}
 .reverse .chapterArt{grid-column:1;border-left:0;border-right:11px solid #110818}
 .reverse .chapterCopy{grid-column:2}
-.contact{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:40px clamp(24px,3.7vw,56px);background:#302035}
-.about .contact h2{font-size:clamp(40px,5vw,64px);text-transform:uppercase;margin-top:10px}
-.about .contact>a{display:flex;align-items:center;justify-content:space-between;gap:36px;background:var(--game-accent);color:var(--game-bg);padding:16px 24px;font:600 21px var(--game-ui)}
-.about .contact>a:hover{background:#ff9ba1}
 @media(max-width:1000px){.hero{grid-template-columns:38% 62%}.heroCopy{padding:32px 26px}.about .heroCopy h1{font-size:64px}.about .intro p{font-size:15px}.about .intro p:first-child{font-size:18px}.chapter,.reverse{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}.reverse .chapterArt{grid-column:2;border-left:11px solid #110818;border-right:0}.reverse .chapterCopy{grid-column:1}.chapterCopy{padding:32px 26px}.chapterCopy p,.chapterCopy li{font-size:15px}.chapterArt>span{left:20px;font-size:19px}}
-@media(max-width:700px){.hero,.chapter,.reverse{display:flex;flex-direction:column}.portrait{min-height:390px;border-right:0;border-bottom:10px solid #110818}.portrait img{object-position:50% 25%}.portraitCaption{font-size:16px;padding:65px 22px 20px}.heroCopy{padding:28px 22px}.about .heroCopy h1{font-size:clamp(48px,16vw,64px);margin-bottom:24px}.about .intro p:first-child{font-size:19px}.chapters{margin-top:22px;gap:0 18px}.chapterArt,.reverse .chapterArt{min-height:230px;border:0;border-bottom:10px solid #110818}.chapterArt [data-art]{inset:-30% 0}.chapterArt>span{bottom:20px;font-size:21px}.chapterCopy{padding:28px 22px 34px}.about .sectionHeader h2{font-size:clamp(30px,9.5vw,37px)}.about .chapterCopy h3{font-size:23px}.chapterCopy p,.chapterCopy li{font-size:16px}.contact{flex-direction:column;align-items:stretch;padding:32px 22px}.about .contact>a{gap:20px}.about .contact h2{font-size:48px}}
-@media(prefers-reduced-motion:no-preference){.socialLink,.action,.about .contact>a{transition:color .2s,background .2s}}
+@media(max-width:700px){.hero,.chapter,.reverse{display:flex;flex-direction:column}.portrait{min-height:390px;border-right:0;border-bottom:10px solid #110818}.portrait img{object-position:50% 25%}.portraitCaption{font-size:16px;padding:65px 22px 20px}.heroCopy{padding:28px 22px}.about .heroCopy h1{font-size:clamp(48px,16vw,64px);margin-bottom:24px}.about .intro p:first-child{font-size:19px}.chapters{margin-top:22px;gap:0 18px}.chapterArt,.reverse .chapterArt{min-height:230px;border:0;border-bottom:10px solid #110818}.chapterArt [data-art]{inset:-30% 0}.chapterArt>span{bottom:20px;font-size:21px}.chapterCopy{padding:28px 22px 34px}.about .sectionHeader h2{font-size:clamp(30px,9.5vw,37px)}.about .chapterCopy h3{font-size:23px}.chapterCopy p,.chapterCopy li{font-size:16px}}
+@media(prefers-reduced-motion:no-preference){.socialLink,.action{transition:color .2s,background .2s}}
+
+/* Shared sloping edges keep the black gutters uniform. Counter-skew the
+   contents so illustrations and reading text remain upright. */
+.about{--panel-angle:-1.4deg;--content-angle:1.4deg}
+.hero,.chapter{transform:skewY(var(--panel-angle));transform-origin:top left;overflow:hidden}
+.hero{margin-top:30px}
+.heroCopy,.chapterCopy{transform:skewY(var(--content-angle))}
+.portrait{transform:skewX(3deg);transform-origin:bottom right}
+.portrait img{transform:skewX(-3deg) skewY(var(--content-angle)) scale(1.12)}
+.portraitCaption{transform:skewX(-3deg) skewY(var(--content-angle));transform-origin:bottom left}
+.chapterArt{transform:skewX(-3deg);transform-origin:bottom left}
+.chapterArt [data-art]{transform:skewX(3deg) skewY(var(--content-angle)) scale(1.12)}
+.chapterArt>span{transform:skewX(3deg) skewY(var(--content-angle))}
+.reverse .chapterArt{transform:skewX(3deg);transform-origin:bottom right}
+.reverse .chapterArt [data-art]{transform:skewX(-3deg) skewY(var(--content-angle)) scale(1.12)}
+.reverse .chapterArt>span{transform:skewX(-3deg) skewY(var(--content-angle))}
+@media(max-width:1000px) and (min-width:701px){
+ .reverse .chapterArt{transform:skewX(-3deg);transform-origin:bottom left}
+ .reverse .chapterArt [data-art]{transform:skewX(3deg) skewY(var(--content-angle)) scale(1.12)}
+ .reverse .chapterArt>span{transform:skewX(3deg) skewY(var(--content-angle))}
+}
+@media(max-width:700px){
+ .about{--panel-angle:-2deg;--content-angle:2deg}
+ .hero{margin-top:10px}
+ .portrait,.chapterArt,.reverse .chapterArt{transform:none}
+ .portrait img,.chapterArt [data-art],.reverse .chapterArt [data-art]{transform:skewY(var(--content-angle)) scale(1.06)}
+ .portraitCaption,.chapterArt>span,.reverse .chapterArt>span{transform:skewY(var(--content-angle))}
+}
