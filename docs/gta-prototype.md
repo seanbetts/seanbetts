@@ -37,4 +37,4 @@ Verified: 35 tests / 13 suites; successful optimized build; desktop and mobile b
 
 ## Cover refinements
 
-The cover uses matching polygon boundaries and a single SVG overlay for consistent 11px diagonal dividers. Mobile panels use straight 10px gaps for a clean vertical reading order. Thought Leadership replaces the map tile; Map remains in the header. The main portrait is one About link with the four profile points beneath the fixed wordmark. Social icons retain accessible names and 44px targets. The Thought Leadership page reuses the original global-brand copy and all 21 logos.
+The cover uses matching polygon boundaries and a single SVG overlay for consistent 11px diagonal dividers. Mobile panels use straight 10px gaps for a clean vertical reading order. Thought Leadership replaces the map tile; Map remains in the header. The main portrait is one About link with Hands-on AI Leader beneath the fixed wordmark and two single-line, dot-separated statements for expertise and advocacy. Social icons retain accessible names and 44px targets. The Thought Leadership page reuses the original global-brand copy and all 21 logos.

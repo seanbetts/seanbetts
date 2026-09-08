@@ -10,7 +10,7 @@ test('renders the current home page content', () => {
     screen.getByRole('heading', { name: /sean betts/i, level: 1 })
   ).toBeInTheDocument();
   expect(
-    screen.getByText(/Chief AI & Innovation Officer/i)
+    screen.getByText(/Hands-on AI Leader/i)
   ).toBeInTheDocument();
 });
 

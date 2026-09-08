@@ -52,10 +52,9 @@ export default function GameHome() {
         <img className={styles.portraitImage} src="/images/game/portrait.webp" alt="" fetchpriority="high" width="1024" height="1536" />
         <div className={styles.identity}>
           <h1><span className="sr-only">Sean Betts</span><img src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
-          <p className={styles.role}>Chief AI &amp; Innovation Officer</p>
-          <p className={styles.handsOn}>Hands-on AI leader</p>
-          <p className={styles.expertise}>AI strategy, transformation<br />&amp; product innovation</p>
-          <p className={styles.advocacy}><span>Autistic</span> · Neurodiversity<br />&amp; mental health speaker</p>
+          <p className={styles.role}>Hands-on AI Leader</p>
+          <p className={styles.expertise}>AI strategy · Transformation · Product innovation</p>
+          <p className={styles.advocacy}>Autistic · Neurodiversity · Mental health speaker</p>
         </div>
       </Link>
       <CoverPanel scene="building" title="Building" description="Products, prototypes & experiments" to="/building" />

@@ -9,12 +9,11 @@
 .portrait{left:22%;top:0;width:37%;height:100%;clip-path:polygon(0 0,91.892% 0,100% 100%,8.108% 100%)}
 .portraitImage{height:100%;width:100%;object-fit:cover;object-position:50% 30%;transition:transform .55s ease}
 .portrait:hover .portraitImage{transform:scale(1.025)}
-.identity{position:absolute;left:10%;bottom:0;width:90%;padding:55px 4% 26px;text-align:center;background:linear-gradient(transparent,#150c1db3 40%,#150c1def);text-shadow:0 2px 5px #000}
+.identity{container-type:inline-size;position:absolute;left:10%;bottom:0;width:90%;padding:55px 4% 26px;text-align:center;background:linear-gradient(transparent,#150c1db3 40%,#150c1def);text-shadow:0 2px 5px #000}
 .identity h1 img{width:100%;height:auto;max-height:235px;filter:drop-shadow(0 3px 4px #0005)}
 .identity p{font-family:var(--game-ui);line-height:1.15}
 .identity .role{font-size:clamp(19px,1.85vw,28px);margin-top:9px}
-.identity .handsOn{font-size:clamp(17px,1.5vw,23px);color:var(--game-accent);margin-top:4px}
-.identity .expertise,.identity .advocacy{font-size:clamp(15px,1.25vw,19px);margin-top:12px;line-height:1.18}
+.identity .expertise,.identity .advocacy{font-size:clamp(10px,4.7cqw,19px);white-space:nowrap;margin-top:12px;line-height:1.18}
 .identity .advocacy{color:#ebd6ea}
 .speaking{left:0;top:0;width:23.44%;height:48%;clip-path:polygon(0 0,93.8567% 0,100% 100%,0 95.8333%)}
 .writing{left:0;top:46%;width:25%;height:54%;clip-path:polygon(0 0,93.76% 3.7037%,100% 100%,0 100%)}
@@ -39,7 +38,7 @@
  .portrait{height:660px;order:0}
  .portraitImage{object-position:50% 24%}
  .identity{left:0;width:100%;padding:50px 7% 24px}
- .identity h1 img{width:100%;max-height:190px}.identity .role{font-size:25px}.identity .handsOn{font-size:21px}.identity .expertise,.identity .advocacy{font-size:18px;margin-top:10px}
+ .identity h1 img{width:100%;max-height:190px}.identity .role{font-size:25px}.identity .expertise,.identity .advocacy{margin-top:10px}
  .building{order:1}.writing{order:2}.speaking{order:3}.leadership{order:4}.about{order:5}
  .dividers{display:none}
  .caption,.speaking .caption,.building .caption,.writing .caption,.leadership .caption{padding:50px 20px 25px;display:flex}

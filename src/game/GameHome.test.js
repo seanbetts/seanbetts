@@ -11,10 +11,10 @@ test('preserves home search and social descriptions and keywords with the new co
     }
     expect(document.querySelector('meta[name="keywords"]')).toHaveAttribute('content', 'Sean Betts, AI strategy, product innovation, business transformation, marketing technology, generative AI, Omnicom Media Group UK');
   });
-  expect(screen.getByText('Chief AI & Innovation Officer')).toBeInTheDocument();
-  expect(screen.getByText('Hands-on AI leader')).toBeInTheDocument();
-  expect(screen.getByText(/AI strategy, transformation/)).toHaveTextContent('AI strategy, transformation& product innovation');
-  expect(screen.getByText('Autistic').parentElement).toHaveTextContent('Autistic · Neurodiversity& mental health speaker');
+  expect(screen.queryByText('Chief AI & Innovation Officer')).not.toBeInTheDocument();
+  expect(screen.getByText('Hands-on AI Leader')).toBeInTheDocument();
+  expect(screen.getByText('AI strategy · Transformation · Product innovation')).toBeInTheDocument();
+  expect(screen.getByText('Autistic · Neurodiversity · Mental health speaker')).toBeInTheDocument();
 });
 
 test('publishes the original WebSite and Person structured data without advertising a nonexistent search route', async () => {
