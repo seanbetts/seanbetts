@@ -50,7 +50,6 @@ const About = () => {
       <header className={styles.hero}>
         <div className={styles.portrait}>
           <img src="/images/game/portrait.webp" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" />
-          <span className={styles.portraitCaption}>The person behind the work</span>
         </div>
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>AI leader · Researcher · Builder</span>
@@ -83,7 +82,7 @@ const About = () => {
           <div className={styles.sectionHeader}>
             <div><h2 id="professional-heading">Professional<br />experience<span>.</span></h2></div>
             <a href="https://linkedin.com/in/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn Profile">
-              <LinkedinLogo size={25} aria-hidden="true" />
+              <LinkedinLogo size={36} aria-hidden="true" />
             </a>
           </div>
           <h3>Chief AI &amp; Innovation Officer <span>Omnicom Media UK</span></h3>
@@ -122,7 +121,7 @@ const About = () => {
           <div className={styles.sectionHeader}>
             <div><h2 id="research-heading">AI research<br />&amp; development<span>.</span></h2></div>
             <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
-              <GithubLogo size={25} aria-hidden="true" />
+              <GithubLogo size={36} aria-hidden="true" />
             </a>
           </div>
           <p>
@@ -149,7 +148,7 @@ const About = () => {
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>
             <InternalLink to="/contact" className={styles.socialLink} aria-label="Email">
-              <EnvelopeSimple size={25} aria-hidden="true" />
+              <EnvelopeSimple size={36} aria-hidden="true" />
             </InternalLink>
           </div>
           <p>
