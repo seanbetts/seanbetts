@@ -54,7 +54,7 @@ const About = () => {
         </div>
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>AI leader · Researcher · Builder</span>
-          <h1>About<br />Sean Betts<span>.</span></h1>
+          <h1>About<span>.</span></h1>
           <section className={styles.intro}>
             <p>
               I’m an AI leader, researcher and builder working at the intersection of AI, product innovation and business transformation.
@@ -81,7 +81,7 @@ const About = () => {
         <div className={styles.chapterArt} aria-hidden="true"><SceneArt scene="building" /><span>01 / Strategy into practice</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
-            <div><span className={styles.eyebrow}>01 / Professional</span><h2 id="professional-heading">Professional<br />experience</h2></div>
+            <div><h2 id="professional-heading">Professional<br />experience<span>.</span></h2></div>
             <a href="https://linkedin.com/in/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn Profile">
               <LinkedinLogo size={25} aria-hidden="true" />
             </a>
@@ -120,7 +120,7 @@ const About = () => {
         <div className={styles.chapterArt} aria-hidden="true"><SceneArt scene="writing" /><span>02 / Learn by building</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
-            <div><span className={styles.eyebrow}>02 / Independent work</span><h2 id="research-heading">AI research<br />&amp; development</h2></div>
+            <div><h2 id="research-heading">AI research<br />&amp; development<span>.</span></h2></div>
             <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
               <GithubLogo size={25} aria-hidden="true" />
             </a>
@@ -147,7 +147,7 @@ const About = () => {
         <div className={styles.chapterArt} aria-hidden="true"><SceneArt scene="about" /><span>03 / A personal perspective</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
-            <div><span className={styles.eyebrow}>03 / Lived experience</span><h2 id="advocacy-heading">Speaking<br />&amp; advocacy</h2></div>
+            <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>
             <InternalLink to="/contact" className={styles.socialLink} aria-label="Email">
               <EnvelopeSimple size={25} aria-hidden="true" />
             </InternalLink>

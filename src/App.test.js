@@ -27,7 +27,7 @@ test.each(['/thought-leadership', '/thought-leadership/', '/Thought-Leadership']
 test.each(['/about', '/about/', '/About'])('opens %s in the portfolio shell', (pathname) => {
   window.history.replaceState({}, '', pathname);
   render(<App />);
-  expect(screen.getByRole('heading', { name: /About Sean Betts/, level: 1 })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /^About\s*\.$/, level: 1 })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
 });
 
@@ -35,10 +35,10 @@ test('portrait to About to project keeps the return journey intact', () => {
   jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
   render(<App />);
   fireEvent.click(screen.getByRole('link', { name: 'About Sean Betts', exact: true }));
-  expect(screen.getByRole('heading', { name: /About Sean Betts/, level: 1 })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /^About\s*\.$/, level: 1 })).toBeInTheDocument();
   fireEvent.click(screen.getByRole('link', { name: 'sideBar', exact: true }));
   expect(screen.getByRole('heading', { name: 'sideBar', level: 1 })).toBeInTheDocument();
   fireEvent.click(screen.getByRole('link', { name: 'Back to About' }));
-  expect(screen.getByRole('heading', { name: /About Sean Betts/, level: 1 })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /^About\s*\.$/, level: 1 })).toBeInTheDocument();
   jest.restoreAllMocks();
 });
