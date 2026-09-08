@@ -54,3 +54,7 @@ The homepage panels use their full clickable artwork and captions without link a
 The footer credit inherits the surrounding footer typography while remaining centred. The homepage profile line reads “Autistic · Neurodiversity & Mental Health Speaker”. Map is available at desktop widths (1024px and above); narrower viewports omit all map links, use Home as the Building breadcrumb, and redirect direct map visits to Home. Resizing an open map below the cutoff also returns Home.
 
 About now uses one continuous ink frame around all four rows. Image windows clip diagonal seams inside that frame, replacing individually skewed image borders; text and artwork remain upright. Mobile footer rows are copyright, a single centred social icon row, then the centred credit. Map and Contact are icon-only links alongside the theme and menu controls, with accessible labels and 44px click targets; Contact remains visible on mobile.
+
+## Thought Leadership
+
+Thought Leadership follows the shared Home/About treatment: a Home breadcrumb, theme-aware headline panel with an accent period, upright speaking artwork behind a clipped diagonal seam, and one continuous ink frame. All 21 original brand logos remain in their original colours, arranged in unequal trapezoid panels across staggered strips. The layout reduces to two logo panels per row on phones. The former Writing/Speaking action container is removed; those destinations remain in the global menu.
