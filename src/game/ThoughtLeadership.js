@@ -3,10 +3,8 @@ import { ArrowLeft } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
 import brandLogos from '../data/brandLogos';
 import SceneArt from './SceneArt';
+import BrandStreet from './BrandStreet';
 import styles from './ThoughtLeadership.module.css';
-
-// Unequal panels form five staggered strips rather than aligned square cells.
-const panelSpans = [3, 2, 3, 3, 3, 4, 3, 4, 3, 2, 3, 3, 3, 3, 4, 4, 3, 3, 5, 4, 5];
 
 export default function ThoughtLeadership() {
   return <div className={styles.page}>
@@ -28,13 +26,13 @@ export default function ThoughtLeadership() {
           <h2 id="brands-heading">Global brands<span>.</span></h2>
           <p>Providing strategic perspectives to global brands on how AI is rewiring discovery, consumer behaviour, and digital marketing strategies.</p>
         </div>
-        <ul className={styles.logoWall} aria-label="Global brands">
-          {brandLogos.map((brand, index) => <li key={brand.name} style={{ '--panel-span': panelSpans[index] || 3 }}>
-            <div className={styles.logoFace}>
-              <img src={brand.src} alt={brand.name} style={{ maxWidth: brand.width }} loading="lazy" />
-            </div>
-          </li>)}
-        </ul>
+        <BrandStreet />
+        <details className={styles.brandDirectory}>
+          <summary>View all {brandLogos.length} brands</summary>
+          <ul className={styles.brandNames} aria-label="Global brands">
+            {brandLogos.map(brand => <li key={brand.name}>{brand.name}</li>)}
+          </ul>
+        </details>
       </section>
     </div>
   </div>;

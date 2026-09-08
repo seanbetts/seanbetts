@@ -18,22 +18,16 @@
 .intro h2,.intro p{transform:skewY(var(--counter-angle))}
 .page .intro h2{font-size:clamp(34px,3.4vw,49px);text-transform:uppercase}
 .intro p{max-width:590px;color:var(--game-body);line-height:1.7;font-size:16px}
-/* Wide and narrow trapezoids stagger the vertical joins. Logo artwork stays upright. */
-.logoWall{overflow:hidden;list-style:none;padding:0;margin:var(--game-frame) 0 0;display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:var(--game-frame)}
-.logoWall li{grid-column:span var(--panel-span);position:relative;height:146px;min-width:0}
-.logoFace{position:absolute;inset:0 -8px;display:flex;align-items:center;justify-content:center;padding:28px 30px;background:#fff;clip-path:polygon(16px 0,100% 0,calc(100% - 16px) 100%,0 100%)}
-.logoWall li:nth-child(n+6):nth-child(-n+9) .logoFace,.logoWall li:nth-child(n+15):nth-child(-n+18) .logoFace{clip-path:polygon(0 0,calc(100% - 16px) 0,100% 100%,16px 100%)}
-.logoFace img{width:100%;height:auto;max-height:72px;object-fit:contain;transform:skewY(var(--counter-angle))}
+.brandDirectory{margin-top:var(--game-frame);padding:22px 44px;background:var(--game-surface)}
+.brandDirectory summary{cursor:pointer;font:600 18px var(--game-ui);color:var(--game-accent);transform:skewY(var(--counter-angle));min-height:28px}
+.brandDirectory summary:focus-visible{outline:3px solid var(--game-accent);outline-offset:4px}
+.brandNames{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;margin:24px 0 0;padding:0;color:var(--game-body);font-size:15px;transform:skewY(var(--counter-angle))}
 @media(max-width:1000px){
  .hero{grid-template-columns:58% 42%;min-height:390px}
  .heroCopy{padding:36px 46px 36px 28px}
  .page .heroCopy h1{font-size:clamp(48px,6.8vw,68px)}
  .heroCopy p{font-size:20px}
  .intro{gap:28px;padding:32px 28px}
- .logoWall{grid-template-columns:repeat(6,minmax(0,1fr))}
- .logoWall li{grid-column:span 2;height:132px}
- .logoWall li:nth-child(5n+4),.logoWall li:nth-child(5n+5){grid-column:span 3}
- .logoWall li:last-child{grid-column:1/-1}
 }
 @media(max-width:700px){
  .cover{--angle:-2deg;--counter-angle:2deg;margin-top:10px}
@@ -46,9 +40,5 @@
  .intro{grid-template-columns:1fr;gap:18px;padding:28px 22px}
  .page .intro h2{font-size:clamp(30px,8vw,42px)}
  .intro p{font-size:16px}
- .logoWall{grid-template-columns:repeat(2,minmax(0,1fr))}
- .logoWall li,.logoWall li:nth-child(5n+4),.logoWall li:nth-child(5n+5){grid-column:span 1;height:120px}
- .logoWall li:last-child{grid-column:1/-1}
- .logoFace{padding:22px 20px}
- .logoFace img{max-height:62px}
+ .brandDirectory{padding:22px}
 }
