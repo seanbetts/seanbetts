@@ -69,12 +69,14 @@ export default function GameShell({ children }) {
       <div className={styles.tools}>
         <NavLink to="/map" onClick={closeNavigation} className={({ isActive }) => `${styles.tool} ${isActive ? styles.active : ''}`}><MapTrifold size={18} /> Map</NavLink>
         <Link to="/contact" onClick={closeNavigation} className={`${styles.tool} ${styles.contact}`}>Contact <ArrowUpRight size={17} /></Link>
-        <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
-          {darkMode ? <Sun size={23} aria-hidden="true" /> : <Moon size={23} aria-hidden="true" />}
-        </button>
-        <button ref={trigger} className={styles.menuButton} onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="game-navigation" aria-label={open ? 'Close navigation' : 'Open navigation'}>
-          {open ? <X size={26} /> : <List size={26} />}
-        </button>
+        <div className={styles.controls}>
+          <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+            {darkMode ? <Sun size={23} aria-hidden="true" /> : <Moon size={23} aria-hidden="true" />}
+          </button>
+          <button ref={trigger} className={styles.menuButton} onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="game-navigation" aria-label={open ? 'Close navigation' : 'Open navigation'}>
+            {open ? <X size={26} /> : <List size={26} />}
+          </button>
+        </div>
       </div>
       {open && <nav ref={menu} id="game-navigation" className={styles.menu} aria-label="Primary navigation">
         {links.map(([to, label]) => <NavLink key={to} to={to} onClick={closeNavigation} end className={({ isActive }) => isActive ? styles.selected : undefined}>{label}<ArrowUpRight size={21} /></NavLink>)}

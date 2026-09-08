@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
 import SceneArt from './SceneArt';
 import styles from './GameHome.module.css';
@@ -32,7 +31,7 @@ const homeSchema = [
 function CoverPanel({ scene, title, description, to, panel = scene }) {
   return <Link to={to} className={`${styles.panel} ${styles[panel]}`}>
     <SceneArt scene={scene} />
-    <div className={styles.caption}><div><h2>{title}</h2><p>{description}</p></div><ArrowRight size={34} weight="bold" /></div>
+    <div className={styles.caption}><div><h2>{title}</h2><p>{description}</p></div></div>
   </Link>;
 }
 

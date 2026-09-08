@@ -4,6 +4,7 @@
 .brand{display:flex;align-items:center;width:132px}
 .brand img{width:132px;height:auto}
 .tools{display:flex;align-items:center;gap:32px}
+.controls{display:flex;align-items:center;gap:0}
 .tool{font-family:var(--game-ui);font-size:17px;letter-spacing:.08em;text-transform:uppercase;display:flex;gap:9px;align-items:center;padding:10px 0}
 .tool:hover,.active{color:var(--game-accent)!important}
 .menuButton{border:0;background:transparent;color:inherit;display:grid;place-items:center;min-width:44px;min-height:44px}

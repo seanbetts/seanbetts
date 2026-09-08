@@ -8,7 +8,7 @@
 .mapTop { border-bottom: 1px solid #625467; }
 .mapTop span:first-child { color: var(--game-accent, #ff777f); }
 .mapTop span:last-child { color: var(--game-muted, #c8bdce); font-size: 10px; }
-.destinationChoices { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid #625467; background: #160e20; }
+.destinationChoices { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid #625467; background: #160e20; }
 .destinationChoices button { min-height: 44px; padding: 9px 10px; border: 0; border-right: 1px solid #625467; background: transparent; color: #fffaf4; font: 700 14px/1 var(--game-ui, 'Arial Narrow', sans-serif); letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
 .destinationChoices button:last-child { border-right: 0; }
 .destinationChoices button[aria-pressed='true'] { background: #ff777f; color: #16051f; }
@@ -37,7 +37,7 @@
 .zoomControls button:focus-visible, .detail a:focus-visible { outline: 3px solid #fffaf4; outline-offset: 3px; z-index: 1; }
 .zoomControls > span { background: #160e20f2; padding: 5px 0; text-align: center; color: #c8bdce; font-size: 10px; }
 .detail { display: grid; grid-template-columns: 115px 1fr; position: absolute; left: 20px; bottom: 65px; width: min(430px, 47%); background: #160e20f7; border: 1px solid #8a738d; box-shadow: 0 10px 30px #06030980; z-index: 2; }
-.detailArt { position: relative; overflow: hidden; border-right: 5px solid #110818; }
+.detailArt { position: relative; overflow: hidden; border-right: 10px solid var(--game-ink); }
 .detailArt > span { position: absolute; left: 10px; bottom: 8px; color: #fffaf4; font: 900 44px/1 var(--game-ui, 'Arial Narrow', sans-serif); text-shadow: 2px 3px #110818; }
 .detailCopy { padding: 20px 18px 18px; }
 .detailCopy .eyebrow { font-size: 9px; letter-spacing: 1.2px; margin-bottom: 6px; }
@@ -57,7 +57,7 @@
   .heading h1 { max-width: 320px; }
   .intro { display: none; }
   .mapViewport { height: 480px; }
-  .detail { position: relative; left: auto; bottom: auto; width: auto; border: 0; border-top: 5px solid #110818; grid-template-columns: 30% 1fr; min-height: 200px; }
+  .detail { position: relative; left: auto; bottom: auto; width: auto; border: 0; border-top: 10px solid var(--game-ink); grid-template-columns: 30% 1fr; min-height: 200px; }
   .detailArt { min-height: 200px; }
   .detailCopy { padding: 22px 20px; }
   .detailCopy > p:not(.eyebrow) { font-size: 13px; }
@@ -69,3 +69,5 @@
   .pinLabel strong { font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { .pinCircle { transition: none; } }
+
+@media (max-width: 400px) { .destinationChoices button { min-width: 0; padding: 9px 3px; font-size: 12px; letter-spacing: .4px; } }
