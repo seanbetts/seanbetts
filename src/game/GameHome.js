@@ -53,7 +53,7 @@ export default function GameHome() {
           <h1><span className="sr-only">Sean Betts</span><img src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
           <p className={styles.role}>Hands-on AI Leader</p>
           <p className={styles.expertise}>AI strategy · Transformation · Product innovation</p>
-          <p className={styles.advocacy}>Autistic · Neurodiversity · Mental health speaker</p>
+          <p className={styles.advocacy}>Autistic · Neurodiversity & Mental Health Speaker</p>
         </div>
       </Link>
       <CoverPanel scene="building" title="Building" description="Products, prototypes & experiments" to="/building" />

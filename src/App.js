@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useContext, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { ThemeProvider, ThemeContext } from './ThemeContext';
 import Layout from './components/Layout';
 import About from './pages/About';
@@ -13,9 +13,11 @@ import GameHome from './game/GameHome';
 import GameBuilding from './game/GameBuilding';
 import GameProject from './game/GameProject';
 import WorldMap from './game/WorldMap';
+import useDesktop from './game/useDesktop';
 import ThoughtLeadership from './game/ThoughtLeadership';
 
 function SiteRoutes() {
+  const isDesktop = useDesktop();
   const { pathname } = useLocation();
   // Match React Router's case-insensitive and optional trailing-slash behaviour.
   const routePath = pathname.toLowerCase().replace(/\/+$/, '') || '/';
@@ -24,7 +26,7 @@ function SiteRoutes() {
   return <Shell><Routes>
     <Route path="/" element={<GameHome />} />
     <Route path="/thought-leadership" element={<ThoughtLeadership />} />
-    <Route path="/map" element={<WorldMap />} />
+    <Route path="/map" element={isDesktop ? <WorldMap /> : <Navigate to="/" replace />} />
     <Route path="/building" element={<GameBuilding />} />
     <Route path="/building/:id" element={<GameProject />} />
     <Route path="/about" element={<About />} />

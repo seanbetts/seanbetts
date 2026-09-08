@@ -14,7 +14,7 @@ test('preserves home search and social descriptions and keywords with the new co
   expect(screen.queryByText('Chief AI & Innovation Officer')).not.toBeInTheDocument();
   expect(screen.getByText('Hands-on AI Leader')).toBeInTheDocument();
   expect(screen.getByText('AI strategy · Transformation · Product innovation')).toBeInTheDocument();
-  expect(screen.getByText('Autistic · Neurodiversity · Mental health speaker')).toBeInTheDocument();
+  expect(screen.getByText('Autistic · Neurodiversity & Mental Health Speaker')).toBeInTheDocument();
 });
 
 test('publishes the original WebSite and Person structured data without advertising a nonexistent search route', async () => {

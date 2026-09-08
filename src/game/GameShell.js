@@ -6,10 +6,12 @@ import packageJson from '../../package.json';
 import './game.css';
 import { ThemeContext } from '../ThemeContext';
 import MadeWith from '../components/MadeWith';
+import useDesktop from './useDesktop';
 
 const links = [['/', 'Home'], ['/building', 'Building'], ['/writing', 'Writing'], ['/speaking', 'Speaking'], ['/thought-leadership', 'Thought leadership'], ['/about', 'About'], ['/contact', 'Contact']];
 
 export default function GameShell({ children }) {
+  const isDesktop = useDesktop();
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   const [open, setOpen] = useState(false);
   const trigger = useRef(null);
@@ -67,7 +69,7 @@ export default function GameShell({ children }) {
         <span className={styles.version}>v{packageJson.version}</span>
       </div>
       <div className={styles.tools}>
-        <NavLink to="/map" onClick={closeNavigation} className={({ isActive }) => `${styles.tool} ${isActive ? styles.active : ''}`}><MapTrifold size={18} /> Map</NavLink>
+        {isDesktop && <NavLink to="/map" onClick={closeNavigation} className={({ isActive }) => `${styles.tool} ${isActive ? styles.active : ''}`}><MapTrifold size={18} /> Map</NavLink>}
         <Link to="/contact" onClick={closeNavigation} className={`${styles.tool} ${styles.contact}`}>Contact <ArrowUpRight size={17} /></Link>
         <div className={styles.controls}>
           <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>

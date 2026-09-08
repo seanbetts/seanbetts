@@ -4,6 +4,7 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import Seo from '../components/Seo';
 import projectsData from '../data/projectsData';
 import SceneArt from './SceneArt';
+import useDesktop from './useDesktop';
 import styles from './GameProject.module.css';
 
 const tabs = ['Overview', 'Features', 'Tech'];
@@ -11,6 +12,7 @@ const tabs = ['Overview', 'Features', 'Tech'];
 const missingImages = ['/images/projects/xxx.jpg', '/images/projects/llm-search-analysis-hero.png'];
 
 function ProjectDossier({ project, index, origin }) {
+  const isDesktop = useDesktop();
   const [selectedTab, setSelectedTab] = useState(0);
   const [imageFailed, setImageFailed] = useState(false);
   const tabRefs = useRef([]);
@@ -49,7 +51,7 @@ function ProjectDossier({ project, index, origin }) {
             {selectedTab === 1 && <><h2>What it does</h2><ol className={styles.features}>{project.features.map(feature => <li key={feature}>{feature}</li>)}</ol></>}
             {selectedTab === 2 && <>{project.technologies?.length ? <><h2>Built with</h2><ul className={styles.technologies}>{project.technologies.map(technology => <li key={technology}>{technology}</li>)}</ul></> : <p>This project focuses on ideas and education.</p>}{project.topics?.length > 0 && <><h2>Topics covered</h2><ul className={styles.topics}>{project.topics.map(topic => <li key={topic}>{topic}</li>)}</ul></>}</>}
           </div>
-          <div className={styles.actions}><a href={project.url} target="_blank" rel="noopener noreferrer">View project <ArrowUpRight size={18} aria-hidden="true" /><span className={styles.srOnly}> (opens in a new tab)</span></a><Link to="/map">Back to map <MapTrifold size={18} aria-hidden="true" /></Link></div>
+          <div className={styles.actions}><a href={project.url} target="_blank" rel="noopener noreferrer">View project <ArrowUpRight size={18} aria-hidden="true" /><span className={styles.srOnly}> (opens in a new tab)</span></a>{isDesktop && <Link to="/map">Back to map <MapTrifold size={18} aria-hidden="true" /></Link>}</div>
         </div>
       </div>
     </article>
@@ -57,9 +59,10 @@ function ProjectDossier({ project, index, origin }) {
 }
 
 export default function GameProject() {
+  const isDesktop = useDesktop();
   const { id } = useParams();
   const location = useLocation();
   const index = projectsData.findIndex(project => project.id === id);
-  if (index < 0) return <div className={`${styles.page} ${styles.notFound}`}><Seo title="Project not found | Sean Betts" description="Explore Sean Betts's products, prototypes and experiments." canonicalPath={`/building/${id}`} noindex /><p className={styles.eyebrow}>Project file unavailable</p><h1>Project not found</h1><p>This project isn't in the workshop. Find your next stop in the collection or on the map.</p><div className={styles.actions}><Link to="/building"><ArrowLeft size={16} aria-hidden="true" /> Back to Building</Link><Link to="/map">Back to map</Link></div></div>;
+  if (index < 0) return <div className={`${styles.page} ${styles.notFound}`}><Seo title="Project not found | Sean Betts" description="Explore Sean Betts's products, prototypes and experiments." canonicalPath={`/building/${id}`} noindex /><p className={styles.eyebrow}>Project file unavailable</p><h1>Project not found</h1><p>This project isn't in the workshop. Find your next stop in the project collection.</p><div className={styles.actions}><Link to="/building"><ArrowLeft size={16} aria-hidden="true" /> Back to Building</Link>{isDesktop && <Link to="/map">Back to map</Link>}</div></div>;
   return <ProjectDossier key={id} project={projectsData[index]} index={index} origin={location.state} />;
 }

@@ -42,3 +42,45 @@ test('portrait to About to project keeps the return journey intact', () => {
   expect(screen.getByRole('heading', { name: /^About\s*\.$/, level: 1 })).toBeInTheDocument();
   jest.restoreAllMocks();
 });
+
+describe('desktop-only map', () => {
+  let originalMatchMedia;
+  let media;
+  beforeEach(() => {
+    originalMatchMedia = window.matchMedia;
+    media = { matches: false, addEventListener: jest.fn(), removeEventListener: jest.fn() };
+    window.matchMedia = jest.fn(() => media);
+    jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+  });
+  afterEach(() => {
+    window.matchMedia = originalMatchMedia;
+    jest.restoreAllMocks();
+  });
+
+  test('a mobile map URL redirects home without offering Map navigation', () => {
+    window.history.replaceState({}, '', '/map');
+    render(<App />);
+    expect(window.location.pathname).toBe('/');
+    expect(screen.getByRole('heading', { name: 'Sean Betts', level: 1 })).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Map' })).not.toBeInTheDocument();
+  });
+
+  test('mobile Building and project navigation avoid the map', () => {
+    window.history.replaceState({}, '', '/building');
+    render(<App />);
+    expect(screen.getByRole('link', { name: 'Home', exact: true })).toHaveAttribute('href', '/');
+    expect(screen.queryByRole('link', { name: /map/i })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('link', { name: 'Open sideBar project' }));
+    expect(screen.getByRole('link', { name: 'Back to Building' })).toHaveAttribute('href', '/building');
+    expect(screen.queryByRole('link', { name: /map/i })).not.toBeInTheDocument();
+  });
+
+  test('desktop keeps the interactive map', () => {
+    media.matches = true;
+    window.history.replaceState({}, '', '/map');
+    render(<App />);
+    expect(window.location.pathname).toBe('/map');
+    expect(screen.getByRole('heading', { name: /Choose your next stop/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
+  });
+});

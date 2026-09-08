@@ -4,18 +4,20 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import projectsData from '../data/projectsData';
 import SceneArt from './SceneArt';
+import useDesktop from './useDesktop';
 import styles from './GameBuilding.module.css';
 
 const origin = { fromPath: '/building', fromLabel: 'Building' };
 
 export default function GameBuilding() {
+  const isDesktop = useDesktop();
   const [primary, ...otherProjects] = projectsData;
   const [imageFailed, setImageFailed] = useState(false);
   const featured = otherProjects.slice(0, 2);
   return (
     <div className={styles.page}>
       <Seo title="What Sean Betts is Building | AI Products, Benchmarks and Experiments" description="Explore AI products, benchmarks and experiments Sean Betts is building, including sideBar, evaluation frameworks and applied AI workflows." canonicalPath="/building" jsonLd={{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: projectsData.map((project, index) => ({ '@type': 'ListItem', position: index + 1, url: `https://www.seanbetts.com/building/${project.id}`, name: project.name, description: project.description })) }} />
-      <div className={styles.breadcrumb}><Link to="/map"><ArrowLeft size={16} aria-hidden="true" /> Back to map</Link><span>02 / The workshop</span></div>
+      <div className={styles.breadcrumb}><Link to={isDesktop ? "/map" : "/"}><ArrowLeft size={16} aria-hidden="true" /> {isDesktop ? "Back to map" : "Home"}</Link><span>02 / The workshop</span></div>
       <header className={styles.heading}>
         <div><h1>Building<span>.</span></h1></div>
         <p>Products, prototypes and experiments.<br />Exploring what AI can do in the real world.</p>

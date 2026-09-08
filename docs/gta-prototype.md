@@ -33,7 +33,7 @@ The new treatment covers Home, About, Thought Leadership, Building, project page
 
 The approved cover composition is recorded in `superpowers/specs/2026-09-08-gta-prototype.md`; verification and deliberate adaptations are recorded in the plan. Artwork provenance is in `public/images/game/README.md`. The Pricedown wordmark is fixed vector art, not an embedded font.
 
-Verified: 42 tests / 14 suites; successful optimized build; desktop and mobile browser navigation; clean core production console; independent review and regression fixes.
+Verified: 45 tests / 14 suites; successful optimized build; desktop and mobile browser navigation; clean core production console; independent review and regression fixes.
 
 ## Cover refinements
 
@@ -50,3 +50,5 @@ The header sun/moon control restores the shared, saved theme preference. Night i
 Structural blocks now use a shared near-black outer frame as well as internal dividers (22px desktop, 16px mobile). Home, About, Thought Leadership, the project collections/dossiers and Map use the same frame token; adjoining About chapters share a single horizontal edge.
 
 The homepage panels use their full clickable artwork and captions without link arrows. The theme toggle and navigation menu share a compact control group with adjacent 44px click targets.
+
+The footer credit inherits the surrounding footer typography while remaining centred. The homepage profile line reads “Autistic · Neurodiversity & Mental Health Speaker”. Map is available at desktop widths (1024px and above); narrower viewports omit all map links, use Home as the Building breadcrumb, and redirect direct map visits to Home. Resizing an open map below the cutoff also returns Home.
