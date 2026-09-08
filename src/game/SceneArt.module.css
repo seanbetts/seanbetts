@@ -1,0 +1,3 @@
+.art{position:absolute;inset:0;overflow:hidden;container-type:size;background:#302339;pointer-events:none}
+.sprite{position:absolute;left:50%;top:50%;width:max(100cqw,100cqh);height:max(100cqw,100cqh);transform:translate(-50%,-50%);background-image:url('../../public/images/game/scenes.webp');background-size:200% 200%;background-repeat:no-repeat}
+.building{background-position:0 0}.writing{background-position:100% 0}.speaking{background-position:0 100%}.about{background-position:100% 100%}

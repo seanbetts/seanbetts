@@ -1,0 +1,17 @@
+.header{height:70px;display:flex;align-items:center;justify-content:space-between;margin:0 28px;position:relative;border-bottom:1px solid #ffffff21;z-index:20}
+.brand{display:flex;align-items:center;width:132px}
+.brand img{width:132px;height:auto}
+.tools{display:flex;align-items:center;gap:32px}
+.tool{font-family:var(--game-ui);font-size:17px;letter-spacing:.08em;text-transform:uppercase;display:flex;gap:9px;align-items:center;padding:10px 0}
+.tool:hover,.active{color:var(--game-accent)!important}
+.menuButton{border:0;background:transparent;color:inherit;display:grid;place-items:center;min-width:44px;min-height:44px}
+.menu{position:absolute;right:0;top:64px;min-width:280px;padding:12px;background:#1b1021;border:1px solid #73536d;box-shadow:0 20px 50px #0009}
+.menu a{padding:13px 18px;display:flex;align-items:center;justify-content:space-between;font:600 25px var(--game-ui);text-transform:uppercase}
+.menu a:hover,.menu .selected{background:var(--game-accent);color:var(--game-bg)}
+.main{padding:12px 28px 0;outline:0;animation:enter .3s ease both}
+.footer{padding:18px 30px 22px;display:flex;align-items:center;justify-content:space-between;font:600 12px var(--game-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--game-muted)}
+.footer div{display:flex;gap:22px}.footer a{display:flex;gap:6px;align-items:center}.footer a:hover{color:var(--game-accent)}
+.skip{position:fixed;top:-80px;left:20px;z-index:100;background:var(--game-accent);color:#16051f!important;padding:12px 18px}.skip:focus{top:10px}
+@keyframes enter{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(min-width:1800px){.header,.main,.footer{max-width:1860px;margin-left:auto;margin-right:auto}}
+@media(max-width:650px){.header{height:58px;margin:0 12px}.brand,.brand img{width:113px}.tools{gap:16px}.contact{display:none}.main{padding:8px 10px 0}.tool{font-size:15px}.menu{top:52px;right:0;min-width:250px}.footer{padding:18px 14px;gap:18px;align-items:flex-start}.footer div{flex-wrap:wrap;justify-content:flex-end;gap:9px 16px}.footer span{white-space:nowrap}}

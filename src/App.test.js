@@ -8,6 +8,6 @@ test('renders the current home page content', () => {
     screen.getByRole('heading', { name: /sean betts/i, level: 1 })
   ).toBeInTheDocument();
   expect(
-    screen.getByText(/independent ai products, benchmarks and applied systems/i)
+    screen.getByText(/AI leader\. Researcher\. Builder\./i)
   ).toBeInTheDocument();
 });
