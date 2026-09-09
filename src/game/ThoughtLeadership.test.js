@@ -23,8 +23,8 @@ test('preserves all global brands and removes the bottom writing and speaking li
   for (const name of ["Sainsbury's", 'Chanel', 'Apple', 'Barclays', 'British Gas', 'Channel 4']) {
     expect(streetImage.getAttribute('alt')).toContain(name);
   }
-  for (const [name, scene] of [["McDonald's", 'takeaway'], ['Warner Bros.', 'film-set'], ['Halfords', 'getaway'], ['Lidl', 'marina'], ['John Lewis', 'delivery']]) {
-    expect(screen.getByRole('img', { name })).toHaveAttribute('src', `/images/game/brand-scenes/${scene}-integrated-v2.png`);
+  for (const [name, artwork] of [["McDonald's", 'takeaway-cast-v3.png'], ['Warner Bros.', 'film-set-cast-v3.png'], ['Halfords', 'getaway-cast-v3.png'], ['Lidl', 'marina-integrated-v2.png'], ['John Lewis', 'delivery-integrated-v2.png']]) {
+    expect(screen.getByRole('img', { name })).toHaveAttribute('src', `/images/game/brand-scenes/${artwork}`);
   }
   expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
   expect(screen.queryByRole('region', { name: 'Explore my perspectives' })).not.toBeInTheDocument();

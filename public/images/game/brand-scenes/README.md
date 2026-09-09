@@ -1,6 +1,6 @@
 # Illustrated brand scenes
 
-The page now uses five `*-integrated-v2.png` assets with brand marks rendered directly into their materials. See [integration prompts and output provenance](integrated-prompts.md). The original unbranded artwork and generation briefs below are retained as fallbacks.
+All five scenes have brand marks rendered directly into their materials. The McDonald's, Warner Bros. and Halfords scenes now use `*-cast-v3.png` character refinements; see [character prompts and provenance](character-prompts.md). John Lewis and Lidl retain their `*-integrated-v2.png` versions. See [integration prompts and output provenance](integrated-prompts.md). The original unbranded artwork and generation briefs below are retained as fallbacks.
 
 The additional John Lewis title-row portrait is documented in [delivery-prompt.md](delivery-prompt.md).
 
