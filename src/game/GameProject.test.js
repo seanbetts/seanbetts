@@ -14,24 +14,30 @@ function renderProject(path = '/building/sidebar', state) {
   </Routes></MemoryRouter>);
 }
 
-test('project tabs reveal real features and technologies with keyboard navigation', () => {
-  renderProject();
-  expect(screen.getByRole('heading', { name: 'sideBar', level: 1 })).toBeInTheDocument();
-  expect(screen.getByRole('tab', { name: 'Overview' })).toHaveAttribute('aria-selected', 'true');
-  fireEvent.click(screen.getByRole('tab', { name: 'Features' }));
-  expect(within(screen.getByRole('tabpanel')).getByText(projectsData[0].features[0])).toBeInTheDocument();
-  fireEvent.keyDown(screen.getByRole('tab', { name: 'Features' }), { key: 'ArrowRight' });
-  expect(screen.getByRole('tab', { name: 'Tech' })).toHaveFocus();
-  expect(within(screen.getByRole('tabpanel')).getByText('FastAPI')).toBeInTheDocument();
-  fireEvent.keyDown(screen.getByRole('tab', { name: 'Tech' }), { key: 'Home' });
-  expect(screen.getByRole('tab', { name: 'Overview' })).toHaveAttribute('aria-selected', 'true');
-  expect(screen.getByRole('img', { name: 'sideBar project screenshot' })).toHaveAttribute('src', '/images/projects/sidebar-welcome-ipad.png');
-  expect(screen.getByRole('link', { name: /View project/ })).toHaveAttribute('href', 'https://trysidebar.ai');
+test.each(projectsData)('$name exposes its story, features and technologies without tabs', project => {
+  renderProject(`/building/${project.id}`);
+  expect(screen.getByRole('heading', { name: project.name, level: 1 })).toBeInTheDocument();
+  expect(screen.queryByRole('tablist')).not.toBeInTheDocument();
+  project.features.forEach(feature => expect(screen.getByText(feature)).toBeVisible());
+  expect(screen.getByText(project.challenges)).toBeVisible();
+  expect(screen.getByRole('heading', { name: 'What I learned' })).toBeVisible();
+  expect(screen.getByText(project.learnings)).toBeVisible();
+  project.technologies?.forEach(technology => expect(within(screen.getByRole('region', { name: /Built with|Tools & methods/ })).getByText(technology)).toBeVisible());
+  expect(screen.getByRole('link', { name: /Visit project|View on GitHub/ })).toHaveAttribute('href', project.url);
 });
 
-test('project returns to its referring page and offers a separate map destination', () => {
+test('sideBar screenshot recovers to illustrated project artwork on failure', () => {
+  renderProject();
+  const screenshot = screen.getByRole('img', { name: 'sideBar project screenshot' });
+  expect(screenshot).toHaveAttribute('src', '/images/projects/sidebar-welcome-ipad.png');
+  fireEvent.error(screenshot);
+  expect(screen.queryByRole('img', { name: 'sideBar project screenshot' })).not.toBeInTheDocument();
+  expect(screen.getByText('sideBar', { selector: 'strong' })).toBeInTheDocument();
+});
+
+test('project returns to its referring page and offers all projects', () => {
   renderProject('/building/sidebar', { fromPath: '/writing', fromLabel: 'Writing' });
-  expect(screen.getByRole('link', { name: /Back to map/i })).toHaveAttribute('href', '/map');
+  expect(screen.getByRole('link', { name: 'All projects' })).toHaveAttribute('href', '/building');
   fireEvent.click(screen.getByRole('link', { name: /Back to Writing/i }));
   expect(screen.getByRole('heading', { name: 'Writing destination' })).toBeInTheDocument();
 });
@@ -47,15 +53,14 @@ test('full narrative and technologies remain accessible for coding projects', ()
   renderProject('/building/genai-marketing-benchmarks');
   const record = projectsData.find(project => project.id === 'genai-marketing-benchmarks');
   expect(screen.getByText(record.challenges)).toBeInTheDocument();
-  expect(screen.getByText(record.futureImprovements)).toBeInTheDocument();
-  fireEvent.click(screen.getByRole('tab', { name: 'Tech' }));
+  expect(screen.getByText(record.learnings)).toBeInTheDocument();
   expect(screen.getByText('Flask')).toBeInTheDocument();
 });
 
-test('placeholder media uses workshop illustration and real video remains playable', () => {
+test('placeholder media uses project artwork and real video remains playable', () => {
   const view = renderProject('/building/genai-explorer');
   expect(view.container.querySelector('img[src$="xxx.jpg"]')).toBeNull();
-  expect(screen.getByText('From the workshop')).toBeInTheDocument();
+  expect(screen.getByText('Generative AI Explorer', { selector: 'strong' })).toBeInTheDocument();
   view.unmount();
   renderProject('/building/ai-chat-experience');
   expect(screen.getByTitle('🐼 panda.ai demo')).toHaveAttribute('src', projectsData.find(project => project.id === 'ai-chat-experience').heroVideo);

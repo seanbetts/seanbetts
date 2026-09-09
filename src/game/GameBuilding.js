@@ -43,7 +43,7 @@ export default function GameBuilding() {
           <div className={styles.deviceStage}>{!imageFailed && <img src={primary.heroImage} alt="sideBar welcome screen on iPad" className={styles.device} onError={() => setImageFailed(true)} />}</div>
           <div className={styles.primaryCaption}><span className={styles.eyebrow}>Your context. Connected.</span><h2>{primary.name}</h2><p>{primary.description}</p><span className={styles.cta}>Open project <ArrowUpRight size={18} aria-hidden="true" /></span></div>
         </Link>
-        <ProjectPanel project={pointilism} className={`${styles.topFeature} ${styles.dots}`} />
+        <ProjectPanel project={pointilism} className={styles.topFeature} backgroundImage="/images/game/backgrounds/daytime-rooftop.webp" />
       </section>
       <section className={`${styles.featured} game-art`} aria-label="Applied AI projects">
         {featured.map((project, index) => (

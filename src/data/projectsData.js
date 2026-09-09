@@ -9,7 +9,7 @@ const projectsData = [
     icon: <Brain size={48} />,
     url: "https://trysidebar.ai",
     type: "cross-platform app",
-    date: "December 2025 onwards",
+    date: "December 2025–present",
     technologies: ["SvelteKit", "FastAPI", "TypeScript", "Python", "Supabase"],
     features: [
       "Streaming chat that surfaces skills, attachments, and the context from recent notes, tasks, and files.",
@@ -19,8 +19,7 @@ const projectsData = [
     ],
     challenges:
       "Giving the assistant seamless access to everything you’ve created while honoring real-time sync, soft deletes, and your encrypted API keys across iPhone, iPad, Mac, and the browser.",
-    futureImprovements:
-      "Expand the Skills Store/OAuth coverage, harden the planned skill guard UI states, and keep building richer presets and automations while the interface stays minimal and readable.",
+    learnings: "Bringing all your context into one place is valuable, but it can also create another walled garden. If that context cannot travel with you into the other tools you use, its usefulness is limited. Building sideBar has made me think as much about how context moves between products as how it is collected within one.",
     status: "Active",
     heroImage: "/images/projects/sidebar-welcome-ipad.png"
   },
@@ -40,7 +39,7 @@ const projectsData = [
       "Freeze and export the dot field as a PNG"
     ],
     challenges: "Balancing a strict no-overlap layout with fluid motion and interactions across devices, while keeping the UI readable over a dynamic canvas layer.",
-    futureImprovements: "Add more curated presets/themes, refine mobile interactions, and expand the single-page into a richer interactive homepage while keeping the minimal aesthetic.",
+    learnings: "Beautiful design does not always translate into practical UX. An interface can be visually compelling and enjoyable to explore while still making everyday tasks harder than they need to be. Pointilism gave me room to explore that tension between an interesting visual idea and something people would want to use repeatedly.",
     status: "Completed",
     heroImage: "/images/projects/pointilism-hero.png"
   },
@@ -72,7 +71,7 @@ const projectsData = [
       "Real-time search query and source analysis"
     ],
     challenges: "Integrating three different provider APIs with varying search implementations, implementing accurate rank tracking for cited sources, and creating a unified interface for comparing search behaviors across models.",
-    futureImprovements: "Add visualization dashboards for search pattern analysis, implement A/B testing framework for prompt optimization, and expand to include more AI providers.",
+    learnings: "ChatGPT searches and uses search results very differently from a human. It is tempting to understand AI search through familiar ideas about queries, rankings and clicks, but that only tells part of the story. This project changed how I think about what it means for information to be found and used by an AI assistant.",
     status: "Completed",
     heroImage: "/images/projects/llm-search-analysis-hero.png"
   },
@@ -83,7 +82,7 @@ const projectsData = [
     icon: <Globe size={48} />,
     url: "https://explorer.the-blueprint.ai/",
     type: "website",
-    date: "May 2025 onwards",
+    date: "May 2025–present",
     technologies: [
       "React 19",
       "Next.js 15.3",
@@ -98,7 +97,7 @@ const projectsData = [
       "Model comparison tool"
     ],
     challenges: "Creating a structured data model to represent the complex AI ecosystem and enabling meaningful comparisons across diverse model types.",
-    futureImprovements: "Chat interface for intuitive exploration, expanded benchmark database, and real-time data updates",
+    learnings: "The GenAI landscape is already incredibly complex, and fitting it into a coherent marketplace structure is much harder than it first appears. Companies, models, products and capabilities overlap, while the categories themselves keep changing. Deciding how to organise the landscape became as much of the work as building the interface to explore it.",
     status: "Active",
     heroImage: "/images/projects/xxx.jpg"
   },
@@ -109,7 +108,7 @@ const projectsData = [
     icon: <GameController size={48} />,
     url: "https://github.com/seanbetts/steam-hardware-watch",
     type: "github",
-    date: "2026",
+    date: "April–July 2026",
     technologies: ["Python", "Shell", "Node.js", "SteamKit", "Playwright"],
     features: [
       "Checks Komodo, SteamDB, SteamTracking and Valve endpoints for hardware signals",
@@ -118,8 +117,8 @@ const projectsData = [
       "Tracks discovered, retrieved and blocked visual assets separately"
     ],
     challenges: "Reconciling incomplete signals across multiple sources, handling browser-dependent access and distinguishing meaningful changes from routine metadata updates.",
-    futureImprovements: "Potential extensions include broader hardware coverage and more reliable source access, while keeping each reported change traceable to its evidence.",
-    status: "Published"
+    learnings: "The more people discover loopholes in digital systems, the more likely those gaps are to be closed. Komodo eventually shut off the backend access this project had been using. It was a practical reminder that a useful discovery can be temporary, and that tools built around that access need to account for its disappearance.",
+    status: "Completed"
   },
   {
     id: "apple-hig-mirror",
@@ -128,7 +127,7 @@ const projectsData = [
     icon: <BookOpen size={48} />,
     url: "https://github.com/seanbetts/Apple-HIG",
     type: "github",
-    date: "2026",
+    date: "March 2026",
     technologies: ["TypeScript", "Node.js", "Playwright", "Markdown", "GitHub Actions"],
     features: [
       "Discovers guideline pages and extracts their rendered content",
@@ -137,8 +136,8 @@ const projectsData = [
       "Verifies generated output and schedules incremental updates through GitHub Actions"
     ],
     challenges: "Extracting consistent content from a dynamic documentation site while preserving structure, keeping internal links useful and avoiding unnecessary changes in generated files.",
-    futureImprovements: "Potential extensions include refining extraction as Apple's documentation evolves and improving how the mirrored guidelines are explored locally.",
-    status: "Published"
+    learnings: "AI agents have become much better at retrieving context directly from live websites, and much better versed in Swift and Apple’s developer ecosystem. That changes the value of maintaining a separate documentation mirror. A useful lesson here is to keep reassessing the workarounds I build as the underlying capabilities improve.",
+    status: "Completed"
   },
   {
     id: "pixel-loader-lab",
@@ -147,7 +146,7 @@ const projectsData = [
     icon: <SquaresFour size={48} />,
     url: "https://github.com/seanbetts/pixel-loader-lab",
     type: "github",
-    date: "2026",
+    date: "February 2026",
     technologies: ["JavaScript", "CSS", "Vite", "Node.js", "ffmpeg", "gifsicle"],
     features: [
       "Builds a pixelated loader from a source app icon",
@@ -156,8 +155,8 @@ const projectsData = [
       "Reports image dimensions and file sizes"
     ],
     challenges: "Keeping the source icon recognisable through pixelation and animation, while balancing crisp rendering with a compact exported file.",
-    futureImprovements: "Potential experiments include additional motion patterns and export presets for different app surfaces.",
-    status: "Published"
+    learnings: "It is fun creating loading animations and animated logos. There is a lot of room for character in a small visual detail, and experimenting with movement can be rewarding in its own right. This was a reminder to leave space for playful projects alongside the more practical ones.",
+    status: "Completed"
   },
   {
     id: "cains-jawbone",
@@ -167,7 +166,7 @@ const projectsData = [
     url: "https://github.com/seanbetts/cains-jawbone",
     type: "research experiment",
     schemaType: "CreativeWork",
-    date: "2025–2026",
+    date: "December 2025–January 2026",
     technologies: ["Python", "Markdown", "Git", "Agent skills"],
     features: [
       "Annotates pages and indexes people, places, quotations and recurring motifs",
@@ -176,7 +175,7 @@ const projectsData = [
       "Uses integrity checks to protect the original text during analysis"
     ],
     challenges: "Separating plausible interpretations from supported conclusions across 100 shuffled pages, while preserving the source text and checking hypotheses against contradictory evidence.",
-    futureImprovements: "The research approach could be adapted to other literary puzzles, with richer ways to explore connections between clues and compare competing hypotheses.",
+    learnings: "Even the strongest AI models I tried could not crack Cain’s Jawbone. Their ability to produce convincing interpretations did not translate into a complete, correct solution. Working through the puzzle was a useful reminder of the gap between a plausible explanation and sustained reasoning that holds together across the whole problem.",
     status: "Experiment"
   },
   {
@@ -186,7 +185,7 @@ const projectsData = [
     icon: <Video size={48} />,
     url: "https://github.com/TheGoodNet/YouTube-Scripts",
     type: "github",
-    date: "January 2025 to December 2025",
+    date: "January–December 2025",
     technologies: [
         "Python",
         "YouTube Data API",
@@ -194,7 +193,7 @@ const projectsData = [
       ],
     features: ["YouTube video transcription", "Channel analysis", "SDG mapping"],
     challenges: "Developing an accurate model that can map SDGs to video content and scaling the analysis to over 2.5m videos.",
-    futureImprovements: "Develop visual reporting and more robust scaling methods",
+    learnings: "Platform APIs can bring so many good ideas to life, but they also put a critical part of the product outside your control. Access can be changed or withdrawn without notice. This project reinforced how much the viability of an idea can depend on a platform continuing to offer the data and capabilities it was built around.",
     status: "Completed",
     heroImage: "/images/projects/xxx.jpg"
   },
@@ -205,7 +204,7 @@ const projectsData = [
     icon: <Video size={48} />,
     url: "https://github.com/seanbetts/product-placement",
     type: "github",
-    date: "August 2024 to December 2024",
+    date: "August–December 2024",
     technologies: [
         "React",
         "Python",
@@ -219,7 +218,7 @@ const projectsData = [
       ],
     features: ["Brand and product detection", "Multi-brand support", "Integration with marketing analytics"],
     challenges: "Developing an accurate model that can detect brands in various contexts and lighting conditions.",
-    futureImprovements: "Implement object tracking with SAM 2, expanding the database of recognizable brands and improving detection speeds and efficiency.",
+    learnings: "Visual recognition capabilities have improved incredibly quickly, but technical feasibility does not automatically make a product economically viable. For this kind of video analysis, I found the economics difficult to justify without very large scale. The cost of delivering useful results matters just as much as the ability to produce them.",
     status: "Completed",
     heroImage: "/images/projects/xxx.jpg"
   },
@@ -231,7 +230,7 @@ const projectsData = [
     icon: <Ruler size={48} />,
     url: "https://github.com/seanbetts/genai-marketing-benchmarks",
     type: "github",
-    date: "June 2024 to December 2024",
+    date: "June–December 2024",
     technologies: [
       "Python",
       "SQLite",
@@ -252,7 +251,7 @@ const projectsData = [
       "Automated testing across various LLMs"
     ],
     challenges: "Creating a diverse and representative set of marketing questions that cover various aspects and difficulty levels. Ensuring the integrity of the benchmark by preventing the questions from being included in future LLM training datasets.",
-    futureImprovements: "Expand the question database, integrate with more LLMs as they become available, and develop phases for testing marketing understanding and capabilities.",
+    learnings: "Creating benchmarks for an industry is very difficult without engagement from its industry bodies. Building the tests is only part of the work: the benchmark also needs shared agreement about what matters and confidence that it represents the industry. That makes participation and adoption central to the project.",
     status: "Completed",
     heroImage: "/images/projects/genai-marketing-benchmarks-hero.png"
   },
@@ -264,11 +263,11 @@ const projectsData = [
     icon: <Clock size={48} />,
     url: "https://timeline.the-blueprint.ai",
     type: "blog",
-    date: "May 2024 onwards",
+    date: "May 2024–present",
     technologies: ["React", "D3.js", "Node.js"],
     features: ["Interactive timeline visualization", "Filterable AI milestones", "Regular updates with new developments"],
     challenges: "Keeping the timeline up-to-date with the rapidly evolving field of GenAI.",
-    futureImprovements: "Implement user contributions and add more detailed information for each milestone.",
+    learnings: "A simple timeline of how GenAI technology has developed can be a great traffic driver. There is real value in helping people make sense of the pace of change through a clear chronological view. This project was a reminder that a straightforward, useful reference can give people a strong reason to visit.",
     status: "Ongoing",
     heroImage: "/images/projects/genai-timeline-hero.png"
   },
@@ -279,7 +278,7 @@ const projectsData = [
     icon: <ChatCircleDots size={48} />,
     url: "https://github.com/the-blueprint-ai/panda.ai",
     type: "github",
-    date: "March - June 2023",
+    date: "March–June 2023",
     technologies: [
       "Vue.js 3",
       "FastAPI",
@@ -303,7 +302,7 @@ const projectsData = [
       "Multiple API integrations (YouTube, Google Maps, Wikipedia, Spotify, etc.)"
     ],
     challenges: "Implementing an efficient and effective way to store and retrieve user memories without compromising privacy. Integrating multiple APIs and data sources to create a comprehensive user profile while ensuring data security and user privacy.",
-    futureImprovements: "Enhance the memory retrieval algorithm, implement more sophisticated personalization features, and expand the range of integrations to provide a more comprehensive personal assistant experience.",
+    learnings: "Three years on, I still do not think frontier AI companies have delivered a consumer experience that fulfils the promise of the technology. I expected the labs to focus much more on how people would actually use these capabilities. The gap between what the models can do and the experience of using them remains much wider than I anticipated, with a great deal of product and UX work still to do.",
     status: "Completed",
     heroVideo: "https://www.youtube.com/embed/Gs-oqqxsBMc?si=0SiQwmqSQG3typ6l"
   },

@@ -182,8 +182,8 @@ const ProjectPage = ({ projects }) => {
         <p>{project.challenges}</p>
       </div>
       <div className={styles.infoSection}>
-        <h2>Future Improvements</h2>
-        <p>{project.futureImprovements}</p>
+        <h2>What I learned</h2>
+        <p>{project.learnings}</p>
       </div>
       <div className={styles.projectFooter}>
         <div className={styles.infoSection}>

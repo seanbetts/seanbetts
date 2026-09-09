@@ -34,8 +34,6 @@
 /* Neighbouring masks expose the shared ink canvas, as on Thought Leadership. */
 .firstFeature { grid-column: 1; padding-right: var(--seam-slant); clip-path: polygon(0 0, 100% 0, calc(100% - var(--seam-slant)) 100%, 0 100%); }
 .lastFeature { grid-column: 2; padding-left: var(--game-frame); clip-path: polygon(var(--game-frame) 0, 100% 0, 100% 100%, calc(var(--game-frame) - var(--seam-slant)) 100%); }
-.dots { background-color: #f2e7db; background-image: radial-gradient(#39263e 1.6px, transparent 1.8px); background-size: 13px 13px; }
-.dots .cardWash { background: linear-gradient(180deg, #16051f55, #16051f22 15%, #16051fe8 65%); }
 .secondaryTop { font-size: 12px; }
 .secondaryTop > span { padding: 4px 8px; background: #16051fbf; }
 .secondaryCaption { margin-top: auto; padding: 28px 30px 34px; }
