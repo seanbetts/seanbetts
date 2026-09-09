@@ -117,7 +117,7 @@ const About = () => {
       </section>
 
       <section id="research" className={`${styles.chapter} ${styles.reverse}`} aria-labelledby="research-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><SceneArt scene="writing" /></div><span>02 / Learn by building</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><img className={`${styles.chapterImage} ${styles.researchImage}`} src="/images/game/about-studies/research-mac-sidebar-v2.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>02 / Learn by building</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="research-heading">AI research<br />&amp; development<span>.</span></h2></div>
