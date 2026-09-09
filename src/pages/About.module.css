@@ -18,6 +18,7 @@
 .chapter:focus{outline:none}
 .chapter:focus-visible{outline:3px solid var(--game-accent);outline-offset:3px}
 .chapterArt{grid-column:2;grid-row:1;position:relative;min-height:450px;border-left:var(--game-frame) solid var(--game-ink);overflow:hidden;isolation:isolate}
+.chapterImage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
 .chapterArt::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 60%,#170c20ed)}
 .chapterArt>span{position:absolute;bottom:28px;left:28px;right:24px;z-index:2;font:600 22px var(--game-ui);text-transform:uppercase;letter-spacing:.02em}
 .chapterCopy{grid-column:1;grid-row:1;padding:42px clamp(24px,3.7vw,56px);min-width:0}

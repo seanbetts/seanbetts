@@ -50,7 +50,7 @@ const About = () => {
       <div className={styles.panels}>
       <header className={styles.hero}>
         <div className={styles.portrait}>
-          <div className={styles.imageWindow}><img src="/images/game/portrait-dark-brown-eyes.webp" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
+          <div className={styles.imageWindow}><img src="/images/game/portrait-sean-london-candidate-v1.png" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
         </div>
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>AI leader · Researcher · Builder</span>
@@ -78,7 +78,7 @@ const About = () => {
       </header>
 
       <section id="professional" className={styles.chapter} aria-labelledby="professional-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><SceneArt scene="building" /></div><span>01 / Strategy into practice</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><img className={styles.chapterImage} src="/images/game/about-studies/professional-discussion-v1.webp" alt="" width="941" height="1672" loading="lazy" /></div><span>01 / Strategy into practice</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="professional-heading">Professional<br />experience<span>.</span></h2></div>
