@@ -21,7 +21,7 @@ function SiteRoutes() {
   const { pathname } = useLocation();
   // Match React Router's case-insensitive and optional trailing-slash behaviour.
   const routePath = pathname.toLowerCase().replace(/\/+$/, '') || '/';
-  const gameRoute = ['/', '/map', '/thought-leadership', '/building', '/about', '/speaking'].includes(routePath) || routePath.startsWith('/building/');
+  const gameRoute = ['/', '/map', '/thought-leadership', '/building', '/about', '/speaking', '/writing'].includes(routePath) || routePath.startsWith('/building/');
   const Shell = gameRoute ? GameShell : Layout;
   return <Shell><Routes>
     <Route path="/" element={<GameHome />} />
