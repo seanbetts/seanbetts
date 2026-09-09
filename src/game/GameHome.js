@@ -48,7 +48,7 @@ export default function GameHome() {
     />
     <div className={`${styles.cover} game-art`}>
       <Link to="/about" className={`${styles.panel} ${styles.portrait}`} aria-label="About Sean Betts">
-        <img className={styles.portraitImage} src="/images/game/portrait-dark-brown-eyes.webp" alt="" fetchpriority="high" width="1024" height="1536" />
+        <img className={styles.portraitImage} src="/images/game/portrait-sean-london-candidate-v1.png" alt="" fetchpriority="high" width="1024" height="1536" />
         <div className={styles.identity}>
           <h1><span className="sr-only">Sean Betts</span><img src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
           <p className={styles.role}>Hands-on AI Leader</p>
