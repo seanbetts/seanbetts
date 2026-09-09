@@ -47,3 +47,23 @@ test('keeps event context visible if a featured photograph fails to load', () =>
   expect(screen.queryByRole('img', { name: 'Sean Betts speaking at Apple Interactive Conference' })).not.toBeInTheDocument();
   expect(screen.getAllByText('Apple Interactive Conference')).toHaveLength(2);
 });
+
+test('featured descriptions support focus, Escape, tap toggling and outside dismissal', () => {
+  openPage();
+  const talk = speakingData.find(item => item.id === 'future-of-brands-2026');
+  const button = screen.getByRole('button', { name: `About this talk: ${talk.title}` });
+  const description = screen.getByText(talk.description);
+  expect(description).not.toBeVisible();
+  fireEvent.focus(button);
+  expect(description).toBeVisible();
+  expect(button).toHaveAttribute('aria-expanded', 'true');
+  fireEvent.keyDown(button, { key: 'Escape' });
+  expect(description).not.toBeVisible();
+  fireEvent.click(button);
+  expect(description).toBeVisible();
+  fireEvent.click(button);
+  expect(description).not.toBeVisible();
+  fireEvent.click(button);
+  fireEvent.pointerDown(document.body);
+  expect(description).not.toBeVisible();
+});
