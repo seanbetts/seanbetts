@@ -16,7 +16,7 @@
 .identity .expertise,.identity .advocacy{font-size:clamp(10px,4.7cqw,19px);white-space:nowrap;margin-top:12px;line-height:1.18;color:#fff}
 .identity .advocacy{margin-top:4px}
 .speaking{left:0;top:0;width:23.44%;height:48%;clip-path:polygon(0 0,93.8567% 0,100% 100%,0 95.8333%)}
-.speaking [data-art="speaking"]>div{width:100%;height:100%;background-image:url('../../public/images/game/home-studies/speaking-stage-v1.webp');background-size:cover;background-position:center 25%}
+.speaking [data-art="speaking"]>div{width:100%;height:100%;background-image:url('../../public/images/game/home-studies/speaking-rear-v3.webp');background-size:cover;background-position:center 25%}
 .writing{left:0;top:46%;width:25%;height:54%;clip-path:polygon(0 0,93.76% 3.7037%,100% 100%,0 100%)}
 .writing [data-art="writing"]>div{width:100%;height:100%;background-image:url('../../public/images/game/home-studies/writing-tablet-v5-steve-jobs.webp');background-size:cover;background-position:center 25%}
 .building{left:56%;top:0;width:44%;height:47%;clip-path:polygon(0 0,100% 0,100% 91.4894%,3.2045% 100%)}
