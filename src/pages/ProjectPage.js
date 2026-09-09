@@ -85,7 +85,7 @@ const ProjectPage = ({ projects }) => {
 
   const projectSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": project.schemaType || "SoftwareApplication",
     "name": project.name,
     "description": project.description,
     "applicationCategory": "AI & Marketing",

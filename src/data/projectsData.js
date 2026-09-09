@@ -1,4 +1,4 @@
-import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar, Globe, MagnifyingGlass, Brain } from "@phosphor-icons/react";
+import { Video, Ruler, Clock, ChatCircleDots, Globe, MagnifyingGlass, Brain, GameController, BookOpen, SquaresFour } from "@phosphor-icons/react";
 
 const projectsData = [
   {
@@ -22,7 +22,7 @@ const projectsData = [
     futureImprovements:
       "Expand the Skills Store/OAuth coverage, harden the planned skill guard UI states, and keep building richer presets and automations while the interface stays minimal and readable.",
     status: "Active",
-    heroImage: "/images/projects/overview.png"
+    heroImage: "/images/projects/sidebar-welcome-ipad.png"
   },
   {
     id: "pointilism",
@@ -103,6 +103,83 @@ const projectsData = [
     heroImage: "/images/projects/xxx.jpg"
   },
   {
+    id: "steam-hardware-watch",
+    name: "Steam Hardware Watch",
+    description: "An agent-driven monitoring toolkit that tracks Valve hardware launch signals, compares evidence across sources and turns changes into readable reports.",
+    icon: <GameController size={48} />,
+    url: "https://github.com/seanbetts/steam-hardware-watch",
+    type: "github",
+    date: "2026",
+    technologies: ["Python", "Shell", "Node.js", "SteamKit", "Playwright"],
+    features: [
+      "Checks Komodo, SteamDB, SteamTracking and Valve endpoints for hardware signals",
+      "Saves source snapshots and compares each run with the previous one",
+      "Produces evidence summaries and human-readable status reports",
+      "Tracks discovered, retrieved and blocked visual assets separately"
+    ],
+    challenges: "Reconciling incomplete signals across multiple sources, handling browser-dependent access and distinguishing meaningful changes from routine metadata updates.",
+    futureImprovements: "Potential extensions include broader hardware coverage and more reliable source access, while keeping each reported change traceable to its evidence.",
+    status: "Published"
+  },
+  {
+    id: "apple-hig-mirror",
+    name: "Apple HIG Mirror",
+    description: "A developer tool that turns Apple's browser-rendered Human Interface Guidelines into structured Markdown, with repeatable extraction, verification and scheduled updates.",
+    icon: <BookOpen size={48} />,
+    url: "https://github.com/seanbetts/Apple-HIG",
+    type: "github",
+    date: "2026",
+    technologies: ["TypeScript", "Node.js", "Playwright", "Markdown", "GitHub Actions"],
+    features: [
+      "Discovers guideline pages and extracts their rendered content",
+      "Normalises content into deterministic Markdown and frontmatter",
+      "Rewrites internal links and generates a Mintlify preview configuration",
+      "Verifies generated output and schedules incremental updates through GitHub Actions"
+    ],
+    challenges: "Extracting consistent content from a dynamic documentation site while preserving structure, keeping internal links useful and avoiding unnecessary changes in generated files.",
+    futureImprovements: "Potential extensions include refining extraction as Apple's documentation evolves and improving how the mirrored guidelines are explored locally.",
+    status: "Published"
+  },
+  {
+    id: "pixel-loader-lab",
+    name: "Pixel Loader Lab",
+    description: "A small creative coding sandbox for turning an app icon into a pixelated animated loader, with a live preview and optimised GIF export.",
+    icon: <SquaresFour size={48} />,
+    url: "https://github.com/seanbetts/pixel-loader-lab",
+    type: "github",
+    date: "2026",
+    technologies: ["JavaScript", "CSS", "Vite", "Node.js", "ffmpeg", "gifsicle"],
+    features: [
+      "Builds a pixelated loader from a source app icon",
+      "Provides a browser preview for iterating on the animation",
+      "Exports optimised GIFs for use in other apps",
+      "Reports image dimensions and file sizes"
+    ],
+    challenges: "Keeping the source icon recognisable through pixelation and animation, while balancing crisp rendering with a compact exported file.",
+    futureImprovements: "Potential experiments include additional motion patterns and export presets for different app surfaces.",
+    status: "Published"
+  },
+  {
+    id: "cains-jawbone",
+    name: "Cain’s Jawbone",
+    description: "An AI-assisted literary investigation into a murder mystery with 100 shuffled pages, combining clue indexing, historical research and systematic testing of possible page orders.",
+    icon: <MagnifyingGlass size={48} />,
+    url: "https://github.com/seanbetts/cains-jawbone",
+    type: "research experiment",
+    schemaType: "CreativeWork",
+    date: "2025–2026",
+    technologies: ["Python", "Markdown", "Git", "Agent skills"],
+    features: [
+      "Annotates pages and indexes people, places, quotations and recurring motifs",
+      "Uses modular agent workflows for research, wordplay and narrative analysis",
+      "Records ordering hypotheses alongside evidence and possible contradictions",
+      "Uses integrity checks to protect the original text during analysis"
+    ],
+    challenges: "Separating plausible interpretations from supported conclusions across 100 shuffled pages, while preserving the source text and checking hypotheses against contradictory evidence.",
+    futureImprovements: "The research approach could be adapted to other literary puzzles, with richer ways to explore connections between clues and compare competing hypotheses.",
+    status: "Experiment"
+  },
+  {
     id: "youtube-sdg-analysis",
     name: "YouTube SDG Analysis",
     description: "Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.",
@@ -146,33 +223,7 @@ const projectsData = [
     status: "Completed",
     heroImage: "/images/projects/xxx.jpg"
   },
-  {
-    id: "beyond-chatbots",
-    name: "Beyond Chatbots",
-    description: "A comprehensive series exploring the future of Large Language Models (LLMs) and their transformation from simple chatbots into intuitive, indispensable digital companions.",
-    icon: <Lightbulb size={48} />,
-    url: "https://www.the-blueprint.ai/p/beyond-chatbots",
-    type: "blog",
-    date: "July - October 2024",
-    features: [
-      "In-depth analysis of current LLM limitations",
-      "Vision for the future of digital companions",
-      "Discussion of ethical considerations and challenges",
-      "Practical insights for developers, researchers, and business leaders"
-    ],
-    topics: [
-      "Personalisation in AI",
-      "Integration with digital ecosystems",
-      "Proactive AI assistance",
-      "Adaptive AI personalities",
-      "Fact-checking and information verification",
-      "Human-AI collaboration"
-    ],
-    challenges: "Addressing technical hurdles in continuous learning and contextual understanding. Navigating ethical considerations such as privacy, data security, and the risk of over-reliance on AI. Balancing the benefits of AI assistance with the need to maintain human autonomy and critical thinking skills.",
-    futureImprovements: "Expand the series with practical case studies. Develop prototypes or proof-of-concepts for key features discussed. Create interactive demonstrations of potential digital companion functionalities.",
-    status: "Completed",
-    heroImage: "/images/projects/beyond-chatbots-hero.png"
-  },
+
   {
     id: "genai-marketing-benchmarks",
     name: "GenAI Marketing Benchmarks",
@@ -205,26 +256,7 @@ const projectsData = [
     status: "Completed",
     heroImage: "/images/projects/genai-marketing-benchmarks-hero.png"
   },
-  {
-    id: "genai-newsletter",
-    name: "Weekly GenAI Newsletter",
-    description: "A curated weekly newsletter covering the latest developments, breakthroughs, and applications in Generative AI.",
-    icon: <Calendar size={48} />,
-    url: "https://www.the-blueprint.ai",
-    type: "blog",
-    date: "July 2023 onwards",
-    features: [
-      "Weekly roundup of key GenAI news and developments",
-      "In-depth analysis of emerging GenAI trends and technologies",
-      "Curated list of must-read long-read articles",
-      "Spotlight on innovative AI applications across industries",
-      "Expert commentary on AI ethics and policy developments"
-    ],
-    challenges: "Staying up-to-date with the rapidly evolving GenAI landscape, distilling complex technical information into accessible insights, and maintaining a consistent publishing schedule while ensuring high-quality, relevant content.",
-    futureImprovements: "Implement personalized content recommendations based on reader interests, expand to include interactive elements such as polls or Q&A sessions, and develop a community platform for subscribers to discuss and share insights.",
-    status: "Ongoing",
-    heroImage: "/images/projects/genai-newsletter-hero.png"
-  },
+
   {
     id: "genai-timeline",
     name: "GenAI Timeline",
@@ -275,86 +307,6 @@ const projectsData = [
     status: "Completed",
     heroVideo: "https://www.youtube.com/embed/Gs-oqqxsBMc?si=0SiQwmqSQG3typ6l"
   },
-  {
-    id: "genai-webinar-series",
-    name: "Generative AI Webinar Series",
-    description: "A comprehensive series of 12 webinars introducing Generative AI, its applications in marketing, ethical considerations, and future implications.",
-    icon: <ChalkboardTeacher size={48} />,
-    url: "https://vimeo.com/user/61969948/folder/17042522?isPrivate=false",
-    type: "video",
-    date: "July 2023 - April 2024",
-    features: [
-      "Practical demonstrations of AI tools and techniques",
-      "Real-world examples and case studies in marketing",
-      "Exploration of ethical considerations in AI",
-      "Future predictions and implications for the marketing industry"
-    ],
-    topics: [
-      "Introduction to Artificial Intelligence and Generative AI",
-      "The Impact of Generative AI on consumers, work, and society",
-      "Ethics of Generative AI",
-      "Future of AI explored through sci-fi film scenarios",
-      "The Future of Marketing with Generative AI (2-part series)",
-      "Omnicom's approach to integrating Generative AI",
-      "Prompt Engineering for Marketing (2-part series)",
-      "Creating Content with Generative AI",
-      "15 Months of Gen-AI Progress: A comprehensive review",
-      "Synthetic Data in Marketing"
-    ],
-    challenges: "Simplifying complex AI concepts for a diverse audience while keeping the content engaging and relevant. Balancing theoretical knowledge with practical applications in marketing. Staying up-to-date with rapidly evolving AI technologies and their implications.",
-    futureImprovements: "Create follow-up advanced courses focusing on specific AI applications in marketing. Provide hands-on workshops for practical skill development. Develop an online resource center with updated information on AI advancements and their marketing implications.",
-    status: "Completed",
-    heroImage: "/images/projects/genai-webinar-series-hero.png"
-  },
-  {
-    id: "little-ai-lessons",
-    name: "Little AI Lessons",
-    description: "A series of 100 daily AI lessons published on LinkedIn over the last 100 days of 2023. Each lesson covers a different AI-related topic and is presented at 5 levels of difficulty, from beginner to expert.",
-    icon: <Student size={48} />,
-    url: "https://www.the-blueprint.ai/p/little-ai-lessons",
-    type: "blog",
-    date: "September - December 2023",
-    features: [
-      "100 daily AI lessons",
-      "5 difficulty levels per lesson (beginner to expert)",
-      "Interactive engagement with LinkedIn audience"
-    ],
-    topics: [
-      "Artificial Intelligence (AI)", "Machine Learning", "Data Ethics", "Neural Networks", 
-      "Deep Learning", "Generative Artificial Intelligence (GAI)", 
-      "Artificial General Intelligence (AGI)", "Bias in AI", "Explainable AI (XAI)", 
-      "Computer Vision", "Speech Recognition", "Natural Language Processing (NLP)", 
-      "Supervised Learning", "Unsupervised Learning", "Data Privacy", 
-      "Reinforcement Learning", "Multi-Agent Systems", 
-      "Reinforcement Learning from Human Feedback (RLHF)", "Fairness", "Reward Model", 
-      "Reward Gaming", "Regularisation Techniques", "Data Augmentation", 
-      "Feature Engineering", "Anomaly Detection", "Clustering", "Dimensionality Reduction", 
-      "Accountability", "Artificial Neuron", "Activation Functions", "Loss Functions", 
-      "Optimisation Algorithms", "Parameters", "Hyperparameters", "AutoML", 
-      "Model Architectures", "Dimensions in Neural Networks", "Model Evaluation Metrics", 
-      "Cross-Validation Techniques", "Outer Alignment", "Recurrent Neural Networks (RNNs)", 
-      "Generative Adversarial Networks (GANs)", "Variational Autoencoders (VAEs)", 
-      "Graph Neural Networks", "Inner Alignment", "Transformer Architecture", 
-      "Attention Mechanisms", "Sequence-to-Sequence Models", "Tokens in NLP", "Embeddings", 
-      "Large Language Model (LLM)", "Generative Pre-training Transformer (GPT)", 
-      "Ethical AI Design", "Swarm Intelligence", "Few-Shot Prompt", "One-Shot Prompt", 
-      "Zero-Shot Prompt", "Scaling Laws", "Scalability", "GPUs", "TPUs", 
-      "Other Accelerators", "AI Governance", "Hardware Optimisation Techniques", 
-      "Cloud Computing and AI", "Edge Computing in AI", "Federated Learning", "AI Safety", 
-      "Batch Learning", "Mini-Batch Learning", "Online Learning", "Transfer Learning", 
-      "Meta-Learning", "Ensemble Methods", "Human-In-The-Loop (HITL) AI", "Safeguards", 
-      "Diffusion Model", "Emergence", "Synthetic Data Generation", "Bayesian Networks", 
-      "Chain of Thought", "Tree of Thought", "Chaining", "Steerability", "Moderation Tools", 
-      "Red Teaming", "Regulatory Frameworks", "Disclosure Mechanism", "Finetuning", 
-      "Prompt Engineering", "Real-World Deployment", "Reflection", "Social Impact of AI", 
-      "Economic Impact of AI", "Conversational Agents", "Open-Source Software", 
-      "Interdisciplinary AI", "AI Policy", "Human-AI Collaboration", "AI for Social Good"
-    ],
-    challenges: "Consistently producing high-quality, informative content daily while catering to different expertise levels. Simplifying complex AI concepts without losing depth or accuracy. Maintaining engagement and relevance across 100 consecutive days.",
-    futureImprovements: "Compile the lessons into an e-book or interactive online course. Create video content to complement the written lessons.",
-    status: "Completed",
-    heroImage: "/images/projects/little-ai-lessons-hero.png"
-  }
 ];
 
 export default projectsData;

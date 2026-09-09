@@ -55,19 +55,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/building/beyond-chatbots</loc>
-    <lastmod>2025-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.seanbetts.com/building/genai-marketing-benchmarks</loc>
-    <lastmod>2025-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.seanbetts.com/building/genai-newsletter</loc>
     <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,14 +73,26 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/building/genai-webinar-series</loc>
-    <lastmod>2025-11-02</lastmod>
+    <loc>https://www.seanbetts.com/building/steam-hardware-watch</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.seanbetts.com/building/little-ai-lessons</loc>
-    <lastmod>2025-11-02</lastmod>
+    <loc>https://www.seanbetts.com/building/apple-hig-mirror</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.seanbetts.com/building/pixel-loader-lab</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.seanbetts.com/building/cains-jawbone</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
