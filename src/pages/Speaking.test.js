@@ -30,7 +30,6 @@ test('features every event photograph and keeps logo and artwork appearances in 
     expect(articles.some(article => article.textContent.includes(talk.title) && article.textContent.includes(talk.conference) && article.textContent.includes(talk.description))).toBe(true);
   }
   expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
-  expect(screen.getByRole('link', { name: 'Speaking enquiries' })).toHaveAttribute('href', '/contact');
 });
 
 test('combines year and format filters and recovers from an empty result', () => {

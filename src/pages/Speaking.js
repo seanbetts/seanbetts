@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, Microphone, Users, ChatsCircle, Headphones, Info } from '@phosphor-icons/react';
+import { ArrowLeft, Microphone, Users, ChatsCircle, Headphones, Info } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
 import styles from './Speaking.module.css';
 import speakingData from '../data/speakingData';
@@ -121,11 +121,10 @@ export default function Speaking() {
       <header className={styles.hero}>
         <div className={styles.heroCopy}>
           <div className={styles.upright}>
-            <p className={styles.eyebrow}>Keynotes · Panels · Conversations</p>
+            <p className={styles.eyebrow}>Keynotes · Panels · Podcasts</p>
             <h1>Speaking<span className={styles.period}>.</span></h1>
             <p className={styles.intro}>Perspectives on AI, innovation and the human side of change.</p>
             <p className={styles.heroBody}>I speak at conferences and events around the world, exploring the future of technology and sharing my lived experience of autism, leadership and mental health.</p>
-            <Link to="/contact" className={styles.enquiry}>Speaking enquiries<ArrowUpRight size={21} aria-hidden="true" /></Link>
           </div>
         </div>
         <div className={styles.heroArt}><img src="/images/game/speaking/stage-v1.webp" alt="Illustration of Sean Betts presenting on stage" width="941" height="1672" decoding="async" /></div>

@@ -10,9 +10,6 @@
 .period{color:var(--game-accent)}
 .speaking .intro{font:600 clamp(25px,2.4vw,34px)/1.2 var(--game-ui);max-width:580px;margin-bottom:22px}
 .heroBody{color:var(--game-body);font-size:17px;line-height:1.75;max-width:580px}
-.enquiry{display:inline-flex;align-items:center;gap:20px;font:600 20px var(--game-ui);min-height:48px;margin-top:30px;border-bottom:2px solid var(--game-accent)}
-.speaking .enquiry{color:var(--game-accent)}
-.enquiry:hover{color:var(--game-text)}
 .heroArt{position:relative;overflow:hidden;clip-path:polygon(var(--game-frame) 0,100% 0,100% 100%,calc(var(--game-frame) - 16px) 100%)}
 .heroArt img{width:100%;height:100%;position:absolute;object-fit:cover;object-position:center 33%;transform:skewY(var(--counter-angle)) scale(1.04)}
 .features{display:grid;grid-template-columns:1fr 1fr;row-gap:var(--game-frame);margin-top:var(--game-frame)}
