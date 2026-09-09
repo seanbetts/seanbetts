@@ -92,3 +92,11 @@ test.each(['/speaking', '/speaking/', '/Speaking'])('opens %s with the game navi
   expect(screen.getByRole('button', { name: 'Open navigation' })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Home', exact: true })).toHaveAttribute('href', '/');
 });
+
+test.each(['/contact', '/contact/', '/Contact'])('opens %s with the game navigation', pathname => {
+  window.history.replaceState({}, '', pathname);
+  render(<App />);
+  expect(screen.getByRole('heading', { level: 1, name: /^Contact\s*\.$/ })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Open navigation' })).toBeInTheDocument();
+  expect(screen.getByRole('navigation', { name: 'Connect with Sean' })).toBeInTheDocument();
+});
