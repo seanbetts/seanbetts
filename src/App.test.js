@@ -84,3 +84,11 @@ describe('desktop-only map', () => {
     expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
   });
 });
+
+test.each(['/speaking', '/speaking/', '/Speaking'])('opens %s with the game navigation', pathname => {
+  window.history.replaceState({}, '', pathname);
+  render(<App />);
+  expect(screen.getByRole('heading', { level: 1, name: /^Speaking\s*\.$/ })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Open navigation' })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Home', exact: true })).toHaveAttribute('href', '/');
+});

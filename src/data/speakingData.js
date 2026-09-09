@@ -2,7 +2,7 @@ const speakingData = [
   // 2026
   {
     id: "future-of-brands-2026",
-    title: "How AI is Rewiriing the Internet",
+    title: "How AI is Rewiring the Internet",
     type: "keynote",
     description: "A keynote presentation on how AI is transforming the internet into an AI-mediated ecosystem, reshaping how consumers discover, evaluate and purchase, and what brands must do to remain visible within it.",
     date: "29th April 2026",
@@ -24,7 +24,7 @@ const speakingData = [
     id: "lead-2026",
     title: "Advertising And Trust In The Time Of AI Panel",
     type: "panel",
-    description: "Panel discussion on the changing advertising landscape and whether ads cretaed by machines can still be trusted by humans.",
+    description: "Panel discussion on the changing advertising landscape and whether ads created by machines can still be trusted by humans.",
     date: "5 February 2026",
     location: "London, UK",
     conference: "LEAD 2026",
