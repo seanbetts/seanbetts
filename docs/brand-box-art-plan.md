@@ -2,6 +2,8 @@
 
 Status: all five panels assembled after approval of the first pair. The retained high street sits above McDonald's and Lidl portraits flanking the Warner Bros. and Halfords landscapes. All ten featured brands use original logos over generated environments. The complete 21-brand directory remains below.
 
+Subsequent refinement: the title and subtitle are their own panel within the same frame, with a sixth illustration to the right: the John Lewis penthouse-delivery portrait from the reserve ideas. This brings the featured brands to eleven. On phones the title and new portrait stack before the retained high street and four-panel composition.
+
 ## Intent
 
 Turn the approved brand street into a curated, five-panel cover-art composition. Feature ten brands chosen for recognition or a strong visual story; retain all 21 names in one expandable directory. The artwork should communicate personality while the existing headline and introduction explain Sean's thought leadership work.

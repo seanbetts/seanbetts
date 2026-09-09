@@ -1,5 +1,7 @@
 # Illustrated brand scenes
 
+The additional John Lewis title-row portrait is documented in [delivery-prompt.md](delivery-prompt.md).
+
 Generated with the built-in image generation tool using `../brand-street/street-v1.png` as the visual style reference. Original outputs copied unchanged into this directory. The approved high street remains in place.
 
 | Asset | Native dimensions | Original output |

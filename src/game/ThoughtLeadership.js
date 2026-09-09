@@ -10,11 +10,21 @@ export default function ThoughtLeadership() {
   return <div className={styles.page}>
     <Seo title="AI Thought Leadership for Global Brands | Sean Betts" description="Strategic perspectives on how AI is rewiring discovery, consumer behaviour and digital marketing strategies." canonicalPath="/thought-leadership" />
     <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Home</Link>
-    <header className={styles.introduction}>
-      <h1 id="thought-leadership-heading">AI thought leadership{' '}<span className={styles.titleLine}>for global brands<span className={styles.period}>.</span></span></h1>
-      <p>Providing strategic perspectives to global brands on how AI is rewiring discovery, consumer behaviour, and digital marketing strategies.</p>
-    </header>
     <section className={styles.cover} aria-labelledby="thought-leadership-heading">
+      <header className={styles.introduction}>
+        <div className={styles.copy}>
+          <div className={styles.copyInner}>
+            <h1 id="thought-leadership-heading">AI thought leadership{' '}<span className={styles.titleLine}>for global brands<span className={styles.period}>.</span></span></h1>
+            <p>Providing strategic perspectives to global brands on how AI is rewiring discovery, consumer behaviour, and digital marketing strategies.</p>
+          </div>
+        </div>
+        <figure className={styles.portrait} aria-label="John Lewis: movers discover an extravagant armchair is too wide for a penthouse doorway.">
+          <div className={styles.portraitArt}>
+            <img className={styles.portraitImage} src="/images/game/brand-scenes/delivery-v1.png" alt="" width="1024" height="1536" decoding="async" />
+            <img className={styles.deliveryLogo} src={brandLogos.find(brand => brand.name === 'John Lewis').src} alt="John Lewis" />
+          </div>
+        </figure>
+      </header>
         <BrandStreet />
         <BrandScenes />
         <details className={styles.brandDirectory}>

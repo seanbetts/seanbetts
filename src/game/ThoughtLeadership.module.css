@@ -1,26 +1,34 @@
 .page{max-width:1440px;margin:0 auto;padding-bottom:40px}
 .back{display:inline-flex;align-items:center;gap:9px;font:600 17px var(--game-ui);text-transform:uppercase;min-height:44px;margin:4px 0 14px}
 .back:hover{color:var(--game-accent)}
-.introduction{display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;margin:14px 0 60px}
-.page .introduction h1{font-size:clamp(44px,5vw,72px);line-height:1.05;text-transform:uppercase;margin:0;text-wrap:balance}
+.introduction{display:grid;grid-template-columns:7fr 3fr;background:var(--game-ink)}
+.copy{display:flex;align-items:center;padding:48px 64px 48px 48px;background:var(--game-surface);clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%)}
+.copyInner{transform:skewY(var(--counter-angle));min-width:0}
+.page .introduction h1{font-size:clamp(44px,6.2vw,88px);line-height:1.02;text-transform:uppercase;margin:0 0 30px;text-wrap:balance}
 .titleLine{display:block}
 .period{color:var(--game-accent)}
-.introduction p{margin:0;max-width:500px;color:var(--game-body);font-size:18px;line-height:1.7}
-/* The artwork shares one ink canvas, without separate hero or introduction panels. */
-.cover{--angle:-1.4deg;--counter-angle:1.4deg;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--angle));transform-origin:top left;overflow:hidden}
-.cover>figure:first-child{margin-top:0}
+.introduction p{margin:0;max-width:660px;color:var(--game-body);font-size:18px;line-height:1.7}
+.portrait{position:relative;aspect-ratio:2/3;min-height:100%;margin:0;overflow:hidden;clip-path:polygon(var(--game-frame) 0,100% 0,100% 100%,calc(var(--game-frame) - 16px) 100%)}
+.portraitArt{position:absolute;left:0;right:0;top:50%;aspect-ratio:2/3;transform:translateY(-50%) skewY(var(--counter-angle)) scale(1.05)}
+.portraitImage{display:block;width:100%;height:auto}
+.deliveryLogo{position:absolute;left:28%;top:62.8%;width:36.5%;height:4.5%;object-fit:contain}
+/* Title, portrait and brand collage all share one ink canvas and connected seams. */
+.cover{--angle:-1.4deg;--counter-angle:1.4deg;margin-top:30px;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--angle));transform-origin:top left;overflow:hidden}
 .brandDirectory{margin-top:var(--game-frame);padding:22px 44px;background:var(--game-surface)}
 .brandDirectory summary{cursor:pointer;font:600 18px var(--game-ui);color:var(--game-accent);transform:skewY(var(--counter-angle));min-height:28px}
 .brandDirectory summary:focus-visible{outline:3px solid var(--game-accent);outline-offset:4px}
 .brandNames{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;margin:24px 0 0;padding:0;color:var(--game-body);font-size:15px;transform:skewY(var(--counter-angle))}
 @media(max-width:1000px){
- .introduction{grid-template-columns:1fr;gap:22px;margin-bottom:50px}
- .introduction p{max-width:680px}
+ .introduction{grid-template-columns:3fr 2fr}
+ .copy{padding:32px 40px 32px 28px}
+ .page .introduction h1{font-size:clamp(40px,5.6vw,60px)}
 }
 @media(max-width:700px){
- .introduction{gap:20px;margin:8px 0 32px}
+ .introduction{display:flex;flex-direction:column;gap:var(--game-frame)}
+ .copy{padding:30px 22px;clip-path:none}
  .page .introduction h1{font-size:clamp(38px,10.5vw,64px)}
  .introduction p{font-size:16px}
- .cover{--angle:-2deg;--counter-angle:2deg}
+ .portrait{clip-path:none;min-height:0}
+ .cover{--angle:-2deg;--counter-angle:2deg;margin-top:10px}
  .brandDirectory{padding:22px}
 }
