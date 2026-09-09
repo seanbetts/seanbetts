@@ -10,7 +10,6 @@ function renderProject(path = '/building/sidebar', state) {
     <Route path="/building/:id" element={<GameProject />} />
     <Route path="/building" element={<GameBuilding />} />
     <Route path="/writing" element={<h1>Writing destination</h1>} />
-    <Route path="/map" element={<h1>Map destination</h1>} />
   </Routes></MemoryRouter>);
 }
 

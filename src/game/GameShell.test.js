@@ -11,7 +11,6 @@ function mount(pathname = '/') {
   return render(<ThemeProvider><MemoryRouter initialEntries={[pathname]}><GameShell><Routes>
     <Route path="/" element={<GameHome />} />
     <Route path="/building" element={<h1>Project collection</h1>} />
-    <Route path="/map" element={<h1>World map</h1>} />
   </Routes></GameShell></MemoryRouter></ThemeProvider>);
 }
 
@@ -40,7 +39,6 @@ test('quick navigation closes on selection and Escape restores the trigger focus
 test.each([
   ['/', 'Home'],
   ['/building', 'Building'],
-  ['/map', 'Map'],
   ['/', 'Sean Betts home'],
 ])('activating the current route %s through %s closes navigation and focuses content', (pathname, name) => {
   mount(pathname);
@@ -55,11 +53,11 @@ test.each([
   expect(window.scrollTo).not.toHaveBeenCalled();
 });
 
-test('cover links to thought leadership and About while Map stays in navigation', () => {
+test('cover links to thought leadership and About without Map navigation', () => {
   mount();
   expect(screen.getByRole('heading', { name: 'Sean Betts', level: 1 })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: /Thought leadership AI perspectives/i })).toHaveAttribute('href', '/thought-leadership');
-  expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
+  expect(screen.queryByRole('link', { name: 'Map' })).not.toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'About Sean Betts' })).toHaveAttribute('href', '/about');
   expect(screen.queryByRole('link', { name: /Explore the map/i })).not.toBeInTheDocument();
 });

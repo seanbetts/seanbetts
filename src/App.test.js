@@ -19,7 +19,7 @@ test.each(['/thought-leadership', '/thought-leadership/', '/Thought-Leadership']
   window.history.replaceState({}, '', pathname);
   render(<App />);
   expect(screen.getByRole('heading', { name: /AI thought leadership for global brands/, level: 1 })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
+  expect(screen.getByRole('link', { name: 'Sean Betts home' })).toHaveAttribute('href', '/');
   expect(screen.getByRole('button', { name: 'Open navigation' })).toBeInTheDocument();
 });
 
@@ -28,7 +28,7 @@ test.each(['/about', '/about/', '/About'])('opens %s in the portfolio shell', (p
   window.history.replaceState({}, '', pathname);
   render(<App />);
   expect(screen.getByRole('heading', { name: /^About\s*\.$/, level: 1 })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
+  expect(screen.getByRole('link', { name: 'Sean Betts home' })).toHaveAttribute('href', '/');
 });
 
 test('portrait to About to project keeps the return journey intact', () => {
@@ -43,46 +43,14 @@ test('portrait to About to project keeps the return journey intact', () => {
   jest.restoreAllMocks();
 });
 
-describe('desktop-only map', () => {
-  let originalMatchMedia;
-  let media;
-  beforeEach(() => {
-    originalMatchMedia = window.matchMedia;
-    media = { matches: false, addEventListener: jest.fn(), removeEventListener: jest.fn() };
-    window.matchMedia = jest.fn(() => media);
-    jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
-  });
-  afterEach(() => {
-    window.matchMedia = originalMatchMedia;
-    jest.restoreAllMocks();
-  });
-
-  test('a mobile map URL redirects home without offering Map navigation', () => {
-    window.history.replaceState({}, '', '/map');
-    render(<App />);
-    expect(window.location.pathname).toBe('/');
-    expect(screen.getByRole('heading', { name: 'Sean Betts', level: 1 })).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: 'Map' })).not.toBeInTheDocument();
-  });
-
-  test('mobile Building and project navigation avoid the map', () => {
-    window.history.replaceState({}, '', '/building');
-    render(<App />);
-    expect(screen.getByRole('link', { name: 'Home', exact: true })).toHaveAttribute('href', '/');
-    expect(screen.queryByRole('link', { name: /map/i })).not.toBeInTheDocument();
-    fireEvent.click(screen.getByRole('link', { name: 'Open sideBar project' }));
-    expect(screen.getByRole('link', { name: 'Back to Building' })).toHaveAttribute('href', '/building');
-    expect(screen.queryByRole('link', { name: /map/i })).not.toBeInTheDocument();
-  });
-
-  test('desktop keeps the interactive map', () => {
-    media.matches = true;
-    window.history.replaceState({}, '', '/map');
-    render(<App />);
-    expect(window.location.pathname).toBe('/map');
-    expect(screen.getByRole('heading', { name: /Choose your next stop/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
-  });
+test.each(['/map', '/map/', '/Map'])('retired map URL %s redirects home without Map navigation', pathname => {
+  window.history.replaceState({}, '', pathname);
+  render(<App />);
+  expect(window.location.pathname).toBe('/');
+  expect(screen.getByRole('heading', { name: 'Sean Betts', level: 1 })).toBeInTheDocument();
+  expect(screen.queryByRole('link', { name: 'Map' })).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Open navigation' }));
+  expect(screen.queryByRole('link', { name: 'Map' })).not.toBeInTheDocument();
 });
 
 test.each(['/speaking', '/speaking/', '/Speaking'])('opens %s with the game navigation', pathname => {

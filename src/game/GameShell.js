@@ -1,17 +1,15 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ArrowUpRight, Butterfly, EnvelopeSimple, GithubLogo, Heart, LinkedinLogo, List, MapTrifold, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
+import { ArrowUpRight, Butterfly, EnvelopeSimple, GithubLogo, Heart, LinkedinLogo, List, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
 import styles from './GameShell.module.css';
 import packageJson from '../../package.json';
 import './game.css';
 import { ThemeContext } from '../ThemeContext';
 import MadeWith from '../components/MadeWith';
-import useDesktop from './useDesktop';
 
 const links = [['/', 'Home'], ['/building', 'Building'], ['/writing', 'Writing'], ['/speaking', 'Speaking'], ['/thought-leadership', 'Thought leadership'], ['/about', 'About'], ['/contact', 'Contact']];
 
 export default function GameShell({ children }) {
-  const isDesktop = useDesktop();
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   const [open, setOpen] = useState(false);
   const trigger = useRef(null);
@@ -69,7 +67,6 @@ export default function GameShell({ children }) {
         <span className={styles.version}>v{packageJson.version}</span>
       </div>
       <div className={styles.tools}>
-        {isDesktop && <NavLink to="/map" aria-label="Map" title="Map" onClick={closeNavigation} className={({ isActive }) => `${styles.tool} ${isActive ? styles.active : ''}`}><MapTrifold size={23} weight="bold" aria-hidden="true" /></NavLink>}
         <Link to="/contact" onClick={closeNavigation} className={styles.tool} aria-label="Contact" title="Contact"><EnvelopeSimple size={23} weight="bold" aria-hidden="true" /></Link>
         <div className={styles.controls}>
           <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>

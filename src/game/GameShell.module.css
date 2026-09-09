@@ -6,7 +6,7 @@
 .tools{display:flex;align-items:center;gap:0}
 .controls{display:flex;align-items:center;gap:0}
 .tool{display:grid;place-items:center;min-width:44px;min-height:44px}
-.tool:hover,.tool:focus-visible,.active{color:var(--game-accent)!important}
+.tool:hover,.tool:focus-visible{color:var(--game-accent)!important}
 .menuButton{border:0;background:transparent;color:inherit;display:grid;place-items:center;min-width:44px;min-height:44px}
 .menuButton:hover,.menuButton:focus-visible{color:var(--game-accent)}
 @media(prefers-reduced-motion:no-preference){.tool,.menuButton,.socials a{transition:color .15s ease}}

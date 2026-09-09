@@ -12,12 +12,9 @@ import GameShell from './game/GameShell';
 import GameHome from './game/GameHome';
 import GameBuilding from './game/GameBuilding';
 import GameProject from './game/GameProject';
-import WorldMap from './game/WorldMap';
-import useDesktop from './game/useDesktop';
 import ThoughtLeadership from './game/ThoughtLeadership';
 
 function SiteRoutes() {
-  const isDesktop = useDesktop();
   const { pathname } = useLocation();
   // Match React Router's case-insensitive and optional trailing-slash behaviour.
   const routePath = pathname.toLowerCase().replace(/\/+$/, '') || '/';
@@ -26,7 +23,7 @@ function SiteRoutes() {
   return <Shell><Routes>
     <Route path="/" element={<GameHome />} />
     <Route path="/thought-leadership" element={<ThoughtLeadership />} />
-    <Route path="/map" element={isDesktop ? <WorldMap /> : <Navigate to="/" replace />} />
+    <Route path="/map" element={<Navigate to="/" replace />} />
     <Route path="/building" element={<GameBuilding />} />
     <Route path="/building/:id" element={<GameProject />} />
     <Route path="/about" element={<About />} />
