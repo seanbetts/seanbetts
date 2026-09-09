@@ -18,7 +18,7 @@ test('renders the current home page content', () => {
 test.each(['/thought-leadership', '/thought-leadership/', '/Thought-Leadership'])('loads %s with the game navigation', (pathname) => {
   window.history.replaceState({}, '', pathname);
   render(<App />);
-  expect(screen.getByRole('heading', { name: /Thought leadership/, level: 1 })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /AI thought leadership for global brands/, level: 1 })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Map' })).toHaveAttribute('href', '/map');
   expect(screen.getByRole('button', { name: 'Open navigation' })).toBeInTheDocument();
 });

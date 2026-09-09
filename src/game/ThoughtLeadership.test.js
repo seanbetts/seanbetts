@@ -5,8 +5,11 @@ import brandLogos from '../data/brandLogos';
 
 test('preserves all global brands and removes the bottom writing and speaking links', () => {
   render(<MemoryRouter><ThoughtLeadership /></MemoryRouter>);
-  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Thoughtleadership.');
+  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('AI thought leadership for global brands.');
   expect(screen.getByText(/Providing strategic perspectives to global brands/)).toBeInTheDocument();
+  expect(screen.queryByText('Ideas with real-world impact')).not.toBeInTheDocument();
+  expect(screen.queryByText('AI strategy · Transformation · Product innovation')).not.toBeInTheDocument();
+  expect(screen.queryByRole('heading', { level: 2 })).not.toBeInTheDocument();
   fireEvent.click(screen.getByText('View all 21 brands'));
   const list = screen.getByRole('list', { name: 'Global brands' });
   expect(within(list).getAllByRole('listitem')).toHaveLength(21);
