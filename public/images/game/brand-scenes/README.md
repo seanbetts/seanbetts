@@ -1,4 +1,4 @@
-# Illustrated brand scenes — first pair
+# Illustrated brand scenes
 
 Generated with the built-in image generation tool using `../brand-street/street-v1.png` as the visual style reference. Original outputs copied unchanged into this directory. The approved high street remains in place.
 
@@ -7,7 +7,7 @@ Generated with the built-in image generation tool using `../brand-street/street-
 | `takeaway-v1.png` | 1024 × 1536 | `exec-9d10dbb0-4d0c-4759-adcf-23f936c029ea.png` |
 | `film-set-v1.png` | 1672 × 941 | `exec-55204096-3a8b-4f4e-ae9c-794f44f4c9a2.png` |
 
-`src/game/BrandScenes.js` overlays the original McDonald's and Warner Bros. SVG assets on the blank bag and flight case. Positions use percentages of the source image, and image plus logo scale together. Logos are not generated. This pair is the review stage before the planned Halfords and Lidl additions.
+`src/game/BrandScenes.js` overlays the original McDonald's and Warner Bros. SVG assets on the blank bag and flight case. Positions use percentages of the source image, and image plus logo scale together. Logos are not generated. The approved first pair is joined by the Halfords and Lidl scenes documented in [second-pair-prompts.md](second-pair-prompts.md).
 
 ## Takeaway prompt
 

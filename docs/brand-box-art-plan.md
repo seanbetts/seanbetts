@@ -1,6 +1,6 @@
 # Thought Leadership: illustrated brand cover
 
-Status: art direction approved. The first McDonald's portrait and Warner Bros. landscape are generated and fitted with their original SVG logos beneath the retained high street. The temporary two-panel row lets this first pair be reviewed together before producing Halfords and Lidl and assembling the full five-panel layout.
+Status: all five panels assembled after approval of the first pair. The retained high street sits above McDonald's and Lidl portraits flanking the Warner Bros. and Halfords landscapes. All ten featured brands use original logos over generated environments. The complete 21-brand directory remains below.
 
 ## Intent
 

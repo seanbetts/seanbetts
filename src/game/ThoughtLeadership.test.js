@@ -15,7 +15,7 @@ test('preserves all global brands and removes the bottom writing and speaking li
   for (const name of ["Sainsbury's", 'Chanel', 'Apple', 'Barclays', 'British Gas', 'Channel 4']) {
     expect(within(street).getByRole('img', { name })).toHaveAttribute('src', brandLogos.find(brand => brand.name === name).src);
   }
-  for (const name of ["McDonald's", 'Warner Bros.']) {
+  for (const name of ["McDonald's", 'Warner Bros.', 'Halfords', 'Lidl']) {
     expect(screen.getByRole('img', { name })).toHaveAttribute('src', brandLogos.find(brand => brand.name === name).src);
   }
   expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');

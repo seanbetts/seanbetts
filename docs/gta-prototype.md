@@ -2,6 +2,12 @@
 
 Local prototype on `codex/gta-prototype`. No production deployment.
 
+## Busted 404
+
+Unknown routes now show the approved full-bleed motorbike scene with a cyan Pricedown Busted wordmark, translucent band, page-not-found copy and Return home link. Preview at `http://127.0.0.1:3016/404`. It deliberately stands outside both site layouts to preserve the game failure-screen composition. The source image is unchanged; all overlays are separate code/vector elements. Narrow screens use the approved close crop; short landscape screens reduce the wordmark to keep recovery visible. Keyboard entry focuses the error content, and returning home restores the portfolio layout and saved theme. The existing project-specific missing-record page is retained.
+
+Verified 9 September 2026: 49 tests across 15 suites, successful production build, desktop and phone browser rendering, keyboard recovery to Home. The existing React Helmet development StrictMode warning remains. Asset provenance is in `public/images/game/404/README.md`.
+
 ## Preview
 
 The current production-build preview is http://127.0.0.1:3017. The live development preview is http://127.0.0.1:3016. These are local processes and last only while running.
@@ -59,4 +65,4 @@ About now uses one continuous ink frame around all four rows. Image windows clip
 
 Thought Leadership follows the shared Home/About treatment: a Home breadcrumb, theme-aware headline panel with an accent period, upright speaking artwork behind a clipped diagonal seam, and one continuous ink frame. The logo strips are replaced by a prototype illustrated sunset high street: six original SVG logos appear on four storefronts, a poster and a van. The scene pans horizontally on phones, with all 21 brand names retained in a compact disclosure below. The former Writing/Speaking action container is removed; those destinations remain in the global menu. Image provenance and the generation prompt are in `public/images/game/brand-street/README.md`. This is one sample street to assess the direction before generating further scenes.
 
-The first two additional cover-art scenes now sit below the high street: a McDonald's chauffeur takeaway portrait and a Warner Bros. film-set landscape. Original SVG logos sit on the generated blank bag and flight case. This initial pair uses a shared diagonal seam and stacks on phones; the remaining Halfords and Lidl scenes are planned in `docs/brand-box-art-plan.md`. Their image prompts and source provenance are in `public/images/game/brand-scenes/README.md`.
+Four additional cover-art scenes now sit below the high street: McDonald's chauffeur takeaway and Lidl marina portraits flank Warner Bros. film-set and Halfords holiday landscapes. Original SVG logos sit on generated blank bags, flight case and shop signage. Images and logos share an intrinsic-ratio stage so cropping preserves alignment and proportions. Matching diagonal cuts expose one shared ink canvas; phones stack the four scenes in reading order. The complete art direction is in `docs/brand-box-art-plan.md`; image prompts and source provenance are in `public/images/game/brand-scenes/README.md` and `second-pair-prompts.md`.
