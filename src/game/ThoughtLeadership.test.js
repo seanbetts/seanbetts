@@ -16,7 +16,7 @@ test('preserves all global brands and removes the bottom writing and speaking li
   for (const brand of brandLogos) expect(within(list).getByText(brand.name)).toBeInTheDocument();
   const street = screen.getByRole('region', { name: 'Illustrated brand high street' });
   const streetImage = within(street).getByRole('img');
-  expect(streetImage).toHaveAttribute('src', '/images/game/brand-street/street-integrated-v3.png');
+  expect(streetImage).toHaveAttribute('src', '/images/game/brand-street/street-integrated-v4.png');
   for (const name of ["Sainsbury's", 'Chanel', 'Apple', 'Barclays', 'British Gas', 'Channel 4']) {
     expect(streetImage.getAttribute('alt')).toContain(name);
   }

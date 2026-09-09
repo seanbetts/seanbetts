@@ -2,7 +2,7 @@
 
 Generated with the built-in image generation tool on 2026-09-08. Original: `exec-d4fb9a84-0a3e-4f9b-97fa-5c6444ab797e.png`. Native dimensions: 2172 × 724. Copied unchanged as `street-v1.png`.
 
-The original environment contains blank signage and is retained as a fallback. The page now uses `street-integrated-v3.png`, with all six brand marks generated into the scene and refined British Gas vehicle livery. See [integration and refinement prompts](integrated-prompts.md). The scene is a conceptual portfolio illustration.
+The original environment contains blank signage and is retained as a fallback. The page now uses `street-integrated-v4.png`, with all six brand marks generated into the scene and refined British Gas vehicle livery. See [integration and refinement prompts](integrated-prompts.md). The scene is a conceptual portfolio illustration.
 
 ## Generation prompt
 

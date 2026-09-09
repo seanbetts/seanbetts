@@ -1,8 +1,16 @@
 # Integrated high street
 
-Generated with the built-in image generation tool on 2026-09-09. Final asset: `street-integrated-v3.png` (2172 × 724). Original final output: `exec-1e39e9eb-9710-4ea5-a538-a86223aa0f40.png`.
+## Centring and paint correction prompt
 
-All six brand marks are now part of the raster illustration. The second edit reduces and shades the British Gas livery within the van panel. `street-v1.png` remains the unbranded fallback. Other brand scenes retain their separate original logo assets.
+Use case: precise-object-edit.
+Correct ONLY the British Gas van in this panorama. There are TWO specific defects to fix:
+1) ERASE the entire pale ivory rectangular sign-like patch and its bright rounded rectangular border from the van's upper cargo side. Repaint that whole patch as continuous warm beige/cream metal bodywork, matching the paint, sunset reflections and shading immediately beneath and beside it. There must be NO visible light rectangle, NO outlined rectangular inset and NO label backing. Keep only necessary structural door seams.
+2) Move the COMPLETE British Gas lettering AND flame together LEFT so the whole logo is horizontally centred on the broad cargo side between the rear vertical edge and the cab door seam. Current logo is too far right. Its visual centre should lie around 73% of the full image width, roughly halfway between the cargo panel's rear edge at 66% and its front edge at 79%. Centre it vertically in the upper cargo metal area. Keep modest scale, blue "British Gas" wording and blue/green flame. Render the logo directly onto the same uninterrupted beige metal with warm scene shading visible over it.
+Preserve the shape and position of the van, tyres, cab and all remaining illustration. Preserve all five other brand signs exactly as they are, all buildings, pavement, sunset, framing and GTA-style painted aesthetic. Keep the exact wide 3:1 composition. Change no other elements. The important correction is a centrally positioned logo on uninterrupted body-coloured metal, with the white placeholder rectangle fully gone.
+
+Generated with the built-in image generation tool on 2026-09-09. Final asset: `street-integrated-v4.png` (2172 × 724). Original final output: `exec-ea9acedb-738c-4059-afe2-7e551569ab7b.png`.
+
+All six brand marks are now part of the raster illustration. The final edit centres the British Gas livery on the cargo panel and replaces the pale backing rectangle with continuous cream paint. `street-v1.png` remains the unbranded fallback. Other brand scenes retain their separate original logo assets.
 
 ## Initial integration prompt
 
