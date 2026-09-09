@@ -13,15 +13,18 @@
 .identity h1 img{width:100%;height:auto;max-height:235px;filter:drop-shadow(0 3px 4px #0005)}
 .identity p{font-family:var(--game-ui);line-height:1.15}
 .identity .role{font-size:clamp(19px,1.85vw,28px);margin-top:9px}
-.identity .expertise,.identity .advocacy{font-size:clamp(10px,4.7cqw,19px);white-space:nowrap;margin-top:12px;line-height:1.18}
-.identity .advocacy{color:#ebd6ea}
+.identity .expertise,.identity .advocacy{font-size:clamp(10px,4.7cqw,19px);white-space:nowrap;margin-top:12px;line-height:1.18;color:#fff}
+.identity .advocacy{margin-top:4px}
 .speaking{left:0;top:0;width:23.44%;height:48%;clip-path:polygon(0 0,93.8567% 0,100% 100%,0 95.8333%)}
+.speaking [data-art="speaking"]>div{width:100%;height:100%;background-image:url('../../public/images/game/home-studies/speaking-stage-v1.webp');background-size:cover;background-position:center 25%}
 .writing{left:0;top:46%;width:25%;height:54%;clip-path:polygon(0 0,93.76% 3.7037%,100% 100%,0 100%)}
+.writing [data-art="writing"]>div{width:100%;height:100%;background-image:url('../../public/images/game/home-studies/writing-tablet-v5-steve-jobs.webp');background-size:cover;background-position:center 25%}
 .building{left:56%;top:0;width:44%;height:47%;clip-path:polygon(0 0,100% 0,100% 91.4894%,3.2045% 100%)}
+.building [data-art="building"]>div{width:100%;height:100%;background-image:url('../../public/images/game/home-studies/building-studio-v3-tattoos.webp');background-size:cover;background-position:65% center}
 .leadership{left:57.41%;top:45.066%;width:20.59%;height:54.934%;clip-path:polygon(0 3.5205%,100% 0,95.1433% 100%,7.7222% 100%)}
+.leadership [data-art]>div{width:100%;height:100%;background-image:url('../../public/images/game/home-studies/leadership-workshop-v2-tattoos.webp');background-size:cover;background-position:center 35%}
 .about{left:77%;top:43%;width:23%;height:57%;clip-path:polygon(4.3478% 3.6246%,100% 0,100% 100%,0 100%)}
-.leadership [data-art]{filter:hue-rotate(-18deg);transform:scale(1.15)}
-.leadership:hover [data-art]{transform:scale(1.2)}
+.about [data-art="about"]>div{width:100%;height:100%;background-image:url('../../public/images/game/home-studies/about-personal-room-v1.webp');background-size:cover;background-position:center center}
 .dividers{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;overflow:visible}
 .dividers path{fill:none;stroke:#110818;stroke-width:var(--game-frame);vector-effect:non-scaling-stroke;stroke-linecap:square;stroke-linejoin:round}
 .caption{position:absolute;left:0;bottom:0;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:58px 20px 24px;background:linear-gradient(transparent,#100b18db 47%,#100b18f5);z-index:2}
@@ -36,7 +39,7 @@
  .portrait{height:660px;order:0}
  .portraitImage{object-position:50% 24%}
  .identity{left:0;width:100%;padding:50px 7% 24px}
- .identity h1 img{width:100%;max-height:190px}.identity .role{font-size:25px}.identity .expertise,.identity .advocacy{margin-top:10px}
+ .identity h1 img{width:100%;max-height:190px}.identity .role{font-size:25px}.identity .expertise{margin-top:10px}
  .building{order:1}.writing{order:2}.speaking{order:3}.leadership{order:4}.about{order:5}
  .dividers{display:none}
  .caption,.speaking .caption,.building .caption,.writing .caption,.leadership .caption{padding:50px 20px 25px;display:flex}

@@ -57,9 +57,9 @@ export default function GameHome() {
         </div>
       </Link>
       <CoverPanel scene="building" title="Building" description="Products, prototypes & experiments" to="/building" />
-      <CoverPanel scene="writing" title="Writing" description="The Blueprint & beyond" to="/writing" />
-      <CoverPanel scene="speaking" title="Speaking" description="Keynotes, panels & conversations" to="/speaking" />
-      <CoverPanel scene="about" title="About" description="The story so far" to="/about" />
+      <CoverPanel scene="writing" title="Writing" description="The Blueprint" to="/writing" />
+      <CoverPanel scene="speaking" title="Speaking" description="Keynotes, panels & podcasts" to="/speaking" />
+      <CoverPanel scene="about" title="About" description="A little more about me" to="/about" />
       <CoverPanel scene="speaking" panel="leadership" title="Thought leadership" description="AI perspectives for global brands" to="/thought-leadership" />
       <svg className={styles.dividers} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <path d="M22 0L25 100 M56 0L59 100 M0 46L23.44 48 M57.41 47L100 43 M78 45.066L77 100" />
