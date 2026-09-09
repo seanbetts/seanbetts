@@ -101,17 +101,6 @@ const articlesData = [
     "imagePosition": "center center"
   },
   {
-    "title": "I really miss Steve Jobs",
-    "url": "https://www.the-blueprint.ai/p/i-really-miss-steve-jobs",
-    "datePublished": "2025-03-19",
-    "publication": "The Blueprint",
-    "description": "A personal reflection on Steve Jobs and his enduring influence.",
-    "image": "/images/writing/article-10.webp",
-    "imageSource": "https://substackcdn.com/image/fetch/$s_!6Mkc!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e58de5f-b206-4520-9ff5-55bd2a512a2a_1200x800.heic",
-    "imageAlt": "Black and white portrait of Steve Jobs resting his chin on his hand.",
-    "imagePosition": "center 20%"
-  },
-  {
     "title": "Omnicom Media Group’s AI Chief on What Star Wars Teaches Us About AI",
     "url": "https://futureweek.com/omnicoms-ai-chief-on-what-star-wars-teaches-us-about-ai/",
     "publication": "FutureWeek",
@@ -143,6 +132,17 @@ const articlesData = [
     "imageSource": "https://thedrum-media.imgix.net/thedrum-prod/s3/screenshot_2025-04-01_120307.png?w=1280&ar=default&fit=crop&crop=faces&auto=format",
     "imageAlt": "A person surrounded by a wall of colourful digital screens.",
     "imagePosition": "center center"
+  },
+  {
+    "title": "I really miss Steve Jobs",
+    "url": "https://www.the-blueprint.ai/p/i-really-miss-steve-jobs",
+    "datePublished": "2025-03-19",
+    "publication": "The Blueprint",
+    "description": "A personal reflection on Steve Jobs and his enduring influence.",
+    "image": "/images/writing/article-10.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!6Mkc!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e58de5f-b206-4520-9ff5-55bd2a512a2a_1200x800.heic",
+    "imageAlt": "Black and white portrait of Steve Jobs resting his chin on his hand.",
+    "imagePosition": "center 20%"
   },
   {
     "title": "Web 4.0 - The Rise of the Agentic Web",
@@ -189,17 +189,6 @@ const articlesData = [
     "imagePosition": "center center"
   },
   {
-    "title": "The Search for (im)perfection",
-    "url": "https://newdigitalage.co/agencies/sean-betts-the-search-for-imperfection/",
-    "publication": "New Digital Age",
-    "description": "When should we trust AI to work without human oversight?",
-    "datePublished": "2024-04-22",
-    "image": "/images/writing/article-18.webp",
-    "imageSource": "https://newdigitalage.co/wp-content/uploads/2023/08/Sean-Betts-1-jpg.webp",
-    "imageAlt": "Sean Betts sitting in front of a wall of framed artwork.",
-    "imagePosition": "70% 28%"
-  },
-  {
     "title": "O is for Omni, but A is for Agent",
     "url": "https://www.the-blueprint.ai/p/o-is-for-omni-but-a-is-for-agent",
     "datePublished": "2024-05-13",
@@ -209,6 +198,17 @@ const articlesData = [
     "imageSource": "https://substackcdn.com/image/fetch/$s_!JbXm!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8755e01-b179-49f9-aeb1-65dc4480a79b_1966x1228.png",
     "imageAlt": "A row of interface symbols against a painted sky.",
     "imagePosition": "center center"
+  },
+  {
+    "title": "The Search for (im)perfection",
+    "url": "https://newdigitalage.co/agencies/sean-betts-the-search-for-imperfection/",
+    "publication": "New Digital Age",
+    "description": "When should we trust AI to work without human oversight?",
+    "datePublished": "2024-04-22",
+    "image": "/images/writing/article-18.webp",
+    "imageSource": "https://newdigitalage.co/wp-content/uploads/2023/08/Sean-Betts-1-jpg.webp",
+    "imageAlt": "Sean Betts sitting in front of a wall of framed artwork.",
+    "imagePosition": "70% 28%"
   },
   {
     "title": "The Marketing Singularity is Nearer Than You Think",
@@ -255,6 +255,17 @@ const articlesData = [
     "imagePosition": "center center"
   },
   {
+    "title": "AI Safety Summit: what marketers need to know",
+    "url": "https://www.thedrum.com/opinion/2023/11/07/ai-safety-summit-what-marketers-need-know",
+    "datePublished": "2023-11-07",
+    "publication": "The Drum",
+    "description": "What the AI Safety Summit means for marketers.",
+    "image": "/images/writing/article-25.webp",
+    "imageSource": "https://thedrum-media.imgix.net/thedrum-prod/s3/news/tmp/77017/screenshot_2023-11-07_161648.png?w=1280&ar=default&fit=crop&crop=faces&auto=format",
+    "imageAlt": "The entrance to the AI Safety Summit at Bletchley Park.",
+    "imagePosition": "center 38%"
+  },
+  {
     "title": "OpenAI DevDay Special",
     "url": "https://www.the-blueprint.ai/p/openai-devday-special",
     "datePublished": "2023-11-06",
@@ -266,15 +277,15 @@ const articlesData = [
     "imagePosition": "center center"
   },
   {
-    "title": "AI Safety Summit: what marketers need to know",
-    "url": "https://www.thedrum.com/opinion/2023/11/07/ai-safety-summit-what-marketers-need-know",
-    "datePublished": "2023-11-07",
-    "publication": "The Drum",
-    "description": "What the AI Safety Summit means for marketers.",
-    "image": "/images/writing/article-25.webp",
-    "imageSource": "https://thedrum-media.imgix.net/thedrum-prod/s3/news/tmp/77017/screenshot_2023-11-07_161648.png?w=1280&ar=default&fit=crop&crop=faces&auto=format",
-    "imageAlt": "The entrance to the AI Safety Summit at Bletchley Park.",
-    "imagePosition": "center 38%"
+    "title": "Navigating the role of generative AI in digital marketing",
+    "url": "https://newdigitalage.co/agencies/sean-betts-the-generative-ai-hype-cycle/",
+    "publication": "New Digital Age",
+    "description": "Making sense of generative AI’s place in digital marketing beyond the hype.",
+    "datePublished": "2023-09-26",
+    "image": "/images/writing/article-18.webp",
+    "imageSource": "https://newdigitalage.co/wp-content/uploads/2023/08/Sean-Betts-1-jpg.webp",
+    "imageAlt": "Sean Betts sitting in front of a wall of framed artwork.",
+    "imagePosition": "70% 28%"
   },
   {
     "title": "Is Generative AI a Feature or a Platform?",
@@ -297,17 +308,6 @@ const articlesData = [
     "imageSource": "https://substackcdn.com/image/fetch/$s_!kmhq!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff8eb9c0f-3f99-4e7d-a32c-644d01cc0696_1456x816.png",
     "imageAlt": "A futuristic figure sitting in a chair against a dark background.",
     "imagePosition": "center center"
-  },
-  {
-    "title": "Navigating the role of generative AI in digital marketing",
-    "url": "https://newdigitalage.co/agencies/sean-betts-the-generative-ai-hype-cycle/",
-    "publication": "New Digital Age",
-    "description": "Making sense of generative AI’s place in digital marketing beyond the hype.",
-    "datePublished": "2023-09-26",
-    "image": "/images/writing/article-18.webp",
-    "imageSource": "https://newdigitalage.co/wp-content/uploads/2023/08/Sean-Betts-1-jpg.webp",
-    "imageAlt": "Sean Betts sitting in front of a wall of framed artwork.",
-    "imagePosition": "70% 28%"
   }
 ];
 
