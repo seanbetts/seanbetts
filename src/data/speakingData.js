@@ -8,7 +8,8 @@ const speakingData = [
     date: "29th April 2026",
     location: "London, UK",
     conference: "Future of Brands 2026",
-    image: "/images/speaking/future-of-brands-2026.jpg"
+    image: "/images/speaking/future-of-brands-2026.jpg",
+    imageType: "photo"
   },
   {
     id: "iab-leadership-summit-2026",
@@ -18,7 +19,8 @@ const speakingData = [
     date: "5 March 2026",
     location: "London, UK",
     conference: "IAB Leadership Summit 2026",
-    image: "/images/speaking/iab-leadership-summit-2026.jpg"
+    image: "/images/speaking/iab-leadership-summit-2026.jpg",
+    imageType: "photo"
   },
   {
     id: "lead-2026",
@@ -28,7 +30,8 @@ const speakingData = [
     date: "5 February 2026",
     location: "London, UK",
     conference: "LEAD 2026",
-    image: "/images/speaking/lead-2026.jpg"
+    image: "/images/speaking/lead-2026.jpg",
+    imageType: "photo"
   },
   // 2025
   {
@@ -39,7 +42,8 @@ const speakingData = [
     date: "19 November 2025",
     location: "London, UK",
     conference: "Profound's Zero Click London 2025",
-    image: "/images/speaking/profound-zero-click-london-2025.jpg"
+    image: "/images/speaking/profound-zero-click-london-2025.jpg",
+    imageType: "photo"
   },
   {
     id: "future-media-talk-2025",
@@ -49,7 +53,8 @@ const speakingData = [
     date: "5 November 2025",
     location: "London, UK",
     conference: "Future of Media 2025",
-    image: "/images/speaking/fom-2025.png"
+    image: "/images/speaking/fom-2025.png",
+    imageType: "artwork"
   },
   {
     id: "gcs-inside-media-2026",
@@ -59,7 +64,8 @@ const speakingData = [
     date: "5 November 2025",
     location: "London, UK",
     conference: "Government Communications Service Inside Media 2026",
-    image: "/images/speaking/gcs.png"
+    image: "/images/speaking/gcs.png",
+    imageType: "logo"
   },
   {
     id: "aop-publishing-tech-2025",
@@ -69,7 +75,8 @@ const speakingData = [
     date: "8 October 2025",
     location: "London, UK",
     conference: "AOP Publishing Tech Talks 2025",
-    image: "/images/speaking/aop-publishing-2025.jpeg"
+    image: "/images/speaking/aop-publishing-2025.jpeg",
+    imageType: "photo"
   },
   {
     id: "brunel-salesforce-ai-2025",
@@ -79,7 +86,8 @@ const speakingData = [
     date: "1 October 2025",
     location: "London, UK",
     conference: "Brunel x Salesforce AI Conference",
-    image: "/images/speaking/brunel-2025.jpeg"
+    image: "/images/speaking/brunel-2025.jpeg",
+    imageType: "photo"
   },
   {
     id: "overbury-ai-seminar-2025",
@@ -89,7 +97,8 @@ const speakingData = [
     date: "30 September 2025",
     location: "London, UK",
     conference: "Overbury Client Seminar",
-    image: "/images/speaking/overbury-2025.jpg"
+    image: "/images/speaking/overbury-2025.jpg",
+    imageType: "logo"
   },
   {
     id: "apple-web4-2025",
@@ -99,7 +108,8 @@ const speakingData = [
     date: "24 September 2025",
     location: "San Francisco, USA",
     conference: "Apple Interactive Conference",
-    image: "/images/speaking/apple-2025.jpeg"
+    image: "/images/speaking/apple-2025.jpeg",
+    imageType: "photo"
   },
   {
     id: "gcs-learning-festival 2025",
@@ -109,7 +119,8 @@ const speakingData = [
     date: "23 September 2025",
     location: "London, UK",
     conference: "Government Communications Service Learning Festival 2025",
-    image: "/images/speaking/gcs-learning-2025.jpeg"
+    image: "/images/speaking/gcs-learning-2025.jpeg",
+    imageType: "photo"
   },
   {
     id: "giffgaff-ai-day-2025",
@@ -119,7 +130,8 @@ const speakingData = [
     date: "17 September 2025",
     location: "Uxbridge, UK",
     conference: "giffgaff AI Day",
-    image: "/images/speaking/giffgaff-2025.jpeg"
+    image: "/images/speaking/giffgaff-2025.jpeg",
+    imageType: "photo"
   },
   {
     id: "barclays-marketing-frontiers-2025",
@@ -129,7 +141,8 @@ const speakingData = [
     date: "16 September 2025",
     location: "London, UK",
     conference: "Barclays Marketing Frontiers 2025",
-    image: "/images/speaking/barclays.svg"
+    image: "/images/speaking/barclays.svg",
+    imageType: "logo"
   },
   {
     id: "ai-adoption-podcast-2025",
@@ -139,7 +152,8 @@ const speakingData = [
     date: "21 August 2025",
     location: "Virtual",
     conference: "The AI Adoption Podcast",
-    image: "/images/speaking/ai-adoption-podcast-2024.jpg"
+    image: "/images/speaking/ai-adoption-podcast-2024.jpg",
+    imageType: "artwork"
   },
   {
     id: "dmwf-london-2025",
@@ -149,7 +163,8 @@ const speakingData = [
     date: "24 June 2025",
     location: "London, UK",
     conference: "Digital Marketing World Forum",
-    image: "/images/speaking/dmwf-2025.png"
+    image: "/images/speaking/dmwf-2025.png",
+    imageType: "logo"
   },
   {
     id: "jcdecaux-speaker-series-2025",
@@ -159,7 +174,8 @@ const speakingData = [
     date: "16 June 2025",
     location: "London, UK",
     conference: "JCDecaux Speaker Series",
-    image: "/images/speaking/jcd.svg"
+    image: "/images/speaking/jcd.svg",
+    imageType: "logo"
   },
   {
     id: "programmatic-pioneers-2025",
@@ -169,7 +185,8 @@ const speakingData = [
     date: "6 June 2025",
     location: "London, UK",
     conference: "Programmatic Pioneers 2025",
-    image: "/images/speaking/programmatic-pioneers-2025.jpg"
+    image: "/images/speaking/programmatic-pioneers-2025.jpg",
+    imageType: "photo"
   },
   {
     id: "futureweek-forum-2025",
@@ -179,7 +196,8 @@ const speakingData = [
     date: "5 March 2025",
     location: "London, UK",
     conference: "FutureWeek Forum 2025",
-    image: "/images/speaking/future-week-forum-2025.jpg"
+    image: "/images/speaking/future-week-forum-2025.jpg",
+    imageType: "photo"
   },
   {
     id: "gcs-inside-media-2025",
@@ -189,7 +207,8 @@ const speakingData = [
     date: "28 January 2025",
     location: "London, UK",
     conference: "Government Communications Service Inside Media 2025",
-    image: "/images/speaking/gcs.png"
+    image: "/images/speaking/gcs.png",
+    imageType: "logo"
   },
 
   // 2024
@@ -201,7 +220,8 @@ const speakingData = [
     date: "28 November 2024",
     location: "Virtual",
     conference: "Intellectual Property Office",
-    image: "/images/speaking/ipo-2024.jpg"
+    image: "/images/speaking/ipo-2024.jpg",
+    imageType: "logo"
   },
   {
     id: "uk-gov-marketing-breakfast-2024",
@@ -211,7 +231,8 @@ const speakingData = [
     date: "26 November 2024",
     location: "London, UK",
     conference: "UK Government Marketing Leaders Group Breakfast",
-    image: "/images/speaking/gcs.png"
+    image: "/images/speaking/gcs.png",
+    imageType: "logo"
   },
   {
     id: "infosummit-london-2024",
@@ -221,7 +242,8 @@ const speakingData = [
     date: "13 November 2024",
     location: "London, UK",
     conference: "InfoSummit London 2024",
-    image: "/images/speaking/infosummit-2024.png"
+    image: "/images/speaking/infosummit-2024.png",
+    imageType: "logo"
   },
   {
     id: "isba-procurement-2024",
@@ -231,7 +253,8 @@ const speakingData = [
     date: "8 November 2024",
     location: "London, UK",
     conference: "ISBA Procurement Conference",
-    image: "/images/speaking/isba.png"
+    image: "/images/speaking/isba.png",
+    imageType: "logo"
   },
   {
     id: "future-media-panel-2024",
@@ -241,7 +264,8 @@ const speakingData = [
     date: "9 October 2024",
     location: "London, UK",
     conference: "Future of Media 2024",
-    image: "/images/speaking/fom-2024.jpg"
+    image: "/images/speaking/fom-2024.jpg",
+    imageType: "artwork"
   },
   {
     id: "future-media-talk-2024",
@@ -251,7 +275,8 @@ const speakingData = [
     date: "9 October 2024",
     location: "London, UK",
     conference: "Future of Media",
-    image: "/images/speaking/future-of-media-2024.jpg"
+    image: "/images/speaking/future-of-media-2024.jpg",
+    imageType: "photo"
   },
   {
     id: "gcs-learning-festival-2024",
@@ -261,7 +286,8 @@ const speakingData = [
     date: "24 September 2024",
     location: "London, UK",
     conference: "Government Communications Service Learning Festival",
-    image: "/images/speaking/gcs.png"
+    image: "/images/speaking/gcs.png",
+    imageType: "logo"
   },
   {
     id: "identity-architects-podcast-2024",
@@ -271,7 +297,8 @@ const speakingData = [
     date: "5 September 2024",
     location: "Virtual",
     conference: "Identity Architects Podcast (InfoSum)",
-    image: "/images/speaking/infosum-2024.jpg"
+    image: "/images/speaking/infosum-2024.jpg",
+    imageType: "artwork"
   },
   {
     id: "programmatic-pioneers-2024",
@@ -281,7 +308,8 @@ const speakingData = [
     date: "23 May 2024",
     location: "London, UK",
     conference: "Programmatic Pioneers",
-    image: "/images/speaking/programmatic-pioneers-2024.jpg"
+    image: "/images/speaking/programmatic-pioneers-2024.jpg",
+    imageType: "photo"
   },
   {
     id: "media-360-2024",
@@ -291,7 +319,8 @@ const speakingData = [
     date: "22 May 2024",
     location: "Brighton, UK",
     conference: "Media 360",
-    image: "/images/speaking/media360-2024.jpg"
+    image: "/images/speaking/media360-2024.jpg",
+    imageType: "logo"
   },
   {
     id: "adweek-europe-2024",
@@ -301,7 +330,8 @@ const speakingData = [
     date: "14 May 2024",
     location: "London, UK",
     conference: "Advertising Week Europe",
-    image: "/images/speaking/adweek-2024.jpg"
+    image: "/images/speaking/adweek-2024.jpg",
+    imageType: "photo"
   },
   {
     id: "future-of-brands-2024",
@@ -311,7 +341,8 @@ const speakingData = [
     date: "17 April 2024",
     location: "London, UK",
     conference: "Future of Brands 2024",
-    image: "/images/speaking/future-of-brands-2024.jpg"
+    image: "/images/speaking/future-of-brands-2024.jpg",
+    imageType: "photo"
   },
   {
     id: "barclays-ai-comms-2024",
@@ -321,7 +352,8 @@ const speakingData = [
     date: "26 March 2024",
     location: "London, UK",
     conference: "Barclays New Perspectives",
-    image: "/images/speaking/barclays.svg"
+    image: "/images/speaking/barclays.svg",
+    imageType: "logo"
   },
   {
     id: "genai-marketing-summit-2024",
@@ -331,7 +363,8 @@ const speakingData = [
     date: "28 February 2024",
     location: "London, UK",
     conference: "Generative AI for Marketing Summit",
-    image: "/images/speaking/genai-marketing-2023.png"
+    image: "/images/speaking/genai-marketing-2023.png",
+    imageType: "logo"
   },
 
   // 2023
@@ -343,7 +376,8 @@ const speakingData = [
     date: "28 November 2023",
     location: "Virtual",
     conference: "Middlesex University",
-    image: "/images/speaking/middlesex-2023.png"
+    image: "/images/speaking/middlesex-2023.png",
+    imageType: "logo"
   },
   {
     id: "gcs-inside-media-2024",
@@ -353,7 +387,8 @@ const speakingData = [
     date: "28 November 2023",
     location: "London, UK",
     conference: "Government Communications Service Inside Media 2024",
-    image: "/images/speaking/gcs.png"
+    image: "/images/speaking/gcs.png",
+    imageType: "logo"
   },
   {
     id: "linkedin-emea-leadership-2023",
@@ -363,7 +398,8 @@ const speakingData = [
     date: "14 November 2023",
     location: "London, UK",
     conference: "LinkedIn EMEA Leadership Team",
-    image: "/images/speaking/linkedin-2023.webp"
+    image: "/images/speaking/linkedin-2023.webp",
+    imageType: "logo"
   },
   {
     id: "barclays-marketing-frontiers-2023",
@@ -373,7 +409,9 @@ const speakingData = [
     date: "19 October 2023",
     location: "London, UK",
     conference: "Barclays Marketing Frontiers",
-    image: "/images/speaking/barclays-2023.jpg"
+    image: "/images/speaking/barclays-2023.jpg",
+    imagePosition: "50% 20%",
+    imageType: "photo"
   },
   {
     id: "cheq-breakfast-briefing-2023",
@@ -383,7 +421,8 @@ const speakingData = [
     date: "1 October 2023",
     location: "London, UK",
     conference: "CHEQ Executive Breakfast Briefing",
-    image: "/images/speaking/cheq-2023.png"
+    image: "/images/speaking/cheq-2023.png",
+    imageType: "logo"
   },
   {
     id: "guardian-marketing-conf-2023",
@@ -393,7 +432,8 @@ const speakingData = [
     date: "15 June 2023",
     location: "London, UK",
     conference: "Guardian Marketing Conference",
-    image: "/images/speaking/guardian-2025.png"
+    image: "/images/speaking/guardian-2025.png",
+    imageType: "logo"
   }
 ];
 

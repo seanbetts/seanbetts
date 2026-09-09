@@ -8,11 +8,14 @@ function openPage() {
   return screen.getByRole('region', { name: /^More appearances\s*\.$/ });
 }
 
-test('features three appearances and keeps every other engagement available without duplicates', () => {
+test('features every event photograph and keeps logo and artwork appearances in the archive without duplicates', () => {
   const archive = openPage();
   expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Speaking.');
-  const selected = screen.getByRole('region', { name: 'Selected appearances' });
-  expect(within(selected).getAllByRole('article')).toHaveLength(3);
+  const selected = screen.getByRole('region', { name: 'Appearances in pictures' });
+  expect(within(selected).getAllByRole('article')).toHaveLength(16);
+  expect(within(selected).getAllByRole('img')).toHaveLength(16);
+  expect(within(selected).queryByText('Overbury Client Seminar')).not.toBeInTheDocument();
+  expect(within(selected).getByText('Barclays Marketing Frontiers')).toBeVisible();
   expect(within(selected).getByText('Apple Interactive Conference')).toBeVisible();
   expect(within(archive).getAllByRole('article')).toHaveLength(12);
   while (screen.queryByRole('button', { name: 'Show more appearances' })) {
@@ -20,7 +23,10 @@ test('features three appearances and keeps every other engagement available with
   }
   const articles = screen.getAllByRole('article');
   expect(articles).toHaveLength(speakingData.length);
+  expect(within(archive).getAllByRole('article')).toHaveLength(23);
   for (const talk of speakingData) {
+    const group = talk.imageType === 'photo' ? selected : archive;
+    expect(within(group).getAllByRole('article').some(article => article.textContent.includes(talk.conference) && article.textContent.includes(talk.title))).toBe(true);
     expect(articles.some(article => article.textContent.includes(talk.title) && article.textContent.includes(talk.conference) && article.textContent.includes(talk.description))).toBe(true);
   }
   expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
@@ -29,7 +35,7 @@ test('features three appearances and keeps every other engagement available with
 
 test('combines year and format filters and recovers from an empty result', () => {
   const archive = openPage();
-  fireEvent.change(screen.getByLabelText('Year'), { target: { value: '2026' } });
+  fireEvent.change(screen.getByLabelText('Year'), { target: { value: '2023' } });
   fireEvent.change(screen.getByLabelText('Format'), { target: { value: 'podcast' } });
   expect(within(archive).queryAllByRole('article')).toHaveLength(0);
   expect(screen.getByText(/No appearances match/)).toBeVisible();

@@ -5,9 +5,8 @@ import Seo from '../components/Seo';
 import styles from './Speaking.module.css';
 import speakingData from '../data/speakingData';
 
-const featuredIds = ['future-of-brands-2026', 'iab-leadership-summit-2026', 'apple-web4-2025'];
-const featured = featuredIds.map(id => speakingData.find(talk => talk.id === id)).filter(Boolean);
-const archive = speakingData.filter(talk => !featuredIds.includes(talk.id));
+const featured = speakingData.filter(talk => talk.imageType === 'photo');
+const archive = speakingData.filter(talk => talk.imageType !== 'photo');
 const yearOf = talk => talk.date.match(/20\d{2}/)?.[0] || 'Other';
 const years = [...new Set(archive.map(yearOf))].sort().reverse();
 const formats = {
@@ -27,7 +26,7 @@ function EventPhoto({ talk }) {
   const [failed, setFailed] = useState(false);
   return <div className={styles.photo}>
     {failed ? <span className={styles.photoFallback}>{talk.conference}</span> :
-      <img src={talk.image} alt={`Sean Betts speaking at ${talk.conference}`} loading="lazy" decoding="async" onError={() => setFailed(true)} />}
+      <img src={talk.image} style={talk.imagePosition ? { objectPosition: talk.imagePosition } : undefined} alt={`Sean Betts speaking at ${talk.conference}`} loading="lazy" decoding="async" onError={() => setFailed(true)} />}
   </div>;
 }
 
@@ -59,25 +58,25 @@ function TalkInfo({ talk }) {
     onPointerLeave={() => setHovered(false)}
     onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) { setFocused(false); setPinned(false); } }}>
     <button type="button" className={styles.infoButton} aria-label={`About this talk: ${talk.title}`}
-      aria-expanded={open} aria-controls={`description-${talk.id}`}
+      aria-expanded={open} aria-controls={`description-${talk.id.replace(/\s/g, '-')}`}
       onFocus={() => { setFocused(true); setDismissed(false); }}
       onClick={() => { if (pinned) close(); else { setPinned(true); setDismissed(false); } }}>
       <Info size={28} aria-hidden="true" />
     </button>
-    <div id={`description-${talk.id}`} className={styles.talkDescription} hidden={!open}>
+    <div id={`description-${talk.id.replace(/\s/g, '-')}`} className={styles.talkDescription} hidden={!open}>
       <p>{talk.description}</p>
     </div>
   </div>;
 }
 
 function FeaturedAppearance({ talk, lead }) {
-  return <article className={`${styles.feature} ${lead ? styles.lead : ''}`} aria-labelledby={`featured-${talk.id}`}>
+  return <article className={`${styles.feature} ${lead ? styles.lead : ''}`} aria-labelledby={`featured-${talk.id.replace(/\s/g, '-')}`}>
     <EventPhoto talk={talk} />
     <TalkInfo talk={talk} />
     <div className={styles.featureCopy}>
       <div className={styles.upright}>
         <Format type={talk.type} />
-        <h3 id={`featured-${talk.id}`}>{talk.title}<span className={styles.period}>.</span></h3>
+        <h3 id={`featured-${talk.id.replace(/\s/g, '-')}`}>{talk.title.replace(/[.!?]$/, '')}<span className={styles.period}>{talk.title.match(/[.!?]$/)?.[0] || '.'}</span></h3>
         <p className={styles.conference}>{talk.conference}</p>
         <p className={styles.metadata}>{talk.date} · {talk.location}</p>
       </div>
@@ -131,8 +130,8 @@ export default function Speaking() {
         </div>
         <div className={styles.heroArt}><img src="/images/game/speaking/stage-v1.webp" alt="Illustration of Sean Betts presenting on stage" width="941" height="1672" decoding="async" /></div>
       </header>
-      <section className={styles.features} aria-label="Selected appearances">
-        <h2 className="sr-only">Selected appearances</h2>
+      <section className={styles.features} aria-label="Appearances in pictures">
+        <h2 className="sr-only">Appearances in pictures</h2>
         {featured.map((talk, index) => <FeaturedAppearance key={talk.id} talk={talk} lead={index === 0} />)}
       </section>
       <section className={styles.archive} aria-labelledby="archive-heading">
