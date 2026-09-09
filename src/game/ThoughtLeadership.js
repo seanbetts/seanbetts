@@ -27,7 +27,7 @@ export default function ThoughtLeadership() {
         <BrandStreet />
         <BrandScenes />
         <details className={styles.brandDirectory}>
-          <summary>View all {brandLogos.length} brands</summary>
+          <summary>View all brands</summary>
           <ul className={styles.brandNames} aria-label="Global brands">
             {brandLogos.map(brand => <li key={brand.name}>{brand.name}</li>)}
           </ul>

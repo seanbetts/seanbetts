@@ -10,7 +10,7 @@ test('preserves all global brands and removes the bottom writing and speaking li
   expect(screen.queryByText('Ideas with real-world impact')).not.toBeInTheDocument();
   expect(screen.queryByText('AI strategy · Transformation · Product innovation')).not.toBeInTheDocument();
   expect(screen.queryByRole('heading', { level: 2 })).not.toBeInTheDocument();
-  fireEvent.click(screen.getByText('View all 21 brands'));
+  fireEvent.click(screen.getByText('View all brands'));
   const list = screen.getByRole('list', { name: 'Global brands' });
   expect(within(list).getAllByRole('listitem')).toHaveLength(21);
   for (const brand of brandLogos) expect(within(list).getByText(brand.name)).toBeInTheDocument();
