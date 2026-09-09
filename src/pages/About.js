@@ -50,7 +50,7 @@ const About = () => {
       <div className={styles.panels}>
       <header className={styles.hero}>
         <div className={styles.portrait}>
-          <div className={styles.imageWindow}><img src="/images/game/portrait.webp" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
+          <div className={styles.imageWindow}><img src="/images/game/portrait-dark-brown-eyes.webp" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
         </div>
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>AI leader · Researcher · Builder</span>
