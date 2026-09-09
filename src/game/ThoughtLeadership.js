@@ -6,6 +6,13 @@ import BrandStreet from './BrandStreet';
 import BrandScenes from './BrandScenes';
 import styles from './ThoughtLeadership.module.css';
 
+// These brands already appear in the illustrated street and individual scenes.
+const featuredBrands = new Set([
+  "Sainsbury's", 'Chanel', 'Apple', 'Barclays', 'British Gas', 'Channel 4',
+  "McDonald's", 'Warner Bros.', 'Halfords', 'Lidl', 'John Lewis',
+]);
+const additionalBrands = brandLogos.filter(brand => !featuredBrands.has(brand.name));
+
 export default function ThoughtLeadership() {
   return <div className={styles.page}>
     <Seo title="AI Thought Leadership for Global Brands | Sean Betts" description="Strategic perspectives on how AI is rewiring discovery, consumer behaviour and digital marketing strategies." canonicalPath="/thought-leadership" />
@@ -26,12 +33,14 @@ export default function ThoughtLeadership() {
       </header>
         <BrandStreet />
         <BrandScenes />
-        <details className={styles.brandDirectory}>
-          <summary>View all brands</summary>
-          <ul className={styles.brandNames} aria-label="Global brands">
-            {brandLogos.map(brand => <li key={brand.name}>{brand.name}</li>)}
-          </ul>
-        </details>
+        <div className={styles.brandCredits}>
+          <div className={styles.creditsInner}>
+            <p className={styles.creditsLabel}>Also featuring</p>
+            <ul className={styles.brandNames} aria-label="Additional global brands">
+              {additionalBrands.map(brand => <li key={brand.name}>{brand.name}</li>)}
+            </ul>
+          </div>
+        </div>
     </section>
   </div>;
 }

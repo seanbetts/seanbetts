@@ -1,7 +1,6 @@
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import ThoughtLeadership from './ThoughtLeadership';
-import brandLogos from '../data/brandLogos';
 
 test('preserves all global brands and removes the bottom writing and speaking links', () => {
   render(<MemoryRouter><ThoughtLeadership /></MemoryRouter>);
@@ -10,10 +9,14 @@ test('preserves all global brands and removes the bottom writing and speaking li
   expect(screen.queryByText('Ideas with real-world impact')).not.toBeInTheDocument();
   expect(screen.queryByText('AI strategy · Transformation · Product innovation')).not.toBeInTheDocument();
   expect(screen.queryByRole('heading', { level: 2 })).not.toBeInTheDocument();
-  fireEvent.click(screen.getByText('View all brands'));
-  const list = screen.getByRole('list', { name: 'Global brands' });
-  expect(within(list).getAllByRole('listitem')).toHaveLength(21);
-  for (const brand of brandLogos) expect(within(list).getByText(brand.name)).toBeInTheDocument();
+  expect(screen.queryByText('View all brands')).not.toBeInTheDocument();
+  const list = screen.getByRole('list', { name: 'Additional global brands' });
+  expect(list).toBeVisible();
+  expect(list.closest('details')).toBeNull();
+  expect(within(list).getAllByRole('listitem').map(item => item.textContent)).toEqual([
+    'Allwyn', 'giffgaff', 'HM Government', 'NatWest', 'PepsiCo', 'pladis',
+    'Renault', 'Virgin Media O2', 'Volkswagen', 'Whitbread',
+  ]);
   const street = screen.getByRole('region', { name: 'Illustrated brand high street' });
   const streetImage = within(street).getByRole('img');
   expect(streetImage).toHaveAttribute('src', '/images/game/brand-street/street-integrated-v4.png');

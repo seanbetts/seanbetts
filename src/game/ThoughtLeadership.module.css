@@ -13,10 +13,12 @@
 .portraitImage{display:block;width:100%;height:auto}
 /* Title, portrait and brand collage all share one ink canvas and connected seams. */
 .cover{--angle:-1.4deg;--counter-angle:1.4deg;margin-top:30px;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--angle));transform-origin:top left;overflow:hidden}
-.brandDirectory{margin-top:var(--game-frame);padding:22px 44px;background:var(--game-surface)}
-.brandDirectory summary{cursor:pointer;font:600 18px var(--game-ui);color:var(--game-accent);transform:skewY(var(--counter-angle));min-height:28px}
-.brandDirectory summary:focus-visible{outline:3px solid var(--game-accent);outline-offset:4px}
-.brandNames{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;margin:24px 0 0;padding:0;color:var(--game-body);font-size:15px;transform:skewY(var(--counter-angle))}
+.brandCredits{margin-top:var(--game-frame);padding:28px 44px;background:var(--game-surface);text-align:center}
+.creditsInner{transform:skewY(var(--counter-angle))}
+.creditsLabel{margin:0 0 12px;color:var(--game-accent);font:600 13px var(--game-ui);letter-spacing:2px;text-transform:uppercase}
+.brandNames{list-style:none;margin:0 auto;padding:0;max-width:1080px;color:var(--game-text);font:600 clamp(18px,1.6vw,23px)/1.8 var(--game-ui);text-transform:uppercase;text-wrap:balance}
+.brandNames li{display:inline-block;white-space:nowrap}
+.brandNames li:not(:last-child)::after{content:'·';display:inline-block;margin:0 14px;color:var(--game-accent)}
 @media(max-width:1000px){
  .introduction{grid-template-columns:3fr 2fr}
  .copy{padding:32px 40px 32px 28px}
@@ -29,5 +31,6 @@
  .introduction p{font-size:16px}
  .portrait{clip-path:none;min-height:0}
  .cover{--angle:-2deg;--counter-angle:2deg;margin-top:10px}
- .brandDirectory{padding:22px}
+ .brandCredits{padding:24px 18px}
+ .brandNames li:not(:last-child)::after{margin:0 10px}
 }
