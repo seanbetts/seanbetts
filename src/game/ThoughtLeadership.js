@@ -20,8 +20,7 @@ export default function ThoughtLeadership() {
         </div>
         <figure className={styles.portrait} aria-label="John Lewis: movers discover an extravagant armchair is too wide for a penthouse doorway.">
           <div className={styles.portraitArt}>
-            <img className={styles.portraitImage} src="/images/game/brand-scenes/delivery-v1.png" alt="" width="1024" height="1536" decoding="async" />
-            <img className={styles.deliveryLogo} src={brandLogos.find(brand => brand.name === 'John Lewis').src} alt="John Lewis" />
+            <img className={styles.portraitImage} src="/images/game/brand-scenes/delivery-integrated-v2.png" alt="John Lewis" width="1024" height="1536" decoding="async" />
           </div>
         </figure>
       </header>

@@ -11,7 +11,6 @@
 .portrait{position:relative;aspect-ratio:2/3;min-height:100%;margin:0;overflow:hidden;clip-path:polygon(var(--game-frame) 0,100% 0,100% 100%,calc(var(--game-frame) - 16px) 100%)}
 .portraitArt{position:absolute;left:0;right:0;top:50%;aspect-ratio:2/3;transform:translateY(-50%) skewY(var(--counter-angle)) scale(1.05)}
 .portraitImage{display:block;width:100%;height:auto}
-.deliveryLogo{position:absolute;left:28%;top:62.8%;width:36.5%;height:4.5%;object-fit:contain}
 /* Title, portrait and brand collage all share one ink canvas and connected seams. */
 .cover{--angle:-1.4deg;--counter-angle:1.4deg;margin-top:30px;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--angle));transform-origin:top left;overflow:hidden}
 .brandDirectory{margin-top:var(--game-frame);padding:22px 44px;background:var(--game-surface)}
