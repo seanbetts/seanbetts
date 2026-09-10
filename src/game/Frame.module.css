@@ -1,8 +1,19 @@
 /* Shared frame primitives. Page modules own layout and polygon geometry only. */
 .canvas,
 .flatCanvas {
+  /* Short labels use the compact fade; multi-line editorial/project copy
+     needs a broader fade. Pages control the area each treatment covers. */
+  --frame-caption-fade: linear-gradient(transparent, #100b189e 52%, #100b18d6);
+  --frame-copy-fade: linear-gradient(180deg, transparent 12%, #100b1833 32%, #100b18bf 72%, #100b18eb);
+  --frame-top-fade: linear-gradient(180deg, #100b1873, transparent 24%);
+  --frame-caption-shadow: 0 1px 3px #0009;
+  --frame-identity-fade: linear-gradient(transparent, #150c1db3 40%, #150c1def);
+  --frame-media-fade: linear-gradient(180deg, #16051f0a, #16051f22 45%, #16051fb3);
+}
+
+.canvas,
+.flatCanvas {
   --frame-edge: 1px;
-  --frame-caption-fade: linear-gradient(180deg, transparent 12%, #21132933 32%, #211329d9 72%, #211329f2 100%);
   position: relative;
   isolation: isolate;
   background: var(--game-ink);
@@ -49,7 +60,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: var(--frame-caption-fade);
+  background: var(--frame-copy-fade);
 }
 
 /* Shared fixed-width seams for the freeform home collage. */

@@ -10,7 +10,7 @@
 .portrait{left:22%;top:0;width:37%;height:100%;clip-path:polygon(0 0,91.892% 0,100% 100%,8.108% 100%)}
 .portraitImage{height:100%;width:100%;object-fit:cover;object-position:50% 30%;transition:transform .55s ease}
 .portrait:hover .portraitImage{transform:scale(1.025)}
-.identity{container-type:inline-size;position:absolute;left:10%;bottom:0;width:90%;padding:55px 4% 26px;text-align:center;background:linear-gradient(transparent,#150c1db3 40%,#150c1def);text-shadow:0 2px 5px #000}
+.identity{container-type:inline-size;position:absolute;left:10%;bottom:0;width:90%;padding:55px 4% 26px;text-align:center;background:var(--frame-identity-fade);text-shadow:0 2px 5px #000}
 .identity h1 img{width:100%;height:auto;max-height:235px;filter:drop-shadow(0 3px 4px #0005)}
 .identity p{font-family:var(--game-ui);line-height:1.15}
 .identity .role{font-size:clamp(19px,1.85vw,28px);margin-top:9px}
@@ -27,7 +27,7 @@
 .about{left:77%;top:43%;width:23%;height:57%;clip-path:polygon(4.3478% 3.6246%,100% 0,100% 100%,0 100%)}
 .about .panelImage{object-position:center center}
 .dividers{composes:seams from "./Frame.module.css";position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;overflow:visible}
-.caption{position:absolute;left:0;bottom:0;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:58px 20px 24px;background:linear-gradient(transparent,#100b18db 47%,#100b18f5);z-index:2}
+.caption{position:absolute;left:0;bottom:0;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:36px 20px 24px;background:var(--frame-caption-fade);text-shadow:var(--frame-caption-shadow);z-index:2}
 .caption h2{font-size:clamp(24px,2.2vw,35px);text-transform:uppercase}
 .caption p{font-family:var(--game-ui);font-size:clamp(15px,1.2vw,19px);line-height:1.15;margin-top:4px}
 .speaking .caption{padding-bottom:37px;padding-right:28px}.writing .caption{padding-right:28px}.building .caption{padding-left:38px;padding-bottom:43px}.leadership .caption{padding-left:40px;padding-right:24px;gap:5px}.leadership .caption h2{font-size:clamp(23px,2vw,32px)}
@@ -37,7 +37,7 @@
  .portrait{overflow:visible;clip-path:none;background:transparent;isolation:auto}
  .portraitImage{clip-path:polygon(0 0,91.892% 0,100% 100%,8.108% 100%)}
  .identity{background:none;isolation:isolate;z-index:5;pointer-events:none}
- .identity::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(transparent,#150c1db3 40%,#150c1def);clip-path:polygon(0 0,94% 0,100% 100%,0 100%)}
+ .identity::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--frame-identity-fade);clip-path:polygon(0 0,94% 0,100% 100%,0 100%)}
  /* Cap the artwork height before enlargement so shorter viewports keep the
     portrait visible. Taller layouts retain the full 170% wordmark. */
  .identity h1 img{max-height:clamp(130px,calc(35svh - 170px),235px);transform:translateX(-3%) scale(1.7);transform-origin:50% 100%;filter:drop-shadow(0 3px 4px #0008)}
@@ -53,7 +53,7 @@
  .identity h1 img{width:100%;max-height:190px}.identity .role{font-size:25px}.identity .expertise{margin-top:10px}
  .building{order:1}.writing{order:2}.speaking{order:3}.leadership{order:4}.about{order:5}
  .dividers{display:none}
- .caption,.speaking .caption,.building .caption,.writing .caption,.leadership .caption{padding:50px 20px 25px;display:flex}
+ .caption,.speaking .caption,.building .caption,.writing .caption,.leadership .caption{padding:32px 20px 25px;display:flex}
  .caption h2,.leadership .caption h2{font-size:30px}.caption p{font-size:18px}
 }
 @media(max-width:380px){.portrait{height:620px}.identity h1 img{max-height:170px}.identity .role{font-size:23px}}

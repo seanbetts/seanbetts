@@ -26,7 +26,7 @@
 .photo { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: #211329; }
 .photo img { width: 100%; height: 100%; object-fit: cover; transform: skewY(var(--content-angle)) scale(1.06); }
 .featureLink { display: flex; flex: 1; align-items: flex-end; padding: 160px 42px 40px; min-width: 0; }
-.featureLink > div { width: 100%; }
+.featureLink > div { width: 100%; text-shadow: var(--frame-caption-shadow); }
 .featureGrid .feature:nth-of-type(even) .featureLink { padding-left: 54px; }
 .page .feature h3, .page .feature h2 { color: #fffaf4; font-size: clamp(30px, 3vw, 43px); line-height: 1.08; text-transform: uppercase; margin: 0 0 14px; text-wrap: balance; max-width: 680px; }
 .page .feature .publication { color: #ff929d; font: 600 19px/1.3 var(--game-ui); margin-bottom: 10px; }

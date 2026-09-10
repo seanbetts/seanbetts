@@ -21,7 +21,6 @@
 .chapterArt{grid-column:2;grid-row:1;position:relative;min-height:450px;border-left:var(--game-frame) solid var(--game-ink);overflow:hidden;isolation:isolate}
 .chapterImage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
 .researchImage{object-position:center bottom}
-.chapterArt::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 60%,#170c20ed)}
 .chapterArt>span{position:absolute;bottom:28px;left:28px;right:24px;z-index:2;font:600 22px var(--game-ui);text-transform:uppercase;letter-spacing:.02em}
 .chapterCopy{grid-column:1;grid-row:1;padding:42px clamp(24px,3.7vw,56px);min-width:0}
 .sectionHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:24px}
@@ -60,9 +59,8 @@
 .imageWindow{position:absolute;inset:0;overflow:hidden;clip-path:polygon(calc(var(--image-slant) + var(--game-frame)) 0,100% 0,100% 100%,var(--game-frame) 100%)}
 .portrait .imageWindow,.reverse .imageWindow{clip-path:polygon(0 0,calc(100% - var(--image-slant) - var(--game-frame)) 0,calc(100% - var(--game-frame)) 100%,0 100%)}
 .imageWindow img,.imageWindow [data-art]{transform:skewY(var(--content-angle)) scale(1.08)}
-.chapterArt::after{display:none}
-.chapterArt .imageWindow::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 60%,#170c20ed)}
-.chapterArt>span{left:calc(var(--game-frame) + 28px);right:28px;transform:skewY(var(--content-angle));color:#fffaf4}
+.chapterArt .imageWindow::after{content:'';position:absolute;inset:auto 0 0;height:140px;background:var(--frame-caption-fade);pointer-events:none}
+.chapterArt>span{left:calc(var(--game-frame) + 28px);right:28px;transform:skewY(var(--content-angle));color:#fffaf4;text-shadow:var(--frame-caption-shadow)}
 .reverse .chapterArt>span{left:28px;right:calc(var(--game-frame) + 28px)}
 @media(max-width:1000px) and (min-width:701px){
  .panels{--image-slant:24px}
