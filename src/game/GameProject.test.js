@@ -1,3 +1,4 @@
+import imageExports from '../generated/images.json';
 import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
@@ -28,7 +29,8 @@ test.each(projectsData)('$name exposes its story, features and technologies with
 test('sideBar screenshot recovers to illustrated project artwork on failure', () => {
   renderProject();
   const screenshot = screen.getByRole('img', { name: 'sideBar project screenshot' });
-  expect(screenshot).toHaveAttribute('src', '/images/projects/sidebar-welcome-ipad.png');
+  expect(imageExports['/images/projects/sidebar-welcome-ipad.png'].variants.map(image => image.src)).toContain(screenshot.getAttribute('src'));
+  expect(screenshot).toHaveAttribute('srcset');
   fireEvent.error(screenshot);
   expect(screen.queryByRole('img', { name: 'sideBar project screenshot' })).not.toBeInTheDocument();
   expect(screen.getByText('sideBar', { selector: 'strong' })).toBeInTheDocument();
@@ -71,5 +73,7 @@ test('Building retains its illustrated feature panel if the sideBar screenshot f
   fireEvent.error(screenshot);
   expect(screen.queryByRole('img', { name: 'sideBar welcome screen on iPad' })).not.toBeInTheDocument();
   const feature = screen.getByRole('link', { name: 'Open sideBar project' });
-  expect(feature.querySelector('img[src="/images/game/backgrounds/river-sunset.webp"]')).toBeInTheDocument();
+  const background = feature.querySelector('img');
+  expect(background).toBeInTheDocument();
+  expect(imageExports['/images/game/backgrounds/river-sunset.webp'].variants.map(image => image.src)).toContain(background.getAttribute('src'));
 });

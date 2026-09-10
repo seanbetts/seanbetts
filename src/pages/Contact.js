@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { ArrowLeft, ArrowUpRight, Newspaper, LinkedinLogo, Butterfly, GithubLogo } from '@phosphor-icons/react';
@@ -34,7 +35,7 @@ export default function Contact() {
           </nav>
         </div>
       </div>
-      <div className={styles.art}><img src="/images/game/contact/phone-box-v1.webp" alt="Illustrated red London telephone box in warm evening light" width="1024" height="1536" decoding="async" /></div>
+      <div className={styles.art}><ResponsiveImage src="/images/game/contact/phone-box-v1.webp" alt="Illustrated red London telephone box in warm evening light" width="1024" height="1536" decoding="async" /></div>
     </div>
   </div>;
 }

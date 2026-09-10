@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Info } from '@phosphor-icons/react';
@@ -80,7 +81,7 @@ function ArticlePanel({ article, hero = false }) {
     <div className={styles.panelWindow}>
       <div className={styles.scrim} aria-hidden="true" />
       <div className={styles.photo}>
-        {!failed && <img src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
+        {!failed && <ResponsiveImage src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
           style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
       </div>
       <ArticleInfo article={article} />

@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Seo from '../components/Seo';
@@ -35,10 +36,10 @@ export default function Custom404() {
         url: 'https://www.seanbetts.com/404',
       }}
     />
-    <img className={styles.art} src="/images/game/404/motorbike.png" alt="" fetchpriority="high" />
+    <ResponsiveImage sizes="100vw" className={styles.art} src="/images/game/404/motorbike.png" alt="" fetchpriority="high" />
     <div className={styles.shade} aria-hidden="true" />
     <div className={styles.verdict}>
-      <h1 className={styles.title}><img className={styles.wordmark} src="/images/game/404/busted.svg" alt="Busted" /></h1>
+      <h1 className={styles.title}><ResponsiveImage className={styles.wordmark} src="/images/game/404/busted.svg" alt="Busted" /></h1>
       <p className={styles.reason}>404 — Page not found.</p>
     </div>
     <nav className={styles.actions} aria-label="Recovery">

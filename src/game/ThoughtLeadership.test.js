@@ -1,3 +1,4 @@
+import imageExports from '../generated/images.json';
 import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import ThoughtLeadership from './ThoughtLeadership';
@@ -19,12 +20,13 @@ test('preserves all global brands and removes the bottom writing and speaking li
   ]);
   const street = screen.getByRole('region', { name: 'Illustrated brand high street' });
   const streetImage = within(street).getByRole('img');
-  expect(streetImage).toHaveAttribute('src', '/images/game/brand-street/street-integrated-v4.png');
+  expect(imageExports['/images/game/brand-street/street-integrated-v4.png'].variants.map(image => image.src)).toContain(streetImage.getAttribute('src'));
+  expect(streetImage).toHaveAttribute('srcset');
   for (const name of ["Sainsbury's", 'Chanel', 'Apple', 'Barclays', 'British Gas', 'Channel 4']) {
     expect(streetImage.getAttribute('alt')).toContain(name);
   }
   for (const [name, artwork] of [["McDonald's", 'takeaway-cast-v3.png'], ['Warner Bros.', 'film-set-cast-v3.png'], ['Halfords', 'getaway-cast-v3.png'], ['Lidl', 'marina-integrated-v2.png'], ['John Lewis', 'delivery-integrated-v2.png']]) {
-    expect(screen.getByRole('img', { name })).toHaveAttribute('src', `/images/game/brand-scenes/${artwork}`);
+    expect(imageExports[`/images/game/brand-scenes/${artwork}`].variants.map(image => image.src)).toContain(screen.getByRole('img', { name }).getAttribute('src'));
   }
   expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
   expect(screen.queryByRole('region', { name: 'Explore my perspectives' })).not.toBeInTheDocument();

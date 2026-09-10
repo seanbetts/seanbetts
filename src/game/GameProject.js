@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import { Link, useLocation, useParams } from 'react-router-dom';
@@ -28,14 +29,14 @@ function ProjectMedia({ project, heroImage }) {
   return (
     <div className={`${styles.media} game-art ${project.heroVideo ? styles.video : ''}`}>
       <div className={styles.artwork} aria-hidden="true">
-        {art.background ? <img src={art.background} alt="" /> : <SceneArt scene={art.scene} />}
+        {art.background ? <ResponsiveImage src={art.background} alt="" /> : <SceneArt scene={art.scene} />}
       </div>
       <div className={styles.mediaWash} />
       <div className={styles.mediaInner}>
         {project.heroVideo ? (
           <iframe src={project.heroVideo} title={`${project.name} demo`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
         ) : heroImage && !imageFailed ? (
-          <img className={styles.screenshot} src={heroImage} alt={`${project.name} project screenshot`} onError={() => setImageFailed(true)} />
+          <ResponsiveImage className={styles.screenshot} src={heroImage} alt={`${project.name} project screenshot`} onError={() => setImageFailed(true)} />
         ) : (
           <div className={styles.artCaption}><span aria-hidden="true" className={styles.projectIcon}>{project.icon}</span><span className={styles.eyebrow}>{project.type}</span><strong>{project.name}</strong></div>
         )}

@@ -1,11 +1,20 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import SceneArt from './SceneArt';
 import styles from './GameHome.module.css';
 
+const homeArtwork = {
+  building: '/images/game/home-studies/building-studio-v4-code.webp',
+  writing: '/images/game/home-studies/writing-desk-v10-balcombe.webp',
+  speaking: '/images/game/home-studies/speaking-rear-v3.webp',
+  leadership: '/images/game/home-studies/leadership-workshop-v2-tattoos.webp',
+  about: '/images/game/home-studies/about-personal-room-v1.webp',
+};
+
 function CoverPanel({ scene, title, description, to, panel = scene }) {
   return <Link to={to} className={`${styles.panel} ${styles[panel]}`}>
-    <SceneArt scene={scene} />
+    <SceneArt scene={scene} image={homeArtwork[panel]} />
     <div className={styles.caption}><div><h2>{title}</h2><p>{description}</p></div></div>
   </Link>;
 }
@@ -22,11 +31,11 @@ export default function GameHome() {
     />
     <div className={`${styles.cover} game-art`}>
       <Link to="/about" className={`${styles.panel} ${styles.portrait}`} aria-label="About Sean Betts">
-        <img className={styles.portraitImage} src="/images/game/portrait-sean-london-candidate-v1.png" alt="" fetchpriority="high" width="1024" height="1536" />
+        <ResponsiveImage className={styles.portraitImage} sizes="(max-width: 1000px) 520px, (max-width: 1700px) 650px, 740px" src="/images/game/portrait-sean-london-candidate-v1.png" alt="" fetchpriority="high" width="1024" height="1536" />
         <div className={styles.identity}>
-          <h1><span className="sr-only">Sean Betts</span><img src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
+          <h1><span className="sr-only">Sean Betts</span><ResponsiveImage src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
           <p className={styles.role}>Hands-on AI Leader</p>
-          <p className={styles.expertise}>AI strategy · Transformation · Product innovation</p>
+          <p className={styles.expertise}>AI strategy · Product innovation · Technology leadership</p>
           <p className={styles.advocacy}>Autistic · Neurodiversity & Mental Health Speaker</p>
         </div>
       </Link>

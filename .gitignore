@@ -25,3 +25,7 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+# Reproducible image exports (generated before start, build and test)
+/public/images/responsive/
+/src/generated/images.json

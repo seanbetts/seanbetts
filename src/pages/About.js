@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import React from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo, GithubLogo, EnvelopeSimple } from "@phosphor-icons/react";
 import InternalLink from '../components/InternalLink';
@@ -29,7 +30,7 @@ const About = () => {
       <div className={styles.panels}>
       <header className={styles.hero}>
         <div className={styles.portrait}>
-          <div className={styles.imageWindow}><img src="/images/game/portrait-sean-london-candidate-v1.png" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
+          <div className={styles.imageWindow}><ResponsiveImage src="/images/game/portrait-sean-london-candidate-v1.png" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
         </div>
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>AI leader · Researcher · Builder</span>
@@ -57,7 +58,7 @@ const About = () => {
       </header>
 
       <section id="professional" className={styles.chapter} aria-labelledby="professional-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><img className={styles.chapterImage} src="/images/game/about-studies/professional-discussion-v1.webp" alt="" width="941" height="1672" loading="lazy" /></div><span>01 / Strategy into practice</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={styles.chapterImage} src="/images/game/about-studies/professional-discussion-v1.webp" alt="" width="941" height="1672" loading="lazy" /></div><span>01 / Strategy into practice</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="professional-heading">Professional<br />experience<span>.</span></h2></div>
@@ -96,7 +97,7 @@ const About = () => {
       </section>
 
       <section id="research" className={`${styles.chapter} ${styles.reverse}`} aria-labelledby="research-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><img className={`${styles.chapterImage} ${styles.researchImage}`} src="/images/game/about-studies/research-mac-sidebar-v2.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>02 / Learn by building</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={`${styles.chapterImage} ${styles.researchImage}`} src="/images/game/about-studies/research-mac-sidebar-v2.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>02 / Learn by building</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="research-heading">AI research<br />&amp; development<span>.</span></h2></div>
@@ -123,7 +124,7 @@ const About = () => {
       </section>
 
       <section id="advocacy" className={styles.chapter} aria-labelledby="advocacy-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><img className={styles.chapterImage} src="/images/game/about-studies/advocacy-conversation-v1.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>03 / A personal perspective</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={styles.chapterImage} src="/images/game/about-studies/advocacy-conversation-v1.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>03 / A personal perspective</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>

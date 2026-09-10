@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
@@ -27,7 +28,7 @@ export default function ThoughtLeadership() {
         </div>
         <figure className={styles.portrait} aria-label="John Lewis: movers discover an extravagant armchair is too wide for a penthouse doorway.">
           <div className={styles.portraitArt}>
-            <img className={styles.portraitImage} src="/images/game/brand-scenes/delivery-integrated-v2.png" alt="John Lewis" width="1024" height="1536" decoding="async" />
+            <ResponsiveImage className={styles.portraitImage} src="/images/game/brand-scenes/delivery-integrated-v2.png" alt="John Lewis" width="1024" height="1536" decoding="async" />
           </div>
         </figure>
       </header>

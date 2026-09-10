@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import styles from './BrandScenes.module.css';
 
 const scenes = [
@@ -23,7 +24,7 @@ export default function BrandScenes() {
   return <div className={styles.panels}>
     {scenes.map(scene => <figure key={scene.id} className={`${styles.panel} ${styles[scene.id]}`} aria-label={`${scene.brand}: ${scene.description}`} style={{ '--scene-ratio': `${scene.width} / ${scene.height}` }}>
       <div className={styles.art}>
-        <img className={styles.environment} src={`/images/game/brand-scenes/${scene.artwork}`} alt={scene.brand} width={scene.width} height={scene.height} loading="lazy" decoding="async" />
+        <ResponsiveImage sizes={`(max-width: 700px) 100vw, ${scene.id === 'film-set' || scene.id === 'getaway' ? '40vw' : '30vw'}`} className={styles.environment} src={`/images/game/brand-scenes/${scene.artwork}`} alt={scene.brand} width={scene.width} height={scene.height} loading="lazy" decoding="async" />
       </div>
     </figure>)}
   </div>;

@@ -16,10 +16,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && node scripts/prerender.cjs && node scripts/check-crawl.cjs",
+    "build": "react-scripts build && node scripts/prerender.cjs && node scripts/check-crawl.cjs && node scripts/check-images.cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "check:crawl": "node scripts/check-crawl.cjs"
+    "check:crawl": "node scripts/check-crawl.cjs",
+    "images:prepare": "node scripts/prepare-images.cjs",
+    "prestart": "npm run images:prepare",
+    "prebuild": "npm run images:prepare",
+    "pretest": "npm run images:prepare",
+    "check:images": "node scripts/check-images.cjs"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +48,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@phosphor-icons/react": "^2.1.7",
     "jsdom": "16.7.0",
+    "sharp": "^0.35.4",
     "webpack": "5.94.0"
   }
 }

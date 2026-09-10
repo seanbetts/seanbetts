@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
@@ -12,7 +13,7 @@ function ProjectPanel({ project, className, scene, backgroundImage }) {
   return (
     <Link to={`/building/${project.id}`} state={origin} aria-label={`Open ${project.name} project`} className={`${styles.secondaryCard} ${className} game-art`}>
       {(scene || backgroundImage) && <div className={styles.scene} aria-hidden="true">
-        {backgroundImage ? <img src={backgroundImage} alt="" width="1672" height="941" decoding="async" /> : <SceneArt scene={scene} />}
+        {backgroundImage ? <ResponsiveImage src={backgroundImage} alt="" width="1672" height="941" decoding="async" /> : <SceneArt scene={scene} />}
       </div>}
       <div className={styles.cardWash} />
       <div className={styles.secondaryTop}><span>{project.type}</span><ArrowUpRight size={22} aria-hidden="true" /></div>
@@ -37,10 +38,10 @@ export default function GameBuilding() {
           <p>Exploring what AI can do in the real world.</p>
         </div></header>
         <Link to={`/building/${primary.id}`} state={origin} aria-label={`Open ${primary.name} project`} className={`${styles.primary} game-art`}>
-          <div className={styles.scene} aria-hidden="true"><img src="/images/game/backgrounds/river-sunset.webp" alt="" width="1672" height="941" decoding="async" /></div>
+          <div className={styles.scene} aria-hidden="true"><ResponsiveImage src="/images/game/backgrounds/river-sunset.webp" alt="" width="1672" height="941" decoding="async" /></div>
           <div className={styles.primaryWash} />
           <div className={styles.primaryTop}><span>Featured project</span><span className={styles.status}>{primary.status}</span></div>
-          <div className={styles.deviceStage}>{!imageFailed && <img src={primary.heroImage} alt="sideBar welcome screen on iPad" className={styles.device} onError={() => setImageFailed(true)} />}</div>
+          <div className={styles.deviceStage}>{!imageFailed && <ResponsiveImage src={primary.heroImage} alt="sideBar welcome screen on iPad" className={styles.device} onError={() => setImageFailed(true)} />}</div>
           <div className={styles.primaryCaption}><span className={styles.eyebrow}>Your context. Connected.</span><h2>{primary.name}</h2><p>{primary.description}</p><span className={styles.cta}>Open project <ArrowUpRight size={18} aria-hidden="true" /></span></div>
         </Link>
         <ProjectPanel project={pointilism} className={styles.topFeature} backgroundImage="/images/game/backgrounds/daytime-rooftop.webp" />
