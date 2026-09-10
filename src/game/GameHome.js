@@ -8,7 +8,7 @@ const homeArtwork = {
   writing: '/images/game/home-studies/writing-desk-v10-balcombe.webp',
   speaking: '/images/game/home-studies/speaking-rear-v3.webp',
   leadership: '/images/game/home-studies/leadership-workshop-v2-tattoos.webp',
-  about: '/images/game/home-studies/about-personal-room-v1.webp',
+  about: '/images/game/home-studies/about-personal-room-v3-eames.png',
 };
 
 function CoverPanel({ scene, title, description, to, panel = scene }) {
