@@ -23,7 +23,23 @@ test.each(projectsData)('$name exposes its story, features and technologies with
   expect(screen.getByRole('heading', { name: 'What I learned' })).toBeVisible();
   expect(screen.getByText(project.learnings)).toBeVisible();
   project.technologies?.forEach(technology => expect(within(screen.getByRole('region', { name: /Built with|Tools & methods/ })).getByText(technology)).toBeVisible());
-  expect(screen.getByRole('link', { name: /Visit project|View on GitHub/ })).toHaveAttribute('href', project.url);
+  if (project.url) expect(screen.getByRole('link', { name: /Visit project|View on GitHub/ })).toHaveAttribute('href', project.url);
+  else expect(screen.queryByRole('link', { name: /Visit project|View on GitHub/ })).not.toBeInTheDocument();
+});
+
+test('a project without a public URL retains its story and navigation without an external CTA', () => {
+  const project = projectsData.find(item => item.id === 'sidebar');
+  const originalUrl = project.url;
+  try {
+    project.url = null;
+    renderProject();
+    expect(screen.getByRole('heading', { name: 'sideBar', level: 1 })).toBeVisible();
+    expect(screen.getByRole('heading', { name: 'What I learned' })).toBeVisible();
+    expect(screen.getByRole('link', { name: 'Back to Building' })).toHaveAttribute('href', '/building');
+    expect(screen.queryByRole('link', { name: /Visit project|View on GitHub/ })).not.toBeInTheDocument();
+  } finally {
+    project.url = originalUrl;
+  }
 });
 
 test('sideBar screenshot recovers to illustrated project artwork on failure', () => {

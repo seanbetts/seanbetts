@@ -181,7 +181,7 @@ const projectsData = [
     name: "YouTube SDG Analysis",
     description: "Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.",
     icon: <Video size={48} />,
-    url: "https://github.com/TheGoodNet/YouTube-Scripts",
+    url: null,
     type: "github",
     date: "January–December 2025",
     technologies: [

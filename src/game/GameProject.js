@@ -39,7 +39,7 @@ function ProjectStory({ project, origin }) {
   const backPath = origin?.fromPath || '/building';
   const backLabel = origin?.fromLabel || 'Building';
   const isResearch = project.schemaType === 'CreativeWork';
-  const projectLinkLabel = project.url.includes('github.com/') ? 'View on GitHub' : 'Visit project';
+  const projectLinkLabel = project.url?.includes('github.com/') ? 'View on GitHub' : 'Visit project';
   return (
     <article className={styles.page}>
       <Seo title={`${project.name} | What Sean Betts is Building`} description={`Explore ${project.name}, a ${project.type} project by Sean Betts. ${project.description}`} canonicalPath={`/building/${project.id}`} imagePath={heroImage || '/images/sean-betts-profile.png'} keywords={['Sean Betts', project.name, project.type, ...(project.technologies || [])]} ogType="article" jsonLd={{ '@context': 'https://schema.org', '@type': project.schemaType || (project.technologies ? 'SoftwareApplication' : 'CreativeWork'), name: project.name, description: project.description, url: `${SITE_URL}/building/${project.id}`, '@id': `${SITE_URL}/building/${project.id}#project`, mainEntityOfPage: { '@id': `${SITE_URL}/building/${project.id}#webpage` }, image: new URL(heroImage || '/images/sean-betts-profile.png', SITE_URL).href, author: { '@id': PERSON_ID } }} />
@@ -51,7 +51,7 @@ function ProjectStory({ project, origin }) {
             <h1>{project.name}<span className={styles.period} aria-hidden="true">.</span></h1>
             <p className={styles.summary}>{project.description}</p>
             <span className={styles.date}>{project.date}</span>
-            <a className={styles.cta} href={project.url} target="_blank" rel="noopener noreferrer">{projectLinkLabel}<ArrowUpRight size={20} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+            {project.url && <a className={styles.cta} href={project.url} target="_blank" rel="noopener noreferrer">{projectLinkLabel}<ArrowUpRight size={20} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>}
           </div></div>
           <ProjectMedia project={project} heroImage={heroImage} />
         </header>
