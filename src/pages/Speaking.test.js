@@ -46,6 +46,20 @@ test('combines year and format filters and recovers from an empty result', () =>
   expect(within(archive).getAllByRole('article')).toHaveLength(12);
 });
 
+test('show more moves focus to the first revealed appearance without stealing filter focus', () => {
+  const archive = openPage();
+  const more = screen.getByRole('button', { name: 'Show more appearances' });
+  more.focus();
+  fireEvent.click(more);
+  expect(within(archive).getAllByRole('article')[12]).toHaveFocus();
+  expect(screen.queryByRole('button', { name: 'Show more appearances' })).not.toBeInTheDocument();
+
+  const year = screen.getByLabelText('Year');
+  year.focus();
+  fireEvent.change(year, { target: { value: '2025' } });
+  expect(year).toHaveFocus();
+});
+
 test('keeps event context visible if a featured photograph fails to load', () => {
   openPage();
   fireEvent.error(screen.getByRole('img', { name: 'Sean Betts speaking at Apple Interactive Conference' }));

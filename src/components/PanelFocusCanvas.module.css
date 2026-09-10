@@ -1,0 +1,11 @@
+.ring { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 10; }
+.ring polygon { fill: none; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.backing { stroke: var(--game-ink); stroke-width: 9px; }
+.accent { stroke: var(--game-accent); stroke-width: 3px; }
+.canvas:not(:has([data-panel-focus]:focus-visible)) .ring { display: none; }
+/* Keep the native fallback until the shared overlay has measured the card. */
+.canvas[data-panel-focus-ready="true"] [data-panel-focus]:focus-visible { outline: none; box-shadow: none; }
+@media (forced-colors: active) {
+  .backing { stroke: Canvas; }
+  .accent { stroke: Highlight; }
+}

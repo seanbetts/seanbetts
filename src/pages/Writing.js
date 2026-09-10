@@ -1,4 +1,5 @@
 import ResponsiveImage from '../components/ResponsiveImage';
+import PanelFocusCanvas from '../components/PanelFocusCanvas';
 import { useId, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
@@ -42,8 +43,8 @@ function ArticlePanel({ article, hero = false }) {
   const [failed, setFailed] = useState(false);
   const titleId = useId();
   return <article className={`${styles.feature} ${hero ? styles.heroFeature : ''}`} aria-labelledby={titleId}>
-    <div className={styles.panelWindow}>
-      <a href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink} aria-labelledby={`${titleId} ${titleId}-external`}>
+    <div data-panel-shape className={styles.panelWindow}>
+      <a data-panel-focus href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink} aria-labelledby={`${titleId} ${titleId}-external`}>
         <span id={`${titleId}-external`} className="sr-only">Opens in a new tab</span>
       </a>
       <div className={styles.articleContent}>
@@ -85,7 +86,7 @@ export default function Writing() {
       jsonLd={articleListSchema}
     />
     <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Home</Link>
-    <div className={styles.panels}>
+    <PanelFocusCanvas className={styles.panels}>
       <header className={styles.hero}>
         <div className={styles.introduction}>
           <div className={styles.upright}>
@@ -112,6 +113,6 @@ export default function Writing() {
           <div>{collection.map(article => <ArchiveArticle key={article.url} article={article} />)}</div>
         </div>
       </section>}
-    </div>
+    </PanelFocusCanvas>
   </div>;
 }

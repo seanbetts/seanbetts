@@ -1,5 +1,5 @@
 import ResponsiveImage from '../components/ResponsiveImage';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Microphone, Users, ChatsCircle, Headphones } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
@@ -56,10 +56,21 @@ export default function Speaking() {
   const [year, setYear] = useState('all');
   const [format, setFormat] = useState('all');
   const [visibleCount, setVisibleCount] = useState(archive.length);
+  const archiveEntries = useRef(null);
+  const nextFocusIndex = useRef(null);
   useEffect(() => { setVisibleCount(PAGE_SIZE); }, []);
+  useEffect(() => {
+    if (nextFocusIndex.current === null) return;
+    archiveEntries.current?.children[nextFocusIndex.current]?.focus();
+    nextFocusIndex.current = null;
+  }, [visibleCount]);
   const filtered = archive.filter(talk => (year === 'all' || yearOf(talk) === year) && (format === 'all' || talk.type === format));
   const shown = filtered.slice(0, visibleCount);
   const updateFilter = (setter, value) => { setter(value); setVisibleCount(PAGE_SIZE); };
+  const showMore = () => {
+    nextFocusIndex.current = visibleCount;
+    setVisibleCount(count => count + PAGE_SIZE);
+  };
 
   return <div className={styles.speaking}>
       <Seo
@@ -105,14 +116,14 @@ export default function Speaking() {
             </div>
           </div>
           <p className="sr-only" role="status">Showing {shown.length} of {filtered.length} additional appearances.</p>
-          <div>
-            {filtered.map((talk, index) => <article hidden={index >= visibleCount} className={styles.archiveEntry} key={talk.id} aria-labelledby={`archive-${talk.id.replace(/\s/g, '-')}`}>
+          <div ref={archiveEntries}>
+            {filtered.map((talk, index) => <article tabIndex={-1} hidden={index >= visibleCount} className={styles.archiveEntry} key={talk.id} aria-labelledby={`archive-${talk.id.replace(/\s/g, '-')}`}>
               <div className={styles.entryMeta}><Format type={talk.type} /><p>{talk.date}</p><p>{talk.location}</p></div>
               <div className={styles.entryCopy}><h3 id={`archive-${talk.id.replace(/\s/g, '-')}`}>{talk.title}</h3><p className={styles.conference}>{talk.conference}</p><p className={styles.description}>{talk.description}</p></div>
             </article>)}
           </div>
           {filtered.length === 0 && <p className={styles.empty}>No appearances match this year and format. Try another combination.</p>}
-          {shown.length < filtered.length && <button className={styles.more} onClick={() => setVisibleCount(count => count + PAGE_SIZE)}>Show more appearances<span aria-hidden="true">+</span></button>}
+          {shown.length < filtered.length && <button className={styles.more} onClick={showMore}>Show more appearances<span aria-hidden="true">+</span></button>}
         </div>
       </section>
     </div>
