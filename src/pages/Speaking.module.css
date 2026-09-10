@@ -1,3 +1,4 @@
+.topics { composes: surface from "../game/Frame.module.css"; }
 .archive { composes: surface from "../game/Frame.module.css"; }
 .heroArt { composes: surface from "../game/Frame.module.css"; }
 .heroCopy { composes: surface from "../game/Frame.module.css"; }
@@ -90,3 +91,14 @@
 
 .panelWindow { composes: window from "../game/Frame.module.css"; display:flex;align-items:flex-end;align-self:stretch;flex:1; }
 @media(max-width:700px){.panelWindow{flex-direction:column;align-items:stretch}}
+
+.speaking .enquiry{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:48px;max-width:100%;margin-top:26px;padding:13px 18px;background:var(--game-accent);color:var(--game-button-text);font:600 18px/1.3 var(--game-ui);text-transform:uppercase}
+.enquiry svg{flex-shrink:0}
+.enquiry:hover{filter:brightness(1.08)}
+.topics{margin-top:var(--game-frame);padding:38px 48px;background:var(--game-surface)}
+.speaking .topics h2{font-size:clamp(32px,3.5vw,48px);text-transform:uppercase;margin:0 0 28px}
+.topicGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.speaking .topic h3{font:600 27px/1.15 var(--game-ui);margin:0 0 14px}
+.speaking .topic p{font-size:16px;line-height:1.7;color:var(--game-body);margin:0}
+@media(max-width:1000px){.topics{padding:32px}.topicGrid{gap:24px}}
+@media(max-width:700px){.topics{padding:32px 24px}.topicGrid{grid-template-columns:1fr;gap:24px}.topic+.topic{border-top:1px solid var(--game-border);padding-top:24px}.speaking .enquiry{font-size:17px}}

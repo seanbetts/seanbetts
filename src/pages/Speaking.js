@@ -1,14 +1,23 @@
 import ResponsiveImage from '../components/ResponsiveImage';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Microphone, Users, ChatsCircle, Headphones } from '@phosphor-icons/react';
+import { ArrowLeft, ArrowUpRight, Microphone, Users, ChatsCircle, Headphones } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
 import InfoPopover from '../components/InfoPopover';
 import styles from './Speaking.module.css';
 import speakingData from '../data/speakingData';
 
-const featured = speakingData.filter(talk => talk.imageType === 'photo');
-const archive = speakingData.filter(talk => talk.imageType !== 'photo');
+const featuredIds = new Set([
+  'future-of-brands-2026', 'iab-leadership-summit-2026', 'lead-2026',
+  'apple-web4-2025', 'gcs-learning-festival 2025', 'giffgaff-ai-day-2025',
+]);
+const featured = speakingData.filter(talk => featuredIds.has(talk.id));
+const archive = speakingData.filter(talk => !featuredIds.has(talk.id));
+const topics = [
+  { title: 'How AI is changing the internet', description: 'How AI is changing the way people discover information, choose brands and make decisions, and what that means for marketing and communications.' },
+  { title: 'Putting AI to work', description: 'What it takes to move from experimentation to everyday use, drawing on my experience of AI adoption, product development and organisational change.' },
+  { title: 'Leading with autism', description: 'My experience of being an autistic leader, what diagnosis changed for me, and what I’ve learned about leadership, working relationships and mental health.' },
+];
 const yearOf = talk => talk.date.match(/20\d{2}/)?.[0] || 'Other';
 const years = [...new Set(archive.map(yearOf))].sort().reverse();
 const formats = {
@@ -75,7 +84,7 @@ export default function Speaking() {
   return <div className={styles.speaking}>
       <Seo
         title="Sean Betts Speaking | AI, Marketing and Neurodiversity Talks"
-        description="Explore Sean Betts' keynote talks, panels, podcasts and speaking appearances on AI, marketing innovation, technology and neurodiversity."
+        description="Keynotes, panels and podcasts on AI, the future of marketing and leading with autism. Explore Sean Betts' speaking experience and discuss an event."
         keywords={[
           'Sean Betts',
           'keynote speaker',
@@ -96,14 +105,23 @@ export default function Speaking() {
           <div className={styles.upright}>
             <p className={styles.eyebrow}>Keynotes · Panels · Podcasts</p>
             <h1>Speaking<span className={styles.period}>.</span></h1>
-            <p className={styles.intro}>Perspectives on AI, innovation and the human side of change.</p>
-            <p className={styles.heroBody}>I speak at conferences and events around the world, exploring the future of technology and sharing my lived experience of autism, leadership and mental health.</p>
+            <p className={styles.intro}>AI, the future of marketing, and leading with autism.</p>
+            <p className={styles.heroBody}>I speak about how AI is changing business, marketing and the internet, drawing on my work leading AI adoption and building products myself. I also share my experience of autism, leadership and mental health.</p>
+            <Link to="/contact/" className={styles.enquiry}>Discuss a speaking opportunity<ArrowUpRight size={20} aria-hidden="true" /></Link>
           </div>
         </div>
         <div className={styles.heroArt}><ResponsiveImage src="/images/game/speaking/stage-v1.webp" alt="Illustration of Sean Betts presenting on stage" fetchpriority="high" sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1000px) 40vw, (max-width: 1500px) 36vw, 520px" width="941" height="1672" decoding="async" /></div>
       </header>
-      <section className={styles.features} aria-label="Appearances in pictures">
-        <h2 className="sr-only">Appearances in pictures</h2>
+      <section className={styles.topics} aria-labelledby="speaking-topics-heading">
+        <div className={styles.upright}>
+          <h2 id="speaking-topics-heading">What I speak about<span className={styles.period}>.</span></h2>
+          <div className={styles.topicGrid}>{topics.map(topic => <div className={styles.topic} key={topic.title}>
+            <h3>{topic.title}</h3><p>{topic.description}</p>
+          </div>)}</div>
+        </div>
+      </section>
+      <section className={styles.features} aria-label="Selected appearances">
+        <h2 className="sr-only">Selected appearances</h2>
         {featured.map((talk, index) => <FeaturedAppearance key={talk.id} talk={talk} lead={index === 0} />)}
       </section>
       <section className={styles.archive} aria-labelledby="archive-heading">
