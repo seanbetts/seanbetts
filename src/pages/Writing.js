@@ -59,7 +59,7 @@ function ArticlePanel({ article, hero = false }) {
         </div>
         <div className={styles.photo}>
           {!failed && <ResponsiveImage src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
-            sizes={hero ? '(max-width: 360px) 80vw, (max-width: 700px) 140px, (max-width: 1000px) 150px, 260px' : '(max-width: 360px) 80vw, (max-width: 700px) 132px, (max-width: 1000px) 140px, 280px'}
+            sizes={hero ? '(max-width: 360px) 80vw, (max-width: 700px) 140px, (max-width: 1000px) 240px, 260px' : '(max-width: 360px) 80vw, (max-width: 700px) 132px, (max-width: 1000px) 220px, 280px'}
             style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
         </div>
       </div>
