@@ -57,7 +57,7 @@ const About = () => {
       </header>
 
       <section id="professional" className={styles.chapter} aria-labelledby="professional-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={styles.chapterImage} src="/images/game/about-studies/professional-discussion-v1.webp" alt="" width="941" height="1672" loading="lazy" /></div><span>01 / Strategy into practice</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={styles.chapterImage} src="/images/game/about-studies/professional-discussion-v2-colour.png" alt="" width="941" height="1672" loading="lazy" /></div><span>01 / Strategy into practice</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="professional-heading">Professional<br />experience<span>.</span></h2></div>
@@ -89,7 +89,7 @@ const About = () => {
       </section>
 
       <section id="research" className={`${styles.chapter} ${styles.reverse}`} aria-labelledby="research-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={`${styles.chapterImage} ${styles.researchImage}`} src="/images/game/about-studies/research-mac-sidebar-v2.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>02 / Learn by building</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={`${styles.chapterImage} ${styles.researchImage}`} src="/images/game/about-studies/research-mac-sidebar-v3-colour.png" alt="" width="1122" height="1402" loading="lazy" /></div><span>02 / Learn by building</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="research-heading">Applied AI<br />&amp; building<span>.</span></h2></div>
@@ -121,7 +121,7 @@ const About = () => {
       </section>
 
       <section id="advocacy" className={styles.chapter} aria-labelledby="advocacy-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={styles.chapterImage} src="/images/game/about-studies/advocacy-conversation-v1.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>03 / A personal perspective</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={styles.chapterImage} src="/images/game/about-studies/advocacy-conversation-v2-colour.png" alt="" width="1122" height="1402" loading="lazy" /></div><span>03 / A personal perspective</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Neurodiversity<br />&amp; mental health<span>.</span></h2></div>
