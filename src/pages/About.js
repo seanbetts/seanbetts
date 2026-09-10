@@ -3,7 +3,6 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo, GithubLogo, Envelope
 import InternalLink from '../components/InternalLink';
 import Seo from '../components/Seo';
 import styles from './About.module.css';
-import SceneArt from '../game/SceneArt';
 
 const About = () => {
   const personSchema = {
@@ -144,7 +143,7 @@ const About = () => {
       </section>
 
       <section id="advocacy" className={styles.chapter} aria-labelledby="advocacy-heading" tabIndex={-1}>
-        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><SceneArt scene="about" /></div><span>03 / A personal perspective</span></div>
+        <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><img className={styles.chapterImage} src="/images/game/about-studies/advocacy-conversation-v1.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>03 / A personal perspective</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>
