@@ -228,7 +228,7 @@ const projectsData = [
     heroImageAlt: "YouTube SDG workflow: collect channel metadata, video information and transcripts; analyse content, mission and themes; then map directly evidenced themes to relevant Sustainable Development Goals. Structured results support channel-level analysis.",
     heroImageKind: "diagram",
     name: "YouTube SDG Analysis",
-    description: "Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.",
+    description: "An LLM-based analysis system that scored 2.5 million YouTube videos against an ethical media framework based on the UN Sustainable Development Goals.",
     icon: <Video size={48} />,
     url: null,
     type: "research tool",
@@ -239,17 +239,22 @@ const projectsData = [
         "YouTube Data API",
         "OpenAI API"
       ],
-    features: ["YouTube video transcription", "Channel analysis", "SDG mapping"],
-    challenges: "Developing an accurate model that can map SDGs to video content and scaling the analysis to over 2.5m videos.",
-    learnings: "Platform APIs can bring so many good ideas to life, but they also put a critical part of the product outside your control. Access can be changed or withdrawn without notice. This project reinforced how much the viability of an idea can depend on a platform continuing to offer the data and capabilities it was built around.",
-    status: "Completed",
+    features: [
+      "Collect video transcripts and channel information for analysis.",
+      "Use LLMs to analyse video content against an existing ethical scoring framework.",
+      "Map relevant themes to the UN Sustainable Development Goals and produce structured scores.",
+      "Bring video-level results together to support channel analysis."
+    ],
+    challenges: "I worked with a startup that sources ethical media opportunities for brands and wanted to extend its offering to YouTube. I devised and built a way to use LLMs to analyse video transcripts against its existing ethical scoring framework, based on the UN Sustainable Development Goals. The work involved translating that framework into an automated analysis process and scaling it to 2.5 million videos.",
+    learnings: "We shut the project down after YouTube cut off the transcript API we were using. The system had reached scale, but losing access to its essential input made it no longer viable. It was a direct lesson in platform dependency: the ability to build and scale a product is only part of the picture when another company controls the data it needs.",
+    status: "Archived",
   },
   {
     id: "ai-brand-detection",
     heroImage: "/images/projects/brand-detection-film.jpg",
     heroImageAlt: "Original Brand Detection output showing a red detection box labelled pizza hut around the logo on a pizza box in a film frame.",
     name: "AI Brand Detection",
-    description: "Developing AI techniques to detect brands and products in videos.",
+    description: "An AI prototype for detecting brands and products in video, exploring how to automate the measurement of product placement and sports sponsorship.",
     icon: <Video size={48} />,
     url: "https://github.com/seanbetts/product-placement",
     type: "AI prototype",
@@ -266,16 +271,20 @@ const projectsData = [
         "Google Cloud Vision API",
         "Segment Anything Model 2"
       ],
-    features: ["Brand and product detection", "Multi-brand support", "Integration with marketing analytics"],
-    challenges: "Developing an accurate model that can detect brands in various contexts and lighting conditions.",
-    learnings: "Visual recognition capabilities have improved incredibly quickly, but technical feasibility does not automatically make a product economically viable. For this kind of video analysis, I found the economics difficult to justify without very large scale. The cost of delivering useful results matters just as much as the ability to produce them.",
-    status: "Completed",
+    features: [
+      "Detect brands and products in video frames.",
+      "Identify multiple brands within the same video.",
+      "Mark detections with labelled bounding boxes so the results can be inspected."
+    ],
+    challenges: "Product placement and sports sponsorship deals still rely heavily on manual measurement. I built this prototype to explore whether the latest AI models could automate that work by detecting brands and products in video. The challenge was recognising them across different scenes, lighting conditions and contexts, while making the process economical enough to be useful commercially.",
+    learnings: "I could build the detection system, but I could not make it commercially viable at the scale I was operating at. The project made the distinction between technical capability and a sustainable product very concrete. Producing useful detections was one part of the problem; delivering them at a viable cost was the constraint I could not resolve.",
+    status: "Archived",
   },
 
   {
     id: "genai-marketing-benchmarks",
     name: "GenAI Marketing Benchmarks",
-    description: "Developing comprehensive benchmarks to assess the marketing knowledge and capabilities of large language models.",
+    description: "A research project to assess and compare the marketing knowledge of large language models, addressing a gap in the benchmarks available at the time.",
     icon: <Ruler size={48} />,
     url: "https://github.com/seanbetts/genai-marketing-benchmarks",
     type: "research tool",
@@ -294,15 +303,14 @@ const projectsData = [
       "Flask"
     ],
     features: [
-      "Comprehensive marketing knowledge assessment",
-      "Comparative analysis of different LLMs",
-      "Customizable benchmarking criteria",
-      "Multiple-choice question database",
-      "Automated testing across various LLMs"
+      "Assess marketing knowledge through a database of multiple-choice questions.",
+      "Run automated evaluations across models from different providers.",
+      "Compare model results against a common set of marketing questions.",
+      "Adjust evaluation criteria as the benchmark develops."
     ],
-    challenges: "Creating a diverse and representative set of marketing questions that cover various aspects and difficulty levels. Ensuring the integrity of the benchmark by preventing the questions from being included in future LLM training datasets.",
-    learnings: "Creating benchmarks for an industry is very difficult without engagement from its industry bodies. Building the tests is only part of the work: the benchmark also needs shared agreement about what matters and confidence that it represents the industry. That makes participation and adoption central to the project.",
-    status: "Completed",
+    challenges: "There were benchmarks for many areas of knowledge, but I could not find a way to judge how well LLMs understood marketing. I started this project to fill that gap, building a question database and tools to test models against it. The challenge was deciding what a useful assessment of marketing knowledge should cover and getting wider industry participation in developing it.",
+    learnings: "The project ran out of steam when I could not get enough engagement from the wider UK marketing industry. Building the evaluation tools was only part of the work. A benchmark also needs people to help shape it, challenge its assumptions and use its results. I had underestimated how much the project's momentum would depend on that participation.",
+    status: "Archived",
     heroImage: "/images/projects/genai-marketing-benchmarks-hero.png"
   },
 
