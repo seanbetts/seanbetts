@@ -5,9 +5,9 @@ import styles from './Contact.module.css';
 
 const channels = [
   { name: 'LinkedIn', description: 'Connect and get in touch', href: 'https://www.linkedin.com/in/seanbetts/', Icon: LinkedinLogo },
-  { name: 'The Blueprint', description: 'AI perspectives, every week', href: 'https://www.the-blueprint.ai/', Icon: Newspaper },
+  { name: 'The Blueprint', description: 'Occasional thought leadership and opinions', href: 'https://www.the-blueprint.ai/', Icon: Newspaper },
   { name: 'GitHub', description: 'Code, projects and experiments', href: 'https://github.com/seanbetts', Icon: GithubLogo },
-  { name: 'Bluesky', description: 'Thoughts and updates', href: 'https://bsky.app/profile/seanbetts.com', Icon: Butterfly },
+  { name: 'Bluesky', description: 'Mostly Aston Villa thoughts and updates', href: 'https://bsky.app/profile/seanbetts.com', Icon: Butterfly },
 ];
 
 export default function Contact() {
@@ -25,9 +25,9 @@ export default function Contact() {
 
   return <div className={styles.contact}>
     <Seo
-      title="Contact Sean Betts | Newsletter, Socials and Collaboration"
+      title="Contact Sean Betts | Writing, Socials and Collaboration"
       description="Connect with Sean Betts on LinkedIn to discuss AI, speaking and collaboration, or explore The Blueprint, GitHub and Bluesky."
-      keywords={['contact Sean Betts', 'newsletter', 'LinkedIn', 'GitHub', 'Bluesky', 'AI collaboration']}
+      keywords={['contact Sean Betts', 'The Blueprint', 'LinkedIn', 'GitHub', 'Bluesky', 'AI collaboration']}
       canonicalPath="/contact" imagePath="/images/sean-betts-profile.png" ogType="website" jsonLd={contactPageSchema}
     />
     <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" />Home</Link>

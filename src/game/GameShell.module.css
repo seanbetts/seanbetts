@@ -10,7 +10,7 @@
 .menuButton{border:0;background:transparent;color:inherit;display:grid;place-items:center;min-width:44px;min-height:44px}
 .menuButton:hover,.menuButton:focus-visible{color:var(--game-accent)}
 @media(prefers-reduced-motion:no-preference){.tool,.menuButton,.socials a{transition:color .15s ease}}
-.menu{position:absolute;right:0;top:64px;min-width:280px;padding:12px;background:var(--game-surface);border:1px solid var(--game-border);box-shadow:0 20px 50px #0009}
+.menu{position:absolute;right:0;top:64px;width:min(320px,calc(100vw - 24px));padding:12px;background:var(--game-surface);border:1px solid var(--game-border);box-shadow:0 20px 50px #0009}
 .menu a{padding:13px 18px;display:flex;align-items:center;justify-content:space-between;font:600 25px var(--game-ui);text-transform:uppercase}
 .menu a:hover,.menu .selected{background:var(--game-accent);color:var(--game-button-text)}
 .main{padding:12px 28px 0;outline:0;animation:enter .3s ease both}
@@ -19,7 +19,7 @@
 .skip{position:fixed;top:-80px;left:20px;z-index:100;background:var(--game-accent);color:var(--game-button-text)!important;padding:12px 18px}.skip:focus{top:10px}
 @keyframes enter{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:none}}
 @media(min-width:1800px){.header,.main,.footer{max-width:1860px;margin-left:auto;margin-right:auto}}
-@media(max-width:650px){.header{height:58px;margin:0 12px}.brand,.brand img{width:113px}.main{padding:8px 10px 0}.menu{top:52px;right:0;min-width:250px}.footer{padding:10px 10px;gap:4px;align-items:center}.footer span{white-space:nowrap}}
+@media(max-width:650px){.header{height:58px;margin:0 12px}.brand,.brand img{width:113px}.main{padding:8px 10px 0}.menu{top:52px;right:0}.footer{padding:10px 10px;gap:4px;align-items:center}.footer span{white-space:nowrap}}
 
 .credit{justify-self:center;text-align:center;white-space:nowrap;font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--game-muted)}
 .heart{color:var(--game-accent);vertical-align:-.125em}

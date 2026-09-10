@@ -13,7 +13,7 @@
 .page .blueprint h2 { margin: 0 0 12px; font-size: 28px; text-transform: uppercase; }
 .page .blueprint p { max-width: 530px; margin: 0 0 24px; font-size: 16px; line-height: 1.65; color: var(--game-body); }
 .page .cta { display: inline-flex; align-items: center; gap: 28px; min-height: 48px; padding: 12px 20px; font: 600 17px/1.4 var(--game-ui); text-transform: uppercase; background: var(--game-accent); color: var(--game-button-text); }
-.cta:hover { text-decoration: underline; text-underline-offset: 4px; }
+.cta:hover { filter: brightness(1.1); }
 .featured { margin-top: var(--game-frame); }
 .featureGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--game-frame); }
 .feature { position: relative; min-width: 0; min-height: 480px; display: flex; flex-direction: column; background: var(--game-ink); isolation: isolate; }
@@ -32,7 +32,7 @@
 .metadata { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #eee2f2; font-size: 13px; line-height: 1.5; }
 .read { display: inline-flex; align-items: center; gap: 10px; margin-left: auto; color: #ff929d; font: 600 14px/1.5 var(--game-ui); text-transform: uppercase; white-space: nowrap; }
 .featureGrid .feature:last-child:nth-of-type(odd) { grid-column: 1 / -1; clip-path: none; }
-.featureLink:hover h3, .featureLink:hover h2 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.page .featureLink:hover h3, .page .featureLink:hover h2 { color: #ff929d; }
 .page .featureLink:focus-visible { outline: 3px solid #ff929d; outline-offset: -18px; }
 .articleInfo { position: absolute; top: 20px; right: 28px; z-index: 2; transform: skewY(var(--content-angle)); display: flex; flex-direction: column; align-items: flex-end; max-width: calc(100% - 56px); }
 .infoButton { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #100718dd; color: #fffaf4; }

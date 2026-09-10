@@ -101,7 +101,7 @@ export default function Writing() {
   return <div className={styles.page}>
     <Seo
       title="Sean Betts Writing | AI, Marketing and Technology Insights"
-      description="Read Sean Betts' writing on AI, marketing and technology, including The Blueprint newsletter and featured essays on generative AI and industry trends."
+      description="Read Sean Betts' writing on AI, marketing and technology, including The Blueprint and featured essays on generative AI and industry trends."
       keywords={['Sean Betts', 'AI writing', 'marketing insights', 'The Blueprint', 'generative AI', 'technology essays']}
       canonicalPath="/writing"
       jsonLd={[
@@ -118,7 +118,7 @@ export default function Writing() {
             <p className={styles.standfirst}>Ideas and perspectives on AI, marketing and the technology changing how we live and work.</p>
             <div className={styles.blueprint}>
               <h2>The Blueprint</h2>
-              <p>My newsletter and essays exploring generative AI, its possibilities and what it means for people and businesses.</p>
+              <p>Occasional thought leadership and opinions on generative AI, its possibilities and what it means for people and businesses.</p>
               <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer" className={styles.cta}>Read The Blueprint <ArrowUpRight size={21} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
             </div>
           </div>

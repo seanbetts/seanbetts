@@ -135,8 +135,8 @@ const About = () => {
             transcription, automated classification and <InternalLink to="/building/youtube-sdg-analysis" state={{ fromLabel: 'About', fromPath: '/about' }}>large-scale content analysis</InternalLink>.
           </p>
           <p>
-            I also write <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer">The Blueprint</a>, a weekly newsletter on AI
-            developments and their broader implications, and contribute to industry discussions on the future of generative AI and its responsible use.
+            I also write <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer">The Blueprint</a>, where I share occasional thought leadership and opinions on AI
+            and its broader implications, and contribute to industry discussions on the future of generative AI and its responsible use.
           </p>
           <InternalLink to="/building" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></InternalLink>
         </div>
