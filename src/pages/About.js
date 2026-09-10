@@ -33,26 +33,24 @@ const About = () => {
           <div className={styles.imageWindow}><ResponsiveImage src="/images/game/portrait-sean-london-candidate-v1.png" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
         </div>
         <div className={styles.heroCopy}>
-          <span className={styles.eyebrow}>AI leader · Researcher · Builder</span>
+          <span className={styles.eyebrow}>AI strategy · Product innovation · Technology leadership</span>
           <h1>About<span>.</span></h1>
           <section className={styles.intro}>
             <p>
-              I’m an AI leader, researcher and builder working at the intersection of AI, product innovation and business transformation.
+              I’m Sean, an AI, product and technology leader. I’ve spent more than 20 years developing products and building teams.
             </p>
             <p>
-              Alongside my role as Chief AI & Innovation Officer at Omnicom Media UK, I design and build independent AI products, benchmarks
-              and applied systems to better understand how emerging technologies are reshaping products, knowledge work and consumer experiences.
+              I’m currently Chief AI &amp; Innovation Officer at Omnicom Media UK. Previously, as Chief Product &amp; Technology Officer,
+              I built and led a 150-person organisation spanning product, engineering, data and analytics.
             </p>
             <p>
-              My work combines strategic leadership with hands-on technical exploration, from AI strategy and organisational transformation to
-              prototyping, evaluation and product development. I’m particularly interested in turning complex advances in AI into practical tools,
-              capabilities and ideas that create real value for people and organisations.
+              I also build AI products myself. Working directly with the technology helps me judge what it’s useful for and where it falls short.
             </p>
           </section>
           <nav className={styles.chapters} aria-label="About chapters">
             <a href="#professional"><span>Professional Experience</span><ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
-            <a href="#research"><span>AI Research &amp; Development</span><ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
-            <a href="#advocacy"><span>Speaking &amp; Advocacy</span><ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
+            <a href="#research"><span>Applied AI &amp; Building</span><ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
+            <a href="#advocacy"><span>Neurodiversity &amp; Mental Health</span><ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
           </nav>
         </div>
       </header>
@@ -68,31 +66,24 @@ const About = () => {
           </div>
           <h3>Chief AI &amp; Innovation Officer <span>Omnicom Media UK</span></h3>
           <p>
-            At Omnicom Media UK, I lead AI strategy, innovation and transformation across the business, helping shape how our agencies, teams
-            and clients respond to the rapid evolution of artificial intelligence.
+            At Omnicom Media UK, I lead AI strategy and innovation, chair our AI Centre of Excellence and advise boards and leadership teams on how
+            emerging technology could change their businesses.
           </p>
           <p>
-            My role spans AI strategy and governance, client consultancy, capability building, product innovation and organisational change. I lead
-            our AI Centre of Excellence, sit on the OM UK board and work closely with agency leadership, to identify where emerging AI capabilities
-            can create real operational and commercial value.
+            I’ve helped develop AI Optix and Humanics, and put in place the training and governance teams need to use AI responsibly.
           </p>
           <p>
-            A key part of my role is translating fast-moving technical change into practical action. That includes advising client boards and internal
-            teams on AI adoption, developing new use cases and solutions, building AI readiness across the organisation, and helping position OM UK
-            for a future increasingly shaped by AI.
-          </p>
-          <p>
-            Areas of focus:
+            Previously, as Chief Product &amp; Technology Officer at OMG UK, I:
           </p>
           <ul>
-            <li>Leading AI strategy and transformation across OM UK.</li>
-            <li>Advising agencies and client boards on practical AI adoption and use cases.</li>
-            <li>Building AI capability, readiness and learning programmes.</li>
-            <li>Identifying emerging technologies and their commercial implications.</li>
-            <li>Shaping board-level thinking on AI, innovation and business change.</li>
-            <li>Supporting product and solution development across internal and client contexts.</li>
+            <li>Grew the product and technology function from 20 to 150 people.</li>
+            <li>Delivered nearly 500% growth in product and technology revenue.</li>
+            <li>Led the development of proprietary platforms including SearchKit, Availability Engine and Multi Screen Optimiser.</li>
           </ul>
-          <Link to="/thought-leadership" className={styles.action}>Thought leadership for global brands <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
+          <p>
+            I’ve served on the UK leadership board since 2017.
+          </p>
+          <Link to="/thought-leadership" className={styles.action}>Explore my AI thought leadership <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
       </section>
 
@@ -100,24 +91,29 @@ const About = () => {
         <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={`${styles.chapterImage} ${styles.researchImage}`} src="/images/game/about-studies/research-mac-sidebar-v2.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>02 / Learn by building</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
-            <div><h2 id="research-heading">AI research<br />&amp; development<span>.</span></h2></div>
+            <div><h2 id="research-heading">Applied AI<br />&amp; building<span>.</span></h2></div>
             <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
               <GithubLogo size={36} weight="bold" aria-hidden="true" />
             </a>
           </div>
           <p>
-            As an independent AI researcher and developer, I build practical AI products, benchmarks and experiments to better understand the capabilities
-            and limitations of emerging technologies.
+            My independent work focuses on personal AI assistants and testing how well AI performs on specific tasks.
           </p>
           <p>
-            My work includes building <Link to="/building/sidebar" state={{ fromLabel: 'About', fromPath: '/about' }}>sideBar</Link>, a cross-platform AI assistant that explores personal knowledge, memory and
-            tool use; creating a <Link to="/building/genai-marketing-benchmarks" state={{ fromLabel: 'About', fromPath: '/about' }}>benchmarking framework</Link> with 2,800+ questions across 20 marketing
-            disciplines to assess LLM performance; and developing applied AI workflows spanning <Link to="/building/ai-brand-detection" state={{ fromLabel: 'About', fromPath: '/about' }}>OCR</Link>,
-            transcription, automated classification and <Link to="/building/youtube-sdg-analysis" state={{ fromLabel: 'About', fromPath: '/about' }}>large-scale content analysis</Link>.
+            <Link to="/building/sidebar" state={{ fromLabel: 'About', fromPath: '/about' }}>sideBar</Link> brings notes, tasks, files and web content
+            into a personal AI assistant for iPhone, iPad, Mac and web. I’m building it to explore how an assistant can use memory and tools to be more useful over time.
           </p>
           <p>
-            I also write <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer">The Blueprint</a>, where I share occasional thought leadership and opinions on AI
-            and its broader implications, and contribute to industry discussions on the future of generative AI and its responsible use.
+            <Link to="/building/genai-marketing-benchmarks" state={{ fromLabel: 'About', fromPath: '/about' }}>GenAI Marketing Benchmarks</Link> tests
+            how well language models understand specialist marketing knowledge, using more than 2,800 questions across 20 disciplines.
+          </p>
+          <p>
+            Other projects explore <Link to="/building/ai-brand-detection" state={{ fromLabel: 'About', fromPath: '/about' }}>brand detection in video</Link> and{' '}
+            <Link to="/building/youtube-sdg-analysis" state={{ fromLabel: 'About', fromPath: '/about' }}>large-scale content analysis</Link>.
+          </p>
+          <p>
+            I write <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer">The Blueprint</a>, covering
+            AI, emerging technology and what they mean for people and businesses.
           </p>
           <Link to="/building" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
@@ -127,25 +123,22 @@ const About = () => {
         <div className={styles.chapterArt} aria-hidden="true"><div className={styles.imageWindow}><ResponsiveImage className={styles.chapterImage} src="/images/game/about-studies/advocacy-conversation-v1.webp" alt="" width="1122" height="1402" loading="lazy" /></div><span>03 / A personal perspective</span></div>
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
-            <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>
+            <div><h2 id="advocacy-heading">Neurodiversity<br />&amp; mental health<span>.</span></h2></div>
             <Link to="/contact" className={styles.socialLink} aria-label="Contact Sean">
               <ChatsCircle size={36} weight="bold" aria-hidden="true" />
             </Link>
           </div>
           <p>
-            As an advocate for neurodiversity and mental health awareness, I frequently speak about these topics.
-            My late-life autism diagnosis has given me a unique perspective on problem-solving and innovation in the AI space.
+            I’m autistic, diagnosed in 2022, and I speak openly about neurodiversity and mental health.
           </p>
           <p>
-            Since experiencing burnout followed by depression and anxiety in 2017, I've been openly sharing my
-            mental health experiences. I believe that by speaking about mental health and neurodiversity, we
-            encourage others to share their stories, which is the best way to break down stigma.
+            After experiencing burnout, depression and anxiety in 2017, I began sharing my experiences publicly. Since my diagnosis, I’ve also spoken
+            about being autistic and how workplaces can better support autistic people.
           </p>
           <p>
-            My autism diagnosis in 2022 has further enriched my advocacy work, allowing me to share insights
-            on both mental health and autistic experiences.
+            I hope that talking openly makes it easier for other people to share their own experiences and ask for support.
           </p>
-          <Link to="/speaking" className={styles.action}>Keynote Presentations <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
+          <Link to="/speaking" className={styles.action}>Explore my speaking <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
       </section>
       </div>

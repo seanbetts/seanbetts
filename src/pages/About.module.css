@@ -11,7 +11,7 @@
 .about .heroCopy h1{font-size:clamp(56px,6.5vw,94px);line-height:.95;text-transform:uppercase;margin:16px 0 28px}
 .about .heroCopy h1 span,.about .sectionHeader h2 span{color:var(--game-accent)}
 .about .intro p{font-size:16px;line-height:1.7;color:var(--game-body);margin-top:16px}
-.about .intro p:first-child{font-size:20px;line-height:1.55;color:var(--game-text);margin-top:0}
+.about .intro p:first-child{margin-top:0}
 .chapters{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:30px;border-top:1px solid var(--game-border);padding-top:18px}
 .about .chapters a{display:flex;align-items:center;gap:9px;min-height:44px;color:var(--game-accent);font:600 16px var(--game-ui)}
 .about .chapters a span{color:var(--game-text)}
@@ -43,8 +43,8 @@
 .reverse{grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);background:var(--game-surface-deep)}
 .reverse .chapterArt{grid-column:1;border-left:0;border-right:var(--game-frame) solid var(--game-ink)}
 .reverse .chapterCopy{grid-column:2}
-@media(max-width:1000px){.hero{grid-template-columns:38% 62%}.heroCopy{padding:32px 26px}.about .heroCopy h1{font-size:64px}.about .intro p{font-size:15px}.about .intro p:first-child{font-size:18px}.chapter,.reverse{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}.reverse .chapterArt{grid-column:2;border-left:var(--game-frame) solid var(--game-ink);border-right:0}.reverse .chapterCopy{grid-column:1}.chapterCopy{padding:32px 26px}.chapterCopy p,.chapterCopy li{font-size:15px}.chapterArt>span{left:20px;font-size:19px}}
-@media(max-width:700px){.hero,.chapter,.reverse{display:flex;flex-direction:column}.portrait{min-height:390px;border-right:0;border-bottom:var(--game-frame) solid var(--game-ink)}.portrait img{object-position:50% 25%}.heroCopy{padding:28px 22px}.about .heroCopy h1{font-size:clamp(48px,16vw,64px);margin-bottom:24px}.about .intro p:first-child{font-size:19px}.chapters{margin-top:22px;gap:0 18px}.chapterArt,.reverse .chapterArt{min-height:clamp(300px,90vw,420px);border:0;border-bottom:var(--game-frame) solid var(--game-ink)}.researchImage{object-position:center 65%}.chapterArt [data-art]{inset:-30% 0}.chapterArt>span{bottom:20px;font-size:21px}.chapterCopy{padding:28px 22px 34px}.about .sectionHeader h2{font-size:clamp(30px,9.5vw,37px)}.about .chapterCopy h3{font-size:23px}.chapterCopy p,.chapterCopy li{font-size:16px}}
+@media(max-width:1000px){.hero{grid-template-columns:38% 62%}.heroCopy{padding:32px 26px}.about .heroCopy h1{font-size:64px}.about .intro p{font-size:15px}.chapter,.reverse{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}.reverse .chapterArt{grid-column:2;border-left:var(--game-frame) solid var(--game-ink);border-right:0}.reverse .chapterCopy{grid-column:1}.chapterCopy{padding:32px 26px}.chapterCopy p,.chapterCopy li{font-size:15px}.chapterArt>span{left:20px;font-size:19px}}
+@media(max-width:700px){.hero,.chapter,.reverse{display:flex;flex-direction:column}.portrait{min-height:390px;border-right:0;border-bottom:var(--game-frame) solid var(--game-ink)}.portrait img{object-position:50% 25%}.heroCopy{padding:28px 22px}.about .heroCopy h1{font-size:clamp(48px,16vw,64px);margin-bottom:24px}.about .intro p{font-size:16px}.chapters{margin-top:22px;gap:0 18px}.chapterArt,.reverse .chapterArt{min-height:clamp(300px,90vw,420px);border:0;border-bottom:var(--game-frame) solid var(--game-ink)}.researchImage{object-position:center 65%}.chapterArt [data-art]{inset:-30% 0}.chapterArt>span{bottom:20px;font-size:21px}.chapterCopy{padding:28px 22px 34px}.about .sectionHeader h2{font-size:clamp(30px,9.5vw,37px)}.about .chapterCopy h3{font-size:23px}.chapterCopy p,.chapterCopy li{font-size:16px}}
 @media(prefers-reduced-motion:no-preference){.socialLink,.action,.chapterCopy p a{transition:color .2s,background .2s}}
 
 /* One continuous ink canvas owns the outside frame and the shared row gutters.
