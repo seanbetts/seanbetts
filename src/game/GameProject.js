@@ -16,6 +16,7 @@ function ProjectMedia({ project, heroImage }) {
   const [videoStarted, setVideoStarted] = useState(false);
   const [animationPaused, setAnimationPaused] = useState(false);
   const art = artworkForProject(project.id);
+  const mediaFrame = project.heroImageFrame === false ? '' : styles.mediaFrame;
   return (
     <div className={`${styles.media} game-art ${project.heroVideo ? styles.video : ''}`}>
       <div className={styles.artwork} aria-hidden="true">
@@ -24,9 +25,9 @@ function ProjectMedia({ project, heroImage }) {
       <div className={styles.mediaWash} />
       <div className={styles.mediaInner}>
         {project.heroVideo ? videoStarted ? (
-          <iframe src={project.heroVideo} title={`${project.name} demo`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen autoFocus />
+          <iframe className={mediaFrame} src={project.heroVideo} title={`${project.name} demo`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen autoFocus />
         ) : (
-          <a className={styles.videoPreview} href={project.heroVideo} onClick={event => {
+          <a className={`${styles.videoPreview} ${mediaFrame}`} href={project.heroVideo} onClick={event => {
             if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
             event.preventDefault(); setVideoStarted(true);
           }} aria-label={`Play ${project.name} demo`}>
@@ -34,7 +35,7 @@ function ProjectMedia({ project, heroImage }) {
             <span>Watch {project.name} demo</span>
           </a>
         ) : project.heroAnimations?.length > 0 && !imageFailed ? (
-          <div className={styles.animationPanel}>
+          <div className={`${styles.animationPanel} ${mediaFrame}`}>
             <span className={styles.animationTitle}>Pixel Loader Lab</span>
             <div className={styles.animationGrid}>
               {project.heroAnimations.map(animation => <picture key={animation.src}>
@@ -45,20 +46,20 @@ function ProjectMedia({ project, heroImage }) {
             <button type="button" className={styles.animationToggle} onClick={() => setAnimationPaused(paused => !paused)}>{animationPaused ? 'Play animation' : 'Pause animation'}</button>
           </div>
         ) : project.heroGallery?.length > 0 && !imageFailed ? (
-          <div className={styles.artGrid} role="group" aria-label={`${project.name} artwork`}>
+          <div className={`${styles.artGrid} ${mediaFrame}`} role="group" aria-label={`${project.name} artwork`}>
             {project.heroGallery.map(image => <ResponsiveImage key={image.src} src={image.src} alt={image.alt} sizes="(max-width: 700px) 28vw, 18vw" onError={() => setImageFailed(true)} />)}
           </div>
         ) : heroImage && project.heroImageKind === 'logo' && !imageFailed ? (
-          <div className={`${styles.logoPanel} ${project.heroImageTone === 'dark' ? styles.logoDark : ''}`}>
+          <div className={`${styles.logoPanel} ${mediaFrame} ${project.heroImageTone === 'dark' ? styles.logoDark : ''}`}>
             <ResponsiveImage src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
           </div>
         ) : heroImage && project.heroImageFullSize && !imageFailed ? (
           <a className={styles.graphicLink} href={heroImage} target="_blank" rel="noopener noreferrer">
-            <ResponsiveImage className={styles.screenshot} src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
+            <ResponsiveImage className={`${styles.screenshot} ${mediaFrame}`} src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
             <span>View graphic full size <ArrowUpRight size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></span>
           </a>
         ) : heroImage && !imageFailed ? (
-          <ResponsiveImage className={`${styles.screenshot} ${project.heroImageFrame === false ? '' : styles.screenshotFrame}`} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
+          <ResponsiveImage className={`${styles.screenshot} ${mediaFrame} ${project.heroImageFrame === false ? '' : styles.screenshotFrame}`} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
         ) : (
           <div className={styles.artCaption}><span aria-hidden="true" className={styles.projectIcon}>{project.icon}</span><span className={styles.eyebrow}>{project.type}</span><strong>{project.name}</strong></div>
         )}
