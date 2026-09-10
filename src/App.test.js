@@ -31,10 +31,10 @@ test.each(['/about', '/about/', '/About'])('opens %s in the portfolio shell', (p
   expect(screen.getByRole('link', { name: 'Sean Betts home' })).toHaveAttribute('href', '/');
 });
 
-test('portrait to About to project keeps the return journey intact', () => {
+test('About pane to About to project keeps the return journey intact', () => {
   jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
   render(<App />);
-  fireEvent.click(screen.getByRole('link', { name: 'About Sean Betts', exact: true }));
+  fireEvent.click(screen.getByRole('link', { name: /About A little more about me/i }));
   expect(screen.getByRole('heading', { name: /^About\s*\.$/, level: 1 })).toBeInTheDocument();
   fireEvent.click(screen.getByRole('link', { name: 'sideBar', exact: true }));
   expect(screen.getByRole('heading', { name: 'sideBar', level: 1 })).toBeInTheDocument();

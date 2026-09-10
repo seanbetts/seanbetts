@@ -1,15 +1,26 @@
 .cover{composes:flatCanvas from "./Frame.module.css";height:calc(100svh - 139px);min-height:710px;max-height:1100px;isolation:isolate;overflow:hidden}
-.panel{position:absolute;overflow:hidden;transition:filter .25s ease;isolation:isolate;background:var(--game-ink)}
+.panel{position:absolute;overflow:hidden;isolation:isolate;background:var(--game-ink)}
 .panelImage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .panel [data-art]{transition:transform .55s cubic-bezier(.2,.6,.2,1)}
 .panel:hover [data-art],.panel:focus-visible [data-art]{transform:scale(1.045)}
-.panel:focus-visible{outline:0!important;filter:brightness(1.17)}
-.panel:focus-visible::after{content:'';position:absolute;inset:10px;border:3px solid var(--game-accent);pointer-events:none;z-index:5}
+.panel:focus-visible{outline:0!important}
+.panel:focus-visible .panelImage{filter:brightness(1.17)}
+/* The focus layer sits above clipping, frame seams and the portrait wordmark.
+   Use the seam layer's exact bounds so percentage coordinates stay aligned.
+   A fixed-width ink backing keeps the accent legible against every image. */
+.focusRings{position:absolute;inset:0;width:100%;height:100%;z-index:6;pointer-events:none;overflow:visible}
+.focusRings g{visibility:hidden}
+.focusRings polygon{fill:none;stroke:var(--game-ink);stroke-width:9px;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.focusRings .focusAccent{stroke:var(--game-accent);stroke-width:3px}
+.cover:has(.building:focus-visible) .focusBuilding,
+.cover:has(.writing:focus-visible) .focusWriting,
+.cover:has(.speaking:focus-visible) .focusSpeaking,
+.cover:has(.leadership:focus-visible) .focusLeadership,
+.cover:has(.about:focus-visible) .focusAbout{visibility:visible}
 /* Every polygon shares an edge with its neighbour. The SVG draws the seams once,
    with a fixed stroke width at every desktop aspect ratio. */
 .portrait{left:22%;top:0;width:37%;height:100%;clip-path:polygon(0 0,91.892% 0,100% 100%,8.108% 100%)}
-.portraitImage{height:100%;width:100%;object-fit:cover;object-position:50% 30%;transition:transform .55s ease}
-.portrait:hover .portraitImage{transform:scale(1.025)}
+.portraitImage{height:100%;width:100%;object-fit:cover;object-position:50% 30%}
 .identity{container-type:inline-size;position:absolute;left:10%;bottom:0;width:90%;padding:55px 4% 26px;text-align:center;background:var(--frame-identity-fade);text-shadow:0 2px 5px #000}
 .identity h1 img{width:100%;height:auto;max-height:235px;filter:drop-shadow(0 3px 4px #0005)}
 .identity p{font-family:var(--game-ui);line-height:1.15}
@@ -51,9 +62,16 @@
  .portraitImage{object-position:50% 24%}
  .identity{left:0;width:100%;padding:50px 7% 24px}
  .identity h1 img{width:100%;max-height:190px}.identity .role{font-size:25px}.identity .expertise{margin-top:10px}
- .building{order:1}.writing{order:2}.speaking{order:3}.leadership{order:4}.about{order:5}
+ .speaking{order:1}.building{order:2}.writing{order:3}.leadership{order:4}.about{order:5}
  .dividers{display:none}
+ .focusRings{display:none}
+ .panel:focus-visible::after{content:'';position:absolute;inset:8px;border:3px solid var(--game-accent);box-shadow:0 0 0 3px var(--game-ink),inset 0 0 0 3px var(--game-ink);pointer-events:none;z-index:5}
  .caption,.speaking .caption,.building .caption,.writing .caption,.leadership .caption{padding:32px 20px 25px;display:flex}
  .caption h2,.leadership .caption h2{font-size:30px}.caption p{font-size:18px}
 }
 @media(max-width:380px){.portrait{height:620px}.identity h1 img{max-height:170px}.identity .role{font-size:23px}}
+@media(forced-colors:active){
+ .focusRings polygon{stroke:Canvas}
+ .focusRings .focusAccent{stroke:Highlight}
+ .panel:focus-visible::after{border-color:Highlight}
+}
