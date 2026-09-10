@@ -2,6 +2,39 @@
 // Image sources are kept for provenance; the page serves optimised local assets.
 const articlesData = [
   {
+    "title": "The Hidden Layer of the Internet",
+    "url": "https://www.the-blueprint.ai/p/the-hidden-layer-of-the-internet",
+    "publication": "The Blueprint",
+    "description": "Why AI’s unseen choices about what to search and retrieve demand greater transparency as platforms become gateways to the internet.",
+    "datePublished": "2026-08-24",
+    "image": "/images/writing/blueprint-portrait-2026.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!s-Ef!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5233f053-919f-4f58-895c-5e166391fd0e_1536x1024.png",
+    "imageAlt": "Illustrated portrait of Sean Betts at a laptop beneath a neon Blueprint sign.",
+    "imagePosition": "center 25%"
+  },
+  {
+    "title": "Welcome to the Era of Paid Organic",
+    "url": "https://www.the-blueprint.ai/p/welcome-to-the-era-of-paid-organic",
+    "publication": "The Blueprint",
+    "description": "How brands can pay to put information into the sources AI platforms consult, creating a new space between paid advertising and organic discovery.",
+    "datePublished": "2026-08-10",
+    "image": "/images/writing/blueprint-portrait-2026.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!s-Ef!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5233f053-919f-4f58-895c-5e166391fd0e_1536x1024.png",
+    "imageAlt": "Illustrated portrait of Sean Betts at a laptop beneath a neon Blueprint sign.",
+    "imagePosition": "center 25%"
+  },
+  {
+    "title": "OpenAI Pivots",
+    "url": "https://www.the-blueprint.ai/p/openai-pivots",
+    "publication": "The Blueprint",
+    "description": "What OpenAI’s shift towards professional and enterprise work means for its products, consumers and competition with Google.",
+    "datePublished": "2026-07-10",
+    "image": "/images/writing/blueprint-portrait-2026.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!s-Ef!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5233f053-919f-4f58-895c-5e166391fd0e_1536x1024.png",
+    "imageAlt": "Illustrated portrait of Sean Betts at a laptop beneath a neon Blueprint sign.",
+    "imagePosition": "center 25%"
+  },
+  {
     "title": "OMG UK’s Chief AI Officer on Why GEO Is Not SEO for AI",
     "url": "https://futureweek.com/omg-uks-chief-ai-officer-on-why-geo-is-not-seo-for-ai/",
     "publication": "FutureWeek",
@@ -11,6 +44,17 @@ const articlesData = [
     "imageSource": "https://futureweek.com/wp-content/uploads/2026/06/Sean-Betts-1.png",
     "imageAlt": "Sean Betts against a blue background patterned with binoculars.",
     "imagePosition": "center 28%"
+  },
+  {
+    "title": "AI For The Rest Of Us, Take Two",
+    "url": "https://www.the-blueprint.ai/p/ai-for-the-rest-of-us-take-two",
+    "publication": "The Blueprint",
+    "description": "A fresh look at Apple Intelligence and Siri, and the promise of personal AI built into the devices and apps people already use.",
+    "datePublished": "2026-06-09",
+    "image": "/images/writing/ai-for-the-rest-of-us-take-two.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!Q59W!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38000e7e-8efe-4cf2-ad08-b200e93e398e_3840x2160.png",
+    "imageAlt": "A collage of Apple Intelligence features, including Siri, Shortcuts and personal context.",
+    "imagePosition": "center center"
   },
   {
     "title": "AI can fix advertising’s relevance problem – if we stop feeding into the hype",
@@ -33,6 +77,17 @@ const articlesData = [
     "imageSource": "https://www.decisionmarketing.co.uk/wp-content/uploads/2026/04/Sean-Betts-compressed.jpg",
     "imageAlt": "Portrait of Sean Betts wearing a white shirt.",
     "imagePosition": "center 20%"
+  },
+  {
+    "title": "The Problem with Sell-Side Agents",
+    "url": "https://www.the-blueprint.ai/p/the-problem-with-sell-side-agents",
+    "publication": "The Blueprint",
+    "description": "Why sell-side AI agents should support insights and planning while control of live campaign execution stays with the buy side.",
+    "datePublished": "2026-04-07",
+    "image": "/images/writing/the-problem-with-sell-side-agents.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!ctzy!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff0b3e36b-10b4-4395-a584-03ed08819359_1536x1024.png",
+    "imageAlt": "A neon diagram separating AI insights and recommendations from locked campaign execution.",
+    "imagePosition": "center center"
   },
   {
     "title": "Advertising Inside The Model",

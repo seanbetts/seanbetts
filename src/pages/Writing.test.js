@@ -50,7 +50,7 @@ test('places the lead article in the hero without repeating it in the gallery', 
   const heading = screen.getByRole('heading', { level: 2, name: article.title });
   expect(heading.closest('header')).not.toBeNull();
   expect(screen.getAllByRole('heading', { name: article.title })).toHaveLength(1);
-  expect(screen.getByRole('img', { name: article.imageAlt })).toHaveAttribute('loading', 'eager');
+  expect(within(heading.closest('article')).getByRole('img', { name: article.imageAlt })).toHaveAttribute('loading', 'eager');
   expect(screen.queryByRole('img', { name: /Illustrated hands/ })).not.toBeInTheDocument();
 });
 
@@ -79,8 +79,9 @@ test('article summaries support keyboard focus, Escape, touch toggling and outsi
 test('an image failure preserves the article title, summary control and destination', () => {
   render(<MemoryRouter><Writing /></MemoryRouter>);
   const article = articlesData[0];
-  fireEvent.error(screen.getByRole('img', { name: article.imageAlt }));
-  expect(screen.queryByRole('img', { name: article.imageAlt })).not.toBeInTheDocument();
+  const panel = screen.getByRole('article', { name: article.title });
+  fireEvent.error(within(panel).getByRole('img', { name: article.imageAlt }));
+  expect(within(panel).queryByRole('img', { name: article.imageAlt })).not.toBeInTheDocument();
   expect(screen.getByRole('heading', { name: article.title }).closest('a')).toHaveAttribute('href', article.url);
   fireEvent.click(screen.getByRole('button', { name: `About this article: ${article.title}` }));
   expect(screen.getByText(article.description)).toBeVisible();
