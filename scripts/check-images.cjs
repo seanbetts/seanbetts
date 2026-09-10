@@ -11,9 +11,13 @@ async function main() {
   let count = 0;
   for (const route of routes) {
     const doc = readPage(route);
-    for (const image of doc.querySelectorAll('img[srcset]')) {
+    for (const image of doc.querySelectorAll('img[srcset], picture source[srcset]')) {
       assert.ok(image.getAttribute('sizes'), `${route}: missing responsive sizes`);
-      assert.ok(image.hasAttribute('alt'), `${route}: lost alternative text`);
+      if (image.tagName === 'IMG') assert.ok(image.hasAttribute('alt'), `${route}: lost alternative text`);
+      else {
+        assert.equal(image.type, 'image/avif');
+        assert.ok(image.parentElement.querySelector('img[srcset]'), `${route}: AVIF needs a WebP fallback`);
+      }
       for (const candidate of image.getAttribute('srcset').split(', ')) {
         const [src, descriptor] = candidate.split(' ');
         assert.ok(fs.existsSync(path.join(build, src)), `${route}: missing ${src}`);
@@ -26,10 +30,10 @@ async function main() {
     }
   }
   for (const image of Object.values(images)) {
-    for (const candidate of image.variants) {
+    for (const candidate of [...image.variants, ...(image.avif || [])]) {
       const metadata = await sharp(path.join(build, candidate.src)).metadata();
       assert.equal(metadata.width, candidate.width, 'The browser must receive the advertised pixel width');
-      assert.equal(metadata.format, 'webp');
+      assert.equal(metadata.format, candidate.src.endsWith('.avif') ? 'heif' : 'webp');
       assert.ok(metadata.width <= image.width, 'Do not upscale originals');
     }
   }

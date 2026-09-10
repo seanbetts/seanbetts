@@ -44,16 +44,34 @@ async function main() {
       variants.push({ src: `/images/responsive/${name}`, width: targetWidth });
     }
     const source = '/images/' + path.relative(sourceRoot, file).split(path.sep).join('/');
-    manifest[source] = { width, height, variants };
+    // AVIF supplements the illustrated artwork; photographs and screenshots keep WebP.
+    const avif = [];
+    if (source.startsWith('/images/game/')) {
+      const avifHash = crypto.createHash('sha256').update(buffer).update('avif-q60-e6-v1').digest('hex').slice(0, 16);
+      for (const targetWidth of targetWidths) {
+        const name = `${avifHash}-${targetWidth}.avif`;
+        const output = path.join(outputRoot, name);
+        try { await fs.access(output); } catch {
+          await sharp(buffer).rotate().resize({ width: targetWidth, withoutEnlargement: true })
+            .avif({ quality: 60, effort: 6 }).toFile(output);
+        }
+        avif.push({ src: `/images/responsive/${name}`, width: targetWidth });
+      }
+    }
+    // Keep the cached AVIF exports, but prefer WebP when it is smaller overall.
+    const bytesFor = async candidates => (await Promise.all(candidates.map(candidate =>
+      fs.stat(path.join(root, 'public', candidate.src)).then(stat => stat.size)))).reduce((sum, bytes) => sum + bytes, 0);
+    const preferWebp = avif.length && await bytesFor(avif) >= await bytesFor(variants);
+    manifest[source] = { width, height, variants, ...(avif.length ? { avif, preferWebp: Boolean(preferWebp) } : {}) };
     originalBytes += buffer.length;
     exportedBytes += (await fs.stat(path.join(root, 'public', variants.at(-1).src))).size;
   }
   await fs.mkdir(path.dirname(manifestFile), { recursive: true });
   const json = JSON.stringify(manifest, null, 2) + '\n';
   if (await fs.readFile(manifestFile, 'utf8').catch(() => '') !== json) await fs.writeFile(manifestFile, json);
-  const currentFiles = new Set(Object.values(manifest).flatMap(image => image.variants.map(variant => path.basename(variant.src))));
+  const currentFiles = new Set(Object.values(manifest).flatMap(image => [...image.variants, ...(image.avif || [])].map(variant => path.basename(variant.src))));
   for (const name of await fs.readdir(outputRoot)) {
-    if (!currentFiles.has(name) && /^[a-f0-9]{16}-\d+\.webp$/.test(name)) await fs.unlink(path.join(outputRoot, name));
+    if (!currentFiles.has(name) && /^[a-f0-9]{16}-\d+\.(?:webp|avif)$/.test(name)) await fs.unlink(path.join(outputRoot, name));
   }
   console.log(`Prepared ${Object.keys(manifest).length} responsive images. Originals ${(originalBytes / 1e6).toFixed(1)} MB; largest WebP variants ${(exportedBytes / 1e6).toFixed(1)} MB.`);
 }

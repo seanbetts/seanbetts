@@ -1,4 +1,4 @@
-@font-face{font-family:Barlow Condensed;src:url('../../public/fonts/BarlowCondensed-SemiBold.ttf') format('truetype');font-display:swap;font-weight:600}
+@font-face{font-family:Barlow Condensed;src:url('../../public/fonts/BarlowCondensed-SemiBold.woff2') format('woff2');font-display:swap;font-weight:600}
 body.game-mode{margin:0;background:#16051f;color:#fffaf4}
 .game{--game-frame:22px;--game-ink:#110818;--game-bg:#16051f;--game-surface:#211329;--game-surface-alt:#24162d;--game-surface-deep:#1d1428;--game-hover:#3b2540;--game-body:#ded5e2;--game-button-text:#16051f;--game-status:#b7ffda;--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-border:#49354e;--game-ui:'Barlow Condensed','Arial Narrow',sans-serif;font-family:Arial,Helvetica,sans-serif;background:var(--game-bg);color:var(--game-text);min-height:100svh;line-height:1.5;color-scheme:dark}
 .game *{box-sizing:border-box}
