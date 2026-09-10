@@ -50,13 +50,12 @@ function ArticlePanel({ article, hero = false }) {
       <div className={styles.articleContent}>
         <div className={styles.articleCopy}>
           <Heading id={titleId}>{article.title}</Heading>
-          <div className={styles.articleDetails}>
+          <InfoPopover className={styles.articleDetails} label={`About this article: ${article.title}`} description={article.description}>
             <div className={styles.metadata}>
               <p className={styles.publication}>{article.publication}</p>
               <ArticleDate article={article} />
             </div>
-            <InfoPopover className={styles.summary} label={`About this article: ${article.title}`} description={article.description} />
-          </div>
+          </InfoPopover>
         </div>
         <div className={styles.photo}>
           {!failed && <ResponsiveImage src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"

@@ -32,7 +32,7 @@
 .lead{grid-column:1/-1;min-height:520px}
 .feature:last-child:nth-of-type(even){grid-column:1/-1;--frame-window:none}
 .lead .photo img{object-position:center 42%}
-.lead .featureCopy{padding:42px;max-width:850px}
+.lead .featureCopy{padding:42px}
 .speaking .feature h3{color:#fffaf4}
 .feature .metadata{color:#eee2f2}
 .archive{margin-top:var(--game-frame);padding:48px;background:var(--game-surface)}
@@ -90,5 +90,3 @@
 
 .panelWindow { composes: window from "../game/Frame.module.css"; display:flex;align-items:flex-end;align-self:stretch;flex:1; }
 @media(max-width:700px){.panelWindow{flex-direction:column;align-items:stretch}}
-
-.talkInfo { --info-background: rgba(16, 7, 24, .8); --info-color: #fffaf4; }

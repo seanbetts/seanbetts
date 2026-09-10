@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { Info } from '@phosphor-icons/react';
 import styles from './InfoPopover.module.css';
 
-export default function InfoPopover({ label, description, className = '' }) {
+export default function InfoPopover({ label, description, children, className = '' }) {
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [pinned, setPinned] = useState(false);
@@ -27,15 +27,18 @@ export default function InfoPopover({ label, description, className = '' }) {
     };
   }, [open]);
   return <div ref={root} className={`${styles.root} ${className}`}
-    onPointerEnter={event => { if (event.pointerType === 'mouse') { setHovered(true); setDismissed(false); } }}
-    onPointerLeave={() => setHovered(false)}
     onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) { setFocused(false); setPinned(false); } }}>
-    <button type="button" className={styles.button} aria-label={label}
-      aria-expanded={open} aria-controls={id}
-      onFocus={() => { setFocused(true); setDismissed(false); }}
-      onClick={() => { if (pinned) close(); else { setPinned(true); setDismissed(false); } }}>
-      <Info size={28} aria-hidden="true" />
-    </button>
-    <div id={id} className={styles.content} hidden={!open}><p>{description}</p></div>
+    {children && <div className={styles.details}>{children}</div>}
+    <div className={styles.control}
+      onPointerEnter={event => { if (event.pointerType === 'mouse') { setHovered(true); setDismissed(false); } }}
+      onPointerLeave={() => setHovered(false)}>
+      <button type="button" className={styles.button} aria-label={label}
+        aria-expanded={open} aria-controls={id}
+        onFocus={() => { setFocused(true); setDismissed(false); }}
+        onClick={() => { if (pinned) close(); else { setPinned(true); setDismissed(false); } }}>
+        <Info size={28} aria-hidden="true" />
+      </button>
+      <div id={id} className={styles.content} hidden={!open}><p>{description}</p></div>
+    </div>
   </div>;
 }

@@ -38,14 +38,14 @@ function FeaturedAppearance({ talk, lead }) {
     <div className={styles.panelWindow}>
       <div className={styles.scrim} aria-hidden="true" />
       <EventPhoto talk={talk} />
-      <InfoPopover label={`About this talk: ${talk.title}`} description={talk.description}
-        className={styles.talkInfo} />
       <div className={styles.featureCopy}>
         <div className={styles.upright}>
           <Format type={talk.type} />
           <h3 id={`featured-${talk.id.replace(/\s/g, '-')}`}>{talk.title.replace(/[.!?]$/, '')}<span className={styles.period}>{talk.title.match(/[.!?]$/)?.[0] || '.'}</span></h3>
-          <p className={styles.conference}>{talk.conference}</p>
-          <p className={styles.metadata}>{talk.date} · {talk.location}</p>
+          <InfoPopover label={`About this talk: ${talk.title}`} description={talk.description}>
+            <p className={styles.conference}>{talk.conference}</p>
+            <p className={styles.metadata}>{talk.date} · {talk.location}</p>
+          </InfoPopover>
         </div>
       </div>
     </div>
