@@ -17,7 +17,7 @@ body.game-mode{margin:0;background:#16051f;color:#fffaf4}
 @media(prefers-reduced-motion:reduce){.game *,.game *::before,.game *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 body.game-mode.light-mode{background:#f8d8ed;color:#28133e}
-.game.game-light{--game-bg:#f8d8ed;--game-surface:#f3ebfa;--game-surface-alt:#f3ebfa;--game-surface-deep:#f3ebfa;--game-hover:#e6d8f2;--game-text:#28133e;--game-muted:#624571;--game-body:#443153;--game-accent:#4055f5;--game-border:#ba8dbb;--game-button-text:#fffaf4;--game-status:#17665f;color-scheme:light}
+.game.game-light{--game-bg:#f8d8ed;--game-surface:#f3ebfa;--game-surface-alt:#f3ebfa;--game-surface-deep:#f3ebfa;--game-hover:#e6d8f2;--game-text:#28133e;--game-muted:#624571;--game-body:#443153;--game-accent:#f52b93;--game-border:#ba8dbb;--game-button-text:#16051f;--game-status:#17665f;color-scheme:light}
 /* Keep artwork captions light while accents inherit the selected reading mode. */
 .game .game-art{--game-text:#fffaf4;--game-muted:#c8bdce;color:#fffaf4}
 
