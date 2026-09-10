@@ -6,18 +6,17 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { pageUrl, pagePath } from '../data/siteIdentity';
 import projectsData from '../data/projectsData';
-import SceneArt from './SceneArt';
 import styles from './GameBuilding.module.css';
 
 const origin = { fromPath: '/building/', fromLabel: 'Building' };
 
 function ProjectPanel({ project, className }) {
-  const { scene, background: backgroundImage } = artworkForProject(project.id);
+  const { background: backgroundImage } = artworkForProject(project.id);
   return (
     <Link to={pagePath(`/building/${project.id}`)} state={origin} aria-label={`Open ${project.name} project`} className={`${styles.secondaryCard} ${className} game-art`}>
-      {(scene || backgroundImage) && <div className={styles.scene} aria-hidden="true">
-        {backgroundImage ? <ResponsiveImage src={backgroundImage} alt="" width="1672" height="941" decoding="async" /> : <SceneArt scene={scene} />}
-      </div>}
+      <div className={styles.scene} aria-hidden="true">
+        <ResponsiveImage src={backgroundImage} alt="" width="1672" height="941" decoding="async" />
+      </div>
       <div className={styles.cardWash} />
       <div className={styles.secondaryTop}><span>{project.type}</span><ArrowUpRight size={22} aria-hidden="true" /></div>
       <div className={styles.secondaryCaption}><h2>{project.name}</h2><p>{project.description}</p></div>

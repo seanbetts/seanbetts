@@ -7,7 +7,6 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { PERSON_ID, SITE_URL, pageUrl, pagePath } from '../data/siteIdentity';
 import projectsData from '../data/projectsData';
-import SceneArt from './SceneArt';
 import styles from './GameProject.module.css';
 
 
@@ -19,7 +18,7 @@ function ProjectMedia({ project, heroImage }) {
   return (
     <div className={`${styles.media} game-art ${project.heroVideo ? styles.video : ''}`}>
       <div className={styles.artwork} aria-hidden="true">
-        {art.background ? <ResponsiveImage src={art.background} alt="" /> : <SceneArt scene={art.scene} />}
+        <ResponsiveImage src={art.background} alt="" />
       </div>
       <div className={styles.mediaWash} />
       <div className={styles.mediaInner}>
