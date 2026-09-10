@@ -4,10 +4,10 @@ import Seo from '../components/Seo';
 import styles from './GameHome.module.css';
 
 const homeArtwork = {
-  building: '/images/game/home-studies/building-studio-v4-code.webp',
-  writing: '/images/game/home-studies/writing-desk-v10-balcombe.webp',
-  speaking: '/images/game/home-studies/speaking-rear-v3.webp',
-  leadership: '/images/game/home-studies/leadership-workshop-v2-tattoos.webp',
+  building: '/images/game/home-studies/building-studio-v5-colour.png',
+  writing: '/images/game/home-studies/writing-desk-v11-sharpie.png',
+  speaking: '/images/game/home-studies/speaking-rear-v5-jeans.png',
+  leadership: '/images/game/home-studies/leadership-conversation-v3-jeans.png',
   about: '/images/game/home-studies/about-personal-room-v3-eames.png',
 };
 
