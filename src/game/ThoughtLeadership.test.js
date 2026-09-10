@@ -3,13 +3,14 @@ import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import ThoughtLeadership from './ThoughtLeadership';
 
-test('preserves all global brands and removes the bottom writing and speaking links', () => {
+test('introduces the perspectives while preserving the visual brand showcase', () => {
   render(<MemoryRouter><ThoughtLeadership /></MemoryRouter>);
-  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('AI thought leadership for global brands.');
-  expect(screen.getByText(/Providing strategic perspectives to global brands/)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('AI perspectives for business leaders.');
+  expect(screen.getByText(/I help business leaders understand how AI is changing discovery/)).toBeInTheDocument();
   expect(screen.queryByText('Ideas with real-world impact')).not.toBeInTheDocument();
   expect(screen.queryByText('AI strategy · Transformation · Product innovation')).not.toBeInTheDocument();
-  expect(screen.queryByRole('heading', { level: 2 })).not.toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Informed by building. Grounded in business.');
+  expect(screen.getByText('Also featuring')).toBeInTheDocument();
   expect(screen.queryByText('View all brands')).not.toBeInTheDocument();
   const list = screen.getByRole('list', { name: 'Additional global brands' });
   expect(list).toBeVisible();
@@ -19,6 +20,8 @@ test('preserves all global brands and removes the bottom writing and speaking li
     'Renault', 'Virgin Media O2', 'Volkswagen', 'Whitbread',
   ]);
   const street = screen.getByRole('region', { name: 'Illustrated brand high street' });
+  const perspective = screen.getByRole('region', { name: 'Informed by building. Grounded in business.' });
+  expect(perspective.nextElementSibling).toContainElement(street);
   const streetImage = within(street).getByRole('img');
   expect(imageExports['/images/game/brand-street/street-integrated-v4.png'].variants.map(image => image.src)).toContain(streetImage.getAttribute('src'));
   expect(streetImage).toHaveAttribute('srcset');

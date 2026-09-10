@@ -1,6 +1,7 @@
 .brandCredits { composes: surface from "./Frame.module.css"; }
 .portrait { composes: surface from "./Frame.module.css"; }
 .copy { composes: surface from "./Frame.module.css"; }
+.perspective { composes: surface from "./Frame.module.css"; }
 .page{max-width:1440px;margin:0 auto;padding-bottom:40px}
 .back { composes: back from "../components/Page.module.css"; }
 .introduction{display:grid;grid-template-columns:7fr 3fr;background:var(--game-ink)}
@@ -15,6 +16,10 @@
 .portraitImage{display:block;width:100%;height:auto}
 /* Title, portrait and brand collage all share one ink canvas and connected seams. */
 .cover { composes: canvas from "./Frame.module.css";  }
+.perspective{margin-top:var(--game-frame);padding:36px 48px;background:var(--game-surface)}
+.perspectiveInner{transform:skewY(var(--counter-angle))}
+.perspective h2{margin:0 0 16px;color:var(--game-text);font-size:clamp(26px,3vw,38px);line-height:1.15;text-transform:uppercase}
+.perspective p{margin:0;max-width:1080px;color:var(--game-body);font-size:18px;line-height:1.7}
 .brandCredits{margin-top:var(--game-frame);padding:28px 44px;background:var(--game-surface);text-align:center}
 .creditsInner{transform:skewY(var(--counter-angle))}
 .creditsLabel{margin:0 0 12px;color:var(--game-accent);font:600 13px var(--game-ui);letter-spacing:2px;text-transform:uppercase}
@@ -24,6 +29,7 @@
 @media(max-width:1000px){
  .introduction{grid-template-columns:3fr 2fr}
  .copy{padding:32px 40px 32px 28px}
+ .perspective{padding:32px 28px}
  .page .introduction h1{font-size:clamp(40px,5.6vw,60px)}
 }
 @media(max-width:700px){
@@ -31,6 +37,8 @@
  .copy{padding:30px 22px;clip-path:none}
  .page .introduction h1{font-size:clamp(38px,10.5vw,64px)}
  .introduction p{font-size:16px}
+ .perspective{padding:28px 22px}
+ .perspective p{font-size:16px}
  .portrait{clip-path:none;min-height:0}
 
  .brandCredits{padding:24px 18px}
