@@ -32,7 +32,7 @@
 .chapterCopy p,.chapterCopy li{font-size:16px;line-height:1.75;color:var(--game-body)}
 .chapterCopy p+p{margin-top:18px}
 .chapterCopy p a{color:var(--game-accent);font-weight:600;text-decoration:none;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.chapterCopy p a:hover,.chapterCopy p a:focus-visible{color:var(--game-text);background-color:#ff777f24}
+.chapterCopy p a:hover,.chapterCopy p a:focus-visible{color:var(--game-text);background-color:color-mix(in srgb,var(--game-accent) 14%,transparent)}
 .chapterCopy ul{padding-left:20px;margin:12px 0 0}
 .chapterCopy li{padding-left:6px;margin-top:8px;font-size:15px}
 .chapterCopy li::marker{color:var(--game-accent)}

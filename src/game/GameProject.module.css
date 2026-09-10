@@ -15,7 +15,7 @@
 .eyebrow, .metadata, .date { font: 600 13px/1.5 var(--game-ui); letter-spacing: .08em; text-transform: uppercase; }
 .eyebrow { display: block; margin-bottom: 14px; color: var(--game-accent); }
 .metadata { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--game-muted); }
-.status { color: var(--game-status); }
+.status { color: var(--game-accent); }
 .status::before { content: ''; display: inline-block; width: 5px; height: 5px; background: currentColor; margin: 0 7px 2px 0; }
 .page .introduction h1 { font-size: clamp(48px, 5.4vw, 80px); line-height: .98; text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; margin: 28px 0 24px; }
 .period { color: var(--game-accent); }

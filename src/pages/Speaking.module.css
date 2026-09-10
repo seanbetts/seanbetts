@@ -34,7 +34,6 @@
 .lead .photo img{object-position:center 42%}
 .lead .featureCopy{padding:42px;max-width:850px}
 .speaking .feature h3{color:#fffaf4}
-.feature .format,.feature .period,.speaking .feature .conference{color:#ff929d}
 .feature .metadata{color:#eee2f2}
 .archive{margin-top:var(--game-frame);padding:48px;background:var(--game-surface)}
 .archiveHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding-bottom:28px}

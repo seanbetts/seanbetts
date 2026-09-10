@@ -18,8 +18,8 @@ body.game-mode{margin:0;background:#16051f;color:#fffaf4}
 
 body.game-mode.light-mode{background:#f8d8ed;color:#28133e}
 .game.game-light{--game-bg:#f8d8ed;--game-surface:#f3ebfa;--game-surface-alt:#f3ebfa;--game-surface-deep:#f3ebfa;--game-hover:#e6d8f2;--game-text:#28133e;--game-muted:#624571;--game-body:#443153;--game-accent:#4055f5;--game-border:#ba8dbb;--game-button-text:#fffaf4;--game-status:#17665f;color-scheme:light}
-/* Artwork keeps its ink-and-sunset palette in either reading mode. */
-.game .game-art{--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-button-text:#16051f;color:#fffaf4}
+/* Keep artwork captions light while accents inherit the selected reading mode. */
+.game .game-art{--game-text:#fffaf4;--game-muted:#c8bdce;color:#fffaf4}
 
 @media(max-width:700px){.game{--game-frame:16px}}
 
