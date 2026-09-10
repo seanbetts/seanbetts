@@ -3,19 +3,23 @@ import { MemoryRouter } from 'react-router-dom';
 import App from '../App';
 import Writing from './Writing';
 import articlesData from '../data/articlesData';
-import fetchUrlMetadata from '../utils/fetchUrlMetadata';
 
-jest.mock('../utils/fetchUrlMetadata');
+const originalFetch = global.fetch;
 
 beforeEach(() => {
+  global.fetch = jest.fn();
   window.history.replaceState({}, '', '/');
+});
+
+afterEach(() => {
+  global.fetch = originalFetch;
 });
 
 test('keeps every article reachable without preview requests or cached metadata', () => {
   localStorage.setItem('articleMetadata', '{invalid old cache');
   render(<MemoryRouter><Writing /></MemoryRouter>);
   expect(screen.getByRole('heading', { level: 1, name: 'Writing' })).toBeInTheDocument();
-  expect(fetchUrlMetadata).not.toHaveBeenCalled();
+  expect(global.fetch).not.toHaveBeenCalled();
   expect(screen.queryByText(/preview unavailable|loading\.\.\./i)).not.toBeInTheDocument();
   const featured = screen.getByRole('region', { name: 'Featured articles' });
   expect(screen.queryByRole('region', { name: 'More writing' })).not.toBeInTheDocument();
