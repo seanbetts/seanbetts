@@ -48,7 +48,7 @@ const projectsData = [
   {
     id: "llm-search-analysis",
     name: "LLM Search Analysis",
-    description: "A tool for comparing how AI models search the web and which sources they cite.",
+    description: "A research tool for comparing how AI models search the web, which sources they find and what they cite in their answers.",
     icon: <MagnifyingGlass size={48} />,
     url: "https://github.com/seanbetts/llm-search-analysis",
     type: "research tool",
@@ -57,6 +57,8 @@ const projectsData = [
     technologies: [
       "Python",
       "Streamlit",
+      "FastAPI",
+      "Playwright",
       "SQLite",
       "SQLAlchemy",
       "OpenAI API",
@@ -65,16 +67,13 @@ const projectsData = [
       "pandas"
     ],
     features: [
-      "Multi-provider support (OpenAI, Google Gemini, Anthropic Claude)",
-      "9 AI models with web search capabilities",
-      "3-tab interface (Interactive, Batch Analysis, Query History)",
-      "Database integration with full interaction persistence",
-      "Rank tracking for search result citations",
-      "CSV export for batch analysis results",
-      "Real-time search query and source analysis"
+      "Compare responses to the same question across OpenAI, Google Gemini and Anthropic Claude.",
+      "Inspect the search queries, returned sources and citations each provider exposes.",
+      "Investigate ChatGPT through browser captures to examine details beyond those available through the APIs.",
+      "Run batches of questions, revisit previous results and export the data for further analysis."
     ],
-    challenges: "Integrating three different provider APIs with varying search implementations, implementing accurate rank tracking for cited sources, and creating a unified interface for comparing search behaviors across models.",
-    learnings: "ChatGPT searches and uses search results very differently from a human. It is tempting to understand AI search through familiar ideas about queries, rankings and clicks, but that only tells part of the story. This project changed how I think about what it means for information to be found and used by an AI assistant.",
+    challenges: "I wanted to understand what happens between asking an AI assistant a question and receiving an answer with sources. I built the interface, backend and data collection tools myself, combining provider APIs with browser captures of ChatGPT. Each exposes a different view of the search process. The difficult part was making useful comparisons while keeping gaps in the evidence visible.",
+    learnings: "This project changed how I think about visibility in AI search. In the examples I investigated, the sources selected for the answer appeared to reflect the meaning behind the original prompt more closely than a literal match to the search query. For brands, that shifts the question from which keywords their content targets to how well it answers what someone is actually trying to find out.",
     status: "Completed",
   },
   {
