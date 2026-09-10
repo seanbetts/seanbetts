@@ -53,11 +53,8 @@ function ProjectMedia({ project, heroImage }) {
           <div className={`${styles.logoPanel} ${mediaFrame} ${project.heroImageTone === 'dark' ? styles.logoDark : ''}`}>
             <ResponsiveImage src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
           </div>
-        ) : heroImage && project.heroImageFullSize && !imageFailed ? (
-          <a className={styles.graphicLink} href={heroImage} target="_blank" rel="noopener noreferrer">
-            <ResponsiveImage className={`${styles.screenshot} ${mediaFrame}`} src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
-            <span>View graphic full size <ArrowUpRight size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></span>
-          </a>
+        ) : heroImage && project.heroImageKind === 'diagram' && !imageFailed ? (
+          <ResponsiveImage className={`${styles.screenshot} ${mediaFrame}`} src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
         ) : heroImage && !imageFailed ? (
           <ResponsiveImage className={`${styles.screenshot} ${mediaFrame} ${project.heroImageFrame === false ? '' : styles.screenshotFrame}`} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
         ) : (
@@ -111,7 +108,6 @@ function ProjectStory({ project, origin }) {
           </div>
         </div></section>}
       </div>
-      <nav className={styles.footerNav} aria-label="Explore more"><Link to="/building/"><ArrowLeft size={17} aria-hidden="true" /> All projects</Link></nav>
     </article>
   );
 }

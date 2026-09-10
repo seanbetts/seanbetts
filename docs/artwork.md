@@ -36,7 +36,7 @@ Added on 10 September 2026:
 - `cains-jawbone-workflow.png` illustrates the repository's 100 source pages and documented research process. The numeric page inventory is not a proposed solution or inferred ordering.
 - `youtube-sdg-workflow.png` illustrates the two-stage analysis described in the YouTube Channels toolkit README and `prompts/transcript_analysis_stage2.py`. It contains no client results or invented scores.
 
-The five explanatory graphics are browser-rendered layouts, not screenshots of product interfaces. Their reviewed source layout and provenance are retained in the local `portfolio-image-candidates` review artifact; website exports are stored in `public/images/projects`. Each opens at full size from its project page and has a descriptive text alternative.
+The five explanatory graphics are browser-rendered layouts, not screenshots of product interfaces. Their editable source is retained in [project-diagrams.html](artwork-source/project-diagrams.html); website exports are stored in `public/images/projects`. The layouts are exported at 2400 × 1400 pixels with a solid edge-to-edge background and no rounded screenshot clipping. Each is displayed without a link and has a descriptive text alternative.
 
 ## UI font
 

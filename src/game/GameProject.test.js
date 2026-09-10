@@ -36,11 +36,12 @@ test('Pixel Loader Lab can pause its original animations', () => {
   expect(animation).toHaveAttribute('src', '/images/projects/pixel-loader-bordered.gif');
 });
 
-test('research graphics open at full size and retain an image failure fallback', () => {
+test('research graphics are not linked and retain an image failure fallback', () => {
   renderProject('/building/llm-search-analysis');
-  const link = screen.getByRole('link', { name: /View graphic full size/ });
-  expect(link).toHaveAttribute('href', '/images/projects/llm-search-evidence.png');
-  fireEvent.error(within(link).getByRole('img'));
+  const graphic = screen.getByRole('img', { name: /Recorded GPT-5.1 interaction/ });
+  expect(graphic.closest('a')).toBeNull();
+  expect(screen.queryByText('View graphic full size')).not.toBeInTheDocument();
+  fireEvent.error(graphic);
   expect(screen.queryByRole('link', { name: /View graphic full size/ })).not.toBeInTheDocument();
   expect(screen.getByText('LLM Search Analysis', { selector: 'strong' })).toBeInTheDocument();
 });
@@ -87,9 +88,9 @@ test('sideBar screenshot recovers to illustrated project artwork on failure', ()
   expect(screen.getByText('sideBar', { selector: 'strong' })).toBeInTheDocument();
 });
 
-test('project returns to its referring page and offers all projects', () => {
+test('project returns to its referring page without duplicate footer navigation', () => {
   renderProject('/building/sidebar', { fromPath: '/writing', fromLabel: 'Writing' });
-  expect(screen.getByRole('link', { name: 'All projects' })).toHaveAttribute('href', '/building/');
+  expect(screen.queryByRole('link', { name: 'All projects' })).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole('link', { name: /Back to Writing/i }));
   expect(screen.getByRole('heading', { name: 'Writing destination' })).toBeInTheDocument();
 });
