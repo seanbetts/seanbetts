@@ -31,6 +31,17 @@
 .caption h2{font-size:clamp(24px,2.2vw,35px);text-transform:uppercase}
 .caption p{font-family:var(--game-ui);font-size:clamp(15px,1.2vw,19px);line-height:1.15;margin-top:4px}
 .speaking .caption{padding-bottom:37px;padding-right:28px}.writing .caption{padding-right:28px}.building .caption{padding-left:38px;padding-bottom:43px}.leadership .caption{padding-left:40px;padding-right:24px;gap:5px}.leadership .caption h2{font-size:clamp(23px,2vw,32px)}
+/* Let the desktop wordmark sit above the ink seams, while the artwork keeps
+   its original panel shape. The overlay does not intercept adjacent links. */
+@media(min-width:701px){
+ .portrait{overflow:visible;clip-path:none;background:transparent;isolation:auto}
+ .portraitImage{clip-path:polygon(0 0,91.892% 0,100% 100%,8.108% 100%)}
+ .identity{background:none;isolation:isolate;z-index:5;pointer-events:none}
+ .identity::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(transparent,#150c1db3 40%,#150c1def);clip-path:polygon(0 0,94% 0,100% 100%,0 100%)}
+ /* Cap the artwork height before enlargement so shorter viewports keep the
+    portrait visible. Taller layouts retain the full 170% wordmark. */
+ .identity h1 img{max-height:clamp(130px,calc(35svh - 170px),235px);transform:translateX(-3%) scale(1.7);transform-origin:50% 100%;filter:drop-shadow(0 3px 4px #0008)}
+}
 @media(min-width:1700px){.cover{min-height:780px}}
 @media(max-width:1000px) and (min-width:701px){.cover{height:750px;min-height:0}.caption{padding-left:12px;padding-right:12px}.writing .caption{padding-right:22px}.caption p{font-size:15px}.building .caption{padding-left:25px}.leadership .caption{padding-left:34px;padding-right:15px}.identity{padding-left:3%;padding-right:3%}.identity .role{font-size:21px}}
 @media(max-width:700px){
