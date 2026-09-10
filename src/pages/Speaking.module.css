@@ -91,4 +91,4 @@
 .panelWindow { composes: window from "../game/Frame.module.css"; display:flex;align-items:flex-end;align-self:stretch;flex:1; }
 @media(max-width:700px){.panelWindow{flex-direction:column;align-items:stretch}}
 
-.talkInfo { --info-background: rgba(16, 7, 24, .8); }
+.talkInfo { --info-background: rgba(16, 7, 24, .8); --info-color: #fffaf4; }

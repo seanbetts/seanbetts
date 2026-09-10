@@ -43,20 +43,26 @@ function ArticlePanel({ article, hero = false }) {
   const titleId = useId();
   return <article className={`${styles.feature} ${hero ? styles.heroFeature : ''}`} aria-labelledby={titleId}>
     <div className={styles.panelWindow}>
-      <div className={styles.scrim} aria-hidden="true" />
-      <div className={styles.photo}>
-        {!failed && <ResponsiveImage src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
-          style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
-      </div>
-      <InfoPopover label={`About this article: ${article.title}`} description={article.description}
-         />
-      <a href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink}>
-        <div className={styles.upright}>
-          <Heading id={titleId}>{article.title}</Heading>
-          <p className={styles.publication}>{article.publication}</p>
-          <div className={styles.metadata}><ArticleDate article={article} /><span className={styles.read}>Read article <ArrowUpRight size={21} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></span></div>
-        </div>
+      <a href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink} aria-labelledby={`${titleId} ${titleId}-external`}>
+        <span id={`${titleId}-external`} className="sr-only">Opens in a new tab</span>
       </a>
+      <div className={styles.articleContent}>
+        <div className={styles.articleCopy}>
+          <Heading id={titleId}>{article.title}</Heading>
+          <div className={styles.articleDetails}>
+            <div className={styles.metadata}>
+              <p className={styles.publication}>{article.publication}</p>
+              <ArticleDate article={article} />
+            </div>
+            <InfoPopover className={styles.summary} label={`About this article: ${article.title}`} description={article.description} />
+          </div>
+        </div>
+        <div className={styles.photo}>
+          {!failed && <ResponsiveImage src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
+            sizes={hero ? '(max-width: 360px) 80vw, (max-width: 700px) 140px, (max-width: 1000px) 150px, 260px' : '(max-width: 360px) 80vw, (max-width: 700px) 132px, (max-width: 1000px) 140px, 280px'}
+            style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
+        </div>
+      </div>
     </div>
   </article>;
 }

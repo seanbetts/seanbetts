@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import { createEvent, fireEvent, render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../App';
 import Writing from './Writing';
@@ -28,11 +28,12 @@ test('keeps every article reachable without preview requests or cached metadata'
   expect(within(featured).getAllByRole('link')).toHaveLength(articlesData.filter(article => article.image).length - 1);
   articlesData.forEach(article => {
     const title = screen.getByRole('heading', { name: article.title });
-    const link = title.closest('a');
+    const link = within(title.closest('article')).getByRole('link');
     expect(link).toHaveAttribute('href', article.url);
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
-    expect(within(link).getByText(article.publication)).toBeInTheDocument();
+    expect(within(title.closest('article')).getByText(article.publication)).toBeInTheDocument();
+    expect(link).toHaveAccessibleName(`${article.title} Opens in a new tab`);
     expect(screen.getAllByRole('heading', { name: article.title })).toHaveLength(1);
     if (article.image) {
       const panel = title.closest('article');
@@ -58,11 +59,17 @@ test('places the lead article in the hero without repeating it in the gallery', 
   expect(screen.queryByRole('img', { name: /Illustrated hands/ })).not.toBeInTheDocument();
 });
 
-test('article summaries support keyboard focus, Escape, touch toggling and outside dismissal', () => {
+test('article summaries support hover, keyboard focus, Escape, touch toggling and outside dismissal', () => {
   render(<MemoryRouter><Writing /></MemoryRouter>);
   const article = articlesData[0];
   const button = screen.getByRole('button', { name: `About this article: ${article.title}` });
   const summary = screen.getByText(article.description);
+  expect(summary).not.toBeVisible();
+  const hover = createEvent.pointerOver(button, { bubbles: true });
+  Object.defineProperty(hover, 'pointerType', { value: 'mouse' });
+  fireEvent(button, hover);
+  expect(summary).toBeVisible();
+  fireEvent.pointerOut(button);
   expect(summary).not.toBeVisible();
   fireEvent.focus(button);
   expect(button).toHaveAttribute('aria-expanded', 'true');
@@ -86,7 +93,7 @@ test('an image failure preserves the article title, summary control and destinat
   const panel = screen.getByRole('article', { name: article.title });
   fireEvent.error(within(panel).getByRole('img', { name: article.imageAlt }));
   expect(within(panel).queryByRole('img', { name: article.imageAlt })).not.toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: article.title }).closest('a')).toHaveAttribute('href', article.url);
+  expect(within(panel).getByRole('link')).toHaveAttribute('href', article.url);
   fireEvent.click(screen.getByRole('button', { name: `About this article: ${article.title}` }));
   expect(screen.getByText(article.description)).toBeVisible();
 });

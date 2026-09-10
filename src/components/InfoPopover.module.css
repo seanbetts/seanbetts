@@ -1,9 +1,9 @@
 .root { position: absolute; top: 20px; right: 28px; z-index: 2; transform: skewY(var(--content-angle)); display: flex; flex-direction: column; align-items: flex-end; max-width: calc(100% - 56px); }
-.button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: var(--info-background, #100718dd); color: #fffaf4; }
-.button:hover, .button[aria-expanded='true'] { color: #ff929d; background: #100718; }
-.root .button:focus-visible { outline: 3px solid #ff929d; outline-offset: 3px; }
+.button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: var(--info-background, var(--game-hover)); color: var(--info-color, var(--game-text)); }
+.button:hover, .button[aria-expanded='true'] { color: var(--game-accent); background: var(--game-hover); }
+.root .button:focus-visible { outline: 3px solid var(--game-accent); outline-offset: 3px; }
 .content { width: 340px; max-width: 100%; padding-top: 8px; }
-.root .content p { padding: 20px; background: #211329; color: #fffaf4; font-size: 15px; line-height: 1.65; border-top: 3px solid #ff929d; box-shadow: 0 6px 20px #10071866; }
+.root .content p { padding: 20px; background: var(--game-surface); color: var(--game-text); font-size: 15px; line-height: 1.65; border-top: 3px solid var(--game-accent); box-shadow: 0 6px 20px #10071866; }
 @media (max-width: 700px) {
  .root { position: relative; top: auto; right: auto; margin: 16px 16px 0 auto; max-width: calc(100% - 32px); flex-shrink: 0; }
  .root .content p { font-size: 14px; padding: 16px; }
