@@ -12,15 +12,13 @@ import styles from './GameBuilding.module.css';
 const origin = { fromPath: '/building/', fromLabel: 'Building' };
 
 function ProjectPanel({ project, className }) {
-  const { background: backgroundImage } = artworkForProject(project.id);
   return (
-    <Link data-panel-focus to={pagePath(`/building/${project.id}`)} state={origin} aria-label={`Open ${project.name} project`} className={`${styles.secondaryCard} ${className} game-art`}>
-      <div className={styles.scene} aria-hidden="true">
-        <ResponsiveImage src={backgroundImage} alt="" width="1672" height="941" decoding="async" />
-      </div>
-      <div className={styles.cardWash} />
+    <Link data-panel-focus to={pagePath(`/building/${project.id}`)} state={origin} aria-label={`Open ${project.name} project`} className={`${styles.secondaryCard} ${className}`}>
       <div className={styles.secondaryTop}><span>{project.type}</span><ArrowUpRight size={22} aria-hidden="true" /></div>
-      <div className={styles.secondaryCaption}><h2>{project.name}</h2><p>{project.description}</p></div>
+      <div className={styles.secondaryCaption}>
+        <h2>{project.name}</h2><p>{project.description}</p>
+        <div className={styles.projectFooter}><span>{project.date}</span><span>{project.status}</span></div>
+      </div>
     </Link>
   );
 }
@@ -49,7 +47,7 @@ export default function GameBuilding() {
         </Link>
         <ProjectPanel project={pointilism} className={styles.topFeature} />
       </section>
-      <section className={`${styles.featured} game-art`} aria-label="Applied AI projects">
+      <section className={styles.featured} aria-label="Applied AI projects">
         {featured.map((project, index) => (
           <ProjectPanel key={project.id} project={project} className={index === 0 ? styles.firstFeature : styles.lastFeature} />
         ))}
