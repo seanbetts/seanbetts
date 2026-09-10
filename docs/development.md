@@ -30,6 +30,8 @@ Cloudflare build settings are `npm run build` and output directory `build`. For 
 - `src/components/Page.module.css`: shared back-link styling.
 - `src/game/Frame.module.css`: shared frame primitives; keep page-specific crops in the page's CSS Module.
 
+Project `url` values should point to destinations that visitors can access publicly. Set `url: null` for a private repository or a project without a public destination. Its portfolio page and internal navigation remain available, but the external project button is omitted. YouTube SDG Analysis uses this convention because its repository is private.
+
 Before finishing a UI change, check desktop and mobile layouts, both themes, keyboard navigation and the affected interactions. Writing and Speaking summaries support hover, focus, tap, Escape and outside dismissal. About-to-project navigation preserves a return link. Confirm the unknown-route recovery screen as well as ordinary pages.
 
 ## Supporting notes

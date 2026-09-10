@@ -2,6 +2,8 @@
 
 Hi, I'm Sean Betts. I work at the intersection of AI strategy, transformation, product innovation, and business change.
 
+This repository contains my personal portfolio website: a GTA-inspired illustrated design showcasing my projects, writing, speaking and professional experience. It supports mobile and desktop layouts, light and dark themes, and keyboard navigation.
+
 ## 🚀 About Me
 
 - 🧠 Chief AI & Innovation Officer at Omnicom Media UK
@@ -11,7 +13,7 @@ Hi, I'm Sean Betts. I work at the intersection of AI strategy, transformation, p
 
 With more than 20 years of experience in marketing and innovation, I focus on turning fast-moving advances in AI into practical tools, products, and capabilities that create real value for people and organisations. Alongside my role at Omnicom Media UK, I design and build independent AI products, benchmarks, and applied systems to better understand how emerging technologies are reshaping products, knowledge work, and consumer experiences.
 
-## 🔭 Current Projects
+## 🔭 Selected Work
 
 ### sideBar
 
@@ -77,7 +79,7 @@ An interactive timeline tracking key milestones and developments across the hist
 - GitHub: [github.com/seanbetts](https://github.com/seanbetts)
 - Bluesky: [bsky.app/profile/seanbetts.com](https://bsky.app/profile/seanbetts.com)
 
-Feel free to reach out if you'd like to collaborate on AI products, discuss AI strategy and transformation, or talk about neurodiversity and mental health in tech.
+For speaking, AI and collaboration enquiries, [contact me on LinkedIn](https://www.linkedin.com/in/seanbetts/).
 
 ---
 
@@ -85,4 +87,20 @@ Feel free to reach out if you'd like to collaborate on AI products, discuss AI s
 
 ## Development
 
-See the [development guide](docs/development.md) for local setup, validation and the current code structure.
+The site uses React and React Router, with prerendered HTML and responsive image exports. The production build is prepared for Cloudflare Pages.
+
+```sh
+npm ci
+npm start
+```
+
+To run the tests and validate the production output:
+
+```sh
+CI=true npm test -- --watchAll=false --runInBand
+npm run build
+```
+
+The build generates `build/` and checks the exported pages and images. A local build does not deploy the site.
+
+See the [development guide](docs/development.md) for code structure and content conventions, the [responsive image guide](docs/responsive-images.md) for image handling, and the [search and AI discovery notes](docs/search-and-ai.md) for publishing checks.
