@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ArrowUpRight, Butterfly, EnvelopeSimple, GithubLogo, Heart, LinkedinLogo, List, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
+import { ArrowUpRight, Butterfly, ChatsCircle, GithubLogo, Heart, LinkedinLogo, List, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
 import styles from './GameShell.module.css';
 import packageJson from '../../package.json';
 import './game.css';
@@ -67,7 +67,7 @@ export default function GameShell({ children }) {
         <span className={styles.version}>v{packageJson.version}</span>
       </div>
       <div className={styles.tools}>
-        <Link to="/contact" onClick={closeNavigation} className={styles.tool} aria-label="Contact" title="Contact"><EnvelopeSimple size={23} weight="bold" aria-hidden="true" /></Link>
+        <Link to="/contact" onClick={closeNavigation} className={styles.tool} aria-label="Contact" title="Contact"><ChatsCircle size={23} weight="bold" aria-hidden="true" /></Link>
         <div className={styles.controls} data-js-only>
           <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
             {darkMode ? <Sun size={23} weight="bold" aria-hidden="true" /> : <Moon size={23} weight="bold" aria-hidden="true" />}

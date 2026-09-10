@@ -1,6 +1,6 @@
 import ResponsiveImage from '../components/ResponsiveImage';
 import React from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo, GithubLogo, EnvelopeSimple } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo, GithubLogo, ChatsCircle } from "@phosphor-icons/react";
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import styles from './About.module.css';
@@ -128,8 +128,8 @@ const About = () => {
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>
-            <Link to="/contact" className={styles.socialLink} aria-label="Email">
-              <EnvelopeSimple size={36} weight="bold" aria-hidden="true" />
+            <Link to="/contact" className={styles.socialLink} aria-label="Contact Sean">
+              <ChatsCircle size={36} weight="bold" aria-hidden="true" />
             </Link>
           </div>
           <p>

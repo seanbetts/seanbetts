@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowUpRight, Newspaper, LinkedinLogo, Butterfly, GithubLogo
 import styles from './Contact.module.css';
 
 const channels = [
-  { name: 'LinkedIn', description: 'Connect and get in touch', href: 'https://www.linkedin.com/in/seanbetts/', Icon: LinkedinLogo },
+  { name: 'LinkedIn', description: 'Speaking, AI and collaboration enquiries', href: 'https://www.linkedin.com/in/seanbetts/', Icon: LinkedinLogo },
   { name: 'The Blueprint', description: 'Occasional thought leadership and opinions', href: 'https://www.the-blueprint.ai/', Icon: Newspaper },
   { name: 'GitHub', description: 'Code, projects and experiments', href: 'https://github.com/seanbetts', Icon: GithubLogo },
   { name: 'Bluesky', description: 'Mostly Aston Villa thoughts and updates', href: 'https://bsky.app/profile/seanbetts.com', Icon: Butterfly },
@@ -25,7 +25,7 @@ export default function Contact() {
       <div className={styles.copy}>
         <div className={styles.upright}>
           <h1>Contact<span>.</span></h1>
-          <p className={styles.intro}>For conversations about AI, speaking and collaboration.</p>
+          <p className={styles.intro}>For speaking, AI and collaboration enquiries, contact me on LinkedIn.</p>
           <nav className={styles.channels} aria-label="Connect with Sean">
             {channels.map(({ name, description, href, Icon }) => <a key={name} href={href} target="_blank" rel="noopener noreferrer" className={styles.channel}>
               <Icon className={styles.icon} size={36} aria-hidden="true" />

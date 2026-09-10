@@ -19,7 +19,7 @@ test('chapter shortcuts reach named sections with biography and project links pr
   expect(screen.getByRole('link', { name: 'benchmarking framework' })).toHaveAttribute('href', '/building/genai-marketing-benchmarks');
   expect(screen.getByRole('link', { name: 'Thought leadership for global brands' })).toHaveAttribute('href', '/thought-leadership');
   expect(screen.queryByRole('complementary', { name: 'Get in touch' })).not.toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Email' })).toHaveAttribute('href', '/contact');
+  expect(screen.getByRole('link', { name: 'Contact Sean' })).toHaveAttribute('href', '/contact');
 });
 
 test('retains the About canonical URL and profile structured data', async () => {
