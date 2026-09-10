@@ -42,7 +42,7 @@ function ProjectMedia({ project, heroImage }) {
             <ResponsiveImage src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
           </div>
         ) : heroImage && !imageFailed ? (
-          <ResponsiveImage className={styles.screenshot} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
+          <ResponsiveImage className={`${styles.screenshot} ${project.heroImageFrame === false ? '' : styles.screenshotFrame}`} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
         ) : (
           <div className={styles.artCaption}><span aria-hidden="true" className={styles.projectIcon}>{project.icon}</span><span className={styles.eyebrow}>{project.type}</span><strong>{project.name}</strong></div>
         )}
@@ -69,6 +69,7 @@ function ProjectStory({ project, origin }) {
             <p className={styles.summary}>{project.description}</p>
             <span className={styles.date}>{project.role && <>{project.role} · </>}{project.date}</span>
             {project.url && <a className={styles.cta} href={project.url} target="_blank" rel="noopener noreferrer">{projectLinkLabel}<ArrowUpRight size={20} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>}
+            {project.projectNote && <p className={styles.projectNote}>{project.projectNote}</p>}
           </div></div>
           <ProjectMedia project={project} heroImage={heroImage} />
         </header>

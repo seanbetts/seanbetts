@@ -22,6 +22,7 @@ const projectsData = [
     learnings: "Collecting context in one place risks creating another walled garden. That context is less useful if it cannot travel with you into other tools. Building sideBar has made me think more about how context moves between products, as well as how an assistant uses it within one.",
     status: "In development",
     heroImage: "/images/projects/sidebar-notes-ipad.png",
+    heroImageFrame: false,
     heroImageAlt: "sideBar on iPad with a note created by the assistant beside the conversation"
   },
   {
@@ -79,7 +80,7 @@ const projectsData = [
   {
     id: "genai-explorer",
     name: "Generative AI Explorer",
-    description: "An interactive guide to AI companies and models, with comparisons of their capabilities and benchmark results.",
+    description: "An interactive guide to the generative AI landscape, bringing companies, model capabilities, pricing and benchmark results together for comparison.",
     icon: <Globe size={48} />,
     url: "https://explorer.the-blueprint.ai/",
     type: "web app",
@@ -92,15 +93,17 @@ const projectsData = [
       "Tailwind CSS"
     ],
     features: [
-      "Model explorer by category",
-      "Benchmark comparisons",
-      "Rich media galleries",
-      "Company profiles",
-      "Model comparison tool"
+      "Explore companies and models across text, image, video and audio generation.",
+      "Compare up to four models side by side, including their capabilities, pricing and available benchmark results.",
+      "Browse benchmarks by the capabilities they test, with explanations and links to the original sources.",
+      "Explore company profiles connecting models with products, features and subscriptions."
     ],
-    challenges: "Creating a structured data model to represent the complex AI ecosystem and enabling meaningful comparisons across diverse model types.",
-    learnings: "The GenAI landscape is already incredibly complex, and fitting it into a coherent marketplace structure is much harder than it first appears. Companies, models, products and capabilities overlap, while the categories themselves keep changing. Deciding how to organise the landscape became as much of the work as building the interface to explore it.",
-    status: "Active",
+    challenges: "I wanted to make the generative AI landscape easier to understand and compare. I built the Explorer myself, from the data structure to the interface. The difficult part was deciding how to organise it: a company can offer several models, the same model can support different products, and capabilities overlap across categories. The structure needed to make those relationships understandable while preserving the differences that matter when comparing options.",
+    learnings: "Organising the landscape became as much of the work as building the interface. Companies, models, products and capabilities do not fit neatly into separate boxes, and those boundaries keep shifting. Each decision about grouping or comparison shapes how someone understands the market. Building the Explorer made me more conscious of what a simple overview helps people see, and what it can hide.",
+    status: "Published",
+    projectNote: "Published version uses an August 2025 dataset.",
+    heroImage: "/images/projects/genai-explorer-comparison.png",
+    heroImageAlt: "Generative AI Explorer comparing GPT-5 and Claude-4.1 Opus using the published August 2025 dataset",
   },
   {
     id: "plotter",

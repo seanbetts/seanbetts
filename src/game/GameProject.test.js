@@ -83,9 +83,9 @@ test('full narrative and technologies remain accessible for coding projects', ()
 });
 
 test('projects without screenshots use artwork and real video remains playable', () => {
-  const view = renderProject('/building/genai-explorer');
-  expect(screen.queryByRole('img', { name: 'Generative AI Explorer project screenshot' })).not.toBeInTheDocument();
-  expect(screen.getByText('Generative AI Explorer', { selector: 'strong' })).toBeInTheDocument();
+  const view = renderProject('/building/llm-search-analysis');
+  expect(screen.queryByRole('img', { name: 'LLM Search Analysis project screenshot' })).not.toBeInTheDocument();
+  expect(screen.getByText('LLM Search Analysis', { selector: 'strong' })).toBeInTheDocument();
   view.unmount();
   renderProject('/building/ai-chat-experience');
   expect(screen.queryByTitle('🐼 panda.ai demo')).not.toBeInTheDocument();
@@ -106,4 +106,13 @@ test('Building retains its illustrated feature panel if the sideBar screenshot f
   const background = feature.querySelector('img');
   expect(background).toBeInTheDocument();
   expect(imageExports['/images/game/backgrounds/river-sunset.webp'].variants.map(image => image.src)).toContain(background.getAttribute('src'));
+});
+
+
+test('Explorer shows its real comparison screenshot and dataset date beside the project link', () => {
+  renderProject('/building/genai-explorer');
+  const screenshot = screen.getByRole('img', { name: /Generative AI Explorer comparing/ });
+  expect(screenshot).toHaveAttribute('srcset');
+  expect(screen.getByText('Published version uses an August 2025 dataset.')).toBeVisible();
+  expect(screen.getByRole('link', { name: /Visit project/i })).toHaveAttribute('href', 'https://explorer.the-blueprint.ai/');
 });

@@ -10,6 +10,8 @@ Writing-page images come from the linked publishers. Their original URLs, altern
 
 The sideBar iPad screenshot in `public/images/projects/sidebar-notes-ipad.png` comes from the [sideBar product website](https://trysidebar.ai/screenshots/notes-ipad.png), retrieved on 10 September 2026. It shows the assistant creating a note beside the conversation. The original image is unmodified; the build's image pipeline creates responsive WebP versions.
 
+The Explorer screenshot in `public/images/projects/genai-explorer-comparison.png` was captured from the [live Model Comparer](https://explorer.the-blueprint.ai/compare) on 10 September 2026. It shows GPT-5 and Claude-4.1 Opus using the published August 2025 dataset. It is an unmodified browser screenshot; the image pipeline creates responsive WebP versions.
+
 ## Wordmarks
 
 The nAnimals project gallery uses six untouched 600 × 600 PNGs (1, 8, 12, 28, 34 and 60) recovered from Sean's original `nAnimalsGen1` archive. The arrangement is a CSS grid, not a newly generated composite. The files are stored as `public/images/projects/nanimals-*.png`.
