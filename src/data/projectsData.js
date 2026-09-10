@@ -4,32 +4,34 @@ const projectsData = [
   {
     id: "sidebar",
     name: "sideBar",
-    description:
-      "A unified AI assistant for iPhone, iPad, Mac, and web that keeps your notes, tasks, files, and saved websites in one context-aware workspace, with chat, skills, and personalization woven throughout every surface.",
+    description: "A personal AI assistant that works with your notes, tasks, files and saved websites across iPhone, iPad, Mac and web.",
     icon: <Brain size={48} />,
     url: "https://trysidebar.ai",
     type: "cross-platform app",
+    role: "Sole developer",
     date: "December 2025–present",
-    technologies: ["SvelteKit", "FastAPI", "TypeScript", "Python", "Supabase"],
+    technologies: ["Swift", "SwiftUI", "SvelteKit", "FastAPI", "TypeScript", "Python", "Supabase"],
     features: [
-      "Streaming chat that surfaces skills, attachments, and the context from recent notes, tasks, and files.",
-      "Notes + tasks + projects that stay in sync with skills so sideBar can organise, search, and act on your content.",
-      "Websites + files ingestion with pinning, archiving, and indexed retrieval so saved pages and uploads are instantly available in conversation.",
-      "Skills system (required, standard, and installable store skills) that lets sideBar chain capabilities automatically while keeping availability visible in Settings."
+      "Discuss a note, saved article or file with an assistant that can see what you have open.",
+      "Ask it to research a topic, save a summary as a note and create follow-up tasks, with more capabilities available through installable skills.",
+      "Remember useful details between conversations, with memories you can review, edit or delete.",
+      "Choose models from OpenAI, Anthropic or Google using your own API key."
     ],
     challenges:
-      "Giving the assistant seamless access to everything you’ve created while honoring real-time sync, soft deletes, and your encrypted API keys across iPhone, iPad, Mac, and the browser.",
-    learnings: "Bringing all your context into one place is valuable, but it can also create another walled garden. If that context cannot travel with you into the other tools you use, its usefulness is limited. Building sideBar has made me think as much about how context moves between products as how it is collected within one.",
-    status: "Active",
-    heroImage: "/images/projects/sidebar-welcome-ipad.png"
+      "I built sideBar so an assistant could work with someone's notes, tasks and references without asking them to paste the same background into every conversation. I developed the apps and backend myself. The challenge is choosing useful context, keeping it current across devices and making it clear when the assistant has changed something.",
+    learnings: "Collecting context in one place risks creating another walled garden. That context is less useful if it cannot travel with you into other tools. Building sideBar has made me think more about how context moves between products, as well as how an assistant uses it within one.",
+    status: "In development",
+    heroImage: "/images/projects/sidebar-notes-ipad.png",
+    heroImageAlt: "sideBar on iPad with a note created by the assistant beside the conversation"
   },
   {
     id: "pointilism",
     name: "Pointilism",
-    description: "A calm, monochrome surface to explore. Dots drift, breathe, snap, and drop to reveal different states—always readable, always minimal.",
+    description: "An interactive experiment with animated dots, motion controls and image export.",
     icon: <MagnifyingGlass size={48} />,
     url: "https://pointilism.seanbetts.com",
-    type: "website",
+    type: "creative experiment",
+    role: "Sole developer",
     date: "December 2025",
     technologies: ["HTML", "CSS", "Vanilla JavaScript", "Canvas 2D"],
     features: [
@@ -46,10 +48,11 @@ const projectsData = [
   {
     id: "llm-search-analysis",
     name: "LLM Search Analysis",
-    description: "A comparative analysis tool for evaluating web search capabilities across OpenAI, Google Gemini, and Anthropic Claude models with interactive testing and batch analysis.",
+    description: "A tool for comparing how AI models search the web and which sources they cite.",
     icon: <MagnifyingGlass size={48} />,
     url: "https://github.com/seanbetts/llm-search-analysis",
-    type: "github",
+    type: "research tool",
+    role: "Sole developer",
     date: "November 2025",
     technologies: [
       "Python",
@@ -77,10 +80,11 @@ const projectsData = [
   {
     id: "genai-explorer",
     name: "Generative AI Explorer",
-    description: "An interactive web application that visualizes the landscape of generative AI companies, models, benchmarks, and capabilities.",
+    description: "An interactive guide to AI companies and models, with comparisons of their capabilities and benchmark results.",
     icon: <Globe size={48} />,
     url: "https://explorer.the-blueprint.ai/",
-    type: "website",
+    type: "web app",
+    role: "Sole developer",
     date: "May 2025–present",
     technologies: [
       "React 19",
@@ -105,7 +109,8 @@ const projectsData = [
     description: "An agent-driven monitoring toolkit that tracks Valve hardware launch signals, compares evidence across sources and turns changes into readable reports.",
     icon: <GameController size={48} />,
     url: "https://github.com/seanbetts/steam-hardware-watch",
-    type: "github",
+    type: "research tool",
+    role: "Sole developer",
     date: "April–July 2026",
     technologies: ["Python", "Shell", "Node.js", "SteamKit", "Playwright"],
     features: [
@@ -124,7 +129,8 @@ const projectsData = [
     description: "A developer tool that turns Apple's browser-rendered Human Interface Guidelines into structured Markdown, with repeatable extraction, verification and scheduled updates.",
     icon: <BookOpen size={48} />,
     url: "https://github.com/seanbetts/Apple-HIG",
-    type: "github",
+    type: "developer tool",
+    role: "Sole developer",
     date: "March 2026",
     technologies: ["TypeScript", "Node.js", "Playwright", "Markdown", "GitHub Actions"],
     features: [
@@ -143,7 +149,8 @@ const projectsData = [
     description: "A small creative coding sandbox for turning an app icon into a pixelated animated loader, with a live preview and optimised GIF export.",
     icon: <SquaresFour size={48} />,
     url: "https://github.com/seanbetts/pixel-loader-lab",
-    type: "github",
+    type: "creative experiment",
+    role: "Sole developer",
     date: "February 2026",
     technologies: ["JavaScript", "CSS", "Vite", "Node.js", "ffmpeg", "gifsicle"],
     features: [
@@ -163,6 +170,7 @@ const projectsData = [
     icon: <MagnifyingGlass size={48} />,
     url: "https://github.com/seanbetts/cains-jawbone",
     type: "research experiment",
+    role: "Sole developer",
     schemaType: "CreativeWork",
     date: "December 2025–January 2026",
     technologies: ["Python", "Markdown", "Git", "Agent skills"],
@@ -182,7 +190,8 @@ const projectsData = [
     description: "Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.",
     icon: <Video size={48} />,
     url: null,
-    type: "github",
+    type: "research tool",
+    role: "Sole developer",
     date: "January–December 2025",
     technologies: [
         "Python",
@@ -200,7 +209,8 @@ const projectsData = [
     description: "Developing AI techniques to detect brands and products in videos.",
     icon: <Video size={48} />,
     url: "https://github.com/seanbetts/product-placement",
-    type: "github",
+    type: "AI prototype",
+    role: "Sole developer",
     date: "August–December 2024",
     technologies: [
         "React",
@@ -225,7 +235,8 @@ const projectsData = [
     description: "Developing comprehensive benchmarks to assess the marketing knowledge and capabilities of large language models.",
     icon: <Ruler size={48} />,
     url: "https://github.com/seanbetts/genai-marketing-benchmarks",
-    type: "github",
+    type: "research tool",
+    role: "Sole developer",
     date: "June–December 2024",
     technologies: [
       "Python",
@@ -258,7 +269,8 @@ const projectsData = [
     description: "A timeline of GenAI developments and milestones, tracking the rapid progress in the field.",
     icon: <Clock size={48} />,
     url: "https://timeline.the-blueprint.ai",
-    type: "blog",
+    type: "web app",
+    role: "Sole developer",
     date: "May 2024–present",
     technologies: ["React", "D3.js", "Node.js"],
     features: ["Interactive timeline visualization", "Filterable AI milestones", "Regular updates with new developments"],
@@ -273,7 +285,8 @@ const projectsData = [
     description: "A GenAI personal assistant designed to learn from you and adapt to your unique needs. As you interact with 🐼 panda.ai, it evolves and grows, learning from your conversations, web browsing behaviour, social media activity, music preferences, and even your spending habits.",
     icon: <ChatCircleDots size={48} />,
     url: "https://github.com/the-blueprint-ai/panda.ai",
-    type: "github",
+    type: "AI prototype",
+    role: "Sole developer",
     date: "March–June 2023",
     technologies: [
       "Vue.js 3",

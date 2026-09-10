@@ -44,11 +44,11 @@ test('a project without a public URL retains its story and navigation without an
 
 test('sideBar screenshot recovers to illustrated project artwork on failure', () => {
   renderProject();
-  const screenshot = screen.getByRole('img', { name: 'sideBar project screenshot' });
-  expect(imageExports['/images/projects/sidebar-welcome-ipad.png'].variants.map(image => image.src)).toContain(screenshot.getAttribute('src'));
+  const screenshot = screen.getByRole('img', { name: 'sideBar on iPad with a note created by the assistant beside the conversation' });
+  expect(imageExports['/images/projects/sidebar-notes-ipad.png'].variants.map(image => image.src)).toContain(screenshot.getAttribute('src'));
   expect(screenshot).toHaveAttribute('srcset');
   fireEvent.error(screenshot);
-  expect(screen.queryByRole('img', { name: 'sideBar project screenshot' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('img', { name: 'sideBar on iPad with a note created by the assistant beside the conversation' })).not.toBeInTheDocument();
   expect(screen.getByText('sideBar', { selector: 'strong' })).toBeInTheDocument();
 });
 
@@ -84,9 +84,9 @@ test('projects without screenshots use artwork and real video remains playable',
 
 test('Building retains its illustrated feature panel if the sideBar screenshot fails', () => {
   renderProject('/building');
-  const screenshot = screen.getByRole('img', { name: 'sideBar welcome screen on iPad' });
+  const screenshot = screen.getByRole('img', { name: 'sideBar on iPad with a note created by the assistant beside the conversation' });
   fireEvent.error(screenshot);
-  expect(screen.queryByRole('img', { name: 'sideBar welcome screen on iPad' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('img', { name: 'sideBar on iPad with a note created by the assistant beside the conversation' })).not.toBeInTheDocument();
   const feature = screen.getByRole('link', { name: 'Open sideBar project' });
   const background = feature.querySelector('img');
   expect(background).toBeInTheDocument();

@@ -6,6 +6,10 @@ The portfolio illustrations were created with the built-in image-generation tool
 
 Writing-page images come from the linked publishers. Their original URLs, alternative text and crop positions are recorded alongside the articles in [articlesData.js](../src/data/articlesData.js).
 
+## Product screenshots
+
+The sideBar iPad screenshot in `public/images/projects/sidebar-notes-ipad.png` comes from the [sideBar product website](https://trysidebar.ai/screenshots/notes-ipad.png), retrieved on 10 September 2026. It shows the assistant creating a note beside the conversation. The original image is unmodified; the build's image pipeline creates responsive WebP versions.
+
 ## Wordmarks
 
 `sean-betts.svg`, `sean-betts-inline.svg` and `404/busted.svg` under `public/images/game` are fixed outlined artwork made with Pricedown Black v5.200 by Typodermic, obtained on 8 September 2026 from [DaFont](https://www.dafont.com/pricedown.font).

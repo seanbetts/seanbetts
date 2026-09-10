@@ -38,13 +38,13 @@ export default function GameBuilding() {
         <header className={styles.introCopy}><div className={styles.upright}>
           <span className={styles.eyebrow}>Products · Prototypes · Experiments</span>
           <h1>Building<span>.</span></h1>
-          <p>Exploring what AI can do in the real world.</p>
+          <p>My independent projects in AI, software and creative coding.</p>
         </div></header>
         <Link to={pagePath(`/building/${primary.id}`)} state={origin} aria-label={`Open ${primary.name} project`} className={`${styles.primary} game-art`}>
           <div className={styles.scene} aria-hidden="true"><ResponsiveImage src={artworkForProject(primary.id).background} alt="" width="1672" height="941" decoding="async" /></div>
           <div className={styles.primaryWash} />
           <div className={styles.primaryTop}><span>Featured project</span><span className={styles.status}>{primary.status}</span></div>
-          <div className={styles.deviceStage}>{!imageFailed && <ResponsiveImage src={primary.heroImage} alt="sideBar welcome screen on iPad" className={styles.device} onError={() => setImageFailed(true)} />}</div>
+          <div className={styles.deviceStage}>{!imageFailed && <ResponsiveImage src={primary.heroImage} alt={primary.heroImageAlt || `${primary.name} project screenshot`} className={styles.device} onError={() => setImageFailed(true)} />}</div>
           <div className={styles.primaryCaption}><span className={styles.eyebrow}>Your context. Connected.</span><h2>{primary.name}</h2><p>{primary.description}</p><span className={styles.cta}>Open project <ArrowUpRight size={18} aria-hidden="true" /></span></div>
         </Link>
         <ProjectPanel project={pointilism} className={styles.topFeature} />

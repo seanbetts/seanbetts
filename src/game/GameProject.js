@@ -34,7 +34,7 @@ function ProjectMedia({ project, heroImage }) {
             <span>Watch {project.name} demo</span>
           </a>
         ) : heroImage && !imageFailed ? (
-          <ResponsiveImage className={styles.screenshot} src={heroImage} alt={`${project.name} project screenshot`} onError={() => setImageFailed(true)} />
+          <ResponsiveImage className={styles.screenshot} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
         ) : (
           <div className={styles.artCaption}><span aria-hidden="true" className={styles.projectIcon}>{project.icon}</span><span className={styles.eyebrow}>{project.type}</span><strong>{project.name}</strong></div>
         )}
@@ -59,7 +59,7 @@ function ProjectStory({ project, origin }) {
             <div className={styles.metadata}><span>{project.type}</span><span className={styles.status}>{project.status}</span></div>
             <h1>{project.name}<span className={styles.period} aria-hidden="true">.</span></h1>
             <p className={styles.summary}>{project.description}</p>
-            <span className={styles.date}>{project.date}</span>
+            <span className={styles.date}>{project.role && <>{project.role} · </>}{project.date}</span>
             {project.url && <a className={styles.cta} href={project.url} target="_blank" rel="noopener noreferrer">{projectLinkLabel}<ArrowUpRight size={20} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>}
           </div></div>
           <ProjectMedia project={project} heroImage={heroImage} />
