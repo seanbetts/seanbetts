@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Info } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
+import { PERSON_ID } from '../data/siteIdentity';
 import articlesData from '../data/articlesData';
 import styles from './Writing.module.css';
 
@@ -17,6 +18,8 @@ const articleListSchema = {
     position: index + 1,
     item: {
       '@type': 'Article',
+      '@id': article.url,
+      author: { '@id': PERSON_ID },
       headline: article.title,
       url: article.url,
       description: article.description,
@@ -107,10 +110,7 @@ export default function Writing() {
       description="Read Sean Betts' writing on AI, marketing and technology, including The Blueprint and featured essays on generative AI and industry trends."
       keywords={['Sean Betts', 'AI writing', 'marketing insights', 'The Blueprint', 'generative AI', 'technology essays']}
       canonicalPath="/writing"
-      jsonLd={[
-        { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Sean Betts’ Writing', url: 'https://www.seanbetts.com/writing', description: 'Ideas and perspectives on AI, marketing and technology.' },
-        articleListSchema,
-      ]}
+      jsonLd={articleListSchema}
     />
     <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Home</Link>
     <div className={styles.panels}>

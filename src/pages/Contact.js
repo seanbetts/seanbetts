@@ -11,24 +11,13 @@ const channels = [
 ];
 
 export default function Contact() {
-  const contactPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ContactPage',
-    name: 'Contact Sean Betts',
-    description: 'Connect with Sean Betts to discuss AI, speaking and collaboration.',
-    url: 'https://www.seanbetts.com/contact',
-    mainEntity: {
-      '@type': 'Person', name: 'Sean Betts',
-      sameAs: channels.filter(channel => channel.name !== 'The Blueprint').map(channel => channel.href),
-    },
-  };
 
   return <div className={styles.contact}>
     <Seo
       title="Contact Sean Betts | Writing, Socials and Collaboration"
       description="Connect with Sean Betts on LinkedIn to discuss AI, speaking and collaboration, or explore The Blueprint, GitHub and Bluesky."
       keywords={['contact Sean Betts', 'The Blueprint', 'LinkedIn', 'GitHub', 'Bluesky', 'AI collaboration']}
-      canonicalPath="/contact" imagePath="/images/sean-betts-profile.png" ogType="website" jsonLd={contactPageSchema}
+      canonicalPath="/contact" imagePath="/images/sean-betts-profile.png" ogType="website"
     />
     <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" />Home</Link>
     <div className={styles.cover}>

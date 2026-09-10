@@ -1,6 +1,4 @@
-# Redirect old Projects URLs to Building
+# Preserve legacy project URLs. Current page rewrites and the 404 are generated.
 /projects /building 301
 /projects/* /building/:splat 301
-
-# Handle client-side routing
-/* /index.html 200
+/map / 301

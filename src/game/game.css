@@ -22,3 +22,6 @@ body.game-mode.light-mode{background:#f8d8ed;color:#28133e}
 .game .game-art{--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-button-text:#16051f;color:#fffaf4}
 
 @media(max-width:700px){.game{--game-frame:16px}}
+
+/* Author display rules must not override native disclosure visibility. */
+.game [hidden]{display:none!important}

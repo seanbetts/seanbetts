@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useContext, useEffect } from 'react';
-import { BrowserRouter as Router, Navigate, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import { ThemeProvider, ThemeContext } from './ThemeContext';
 import About from './pages/About';
 import Writing from './pages/Writing';
@@ -12,8 +12,12 @@ import GameHome from './game/GameHome';
 import GameBuilding from './game/GameBuilding';
 import GameProject from './game/GameProject';
 import ThoughtLeadership from './game/ThoughtLeadership';
+import { siteRoutes } from './data/siteRoutes';
 
-function SiteRoutes() {
+export function SiteRoutes() {
+  const { pathname } = useLocation();
+  const normalized = pathname.replace(/\/$/, '').toLowerCase() || '/';
+  if (!siteRoutes.some(route => route.path === normalized) && normalized !== '/map') return <Custom404 />;
   // Route-owned layouts leave the 404 free to fill the viewport.
   return <Routes>
     <Route element={<GameShell><Outlet /></GameShell>}>

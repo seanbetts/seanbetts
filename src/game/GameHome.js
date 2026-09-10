@@ -3,31 +3,6 @@ import Seo from '../components/Seo';
 import SceneArt from './SceneArt';
 import styles from './GameHome.module.css';
 
-const homeSchema = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Sean Betts',
-    url: 'https://www.seanbetts.com',
-    description: 'Sean Betts: Chief AI & Innovation Officer, AI researcher and builder focused on AI strategy, product innovation and business transformation.',
-    // The site has no search route, so do not advertise the legacy SearchAction.
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Sean Betts',
-    jobTitle: 'Chief AI & Innovation Officer',
-    description: 'AI Researcher & Developer, Neurodiversity Advocate',
-    url: 'https://www.seanbetts.com',
-    sameAs: [
-      'https://www.linkedin.com/in/seanbetts/',
-      'https://github.com/seanbetts',
-      'https://twitter.com/seanbetts',
-      'https://bsky.app/profile/seanbetts.com',
-    ],
-  },
-];
-
 function CoverPanel({ scene, title, description, to, panel = scene }) {
   return <Link to={to} className={`${styles.panel} ${styles[panel]}`}>
     <SceneArt scene={scene} />
@@ -39,12 +14,11 @@ export default function GameHome() {
   return <>
     <Seo
       title="Sean Betts | AI Strategy, Transformation & Product Innovation"
-      description="Sean Betts is Chief AI & Innovation Officer at Omnicom Media Group UK, an independent AI researcher and builder focused on AI strategy, product innovation and business transformation."
-      keywords={['Sean Betts', 'AI strategy', 'product innovation', 'business transformation', 'marketing technology', 'generative AI', 'Omnicom Media Group UK']}
+      description="Sean Betts is Chief AI & Innovation Officer at Omnicom Media UK, an independent AI researcher and builder focused on AI strategy, product innovation and business transformation."
+      keywords={['Sean Betts', 'AI strategy', 'product innovation', 'business transformation', 'marketing technology', 'generative AI', 'Omnicom Media UK']}
       canonicalPath="/"
       imagePath="/images/sean-betts-profile.png"
       ogType="website"
-      jsonLd={homeSchema}
     />
     <div className={`${styles.cover} game-art`}>
       <Link to="/about" className={`${styles.panel} ${styles.portrait}`} aria-label="About Sean Betts">

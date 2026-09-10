@@ -59,7 +59,7 @@ export default function GameShell({ children }) {
 
   return <div className={`game ${darkMode ? 'game-dark' : 'game-light'}`}>
     <a className={styles.skip} href="#game-content">Skip to content</a>
-    <header className={styles.header}>
+    <header className={styles.header} data-nojs-header>
       <div className={styles.brandGroup}>
         <Link to="/" onClick={closeNavigation} className={styles.brand} aria-label="Sean Betts home">
           <img src="/images/game/sean-betts-inline.svg" alt="Sean Betts" width="132" height="28" />
@@ -68,7 +68,7 @@ export default function GameShell({ children }) {
       </div>
       <div className={styles.tools}>
         <Link to="/contact" onClick={closeNavigation} className={styles.tool} aria-label="Contact" title="Contact"><EnvelopeSimple size={23} weight="bold" aria-hidden="true" /></Link>
-        <div className={styles.controls}>
+        <div className={styles.controls} data-js-only>
           <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
             {darkMode ? <Sun size={23} weight="bold" aria-hidden="true" /> : <Moon size={23} weight="bold" aria-hidden="true" />}
           </button>
@@ -77,9 +77,9 @@ export default function GameShell({ children }) {
           </button>
         </div>
       </div>
-      {open && <nav ref={menu} id="game-navigation" className={styles.menu} aria-label="Primary navigation">
+      <nav hidden={!open} data-nojs-nav ref={menu} id="game-navigation" className={styles.menu} aria-label="Primary navigation">
         {links.map(([to, label]) => <NavLink key={to} to={to} onClick={closeNavigation} end className={({ isActive }) => isActive ? styles.selected : undefined}>{label}<ArrowUpRight size={21} weight="bold" /></NavLink>)}
-      </nav>}
+      </nav>
     </header>
     <main id="game-content" ref={main} tabIndex={-1} className={styles.main} key={pathname}>{children}</main>
     <footer className={styles.footer}>

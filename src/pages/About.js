@@ -5,31 +5,12 @@ import Seo from '../components/Seo';
 import styles from './About.module.css';
 
 const About = () => {
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sean Betts",
-    "jobTitle": "Chief AI & Innovation Officer",
-    "description": "AI Researcher & Developer, Neurodiversity Advocate",
-    "url": "https://www.seanbetts.com/about",
-    "image": "https://www.seanbetts.com/images/sean-betts-profile.png",
-    "sameAs": [
-      "https://www.linkedin.com/in/seanbetts/",
-      "https://github.com/seanbetts",
-      "https://twitter.com/seanbetts",
-      "https://bsky.app/profile/seanbetts.com"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Omnicom Media Group UK"
-    }
-  };
 
   return (
     <div className={styles.about}>
       <Seo
         title="About Sean Betts | Chief AI & Innovation Officer, Researcher and Builder"
-        description="Learn about Sean Betts, Chief AI & Innovation Officer at Omnicom Media Group UK, independent AI researcher and builder focused on AI strategy, product innovation and business transformation."
+        description="Learn about Sean Betts, Chief AI & Innovation Officer at Omnicom Media UK, independent AI researcher and builder focused on AI strategy, product innovation and business transformation."
         keywords={[
           'Sean Betts',
           'AI strategy',
@@ -37,12 +18,11 @@ const About = () => {
           'AI innovation',
           'product innovation',
           'business transformation',
-          'Omnicom Media Group UK'
+          'Omnicom Media UK'
         ]}
         canonicalPath="/about"
         imagePath="/images/sean-betts-profile.png"
         ogType="profile"
-        jsonLd={personSchema}
       />
 
       <InternalLink to="/" className={styles.back}><ArrowLeft size={17} weight="bold" aria-hidden="true" /> Home</InternalLink>
@@ -97,7 +77,7 @@ const About = () => {
           </p>
           <p>
             A key part of my role is translating fast-moving technical change into practical action. That includes advising client boards and internal
-            teams on AI adoption, developing new use cases and solutions, building AI readiness across the organisation, and helping position OMG UK
+            teams on AI adoption, developing new use cases and solutions, building AI readiness across the organisation, and helping position OM UK
             for a future increasingly shaped by AI.
           </p>
           <p>

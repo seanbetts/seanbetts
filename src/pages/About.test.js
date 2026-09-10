@@ -28,6 +28,6 @@ test('retains the About canonical URL and profile structured data', async () => 
     expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute('href', 'https://www.seanbetts.com/about');
     expect(document.querySelector('meta[property="og:type"]')).toHaveAttribute('content', 'profile');
     const schema = JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent);
-    expect(schema).toMatchObject({ '@type': 'Person', name: 'Sean Betts', jobTitle: 'Chief AI & Innovation Officer', worksFor: { name: 'Omnicom Media Group UK' } });
+    expect(schema).toMatchObject({ '@type': 'Person', name: 'Sean Betts', jobTitle: 'Chief AI & Innovation Officer', worksFor: { name: 'Omnicom Media UK' } });
   });
 });

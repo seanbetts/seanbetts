@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import Seo from '../components/Seo';
+import Seo, { SITE_URL } from '../components/Seo';
+import { PERSON_ID } from '../data/siteIdentity';
 import projectsData from '../data/projectsData';
 import SceneArt from './SceneArt';
 import styles from './GameProject.module.css';
@@ -51,7 +52,7 @@ function ProjectStory({ project, origin }) {
   const projectLinkLabel = project.url.includes('github.com/') ? 'View on GitHub' : 'Visit project';
   return (
     <article className={styles.page}>
-      <Seo title={`${project.name} | What Sean Betts is Building`} description={`Explore ${project.name}, a ${project.type} project by Sean Betts. ${project.description}`} canonicalPath={`/building/${project.id}`} imagePath={heroImage || '/images/sean-betts-profile.png'} keywords={['Sean Betts', project.name, project.type, ...(project.technologies || [])]} ogType="article" jsonLd={{ '@context': 'https://schema.org', '@type': project.schemaType || (project.technologies ? 'SoftwareApplication' : 'CreativeWork'), name: project.name, description: project.description, url: `https://www.seanbetts.com/building/${project.id}`, image: heroImage || '/images/sean-betts-profile.png', author: { '@type': 'Person', name: 'Sean Betts', url: 'https://www.seanbetts.com' } }} />
+      <Seo title={`${project.name} | What Sean Betts is Building`} description={`Explore ${project.name}, a ${project.type} project by Sean Betts. ${project.description}`} canonicalPath={`/building/${project.id}`} imagePath={heroImage || '/images/sean-betts-profile.png'} keywords={['Sean Betts', project.name, project.type, ...(project.technologies || [])]} ogType="article" jsonLd={{ '@context': 'https://schema.org', '@type': project.schemaType || (project.technologies ? 'SoftwareApplication' : 'CreativeWork'), name: project.name, description: project.description, url: `https://www.seanbetts.com/building/${project.id}`, '@id': `${SITE_URL}/building/${project.id}#project`, mainEntityOfPage: { '@id': `${SITE_URL}/building/${project.id}#webpage` }, image: new URL(heroImage || '/images/sean-betts-profile.png', SITE_URL).href, author: { '@id': PERSON_ID } }} />
       <Link to={backPath} className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Back to {backLabel}</Link>
       <div className={styles.panels}>
         <header className={styles.hero}>
@@ -93,7 +94,7 @@ function ProjectStory({ project, origin }) {
 export default function GameProject() {
   const { id } = useParams();
   const location = useLocation();
-  const project = projectsData.find(project => project.id === id);
+  const project = projectsData.find(project => project.id === id?.toLowerCase());
   if (!project) return <div className={`${styles.page} ${styles.notFound}`}><Seo title="Project not found | Sean Betts" description="Explore Sean Betts's products, prototypes and experiments." canonicalPath={`/building/${id}`} noindex /><span className={styles.eyebrow}>Project unavailable</span><h1>Project not found<span className={styles.period} aria-hidden="true">.</span></h1><p>This project isn't in the workshop. Find your next stop in the project collection.</p><Link to="/building" className={styles.cta}><ArrowLeft size={17} aria-hidden="true" /> Back to Building</Link></div>;
   return <ProjectStory key={id} project={project} origin={location.state} />;
 }

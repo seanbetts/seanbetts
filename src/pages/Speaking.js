@@ -90,17 +90,12 @@ function FeaturedAppearance({ talk, lead }) {
 export default function Speaking() {
   const [year, setYear] = useState('all');
   const [format, setFormat] = useState('all');
-  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [visibleCount, setVisibleCount] = useState(archive.length);
+  useEffect(() => { setVisibleCount(PAGE_SIZE); }, []);
   const filtered = archive.filter(talk => (year === 'all' || yearOf(talk) === year) && (format === 'all' || talk.type === format));
   const shown = filtered.slice(0, visibleCount);
   const updateFilter = (setter, value) => { setter(value); setVisibleCount(PAGE_SIZE); };
-  const speakingPageSchema = {
-    '@context': 'https://schema.org', '@type': 'WebPage',
-    name: "Sean Betts' Speaking Engagements",
-    description: 'Keynotes, talks, panels and podcast appearances on AI, marketing, technology and neurodiversity.',
-    url: 'https://www.seanbetts.com/speaking',
-    author: { '@type': 'Person', name: 'Sean Betts', url: 'https://www.seanbetts.com' },
-  };
+
   return <div className={styles.speaking}>
       <Seo
         title="Sean Betts Speaking | AI, Marketing and Neurodiversity Talks"
@@ -117,7 +112,6 @@ export default function Speaking() {
         canonicalPath="/speaking"
         imagePath="/images/sean-betts-profile.png"
         ogType="website"
-        jsonLd={speakingPageSchema}
       />
     <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" />Home</Link>
     <div className={styles.cover}>
@@ -140,14 +134,14 @@ export default function Speaking() {
         <div className={styles.upright}>
           <div className={styles.archiveHeader}>
             <h2 id="archive-heading">More appearances<span className={styles.period}>.</span></h2>
-            <div className={styles.filters}>
+            <div className={styles.filters} data-js-only>
               <label>Year<select value={year} onChange={event => updateFilter(setYear, event.target.value)}><option value="all">All years</option>{years.map(value => <option key={value} value={value}>{value}</option>)}</select></label>
               <label>Format<select value={format} onChange={event => updateFilter(setFormat, event.target.value)}><option value="all">All formats</option>{Object.entries(formats).map(([value, { label }]) => <option key={value} value={value}>{label}</option>)}</select></label>
             </div>
           </div>
           <p className="sr-only" role="status">Showing {shown.length} of {filtered.length} additional appearances.</p>
           <div className={styles.archiveList}>
-            {shown.map(talk => <article className={styles.archiveEntry} key={talk.id} aria-labelledby={`archive-${talk.id.replace(/\s/g, '-')}`}>
+            {filtered.map((talk, index) => <article hidden={index >= visibleCount} className={styles.archiveEntry} key={talk.id} aria-labelledby={`archive-${talk.id.replace(/\s/g, '-')}`}>
               <div className={styles.entryMeta}><Format type={talk.type} /><p>{talk.date}</p><p>{talk.location}</p></div>
               <div className={styles.entryCopy}><h3 id={`archive-${talk.id.replace(/\s/g, '-')}`}>{talk.title}</h3><p className={styles.conference}>{talk.conference}</p><p className={styles.description}>{talk.description}</p></div>
             </article>)}

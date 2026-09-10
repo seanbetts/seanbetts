@@ -1,5 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
+# Public content is open to AI training, search, retrieval and other AI uses.
 User-agent: *
-Disallow:
+Allow: /
+Content-Signal: search=yes,ai-input=yes,ai-train=yes,use=full
 
 Sitemap: https://www.seanbetts.com/sitemap.xml
