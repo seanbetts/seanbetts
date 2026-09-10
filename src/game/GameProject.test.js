@@ -58,9 +58,9 @@ test('full narrative and technologies remain accessible for coding projects', ()
   expect(screen.getByText('Flask')).toBeInTheDocument();
 });
 
-test('placeholder media uses project artwork and real video remains playable', () => {
+test('projects without screenshots use artwork and real video remains playable', () => {
   const view = renderProject('/building/genai-explorer');
-  expect(view.container.querySelector('img[src$="xxx.jpg"]')).toBeNull();
+  expect(screen.queryByRole('img', { name: 'Generative AI Explorer project screenshot' })).not.toBeInTheDocument();
   expect(screen.getByText('Generative AI Explorer', { selector: 'strong' })).toBeInTheDocument();
   view.unmount();
   renderProject('/building/ai-chat-experience');

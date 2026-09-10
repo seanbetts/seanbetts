@@ -83,3 +83,7 @@ Feel free to reach out if you'd like to collaborate on AI products, discuss AI s
 ---
 
 "The future is already here – it's just not evenly distributed." - William Gibson
+
+## Development
+
+See the [development guide](docs/development.md) for local setup, validation and the current code structure.

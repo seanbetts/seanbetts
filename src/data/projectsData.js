@@ -73,7 +73,6 @@ const projectsData = [
     challenges: "Integrating three different provider APIs with varying search implementations, implementing accurate rank tracking for cited sources, and creating a unified interface for comparing search behaviors across models.",
     learnings: "ChatGPT searches and uses search results very differently from a human. It is tempting to understand AI search through familiar ideas about queries, rankings and clicks, but that only tells part of the story. This project changed how I think about what it means for information to be found and used by an AI assistant.",
     status: "Completed",
-    heroImage: "/images/projects/llm-search-analysis-hero.png"
   },
   {
     id: "genai-explorer",
@@ -99,7 +98,6 @@ const projectsData = [
     challenges: "Creating a structured data model to represent the complex AI ecosystem and enabling meaningful comparisons across diverse model types.",
     learnings: "The GenAI landscape is already incredibly complex, and fitting it into a coherent marketplace structure is much harder than it first appears. Companies, models, products and capabilities overlap, while the categories themselves keep changing. Deciding how to organise the landscape became as much of the work as building the interface to explore it.",
     status: "Active",
-    heroImage: "/images/projects/xxx.jpg"
   },
   {
     id: "steam-hardware-watch",
@@ -195,7 +193,6 @@ const projectsData = [
     challenges: "Developing an accurate model that can map SDGs to video content and scaling the analysis to over 2.5m videos.",
     learnings: "Platform APIs can bring so many good ideas to life, but they also put a critical part of the product outside your control. Access can be changed or withdrawn without notice. This project reinforced how much the viability of an idea can depend on a platform continuing to offer the data and capabilities it was built around.",
     status: "Completed",
-    heroImage: "/images/projects/xxx.jpg"
   },
   {
     id: "ai-brand-detection",
@@ -220,7 +217,6 @@ const projectsData = [
     challenges: "Developing an accurate model that can detect brands in various contexts and lighting conditions.",
     learnings: "Visual recognition capabilities have improved incredibly quickly, but technical feasibility does not automatically make a product economically viable. For this kind of video analysis, I found the economics difficult to justify without very large scale. The cost of delivering useful results matters just as much as the ability to produce them.",
     status: "Completed",
-    heroImage: "/images/projects/xxx.jpg"
   },
 
   {

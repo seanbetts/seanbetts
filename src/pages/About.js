@@ -1,7 +1,7 @@
 import ResponsiveImage from '../components/ResponsiveImage';
 import React from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo, GithubLogo, EnvelopeSimple } from "@phosphor-icons/react";
-import InternalLink from '../components/InternalLink';
+import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import styles from './About.module.css';
 
@@ -26,7 +26,7 @@ const About = () => {
         ogType="profile"
       />
 
-      <InternalLink to="/" className={styles.back}><ArrowLeft size={17} weight="bold" aria-hidden="true" /> Home</InternalLink>
+      <Link to="/" className={styles.back}><ArrowLeft size={17} weight="bold" aria-hidden="true" /> Home</Link>
       <div className={styles.panels}>
       <header className={styles.hero}>
         <div className={styles.portrait}>
@@ -92,7 +92,7 @@ const About = () => {
             <li>Shaping board-level thinking on AI, innovation and business change.</li>
             <li>Supporting product and solution development across internal and client contexts.</li>
           </ul>
-          <InternalLink to="/thought-leadership" className={styles.action}>Thought leadership for global brands <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></InternalLink>
+          <Link to="/thought-leadership" className={styles.action}>Thought leadership for global brands <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
       </section>
 
@@ -110,16 +110,16 @@ const About = () => {
             and limitations of emerging technologies.
           </p>
           <p>
-            My work includes building <InternalLink to="/building/sidebar" state={{ fromLabel: 'About', fromPath: '/about' }}>sideBar</InternalLink>, a cross-platform AI assistant that explores personal knowledge, memory and
-            tool use; creating a <InternalLink to="/building/genai-marketing-benchmarks" state={{ fromLabel: 'About', fromPath: '/about' }}>benchmarking framework</InternalLink> with 2,800+ questions across 20 marketing
-            disciplines to assess LLM performance; and developing applied AI workflows spanning <InternalLink to="/building/ai-brand-detection" state={{ fromLabel: 'About', fromPath: '/about' }}>OCR</InternalLink>,
-            transcription, automated classification and <InternalLink to="/building/youtube-sdg-analysis" state={{ fromLabel: 'About', fromPath: '/about' }}>large-scale content analysis</InternalLink>.
+            My work includes building <Link to="/building/sidebar" state={{ fromLabel: 'About', fromPath: '/about' }}>sideBar</Link>, a cross-platform AI assistant that explores personal knowledge, memory and
+            tool use; creating a <Link to="/building/genai-marketing-benchmarks" state={{ fromLabel: 'About', fromPath: '/about' }}>benchmarking framework</Link> with 2,800+ questions across 20 marketing
+            disciplines to assess LLM performance; and developing applied AI workflows spanning <Link to="/building/ai-brand-detection" state={{ fromLabel: 'About', fromPath: '/about' }}>OCR</Link>,
+            transcription, automated classification and <Link to="/building/youtube-sdg-analysis" state={{ fromLabel: 'About', fromPath: '/about' }}>large-scale content analysis</Link>.
           </p>
           <p>
             I also write <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer">The Blueprint</a>, where I share occasional thought leadership and opinions on AI
             and its broader implications, and contribute to industry discussions on the future of generative AI and its responsible use.
           </p>
-          <InternalLink to="/building" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></InternalLink>
+          <Link to="/building" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
       </section>
 
@@ -128,9 +128,9 @@ const About = () => {
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Speaking<br />&amp; advocacy<span>.</span></h2></div>
-            <InternalLink to="/contact" className={styles.socialLink} aria-label="Email">
+            <Link to="/contact" className={styles.socialLink} aria-label="Email">
               <EnvelopeSimple size={36} weight="bold" aria-hidden="true" />
-            </InternalLink>
+            </Link>
           </div>
           <p>
             As an advocate for neurodiversity and mental health awareness, I frequently speak about these topics.
@@ -145,7 +145,7 @@ const About = () => {
             My autism diagnosis in 2022 has further enriched my advocacy work, allowing me to share insights
             on both mental health and autistic experiences.
           </p>
-          <InternalLink to="/speaking" className={styles.action}>Keynote Presentations <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></InternalLink>
+          <Link to="/speaking" className={styles.action}>Keynote Presentations <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
       </section>
       </div>

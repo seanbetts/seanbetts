@@ -2,13 +2,12 @@ import ResponsiveImage from '../components/ResponsiveImage';
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import Seo, { SITE_URL } from '../components/Seo';
-import { PERSON_ID } from '../data/siteIdentity';
+import Seo from '../components/Seo';
+import { PERSON_ID, SITE_URL } from '../data/siteIdentity';
 import projectsData from '../data/projectsData';
 import SceneArt from './SceneArt';
 import styles from './GameProject.module.css';
 
-const missingImages = ['/images/projects/xxx.jpg', '/images/projects/llm-search-analysis-hero.png'];
 const artwork = {
   sidebar: { background: '/images/game/backgrounds/river-sunset.webp' },
   pointilism: { background: '/images/game/backgrounds/daytime-rooftop.webp' },
@@ -46,14 +45,14 @@ function ProjectMedia({ project, heroImage }) {
 }
 
 function ProjectStory({ project, origin }) {
-  const heroImage = missingImages.includes(project.heroImage) ? null : project.heroImage;
+  const { heroImage } = project;
   const backPath = origin?.fromPath || '/building';
   const backLabel = origin?.fromLabel || 'Building';
   const isResearch = project.schemaType === 'CreativeWork';
   const projectLinkLabel = project.url.includes('github.com/') ? 'View on GitHub' : 'Visit project';
   return (
     <article className={styles.page}>
-      <Seo title={`${project.name} | What Sean Betts is Building`} description={`Explore ${project.name}, a ${project.type} project by Sean Betts. ${project.description}`} canonicalPath={`/building/${project.id}`} imagePath={heroImage || '/images/sean-betts-profile.png'} keywords={['Sean Betts', project.name, project.type, ...(project.technologies || [])]} ogType="article" jsonLd={{ '@context': 'https://schema.org', '@type': project.schemaType || (project.technologies ? 'SoftwareApplication' : 'CreativeWork'), name: project.name, description: project.description, url: `https://www.seanbetts.com/building/${project.id}`, '@id': `${SITE_URL}/building/${project.id}#project`, mainEntityOfPage: { '@id': `${SITE_URL}/building/${project.id}#webpage` }, image: new URL(heroImage || '/images/sean-betts-profile.png', SITE_URL).href, author: { '@id': PERSON_ID } }} />
+      <Seo title={`${project.name} | What Sean Betts is Building`} description={`Explore ${project.name}, a ${project.type} project by Sean Betts. ${project.description}`} canonicalPath={`/building/${project.id}`} imagePath={heroImage || '/images/sean-betts-profile.png'} keywords={['Sean Betts', project.name, project.type, ...(project.technologies || [])]} ogType="article" jsonLd={{ '@context': 'https://schema.org', '@type': project.schemaType || (project.technologies ? 'SoftwareApplication' : 'CreativeWork'), name: project.name, description: project.description, url: `${SITE_URL}/building/${project.id}`, '@id': `${SITE_URL}/building/${project.id}#project`, mainEntityOfPage: { '@id': `${SITE_URL}/building/${project.id}#webpage` }, image: new URL(heroImage || '/images/sean-betts-profile.png', SITE_URL).href, author: { '@id': PERSON_ID } }} />
       <Link to={backPath} className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Back to {backLabel}</Link>
       <div className={styles.panels}>
         <header className={styles.hero}>

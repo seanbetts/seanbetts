@@ -1,9 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { personSchema, websiteSchema, PERSON_ID, WEBSITE_ID } from '../data/siteIdentity';
+import { personSchema, websiteSchema, PERSON_ID, WEBSITE_ID, SITE_URL } from '../data/siteIdentity';
 
 export const SITE_NAME = 'Sean Betts';
-export const SITE_URL = 'https://www.seanbetts.com';
 const DEFAULT_IMAGE_PATH = '/images/sean-betts-profile.png';
 const DEFAULT_TWITTER_SITE = '@seanbetts';
 

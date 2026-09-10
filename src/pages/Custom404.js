@@ -2,6 +2,7 @@ import ResponsiveImage from '../components/ResponsiveImage';
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Seo from '../components/Seo';
+import { SITE_URL } from '../data/siteIdentity';
 import styles from './Custom404.module.css';
 
 export default function Custom404() {
@@ -33,7 +34,7 @@ export default function Custom404() {
         '@type': 'WebPage',
         name: '404: Busted - Sean Betts',
         description: 'Page not found. Return to Sean Betts’ website.',
-        url: 'https://www.seanbetts.com/404',
+        url: `${SITE_URL}/404`,
       }}
     />
     <ResponsiveImage sizes="100vw" className={styles.art} src="/images/game/404/motorbike.png" alt="" fetchpriority="high" />

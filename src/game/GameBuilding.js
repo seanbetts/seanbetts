@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import { SITE_URL } from '../data/siteIdentity';
 import projectsData from '../data/projectsData';
 import SceneArt from './SceneArt';
 import styles from './GameBuilding.module.css';
@@ -28,7 +29,7 @@ export default function GameBuilding() {
   const featured = otherProjects.slice(0, 2);
   return (
     <div className={styles.page}>
-      <Seo title="What Sean Betts is Building | AI Products, Benchmarks and Experiments" description="Explore AI products, benchmarks and experiments Sean Betts is building, including sideBar, evaluation frameworks and applied AI workflows." canonicalPath="/building" jsonLd={{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: projectsData.map((project, index) => ({ '@type': 'ListItem', position: index + 1, url: `https://www.seanbetts.com/building/${project.id}`, name: project.name, description: project.description })) }} />
+      <Seo title="What Sean Betts is Building | AI Products, Benchmarks and Experiments" description="Explore AI products, benchmarks and experiments Sean Betts is building, including sideBar, evaluation frameworks and applied AI workflows." canonicalPath="/building" jsonLd={{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: projectsData.map((project, index) => ({ '@type': 'ListItem', position: index + 1, url: `${SITE_URL}/building/${project.id}`, name: project.name, description: project.description })) }} />
       <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Home</Link>
       <div className={styles.panels}>
       <section className={styles.hero} aria-label="Featured projects">

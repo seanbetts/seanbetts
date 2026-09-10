@@ -1,9 +1,10 @@
 import ResponsiveImage from '../components/ResponsiveImage';
-import { useEffect, useId, useRef, useState } from 'react';
+import { useId, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, Info } from '@phosphor-icons/react';
+import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
-import { PERSON_ID } from '../data/siteIdentity';
+import InfoPopover from '../components/InfoPopover';
+import { PERSON_ID, SITE_URL } from '../data/siteIdentity';
 import articlesData from '../data/articlesData';
 import styles from './Writing.module.css';
 
@@ -24,7 +25,7 @@ const articleListSchema = {
       headline: article.title,
       url: article.url,
       description: article.description,
-      ...(article.image ? { image: `https://www.seanbetts.com${article.image}` } : {}),
+      ...(article.image ? { image: `${SITE_URL}${article.image}` } : {}),
       ...(article.datePublished ? { datePublished: article.datePublished } : {}),
       publisher: { '@type': 'Organization', name: article.publication },
     },
@@ -35,43 +36,6 @@ function ArticleDate({ article }) {
   return article.datePublished ? <time dateTime={article.datePublished}>{dateFormat.format(new Date(`${article.datePublished}T00:00:00Z`))}</time> : null;
 }
 
-function ArticleInfo({ article }) {
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
-  const [pinned, setPinned] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
-  const root = useRef(null);
-  const id = useId();
-  const open = !dismissed && (hovered || focused || pinned);
-  const close = () => { setPinned(false); setDismissed(true); };
-  useEffect(() => {
-    if (!open) return undefined;
-    const outside = event => {
-      if (!root.current?.contains(event.target)) { setPinned(false); setDismissed(true); }
-    };
-    const escape = event => {
-      if (event.key === 'Escape') { setPinned(false); setDismissed(true); }
-    };
-    document.addEventListener('pointerdown', outside);
-    document.addEventListener('keydown', escape);
-    return () => {
-      document.removeEventListener('pointerdown', outside);
-      document.removeEventListener('keydown', escape);
-    };
-  }, [open]);
-  return <div ref={root} className={styles.articleInfo}
-    onPointerEnter={event => { if (event.pointerType === 'mouse') { setHovered(true); setDismissed(false); } }}
-    onPointerLeave={() => setHovered(false)}
-    onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) { setFocused(false); setPinned(false); } }}>
-    <button type="button" className={styles.infoButton} aria-label={`About this article: ${article.title}`}
-      aria-expanded={open} aria-controls={id}
-      onFocus={() => { setFocused(true); setDismissed(false); }}
-      onClick={() => { if (pinned) close(); else { setPinned(true); setDismissed(false); } }}>
-      <Info size={28} aria-hidden="true" />
-    </button>
-    <div id={id} className={styles.articleDescription} hidden={!open}><p>{article.description}</p></div>
-  </div>;
-}
 
 function ArticlePanel({ article, hero = false }) {
   const Heading = hero ? 'h2' : 'h3';
@@ -84,7 +48,8 @@ function ArticlePanel({ article, hero = false }) {
         {!failed && <ResponsiveImage src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
           style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
       </div>
-      <ArticleInfo article={article} />
+      <InfoPopover label={`About this article: ${article.title}`} description={article.description}
+        className={styles.articleInfo} buttonClassName={styles.infoButton} contentClassName={styles.articleDescription} />
       <a href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink}>
         <div className={styles.upright}>
           <Heading id={titleId}>{article.title}</Heading>
