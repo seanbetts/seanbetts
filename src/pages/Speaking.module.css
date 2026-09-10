@@ -1,7 +1,10 @@
+.archive { composes: surface from "../game/Frame.module.css"; }
+.heroArt { composes: surface from "../game/Frame.module.css"; }
+.heroCopy { composes: surface from "../game/Frame.module.css"; }
 .speaking{max-width:1440px;margin:0 auto;padding-bottom:40px}
 .back{display:inline-flex;align-items:center;gap:9px;font:600 17px var(--game-ui);text-transform:uppercase;min-height:44px;margin:4px 0 14px}
 .back:hover{color:var(--game-accent)}
-.cover{--angle:-1.4deg;--counter-angle:1.4deg;margin-top:30px;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--angle));transform-origin:top left;overflow:hidden}
+.cover { composes: canvas from "../game/Frame.module.css";  }
 .upright{transform:skewY(var(--counter-angle));min-width:0}
 .hero{display:grid;grid-template-columns:7fr 4fr;min-height:560px}
 .heroCopy{display:flex;align-items:center;background:var(--game-surface);padding:56px 64px 56px 48px;clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%)}
@@ -14,9 +17,9 @@
 .heroArt img{width:100%;height:100%;position:absolute;object-fit:cover;object-position:center 33%;transform:skewY(var(--counter-angle)) scale(1.04)}
 .features{display:grid;grid-template-columns:1fr 1fr;row-gap:var(--game-frame);margin-top:var(--game-frame)}
 .feature{position:relative;min-width:0;min-height:460px;display:flex;align-items:flex-end;background:var(--game-ink);isolation:isolate}
-.feature::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 20%,rgba(16,7,24,.18) 40%,rgba(16,7,24,.88) 76%,#100718 100%)}
-.feature:nth-of-type(even){clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%)}
-.feature:nth-of-type(odd):not(.lead){clip-path:polygon(var(--game-frame) 0,100% 0,100% 100%,calc(var(--game-frame) - 12px) 100%)}
+.scrim { composes: scrim from "../game/Frame.module.css"; }
+.feature:nth-of-type(even){--frame-window:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%)}
+.feature:nth-of-type(odd):not(.lead){--frame-window:polygon(var(--game-frame) 0,100% 0,100% 100%,calc(var(--game-frame) - 12px) 100%)}
 .photo{position:absolute;inset:0;z-index:-2;overflow:hidden;background:#211329}
 .photo img{width:100%;height:100%;object-fit:cover;transform:skewY(var(--counter-angle)) scale(1.06)}
 .photoFallback{height:100%;display:flex;align-items:center;justify-content:center;padding:30px;font:600 28px var(--game-ui);color:var(--game-accent);text-align:center;transform:skewY(var(--counter-angle))}
@@ -28,7 +31,7 @@
 .metadata{color:var(--game-muted);font-size:13px;line-height:1.5}
 .speaking .description{font-size:15px;line-height:1.75;color:var(--game-body);margin-top:20px}
 .lead{grid-column:1/-1;min-height:520px}
-.feature:last-child:nth-of-type(even){grid-column:1/-1;clip-path:none}
+.feature:last-child:nth-of-type(even){grid-column:1/-1;--frame-window:none}
 .lead .photo img{object-position:center 42%}
 .lead .featureCopy{padding:42px;max-width:850px}
 .speaking .feature h3{color:#fffaf4}
@@ -68,7 +71,6 @@
  .archiveHeader{align-items:flex-start;flex-direction:column}
 }
 @media(max-width:700px){
- .cover{--angle:-2deg;--counter-angle:2deg;margin-top:10px}
  .hero{display:flex;flex-direction:column;gap:var(--game-frame);min-height:0}
  .heroCopy{clip-path:none;padding:34px 24px}
  .speaking h1{font-size:clamp(56px,15vw,88px);margin-bottom:24px}
@@ -76,7 +78,7 @@
  .heroArt{clip-path:none;aspect-ratio:4/5}
  .heroArt img{object-position:center 27%}
  .features{display:flex;flex-direction:column;gap:var(--game-frame)}
- .feature,.lead{flex-direction:column;align-items:stretch;clip-path:none!important;min-height:440px}
+ .feature,.lead{flex-direction:column;align-items:stretch;min-height:440px}
  .lead .featureCopy,.featureCopy,.feature:nth-of-type(odd):not(.lead) .featureCopy{padding:28px 24px;margin-top:auto}
  .talkInfo{position:relative;top:auto;right:auto;margin:16px 16px 0 auto;max-width:calc(100% - 32px);flex-shrink:0}
  .talkDescription p{font-size:14px;padding:16px}
@@ -94,3 +96,6 @@
 @media(max-width:380px){
  .filters{flex-direction:column}
 }
+
+.panelWindow { composes: window from "../game/Frame.module.css"; display:flex;align-items:flex-end;align-self:stretch;flex:1; }
+@media(max-width:700px){.panelWindow{flex-direction:column;align-items:stretch}}

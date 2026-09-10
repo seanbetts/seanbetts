@@ -71,14 +71,17 @@ function TalkInfo({ talk }) {
 
 function FeaturedAppearance({ talk, lead }) {
   return <article className={`${styles.feature} ${lead ? styles.lead : ''}`} aria-labelledby={`featured-${talk.id.replace(/\s/g, '-')}`}>
-    <EventPhoto talk={talk} />
-    <TalkInfo talk={talk} />
-    <div className={styles.featureCopy}>
-      <div className={styles.upright}>
-        <Format type={talk.type} />
-        <h3 id={`featured-${talk.id.replace(/\s/g, '-')}`}>{talk.title.replace(/[.!?]$/, '')}<span className={styles.period}>{talk.title.match(/[.!?]$/)?.[0] || '.'}</span></h3>
-        <p className={styles.conference}>{talk.conference}</p>
-        <p className={styles.metadata}>{talk.date} · {talk.location}</p>
+    <div className={styles.panelWindow}>
+      <div className={styles.scrim} aria-hidden="true" />
+      <EventPhoto talk={talk} />
+      <TalkInfo talk={talk} />
+      <div className={styles.featureCopy}>
+        <div className={styles.upright}>
+          <Format type={talk.type} />
+          <h3 id={`featured-${talk.id.replace(/\s/g, '-')}`}>{talk.title.replace(/[.!?]$/, '')}<span className={styles.period}>{talk.title.match(/[.!?]$/)?.[0] || '.'}</span></h3>
+          <p className={styles.conference}>{talk.conference}</p>
+          <p className={styles.metadata}>{talk.date} · {talk.location}</p>
+        </div>
       </div>
     </div>
   </article>;

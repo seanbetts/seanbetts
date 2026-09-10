@@ -1,3 +1,4 @@
+.panel { composes: surface from "./Frame.module.css"; }
 /* The shared ink canvas owns the gap: both sides follow the same diagonal. */
 .panels{display:grid;grid-template-columns:3fr 4fr 3fr;grid-template-rows:1fr 1fr;row-gap:var(--game-frame);aspect-ratio:20/9;margin-top:var(--game-frame);background:var(--game-ink)}
 .panel{position:relative;overflow:hidden;min-width:0;margin:0}

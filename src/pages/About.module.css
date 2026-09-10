@@ -1,3 +1,5 @@
+.chapter { composes: surface from "../game/Frame.module.css"; }
+.hero { composes: surface from "../game/Frame.module.css"; }
 .about{max-width:1440px;margin:auto;padding-bottom:40px}
 .back{display:inline-flex;align-items:center;gap:9px;min-height:44px;margin:4px 0 14px;font:600 17px var(--game-ui);text-transform:uppercase}
 .back:hover{color:var(--game-accent)}
@@ -47,9 +49,8 @@
 
 /* One continuous ink canvas owns the outside frame and the shared row gutters.
    Image masks cut the diagonal seam from that same ink, without skewed borders. */
-.panels{--panel-angle:-1.4deg;--content-angle:1.4deg;--image-slant:36px;margin-top:30px;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--panel-angle));transform-origin:top left;overflow:hidden}
+.panels { composes: canvas from "../game/Frame.module.css"; --image-slant:36px; }
 .hero,.chapter{border:0;overflow:hidden;position:relative}
-.hero::after,.chapter::after{content:"";position:absolute;inset:0;pointer-events:none;border-top:1px solid var(--game-ink);border-bottom:1px solid var(--game-ink);z-index:3}
 .chapter{margin-top:var(--game-frame)}
 .heroCopy,.chapterCopy{transform:skewY(var(--content-angle))}
 .heroCopy,.reverse .chapterCopy{padding-left:calc(clamp(24px,3.7vw,56px) + var(--image-slant))}
@@ -73,7 +74,7 @@
  .reverse .chapterArt>span{left:calc(var(--game-frame) + 28px);right:28px}
 }
 @media(max-width:700px){
- .panels{--panel-angle:-2deg;--content-angle:2deg;margin-top:10px}
+
  .portrait,.chapterArt,.reverse .chapterArt{width:100%;margin:0;clip-path:none;border:0;border-bottom:var(--game-frame) solid var(--game-ink)}
  .imageWindow,.portrait .imageWindow,.reverse .imageWindow{clip-path:none}
  .heroCopy,.chapterCopy,.reverse .chapterCopy,.chapter:not(.reverse) .chapterCopy{padding-left:22px;padding-right:22px}

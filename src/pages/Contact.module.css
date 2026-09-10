@@ -1,7 +1,9 @@
+.art { composes: surface from "../game/Frame.module.css"; }
+.copy { composes: surface from "../game/Frame.module.css"; }
 .contact{max-width:1440px;margin:auto;padding-bottom:40px}
 .back{display:inline-flex;align-items:center;gap:9px;min-height:44px;margin:4px 0 14px;font:600 17px var(--game-ui);text-transform:uppercase}
 .back:hover{color:var(--game-accent)}
-.cover{--angle:-1.4deg;--counter-angle:1.4deg;display:grid;grid-template-columns:44% 56%;min-height:780px;margin-top:30px;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--angle));transform-origin:top left;overflow:hidden}
+.cover { composes: canvas from "../game/Frame.module.css"; display:grid;grid-template-columns:44% 56%;min-height:780px; }
 .copy{grid-column:2;grid-row:1;display:flex;align-items:center;background:var(--game-surface);padding:52px 48px 52px 68px;clip-path:polygon(0 0,100% 0,100% 100%,24px 100%)}
 .upright{width:100%;min-width:0;transform:skewY(var(--counter-angle))}
 .contact h1{font-size:clamp(64px,8vw,118px);text-transform:uppercase;margin-bottom:26px}
@@ -26,7 +28,7 @@
  .description{font-size:13px}
 }
 @media(max-width:700px){
- .cover{--angle:-2deg;--counter-angle:2deg;display:flex;flex-direction:column;gap:var(--game-frame);min-height:0;margin-top:10px}
+ .cover{display:flex;flex-direction:column;gap:var(--game-frame);min-height:0}
  .copy{clip-path:none;padding:34px 24px}
  .contact h1{font-size:clamp(56px,15vw,88px);margin-bottom:24px}
  .contact .intro{font-size:25px;margin-bottom:28px}

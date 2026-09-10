@@ -74,18 +74,21 @@ function ArticlePanel({ article, hero = false }) {
   const [failed, setFailed] = useState(false);
   const titleId = useId();
   return <article className={`${styles.feature} ${hero ? styles.heroFeature : ''}`} aria-labelledby={titleId}>
-    <div className={styles.photo}>
-      {!failed && <img src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
-        style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
-    </div>
-    <ArticleInfo article={article} />
-    <a href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink}>
-      <div className={styles.upright}>
-        <Heading id={titleId}>{article.title}</Heading>
-        <p className={styles.publication}>{article.publication}</p>
-        <div className={styles.metadata}><ArticleDate article={article} /><span className={styles.read}>Read article <ArrowUpRight size={21} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></span></div>
+    <div className={styles.panelWindow}>
+      <div className={styles.scrim} aria-hidden="true" />
+      <div className={styles.photo}>
+        {!failed && <img src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
+          style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
       </div>
-    </a>
+      <ArticleInfo article={article} />
+      <a href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink}>
+        <div className={styles.upright}>
+          <Heading id={titleId}>{article.title}</Heading>
+          <p className={styles.publication}>{article.publication}</p>
+          <div className={styles.metadata}><ArticleDate article={article} /><span className={styles.read}>Read article <ArrowUpRight size={21} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></span></div>
+        </div>
+      </a>
+    </div>
   </article>;
 }
 

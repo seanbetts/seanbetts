@@ -1,9 +1,13 @@
+.project { composes: surface from "./Frame.module.css"; }
+.secondaryCard { composes: surface from "./Frame.module.css"; }
+.primary { composes: surface from "./Frame.module.css"; }
+.introCopy { composes: surface from "./Frame.module.css"; }
 .page { max-width: 1440px; margin: auto; padding-bottom: 40px; }
 .back { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; margin: 4px 0 14px; font: 600 17px var(--game-ui); text-transform: uppercase; }
 .back:hover { color: var(--game-accent); }
 /* The shared ink canvas creates both the outer frame and every connecting seam.
    Counter-skew the artwork and copy so the composition tilts, not the content. */
-.panels { --panel-angle: -1.4deg; --content-angle: 1.4deg; --seam-slant: 16px; --panel-columns: minmax(0, 7fr) minmax(0, 5fr); margin-top: 30px; padding: var(--game-frame); background: var(--game-ink); transform: skewY(var(--panel-angle)); transform-origin: top left; overflow: hidden; }
+.panels { composes: canvas from "./Frame.module.css"; --seam-slant: 16px; --panel-columns: minmax(0, 7fr) minmax(0, 5fr); }
 .upright, .primaryTop, .primaryCaption, .secondaryTop, .secondaryCaption, .projectInner { transform: skewY(var(--content-angle)); }
 .hero { display: grid; grid-template-columns: var(--panel-columns); grid-template-rows: minmax(280px, 1fr) minmax(310px, 1fr); row-gap: var(--game-frame); }
 .introCopy { grid-column: 2; grid-row: 1; display: flex; align-items: center; padding: 34px 30px 34px calc(30px + var(--game-frame)); background: var(--game-surface); clip-path: polygon(calc(var(--game-frame) - var(--seam-slant)) 0, 100% 0, 100% 100%, calc(var(--game-frame) - var(--seam-slant) / 2) 100%); }
@@ -71,7 +75,7 @@
  .project { padding-top: 28px; padding-bottom: 28px; }
 }
 @media (max-width: 700px) {
- .panels { --panel-angle: -2deg; --content-angle: 2deg; margin-top: 10px; }
+
  .hero, .featured { display: flex; flex-direction: column; gap: var(--game-frame); }
  .introCopy { padding: 30px 22px 36px; clip-path: none; }
  .page .introCopy h1 { font-size: clamp(54px, 16vw, 78px); margin: 16px 0 20px; }

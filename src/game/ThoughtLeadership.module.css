@@ -1,3 +1,6 @@
+.brandCredits { composes: surface from "./Frame.module.css"; }
+.portrait { composes: surface from "./Frame.module.css"; }
+.copy { composes: surface from "./Frame.module.css"; }
 .page{max-width:1440px;margin:0 auto;padding-bottom:40px}
 .back{display:inline-flex;align-items:center;gap:9px;font:600 17px var(--game-ui);text-transform:uppercase;min-height:44px;margin:4px 0 14px}
 .back:hover{color:var(--game-accent)}
@@ -12,7 +15,7 @@
 .portraitArt{position:absolute;left:0;right:0;top:50%;aspect-ratio:2/3;transform:translateY(-50%) skewY(var(--counter-angle)) scale(1.05)}
 .portraitImage{display:block;width:100%;height:auto}
 /* Title, portrait and brand collage all share one ink canvas and connected seams. */
-.cover{--angle:-1.4deg;--counter-angle:1.4deg;margin-top:30px;padding:var(--game-frame);background:var(--game-ink);transform:skewY(var(--angle));transform-origin:top left;overflow:hidden}
+.cover { composes: canvas from "./Frame.module.css";  }
 .brandCredits{margin-top:var(--game-frame);padding:28px 44px;background:var(--game-surface);text-align:center}
 .creditsInner{transform:skewY(var(--counter-angle))}
 .creditsLabel{margin:0 0 12px;color:var(--game-accent);font:600 13px var(--game-ui);letter-spacing:2px;text-transform:uppercase}
@@ -30,7 +33,7 @@
  .page .introduction h1{font-size:clamp(38px,10.5vw,64px)}
  .introduction p{font-size:16px}
  .portrait{clip-path:none;min-height:0}
- .cover{--angle:-2deg;--counter-angle:2deg;margin-top:10px}
+
  .brandCredits{padding:24px 18px}
  .brandNames li:not(:last-child)::after{margin:0 10px}
 }

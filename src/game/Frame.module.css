@@ -1,0 +1,69 @@
+/* Shared frame primitives. Page modules own layout and polygon geometry only. */
+.canvas,
+.flatCanvas {
+  --frame-edge: 1px;
+  --frame-caption-fade: linear-gradient(180deg, transparent 12%, #21132933 32%, #211329d9 72%, #211329f2 100%);
+  position: relative;
+  isolation: isolate;
+  background: var(--game-ink);
+  overflow: hidden;
+}
+
+.canvas {
+  --panel-angle: -1.4deg;
+  --content-angle: 1.4deg;
+  --angle: var(--panel-angle);
+  --counter-angle: var(--content-angle);
+  margin-top: 30px;
+  padding: var(--game-frame);
+  transform: skewY(var(--panel-angle));
+  transform-origin: top left;
+}
+
+/* The home collage uses the same ink and width, with an unskewed outside frame. */
+.flatCanvas { border: var(--game-frame) solid var(--game-ink); }
+
+/* Paint over subpixel image bleed at the horizontal joins. Keep this independent
+   of artwork gradients and pointer targets; do not counter-skew the edge. */
+.surface { position: relative; overflow: hidden; }
+.surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: var(--frame-edge) solid var(--game-ink);
+  border-bottom: var(--frame-edge) solid var(--game-ink);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* A card's ink backing stays intact. Clip its content window, not its frame. */
+.window {
+  composes: surface;
+  isolation: isolate;
+  min-width: 0;
+  clip-path: var(--frame-window, none);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--frame-caption-fade);
+}
+
+/* Shared fixed-width seams for the freeform home collage. */
+.seams { pointer-events: none; }
+.seams path {
+  fill: none;
+  stroke: var(--game-ink);
+  stroke-width: var(--game-frame);
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 700px) {
+  .canvas { --panel-angle: -2deg; --content-angle: 2deg; margin-top: 10px; }
+  .window { clip-path: none; }
+}

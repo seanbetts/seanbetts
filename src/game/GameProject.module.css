@@ -1,8 +1,13 @@
+.tools { composes: surface from "./Frame.module.css"; }
+.narrative { composes: surface from "./Frame.module.css"; }
+.featuresPanel { composes: surface from "./Frame.module.css"; }
+.media { composes: surface from "./Frame.module.css"; }
+.introduction { composes: surface from "./Frame.module.css"; }
 .page { max-width: 1440px; margin: auto; padding-bottom: 40px; }
 .back { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; margin: 4px 0 14px; font: 600 17px var(--game-ui); text-transform: uppercase; }
 .back:hover, .footerNav a:hover { color: var(--game-accent); }
 /* All panels reveal one ink canvas. Only their contents are counter-skewed. */
-.panels { --panel-angle: -1.4deg; --content-angle: 1.4deg; --seam-slant: 20px; margin-top: 30px; padding: var(--game-frame); background: var(--game-ink); transform: skewY(var(--panel-angle)); transform-origin: top left; overflow: hidden; }
+.panels { composes: canvas from "./Frame.module.css"; --seam-slant: 20px; }
 .upright, .toolsInner { transform: skewY(var(--content-angle)); }
 .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
 .introduction { display: flex; align-items: center; padding: 42px 42px 48px 34px; background: var(--game-surface); clip-path: polygon(0 0, 100% 0, calc(100% - var(--seam-slant)) 100%, 0 100%); }
@@ -67,7 +72,7 @@
  .features li, .narrative p { font-size: 16px; }
 }
 @media (max-width: 700px) {
- .panels { --panel-angle: -2deg; --content-angle: 2deg; margin-top: 10px; }
+
  .hero, .story { display: flex; flex-direction: column; gap: var(--game-frame); }
  .introduction, .featuresPanel, .narrative { padding: 30px 22px 36px; clip-path: none; }
  .page .introduction h1 { font-size: clamp(42px, 12vw, 64px); margin: 22px 0; }

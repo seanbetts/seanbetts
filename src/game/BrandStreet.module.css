@@ -1,3 +1,5 @@
+.hint { composes: surface from "./Frame.module.css"; }
+.viewport { composes: surface from "./Frame.module.css"; }
 .street{margin:var(--game-frame) 0 0;background:var(--game-ink)}
 .viewport{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-color:var(--game-accent) var(--game-ink);scrollbar-width:thin}
 .viewport:focus-visible{outline:3px solid var(--game-accent);outline-offset:-3px}
