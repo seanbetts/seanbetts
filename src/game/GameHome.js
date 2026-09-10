@@ -1,7 +1,6 @@
 import ResponsiveImage from '../components/ResponsiveImage';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
-import SceneArt from './SceneArt';
 import styles from './GameHome.module.css';
 
 const homeArtwork = {
@@ -14,7 +13,8 @@ const homeArtwork = {
 
 function CoverPanel({ scene, title, description, to, panel = scene }) {
   return <Link to={to} className={`${styles.panel} ${styles[panel]}`}>
-    <SceneArt scene={scene} image={homeArtwork[panel]} />
+    <ResponsiveImage data-art={scene} className={styles.panelImage} src={homeArtwork[panel]} alt="" loading="lazy" decoding="async"
+      sizes={panel === 'building' ? '(max-width: 700px) max(480px, calc(100vw - 52px)), 44vw' : `(max-width: 700px) calc(100vw - 52px), ${panel === 'leadership' ? '21vw' : '25vw'}`} />
     <div className={styles.caption}><div><h2>{title}</h2><p>{description}</p></div></div>
   </Link>;
 }
@@ -30,8 +30,8 @@ export default function GameHome() {
       ogType="website"
     />
     <div className={`${styles.cover} game-art`}>
-      <Link to="/about" className={`${styles.panel} ${styles.portrait}`} aria-label="About Sean Betts">
-        <ResponsiveImage className={styles.portraitImage} sizes="(max-width: 1000px) 520px, (max-width: 1700px) 650px, 740px" src="/images/game/portrait-sean-london-candidate-v1.png" alt="" fetchpriority="high" width="1024" height="1536" />
+      <Link to="/about/" className={`${styles.panel} ${styles.portrait}`} aria-label="About Sean Betts">
+        <ResponsiveImage className={styles.portraitImage} sizes="(max-width: 700px) max(440px, calc(100vw - 52px)), (max-width: 1000px) 500px, (max-width: 1800px) max(500px, 37vw), 680px" src="/images/game/portrait-sean-london-candidate-v1.png" alt="" fetchpriority="high" width="1024" height="1536" />
         <div className={styles.identity}>
           <h1><span className="sr-only">Sean Betts</span><ResponsiveImage src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
           <p className={styles.role}>Hands-on AI Leader</p>
@@ -39,11 +39,11 @@ export default function GameHome() {
           <p className={styles.advocacy}>Autistic · Neurodiversity & Mental Health Speaker</p>
         </div>
       </Link>
-      <CoverPanel scene="building" title="Building" description="Products, prototypes & experiments" to="/building" />
-      <CoverPanel scene="writing" title="Writing" description="The Blueprint" to="/writing" />
-      <CoverPanel scene="speaking" title="Speaking" description="Keynotes, panels & podcasts" to="/speaking" />
-      <CoverPanel scene="about" title="About" description="A little more about me" to="/about" />
-      <CoverPanel scene="speaking" panel="leadership" title="Thought leadership" description="AI perspectives for global brands" to="/thought-leadership" />
+      <CoverPanel scene="building" title="Building" description="Products, prototypes & experiments" to="/building/" />
+      <CoverPanel scene="writing" title="Writing" description="The Blueprint" to="/writing/" />
+      <CoverPanel scene="speaking" title="Speaking" description="Keynotes, panels & podcasts" to="/speaking/" />
+      <CoverPanel scene="about" title="About" description="A little more about me" to="/about/" />
+      <CoverPanel scene="speaking" panel="leadership" title="Thought leadership" description="AI perspectives for global brands" to="/thought-leadership/" />
       <svg className={styles.dividers} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <path d="M22 0L25 100 M56 0L59 100 M0 46L23.44 48 M57.41 47L100 43 M78 45.066L77 100" />
       </svg>

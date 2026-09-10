@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, '..');
 const sourceRoot = path.join(root, 'public/images');
 const outputRoot = path.join(root, 'public/images/responsive');
 const manifestFile = path.join(root, 'src/generated/images.json');
-const widths = [480, 800, 1200, 1600, 2400];
+const widths = [480, 640, 800, 960, 1200, 1600, 2400];
 
 async function filesIn(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -31,7 +31,7 @@ async function main() {
     const rotated = [5, 6, 7, 8].includes(metadata.orientation);
     const width = rotated ? metadata.height : metadata.width;
     const height = rotated ? metadata.width : metadata.height;
-    const hash = crypto.createHash('sha256').update(buffer).update('webp-q84-v1').digest('hex').slice(0, 16);
+    const hash = crypto.createHash('sha256').update(buffer).update('webp-q80-v2').digest('hex').slice(0, 16);
     const targetWidths = [...new Set(widths.map(w => Math.min(w, width)))];
     const variants = [];
     for (const targetWidth of targetWidths) {
@@ -39,7 +39,7 @@ async function main() {
       const output = path.join(outputRoot, name);
       try { await fs.access(output); } catch {
         await sharp(buffer).rotate().resize({ width: targetWidth, withoutEnlargement: true })
-          .webp({ quality: 84, effort: 5 }).toFile(output);
+          .webp({ quality: 80, effort: 5 }).toFile(output);
       }
       variants.push({ src: `/images/responsive/${name}`, width: targetWidth });
     }

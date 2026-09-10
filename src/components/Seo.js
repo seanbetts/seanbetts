@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { personSchema, websiteSchema, PERSON_ID, WEBSITE_ID, SITE_URL } from '../data/siteIdentity';
+import { personSchema, websiteSchema, PERSON_ID, WEBSITE_ID, SITE_URL, pageUrl } from '../data/siteIdentity';
 
 export const SITE_NAME = 'Sean Betts';
 const DEFAULT_IMAGE_PATH = '/images/sean-betts-profile.png';
@@ -45,7 +45,7 @@ const Seo = ({
   twitterTitle,
   twitterDescription,
 }) => {
-  const canonical = canonicalUrl || (canonicalPath ? toAbsoluteUrl(canonicalPath) : SITE_URL);
+  const canonical = canonicalUrl || pageUrl(canonicalPath || '/');
   const image = imageUrl || toAbsoluteUrl(imagePath);
   const metaKeywords = normalizeKeywords(keywords);
   const resolvedOgTitle = ogTitle || title;

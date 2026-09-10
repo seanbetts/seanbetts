@@ -28,7 +28,7 @@ export default function ThoughtLeadership() {
         </div>
         <figure className={styles.portrait} aria-label="John Lewis: movers discover an extravagant armchair is too wide for a penthouse doorway.">
           <div className={styles.portraitArt}>
-            <ResponsiveImage className={styles.portraitImage} src="/images/game/brand-scenes/delivery-integrated-v2.png" alt="John Lewis" width="1024" height="1536" decoding="async" />
+            <ResponsiveImage className={styles.portraitImage} src="/images/game/brand-scenes/delivery-integrated-v2.png" alt="John Lewis" fetchpriority="high" sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1000px) 40vw, (max-width: 1500px) 30vw, 450px" width="1024" height="1536" decoding="async" />
           </div>
         </figure>
       </header>

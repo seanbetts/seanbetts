@@ -33,3 +33,6 @@ yarn-error.log*
 # Local assistant permissions and generated crawl inventory
 /.claude/settings.local.json
 /src/generated/site-inventory.json
+
+# Local Cloudflare runtime state
+/.wrangler/

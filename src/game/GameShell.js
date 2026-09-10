@@ -1,5 +1,5 @@
 import { navigationLinks } from '../data/siteRoutes';
-import { SOCIAL_URLS } from '../data/siteIdentity';
+import { SOCIAL_URLS, pagePath } from '../data/siteIdentity';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Butterfly, ChatsCircle, GithubLogo, Heart, LinkedinLogo, List, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
@@ -16,7 +16,8 @@ export default function GameShell({ children }) {
   const trigger = useRef(null);
   const menu = useRef(null);
   const main = useRef(null);
-  const { pathname } = useLocation();
+  const { pathname: routePath } = useLocation();
+  const pathname = pagePath(routePath);
   const lastPath = useRef(pathname);
 
   const closeNavigation = (event) => {
@@ -68,7 +69,7 @@ export default function GameShell({ children }) {
         <span className={styles.version}>v{packageJson.version}</span>
       </div>
       <div className={styles.tools}>
-        <Link to="/contact" onClick={closeNavigation} className={styles.tool} aria-label="Contact" title="Contact"><ChatsCircle size={23} weight="bold" aria-hidden="true" /></Link>
+        <Link to="/contact/" onClick={closeNavigation} className={styles.tool} aria-label="Contact" title="Contact"><ChatsCircle size={23} weight="bold" aria-hidden="true" /></Link>
         <div className={styles.controls} data-js-only>
           <button className={styles.menuButton} onClick={toggleDarkMode} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
             {darkMode ? <Sun size={23} weight="bold" aria-hidden="true" /> : <Moon size={23} weight="bold" aria-hidden="true" />}

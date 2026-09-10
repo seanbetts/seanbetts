@@ -1,5 +1,6 @@
 .cover{composes:flatCanvas from "./Frame.module.css";height:calc(100svh - 139px);min-height:710px;max-height:1100px;isolation:isolate;overflow:hidden}
 .panel{position:absolute;overflow:hidden;transition:filter .25s ease;isolation:isolate;background:var(--game-ink)}
+.panelImage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .panel [data-art]{transition:transform .55s cubic-bezier(.2,.6,.2,1)}
 .panel:hover [data-art],.panel:focus-visible [data-art]{transform:scale(1.045)}
 .panel:focus-visible{outline:0!important;filter:brightness(1.17)}
@@ -16,15 +17,15 @@
 .identity .expertise,.identity .advocacy{font-size:clamp(15px,4.7cqw,19px);white-space:normal;text-wrap:balance;margin-top:12px;line-height:1.18;color:#fff}
 .identity .advocacy{margin-top:4px}
 .speaking{left:0;top:0;width:23.44%;height:48%;clip-path:polygon(0 0,93.8567% 0,100% 100%,0 95.8333%)}
-.speaking [data-art="speaking"]>div{width:100%;height:100%;background-size:cover;background-position:center 25%}
+.speaking .panelImage{object-position:center 25%}
 .writing{left:0;top:46%;width:25%;height:54%;clip-path:polygon(0 0,93.76% 3.7037%,100% 100%,0 100%)}
-.writing [data-art="writing"]>div{width:100%;height:100%;background-size:cover;background-position:center 25%}
+.writing .panelImage{object-position:center 25%}
 .building{left:56%;top:0;width:44%;height:47%;clip-path:polygon(0 0,100% 0,100% 91.4894%,3.2045% 100%)}
-.building [data-art="building"]>div{width:100%;height:100%;background-size:cover;background-position:65% center}
+.building .panelImage{object-position:65% center}
 .leadership{left:57.41%;top:45.066%;width:20.59%;height:54.934%;clip-path:polygon(0 3.5205%,100% 0,95.1433% 100%,7.7222% 100%)}
-.leadership [data-art]>div{width:100%;height:100%;background-size:cover;background-position:center 35%}
+.leadership .panelImage{object-position:center 35%}
 .about{left:77%;top:43%;width:23%;height:57%;clip-path:polygon(4.3478% 3.6246%,100% 0,100% 100%,0 100%)}
-.about [data-art="about"]>div{width:100%;height:100%;background-size:cover;background-position:center center}
+.about .panelImage{object-position:center center}
 .dividers{composes:seams from "./Frame.module.css";position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;overflow:visible}
 .caption{position:absolute;left:0;bottom:0;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:58px 20px 24px;background:linear-gradient(transparent,#100b18db 47%,#100b18f5);z-index:2}
 .caption h2{font-size:clamp(24px,2.2vw,35px);text-transform:uppercase}

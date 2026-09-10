@@ -35,7 +35,7 @@ test('a project without a public URL retains its story and navigation without an
     renderProject();
     expect(screen.getByRole('heading', { name: 'sideBar', level: 1 })).toBeVisible();
     expect(screen.getByRole('heading', { name: 'What I learned' })).toBeVisible();
-    expect(screen.getByRole('link', { name: 'Back to Building' })).toHaveAttribute('href', '/building');
+    expect(screen.getByRole('link', { name: 'Back to Building' })).toHaveAttribute('href', '/building/');
     expect(screen.queryByRole('link', { name: /Visit project|View on GitHub/ })).not.toBeInTheDocument();
   } finally {
     project.url = originalUrl;
@@ -54,7 +54,7 @@ test('sideBar screenshot recovers to illustrated project artwork on failure', ()
 
 test('project returns to its referring page and offers all projects', () => {
   renderProject('/building/sidebar', { fromPath: '/writing', fromLabel: 'Writing' });
-  expect(screen.getByRole('link', { name: 'All projects' })).toHaveAttribute('href', '/building');
+  expect(screen.getByRole('link', { name: 'All projects' })).toHaveAttribute('href', '/building/');
   fireEvent.click(screen.getByRole('link', { name: /Back to Writing/i }));
   expect(screen.getByRole('heading', { name: 'Writing destination' })).toBeInTheDocument();
 });
@@ -73,6 +73,12 @@ test('projects without screenshots use artwork and real video remains playable',
   expect(screen.getByText('Generative AI Explorer', { selector: 'strong' })).toBeInTheDocument();
   view.unmount();
   renderProject('/building/ai-chat-experience');
+  expect(screen.queryByTitle('🐼 panda.ai demo')).not.toBeInTheDocument();
+  const preview = screen.getByRole('link', { name: 'Play 🐼 panda.ai demo' });
+  expect(preview).toHaveAttribute('href', projectsData.find(project => project.id === 'ai-chat-experience').heroVideo);
+  fireEvent.click(preview, { ctrlKey: true });
+  expect(screen.queryByTitle('🐼 panda.ai demo')).not.toBeInTheDocument();
+  fireEvent.click(preview);
   expect(screen.getByTitle('🐼 panda.ai demo')).toHaveAttribute('src', projectsData.find(project => project.id === 'ai-chat-experience').heroVideo);
 });
 

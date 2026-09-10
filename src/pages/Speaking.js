@@ -28,7 +28,7 @@ function EventPhoto({ talk }) {
   const [failed, setFailed] = useState(false);
   return <div className={styles.photo}>
     {failed ? <span className={styles.photoFallback}>{talk.conference}</span> :
-      <ResponsiveImage sizes={talk === featured[0] ? "(max-width: 700px) 700px, 100vw" : "(max-width: 700px) 700px, 50vw"} src={talk.image} style={talk.imagePosition ? { objectPosition: talk.imagePosition } : undefined} alt={`Sean Betts speaking at ${talk.conference}`} loading="lazy" decoding="async" onError={() => setFailed(true)} />}
+      <ResponsiveImage sizes={talk === featured[0] ? "(max-width: 700px) max(660px, 100vw), (max-width: 1500px) 100vw, 1440px" : "(max-width: 700px) max(660px, 100vw), (max-width: 1500px) max(700px, 50vw), 720px"} src={talk.image} style={talk.imagePosition ? { objectPosition: talk.imagePosition } : undefined} alt={`Sean Betts speaking at ${talk.conference}`} loading="lazy" decoding="async" onError={() => setFailed(true)} />}
   </div>;
 }
 
@@ -89,7 +89,7 @@ export default function Speaking() {
             <p className={styles.heroBody}>I speak at conferences and events around the world, exploring the future of technology and sharing my lived experience of autism, leadership and mental health.</p>
           </div>
         </div>
-        <div className={styles.heroArt}><ResponsiveImage src="/images/game/speaking/stage-v1.webp" alt="Illustration of Sean Betts presenting on stage" width="941" height="1672" decoding="async" /></div>
+        <div className={styles.heroArt}><ResponsiveImage src="/images/game/speaking/stage-v1.webp" alt="Illustration of Sean Betts presenting on stage" fetchpriority="high" sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1000px) 40vw, (max-width: 1500px) 36vw, 520px" width="941" height="1672" decoding="async" /></div>
       </header>
       <section className={styles.features} aria-label="Appearances in pictures">
         <h2 className="sr-only">Appearances in pictures</h2>

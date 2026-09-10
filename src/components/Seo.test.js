@@ -14,7 +14,7 @@ test('normalizes relative seo URLs to absolute site URLs', async () => {
   await waitFor(() => {
     expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute(
       'href',
-      'https://www.seanbetts.com/example'
+      'https://www.seanbetts.com/example/'
     );
     expect(document.querySelector('meta[property="og:image"]')).toHaveAttribute(
       'content',

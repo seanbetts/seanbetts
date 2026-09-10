@@ -1,4 +1,5 @@
 import projects from './projectsData';
+import { pagePath } from './siteIdentity';
 
 // Page names serve the sitemap/AI index; navigation labels and order serve the menu.
 export const sitePages = [
@@ -10,7 +11,7 @@ export const sitePages = [
   { path: '/thought-leadership', name: 'Thought leadership', key: 'thoughtLeadership', label: 'Thought leadership', menuOrder: 4 },
   { path: '/contact', name: 'Contact', key: 'contact', label: 'Contact', menuOrder: 6 },
 ];
-export const navigationLinks = [...sitePages].sort((a, b) => a.menuOrder - b.menuOrder);
+export const navigationLinks = [...sitePages].sort((a, b) => a.menuOrder - b.menuOrder).map(page => ({ ...page, path: pagePath(page.path) }));
 export const siteRoutes = [
   ...sitePages.map(({ path, name }) => ({ path, name })),
   ...projects.map(project => ({ path: `/building/${project.id}`, name: project.name })),

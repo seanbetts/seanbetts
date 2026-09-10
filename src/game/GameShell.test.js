@@ -56,9 +56,9 @@ test.each([
 test('cover links to thought leadership and About without Map navigation', () => {
   mount();
   expect(screen.getByRole('heading', { name: 'Sean Betts', level: 1 })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: /Thought leadership AI perspectives/i })).toHaveAttribute('href', '/thought-leadership');
+  expect(screen.getByRole('link', { name: /Thought leadership AI perspectives/i })).toHaveAttribute('href', '/thought-leadership/');
   expect(screen.queryByRole('link', { name: 'Map' })).not.toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'About Sean Betts' })).toHaveAttribute('href', '/about');
+  expect(screen.getByRole('link', { name: 'About Sean Betts' })).toHaveAttribute('href', '/about/');
   expect(screen.queryByRole('link', { name: /Explore the map/i })).not.toBeInTheDocument();
 });
 

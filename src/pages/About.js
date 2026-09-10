@@ -84,7 +84,7 @@ const About = () => {
           <p>
             I’ve served on the UK leadership board since 2017.
           </p>
-          <Link to="/thought-leadership" className={styles.action}>Explore my AI thought leadership <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
+          <Link to="/thought-leadership/" className={styles.action}>Explore my AI thought leadership <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
       </section>
 
@@ -101,22 +101,22 @@ const About = () => {
             My independent work focuses on personal AI assistants and testing how well AI performs on specific tasks.
           </p>
           <p>
-            <Link to="/building/sidebar" state={{ fromLabel: 'About', fromPath: '/about' }}>sideBar</Link> brings notes, tasks, files and web content
+            <Link to="/building/sidebar/" state={{ fromLabel: 'About', fromPath: '/about/' }}>sideBar</Link> brings notes, tasks, files and web content
             into a personal AI assistant for iPhone, iPad, Mac and web. I’m building it to explore how an assistant can use memory and tools to be more useful over time.
           </p>
           <p>
-            <Link to="/building/genai-marketing-benchmarks" state={{ fromLabel: 'About', fromPath: '/about' }}>GenAI Marketing Benchmarks</Link> tests
+            <Link to="/building/genai-marketing-benchmarks/" state={{ fromLabel: 'About', fromPath: '/about/' }}>GenAI Marketing Benchmarks</Link> tests
             how well language models understand specialist marketing knowledge, using more than 2,800 questions across 20 disciplines.
           </p>
           <p>
-            Other projects explore <Link to="/building/ai-brand-detection" state={{ fromLabel: 'About', fromPath: '/about' }}>brand detection in video</Link> and{' '}
-            <Link to="/building/youtube-sdg-analysis" state={{ fromLabel: 'About', fromPath: '/about' }}>large-scale content analysis</Link>.
+            Other projects explore <Link to="/building/ai-brand-detection/" state={{ fromLabel: 'About', fromPath: '/about/' }}>brand detection in video</Link> and{' '}
+            <Link to="/building/youtube-sdg-analysis/" state={{ fromLabel: 'About', fromPath: '/about/' }}>large-scale content analysis</Link>.
           </p>
           <p>
             I write <a href={SOCIAL_URLS.blueprint} target="_blank" rel="noopener noreferrer">The Blueprint</a>, covering
             AI, emerging technology and what they mean for people and businesses.
           </p>
-          <Link to="/building" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
+          <Link to="/building/" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
       </section>
 
@@ -125,7 +125,7 @@ const About = () => {
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="advocacy-heading">Neurodiversity<br />&amp; mental health<span>.</span></h2></div>
-            <Link to="/contact" className={styles.socialLink} aria-label="Contact Sean">
+            <Link to="/contact/" className={styles.socialLink} aria-label="Contact Sean">
               <ChatsCircle size={36} weight="bold" aria-hidden="true" />
             </Link>
           </div>
@@ -139,7 +139,7 @@ const About = () => {
           <p>
             I hope that talking openly makes it easier for other people to share their own experiences and ask for support.
           </p>
-          <Link to="/speaking" className={styles.action}>Explore my speaking <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
+          <Link to="/speaking/" className={styles.action}>Explore my speaking <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
         </div>
       </section>
       </div>
