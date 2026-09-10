@@ -14,6 +14,7 @@ import styles from './GameProject.module.css';
 function ProjectMedia({ project, heroImage }) {
   const [imageFailed, setImageFailed] = useState(false);
   const [videoStarted, setVideoStarted] = useState(false);
+  const [animationPaused, setAnimationPaused] = useState(false);
   const art = artworkForProject(project.id);
   return (
     <div className={`${styles.media} game-art ${project.heroVideo ? styles.video : ''}`}>
@@ -32,6 +33,17 @@ function ProjectMedia({ project, heroImage }) {
             <span aria-hidden="true" className={styles.playIcon}>▶</span>
             <span>Watch {project.name} demo</span>
           </a>
+        ) : project.heroAnimations?.length > 0 && !imageFailed ? (
+          <div className={styles.animationPanel}>
+            <span className={styles.animationTitle}>Pixel Loader Lab</span>
+            <div className={styles.animationGrid}>
+              {project.heroAnimations.map(animation => <picture key={animation.src}>
+                <source media="(prefers-reduced-motion: reduce)" srcSet={animation.poster} />
+                <img src={animationPaused ? animation.poster : animation.src} alt={animation.alt} width="192" height="192" onError={() => setImageFailed(true)} />
+              </picture>)}
+            </div>
+            <button type="button" className={styles.animationToggle} onClick={() => setAnimationPaused(paused => !paused)}>{animationPaused ? 'Play animation' : 'Pause animation'}</button>
+          </div>
         ) : project.heroGallery?.length > 0 && !imageFailed ? (
           <div className={styles.artGrid} role="group" aria-label={`${project.name} artwork`}>
             {project.heroGallery.map(image => <ResponsiveImage key={image.src} src={image.src} alt={image.alt} sizes="(max-width: 700px) 28vw, 18vw" onError={() => setImageFailed(true)} />)}
@@ -40,6 +52,11 @@ function ProjectMedia({ project, heroImage }) {
           <div className={`${styles.logoPanel} ${project.heroImageTone === 'dark' ? styles.logoDark : ''}`}>
             <ResponsiveImage src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
           </div>
+        ) : heroImage && project.heroImageFullSize && !imageFailed ? (
+          <a className={styles.graphicLink} href={heroImage} target="_blank" rel="noopener noreferrer">
+            <ResponsiveImage className={styles.screenshot} src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
+            <span>View graphic full size <ArrowUpRight size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></span>
+          </a>
         ) : heroImage && !imageFailed ? (
           <ResponsiveImage className={`${styles.screenshot} ${project.heroImageFrame === false ? '' : styles.screenshotFrame}`} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
         ) : (

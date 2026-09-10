@@ -25,6 +25,26 @@ test('nAnimals shows six original artworks and recovers to project artwork if an
   expect(screen.getByText('nAnimals', { selector: 'strong' })).toBeInTheDocument();
 });
 
+test('Pixel Loader Lab can pause its original animations', () => {
+  renderProject('/building/pixel-loader-lab');
+  const animation = screen.getByRole('img', { name: 'Original bordered pixel loader animation' });
+  expect(animation).toHaveAttribute('src', '/images/projects/pixel-loader-bordered.gif');
+  expect(animation.closest('picture').querySelector('source')).toHaveAttribute('media', '(prefers-reduced-motion: reduce)');
+  fireEvent.click(screen.getByRole('button', { name: 'Pause animation' }));
+  expect(animation).toHaveAttribute('src', '/images/projects/pixel-loader-bordered-still.png');
+  fireEvent.click(screen.getByRole('button', { name: 'Play animation' }));
+  expect(animation).toHaveAttribute('src', '/images/projects/pixel-loader-bordered.gif');
+});
+
+test('research graphics open at full size and retain an image failure fallback', () => {
+  renderProject('/building/llm-search-analysis');
+  const link = screen.getByRole('link', { name: /View graphic full size/ });
+  expect(link).toHaveAttribute('href', '/images/projects/llm-search-evidence.png');
+  fireEvent.error(within(link).getByRole('img'));
+  expect(screen.queryByRole('link', { name: /View graphic full size/ })).not.toBeInTheDocument();
+  expect(screen.getByText('LLM Search Analysis', { selector: 'strong' })).toBeInTheDocument();
+});
+
 test.each(projectsData)('$name exposes its story, features and technologies without tabs', project => {
   renderProject(`/building/${project.id}`);
   expect(screen.getByRole('heading', { name: project.name, level: 1 })).toBeInTheDocument();
@@ -82,11 +102,7 @@ test('full narrative and technologies remain accessible for coding projects', ()
   expect(screen.getByText('Flask')).toBeInTheDocument();
 });
 
-test('projects without screenshots use artwork and real video remains playable', () => {
-  const view = renderProject('/building/llm-search-analysis');
-  expect(screen.queryByRole('img', { name: 'LLM Search Analysis project screenshot' })).not.toBeInTheDocument();
-  expect(screen.getByText('LLM Search Analysis', { selector: 'strong' })).toBeInTheDocument();
-  view.unmount();
+test('real video remains playable', () => {
   renderProject('/building/ai-chat-experience');
   expect(screen.queryByTitle('🐼 panda.ai demo')).not.toBeInTheDocument();
   const preview = screen.getByRole('link', { name: 'Play 🐼 panda.ai demo' });

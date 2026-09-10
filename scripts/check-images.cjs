@@ -12,6 +12,20 @@ async function main() {
   for (const route of routes) {
     const doc = readPage(route);
     for (const image of doc.querySelectorAll('img[srcset], picture source[srcset]')) {
+      // Animated originals use a single static source for reduced motion.
+      if (image.tagName === 'SOURCE' && image.media === '(prefers-reduced-motion: reduce)') {
+        const still = image.getAttribute('srcset');
+        assert.ok(still.startsWith('/images/projects/'), `${route}: expected a local animation still`);
+        assert.ok(fs.existsSync(path.join(build, still)), `${route}: missing animation still`);
+        const metadata = await sharp(path.join(build, still)).metadata();
+        assert.ok(!metadata.pages || metadata.pages === 1, `${route}: reduced-motion source must be static`);
+        const animation = image.parentElement.querySelector('img');
+        assert.ok(animation?.getAttribute('alt'), `${route}: animation needs alternative text`);
+        const animatedSrc = animation.getAttribute('src');
+        assert.ok(animatedSrc.endsWith('.gif') && fs.existsSync(path.join(build, animatedSrc)), `${route}: missing original animation`);
+        count++;
+        continue;
+      }
       assert.ok(image.getAttribute('sizes'), `${route}: missing responsive sizes`);
       if (image.tagName === 'IMG') assert.ok(image.hasAttribute('alt'), `${route}: lost alternative text`);
       else {

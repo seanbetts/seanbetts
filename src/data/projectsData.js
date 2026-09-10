@@ -48,6 +48,10 @@ const projectsData = [
   },
   {
     id: "llm-search-analysis",
+    heroImage: "/images/projects/llm-search-evidence.png",
+    heroImageAlt: "Recorded GPT-5.1 interaction from 1 December 2025: a question about the latest Steam Controller information produced the query Valve Steam Controller discontinued, with 20 search results and 9 cited sources. One saved case, not a current model benchmark.",
+    heroImageFrame: false,
+    heroImageFullSize: true,
     name: "LLM Search Analysis",
     description: "A research tool for comparing how AI models search the web, which sources they find and what they cite in their answers.",
     icon: <MagnifyingGlass size={48} />,
@@ -128,6 +132,10 @@ const projectsData = [
   },
   {
     id: "steam-hardware-watch",
+    heroImage: "/images/projects/steam-hardware-evidence.png",
+    heroImageAlt: "Archived monitoring report, 24 August 2026: 453 visual assets discovered, 396 retrieved and 57 blocked. No public Steam Frame launch-readiness movement was found in the available evidence; some sources were blocked or partial.",
+    heroImageFrame: false,
+    heroImageFullSize: true,
     name: "Steam Hardware Watch",
     description: "An agent-driven monitoring toolkit that tracks Valve hardware launch signals, compares evidence across sources and turns changes into readable reports.",
     icon: <GameController size={48} />,
@@ -148,6 +156,10 @@ const projectsData = [
   },
   {
     id: "apple-hig-mirror",
+    heroImage: "/images/projects/apple-hig-workflow.png",
+    heroImageAlt: "Apple HIG Mirror workflow: discover guideline pages, extract and normalise their rendered content, then verify and update. A real Buttons Markdown excerpt shows its title, canonical path and rewritten internal links.",
+    heroImageFrame: false,
+    heroImageFullSize: true,
     name: "Apple HIG Mirror",
     description: "A developer tool that turns Apple's browser-rendered Human Interface Guidelines into structured Markdown, with repeatable extraction, verification and scheduled updates.",
     icon: <BookOpen size={48} />,
@@ -168,6 +180,9 @@ const projectsData = [
   },
   {
     id: "pixel-loader-lab",
+    heroImage: "/images/projects/pixel-loader-overview.png",
+    heroImageAlt: "Original solid and bordered pixel loader variants based on the sideBar icon.",
+    heroAnimations: [{"src": "/images/projects/pixel-loader-solid.gif", "poster": "/images/projects/pixel-loader-solid-still.png", "alt": "Original solid pixel loader animation"}, {"src": "/images/projects/pixel-loader-bordered.gif", "poster": "/images/projects/pixel-loader-bordered-still.png", "alt": "Original bordered pixel loader animation"}],
     name: "Pixel Loader Lab",
     description: "A small creative coding sandbox for turning an app icon into a pixelated animated loader, with a live preview and optimised GIF export.",
     icon: <SquaresFour size={48} />,
@@ -188,6 +203,10 @@ const projectsData = [
   },
   {
     id: "cains-jawbone",
+    heroImage: "/images/projects/cains-jawbone-workflow.png",
+    heroImageAlt: "One hundred source pages displayed in numeric order, followed by the research steps: extract clues, test hypotheses and check evidence. This is a page inventory, not a proposed solution.",
+    heroImageFrame: false,
+    heroImageFullSize: true,
     name: "Cain’s Jawbone",
     description: "An AI-assisted literary investigation into a murder mystery with 100 shuffled pages, combining clue indexing, historical research and systematic testing of possible page orders.",
     icon: <MagnifyingGlass size={48} />,
@@ -209,6 +228,10 @@ const projectsData = [
   },
   {
     id: "youtube-sdg-analysis",
+    heroImage: "/images/projects/youtube-sdg-workflow.png",
+    heroImageAlt: "YouTube SDG workflow: collect channel metadata, video information and transcripts; analyse content, mission and themes; then map directly evidenced themes to relevant Sustainable Development Goals. Structured results support channel-level analysis.",
+    heroImageFrame: false,
+    heroImageFullSize: true,
     name: "YouTube SDG Analysis",
     description: "Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.",
     icon: <Video size={48} />,
@@ -228,6 +251,8 @@ const projectsData = [
   },
   {
     id: "ai-brand-detection",
+    heroImage: "/images/projects/brand-detection-film.jpg",
+    heroImageAlt: "Original Brand Detection output showing a red detection box labelled pizza hut around the logo on a pizza box in a film frame.",
     name: "AI Brand Detection",
     description: "Developing AI techniques to detect brands and products in videos.",
     icon: <Video size={48} />,
