@@ -14,14 +14,29 @@ function renderProject(path = '/building/sidebar', state) {
   </Routes></MemoryRouter>);
 }
 
+test('nAnimals shows six original artworks and recovers to project artwork if an image fails', () => {
+  renderProject('/building/nanimals');
+  const gallery = screen.getByRole('group', { name: 'nAnimals artwork' });
+  const images = within(gallery).getAllByRole('img');
+  expect(images).toHaveLength(6);
+  images.forEach(image => expect(image).toHaveAttribute('alt', expect.stringMatching(/.+/)));
+  fireEvent.error(images[0]);
+  expect(screen.queryByRole('group', { name: 'nAnimals artwork' })).not.toBeInTheDocument();
+  expect(screen.getByText('nAnimals', { selector: 'strong' })).toBeInTheDocument();
+});
+
 test.each(projectsData)('$name exposes its story, features and technologies without tabs', project => {
   renderProject(`/building/${project.id}`);
   expect(screen.getByRole('heading', { name: project.name, level: 1 })).toBeInTheDocument();
   expect(screen.queryByRole('tablist')).not.toBeInTheDocument();
   project.features.forEach(feature => expect(screen.getByText(feature)).toBeVisible());
   expect(screen.getByText(project.challenges)).toBeVisible();
-  expect(screen.getByRole('heading', { name: 'What I learned' })).toBeVisible();
-  expect(screen.getByText(project.learnings)).toBeVisible();
+  if (project.learnings) {
+    expect(screen.getByRole('heading', { name: 'What I learned' })).toBeVisible();
+    expect(screen.getByText(project.learnings)).toBeVisible();
+  } else {
+    expect(screen.queryByRole('heading', { name: 'What I learned' })).not.toBeInTheDocument();
+  }
   project.technologies?.forEach(technology => expect(within(screen.getByRole('region', { name: /Built with|Tools & methods/ })).getByText(technology)).toBeVisible());
   if (project.url) expect(screen.getByRole('link', { name: /Visit project|View on GitHub/ })).toHaveAttribute('href', project.url);
   else expect(screen.queryByRole('link', { name: /Visit project|View on GitHub/ })).not.toBeInTheDocument();

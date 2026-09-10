@@ -33,6 +33,14 @@ function ProjectMedia({ project, heroImage }) {
             <span aria-hidden="true" className={styles.playIcon}>▶</span>
             <span>Watch {project.name} demo</span>
           </a>
+        ) : project.heroGallery?.length > 0 && !imageFailed ? (
+          <div className={styles.artGrid} role="group" aria-label={`${project.name} artwork`}>
+            {project.heroGallery.map(image => <ResponsiveImage key={image.src} src={image.src} alt={image.alt} sizes="(max-width: 700px) 28vw, 18vw" onError={() => setImageFailed(true)} />)}
+          </div>
+        ) : heroImage && project.heroImageKind === 'logo' && !imageFailed ? (
+          <div className={`${styles.logoPanel} ${project.heroImageTone === 'dark' ? styles.logoDark : ''}`}>
+            <ResponsiveImage src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
+          </div>
         ) : heroImage && !imageFailed ? (
           <ResponsiveImage className={styles.screenshot} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
         ) : (

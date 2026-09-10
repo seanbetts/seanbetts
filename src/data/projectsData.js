@@ -103,6 +103,27 @@ const projectsData = [
     status: "Active",
   },
   {
+    id: "plotter",
+    name: "Plotter",
+    heroImage: "/images/projects/plotter-europe-roadtrip.png",
+    heroImageAlt: "Plotter showing a European road-trip route with twelve stops and a nineteen-day itinerary",
+    description: "A trip-planning app and collection of agent skills for exploring destinations, planning routes and finding things to do along the way.",
+    icon: <Globe size={48} />,
+    url: null,
+    type: "web app",
+    date: "2026–present",
+    technologies: ["React", "TypeScript", "Node.js", "SQLite", "MapLibre GL", "Agent skills"],
+    features: [
+      "Plan a trip around the places you want to visit and the activities at each stop.",
+      "Explore destinations and the routes between them on an interactive map.",
+      "Keep research, links and images alongside each destination.",
+      "Use agent skills to research destinations and help shape a trip.",
+      "Export a map of your trip to use outside the app."
+    ],
+    challenges: "I started Plotter to explore the world and plan the kind of travelling I would like to do in retirement. It combines an app with agent skills for researching destinations, planning trips and finding things to do. The challenge is bringing that research into an itinerary that stays useful as plans change. I am still tinkering with how the app and skills work together.",
+    status: "In development"
+  },
+  {
     id: "steam-hardware-watch",
     name: "Steam Hardware Watch",
     description: "An agent-driven monitoring toolkit that tracks Valve hardware launch signals, compares evidence across sources and turns changes into readable reports.",
@@ -313,6 +334,81 @@ const projectsData = [
     learnings: "Three years on, I still do not think frontier AI companies have delivered a consumer experience that fulfils the promise of the technology. I expected the labs to focus much more on how people would actually use these capabilities. The gap between what the models can do and the experience of using them remains much wider than I anticipated, with a great deal of product and UX work still to do.",
     status: "Completed",
     heroVideo: "https://www.youtube.com/embed/Gs-oqqxsBMc?si=0SiQwmqSQG3typ6l"
+  },
+  {
+    id: "nanimals",
+    name: "nAnimals",
+    heroImage: "/images/projects/nanimals-8.png",
+    heroImageAlt: "Original pink nAnimals dog with a red paint-splatter background",
+    heroGallery: [
+      { src: "/images/projects/nanimals-1.png", alt: "Green nAnimals cat with a hip-hop inscription on a blue background" },
+      { src: "/images/projects/nanimals-8.png", alt: "Pink nAnimals dog with a red paint-splatter background" },
+      { src: "/images/projects/nanimals-28.png", alt: "Grey skeletal nAnimals character on a blue background" },
+      { src: "/images/projects/nanimals-34.png", alt: "Pink nAnimals rabbit with a circular forehead marking and striped orange background" },
+      { src: "/images/projects/nanimals-12.png", alt: "Red nAnimals rabbit with purple cheek markings on a blue background" },
+      { src: "/images/projects/nanimals-60.png", alt: "Red nAnimals cat wearing sunglasses on a grey background" }
+    ],
+    description: "An experiment in generating collections of animal artwork through code and rules, with an NFT minting and hatching experience.",
+    icon: <GameController size={48} />,
+    url: "https://github.com/seanbetts/nAnimals",
+    type: "generative art experiment",
+    date: "2021",
+    technologies: ["Solidity", "OpenZeppelin", "React", "Redux", "Web3.js", "IPFS"],
+    features: [
+      "Explore animal artwork generated through code and rules.",
+      "Connect a wallet to view its collection of digital animals.",
+      "Explore minting and hatching as part of a collectible experience.",
+      "View the artwork and details associated with each collectible.",
+      "Record ownership and hatching through transactions on the blockchain."
+    ],
+    challenges: "nAnimals was my first and only attempt at procedural art. At the height of the NFT craze, I wanted to understand how code and rules could generate a collection of different artworks. The creative challenge was designing the system that produced the animals, then connecting the collection to a minting and hatching experience. The artwork was generated procedurally, without generative AI.",
+    learnings: "I enjoyed exploring how code could generate art, but came away deeply sceptical of the market around it. The promise of making money from NFTs felt much closer to gambling, dependent on someone else being willing to pay more. The creative experiment interested me; the economics gave me little reason to pursue it further.",
+    status: "Historical prototype"
+  },
+  {
+    id: "mems",
+    name: "MEMs",
+    heroImage: "/images/projects/mems-logo.png",
+    heroImageAlt: "Original MEMs wordmark in white",
+    heroImageKind: "logo",
+    heroImageTone: "dark",
+    description: "A social network prototype exploring how shared memories, experiences and passions could connect people.",
+    icon: <Brain size={48} />,
+    url: null,
+    type: "social network prototype",
+    date: "2020",
+    technologies: ["React", "Apollo", "GraphQL", "Neo4j", "Material UI"],
+    features: [
+      "Explore how memories connect through the people, places and interests they have in common.",
+      "Browse a personal collection through views of events, people and places.",
+      "Try a prototype interface for describing a memory with a date, image and associated details.",
+      "Explore music, films, television and games as part of the story around a memory."
+    ],
+    challenges: "I wanted to build a different kind of social network, connecting people through shared experiences, memories and passions. MEMs was my first experiment with graph networks. Inspired by the connections in the human brain, I wanted relationships between memories to reinforce and strengthen over time. I prototyped with my own life: photos, media I had consumed, people I knew and things that had happened to me. The ambition was to turn that personal history into connections with other people.",
+    learnings: "Trying to capture a whole life and build a social network around it was a huge undertaking, and I eventually ran out of steam. This was before coding agents, so I was learning as I went and building everything step by step. I think I would have got much further with tools like Claude Code, although the ambition of the project would still have needed careful limits.",
+    status: "Historical prototype"
+  },
+  {
+    id: "mihndbot",
+    name: "MiHNDbot",
+    heroImage: "/images/projects/mihndbot-logo.png",
+    heroImageAlt: "Original MiHNDbot robot logo inside a circular border",
+    heroImageKind: "logo",
+    description: "An early conversational agent for exploring mental health and neurodiversity information, built around publicly available NHS content and other online sources.",
+    icon: <ChatCircleDots size={48} />,
+    url: null,
+    type: "conversational prototype",
+    date: "2019",
+    technologies: ["JavaScript", "Node.js", "Microsoft Bot Framework", "QnA Maker", "Chart.js"],
+    features: [
+      "Ask questions about mental health and neurodiversity using a collection of NHS content and other public information.",
+      "Reflect on mood, sleep, exercise and everyday sources of stress through a guided check-in.",
+      "Answer follow-up questions that adapt to what you have already shared.",
+      "Explore conversation activity, common questions and themes through a companion analytics dashboard."
+    ],
+    challenges: "I wanted to make a body of knowledge about mental health and neurodiversity accessible through conversation. I was an early adopter of Microsoft's frameworks for rules-based chat, using publicly available NHS content and other online sources as the foundation. The challenge was turning that material into useful interactions with technology that depended heavily on predefined questions and dialogue paths.",
+    learnings: "The technology was not quite there yet. The interactions were too brittle, and it was difficult to make the agent useful beyond the paths I had anticipated. Looking back, I think the same idea would be much simpler to prototype with today's tools. It was an early encounter with the gap between an appealing conversational experience and what the technology could reliably support.",
+    status: "Historical prototype"
   },
 ];
 
