@@ -43,13 +43,6 @@ test('project returns to its referring page and offers all projects', () => {
   expect(screen.getByRole('heading', { name: 'Writing destination' })).toBeInTheDocument();
 });
 
-test('unknown project offers a working recovery to all projects', () => {
-  renderProject('/building/not-a-real-project');
-  expect(screen.getByRole('heading', { name: 'Project not found' })).toBeInTheDocument();
-  fireEvent.click(screen.getByRole('link', { name: /Back to Building/i }));
-  projectsData.forEach(project => expect(screen.getByRole('link', { name: new RegExp(`Open ${project.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} project`) })).toHaveAttribute('href', `/building/${project.id}`));
-});
-
 test('full narrative and technologies remain accessible for coding projects', () => {
   renderProject('/building/genai-marketing-benchmarks');
   const record = projectsData.find(project => project.id === 'genai-marketing-benchmarks');

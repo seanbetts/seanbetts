@@ -12,7 +12,7 @@ afterEach(() => {
   jest.restoreAllMocks();
 });
 
-test.each(['/404', '/missing-page', '/building/missing/extra'])('%s opens a standalone accessible error screen', async pathname => {
+test.each(['/404', '/missing-page', '/building/not-a-real-project', '/building/missing/extra'])('%s opens a standalone accessible error screen', async pathname => {
   window.history.replaceState({}, '', pathname);
   render(<App />);
 

@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from '../data/siteIdentity';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
@@ -5,10 +6,10 @@ import { ArrowLeft, ArrowUpRight, Newspaper, LinkedinLogo, Butterfly, GithubLogo
 import styles from './Contact.module.css';
 
 const channels = [
-  { name: 'LinkedIn', description: 'Speaking, AI and collaboration enquiries', href: 'https://www.linkedin.com/in/seanbetts/', Icon: LinkedinLogo },
-  { name: 'The Blueprint', description: 'Occasional thought leadership and opinions', href: 'https://www.the-blueprint.ai/', Icon: Newspaper },
-  { name: 'GitHub', description: 'Code, projects and experiments', href: 'https://github.com/seanbetts', Icon: GithubLogo },
-  { name: 'Bluesky', description: 'Mostly Aston Villa thoughts and updates', href: 'https://bsky.app/profile/seanbetts.com', Icon: Butterfly },
+  { name: 'LinkedIn', description: 'Speaking, AI and collaboration enquiries', href: SOCIAL_URLS.linkedin, Icon: LinkedinLogo },
+  { name: 'The Blueprint', description: 'Occasional thought leadership and opinions', href: SOCIAL_URLS.blueprint + '/', Icon: Newspaper },
+  { name: 'GitHub', description: 'Code, projects and experiments', href: SOCIAL_URLS.github, Icon: GithubLogo },
+  { name: 'Bluesky', description: 'Mostly Aston Villa thoughts and updates', href: SOCIAL_URLS.bluesky, Icon: Butterfly },
 ];
 
 export default function Contact() {

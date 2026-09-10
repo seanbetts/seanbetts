@@ -2,8 +2,7 @@
 .heroArt { composes: surface from "../game/Frame.module.css"; }
 .heroCopy { composes: surface from "../game/Frame.module.css"; }
 .speaking{max-width:1440px;margin:0 auto;padding-bottom:40px}
-.back{display:inline-flex;align-items:center;gap:9px;font:600 17px var(--game-ui);text-transform:uppercase;min-height:44px;margin:4px 0 14px}
-.back:hover{color:var(--game-accent)}
+.back { composes: back from "../components/Page.module.css"; }
 .cover { composes: canvas from "../game/Frame.module.css";  }
 .upright{transform:skewY(var(--counter-angle));min-width:0}
 .hero{display:grid;grid-template-columns:7fr 4fr;min-height:560px}
@@ -37,12 +36,6 @@
 .speaking .feature h3{color:#fffaf4}
 .feature .format,.feature .period,.speaking .feature .conference{color:#ff929d}
 .feature .metadata{color:#eee2f2}
-.talkInfo{position:absolute;top:20px;right:28px;z-index:2;transform:skewY(var(--counter-angle));display:flex;flex-direction:column;align-items:flex-end;max-width:calc(100% - 56px)}
-.infoButton{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:rgba(16,7,24,.8);color:#fffaf4;cursor:pointer}
-.infoButton:hover,.infoButton[aria-expanded="true"]{color:#ff929d;background:#100718}
-.infoButton:focus-visible{outline:3px solid #ff929d;outline-offset:3px}
-.talkDescription{width:340px;max-width:100%;padding-top:8px}
-.talkDescription p{padding:20px;background:#211329;color:#fffaf4;font-size:15px;line-height:1.65;border-top:3px solid #ff929d;box-shadow:0 6px 20px #10071866}
 .archive{margin-top:var(--game-frame);padding:48px;background:var(--game-surface)}
 .archiveHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding-bottom:28px}
 .speaking .archive h2{font-size:clamp(34px,3.5vw,48px);text-transform:uppercase}
@@ -80,8 +73,6 @@
  .features{display:flex;flex-direction:column;gap:var(--game-frame)}
  .feature,.lead{flex-direction:column;align-items:stretch;min-height:440px}
  .lead .featureCopy,.featureCopy,.feature:nth-of-type(odd):not(.lead) .featureCopy{padding:28px 24px;margin-top:auto}
- .talkInfo{position:relative;top:auto;right:auto;margin:16px 16px 0 auto;max-width:calc(100% - 32px);flex-shrink:0}
- .talkDescription p{font-size:14px;padding:16px}
  .photo img,.lead .photo img{object-position:62% center}
  .speaking .feature h3{font-size:32px}
  .archive{padding:32px 24px}
@@ -99,3 +90,5 @@
 
 .panelWindow { composes: window from "../game/Frame.module.css"; display:flex;align-items:flex-end;align-self:stretch;flex:1; }
 @media(max-width:700px){.panelWindow{flex-direction:column;align-items:stretch}}
+
+.talkInfo { --info-background: rgba(16, 7, 24, .8); }

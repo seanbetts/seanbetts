@@ -1,17 +1,13 @@
 // Check the actual production output, without executing its JavaScript.
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
-const { JSDOM } = require('jsdom');
-const base = path.resolve(__dirname, '../build');
-const sitemap = new JSDOM(fs.readFileSync(path.join(base, 'sitemap.xml'), 'utf8'), { contentType: 'text/xml' });
-const urls = [...sitemap.window.document.querySelectorAll('loc')].map(n => n.textContent);
-assert.equal(urls.length, 20, 'All current pages must be in the sitemap');
+const { inventory, readOutput, readPage, sitemapUrls } = require('./site-output.cjs');
+const urls = sitemapUrls();
+assert.ok(inventory.urls.length > 0, 'The source route inventory must not be empty');
+assert.equal(new Set(urls).size, urls.length, 'No duplicate sitemap entries');
+assert.deepEqual([...urls].sort(), [...inventory.urls].sort(), 'Every source route must be in the sitemap');
 for (const url of urls) {
   const pathname = new URL(url).pathname;
-  const file = path.join(base, pathname, 'index.html');
-  assert.ok(fs.existsSync(file), `Missing static page: ${pathname}`);
-  const doc = new JSDOM(fs.readFileSync(file, 'utf8')).window.document;
+  const doc = readPage(pathname);
   assert.equal(doc.querySelectorAll('h1').length, 1, `${pathname}: one readable heading`);
   assert.ok(doc.querySelector('main').textContent.trim().length > 80, `${pathname}: readable content`);
   assert.equal(doc.querySelectorAll('meta[name="description"]').length, 1, `${pathname}: duplicate descriptions`);
@@ -21,12 +17,24 @@ for (const url of urls) {
   assert.ok(schemas.some(s => s['@type'] === 'Person' && s['@id']), `${pathname}: connected identity`);
   assert.ok(!doc.querySelector('meta[name="robots"]')?.content.includes('noindex'));
 }
-const speaking = new JSDOM(fs.readFileSync(path.join(base, 'speaking/index.html'), 'utf8')).window.document;
-assert.equal(speaking.querySelectorAll('article').length, 39, 'Entire speaking archive must be readable without clicking');
-const missing = new JSDOM(fs.readFileSync(path.join(base, '404.html'), 'utf8')).window.document;
+const speaking = readPage('/speaking');
+const appearances = [...speaking.querySelectorAll('article')];
+assert.ok(inventory.appearances.length > 0, 'The speaking inventory must not be empty');
+assert.equal(appearances.length, inventory.appearances.length, 'Every appearance must be readable without clicking');
+for (const talk of inventory.appearances) {
+  const id = talk.id.replace(/\s/g, '-');
+  const article = appearances.find(node => ['featured-' + id, 'archive-' + id].includes(node.getAttribute('aria-labelledby')));
+  assert.ok(article, `Missing appearance: ${talk.id}`);
+  const title = article.querySelector('h3').textContent.replace(/[.!?]$/, '');
+  assert.equal(title, talk.title.replace(/[.!?]$/, ''), `Incorrect appearance: ${talk.id}`);
+}
+const missing = readPage('/404');
 assert.ok(missing.querySelector('meta[name="robots"]').content.includes('noindex'));
-const redirects = fs.readFileSync(path.join(base, '_redirects'), 'utf8');
-assert.ok(redirects.trim().endsWith('/* /404.html 404'));
-assert.ok(!redirects.includes('/* /index.html 200'));
-assert.ok(fs.readFileSync(path.join(base, 'llms.txt'), 'utf8').includes('training'));
-console.log(`Crawl checks passed for ${urls.length} pages, full speaking archive and 404 output.`);
+const redirects = readOutput('_redirects');
+assert.ok(redirects.includes('/projects /building 301'));
+assert.ok(redirects.includes('/projects/* /building/:splat 301'));
+assert.ok(redirects.includes('/map / 301'));
+assert.ok(!/^\/\*\s/m.test(redirects), 'Cloudflare must use the native 404, not a blanket rewrite');
+assert.ok(readOutput('llms.txt').includes('training'));
+for (const url of urls) assert.ok(readOutput('llms.txt').includes(url), `AI index missing ${url}`);
+console.log(`Crawl checks passed for ${urls.length} pages, ${appearances.length} appearances and 404 output.`);

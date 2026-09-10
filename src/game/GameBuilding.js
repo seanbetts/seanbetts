@@ -1,3 +1,4 @@
+import { artworkForProject } from '../data/projectArtwork';
 import ResponsiveImage from '../components/ResponsiveImage';
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
@@ -10,7 +11,8 @@ import styles from './GameBuilding.module.css';
 
 const origin = { fromPath: '/building', fromLabel: 'Building' };
 
-function ProjectPanel({ project, className, scene, backgroundImage }) {
+function ProjectPanel({ project, className }) {
+  const { scene, background: backgroundImage } = artworkForProject(project.id);
   return (
     <Link to={`/building/${project.id}`} state={origin} aria-label={`Open ${project.name} project`} className={`${styles.secondaryCard} ${className} game-art`}>
       {(scene || backgroundImage) && <div className={styles.scene} aria-hidden="true">
@@ -39,17 +41,17 @@ export default function GameBuilding() {
           <p>Exploring what AI can do in the real world.</p>
         </div></header>
         <Link to={`/building/${primary.id}`} state={origin} aria-label={`Open ${primary.name} project`} className={`${styles.primary} game-art`}>
-          <div className={styles.scene} aria-hidden="true"><ResponsiveImage src="/images/game/backgrounds/river-sunset.webp" alt="" width="1672" height="941" decoding="async" /></div>
+          <div className={styles.scene} aria-hidden="true"><ResponsiveImage src={artworkForProject(primary.id).background} alt="" width="1672" height="941" decoding="async" /></div>
           <div className={styles.primaryWash} />
           <div className={styles.primaryTop}><span>Featured project</span><span className={styles.status}>{primary.status}</span></div>
           <div className={styles.deviceStage}>{!imageFailed && <ResponsiveImage src={primary.heroImage} alt="sideBar welcome screen on iPad" className={styles.device} onError={() => setImageFailed(true)} />}</div>
           <div className={styles.primaryCaption}><span className={styles.eyebrow}>Your context. Connected.</span><h2>{primary.name}</h2><p>{primary.description}</p><span className={styles.cta}>Open project <ArrowUpRight size={18} aria-hidden="true" /></span></div>
         </Link>
-        <ProjectPanel project={pointilism} className={styles.topFeature} backgroundImage="/images/game/backgrounds/daytime-rooftop.webp" />
+        <ProjectPanel project={pointilism} className={styles.topFeature} />
       </section>
       <section className={`${styles.featured} game-art`} aria-label="Applied AI projects">
         {featured.map((project, index) => (
-          <ProjectPanel key={project.id} project={project} className={index === 0 ? styles.firstFeature : styles.lastFeature} scene={index === 0 ? 'writing' : undefined} backgroundImage={index === 1 ? '/images/game/backgrounds/daytime-arcade.webp' : undefined} />
+          <ProjectPanel key={project.id} project={project} className={index === 0 ? styles.firstFeature : styles.lastFeature} />
         ))}
       </section>
       <section className={styles.archive} aria-label="More projects">

@@ -2,8 +2,7 @@
 .portrait { composes: surface from "./Frame.module.css"; }
 .copy { composes: surface from "./Frame.module.css"; }
 .page{max-width:1440px;margin:0 auto;padding-bottom:40px}
-.back{display:inline-flex;align-items:center;gap:9px;font:600 17px var(--game-ui);text-transform:uppercase;min-height:44px;margin:4px 0 14px}
-.back:hover{color:var(--game-accent)}
+.back { composes: back from "../components/Page.module.css"; }
 .introduction{display:grid;grid-template-columns:7fr 3fr;background:var(--game-ink)}
 .copy{display:flex;align-items:center;padding:48px 64px 48px 48px;background:var(--game-surface);clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%)}
 .copyInner{transform:skewY(var(--counter-angle));min-width:0}

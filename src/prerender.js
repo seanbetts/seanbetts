@@ -5,7 +5,8 @@ import { Helmet } from 'react-helmet';
 import { SiteRoutes } from './App';
 import { ThemeProvider } from './ThemeContext';
 export { siteRoutes } from './data/siteRoutes';
-export { SITE_URL } from './data/siteIdentity';
+export { default as speakingData } from './data/speakingData';
+export { SITE_URL, SOCIAL_URLS } from './data/siteIdentity';
 
 export function renderPage(path) {
   const content = renderToString(<ThemeProvider><StaticRouter location={path}><SiteRoutes /></StaticRouter></ThemeProvider>);

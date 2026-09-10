@@ -3,8 +3,7 @@
 .primary { composes: surface from "./Frame.module.css"; }
 .introCopy { composes: surface from "./Frame.module.css"; }
 .page { max-width: 1440px; margin: auto; padding-bottom: 40px; }
-.back { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; margin: 4px 0 14px; font: 600 17px var(--game-ui); text-transform: uppercase; }
-.back:hover { color: var(--game-accent); }
+.back { composes: back from "../components/Page.module.css"; }
 /* The shared ink canvas creates both the outer frame and every connecting seam.
    Counter-skew the artwork and copy so the composition tilts, not the content. */
 .panels { composes: canvas from "./Frame.module.css"; --seam-slant: 16px; --panel-columns: minmax(0, 7fr) minmax(0, 5fr); }

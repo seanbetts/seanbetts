@@ -1,16 +1,15 @@
 # Sean Betts
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ce515832-0750-4747-af9c-159c739384e9/deploy-status)](https://app.netlify.com/sites/seanbetts/deploys)
 
 Hi, I'm Sean Betts. I work at the intersection of AI strategy, transformation, product innovation, and business change.
 
 ## 🚀 About Me
 
-- 🧠 Chief AI & Innovation Officer at Omnicom Media Group UK
+- 🧠 Chief AI & Innovation Officer at Omnicom Media UK
 - 🤖 Independent AI Researcher and Builder
 - 🛠️ Focused on AI Strategy, Transformation, and Product Innovation
 - 🗣️ Neurodiversity and Mental Health Speaker
 
-With more than 20 years of experience in marketing and innovation, I focus on turning fast-moving advances in AI into practical tools, products, and capabilities that create real value for people and organisations. Alongside my role at Omnicom Media Group UK, I design and build independent AI products, benchmarks, and applied systems to better understand how emerging technologies are reshaping products, knowledge work, and consumer experiences.
+With more than 20 years of experience in marketing and innovation, I focus on turning fast-moving advances in AI into practical tools, products, and capabilities that create real value for people and organisations. Alongside my role at Omnicom Media UK, I design and build independent AI products, benchmarks, and applied systems to better understand how emerging technologies are reshaping products, knowledge work, and consumer experiences.
 
 ## 🔭 Current Projects
 
@@ -52,9 +51,9 @@ AI techniques for detecting brands and products in video content using multimoda
 
 ### The Blueprint
 
-A weekly newsletter covering AI developments, product shifts, and the broader implications of generative AI.
+Occasional thought leadership and opinions on AI developments, product shifts, and the broader implications of generative AI.
 
-- ✍️ Weekly writing on AI, technology, and industry change
+- ✍️ Writing on AI, technology, and industry change
 - 🔎 Analysis of new models, tools, and platform moves
 - 🧭 Commentary on how AI is reshaping products and knowledge work
 

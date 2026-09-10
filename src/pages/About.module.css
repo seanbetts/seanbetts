@@ -1,8 +1,7 @@
 .chapter { composes: surface from "../game/Frame.module.css"; }
 .hero { composes: surface from "../game/Frame.module.css"; }
 .about{max-width:1440px;margin:auto;padding-bottom:40px}
-.back{display:inline-flex;align-items:center;gap:9px;min-height:44px;margin:4px 0 14px;font:600 17px var(--game-ui);text-transform:uppercase}
-.back:hover{color:var(--game-accent)}
+.back { composes: back from "../components/Page.module.css"; }
 .hero{display:grid;grid-template-columns:42% 58%;position:relative;background:var(--game-surface);border:var(--game-frame) solid var(--game-ink);overflow:hidden}
 .portrait{position:relative;min-height:650px;border-right:var(--game-frame) solid var(--game-ink);overflow:hidden}
 .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%}

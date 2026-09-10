@@ -12,7 +12,10 @@ import GameHome from './game/GameHome';
 import GameBuilding from './game/GameBuilding';
 import GameProject from './game/GameProject';
 import ThoughtLeadership from './game/ThoughtLeadership';
-import { siteRoutes } from './data/siteRoutes';
+import { siteRoutes, sitePages } from './data/siteRoutes';
+
+const pages = { home: GameHome, about: About, building: GameBuilding, writing: Writing,
+  speaking: Speaking, thoughtLeadership: ThoughtLeadership, contact: Contact };
 
 export function SiteRoutes() {
   const { pathname } = useLocation();
@@ -21,15 +24,12 @@ export function SiteRoutes() {
   // Route-owned layouts leave the 404 free to fill the viewport.
   return <Routes>
     <Route element={<GameShell><Outlet /></GameShell>}>
-      <Route path="/" element={<GameHome />} />
-      <Route path="/thought-leadership" element={<ThoughtLeadership />} />
+      {sitePages.map(({ path, key }) => {
+        const Page = pages[key];
+        return <Route key={path} path={path} element={<Page />} />;
+      })}
       <Route path="/map" element={<Navigate to="/" replace />} />
-      <Route path="/building" element={<GameBuilding />} />
       <Route path="/building/:id" element={<GameProject />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/speaking" element={<Speaking />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/writing" element={<Writing />} />
     </Route>
     <Route path="*" element={<Custom404 />} />
   </Routes>;

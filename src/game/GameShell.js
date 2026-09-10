@@ -1,3 +1,5 @@
+import { navigationLinks } from '../data/siteRoutes';
+import { SOCIAL_URLS } from '../data/siteIdentity';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Butterfly, ChatsCircle, GithubLogo, Heart, LinkedinLogo, List, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
@@ -7,7 +9,6 @@ import './game.css';
 import { ThemeContext } from '../ThemeContext';
 import MadeWith from '../components/MadeWith';
 
-const links = [['/', 'Home'], ['/building', 'Building'], ['/writing', 'Writing'], ['/speaking', 'Speaking'], ['/thought-leadership', 'Thought leadership'], ['/about', 'About'], ['/contact', 'Contact']];
 
 export default function GameShell({ children }) {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
@@ -78,7 +79,7 @@ export default function GameShell({ children }) {
         </div>
       </div>
       <nav hidden={!open} data-nojs-nav ref={menu} id="game-navigation" className={styles.menu} aria-label="Primary navigation">
-        {links.map(([to, label]) => <NavLink key={to} to={to} onClick={closeNavigation} end className={({ isActive }) => isActive ? styles.selected : undefined}>{label}<ArrowUpRight size={21} weight="bold" /></NavLink>)}
+        {navigationLinks.map(({ path: to, label }) => <NavLink key={to} to={to} onClick={closeNavigation} end className={({ isActive }) => isActive ? styles.selected : undefined}>{label}<ArrowUpRight size={21} weight="bold" /></NavLink>)}
       </nav>
     </header>
     <main id="game-content" ref={main} tabIndex={-1} className={styles.main} key={pathname}>{children}</main>
@@ -86,10 +87,10 @@ export default function GameShell({ children }) {
       <span>© {new Date().getFullYear()} Sean Betts</span>
       <MadeWith className={styles.credit} heart={<Heart size={14} weight="bold" className={styles.heart} aria-hidden="true" />} />
       <div className={styles.socials}>
-        <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={23} weight="bold" aria-hidden="true" /></a>
-        <a href="https://github.com/seanbetts" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={23} weight="bold" aria-hidden="true" /></a>
-        <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noreferrer" aria-label="Bluesky" title="Bluesky"><Butterfly size={23} weight="bold" aria-hidden="true" /></a>
-        <a href="https://www.the-blueprint.ai" target="_blank" rel="noreferrer" aria-label="The Blueprint" title="The Blueprint"><Newspaper size={23} weight="bold" aria-hidden="true" /></a>
+        <a href={SOCIAL_URLS.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><LinkedinLogo size={23} weight="bold" aria-hidden="true" /></a>
+        <a href={SOCIAL_URLS.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GithubLogo size={23} weight="bold" aria-hidden="true" /></a>
+        <a href={SOCIAL_URLS.bluesky} target="_blank" rel="noreferrer" aria-label="Bluesky" title="Bluesky"><Butterfly size={23} weight="bold" aria-hidden="true" /></a>
+        <a href={SOCIAL_URLS.blueprint} target="_blank" rel="noreferrer" aria-label="The Blueprint" title="The Blueprint"><Newspaper size={23} weight="bold" aria-hidden="true" /></a>
       </div>
     </footer>
   </div>;

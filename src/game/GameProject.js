@@ -1,3 +1,5 @@
+import { artworkForProject } from '../data/projectArtwork';
+import Custom404 from '../pages/Custom404';
 import ResponsiveImage from '../components/ResponsiveImage';
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
@@ -8,23 +10,11 @@ import projectsData from '../data/projectsData';
 import SceneArt from './SceneArt';
 import styles from './GameProject.module.css';
 
-const artwork = {
-  sidebar: { background: '/images/game/backgrounds/river-sunset.webp' },
-  pointilism: { background: '/images/game/backgrounds/daytime-rooftop.webp' },
-  'llm-search-analysis': { scene: 'writing' },
-  'genai-explorer': { background: '/images/game/backgrounds/daytime-arcade.webp' },
-  'steam-hardware-watch': { background: '/images/game/backgrounds/daytime-arcade.webp' },
-  'apple-hig-mirror': { scene: 'writing' },
-  'pixel-loader-lab': { background: '/images/game/backgrounds/radiohead-mural.webp' },
-  'cains-jawbone': { scene: 'writing' },
-  'youtube-sdg-analysis': { background: '/images/game/backgrounds/industrial-yard.webp' },
-  'ai-brand-detection': { background: '/images/game/backgrounds/daytime-arcade.webp' },
-  'genai-timeline': { scene: 'about' }
-};
+
 
 function ProjectMedia({ project, heroImage }) {
   const [imageFailed, setImageFailed] = useState(false);
-  const art = artwork[project.id] || { scene: 'building' };
+  const art = artworkForProject(project.id);
   return (
     <div className={`${styles.media} game-art ${project.heroVideo ? styles.video : ''}`}>
       <div className={styles.artwork} aria-hidden="true">
@@ -61,7 +51,7 @@ function ProjectStory({ project, origin }) {
             <h1>{project.name}<span className={styles.period} aria-hidden="true">.</span></h1>
             <p className={styles.summary}>{project.description}</p>
             <span className={styles.date}>{project.date}</span>
-            <a className={styles.cta} href={project.url} target="_blank" rel="noopener noreferrer">{projectLinkLabel}<ArrowUpRight size={20} aria-hidden="true" /><span className={styles.srOnly}> (opens in a new tab)</span></a>
+            <a className={styles.cta} href={project.url} target="_blank" rel="noopener noreferrer">{projectLinkLabel}<ArrowUpRight size={20} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
           </div></div>
           <ProjectMedia project={project} heroImage={heroImage} />
         </header>
@@ -95,6 +85,6 @@ export default function GameProject() {
   const { id } = useParams();
   const location = useLocation();
   const project = projectsData.find(project => project.id === id?.toLowerCase());
-  if (!project) return <div className={`${styles.page} ${styles.notFound}`}><Seo title="Project not found | Sean Betts" description="Explore Sean Betts's products, prototypes and experiments." canonicalPath={`/building/${id}`} noindex /><span className={styles.eyebrow}>Project unavailable</span><h1>Project not found<span className={styles.period} aria-hidden="true">.</span></h1><p>This project isn't in the workshop. Find your next stop in the project collection.</p><Link to="/building" className={styles.cta}><ArrowLeft size={17} aria-hidden="true" /> Back to Building</Link></div>;
+  if (!project) return <Custom404 />;
   return <ProjectStory key={id} project={project} origin={location.state} />;
 }

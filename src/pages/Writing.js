@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
 import InfoPopover from '../components/InfoPopover';
-import { PERSON_ID, SITE_URL } from '../data/siteIdentity';
+import { PERSON_ID, SITE_URL, SOCIAL_URLS } from '../data/siteIdentity';
 import articlesData from '../data/articlesData';
 import styles from './Writing.module.css';
 
@@ -49,7 +49,7 @@ function ArticlePanel({ article, hero = false }) {
           style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
       </div>
       <InfoPopover label={`About this article: ${article.title}`} description={article.description}
-        className={styles.articleInfo} buttonClassName={styles.infoButton} contentClassName={styles.articleDescription} />
+         />
       <a href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink}>
         <div className={styles.upright}>
           <Heading id={titleId}>{article.title}</Heading>
@@ -88,7 +88,7 @@ export default function Writing() {
             <div className={styles.blueprint}>
               <h2>The Blueprint</h2>
               <p>Occasional thought leadership and opinions on generative AI, its possibilities and what it means for people and businesses.</p>
-              <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer" className={styles.cta}>Read The Blueprint <ArrowUpRight size={21} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+              <a href={SOCIAL_URLS.blueprint} target="_blank" rel="noopener noreferrer" className={styles.cta}>Read The Blueprint <ArrowUpRight size={21} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function Writing() {
       {collection.length > 0 && <section className={styles.archive} aria-labelledby="more-writing-heading">
         <div className={styles.upright}>
           <h2 id="more-writing-heading">More writing<span aria-hidden="true">.</span></h2>
-          <div className={styles.archiveList}>{collection.map(article => <ArchiveArticle key={article.url} article={article} />)}</div>
+          <div>{collection.map(article => <ArchiveArticle key={article.url} article={article} />)}</div>
         </div>
       </section>}
     </div>

@@ -1,8 +1,7 @@
 .archive { composes: surface from "../game/Frame.module.css"; }
 .introduction { composes: surface from "../game/Frame.module.css"; }
 .page { max-width: 1440px; margin: 0 auto; padding-bottom: 40px; }
-.back { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; margin: 4px 0 14px; font: 600 17px var(--game-ui); text-transform: uppercase; }
-.back:hover { color: var(--game-accent); }
+.back { composes: back from "../components/Page.module.css"; }
 /* One ink canvas forms the outer frame and the seams, as on About and Thought Leadership. */
 .panels { composes: canvas from "../game/Frame.module.css"; --seam-slant: 16px; }
 .upright { transform: skewY(var(--content-angle)); }
@@ -36,12 +35,6 @@
 .featureGrid .feature:last-child:nth-of-type(odd) { grid-column: 1 / -1; --frame-window: none; }
 .page .featureLink:hover h3, .page .featureLink:hover h2 { color: #ff929d; }
 .page .featureLink:focus-visible { outline: 3px solid #ff929d; outline-offset: -18px; }
-.articleInfo { position: absolute; top: 20px; right: 28px; z-index: 2; transform: skewY(var(--content-angle)); display: flex; flex-direction: column; align-items: flex-end; max-width: calc(100% - 56px); }
-.infoButton { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #100718dd; color: #fffaf4; }
-.infoButton:hover, .infoButton[aria-expanded='true'] { color: #ff929d; background: #100718; }
-.page .infoButton:focus-visible { outline: 3px solid #ff929d; outline-offset: 3px; }
-.articleDescription { width: 340px; max-width: 100%; padding-top: 8px; }
-.page .articleDescription p { padding: 20px; background: #211329; color: #fffaf4; font-size: 15px; line-height: 1.65; border-top: 3px solid #ff929d; box-shadow: 0 6px 20px #10071866; }
 .archive { margin-top: var(--game-frame); padding: 40px 44px; background: var(--game-surface); }
 .page .archive h2 { font-size: clamp(34px, 3.5vw, 48px); text-transform: uppercase; margin-bottom: 28px; }
 .archive h2 span { color: var(--game-accent); }
@@ -73,8 +66,6 @@
  .heroFeature .featureLink { padding-left: 24px; }
  .featureGrid { display: flex; flex-direction: column; gap: var(--game-frame); }
  .featureLink, .featureGrid .feature:nth-of-type(even) .featureLink { padding: 130px 24px 28px; }
- .articleInfo { position: relative; top: auto; right: auto; margin: 16px 16px 0 auto; max-width: calc(100% - 32px); flex-shrink: 0; }
- .page .articleDescription p { font-size: 14px; padding: 16px; }
  .page .featureLink:focus-visible { outline-offset: -8px; }
  .metadata { font-size: 12px; }
  .read { font-size: 13px; }

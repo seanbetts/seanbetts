@@ -29,3 +29,7 @@ yarn-error.log*
 # Reproducible image exports (generated before start, build and test)
 /public/images/responsive/
 /src/generated/images.json
+
+# Local assistant permissions and generated crawl inventory
+/.claude/settings.local.json
+/src/generated/site-inventory.json

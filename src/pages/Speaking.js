@@ -39,7 +39,7 @@ function FeaturedAppearance({ talk, lead }) {
       <div className={styles.scrim} aria-hidden="true" />
       <EventPhoto talk={talk} />
       <InfoPopover label={`About this talk: ${talk.title}`} description={talk.description}
-        className={styles.talkInfo} buttonClassName={styles.infoButton} contentClassName={styles.talkDescription} />
+        className={styles.talkInfo} />
       <div className={styles.featureCopy}>
         <div className={styles.upright}>
           <Format type={talk.type} />
@@ -105,7 +105,7 @@ export default function Speaking() {
             </div>
           </div>
           <p className="sr-only" role="status">Showing {shown.length} of {filtered.length} additional appearances.</p>
-          <div className={styles.archiveList}>
+          <div>
             {filtered.map((talk, index) => <article hidden={index >= visibleCount} className={styles.archiveEntry} key={talk.id} aria-labelledby={`archive-${talk.id.replace(/\s/g, '-')}`}>
               <div className={styles.entryMeta}><Format type={talk.type} /><p>{talk.date}</p><p>{talk.location}</p></div>
               <div className={styles.entryCopy}><h3 id={`archive-${talk.id.replace(/\s/g, '-')}`}>{talk.title}</h3><p className={styles.conference}>{talk.conference}</p><p className={styles.description}>{talk.description}</p></div>

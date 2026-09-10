@@ -1,4 +1,4 @@
-# Preserve legacy project URLs. Current page rewrites and the 404 are generated.
+# Preserve legacy URLs. Cloudflare serves page directories and 404.html directly.
 /projects /building 301
 /projects/* /building/:splat 301
 /map / 301

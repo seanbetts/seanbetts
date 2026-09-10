@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from '../data/siteIdentity';
 import ResponsiveImage from '../components/ResponsiveImage';
 import React from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo, GithubLogo, ChatsCircle } from "@phosphor-icons/react";
@@ -92,7 +93,7 @@ const About = () => {
         <div className={styles.chapterCopy}>
           <div className={styles.sectionHeader}>
             <div><h2 id="research-heading">Applied AI<br />&amp; building<span>.</span></h2></div>
-            <a href="https://github.com/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
+            <a href={SOCIAL_URLS.github + '/'} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub Profile">
               <GithubLogo size={36} weight="bold" aria-hidden="true" />
             </a>
           </div>
@@ -112,7 +113,7 @@ const About = () => {
             <Link to="/building/youtube-sdg-analysis" state={{ fromLabel: 'About', fromPath: '/about' }}>large-scale content analysis</Link>.
           </p>
           <p>
-            I write <a href="https://www.the-blueprint.ai" target="_blank" rel="noopener noreferrer">The Blueprint</a>, covering
+            I write <a href={SOCIAL_URLS.blueprint} target="_blank" rel="noopener noreferrer">The Blueprint</a>, covering
             AI, emerging technology and what they mean for people and businesses.
           </p>
           <Link to="/building" className={styles.action}>Explore what I’m building <ArrowUpRight size={20} weight="bold" aria-hidden="true" /></Link>
