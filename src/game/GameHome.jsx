@@ -32,7 +32,7 @@ export default function GameHome() {
   return <>
     <Seo
       title="Sean Betts | AI Strategy, Transformation & Product Innovation"
-      description="Sean Betts is Chief AI & Innovation Officer at Omnicom Media UK, an independent AI researcher and builder focused on AI strategy, product innovation and business transformation."
+      description="Sean Betts, Chief AI & Innovation Officer at Omnicom Media UK. Explore his AI research, products, writing and speaking."
       keywords={['Sean Betts', 'AI strategy', 'product innovation', 'business transformation', 'marketing technology', 'generative AI', 'Omnicom Media UK']}
       canonicalPath="/"
       imagePath="/images/sean-betts-profile.png"
