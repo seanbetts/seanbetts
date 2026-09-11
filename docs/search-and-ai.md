@@ -31,6 +31,14 @@ Before publishing, check the generated site with JavaScript enabled and disabled
 
 `.github/workflows/indexnow.yml` runs separately after successful `Site validation` on `main`. It waits for both GitHub validation and the Cloudflare Pages check for that commit, confirms the public `indexnow-manifest.json` belongs to the same commit, and verifies `indexnow-key.txt`. It skips superseded commits and excludes pull requests and previews. No notification runs inside the browser or build.
 
+Commits beginning with a documented Cloudflare skip prefix (`[CF-Pages-Skip]`,
+`[CI Skip]`, `[CI-Skip]`, `[Skip CI]` or `[Skip-CI]`, case-insensitive) finish
+successfully with `deployment-skipped`. The script checks the exact commit's
+message through GitHub before waiting: Pages does not create a deployment check
+for these commits. No URLs are submitted and the saved content baseline is
+unchanged. A missing deployment check without an explicit skip prefix still
+times out, and failed deployment checks still fail the notification run.
+
 The build creates content hashes from each canonical page's readable main content, headings, links, media sources, search metadata and JSON-LD. Referenced local media files are also digested, so replacing an animation or reduced-motion poster at the same URL counts as a content change; remote media is compared by URL without fetching it. Class names, script/style bundles and display metadata are ignored. The output check verifies the hashes against the exported HTML and the URL list against the sitemap. Revision comes from `CF_PAGES_COMMIT_SHA`, `GITHUB_SHA`, or the local Git HEAD in that order.
 
 The notification compares this manifest with the last successful submission, sending added, changed and removed URLs to [IndexNow](https://www.indexnow.org/documentation). The first production run seeds all current pages. Later unchanged deployments send nothing. The baseline is held in a GitHub Actions cache; if it expires or is evicted, the next run seeds current pages again and cannot recover historical deleted URLs. This is a best-effort notification service, with the sitemap remaining the durable discovery source.
