@@ -11,3 +11,11 @@
   Cache-Control: public, max-age=31536000, immutable
 /images/responsive/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Deployment proof and public IndexNow ownership key are not search results.
+/indexnow-manifest.json
+  Cache-Control: no-store
+  X-Robots-Tag: noindex
+/indexnow-key.txt
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex

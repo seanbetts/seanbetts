@@ -77,3 +77,7 @@ the image pipeline regression tests, React tests and production build. Main
 requires an up-to-date pull request, blocks force pushes and deletion, and does
 not require another person to approve a solo-maintained change. Cloudflare
 publishes the resulting push to `main`; its preview deployments remain separate.
+
+## Search notifications
+
+The separate `IndexNow` workflow follows successful main-branch validation and waits for the matching Cloudflare production deployment. It verifies the public build revision and key before submitting content changes. Failures are reported independently of the deployment. See [Search and AI discovery](search-and-ai.md#indexnow-deployment-notifications) for dry runs, retry behaviour and the cache baseline.

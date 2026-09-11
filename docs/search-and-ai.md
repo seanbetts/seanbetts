@@ -27,4 +27,18 @@ Run `npm run build` and the React tests. The build compares the sitemap with the
 
 Before publishing, check the generated site with JavaScript enabled and disabled. After deployment, fetch representative pages and unknown paths from the public domain, check response codes and initial HTML, and use Search Console URL Inspection and structured-data validation. Cloudflare logs can identify the actual URLs behind the previously observed 404 requests; aggregate counts alone cannot establish whether these were removed pages or crawler probes.
 
-This work does not submit URLs to search engines, alter Cloudflare settings, or establish indexing/citation performance. It does not add new editorial sections or optimise artwork files.
+## IndexNow deployment notifications
+
+`.github/workflows/indexnow.yml` runs separately after successful `Site validation` on `main`. It waits for both GitHub validation and the Cloudflare Pages check for that commit, confirms the public `indexnow-manifest.json` belongs to the same commit, and verifies `indexnow-key.txt`. It skips superseded commits and excludes pull requests and previews. No notification runs inside the browser or build.
+
+The build creates content hashes from each canonical page's readable main content, headings, links, media sources, search metadata and JSON-LD. Referenced local media files are also digested, so replacing an animation or reduced-motion poster at the same URL counts as a content change; remote media is compared by URL without fetching it. Class names, script/style bundles and display metadata are ignored. The output check verifies the hashes against the exported HTML and the URL list against the sitemap. Revision comes from `CF_PAGES_COMMIT_SHA`, `GITHUB_SHA`, or the local Git HEAD in that order.
+
+The notification compares this manifest with the last successful submission, sending added, changed and removed URLs to [IndexNow](https://www.indexnow.org/documentation). The first production run seeds all current pages. Later unchanged deployments send nothing. The baseline is held in a GitHub Actions cache; if it expires or is evicted, the next run seeds current pages again and cannot recover historical deleted URLs. This is a best-effort notification service, with the sitemap remaining the durable discovery source.
+
+The public ownership key is intentionally committed in `public/indexnow-key.txt`; it is not a credential. The workflow needs only GitHub's temporary read-only token. The manifest and key have `noindex` response headers and are omitted from the sitemap.
+
+HTTP 200 is accepted; HTTP 202 is accepted pending key verification. Both save the baseline. Other responses fail the notification job without advancing its baseline or changing the deployed website. Review the workflow summary for URLs and status. After resolving a failure (including waiting after HTTP 429), rerun the job to retry outstanding changes. Successful acceptance does not guarantee indexing or AI citations.
+
+To inspect without sending, run the **IndexNow** workflow manually on `main` with **dry_run** checked (the default). A dry run also leaves the baseline unchanged. To retry submissions manually, uncheck it. The equivalent local command is `GITHUB_TOKEN=… node scripts/indexnow.cjs --revision <production-commit>`; it defaults to a dry run and requires `--submit` to send. Keep tokens out of shell history by supplying them through the environment.
+
+IndexNow complements Google Search Console and Bing Webmaster Tools; continue checking their crawl and indexing reports. This workflow does not change Cloudflare crawler controls or establish indexing/citation performance.
