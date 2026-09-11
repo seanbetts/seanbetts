@@ -114,7 +114,8 @@ const projectsData = [
   },
   {
     id: "plotter",
-    startDate: "2026",
+    // First recorded work: https://github.com/seanbetts/plotter/commit/bc754705c2d7b3eb8cdffb51d50e4cddc31772ce
+    startDate: "2026-06",
     name: "Plotter",
     heroImage: "/images/projects/plotter-europe-roadtrip.png",
     heroImageAlt: "Plotter showing a European road-trip route with twelve stops and a nineteen-day itinerary",
@@ -122,7 +123,7 @@ const projectsData = [
     icon: <Globe size={48} />,
     url: null,
     type: "web app",
-    date: "2026–present",
+    date: "June 2026–present",
     technologies: ["React", "TypeScript", "Node.js", "SQLite", "MapLibre GL", "Agent skills"],
     features: [
       "Plan a trip around the places you want to visit and the activities at each stop.",
@@ -383,7 +384,8 @@ const projectsData = [
   },
   {
     id: "nanimals",
-    startDate: "2021",
+    // First recorded work: https://github.com/seanbetts/nAnimals/commit/723b867d83704678b05bc583d6f524bc3426bb09
+    startDate: "2021-10",
     name: "nAnimals",
     heroImage: "/images/projects/nanimals-8.png",
     heroImageAlt: "Original pink nAnimals dog with a red paint-splatter background",
@@ -399,7 +401,7 @@ const projectsData = [
     icon: <GameController size={48} />,
     url: "https://github.com/seanbetts/nAnimals",
     type: "generative art experiment",
-    date: "2021",
+    date: "October 2021",
     technologies: ["Solidity", "OpenZeppelin", "React", "Redux", "Web3.js", "IPFS"],
     features: [
       "Explore animal artwork generated through code and rules.",
@@ -414,7 +416,8 @@ const projectsData = [
   },
   {
     id: "mems",
-    startDate: "2020",
+    // First recorded work: https://github.com/seanbetts/MEMs-v0/commit/dbf8da0c606b81ff9a28a001d62eb46aba2f85d5
+    startDate: "2020-06",
     name: "MEMs",
     heroImage: "/images/projects/mems-logo.png",
     heroImageAlt: "Original MEMs wordmark in white",
@@ -424,7 +427,7 @@ const projectsData = [
     icon: <Brain size={48} />,
     url: null,
     type: "social network prototype",
-    date: "2020",
+    date: "June 2020",
     technologies: ["React", "Apollo", "GraphQL", "Neo4j", "Material UI"],
     features: [
       "Explore how memories connect through the people, places and interests they have in common.",
@@ -438,7 +441,8 @@ const projectsData = [
   },
   {
     id: "mihndbot",
-    startDate: "2019",
+    // First recorded work: https://github.com/seanbetts/MiHNDbot/commit/2ab69f1533f99cdcf06e0197d08571b5006af10b
+    startDate: "2019-06",
     name: "MiHNDbot",
     heroImage: "/images/projects/mihndbot-logo.png",
     heroImageAlt: "Original MiHNDbot robot logo inside a circular border",
@@ -447,7 +451,7 @@ const projectsData = [
     icon: <ChatCircleDots size={48} />,
     url: null,
     type: "conversational prototype",
-    date: "2019",
+    date: "June 2019",
     technologies: ["JavaScript", "Node.js", "Microsoft Bot Framework", "QnA Maker", "Chart.js"],
     features: [
       "Ask questions about mental health and neurodiversity using a collection of NHS content and other public information.",
