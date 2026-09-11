@@ -85,6 +85,18 @@ Historical design plans and generation briefs remain available in Git history.
 
 ## Pull requests
 
+For manually created worktrees, use `.worktrees/<task-name>/` inside the main
+repository. Verify the directory is ignored with `git check-ignore` before
+creating a checkout. Use `codex/` branch names and Git's `worktree add`, `move`
+and `remove` commands to keep its registry consistent. Avoid sibling
+`seanbetts-worktrees` folders and temporary-directory checkouts.
+
+After a change is merged and verified, check that its worktree has no unmerged
+commits, uncommitted work, unique local files or running processes before
+removing it and its merged branch. Remove the empty `.worktrees/` directory
+when no worktrees remain. Worktrees managed by the Codex app should be managed
+through the app's own lifecycle rather than relocated manually.
+
 Use the Node version in `.nvmrc`, which matches Cloudflare's `NODE_VERSION`.
 The `Site validation` GitHub Actions workflow runs image-pipeline regression
 tests, React tests, and the production build with crawl and image checks for
