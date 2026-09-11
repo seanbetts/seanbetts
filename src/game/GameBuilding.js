@@ -24,9 +24,12 @@ function ProjectPanel({ project, className }) {
 }
 
 export default function GameBuilding() {
-  const [primary, pointilism, ...otherProjects] = projectsData;
+  const primary = projectsData.find(project => project.id === 'sidebar');
+  const topFeature = projectsData.find(project => project.id === 'youtube-sdg-analysis');
+  const featured = ['llm-search-analysis', 'genai-explorer'].map(id => projectsData.find(project => project.id === id));
+  const promotedIds = new Set([primary.id, topFeature.id, ...featured.map(project => project.id)]);
+  const otherProjects = projectsData.filter(project => !promotedIds.has(project.id));
   const [imageFailed, setImageFailed] = useState(false);
-  const featured = otherProjects.slice(0, 2);
   return (
     <div className={styles.page}>
       <Seo title="What Sean Betts is Building | AI Products, Benchmarks and Experiments" description="Explore AI products, benchmarks and experiments Sean Betts is building, including sideBar, evaluation frameworks and applied AI workflows." canonicalPath="/building" jsonLd={{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: projectsData.map((project, index) => ({ '@type': 'ListItem', position: index + 1, url: pageUrl(`/building/${project.id}`), name: project.name, description: project.description })) }} />
@@ -45,7 +48,7 @@ export default function GameBuilding() {
           <div className={styles.deviceStage}>{!imageFailed && <ResponsiveImage src={primary.heroImage} alt={primary.heroImageAlt || `${primary.name} project screenshot`} className={styles.device} onError={() => setImageFailed(true)} />}</div>
           <div className={styles.primaryCaption}><span className={styles.eyebrow}>Your context. Connected.</span><h2>{primary.name}</h2><p>{primary.description}</p><span className={styles.cta}>Open project <ArrowUpRight size={18} aria-hidden="true" /></span></div>
         </Link>
-        <ProjectPanel project={pointilism} className={styles.topFeature} />
+        <ProjectPanel project={topFeature} className={styles.topFeature} />
       </section>
       <section className={styles.featured} aria-label="Applied AI projects">
         {featured.map((project, index) => (
@@ -53,7 +56,7 @@ export default function GameBuilding() {
         ))}
       </section>
       <section className={styles.archive} aria-label="More projects">
-        <div className={styles.projectGrid}>{otherProjects.slice(2).map((project) => <Link data-panel-focus key={project.id} to={pagePath(`/building/${project.id}`)} state={origin} aria-label={`Open ${project.name} project`} className={styles.project}>
+        <div className={styles.projectGrid}>{otherProjects.map((project) => <Link data-panel-focus key={project.id} to={pagePath(`/building/${project.id}`)} state={origin} aria-label={`Open ${project.name} project`} className={styles.project}>
           <div className={styles.projectInner}>
           <div className={styles.projectMeta}><span>{project.type}</span><ArrowUpRight size={22} aria-hidden="true" /></div>
           <h2>{project.name}</h2><p>{project.description}</p>
