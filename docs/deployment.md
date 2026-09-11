@@ -1,0 +1,62 @@
+# Cloudflare Pages deployment
+
+The production website is https://www.seanbetts.com/. The apex domain redirects
+to `www`, preserving the path and query string.
+
+## Build and release
+
+The Cloudflare account and Pages project are both named `seanbetts`. The project
+is connected to the GitHub repository `seanbetts/seanbetts`.
+
+| Setting | Value |
+| --- | --- |
+| Production branch | `codex/gta-prototype` |
+| Build command | `npm run build` |
+| Output directory | `build` |
+| Root directory | Repository root |
+| Environment variable | `NODE_VERSION=26.4.0` |
+| Pages hostname | `seanbetts.pages.dev` |
+
+Pushing the production branch automatically builds and deploys the site. `main`
+was not merged during the migration; it retains the previous Netlify source.
+Building locally does not deploy anything.
+
+The first successful Pages release was commit `500b744`, deployed on 11 September
+2026. Its cold build took 19 minutes 20 seconds, mostly generating AVIF artwork.
+Image preparation logs each completed source. Watch build duration when adding
+artwork; locally cached exports do not represent a fresh remote build.
+
+For documentation-only commits, the prefix `[CF-Pages-Skip]` skips a Pages
+deployment. See the [GitHub integration documentation](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/).
+
+## DNS and edge redirects
+
+Both `seanbetts.com` and `www.seanbetts.com` are proxied CNAME records targeting
+`seanbetts.pages.dev`, with automatic TTL. Both are associated with the Pages
+project as custom domains.
+
+Two Single Redirect rules in the `seanbetts.com` zone complement the repository's
+`public/_redirects`:
+
+- **Canonical website: apex to www** matches host `seanbetts.com`, returning a
+  301 to `concat("https://www.seanbetts.com", http.request.uri.path)` and preserving
+  the query string.
+- **Legacy Map URLs** matches `/map` and `/map/` on the apex or `www`, returning a
+  301 to `https://www.seanbetts.com/` and preserving the query string. The edge
+  rule covers the trailing-slash alias, which is absent from the Pages export.
+
+The pre-existing Local Web shortcut rule and unrelated DNS records are unchanged.
+
+## Verification and rollback
+
+The migration verified all 24 public pages, project and Map aliases, real 404
+responses with `noindex`, HTTPS/canonical redirects, security headers, and asset
+caching on the public domain. The hosted HTML has no Google Analytics tag or
+Cloudflare analytics beacon. The Pages build also passed crawl and image checks.
+
+The Netlify deployment is retained as the rollback target. To roll back, restore
+both website CNAME targets to `seanbetts.netlify.app`, retaining proxied status
+and automatic TTL. The canonical redirect can remain enabled. Disable the
+Legacy Map URLs rule if restoring the previous Map behaviour is required.
+Verify the public site after any routing change. When moving back to Pages,
+check custom-domain activation again before declaring the switch complete.

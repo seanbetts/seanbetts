@@ -20,6 +20,9 @@ Start, test and build commands prepare the responsive image exports automaticall
 
 Cloudflare build settings are `npm run build` and output directory `build`. For Pages, the exported directory index pages and top-level `404.html` provide native routing. `public/_redirects` retains legacy URLs; `public/_headers` retains response headers. No Netlify CLI or configuration is required.
 
+See [deployment.md](deployment.md) for the production branch, custom domains,
+edge redirects, verification and rollback details.
+
 ## Where changes belong
 
 - `src/App.js` and `src/data/siteRoutes.js`: routing and the public route inventory. `/map` redirects home; old `/projects` URLs redirect to `/building`.
