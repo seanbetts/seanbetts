@@ -19,12 +19,12 @@
 .cover:has(.about:focus-visible) .focusAbout{visibility:visible}
 /* Every polygon shares an edge with its neighbour. The SVG draws the seams once,
    with a fixed stroke width at every desktop aspect ratio. */
-.portrait{left:22%;top:0;width:37%;height:100%;clip-path:polygon(0 0,91.892% 0,100% 100%,8.108% 100%)}
+.portrait{--portrait-clip:polygon(0 0,91.892% 0,100% 100%,8.108% 100%);left:22%;top:0;width:37%;height:100%;clip-path:var(--portrait-clip)}
 .portraitImage{height:100%;width:100%;object-fit:cover;object-position:50% 30%}
 .identity{container-type:inline-size;position:absolute;left:10%;bottom:0;width:90%;padding:55px 4% 26px;text-align:center;background:var(--frame-identity-fade);text-shadow:0 2px 5px #000}
 .identity h1 img{width:100%;height:auto;max-height:235px;filter:drop-shadow(0 3px 4px #0005)}
 .identity p{font-family:var(--game-ui);line-height:1.15}
-.identity .role{font-size:clamp(19px,1.85vw,28px);margin-top:9px}
+.identity .role{margin-top:9px}
 .identity .expertise,.identity .advocacy{font-size:clamp(15px,4.7cqw,19px);white-space:normal;text-wrap:balance;margin-top:12px;line-height:1.18;color:#fff}
 .identity .advocacy{margin-top:4px}
 .speaking{left:0;top:0;width:23.44%;height:48%;clip-path:polygon(0 0,93.8567% 0,100% 100%,0 95.8333%)}
@@ -41,22 +41,23 @@
 .caption{position:absolute;left:0;bottom:0;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:36px 20px 24px;background:var(--frame-caption-fade);text-shadow:var(--frame-caption-shadow);z-index:2}
 .caption>div{min-width:0;width:100%}
 .caption h2,.caption p{overflow-wrap:anywhere}
-.caption h2{font-size:clamp(24px,2.2vw,35px);text-transform:uppercase}
+.caption h2,.identity .role{font-size:clamp(24px,2.2vw,35px);font-weight:600;text-transform:uppercase}
 .caption p{font-family:var(--game-ui);font-size:clamp(15px,1.2vw,19px);line-height:1.15;margin-top:4px}
 .speaking .caption{padding-bottom:37px;padding-right:28px}.writing .caption{padding-right:28px}.building .caption{padding-left:38px;padding-bottom:43px}.leadership .caption{padding-left:40px;padding-right:24px;gap:5px}.leadership .caption h2{font-size:clamp(23px,2vw,32px)}
 /* Let the desktop wordmark sit above the ink seams, while the artwork keeps
    its original panel shape. The overlay does not intercept adjacent links. */
 @media(min-width:701px){
  .portrait{overflow:visible;clip-path:none;background:transparent;isolation:auto}
- .portraitImage{clip-path:polygon(0 0,91.892% 0,100% 100%,8.108% 100%)}
+ .portraitImage{clip-path:var(--portrait-clip)}
+ /* The fade follows the artwork edges, independently of the inset text. */
+ .portrait::after{content:'';position:absolute;inset:0;pointer-events:none;clip-path:var(--portrait-clip);background:var(--frame-identity-fade) bottom / 100% 40% no-repeat}
  .identity{background:none;isolation:isolate;z-index:5;pointer-events:none}
- .identity::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--frame-identity-fade);clip-path:polygon(0 0,94% 0,100% 100%,0 100%)}
  /* Cap the artwork height before enlargement so shorter viewports keep the
     portrait visible. Taller layouts retain the full 170% wordmark. */
  .identity h1 img{max-height:clamp(130px,calc(35svh - 170px),235px);transform:translateX(-3%) scale(1.7);transform-origin:50% 100%;filter:drop-shadow(0 3px 4px #0008)}
 }
 @media(min-width:1700px){.cover{min-height:780px}}
-@media(max-width:1000px) and (min-width:701px){.cover{height:750px;min-height:0}.caption{padding-left:12px;padding-right:12px}.writing .caption{padding-right:22px}.caption p{font-size:15px}.building .caption{padding-left:25px}.leadership .caption{padding-left:34px;padding-right:15px}.identity{padding-left:3%;padding-right:3%}.identity .role{font-size:21px}}
+@media(max-width:1000px) and (min-width:701px){.cover{height:750px;min-height:0}.caption{padding-left:12px;padding-right:12px}.writing .caption{padding-right:22px}.caption p{font-size:15px}.building .caption{padding-left:25px}.leadership .caption{padding-left:34px;padding-right:15px}.identity{padding-left:3%;padding-right:3%}}
 /* Keep text inside the narrow lower-right panel at the collage breakpoint. */
 @media(min-width:701px) and (max-width:850px){
  .leadership .caption{padding-left:24px;padding-right:20px}
@@ -69,15 +70,15 @@
  .portrait{height:660px;order:0}
  .portraitImage{object-position:50% 24%}
  .identity{left:0;width:100%;padding:50px 7% 24px}
- .identity h1 img{width:100%;max-height:190px}.identity .role{font-size:25px}.identity .expertise{margin-top:10px}
+ .identity h1 img{width:100%;max-height:190px}.identity .expertise{margin-top:10px}
  .speaking{order:1}.building{order:2}.writing{order:3}.leadership{order:4}.about{order:5}
  .dividers{display:none}
  .focusRings{display:none}
  .panel:focus-visible::after{content:'';position:absolute;inset:8px;border:3px solid var(--game-accent);box-shadow:0 0 0 3px var(--game-ink),inset 0 0 0 3px var(--game-ink);pointer-events:none;z-index:5}
  .caption,.speaking .caption,.building .caption,.writing .caption,.leadership .caption{padding:32px 20px 25px;display:flex}
- .caption h2,.leadership .caption h2{font-size:30px}.caption p{font-size:18px}
+ .caption h2,.leadership .caption h2,.identity .role{font-size:30px}.caption p{font-size:18px}
 }
-@media(max-width:380px){.portrait{height:620px}.identity h1 img{max-height:170px}.identity .role{font-size:23px}}
+@media(max-width:380px){.portrait{height:620px}.identity h1 img{max-height:170px}}
 @media(forced-colors:active){
  .focusRings polygon{stroke:Canvas}
  .focusRings .focusAccent{stroke:Highlight}
