@@ -11,7 +11,7 @@
 .hero { display: grid; grid-template-columns: var(--panel-columns); }
 .introCopy { grid-column: 2; grid-row: 1; display: flex; align-items: center; padding: 42px 30px 42px calc(30px + var(--game-frame)); background: var(--game-surface); clip-path: polygon(calc(var(--game-frame) - var(--seam-slant)) 0, 100% 0, 100% 100%, var(--game-frame) 100%); }
 .eyebrow, .primaryTop, .secondaryTop, .cta, .projectMeta, .projectFooter { font: 600 13px/1.5 var(--game-ui); letter-spacing: .08em; text-transform: uppercase; }
-.eyebrow { color: var(--game-accent); }
+.eyebrow { color: var(--game-accent-text); }
 .page .introCopy h1 { font-size: clamp(60px, 6vw, 84px); line-height: .95; margin: 18px 0 20px; text-transform: uppercase; }
 .introCopy h1 span { color: var(--game-accent); }
 .introCopy p { max-width: 430px; font-size: 18px; line-height: 1.6; color: var(--game-body); margin: 0; }

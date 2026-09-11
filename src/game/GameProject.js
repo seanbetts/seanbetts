@@ -1,6 +1,6 @@
 import { artworkForProject } from '../data/projectArtwork';
 import Custom404 from '../pages/Custom404';
-import ResponsiveImage from '../components/ResponsiveImage';
+import ResponsiveImage, { RecoverableImage } from '../components/ResponsiveImage';
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import { Link, useLocation, useParams } from 'react-router-dom';
@@ -42,7 +42,7 @@ function ProjectMedia({ project, heroImage }) {
             <div className={styles.animationGrid}>
               {project.heroAnimations.map(animation => <picture key={animation.src}>
                 <source media="(prefers-reduced-motion: reduce)" srcSet={animation.poster} />
-                <img src={animationPaused ? animation.poster : animation.src} alt={animation.alt} width="192" height="192" onError={() => setImageFailed(true)} />
+                <RecoverableImage src={animationPaused ? animation.poster : animation.src} alt={animation.alt} width="192" height="192" onError={() => setImageFailed(true)} />
               </picture>)}
             </div>
             <button type="button" className={styles.animationToggle} onClick={() => setAnimationPaused(paused => !paused)}>{animationPaused ? 'Play animation' : 'Pause animation'}</button>

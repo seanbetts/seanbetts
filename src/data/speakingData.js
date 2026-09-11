@@ -1,17 +1,6 @@
 const speakingData = [
   // 2026
   {
-    id: "gcs-inside-media-2026",
-    title: "Web 4.0: Building Authority",
-    type: "keynote",
-    description: "How AI agents are changing digital experiences and what it takes to build authority on AI platforms.",
-    date: "5 November 2026",
-    location: "London, UK",
-    conference: "Government Communications Service Inside Media 2026",
-    image: "/images/speaking/gcs.png",
-    imageType: "logo"
-  },
-  {
     id: "future-of-brands-2026",
     title: "How AI is Rewiring the Internet",
     type: "keynote",
@@ -55,6 +44,17 @@ const speakingData = [
     conference: "Profound's Zero Click London 2025",
     image: "/images/speaking/profound-zero-click-london-2025.jpg",
     imageType: "photo"
+  },
+  {
+    id: "gcs-inside-media-november-2025",
+    title: "Web 4.0: Building Authority",
+    type: "keynote",
+    description: "How AI agents are changing digital experiences and what it takes to build authority on AI platforms.",
+    date: "5 November 2025",
+    location: "London, UK",
+    conference: "Government Communications Service Inside Media 2025",
+    image: "/images/speaking/gcs.png",
+    imageType: "logo"
   },
   {
     id: "future-media-talk-2025",

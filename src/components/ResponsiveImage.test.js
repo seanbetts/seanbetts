@@ -1,6 +1,39 @@
-import { render, screen } from '@testing-library/react';
+import { useState } from 'react';
+import { render, screen, act } from '@testing-library/react';
+import { renderToString } from 'react-dom/server';
+import { hydrateRoot } from 'react-dom/client';
 import ResponsiveImage from './ResponsiveImage';
 import images from '../generated/images.json';
+
+test.each([
+  ['failed before hydration', true, 0, true],
+  ['still loading', false, 0, false],
+  ['loaded successfully', true, 640, false],
+])('an image that %s selects the appropriate presentation', async (_, complete, naturalWidth, expectedFallback) => {
+  function ImageWithFallback() {
+    const [failed, setFailed] = useState(false);
+    return failed ? <p>Project artwork fallback</p> : <ResponsiveImage
+      src="/images/projects/example.png" alt="Project screenshot" onError={() => setFailed(true)} />;
+  }
+  const container = document.createElement('div');
+  document.body.appendChild(container);
+  container.innerHTML = renderToString(<ImageWithFallback />);
+  // JSDOM does not fetch images. Set the browser's completed request state
+  // before hydration, when React has not yet attached the error handler.
+  Object.defineProperties(container.querySelector('img'), {
+    complete: { value: complete },
+    naturalWidth: { value: naturalWidth },
+  });
+  let root;
+  try {
+    await act(async () => { root = hydrateRoot(container, <ImageWithFallback />); });
+    expect(container.textContent.includes('Project artwork fallback')).toBe(expectedFallback);
+    expect(Boolean(container.querySelector('img'))).toBe(!expectedFallback);
+  } finally {
+    act(() => root?.unmount());
+    container.remove();
+  }
+});
 
 test('illustrated artwork offers AVIF while retaining its responsive WebP image and loading hints', () => {
   const src = '/images/game/about-studies/professional-discussion-v2-colour.png';

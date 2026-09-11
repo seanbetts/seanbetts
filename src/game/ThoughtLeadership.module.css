@@ -22,7 +22,7 @@
 .perspective p{margin:0;max-width:1080px;color:var(--game-body);font-size:18px;line-height:1.7}
 .brandCredits{margin-top:var(--game-frame);padding:28px 44px;background:var(--game-surface);text-align:center}
 .creditsInner{transform:skewY(var(--counter-angle))}
-.creditsLabel{margin:0 0 12px;color:var(--game-accent);font:600 13px var(--game-ui);letter-spacing:2px;text-transform:uppercase}
+.creditsLabel{margin:0 0 12px;color:var(--game-accent-text);font:600 13px var(--game-ui);letter-spacing:2px;text-transform:uppercase}
 .brandNames{list-style:none;margin:0 auto;padding:0;max-width:1080px;color:var(--game-text);font:600 clamp(18px,1.6vw,23px)/1.8 var(--game-ui);text-transform:uppercase;text-wrap:balance}
 .brandNames li{display:inline-block;white-space:nowrap}
 .brandNames li:not(:last-child)::after{content:'·';display:inline-block;margin:0 14px;color:var(--game-accent)}

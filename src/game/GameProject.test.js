@@ -122,7 +122,7 @@ test('Building retains its illustrated feature panel if the sideBar screenshot f
   const feature = screen.getByRole('link', { name: 'Open sideBar project' });
   const background = feature.querySelector('img');
   expect(background).toBeInTheDocument();
-  expect(imageExports['/images/game/backgrounds/river-sunset.webp'].variants.map(image => image.src)).toContain(background.getAttribute('src'));
+  expect(imageExports['/images/game/backgrounds/canalside-workspace-v1-colour.png'].variants.map(image => image.src)).toContain(background.getAttribute('src'));
 });
 
 

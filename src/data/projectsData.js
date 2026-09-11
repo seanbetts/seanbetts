@@ -141,6 +141,7 @@ const projectsData = [
     type: "research tool",
     role: "Sole developer",
     date: "April–July 2026",
+    projectNote: "Development ended in July; monitoring continued afterwards. The report shown is dated 24 August 2026.",
     technologies: ["Python", "Shell", "Node.js", "SteamKit", "Playwright"],
     features: [
       "Checks Komodo, SteamDB, SteamTracking and Valve endpoints for hardware signals",
@@ -324,7 +325,7 @@ const projectsData = [
     role: "Sole developer",
     date: "May 2024–present",
     technologies: ["React", "D3.js", "Node.js"],
-    features: ["Interactive timeline visualization", "Filterable AI milestones", "Regular updates with new developments"],
+    features: ["Interactive timeline visualisation", "Filterable AI milestones", "Regular updates with new developments"],
     challenges: "Keeping the timeline up-to-date with the rapidly evolving field of GenAI.",
     learnings: "A simple timeline of how GenAI technology has developed can be a great traffic driver. There is real value in helping people make sense of the pace of change through a clear chronological view. This project was a reminder that a straightforward, useful reference can give people a strong reason to visit.",
     status: "Ongoing",
@@ -353,7 +354,7 @@ const projectsData = [
       "SendGrid"
     ],
     features: [
-      "Personalized AI chat assistant",
+      "Personalised AI chat assistant",
       "User authentication and account management",
       "Subscription plans with different tiers",
       "Integration selection for enhanced AI capabilities",

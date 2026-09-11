@@ -1,8 +1,8 @@
 @font-face{font-family:Barlow Condensed;src:url('../../public/fonts/BarlowCondensed-SemiBold.woff2') format('woff2');font-display:swap;font-weight:600}
 body.game-mode{margin:0;background:#16051f;color:#fffaf4}
-.game{--game-frame:22px;--game-ink:#110818;--game-bg:#16051f;--game-surface:#211329;--game-surface-alt:#24162d;--game-surface-deep:#1d1428;--game-hover:#3b2540;--game-body:#ded5e2;--game-button-text:#16051f;--game-status:#b7ffda;--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-border:#49354e;--game-ui:'Barlow Condensed','Arial Narrow',sans-serif;font-family:Arial,Helvetica,sans-serif;background:var(--game-bg);color:var(--game-text);min-height:100svh;line-height:1.5;color-scheme:dark}
+.game{--game-frame:22px;--game-ink:#110818;--game-bg:#16051f;--game-surface:#211329;--game-surface-alt:#24162d;--game-surface-deep:#1d1428;--game-hover:#3b2540;--game-body:#ded5e2;--game-button-text:#16051f;--game-status:#b7ffda;--game-text:#fffaf4;--game-muted:#c8bdce;--game-accent:#ff777f;--game-accent-text:var(--game-accent);--game-inline-link-decoration:none;--game-border:#49354e;--game-ui:'Barlow Condensed','Arial Narrow',sans-serif;font-family:Arial,Helvetica,sans-serif;background:var(--game-bg);color:var(--game-text);min-height:100svh;line-height:1.5;color-scheme:dark}
 .game *{box-sizing:border-box}
-.game h1,.game h2,.game h3,.game h4{font-family:var(--game-ui);font-weight:600;color:var(--game-text);line-height:1.04;margin:0;letter-spacing:.005em}
+.game h1,.game h2,.game h3,.game h4{font-family:var(--game-ui);font-weight:600;color:var(--game-text);line-height:1.04;margin:0;letter-spacing:.005em;overflow-wrap:anywhere}
 .game p{margin:0}
 .game a{color:inherit;text-decoration:none}
 .game button,.game input{font:inherit}
@@ -17,9 +17,9 @@ body.game-mode{margin:0;background:#16051f;color:#fffaf4}
 @media(prefers-reduced-motion:reduce){.game *,.game *::before,.game *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 body.game-mode.light-mode{background:#f8d8ed;color:#28133e}
-.game.game-light{--game-bg:#f8d8ed;--game-surface:#f3ebfa;--game-surface-alt:#f3ebfa;--game-surface-deep:#f3ebfa;--game-hover:#e6d8f2;--game-text:#28133e;--game-muted:#624571;--game-body:#443153;--game-accent:#f52b93;--game-border:#ba8dbb;--game-button-text:#16051f;--game-status:#17665f;color-scheme:light}
+.game.game-light{--game-bg:#f8d8ed;--game-surface:#f3ebfa;--game-surface-alt:#f3ebfa;--game-surface-deep:#f3ebfa;--game-hover:#e6d8f2;--game-text:#28133e;--game-muted:#624571;--game-body:#443153;--game-accent:#f52b93;--game-accent-text:#28133e;--game-inline-link-decoration:underline;--game-border:#ba8dbb;--game-button-text:#16051f;--game-status:#17665f;color-scheme:light}
 /* Keep artwork captions light while accents inherit the selected reading mode. */
-.game .game-art{--game-text:#fffaf4;--game-muted:#c8bdce;color:#fffaf4}
+.game .game-art{--game-accent-text:var(--game-accent);--game-text:#fffaf4;--game-muted:#c8bdce;color:#fffaf4}
 
 @media(max-width:700px){.game{--game-frame:16px}}
 
