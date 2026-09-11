@@ -9,8 +9,10 @@ import { PERSON_ID, SITE_URL, pageUrl, pagePath } from '../data/siteIdentity';
 import projectsData from '../data/projectsData';
 import styles from './GameProject.module.css';
 
-
-
+// Match the media column after shell, frame and inner padding. Framed
+// screenshots occupy 80% of that space; diagrams and device mockups use it all.
+const fullImageSizes = '(max-width: 650px) calc(100vw - 92px), (max-width: 700px) calc(100vw - 128px), (max-width: 1000px) calc(50vw - 112px), min(calc(58.333vw - 136px), 737px)';
+const framedImageSizes = '(max-width: 650px) calc(80vw - 74px), (max-width: 700px) calc(80vw - 103px), (max-width: 1000px) calc(40vw - 90px), min(calc(46.667vw - 109px), 590px)';
 function ProjectMedia({ project, heroImage }) {
   const [imageFailed, setImageFailed] = useState(false);
   const [videoStarted, setVideoStarted] = useState(false);
@@ -54,9 +56,9 @@ function ProjectMedia({ project, heroImage }) {
             <ResponsiveImage src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
           </div>
         ) : heroImage && project.heroImageKind === 'diagram' && !imageFailed ? (
-          <ResponsiveImage className={`${styles.screenshot} ${mediaFrame}`} src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
+          <ResponsiveImage className={`${styles.screenshot} ${mediaFrame}`} sizes={fullImageSizes} src={heroImage} alt={project.heroImageAlt} onError={() => setImageFailed(true)} />
         ) : heroImage && !imageFailed ? (
-          <ResponsiveImage className={`${styles.screenshot} ${mediaFrame} ${project.heroImageFrame === false ? '' : styles.screenshotFrame}`} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
+          <ResponsiveImage className={`${styles.screenshot} ${mediaFrame} ${project.heroImageFrame === false ? '' : styles.screenshotFrame}`} sizes={project.heroImageFrame === false ? fullImageSizes : framedImageSizes} src={heroImage} alt={project.heroImageAlt || `${project.name} project screenshot`} onError={() => setImageFailed(true)} />
         ) : (
           <div className={styles.artCaption}><span aria-hidden="true" className={styles.projectIcon}>{project.icon}</span><span className={styles.eyebrow}>{project.type}</span><strong>{project.name}</strong></div>
         )}

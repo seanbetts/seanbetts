@@ -5,12 +5,16 @@ const path = require('node:path');
 const sharp = require('sharp');
 const { build, inventory, readPage } = require('./site-output.cjs');
 const images = require('../src/generated/images.json');
+const { checkImageSources } = require('./check-image-sources.cjs');
 
 async function main() {
   const routes = [...inventory.urls.map(url => new URL(url).pathname), '/404'];
+  const origin = new URL(inventory.urls[0]).origin;
+  const variants = new Set(Object.values(images).flatMap(image => [...image.variants, ...(image.avif || [])].map(variant => variant.src)));
   let count = 0;
   for (const route of routes) {
     const doc = readPage(route);
+    await checkImageSources(doc, { build, route, origin, variants });
     for (const image of doc.querySelectorAll('img[srcset], picture source[srcset]')) {
       // Animated originals use a single static source for reduced motion.
       if (image.tagName === 'SOURCE' && image.media === '(prefers-reduced-motion: reduce)') {

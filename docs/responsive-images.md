@@ -16,3 +16,13 @@ to fill the height as well (the tall homepage portrait is an example).
 
 The production build runs `check-images.cjs` to verify image references, width
 descriptors and alternative text in the generated pages, alongside crawl checks.
+It also rejects local static raster originals in `src` or `srcset`, even when
+they are missing from the manifest. Real animated images and their reduced-motion
+posters remain supported, as do vectors and remote images. Run the guard's
+regression tests with `node --test scripts/tests/check-image-sources.test.cjs`.
+
+Building's sideBar screenshot uses its contained, painted width when choosing a
+variant. Project screenshots and diagrams have separate `sizes` hints reflecting
+their column widths, frame padding and desktop width cap. Keep these hints in
+step with the corresponding layout CSS; decorative cover backgrounds need to
+retain enough resolution to fill their height as well as their width.

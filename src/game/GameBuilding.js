@@ -45,7 +45,9 @@ export default function GameBuilding() {
           <div className={styles.scene} aria-hidden="true"><ResponsiveImage src={artworkForProject(primary.id).background} alt="" width="1672" height="941" decoding="async" /></div>
           <div className={styles.primaryWash} />
           <div className={styles.primaryTop}><span>Featured project</span><span className={styles.status}>{primary.status}</span></div>
-          <div className={styles.deviceStage}>{!imageFailed && <ResponsiveImage src={primary.heroImage} alt={primary.heroImageAlt || `${primary.name} project screenshot`} className={styles.device} onError={() => setImageFailed(true)} />}</div>
+          {/* The 3137:2450 screenshot is contained in a 230/260/300px-high stage.
+              Request its painted width, rather than the much wider stage. */}
+          <div className={styles.deviceStage}>{!imageFailed && <ResponsiveImage src={primary.heroImage} alt={primary.heroImageAlt || `${primary.name} project screenshot`} sizes="(max-width: 700px) min(calc(100vw - 84px), 295px), (max-width: 1000px) 333px, 385px" className={styles.device} onError={() => setImageFailed(true)} />}</div>
           <div className={styles.primaryCaption}><span className={styles.eyebrow}>Your context. Connected.</span><h2>{primary.name}</h2><p>{primary.description}</p><span className={styles.cta}>Open project <ArrowUpRight size={18} aria-hidden="true" /></span></div>
         </Link>
         <ProjectPanel project={topFeature} className={styles.topFeature} />
