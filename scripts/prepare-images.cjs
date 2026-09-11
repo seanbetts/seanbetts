@@ -23,7 +23,9 @@ async function main() {
   await fs.mkdir(outputRoot, { recursive: true });
   const manifest = {};
   let originalBytes = 0, exportedBytes = 0;
-  for (const file of await filesIn(sourceRoot)) {
+  const files = await filesIn(sourceRoot);
+  let prepared = 0;
+  for (const file of files) {
     const buffer = await fs.readFile(file);
     const metadata = await sharp(buffer).metadata();
     // Do not flatten animated artwork.
@@ -47,13 +49,14 @@ async function main() {
     // AVIF supplements the illustrated artwork; photographs and screenshots keep WebP.
     const avif = [];
     if (source.startsWith('/images/game/')) {
-      const avifHash = crypto.createHash('sha256').update(buffer).update('avif-q60-e6-v1').digest('hex').slice(0, 16);
+      // Effort 4 keeps cold builds practical on the Pages build runner.
+      const avifHash = crypto.createHash('sha256').update(buffer).update('avif-q60-e4-v1').digest('hex').slice(0, 16);
       for (const targetWidth of targetWidths) {
         const name = `${avifHash}-${targetWidth}.avif`;
         const output = path.join(outputRoot, name);
         try { await fs.access(output); } catch {
           await sharp(buffer).rotate().resize({ width: targetWidth, withoutEnlargement: true })
-            .avif({ quality: 60, effort: 6 }).toFile(output);
+            .avif({ quality: 60, effort: 4 }).toFile(output);
         }
         avif.push({ src: `/images/responsive/${name}`, width: targetWidth });
       }
@@ -65,6 +68,7 @@ async function main() {
     manifest[source] = { width, height, variants, ...(avif.length ? { avif, preferWebp: Boolean(preferWebp) } : {}) };
     originalBytes += buffer.length;
     exportedBytes += (await fs.stat(path.join(root, 'public', variants.at(-1).src))).size;
+    console.log(`Prepared ${++prepared}/${files.length}: ${source}`);
   }
   await fs.mkdir(path.dirname(manifestFile), { recursive: true });
   const json = JSON.stringify(manifest, null, 2) + '\n';
