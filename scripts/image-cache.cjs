@@ -27,7 +27,7 @@ function createImageCache({ origin, fetchImpl = fetch, timeoutMs = 5000 }) {
             if (!response.ok || response.headers.get('content-type')?.split(';')[0] !== `image/${candidate.format}` ||
                 Number(response.headers.get('content-length')) > maxBytes) {
               await response.body?.cancel();
-              throw new Error('invalid cache response');
+              throw new Error(`invalid cache response: HTTP ${response.status}, ${response.headers.get('content-type') || 'no content type'}`);
             }
             const chunks = [];
             let size = 0;

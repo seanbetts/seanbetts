@@ -35,7 +35,8 @@ retain enough resolution to fill their height as well as their width.
 ## Reusing published exports during builds
 
 Cloudflare builds automatically try to restore missing exports from
-`https://www.seanbetts.com/images/responsive/`. The URLs use the existing source
+`https://seanbetts.pages.dev/images/responsive/`. This production project hostname
+avoids custom-domain redirect and security rules. The URLs use the existing source
 and encoding-policy hashes, so only matching exports can be reused. Dimensions,
 format, byte limit and full decoding are checked before a downloaded file is
 accepted. The manifest is always regenerated from the checked-out originals.

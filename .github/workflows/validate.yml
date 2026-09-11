@@ -31,6 +31,8 @@ jobs:
       - run: npm ci
       - name: Image pipeline regression tests
         run: node --test scripts/tests/*.test.cjs
+      - name: Prepare responsive images
+        run: npm run images:prepare
       - name: React tests
         run: npm test -- --watchAll=false --runInBand
       - name: Production build, crawl and image checks

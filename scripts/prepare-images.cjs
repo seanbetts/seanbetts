@@ -19,7 +19,7 @@ async function prepareImages({
   root = path.resolve(__dirname, '..'),
   widths = [480, 640, 800, 960, 1200, 1600, 2400],
   cacheOrigin = process.env.SEANBETTS_IMAGE_CACHE === '0' ? null :
-    (process.env.CF_PAGES === '1' || process.env.SEANBETTS_IMAGE_CACHE === '1') ? 'https://www.seanbetts.com' : null,
+    (process.env.CF_PAGES === '1' || process.env.SEANBETTS_IMAGE_CACHE === '1') ? 'https://seanbetts.pages.dev' : null,
   fetchImpl = fetch,
 } = {}) {
   const sourceRoot = path.join(root, 'public/images');
