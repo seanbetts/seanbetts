@@ -3,7 +3,7 @@ import Custom404 from '../pages/Custom404';
 import ResponsiveImage, { RecoverableImage } from '../components/ResponsiveImage';
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router';
 import Seo from '../components/Seo';
 import { PERSON_ID, SITE_URL, pageUrl, pagePath } from '../data/siteIdentity';
 import projectsData from '../data/projectsData';

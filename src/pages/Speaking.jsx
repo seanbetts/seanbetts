@@ -1,6 +1,6 @@
 import ResponsiveImage from '../components/ResponsiveImage';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ArrowLeft, ArrowUpRight, Microphone, Users, ChatsCircle, Headphones } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
 import InfoPopover from '../components/InfoPopover';

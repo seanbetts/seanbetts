@@ -3,7 +3,7 @@ import ResponsiveImage from '../components/ResponsiveImage';
 import PanelFocusCanvas from '../components/PanelFocusCanvas';
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Seo from '../components/Seo';
 import { pageUrl, pagePath } from '../data/siteIdentity';
 import projectsData from '../data/projectsData';

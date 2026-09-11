@@ -1,7 +1,7 @@
 import imageExports from '../generated/images.json';
 import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { MemoryRouter, Routes, Route } from 'react-router';
 import GameBuilding from './GameBuilding';
 import GameProject from './GameProject';
 import projectsData from '../data/projectsData';

@@ -1,7 +1,7 @@
 import ResponsiveImage from '../components/ResponsiveImage';
 import PanelFocusCanvas from '../components/PanelFocusCanvas';
 import { useId, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
 import InfoPopover from '../components/InfoPopover';

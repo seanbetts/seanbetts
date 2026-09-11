@@ -1,6 +1,6 @@
 import { SOCIAL_URLS } from '../data/siteIdentity';
 import ResponsiveImage from '../components/ResponsiveImage';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Seo from '../components/Seo';
 import { ArrowLeft, ArrowUpRight, Newspaper, LinkedinLogo, Butterfly, GithubLogo } from '@phosphor-icons/react';
 import styles from './Contact.module.css';

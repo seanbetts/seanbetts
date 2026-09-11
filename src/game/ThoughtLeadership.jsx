@@ -1,5 +1,5 @@
 import ResponsiveImage from '../components/ResponsiveImage';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ArrowLeft } from '@phosphor-icons/react';
 import Seo from '../components/Seo';
 import brandLogos from '../data/brandLogos';

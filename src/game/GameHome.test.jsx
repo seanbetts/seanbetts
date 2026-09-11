@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import GameHome from './GameHome';
 
 test('preserves home search and social descriptions and keywords with the new cover copy', async () => {

@@ -1,6 +1,6 @@
 import ResponsiveImage from '../components/ResponsiveImage';
 import React, { useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import Seo from '../components/Seo';
 import { SITE_URL } from '../data/siteIdentity';
 import styles from './Custom404.module.css';

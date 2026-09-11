@@ -49,6 +49,17 @@ contain no asset URLs; the font and logo URLs resolve correctly and rendered
 layout matches the preceding build. Recheck asset resolution if those shared
 modules gain relative asset URLs.
 
+## Routing
+
+Browser and test routing APIs, plus build-time StaticRouter, come from
+`react-router` 7.18.3 or a compatible v7 release. Keep imports unified; the old
+`react-router-dom/server` entry no longer exists. The app remains a static
+portfolio with BrowserRouter and the existing prerender pipeline.
+
+After router updates, verify direct route loads, internal navigation, browser
+back/forward, About-to-project return links, anchor links, `/map` redirects,
+404 recovery and hydration, alongside the existing tests and export checks.
+
 ## Where changes belong
 
 - `src/App.jsx` and `src/data/siteRoutes.js`: routing and the public route inventory. `/map` redirects home; old `/projects` URLs redirect to `/building`.

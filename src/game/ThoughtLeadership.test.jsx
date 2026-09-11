@@ -1,6 +1,6 @@
 import imageExports from '../generated/images.json';
 import { render, screen, within } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import ThoughtLeadership from './ThoughtLeadership';
 
 test('introduces the perspectives while preserving the visual brand showcase', () => {

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router';
 import GameShell from './GameShell';
 import GameHome from './GameHome';
 import { ThemeProvider } from '../ThemeContext';

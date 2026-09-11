@@ -2,7 +2,7 @@ import { SOCIAL_URLS } from '../data/siteIdentity';
 import ResponsiveImage from '../components/ResponsiveImage';
 import React from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo, GithubLogo, ChatsCircle } from "@phosphor-icons/react";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Seo from '../components/Seo';
 import styles from './About.module.css';
 
