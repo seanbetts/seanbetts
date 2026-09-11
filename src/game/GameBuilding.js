@@ -25,9 +25,8 @@ function ProjectPanel({ project, className }) {
 
 export default function GameBuilding() {
   const primary = projectsData.find(project => project.id === 'sidebar');
-  const topFeature = projectsData.find(project => project.id === 'youtube-sdg-analysis');
   const featured = ['llm-search-analysis', 'genai-explorer'].map(id => projectsData.find(project => project.id === id));
-  const promotedIds = new Set([primary.id, topFeature.id, ...featured.map(project => project.id)]);
+  const promotedIds = new Set([primary.id, ...featured.map(project => project.id)]);
   const otherProjects = projectsData.filter(project => !promotedIds.has(project.id));
   const [imageFailed, setImageFailed] = useState(false);
   return (
@@ -39,7 +38,9 @@ export default function GameBuilding() {
         <header className={styles.introCopy}><div className={styles.upright}>
           <span className={styles.eyebrow}>Products · Prototypes · Experiments</span>
           <h1>Building<span>.</span></h1>
-          <p>My independent projects in AI, software and creative coding.</p>
+          <p className={styles.introLead}>Curiosity is usually where I start. I build things I want to use, investigate questions I can’t leave alone, and make room for experiments that are simply fun.</p>
+          <p>My projects range from personal AI assistants and travel tools to research, automation and generative art. I work across the product, interface and code, exploring how an idea becomes something useful or opens up another question.</p>
+          <p>For me, hands-on work and AI strategy are inseparable. I need to use and build with AI to understand how it works, where it falls short and where it can create value. That understanding shapes my strategy, while the strategic questions shape what I explore and build next.</p>
         </div></header>
         <Link data-panel-focus to={pagePath(`/building/${primary.id}`)} state={origin} aria-label={`Open ${primary.name} project`} className={`${styles.primary} game-art`}>
           <div className={styles.scene} aria-hidden="true"><ResponsiveImage src={artworkForProject(primary.id).background} alt="" width="1672" height="941" decoding="async" /></div>
@@ -50,7 +51,6 @@ export default function GameBuilding() {
           <div className={styles.deviceStage}>{!imageFailed && <ResponsiveImage src={primary.heroImage} alt={primary.heroImageAlt || `${primary.name} project screenshot`} sizes="(max-width: 700px) min(calc(100vw - 84px), 295px), (max-width: 1000px) 333px, 385px" className={styles.device} onError={() => setImageFailed(true)} />}</div>
           <div className={styles.primaryCaption}><span className={styles.eyebrow}>Your context. Connected.</span><h2>{primary.name}</h2><p>{primary.description}</p><span className={styles.cta}>Open project <ArrowUpRight size={18} aria-hidden="true" /></span></div>
         </Link>
-        <ProjectPanel project={topFeature} className={styles.topFeature} />
       </section>
       <section className={styles.featured} aria-label="Applied AI projects">
         {featured.map((project, index) => (
