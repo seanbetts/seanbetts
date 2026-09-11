@@ -1,5 +1,5 @@
 import ResponsiveImage from '../components/ResponsiveImage';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Seo from '../components/Seo';
 import styles from './GameHome.module.css';
 

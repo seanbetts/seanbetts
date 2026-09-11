@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useContext, useEffect } from 'react';
-import { BrowserRouter as Router, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Outlet, Route, Routes, useLocation } from 'react-router';
 import { ThemeProvider, ThemeContext } from './ThemeContext';
 import About from './pages/About';
 import Writing from './pages/Writing';

@@ -1,7 +1,7 @@
 import { navigationLinks } from '../data/siteRoutes';
 import { SOCIAL_URLS, pagePath } from '../data/siteIdentity';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router';
 import { ArrowUpRight, Butterfly, ChatsCircle, GithubLogo, Heart, LinkedinLogo, List, Moon, Newspaper, Sun, X } from '@phosphor-icons/react';
 import styles from './GameShell.module.css';
 import packageJson from '../../package.json';
