@@ -15,14 +15,16 @@ const dateFormat = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'lo
 const articleListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Selected writing by Sean Betts',
+  name: 'Writing and contributions from Sean Betts',
   itemListElement: articlesData.map((article, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     item: {
       '@type': 'Article',
       '@id': article.url,
-      author: { '@id': PERSON_ID },
+      author: article.authors
+        ? article.authors.map(name => name === 'Sean Betts' ? { '@id': PERSON_ID } : { '@type': 'Person', name })
+        : { '@id': PERSON_ID },
       headline: article.title,
       url: article.url,
       description: article.description,
@@ -79,7 +81,7 @@ export default function Writing() {
   return <div className={styles.page}>
     <Seo
       title="Sean Betts Writing | AI, Marketing and Technology Insights"
-      description="Read Sean Betts' writing on AI, marketing and technology, including The Blueprint and featured essays on generative AI and industry trends."
+      description="Essays, experiments and conversations from Sean Betts on how AI is changing products, choices and businesses. Read The Blueprint and contributions to industry publications."
       keywords={['Sean Betts', 'AI writing', 'marketing insights', 'The Blueprint', 'generative AI', 'technology essays']}
       canonicalPath="/writing"
       jsonLd={articleListSchema}
@@ -90,10 +92,10 @@ export default function Writing() {
         <div className={styles.introduction}>
           <div className={styles.upright}>
             <h1>Writing<span aria-hidden="true">.</span></h1>
-            <p className={styles.standfirst}>Ideas and perspectives on AI, marketing and the technology changing how we live and work.</p>
+            <p className={styles.standfirst}>I write about how AI is changing the products we use, the choices we make and the businesses we build, connecting developments in technology with their consequences for people, brands and organisations.</p>
             <div className={styles.blueprint}>
               <h2>The Blueprint</h2>
-              <p>Occasional thought leadership and opinions on generative AI, its possibilities and what it means for people and businesses.</p>
+              <p>The Blueprint is my newsletter exploring AI, technology and what comes next. Expect analysis, experiments and personal perspectives on what new capabilities make possible and the assumptions we should question along the way.</p>
               <a href={SOCIAL_URLS.blueprint} target="_blank" rel="noopener noreferrer" className={styles.cta}>Read The Blueprint <ArrowUpRight size={21} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
             </div>
           </div>

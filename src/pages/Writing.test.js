@@ -1,8 +1,9 @@
-import { createEvent, fireEvent, render, screen, within } from '@testing-library/react';
+import { createEvent, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../App';
 import Writing from './Writing';
 import articlesData from '../data/articlesData';
+import { PERSON_ID } from '../data/siteIdentity';
 
 const originalFetch = global.fetch;
 
@@ -102,6 +103,21 @@ test('offers The Blueprint and formats verified publication dates', () => {
   render(<MemoryRouter><Writing /></MemoryRouter>);
   expect(screen.getByRole('link', { name: /Read The Blueprint/ })).toHaveAttribute('href', 'https://www.the-blueprint.ai');
   expect(screen.getByText('29 June 2026')).toHaveAttribute('dateTime', '2026-06-29');
+});
+
+test('credits journalists and co-authors without assigning every article to Sean', async () => {
+  render(<MemoryRouter><Writing /></MemoryRouter>);
+  await waitFor(() => {
+    const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')].map(node => JSON.parse(node.textContent));
+    const list = schemas.find(schema => schema['@type'] === 'ItemList');
+    expect(list).toBeDefined();
+    const items = list.itemListElement.map(entry => entry.item);
+    expect(items.find(item => item.headline === 'The Hidden Layer of the Internet').author).toEqual({ '@id': PERSON_ID });
+    expect(items.find(item => item.headline.startsWith('Judge of the Day:')).author).toEqual([{ '@type': 'Person', name: 'Margo Waldrop' }]);
+    expect(items.find(item => item.headline.startsWith('Predictions for 2026:')).author).toEqual([{ '@type': 'Person', name: 'Katie Duffy' }]);
+    expect(items.find(item => item.headline.startsWith('AI can fix advertising')).author).toEqual([{ '@type': 'Person', name: 'Conor Nichols' }]);
+    expect(items.find(item => item.headline.startsWith('Your brand must be available')).author).toEqual([{ '@id': PERSON_ID }, { '@type': 'Person', name: 'Rob Beevers' }]);
+  });
 });
 
 test.each(['/writing', '/writing/', '/Writing'])('opens %s in the shared portfolio shell', pathname => {
