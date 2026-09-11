@@ -4,11 +4,11 @@
 
 ## Sources and ownership
 
-- `src/data/siteRoutes.js`: page routes, navigation labels/order and public route inventory, including every project in `projectsData.js`.
+- `src/data/siteRoutes.js`: page routes, navigation labels/order and public route inventory, including every project in `projectsData.jsx`.
 - `src/data/siteIdentity.js`: shared Person and WebSite identities and profile URLs used by the site and AI index.
-- `src/components/Seo.js`: one title, description, canonical and connected page schema. Page-specific lists and projects reference the same person.
-- `src/prerender.js`: renders the actual React routes using StaticRouter and collects Helmet metadata.
-- `scripts/prerender.cjs`: uses CRA's webpack/CSS configuration to match browser class names; writes route HTML, a 404 document, sitemap, a source inventory for validation and llms.txt. Temporary server bundles are removed after each build.
+- `src/components/Seo.jsx`: one title, description, canonical and connected page schema. Page-specific lists and projects reference the same person.
+- `src/prerender.jsx`: renders the actual React routes using StaticRouter and collects Helmet metadata.
+- `scripts/prerender.cjs`: uses the shared Vite configuration and checks full CSS-module export parity; writes route HTML, a 404 document, sitemap, a source inventory for validation and llms.txt. Temporary server bundles are removed after each build.
 - `public/robots.txt`: permits public crawling and signals permission for AI training, search, retrieval and reuse. Content-Signal is an optional extension; ordinary robots rules remain valid without support for it.
 
 Do not maintain a second sitemap in public. Dates are omitted until there is an authoritative per-page content modification date; build time is not a content update date. The route catalogue and sitemap contain canonical URLs only, excluding error pages and retired aliases.

@@ -3,13 +3,13 @@ import App from './App';
 
 beforeEach(() => {
   localStorage.clear();
-  jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+  vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
 });
 
 afterEach(() => {
   window.history.replaceState({}, '', '/');
   localStorage.clear();
-  jest.restoreAllMocks();
+  vi.restoreAllMocks();
 });
 
 test.each(['/404', '/missing-page', '/building/not-a-real-project', '/building/missing/extra'])('%s opens a standalone accessible error screen', async pathname => {

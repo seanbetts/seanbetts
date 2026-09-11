@@ -4,8 +4,8 @@ import GameShell from './GameShell';
 import GameHome from './GameHome';
 import { ThemeProvider } from '../ThemeContext';
 
-beforeEach(() => { localStorage.clear(); jest.spyOn(window, 'scrollTo').mockImplementation(() => {}); });
-afterEach(() => { jest.restoreAllMocks(); });
+beforeEach(() => { localStorage.clear(); vi.spyOn(window, 'scrollTo').mockImplementation(() => {}); });
+afterEach(() => { vi.restoreAllMocks(); });
 
 function mount(pathname = '/') {
   return render(<ThemeProvider><MemoryRouter initialEntries={[pathname]}><GameShell><Routes>

@@ -32,7 +32,7 @@ test.each(['/about', '/about/', '/About'])('opens %s in the portfolio shell', (p
 });
 
 test('About pane to About to project keeps the return journey intact', () => {
-  jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+  vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
   render(<App />);
   fireEvent.click(screen.getByRole('link', { name: /About A little more about me/i }));
   expect(screen.getByRole('heading', { name: /^About\s*\.$/, level: 1 })).toBeInTheDocument();
@@ -40,7 +40,7 @@ test('About pane to About to project keeps the return journey intact', () => {
   expect(screen.getByRole('heading', { name: 'sideBar', level: 1 })).toBeInTheDocument();
   fireEvent.click(screen.getByRole('link', { name: 'Back to About' }));
   expect(screen.getByRole('heading', { name: /^About\s*\.$/, level: 1 })).toBeInTheDocument();
-  jest.restoreAllMocks();
+  vi.restoreAllMocks();
 });
 
 test.each(['/map', '/map/', '/Map'])('retired map URL %s redirects home without Map navigation', pathname => {
