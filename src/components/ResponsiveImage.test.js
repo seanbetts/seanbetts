@@ -3,9 +3,9 @@ import ResponsiveImage from './ResponsiveImage';
 import images from '../generated/images.json';
 
 test('illustrated artwork offers AVIF while retaining its responsive WebP image and loading hints', () => {
-  const src = '/images/game/brand-scenes/delivery-integrated-v2.png';
-  const { container } = render(<ResponsiveImage src={src} alt="Illustrated delivery" sizes="400px" fetchpriority="high" />);
-  const image = screen.getByRole('img', { name: 'Illustrated delivery' });
+  const src = '/images/game/about-studies/professional-discussion-v2-colour.png';
+  const { container } = render(<ResponsiveImage src={src} alt="Illustrated discussion" sizes="400px" fetchpriority="high" />);
+  const image = screen.getByRole('img', { name: 'Illustrated discussion' });
   const source = container.querySelector('picture source');
   expect(source).toHaveAttribute('type', 'image/avif');
   expect(source.getAttribute('srcset')).toContain(images[src].avif[0].src);

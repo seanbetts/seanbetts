@@ -20,15 +20,15 @@ test('introduces the perspectives while preserving the visual brand showcase', (
     'Renault', 'Virgin Media O2', 'Volkswagen', 'Whitbread',
   ]);
   const street = screen.getByRole('region', { name: 'Illustrated brand high street' });
-  const perspective = screen.getByRole('region', { name: 'Informed by building. Grounded in business.' });
+  const perspective = screen.getByRole('region', { name: /^Informed by building\. Grounded in business\s*\.$/ });
   expect(perspective.nextElementSibling).toContainElement(street);
   const streetImage = within(street).getByRole('img');
-  expect(imageExports['/images/game/brand-street/street-integrated-v4.png'].variants.map(image => image.src)).toContain(streetImage.getAttribute('src'));
+  expect(imageExports['/images/game/brand-street/street-integrated-v5-colour.png'].variants.map(image => image.src)).toContain(streetImage.getAttribute('src'));
   expect(streetImage).toHaveAttribute('srcset');
   for (const name of ["Sainsbury's", 'Chanel', 'Apple', 'Barclays', 'British Gas', 'Channel 4']) {
     expect(streetImage.getAttribute('alt')).toContain(name);
   }
-  for (const [name, artwork] of [["McDonald's", 'takeaway-cast-v3.png'], ['Warner Bros.', 'film-set-cast-v3.png'], ['Halfords', 'getaway-cast-v3.png'], ['Lidl', 'marina-integrated-v2.png'], ['John Lewis', 'delivery-integrated-v2.png']]) {
+  for (const [name, artwork] of [["McDonald's", 'takeaway-cast-v4-colour.png'], ['Warner Bros.', 'film-set-cast-v4-colour.png'], ['Halfords', 'getaway-cast-v4-colour.png'], ['Lidl', 'marina-integrated-v3-colour.png'], ['John Lewis', 'delivery-integrated-v3-colour.png']]) {
     expect(imageExports[`/images/game/brand-scenes/${artwork}`].variants.map(image => image.src)).toContain(screen.getByRole('img', { name }).getAttribute('src'));
   }
   expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
