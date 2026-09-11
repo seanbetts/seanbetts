@@ -31,3 +31,28 @@ variant. Project screenshots and diagrams have separate `sizes` hints reflecting
 their column widths, frame padding and desktop width cap. Keep these hints in
 step with the corresponding layout CSS; decorative cover backgrounds need to
 retain enough resolution to fill their height as well as their width.
+
+## Reusing published exports during builds
+
+Cloudflare builds automatically try to restore missing exports from
+`https://www.seanbetts.com/images/responsive/`. The URLs use the existing source
+and encoding-policy hashes, so only matching exports can be reused. Dimensions,
+format, byte limit and full decoding are checked before a downloaded file is
+accepted. The manifest is always regenerated from the checked-out originals.
+New or changed images are encoded normally; obsolete exports are still pruned.
+
+This is an optional cache. A missing file falls back to encoding; a timeout,
+server error or invalid image disables further downloads for that build. At most
+four requests run concurrently, with a five-second timeout per request. Builds
+still work without access to the published site, but take the original cold-build
+time. No image quality, dimensions or encoding settings have changed.
+
+Local development remains offline by default. Set `SEANBETTS_IMAGE_CACHE=1` to
+opt in locally or in CI; set `SEANBETTS_IMAGE_CACHE=0` to force local-only encoding,
+including on Cloudflare. Existing local exports are always reused first. Delete
+`public/images/responsive/` before measuring a genuinely fresh preparation run.
+
+When changing encoding settings or making an encoder upgrade that should
+regenerate output, update the corresponding hash policy string in
+`scripts/prepare-images.cjs`. Otherwise existing published bytes will be reused.
+Run the pipeline regression tests with `node --test scripts/tests/*.test.cjs`.

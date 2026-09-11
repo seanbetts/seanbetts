@@ -63,3 +63,17 @@ and automatic TTL. The canonical redirect can remain enabled. Disable the
 Legacy Map URLs rule if restoring the previous Map behaviour is required.
 Verify the public site after any routing change. When moving back to Pages,
 check custom-domain activation again before declaring the switch complete.
+
+## Build performance and merge checks
+
+Image preparation can reuse matching exports from the current production site;
+see [responsive-images.md](responsive-images.md) for validation, fallback and
+cache invalidation. Fresh builds only need to encode new or changed images when
+the published cache is available. Full offline builds retain the original cold
+encoding cost.
+
+Before merging to `main`, the required GitHub Actions check `Validate site` runs
+the image pipeline regression tests, React tests and production build. Main
+requires an up-to-date pull request, blocks force pushes and deletion, and does
+not require another person to approve a solo-maintained change. Cloudflare
+publishes the resulting push to `main`; its preview deployments remain separate.
