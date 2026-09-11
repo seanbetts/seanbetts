@@ -110,7 +110,7 @@ export default function Speaking() {
             <Link to="/contact/" className={styles.enquiry}>Discuss a speaking opportunity<ArrowUpRight size={20} aria-hidden="true" /></Link>
           </div>
         </div>
-        <div className={styles.heroArt}><ResponsiveImage src="/images/game/speaking/stage-v1.webp" alt="Illustration of Sean Betts presenting on stage" fetchpriority="high" sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1000px) 40vw, (max-width: 1500px) 36vw, 520px" width="941" height="1672" decoding="async" /></div>
+        <div className={styles.heroArt}><ResponsiveImage src="/images/game/speaking/stage-v2-colour.png" alt="Illustration of Sean Betts presenting on stage" fetchpriority="high" sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1000px) 40vw, (max-width: 1500px) 36vw, 520px" width="941" height="1672" decoding="async" /></div>
       </header>
       <section className={styles.topics} aria-labelledby="speaking-topics-heading">
         <div className={styles.upright}>

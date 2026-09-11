@@ -31,7 +31,7 @@ const About = () => {
       <div className={styles.panels}>
       <header className={styles.hero}>
         <div className={styles.portrait}>
-          <div className={styles.imageWindow}><ResponsiveImage src="/images/game/portrait-sean-london-candidate-v1.png" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
+          <div className={styles.imageWindow}><ResponsiveImage src="/images/game/portrait-sean-london-v2-colour.png" alt="Illustrated portrait of Sean Betts" width="1024" height="1536" fetchpriority="high" /></div>
         </div>
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>AI strategy · Product innovation · Technology leadership</span>
