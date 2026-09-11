@@ -1,5 +1,13 @@
 # Artwork sources
 
+## Profile metadata image
+
+`public/images/sean-betts-profile.png` is Sean's supplied
+`Profile - LATEST - GTA - Square.png`, updated on 11 September 2026. The 850 × 850
+PNG is copied unchanged and used by Person structured data and the default
+Open Graph/Twitter image metadata. It is separate from the “S” favicon,
+Apple touch icon and installed-site icons, which remain unchanged.
+
 ## Illustrations and article images
 
 The portfolio illustrations were created with the built-in image-generation tool, using Sean's photographs and supplied references where appropriate. Website images live in `public/images`; layouts, captions and framing are implemented in code. Generation prompts, rejected concepts and deleted master-image references remain available in Git history. Two representative original edit prompts, for the Writing and Building panels, are also preserved in [prompt-examples.md](artwork-source/prompt-examples.md).
