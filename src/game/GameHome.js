@@ -7,7 +7,7 @@ const homeArtwork = {
   building: '/images/game/home-studies/building-studio-v5-colour.png',
   writing: '/images/game/home-studies/writing-desk-v11-sharpie.png',
   speaking: '/images/game/home-studies/speaking-rear-v5-jeans.png',
-  leadership: '/images/game/home-studies/leadership-conversation-v3-jeans.png',
+  leadership: '/images/game/home-studies/leadership-hands-v1.png',
   about: '/images/game/home-studies/about-personal-room-v3-eames.png',
 };
 
