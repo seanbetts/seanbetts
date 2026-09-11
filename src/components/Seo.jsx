@@ -80,8 +80,8 @@ const Seo = ({
       {resolvedOgDescription ? <meta property="og:description" content={resolvedOgDescription} /> : null}
       <meta property="og:type" content={ogType} />
       {image ? <meta property="og:image" content={image} /> : null}
-      {image === toAbsoluteUrl(DEFAULT_IMAGE_PATH) ? <meta property="og:image:width" content="1024" /> : null}
-      {image === toAbsoluteUrl(DEFAULT_IMAGE_PATH) ? <meta property="og:image:height" content="1024" /> : null}
+      {image === toAbsoluteUrl(DEFAULT_IMAGE_PATH) ? <meta property="og:image:width" content="850" /> : null}
+      {image === toAbsoluteUrl(DEFAULT_IMAGE_PATH) ? <meta property="og:image:height" content="850" /> : null}
       <link rel="describedby" href={`${SITE_URL}/llms.txt`} type="text/plain" />
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:site" content={twitterSite} />
