@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import { Link } from 'react-router';
 import Seo from '../components/Seo';
 import { pageUrl, pagePath } from '../data/siteIdentity';
-import projectsData from '../data/projectsData';
+import projectsData, { projectsByStartDate } from '../data/projectsData';
 import styles from './GameBuilding.module.css';
 
 const origin = { fromPath: '/building/', fromLabel: 'Building' };
@@ -25,13 +25,14 @@ function ProjectPanel({ project, className }) {
 
 export default function GameBuilding() {
   const primary = projectsData.find(project => project.id === 'sidebar');
-  const featured = ['llm-search-analysis', 'genai-explorer'].map(id => projectsData.find(project => project.id === id));
-  const promotedIds = new Set([primary.id, ...featured.map(project => project.id)]);
-  const otherProjects = projectsData.filter(project => !promotedIds.has(project.id));
+  const collection = projectsByStartDate.filter(project => project.id !== primary.id);
+  const featured = collection.slice(0, 2);
+  const otherProjects = collection.slice(2);
+  const orderedProjects = [primary, ...collection];
   const [imageFailed, setImageFailed] = useState(false);
   return (
     <div className={styles.page}>
-      <Seo title="What Sean Betts is Building | AI Products, Benchmarks and Experiments" description="Explore AI products, benchmarks and experiments Sean Betts is building, including sideBar, evaluation frameworks and applied AI workflows." canonicalPath="/building" jsonLd={{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: projectsData.map((project, index) => ({ '@type': 'ListItem', position: index + 1, url: pageUrl(`/building/${project.id}`), name: project.name, description: project.description })) }} />
+      <Seo title="What Sean Betts is Building | AI Products, Benchmarks and Experiments" description="Explore AI products, benchmarks and experiments Sean Betts is building, including sideBar, evaluation frameworks and applied AI workflows." canonicalPath="/building" jsonLd={{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: orderedProjects.map((project, index) => ({ '@type': 'ListItem', position: index + 1, url: pageUrl(`/building/${project.id}`), name: project.name, description: project.description })) }} />
       <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" /> Home</Link>
       <PanelFocusCanvas className={styles.panels}>
       <section className={styles.hero} aria-label="Featured projects">
@@ -52,7 +53,7 @@ export default function GameBuilding() {
           <div className={styles.primaryCaption}><span className={styles.eyebrow}>Your context. Connected.</span><h2>{primary.name}</h2><p>{primary.description}</p><span className={styles.cta}>Open project <ArrowUpRight size={18} aria-hidden="true" /></span></div>
         </Link>
       </section>
-      <section className={styles.featured} aria-label="Applied AI projects">
+      <section className={styles.featured} aria-label="Recent projects">
         {featured.map((project, index) => (
           <ProjectPanel key={project.id} project={project} className={index === 0 ? styles.firstFeature : styles.lastFeature} />
         ))}
