@@ -8,7 +8,7 @@ import { PERSON_ID } from '../data/siteIdentity';
 const originalFetch = global.fetch;
 
 beforeEach(() => {
-  global.fetch = jest.fn();
+  global.fetch = vi.fn();
   window.history.replaceState({}, '', '/');
 });
 
@@ -132,7 +132,7 @@ test.each(['/writing', '/writing/', '/Writing'])('opens %s in the shared portfol
 });
 
 test('homepage Writing panel and Home link complete the return journey', () => {
-  const scroll = jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+  const scroll = vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
   render(<App />);
   fireEvent.click(screen.getByRole('link', { name: 'Writing The Blueprint' }));
   expect(screen.getByRole('heading', { level: 1, name: 'Writing' })).toBeInTheDocument();

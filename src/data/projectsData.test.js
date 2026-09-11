@@ -8,13 +8,10 @@ test('project hero images point to real local assets when supplied', () => {
   expect(missing).toEqual([]);
 });
 
-test('projects data module loads project definitions without React warnings', () => {
-  const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
-  let projectsData;
-
-  jest.isolateModules(() => {
-    projectsData = require('./projectsData').default;
-  });
+test('projects data module loads project definitions without React warnings', async () => {
+  const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+  vi.resetModules();
+  const { default: projectsData } = await import('./projectsData');
 
   expect(projectsData.length).toBeGreaterThan(0);
   expect(projectsData[0].id).toBe('sidebar');

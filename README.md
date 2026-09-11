@@ -97,7 +97,8 @@ npm start
 To run the tests and validate the production output:
 
 ```sh
-CI=true npm test -- --watchAll=false --runInBand
+node --test scripts/tests/*.test.cjs
+npm test
 npm run build
 ```
 

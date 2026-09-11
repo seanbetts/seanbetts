@@ -41,6 +41,6 @@ jobs:
       - name: Prepare responsive images
         run: npm run images:prepare
       - name: React tests
-        run: npm test -- --watchAll=false --runInBand
+        run: npm test
       - name: Production build, crawl and image checks
         run: npm run build
