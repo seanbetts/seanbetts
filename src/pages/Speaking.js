@@ -50,7 +50,7 @@ function FeaturedAppearance({ talk, lead }) {
       <div className={styles.featureCopy}>
         <div className={styles.upright}>
           <Format type={talk.type} />
-          <h3 id={`featured-${talk.id.replace(/\s/g, '-')}`}>{talk.title.replace(/[.!?]$/, '')}<span className={styles.period}>{talk.title.match(/[.!?]$/)?.[0] || '.'}</span></h3>
+          <h3 id={`featured-${talk.id.replace(/\s/g, '-')}`}>{talk.title}</h3>
           <InfoPopover label={`About this talk: ${talk.title}`} description={talk.description}>
             <p className={styles.conference}>{talk.conference}</p>
             <p className={styles.metadata}>{talk.date} · {talk.location}</p>
