@@ -10,16 +10,16 @@ is connected to the GitHub repository `seanbetts/seanbetts`.
 
 | Setting | Value |
 | --- | --- |
-| Production branch | `codex/gta-prototype` |
+| Production branch | `main` |
 | Build command | `npm run build` |
 | Output directory | `build` |
 | Root directory | Repository root |
 | Environment variable | `NODE_VERSION=26.4.0` |
 | Pages hostname | `seanbetts.pages.dev` |
 
-Pushing the production branch automatically builds and deploys the site. `main`
-was not merged during the migration; it retains the previous Netlify source.
-Building locally does not deploy anything.
+Merge reviewed changes into `main`, then push `main` to automatically build and
+deploy the production site. Other branches create preview deployments. Building
+locally does not deploy anything.
 
 The first successful Pages release was commit `500b744`, deployed on 11 September
 2026. Its cold build took 19 minutes 20 seconds, mostly generating AVIF artwork.
@@ -55,7 +55,9 @@ responses with `noindex`, HTTPS/canonical redirects, security headers, and asset
 caching on the public domain. The hosted HTML has no Google Analytics tag or
 Cloudflare analytics beacon. The Pages build also passed crawl and image checks.
 
-The Netlify deployment is retained as the rollback target. To roll back, restore
+Netlify automatic builds are stopped, retaining its published deployment from
+commit `c5e0254` as the rollback target. Keep builds stopped unless deliberately
+resuming Netlify deployments. To roll back, restore
 both website CNAME targets to `seanbetts.netlify.app`, retaining proxied status
 and automatic TTL. The canonical redirect can remain enabled. Disable the
 Legacy Map URLs rule if restoring the previous Map behaviour is required.
