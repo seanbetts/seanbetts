@@ -45,3 +45,15 @@ Before finishing a UI change, check desktop and mobile layouts, both themes, key
 - [Artwork sources](artwork.md)
 
 Historical design plans and generation briefs remain available in Git history.
+
+## Pull requests
+
+Use the Node version in `.nvmrc`, which matches Cloudflare's `NODE_VERSION`.
+The `Site validation` GitHub Actions workflow runs image-pipeline regression
+tests, React tests, and the production build with crawl and image checks for
+every pull request to `main`, including documentation changes. It also runs on
+pushes to `main`. It uses published image exports as an optional cache.
+
+Merge through a pull request after `Validate site` passes for an up-to-date
+branch. The main branch protection requires this check, prevents force pushes
+and deletion, and requires a pull request without a second-person approval.

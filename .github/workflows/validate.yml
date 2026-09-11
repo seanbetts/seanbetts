@@ -1,0 +1,46 @@
+name: Site validation
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      CI: 'true'
+      SEANBETTS_IMAGE_CACHE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Image pipeline regression tests
+        run: node --test scripts/tests/*.test.cjs
+      - name: Cache responsive exports
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: public/images/responsive
+          key: ${{ runner.os }}-images-v1-${{ hashFiles('package-lock.json', 'scripts/prepare-images.cjs', 'scripts/image-cache.cjs') }}-${{ hashFiles('public/images/**') }}
+          restore-keys: |
+            ${{ runner.os }}-images-v1-${{ hashFiles('package-lock.json', 'scripts/prepare-images.cjs', 'scripts/image-cache.cjs') }}-
+      - name: Prepare responsive images
+        run: npm run images:prepare
+      - name: React tests
+        run: npm test -- --watchAll=false --runInBand
+      - name: Production build, crawl and image checks
+        run: npm run build
