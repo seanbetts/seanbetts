@@ -32,7 +32,8 @@ JSX-bearing source uses `.jsx`; extensionless imports continue to work.
 `postcss.config.mjs` retains Autoprefixer and the package's browserslist targets.
 Hashed bundles stay under `build/static/` for the existing immutable cache rule.
 
-`npm test` runs the React suite once with Vitest/JSDOM; `npm run test:watch`
+`npm test` runs the React suite once with Vitest/JSDOM, serially as in the
+previous CI setup; `npm run test:watch`
 starts watch mode. `npm run lint` checks source and Hooks rules. The existing
 Node image tests run separately, alongside the CSS-module regression test.
 JSDOM reports unsupported scroll/navigation operations in a few existing tests;

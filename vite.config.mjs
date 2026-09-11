@@ -25,6 +25,8 @@ export default defineConfig(() => {
       target: browserslistToEsbuild(),
     },
     test: {
+      // Preserve CRA CI's runInBand scheduling for exhaustive DOM interaction tests.
+      fileParallelism: false,
       environment: 'jsdom',
       globals: true,
       setupFiles: ['./src/setupTests.js'],
