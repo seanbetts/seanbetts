@@ -1,7 +1,13 @@
 // Check the actual production output, without executing its JavaScript.
 const assert = require('node:assert/strict');
-const { inventory, readOutput, readPage, sitemapUrls } = require('./site-output.cjs');
+const { build, inventory, readOutput, readPage, sitemapUrls } = require('./site-output.cjs');
+const { validateManifest } = require('./indexnow.cjs');
+const { contentHash, createAssetHasher } = require('./indexnow-manifest.cjs');
+const assetHash = createAssetHasher(build);
 const urls = sitemapUrls();
+const manifest = validateManifest(JSON.parse(readOutput('indexnow-manifest.json')));
+assert.deepEqual(Object.keys(manifest.pages).sort(), [...urls].sort(), 'IndexNow covers exactly the canonical sitemap');
+assert.match(readOutput('indexnow-key.txt').trim(), /^[a-zA-Z0-9-]{8,128}$/);
 assert.ok(inventory.urls.length > 0, 'The source route inventory must not be empty');
 assert.equal(new Set(urls).size, urls.length, 'No duplicate sitemap entries');
 assert.deepEqual([...urls].sort(), [...inventory.urls].sort(), 'Every source route must be in the sitemap');
@@ -9,6 +15,7 @@ for (const url of urls) {
   const pathname = new URL(url).pathname;
   assert.ok(pathname.endsWith('/'), `${pathname}: directory canonical URL`);
   const doc = readPage(pathname);
+  assert.equal(manifest.pages[url], contentHash(doc.documentElement.outerHTML, assetHash), `${pathname}: IndexNow hash matches the exported page`);
   assert.equal(doc.querySelectorAll('h1').length, 1, `${pathname}: one readable heading`);
   assert.ok(doc.querySelector('main').textContent.trim().length > 80, `${pathname}: readable content`);
   assert.equal(doc.querySelectorAll('meta[name="description"]').length, 1, `${pathname}: duplicate descriptions`);

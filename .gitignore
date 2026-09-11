@@ -39,3 +39,6 @@ yarn-error.log*
 
 # Temporary static renderer bundles
 /.prerender-*/
+
+# Local IndexNow submission baseline
+/.indexnow/

@@ -3,6 +3,8 @@ process.env.NODE_ENV = 'production';
 const fs = require('node:fs');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
+const { execFileSync } = require('node:child_process');
+const { createManifest, createAssetHasher } = require('./indexnow-manifest.cjs');
 const { checkCssModules } = require('./check-css.cjs');
 const root = path.resolve(__dirname, '..');
 const build = path.join(root, 'build');
@@ -29,6 +31,8 @@ async function prerender() {
       await import(pathToFileURL(path.join(temporary, 'render.mjs')).href);
     const template = fs.readFileSync(path.join(build, 'index.html'), 'utf8').replace(/<title>.*?<\/title>/, '');
     if (!template.includes('<div id="root"></div>')) throw new Error('Run npm run build to start with a fresh browser build.');
+    const pages = [];
+    const revision = process.env.CF_PAGES_COMMIT_SHA || process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
     for (const route of [...siteRoutes, { path: '/404', name: 'Page not found' }]) {
       const { content, head } = renderPage(route.path);
       const html = template.replace('</head>', `${head}</head>`)
@@ -37,7 +41,9 @@ async function prerender() {
       const file = route.path === '/404' ? path.join(build, '404.html') : path.join(build, route.path, 'index.html');
       fs.mkdirSync(path.dirname(file), { recursive: true });
       fs.writeFileSync(file, html);
+      if (route.path !== '/404') pages.push({ url: pageUrl(route.path), html });
     }
+    fs.writeFileSync(path.join(build, 'indexnow-manifest.json'), JSON.stringify(createManifest(pages, revision, createAssetHasher(build)), null, 2) + '\n');
     // Dates are omitted until content has an authoritative modification date.
     fs.writeFileSync(path.join(build, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${siteRoutes.map(route => `  <url><loc>${pageUrl(route.path)}</loc></url>`).join('\n')}\n</urlset>\n`);
     // Cloudflare serves directory index pages and the top-level 404.html natively.
