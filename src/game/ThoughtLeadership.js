@@ -34,7 +34,7 @@ export default function ThoughtLeadership() {
       </header>
         <section className={styles.perspective} aria-labelledby="perspective-heading">
           <div className={styles.perspectiveInner}>
-            <h2 id="perspective-heading">Informed by building. Grounded in business.</h2>
+            <h2 id="perspective-heading">Informed by building. Grounded in business<span className={styles.period}>.</span></h2>
             <p>My perspectives draw on building and testing AI systems, developing products and leading technology teams. Through executive briefings, workshops and strategic conversations, I help leaders explore emerging capabilities, challenge assumptions and make informed decisions about where AI can create value.</p>
           </div>
         </section>
