@@ -37,7 +37,7 @@ export default function Custom404() {
         url: `${SITE_URL}/404`,
       }}
     />
-    <ResponsiveImage sizes="100vw" className={styles.art} src="/images/game/404/motorbike.png" alt="" fetchpriority="high" />
+    <ResponsiveImage sizes="100vw" className={styles.art} src="/images/game/404/motorbike-v2-colour.png" alt="" fetchpriority="high" />
     <div className={styles.shade} aria-hidden="true" />
     <div className={styles.verdict}>
       <h1 className={styles.title}><ResponsiveImage className={styles.wordmark} src="/images/game/404/busted.svg" alt="Busted" /></h1>
