@@ -2,7 +2,7 @@
 
 ## Illustrations and article images
 
-The portfolio illustrations were created with the built-in image-generation tool, using Sean's photographs and supplied references where appropriate. Website images live in `public/images`; layouts, captions and framing are implemented in code. Generation prompts, rejected concepts and deleted master-image references remain available in Git history.
+The portfolio illustrations were created with the built-in image-generation tool, using Sean's photographs and supplied references where appropriate. Website images live in `public/images`; layouts, captions and framing are implemented in code. Generation prompts, rejected concepts and deleted master-image references remain available in Git history. Two representative original edit prompts, for the Writing and Building panels, are also preserved in [prompt-examples.md](artwork-source/prompt-examples.md).
 
 Writing-page images come from the linked publishers. Their original URLs, alternative text and crop positions are recorded alongside the articles in [articlesData.js](../src/data/articlesData.js).
 
