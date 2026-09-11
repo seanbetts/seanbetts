@@ -4,7 +4,7 @@ import GameHome from './GameHome';
 
 test('preserves home search and social descriptions and keywords with the new cover copy', async () => {
   render(<MemoryRouter><GameHome /></MemoryRouter>);
-  const description = 'Sean Betts is Chief AI & Innovation Officer at Omnicom Media UK, an independent AI researcher and builder focused on AI strategy, product innovation and business transformation.';
+  const description = 'Sean Betts, Chief AI & Innovation Officer at Omnicom Media UK. Explore his AI research, products, writing and speaking.';
   await waitFor(() => {
     for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) {
       expect(document.querySelector(selector)).toHaveAttribute('content', description);
