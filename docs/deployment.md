@@ -38,9 +38,10 @@ project as custom domains.
 Two Single Redirect rules in the `seanbetts.com` zone complement the repository's
 `public/_redirects`:
 
-- **Canonical website: apex to www** matches host `seanbetts.com`, returning a
-  301 to `concat("https://www.seanbetts.com", http.request.uri.path)` and preserving
-  the query string.
+- **Canonical website: apex to www** matches host `seanbetts.com` except paths
+  starting with `/.well-known/`, returning a 301 to
+  `concat("https://www.seanbetts.com", http.request.uri.path)` and preserving the
+  query string. The exception allows Pages certificate validation and renewal.
 - **Legacy Map URLs** matches `/map` and `/map/` on the apex or `www`, returning a
   301 to `https://www.seanbetts.com/` and preserving the query string. The edge
   rule covers the trailing-slash alias, which is absent from the Pages export.
