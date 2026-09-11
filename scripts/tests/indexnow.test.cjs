@@ -60,7 +60,7 @@ test('submits added, changed and removed pages; unchanged pages and repeated sub
 });
 
 // External HTTP boundaries are replaced; the submission and state decisions are real.
-function network({ main = revision, deployed = revision, status = 200, keyBody = key, checks, mainChanges = false } = {}) {
+function network({ main = revision, deployed = revision, status = 200, keyBody = key, checks, mainChanges = false, message = 'Publish website update' } = {}) {
   const posts = [];
   let mainReads = 0;
   const current = manifest({ [`${origin}/about/`]: '1'.repeat(64) });
@@ -71,6 +71,7 @@ function network({ main = revision, deployed = revision, status = 200, keyBody =
       { name: 'Cloudflare Pages', head_sha: revision, status: 'completed', conclusion: 'success', app: { id: 85455 } },
       { name: 'Validate site', head_sha: revision, status: 'completed', conclusion: 'success', app: { id: 15368 } },
     ] });
+    if (url.endsWith(`/commits/${revision}`)) return Response.json({ sha: revision, commit: { message } });
     if (url.includes('/indexnow-manifest.json')) return Response.json({ ...current, revision: deployed });
     if (url.endsWith('/indexnow-key.txt')) return new Response(keyBody);
     throw new Error(`Unexpected request: ${url}`);
@@ -79,6 +80,34 @@ function network({ main = revision, deployed = revision, status = 200, keyBody =
 }
 
 const options = n => ({ revision, key, token: 'test-token', fetchImpl: n.fetchImpl, sleep: async () => {}, attempts: 1 });
+
+test('intentional Pages skip prefixes exit without waiting, submitting or advancing the baseline', async () => {
+  for (const prefix of ['[CF-Pages-Skip]', '[CI Skip]', '[CI-Skip]', '[Skip CI]', '[Skip-CI]', '[cf-pages-skip]']) {
+    const n = network({ message: `${prefix} Merge worktree housekeeping`, checks: [] });
+    let waits = 0;
+    const result = await notifyDeployment({ ...options(n), submit: true, previous: n.current, attempts: 2, sleep: async () => { waits++; } });
+    assert.deepEqual(result, { status: 'deployment-skipped', urls: [] });
+    assert.equal(waits, 0);
+    assert.equal(n.posts.length, 0);
+  }
+});
+
+test('mentioning a skip marker in prose does not bypass deployment verification', async () => {
+  for (const message of ['Document [CF-Pages-Skip] behaviour', 'Update docs\n\n[CF-Pages-Skip] is an example', '[CF-Pages-Skipper] Update site']) {
+    const n = network({ message, checks: [] });
+    await assert.rejects(notifyDeployment({ ...options(n), submit: true }), /Timed out/);
+    assert.equal(n.posts.length, 0);
+  }
+});
+
+test('skip detection rejects missing or mismatched commit evidence', async () => {
+  for (const commit of [{ sha: 'b'.repeat(40), commit: { message: '[CF-Pages-Skip] Docs' } }, { sha: revision, commit: {} }]) {
+    const n = network();
+    const fetchImpl = (url, config) => url.endsWith(`/commits/${revision}`) ? Promise.resolve(Response.json(commit)) : n.fetchImpl(url, config);
+    await assert.rejects(notifyDeployment({ ...options(n), fetchImpl, submit: true }), /Invalid commit/);
+    assert.equal(n.posts.length, 0);
+  }
+});
 
 test('dry run verifies production but neither submits nor advances the baseline', async () => {
   const n = network();
