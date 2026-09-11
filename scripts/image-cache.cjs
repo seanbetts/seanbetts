@@ -4,7 +4,7 @@ const sharp = require('sharp');
 const { randomUUID } = require('node:crypto');
 const maxBytes = 10 * 1024 * 1024;
 
-function createImageCache({ origin, fetchImpl = fetch, timeoutMs = 5000 }) {
+function createImageCache({ origin, fetchImpl = fetch, timeoutMs = 15000 }) {
   let disabled = !origin;
   const cache = {
     restored: 0,

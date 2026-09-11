@@ -44,7 +44,7 @@ New or changed images are encoded normally; obsolete exports are still pruned.
 
 This is an optional cache. A missing file falls back to encoding; a timeout,
 server error or invalid image disables further downloads for that build. At most
-four requests run concurrently, with a five-second timeout per request. Builds
+four requests run concurrently, with a fifteen-second timeout per request. Builds
 still work without access to the published site, but take the original cold-build
 time. No image quality, dimensions or encoding settings have changed.
 
@@ -57,3 +57,9 @@ When changing encoding settings or making an encoder upgrade that should
 regenerate output, update the corresponding hash policy string in
 `scripts/prepare-images.cjs`. Otherwise existing published bytes will be reused.
 Run the pipeline regression tests with `node --test scripts/tests/*.test.cjs`.
+
+GitHub validation also caches the responsive directory between successful runs.
+Its key includes the runner OS, lockfile, preparation scripts and source images;
+a restore prefix allows unchanged exports to survive artwork edits. The manifest
+is not cached. GitHub's normal branch scopes apply, so the first run on a branch
+may still need to download or encode exports.
