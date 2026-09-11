@@ -40,6 +40,13 @@ async function notifyDeployment({ revision, key, token, previous, submit = false
     if (!response.ok) throw new Error(`GitHub check failed: HTTP ${response.status}`);
     return response.json();
   };
+  // Pages publishes no check run when a commit explicitly skips deployment.
+  // Read the exact revision's message so automatic and manual runs agree.
+  const commit = await github(`/commits/${revision}`);
+  if (commit.sha !== revision || typeof commit.commit?.message !== 'string') throw new Error('Invalid commit evidence for deployment skip detection');
+  if (/^\[(?:CF-Pages-Skip|CI[ -]Skip|Skip[ -]CI)\]/i.test(commit.commit.message)) {
+    return { status: 'deployment-skipped', urls: [] };
+  }
   const isCurrent = async () => (await github('/git/ref/heads/main')).object.sha === revision;
   let current;
   for (let attempt = 0; attempt < attempts; attempt++) {
