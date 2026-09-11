@@ -21,18 +21,16 @@
 .feature { position: relative; min-width: 0; min-height: 320px; display: flex; flex-direction: column; background: var(--game-ink); isolation: isolate; }
 .featureGrid .feature:nth-of-type(odd) { --frame-window: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%); }
 .featureGrid .feature:nth-of-type(even) { --frame-window: polygon(var(--game-frame) 0, 100% 0, 100% 100%, calc(var(--game-frame) - 12px) 100%); }
-.heroFeature { min-height: 540px; --frame-window: polygon(var(--game-frame) 0, 100% 0, 100% 100%, calc(var(--game-frame) - var(--seam-slant)) 100%); }
+.heroArtwork { composes: surface from "../game/Frame.module.css"; min-width: 0; min-height: 540px; clip-path: polygon(var(--game-frame) 0, 100% 0, 100% 100%, calc(var(--game-frame) - var(--seam-slant)) 100%); }
+.heroArtwork img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; transform: skewY(var(--content-angle)) scale(1.045); }
 .articleContent { display: grid; grid-template-columns: minmax(0, 1fr) minmax(140px, 43%); align-items: center; gap: 26px; flex: 1; padding: 36px 30px; min-width: 0; }
-.featureGrid .feature:nth-of-type(even) .articleContent, .heroFeature .articleContent { padding-left: 44px; }
+.featureGrid .feature:nth-of-type(even) .articleContent { padding-left: 44px; }
 .articleCopy { position: relative; z-index: 2; min-width: 0; transform: skewY(var(--content-angle)); pointer-events: none; }
 .articleDetails { --info-available-width: calc(100cqw - 88px); }
 .featureLink { position: absolute; inset: 0; z-index: 1; }
 .photo { overflow: hidden; aspect-ratio: 1; border-radius: 12px; background: var(--game-surface-deep); transform: skewY(var(--content-angle)); }
 .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-.heroFeature .articleContent { grid-template-columns: minmax(0, 1fr) minmax(150px, 48%); gap: 22px; }
-.heroFeature .photo { aspect-ratio: 4 / 5; }
 .page .feature h3, .page .feature h2 { color: var(--game-text); font-size: clamp(27px, 2.5vw, 36px); line-height: 1.1; text-transform: uppercase; margin: 0 0 20px; text-wrap: pretty; overflow-wrap: anywhere; hyphens: auto; }
-.page .heroFeature h2 { font-size: clamp(34px, 3vw, 44px); }
 .page .feature .publication { color: var(--game-accent); font: 600 18px/1.3 var(--game-ui); margin-bottom: 6px; }
 .metadata { display: flex; flex-direction: column; align-items: flex-start; gap: 0; color: var(--game-muted); font-size: 13px; line-height: 1.5; }
 .featureGrid .feature:last-child:nth-of-type(odd) { grid-column: 1 / -1; --frame-window: none; }
@@ -56,19 +54,19 @@
  .introduction { padding: 32px; clip-path: none; }
  .page .standfirst { font-size: 18px; }
  .featureGrid { grid-template-columns: minmax(0, 1fr); }
- .feature, .heroFeature { min-height: 0; }
+ .feature { min-height: 0; }
+ .heroArtwork { min-height: 0; height: 300px; clip-path: none; }
  .feature .panelWindow { clip-path: none; }
  .articleContent, .featureGrid .feature:nth-of-type(even) .articleContent,
  .featureGrid .feature:last-child:nth-of-type(odd) .articleContent { grid-template-columns: minmax(0, 1fr) 220px; gap: 28px; padding: 32px; }
- .heroFeature .articleContent { grid-template-columns: minmax(0, 1fr) 240px; gap: 28px; padding: 32px; }
  .page .feature h3 { font-size: 32px; }
- .page .heroFeature h2 { font-size: 38px; }
  .articleDetails { --info-available-width: calc(100cqw - 64px); }
  .archive { padding: 32px; }
  .archiveEntry { grid-template-columns: 120px minmax(0, 1fr) 24px; gap: 20px; }
 }
 @media (max-width: 700px) {
  .introduction { padding: 24px 22px; }
+ .heroArtwork { height: 240px; }
  .page .introduction h1 { font-size: clamp(52px, 14vw, 64px); margin-bottom: 16px; }
  .page .standfirst { font-size: 17px; line-height: 1.5; }
  .blueprint { margin-top: 18px; padding-top: 18px; }
@@ -76,12 +74,10 @@
  .page .blueprint p { font-size: 15px; line-height: 1.5; margin-bottom: 16px; }
  .articleContent, .featureGrid .feature:nth-of-type(even) .articleContent,
  .featureGrid .feature:last-child:nth-of-type(odd) .articleContent { grid-template-columns: minmax(0, 1fr) 132px; gap: 18px 16px; padding: 24px 22px; }
- .heroFeature .articleContent { grid-template-columns: minmax(0, 1fr) 140px; gap: 18px 16px; padding: 24px 22px; }
  /* Let the metadata span both columns without duplicating accessible content. */
  .articleCopy { display: contents; }
  .page .feature h3, .page .feature h2 { grid-column: 1; grid-row: 1; position: relative; z-index: 2; transform: skewY(var(--content-angle)); margin: 0; pointer-events: none; }
  .page .feature h3 { font-size: 27px; }
- .page .heroFeature h2 { font-size: 32px; }
  .photo { grid-column: 2; grid-row: 1; }
  .articleDetails { grid-column: 1 / -1; grid-row: 2; z-index: 2; transform: skewY(var(--content-angle)); pointer-events: none; }
  .articleDetails { --info-available-width: calc(100cqw - 44px); }
@@ -98,10 +94,10 @@
 .panelWindow { composes: window from "../game/Frame.module.css"; display:flex;flex-direction:column;flex:1; container-type: inline-size; background: var(--game-surface); }
 
 @media (max-width: 360px) {
- .articleContent, .heroFeature .articleContent,
+ .articleContent,
  .featureGrid .feature:nth-of-type(even) .articleContent,
  .featureGrid .feature:last-child:nth-of-type(odd) .articleContent { grid-template-columns: minmax(0, 1fr); }
- .photo, .heroFeature .photo { grid-column: 1; grid-row: 1; aspect-ratio: 16 / 9; }
+ .photo { grid-column: 1; grid-row: 1; aspect-ratio: 16 / 9; }
  .page .feature h3, .page .feature h2 { grid-row: 2; }
  .articleDetails { grid-row: 3; }
 }

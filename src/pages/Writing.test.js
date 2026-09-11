@@ -26,7 +26,7 @@ test('keeps every article reachable without preview requests or cached metadata'
   expect(screen.queryByRole('region', { name: 'More writing' })).not.toBeInTheDocument();
   expect(articlesData.every(article => article.image)).toBe(true);
   expect(screen.queryByRole('button', { name: 'Show more articles' })).not.toBeInTheDocument();
-  expect(within(featured).getAllByRole('link')).toHaveLength(articlesData.filter(article => article.image).length - 1);
+  expect(within(featured).getAllByRole('link')).toHaveLength(articlesData.filter(article => article.image).length);
   articlesData.forEach(article => {
     const title = screen.getByRole('heading', { name: article.title });
     const link = within(title.closest('article')).getByRole('link');
@@ -50,14 +50,16 @@ test('keeps every article reachable without preview requests or cached metadata'
   localStorage.removeItem('articleMetadata');
 });
 
-test('places the lead article in the hero without repeating it in the gallery', () => {
+test('shows the writing scene in the hero and all articles in order below it', () => {
   render(<MemoryRouter><Writing /></MemoryRouter>);
-  const article = articlesData.find(article => article.image);
-  const heading = screen.getByRole('heading', { level: 2, name: article.title });
-  expect(heading.closest('header')).not.toBeNull();
-  expect(screen.getAllByRole('heading', { name: article.title })).toHaveLength(1);
-  expect(within(heading.closest('article')).getByRole('img', { name: article.imageAlt })).toHaveAttribute('loading', 'eager');
-  expect(screen.queryByRole('img', { name: /Illustrated hands/ })).not.toBeInTheDocument();
+  const artwork = screen.getByRole('img', { name: /writing desk.*Balcombe Viaduct/i });
+  expect(artwork.closest('header')).not.toBeNull();
+  expect(artwork.closest('a')).toBeNull();
+  expect(artwork).toHaveAttribute('loading', 'eager');
+  const grid = screen.getByRole('region', { name: 'Featured articles' });
+  expect(within(grid).getAllByRole('heading', { level: 3 }).map(node => node.textContent))
+    .toEqual(articlesData.filter(article => article.image).map(article => article.title));
+  expect(within(artwork.closest('header')).queryByRole('article')).not.toBeInTheDocument();
 });
 
 test('article summaries support hover, keyboard focus, Escape, touch toggling and outside dismissal', () => {

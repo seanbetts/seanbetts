@@ -40,18 +40,17 @@ function ArticleDate({ article }) {
 }
 
 
-function ArticlePanel({ article, hero = false }) {
-  const Heading = hero ? 'h2' : 'h3';
+function ArticlePanel({ article }) {
   const [failed, setFailed] = useState(false);
   const titleId = useId();
-  return <article className={`${styles.feature} ${hero ? styles.heroFeature : ''}`} aria-labelledby={titleId}>
+  return <article className={styles.feature} aria-labelledby={titleId}>
     <div data-panel-shape className={styles.panelWindow}>
       <a data-panel-focus href={article.url} target="_blank" rel="noopener noreferrer" className={styles.featureLink} aria-labelledby={`${titleId} ${titleId}-external`}>
         <span id={`${titleId}-external`} className="sr-only">Opens in a new tab</span>
       </a>
       <div className={styles.articleContent}>
         <div className={styles.articleCopy}>
-          <Heading id={titleId}>{article.title}</Heading>
+          <h3 id={titleId}>{article.title}</h3>
           <InfoPopover className={styles.articleDetails} label={`About this article: ${article.title}`} description={article.description}>
             <div className={styles.metadata}>
               <p className={styles.publication}>{article.publication}</p>
@@ -60,8 +59,8 @@ function ArticlePanel({ article, hero = false }) {
           </InfoPopover>
         </div>
         <div className={styles.photo}>
-          {!failed && <ResponsiveImage src={article.image} alt={article.imageAlt} loading={hero ? "eager" : "lazy"} fetchpriority={hero ? "high" : undefined} decoding="async"
-            sizes={hero ? '(max-width: 360px) 80vw, (max-width: 700px) 140px, (max-width: 1000px) 240px, 260px' : '(max-width: 360px) 80vw, (max-width: 700px) 132px, (max-width: 1000px) 220px, 280px'}
+          {!failed && <ResponsiveImage src={article.image} alt={article.imageAlt} loading="lazy" decoding="async"
+            sizes="(max-width: 360px) 80vw, (max-width: 700px) 132px, (max-width: 1000px) 220px, 280px"
             style={{ objectPosition: article.imagePosition }} onError={() => setFailed(true)} />}
         </div>
       </div>
@@ -100,12 +99,17 @@ export default function Writing() {
             </div>
           </div>
         </div>
-        <ArticlePanel article={featured[0]} hero />
+        <div className={styles.heroArtwork}>
+          <ResponsiveImage src="/images/game/writing/over-shoulder-v2-colour.png"
+            alt="Sean seen from behind at his writing desk, with a mostly obscured laptop screen and Balcombe Viaduct beyond the window."
+            loading="eager" fetchpriority="high" decoding="async"
+            sizes="(max-width: 1000px) calc(100vw - 64px), (max-width: 1500px) 42vw, 600px" />
+        </div>
       </header>
       <section className={styles.featured} aria-labelledby="featured-writing-heading">
         <h2 id="featured-writing-heading" className="sr-only">Featured articles</h2>
         <div className={styles.featureGrid}>
-          {featured.slice(1).map(article => <ArticlePanel key={article.url} article={article} />)}
+          {featured.map(article => <ArticlePanel key={article.url} article={article} />)}
         </div>
       </section>
       {collection.length > 0 && <section className={styles.archive} aria-labelledby="more-writing-heading">
