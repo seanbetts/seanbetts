@@ -1,115 +1,372 @@
+// Curated article details. Dates are included only when verified on the publisher’s page.
+// Image sources are kept for provenance; the page serves optimised local assets.
 const articlesData = [
   {
-    title:"OMG UK’s Chief AI Officer on Why GEO Is Not SEO for AI",
-    url:"https://futureweek.com/omg-uks-chief-ai-officer-on-why-geo-is-not-seo-for-ai/"
+    "title": "The Hidden Layer of the Internet",
+    "url": "https://www.the-blueprint.ai/p/the-hidden-layer-of-the-internet",
+    "publication": "The Blueprint",
+    "description": "Why AI’s unseen choices about what to search and retrieve demand greater transparency as platforms become gateways to the internet.",
+    "datePublished": "2026-08-24",
+    "image": "/images/writing/blueprint-portrait-2026.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!s-Ef!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5233f053-919f-4f58-895c-5e166391fd0e_1536x1024.png",
+    "imageAlt": "Illustrated portrait of Sean Betts at a laptop beneath a neon Blueprint sign.",
+    "imagePosition": "center 25%"
   },
   {
-    title:"AI can fix advertising’s relevance problem – if we stop feeding into the hype",
-    url:"https://the-ipa.shorthandstories.com/ipai-forum-june-2026/future-of-the-industry/ai-can-fix-advertisings-relevance-problem/index.html"
+    "title": "Welcome to the Era of Paid Organic",
+    "url": "https://www.the-blueprint.ai/p/welcome-to-the-era-of-paid-organic",
+    "publication": "The Blueprint",
+    "description": "How paying to place information in the sources AI consults could create a new advertising category, and why disclosure must survive the journey into an AI answer.",
+    "datePublished": "2026-08-10",
+    "image": "/images/writing/blueprint-portrait-2026.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!s-Ef!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5233f053-919f-4f58-895c-5e166391fd0e_1536x1024.png",
+    "imageAlt": "Illustrated portrait of Sean Betts at a laptop beneath a neon Blueprint sign.",
+    "imagePosition": "center 25%"
   },
   {
-    title:"How to get chosen by AI platforms that control search",
-    url:"https://www.decisionmarketing.co.uk/views/how-to-get-chosen-by-ai-platforms-that-control-search"
+    "title": "OpenAI Pivots",
+    "url": "https://www.the-blueprint.ai/p/openai-pivots",
+    "publication": "The Blueprint",
+    "description": "Why I think OpenAI’s push into enterprise and knowledge work risks weakening its consumer experience and opening the door to Google.",
+    "datePublished": "2026-07-10",
+    "image": "/images/writing/blueprint-portrait-2026.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!s-Ef!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5233f053-919f-4f58-895c-5e166391fd0e_1536x1024.png",
+    "imageAlt": "Illustrated portrait of Sean Betts at a laptop beneath a neon Blueprint sign.",
+    "imagePosition": "center 25%"
   },
   {
-    title:"Advertising Inside The Model",
-    url:"https://advertisingweek.com/advertising-inside-the-model/"
+    "title": "OMG UK’s Chief AI Officer on Why GEO Is Not SEO for AI",
+    "url": "https://futureweek.com/omg-uks-chief-ai-officer-on-why-geo-is-not-seo-for-ai/",
+    "publication": "FutureWeek",
+    "description": "My guest article on why GEO requires brands to be understood and recommended by AI, with practical steps across content, authority and commerce.",
+    "datePublished": "2026-06-29",
+    "image": "/images/writing/article-01.webp",
+    "imageSource": "https://futureweek.com/wp-content/uploads/2026/06/Sean-Betts-1.png",
+    "imageAlt": "Sean Betts against a blue background patterned with binoculars.",
+    "imagePosition": "center 28%"
   },
   {
-    title:"Predictions for 2026: How Media and Marketing Agencies See the AI Shift Unfolding",
-    url:"https://futureweek.com/predictions-for-2026-how-media-and-marketing-agencies-see-the-ai-shift-unfolding/"
+    "title": "AI For The Rest Of Us, Take Two",
+    "url": "https://www.the-blueprint.ai/p/ai-for-the-rest-of-us-take-two",
+    "publication": "The Blueprint",
+    "description": "A fresh look at Apple Intelligence and Siri, and the promise of personal AI built into the devices and apps people already use.",
+    "datePublished": "2026-06-09",
+    "image": "/images/writing/ai-for-the-rest-of-us-take-two.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!Q59W!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38000e7e-8efe-4cf2-ad08-b200e93e398e_3840x2160.png",
+    "imageAlt": "A collage of Apple Intelligence features, including Siri, Shortcuts and personal context.",
+    "imagePosition": "center center"
   },
   {
-    title:"Why authority, not clicks, decides who conquers Web 4.0",
-    url:"https://uk.themedialeader.com/why-authority-not-clicks-decides-who-conquers-web-4-0/"
+    "title": "AI can fix advertising’s relevance problem – if we stop feeding into the hype",
+    "authors": ["Conor Nichols"],
+    "url": "https://the-ipa.shorthandstories.com/ipai-forum-june-2026/future-of-the-industry/ai-can-fix-advertisings-relevance-problem/index.html",
+    "datePublished": "2026-06-01",
+    "publication": "IPA",
+    "description": "In this IPA interview, I discuss why agencies need clearer workflows and practical experimentation, and how AI could make advertising more relevant to people’s intent.",
+    "image": "/images/writing/article-02.webp",
+    "imageSource": "https://the-ipa.shorthandstories.com/ipai-forum-june-2026/future-of-the-industry/ai-can-fix-advertisings-relevance-problem/assets/nvXEeh0mbR/istock-1440203158-1442x769.webp",
+    "imageAlt": "A neon megaphone glowing against a purple and pink background.",
+    "imagePosition": "center 38%"
   },
   {
-    title:"Judge of the Day: Omnicom’s Sean Betts maps the future of AI in digital experience",
-    url:"https://www.thedrum.com/news/judge-of-the-day-omnicoms-sean-betts-maps-the-future-of-ai-in-digital-experience"
+    "title": "How to get chosen by AI platforms that control search",
+    "url": "https://www.decisionmarketing.co.uk/views/how-to-get-chosen-by-ai-platforms-that-control-search",
+    "publication": "Decision Marketing",
+    "description": "Why AI visibility needs continuous testing, with practical steps for making brand content readable, building authority and keeping product information useful to AI platforms.",
+    "datePublished": "2026-04-14",
+    "image": "/images/writing/article-03.webp",
+    "imageSource": "https://www.decisionmarketing.co.uk/wp-content/uploads/2026/04/Sean-Betts-compressed.jpg",
+    "imageAlt": "Portrait of Sean Betts wearing a white shirt.",
+    "imagePosition": "center 20%"
   },
   {
-    title:"Web 4.0: From Human-Centric to Agent-Mediated",
-    url:"https://aijourn.com/web-4-0-from-human-centric-to-agent-mediated/"
+    "title": "The Problem with Sell-Side Agents",
+    "url": "https://www.the-blueprint.ai/p/the-problem-with-sell-side-agents",
+    "publication": "The Blueprint",
+    "description": "Why sell-side AI agents should support insights and planning while control of live campaign execution stays with the buy side.",
+    "datePublished": "2026-04-07",
+    "image": "/images/writing/the-problem-with-sell-side-agents.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!ctzy!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff0b3e36b-10b4-4395-a584-03ed08819359_1536x1024.png",
+    "imageAlt": "A neon diagram separating AI insights and recommendations from locked campaign execution.",
+    "imagePosition": "center center"
   },
   {
-    title:"Clicks Are Dead",
-    url:"https://www.the-blueprint.ai/p/clicks-are-dead"
+    "title": "Advertising Inside The Model",
+    "url": "https://advertisingweek.com/advertising-inside-the-model/",
+    "publication": "Advertising Week",
+    "description": "A proposal for AI models to evaluate paid content against a user’s intent, surfacing only relevant options with clear disclosure of commercial influence.",
+    "datePublished": "2026-03-05",
+    "image": "/images/writing/article-04.webp",
+    "imageSource": "https://advertisingweek.com/aw360/wp-content/uploads/sites/3/2026/03/Advertising-Inside-The-Model.jpg",
+    "imageAlt": "Illustrated chat windows arranged in a pastel pattern.",
+    "imagePosition": "center center"
   },
   {
-    title: "I really miss Steve Jobs",
-    url: "https://www.the-blueprint.ai/p/i-really-miss-steve-jobs"
+    "title": "Predictions for 2026: How Media and Marketing Agencies See the AI Shift Unfolding",
+    "authors": ["Katie Duffy"],
+    "url": "https://futureweek.com/predictions-for-2026-how-media-and-marketing-agencies-see-the-ai-shift-unfolding/",
+    "publication": "FutureWeek",
+    "description": "My contribution to FutureWeek’s industry predictions: brands will compete to be recommended by AI, making capability, relevance and accountability increasingly important.",
+    "datePublished": "2025-12-19",
+    "image": "/images/writing/article-05.webp",
+    "imageSource": "https://futureweek.com/wp-content/uploads/2025/12/phone.jpeg",
+    "imageAlt": "An illustrated shopping basket on a smartphone.",
+    "imagePosition": "center center"
   },
   {
-    title:"Omnicom Media Group’s AI Chief on What Star Wars Teaches Us About AI",
-    url:"https://futureweek.com/omnicoms-ai-chief-on-what-star-wars-teaches-us-about-ai/"
+    "title": "Why authority, not clicks, decides who conquers Web 4.0",
+    "url": "https://uk.themedialeader.com/why-authority-not-clicks-decides-who-conquers-web-4-0/",
+    "datePublished": "2025-11-26",
+    "publication": "The Media Leader",
+    "description": "Why earning AI recommendations requires coordinated work across engineering, content, PR and product data, while continuing to serve the people using the web.",
+    "image": "/images/writing/article-06.webp",
+    "imageSource": "https://uk.themedialeader.com/wp-content/uploads/2025/11/AI-recommends-750x502.png",
+    "imageAlt": "A humanoid robot between two laptops displaying charts, with glowing data panels behind it.",
+    "imagePosition": "center 25%"
   },
   {
-    title: "Nuclear Waste Kids",
-    url: "https://www.the-blueprint.ai/p/nuclear-waste-kids"
+    "title": "Judge of the Day: Omnicom’s Sean Betts maps the future of AI in digital experience",
+    "authors": ["Margo Waldrop"],
+    "url": "https://www.thedrum.com/news/judge-of-the-day-omnicoms-sean-betts-maps-the-future-of-ai-in-digital-experience",
+    "datePublished": "2025-11-04",
+    "publication": "The Drum",
+    "description": "The Drum profiles my perspective as a Digital Experience awards judge, discussing how creativity, trust and distinctiveness influence brand discovery through AI.",
+    "image": "/images/writing/article-07.webp",
+    "imageSource": "https://thedrum-media.imgix.net/thedrum-user-assets-prod/s3/images/original/sean-betts.png?w=1280&ar=default&fit=crop&crop=faces&auto=format",
+    "imageAlt": "Sean Betts wearing a mustard-coloured sweatshirt against a grey background.",
+    "imagePosition": "center 24%"
   },
   {
-    title: "Your brand must be available physically, mentally and now for the AI algorithm",
-    url: "https://www.thedrum.com/opinion/2025/04/01/your-brand-must-be-available-physically-mentally-and-now-the-ai-algorithm"
+    "title": "Web 4.0: From Human-Centric to Agent-Mediated",
+    "url": "https://aijourn.com/web-4-0-from-human-centric-to-agent-mediated/",
+    "publication": "The AI Journal",
+    "description": "How brands can test their visibility across AI platforms, improve the information those platforms rely on and measure how accurately they are represented.",
+    "datePublished": "2025-08-25",
+    "image": "/images/writing/article-08.webp",
+    "imageSource": "https://aijourn.com/wp-content/uploads/2025/08/pexels-tara-winstead-8386440-min-1024x683.jpg",
+    "imageAlt": "A robotic hand reaching into a network of glowing connections.",
+    "imagePosition": "center center"
   },
   {
-    title: "Web 4.0 - The Rise of the Agentic Web",
-    url: "https://www.the-blueprint.ai/p/web-40-the-rise-of-the-agentic-web"
+    "title": "Clicks Are Dead",
+    "url": "https://www.the-blueprint.ai/p/clicks-are-dead",
+    "datePublished": "2025-07-24",
+    "publication": "The Blueprint",
+    "description": "How zero-click search, browsing and purchasing challenge digital marketing’s measurement model, and what marketers can do to prepare while maintaining their existing channels.",
+    "image": "/images/writing/article-09.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!tW7Z!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdee0732e-9a0e-4302-8c28-9e320723455c_1536x1024.png",
+    "imageAlt": "A neon browser window dissolving into a network of points.",
+    "imagePosition": "center center"
   },
   {
-    title: "o1: The Next Step in Conversational AI",
-    url: "https://www.the-blueprint.ai/p/o1-the-next-step-in-conversational"
+    "title": "Omnicom Media Group’s AI Chief on What Star Wars Teaches Us About AI",
+    "url": "https://futureweek.com/omnicoms-ai-chief-on-what-star-wars-teaches-us-about-ai/",
+    "publication": "FutureWeek",
+    "description": "My guest article using Star Wars’ droids to explore why marketers must take responsibility for AI’s data, decisions and creative outputs.",
+    "datePublished": "2025-05-02",
+    "image": "/images/writing/article-11.webp",
+    "imageSource": "https://futureweek.com/wp-content/uploads/2025/05/Sean-Betts-1.jpeg",
+    "imageAlt": "Sean Betts in front of illustrations of robots and science-fiction characters.",
+    "imagePosition": "center 24%"
   },
   {
-    title: "Beyond Chatbots: A Blueprint for LLMs",
-    url: "https://www.the-blueprint.ai/p/beyond-chatbots-a-blueprint-for-llms"
+    "title": "Nuclear Waste Kids",
+    "url": "https://www.the-blueprint.ai/p/nuclear-waste-kids",
+    "datePublished": "2025-04-01",
+    "publication": "The Blueprint",
+    "description": "An experiment remixing The Simpsons as Garbage Pail Kids reveals how quickly image generation can drift into harmful outputs, and why human judgement still matters.",
+    "image": "/images/writing/article-12.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!Bxjl!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06fb151e-7dc5-486f-a96f-0265b43f2a01_1024x1536.png",
+    "imageAlt": "A Simpsons-inspired illustrated trading card.",
+    "imagePosition": "center 32%"
   },
   {
-    title: "AI For The Rest Of Us",
-    url: "https://www.the-blueprint.ai/p/ai-for-the-rest-of-us"
+    "title": "Your brand must be available physically, mentally and now for the AI algorithm",
+    "authors": ["Sean Betts", "Rob Beevers"],
+    "url": "https://www.thedrum.com/opinion/2025/04/01/your-brand-must-be-available-physically-mentally-and-now-the-ai-algorithm",
+    "datePublished": "2025-04-01",
+    "publication": "The Drum",
+    "description": "Co-written with Rob Beevers: why algorithmic availability belongs alongside physical and mental availability, and five disciplines for helping AI systems recognise and recommend brands.",
+    "image": "/images/writing/article-13.webp",
+    "imageSource": "https://thedrum-media.imgix.net/thedrum-prod/s3/screenshot_2025-04-01_120307.png?w=1280&ar=default&fit=crop&crop=faces&auto=format",
+    "imageAlt": "A person surrounded by a wall of colourful digital screens.",
+    "imagePosition": "center center"
   },
   {
-    title: "The Search for (im)perfection",
-    url: "https://newdigitalage.co/agencies/sean-betts-the-search-for-imperfection/"
+    "title": "I really miss Steve Jobs",
+    "url": "https://www.the-blueprint.ai/p/i-really-miss-steve-jobs",
+    "datePublished": "2025-03-19",
+    "publication": "The Blueprint",
+    "description": "A personal reflection on Steve Jobs’ influence on me, and why AI products need more human experience, delight and ambition in their design.",
+    "image": "/images/writing/article-10.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!6Mkc!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e58de5f-b206-4520-9ff5-55bd2a512a2a_1200x800.heic",
+    "imageAlt": "Black and white portrait of Steve Jobs resting his chin on his hand.",
+    "imagePosition": "center 20%"
   },
   {
-    title: "O is for Omni, but A is for Agent",
-    url: "https://www.the-blueprint.ai/p/o-is-for-omni-but-a-is-for-agent"
+    "title": "Web 4.0 - The Rise of the Agentic Web",
+    "url": "https://www.the-blueprint.ai/p/web-40-the-rise-of-the-agentic-web",
+    "datePublished": "2025-02-11",
+    "publication": "The Blueprint",
+    "description": "My framework for understanding the progression towards autonomous AI agents, and why systems that decide and act for consumers will require marketers to rethink their strategies.",
+    "image": "/images/writing/article-14.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!6rYo!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F43ee440d-bd91-46cd-ae28-916c03daa0f7_1792x1024.webp",
+    "imageAlt": "Glowing figures connected across a digital landscape.",
+    "imagePosition": "center center"
   },
   {
-    title: "The Marketing Singularity is Nearer Than You Think",
-    url: "https://newdigitalage.co/agencies/sean-betts-the-marketing-singularity-is-nearer-than-you-think/"
+    "title": "o1: The Next Step in Conversational AI",
+    "url": "https://www.the-blueprint.ai/p/o1-the-next-step-in-conversational",
+    "datePublished": "2024-09-16",
+    "publication": "The Blueprint",
+    "description": "Early testing of OpenAI’s o1 explores how more deliberate problem-solving changes the user experience, with new demands on trust, verification and how we work with AI.",
+    "image": "/images/writing/article-15.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!CGHL!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5efe06da-725b-4ffb-b135-4164ff03ae94_3840x2160.webp",
+    "imageAlt": "An OpenAI reasoning interface against a yellow and green background.",
+    "imagePosition": "center center"
   },
   {
-    title: "Leadership Lessons",
-    url: "https://www.the-blueprint.ai/p/leadership-lessons"
+    "title": "Beyond Chatbots: A Blueprint for LLMs",
+    "url": "https://www.the-blueprint.ai/p/beyond-chatbots-a-blueprint-for-llms",
+    "datePublished": "2024-07-18",
+    "publication": "The Blueprint",
+    "description": "A product vision for digital companions that know us and work alongside us, connecting memory, integrations and proactive support with trust and human autonomy.",
+    "image": "/images/writing/article-16.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!0lSC!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbf0b1965-1c46-4c4e-b3ba-d4eca9405925_1792x1024.webp",
+    "imageAlt": "Two luminous figures reaching towards one another across a digital network.",
+    "imagePosition": "center center"
   },
   {
-    title: "Tech Pail Kids",
-    url: "https://www.the-blueprint.ai/p/tech-pail-kids"
+    "title": "AI For The Rest Of Us",
+    "url": "https://www.the-blueprint.ai/p/ai-for-the-rest-of-us",
+    "datePublished": "2024-06-14",
+    "publication": "The Blueprint",
+    "description": "My response to WWDC 2024: why personal context, privacy and the ability to take actions matter more for Apple Intelligence than familiar generative features.",
+    "image": "/images/writing/article-17.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!_q-Q!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F97686290-157a-4cf4-a2d1-e7c87303c1bc_1920x1080.webp",
+    "imageAlt": "An Apple presenter on a stage displaying AI for the rest of us.",
+    "imagePosition": "center center"
   },
   {
-    title: "The Power of GPTs",
-    url: "https://www.the-blueprint.ai/p/the-power-of-gpts"
+    "title": "O is for Omni, but A is for Agent",
+    "url": "https://www.the-blueprint.ai/p/o-is-for-omni-but-a-is-for-agent",
+    "datePublished": "2024-05-13",
+    "publication": "The Blueprint",
+    "description": "Why GPT-4o’s real-time voice, expressive interaction and desktop presence suggested a route towards personal AI assistants beyond improvements in model performance.",
+    "image": "/images/writing/article-19.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!JbXm!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8755e01-b179-49f9-aeb1-65dc4480a79b_1966x1228.png",
+    "imageAlt": "A row of interface symbols against a painted sky.",
+    "imagePosition": "center center"
   },
   {
-    title: "OpenAI DevDay Special",
-    url: "https://www.the-blueprint.ai/p/openai-devday-special"
+    "title": "The Search for (im)perfection",
+    "url": "https://newdigitalage.co/agencies/sean-betts-the-search-for-imperfection/",
+    "publication": "New Digital Age",
+    "description": "Why expecting perfect AI misses a harder question: how much oversight and control are we willing to relinquish as systems become more capable?",
+    "datePublished": "2024-04-22",
+    "image": "/images/writing/article-18.webp",
+    "imageSource": "https://newdigitalage.co/wp-content/uploads/2023/08/Sean-Betts-1-jpg.webp",
+    "imageAlt": "Sean Betts sitting in front of a wall of framed artwork.",
+    "imagePosition": "70% 28%"
   },
   {
-    title: "AI Safety Summit: what marketers need to know",
-    url: "https://www.thedrum.com/opinion/2023/11/07/ai-safety-summit-what-marketers-need-know"
+    "title": "The Marketing Singularity is Nearer Than You Think",
+    "url": "https://newdigitalage.co/agencies/sean-betts-the-marketing-singularity-is-nearer-than-you-think/",
+    "publication": "New Digital Age",
+    "description": "Drawing on Ray Kurzweil’s influence on my thinking, I explore how AI could bring marketing disciplines together and reshape consumer experiences, measurement and responsibility.",
+    "datePublished": "2023-12-07",
+    "image": "/images/writing/article-18.webp",
+    "imageSource": "https://newdigitalage.co/wp-content/uploads/2023/08/Sean-Betts-1-jpg.webp",
+    "imageAlt": "Sean Betts sitting in front of a wall of framed artwork.",
+    "imagePosition": "70% 28%"
   },
   {
-    title: "Is Generative AI a Feature or a Platform?",
-    url: "https://www.the-blueprint.ai/p/is-generative-ai-a-feature-or-a-platform"
+    "title": "Leadership Lessons",
+    "url": "https://www.the-blueprint.ai/p/leadership-lessons",
+    "datePublished": "2023-11-22",
+    "publication": "The Blueprint",
+    "description": "Reflections on OpenAI’s November 2023 leadership crisis, examining how a shared mission, employee loyalty and strong partnerships help organisations navigate upheaval.",
+    "image": "/images/writing/article-21.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!EvbZ!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa7b6e1ff-dd1a-4dc0-9fea-faae7722ab9f.heic",
+    "imageAlt": "A group photograph of the OpenAI team.",
+    "imagePosition": "center 25%"
   },
   {
-    title: "The Balancing Act",
-    url: "https://www.the-blueprint.ai/p/the-balancing-act"
+    "title": "Tech Pail Kids",
+    "url": "https://www.the-blueprint.ai/p/tech-pail-kids",
+    "datePublished": "2023-11-20",
+    "publication": "The Blueprint",
+    "description": "How I used Midjourney and Pixelmator to turn technology leaders into retro trading cards, then examined the questions of likeness, ownership and responsibility the experiment raised.",
+    "image": "/images/writing/article-22.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!vo4T!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc10b7e42-cb7c-43c8-8f0d-505a636f14d7_976x1360.png",
+    "imageAlt": "A Garbage Pail Kids-style illustrated character.",
+    "imagePosition": "center 30%"
   },
   {
-    title: "Navigating the role of generative AI in digital marketing",
-    url: "https://newdigitalage.co/agencies/sean-betts-the-generative-ai-hype-cycle/"
+    "title": "The Power of GPTs",
+    "url": "https://www.the-blueprint.ai/p/the-power-of-gpts",
+    "datePublished": "2023-11-13",
+    "publication": "The Blueprint",
+    "description": "Why custom GPTs put powerful capabilities within more people’s reach, and how organisational approaches to control, cost and IT could limit their adoption.",
+    "image": "/images/writing/article-23.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!l_55!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd800784a-7fb6-46fc-9110-1b94bc41ff9e.heic",
+    "imageAlt": "A collection of custom GPT examples.",
+    "imagePosition": "center center"
+  },
+  {
+    "title": "AI Safety Summit: what marketers need to know",
+    "url": "https://www.thedrum.com/opinion/2023/11/07/ai-safety-summit-what-marketers-need-know",
+    "datePublished": "2023-11-07",
+    "publication": "The Drum",
+    "description": "My response to the Bletchley Declaration: why marketers should address immediate concerns around bias, privacy and transparency, and ask tougher questions of AI providers.",
+    "image": "/images/writing/article-25.webp",
+    "imageSource": "https://thedrum-media.imgix.net/thedrum-prod/s3/news/tmp/77017/screenshot_2023-11-07_161648.png?w=1280&ar=default&fit=crop&crop=faces&auto=format",
+    "imageAlt": "The entrance to the AI Safety Summit at Bletchley Park.",
+    "imagePosition": "center 38%"
+  },
+  {
+    "title": "OpenAI DevDay Special",
+    "url": "https://www.the-blueprint.ai/p/openai-devday-special",
+    "datePublished": "2023-11-06",
+    "publication": "The Blueprint",
+    "description": "My first reactions to OpenAI’s 2023 developer conference, focusing on how custom GPTs and the Assistants API could make useful AI tools easier to build.",
+    "image": "/images/writing/article-24.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!jyHR!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0aadde5a-da14-473f-8bd6-23239313dca8.heic",
+    "imageAlt": "An OpenAI presentation showing GPTs and Copyright Shield.",
+    "imagePosition": "center center"
+  },
+  {
+    "title": "Navigating the role of generative AI in digital marketing",
+    "url": "https://newdigitalage.co/agencies/sean-betts-the-generative-ai-hype-cycle/",
+    "publication": "New Digital Age",
+    "description": "Why AI’s awkward interfaces, inconsistent outputs and ethical challenges could fuel disillusionment, even as its capabilities open up new possibilities for knowledge work.",
+    "datePublished": "2023-09-26",
+    "image": "/images/writing/article-18.webp",
+    "imageSource": "https://newdigitalage.co/wp-content/uploads/2023/08/Sean-Betts-1-jpg.webp",
+    "imageAlt": "Sean Betts sitting in front of a wall of framed artwork.",
+    "imagePosition": "70% 28%"
+  },
+  {
+    "title": "Is Generative AI a Feature or a Platform?",
+    "url": "https://www.the-blueprint.ai/p/is-generative-ai-a-feature-or-a-platform",
+    "datePublished": "2023-09-12",
+    "publication": "The Blueprint",
+    "description": "An early exploration of AI’s evolution from individual features towards personal platforms, and the memory, integrations and user control those products would need.",
+    "image": "/images/writing/article-26.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!KdyT!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F639cbaac-f1f3-473a-971d-d4c4aa4db22d_1456x816.png",
+    "imageAlt": "A colourful network of connected icons.",
+    "imagePosition": "center center"
+  },
+  {
+    "title": "The Balancing Act",
+    "url": "https://www.the-blueprint.ai/p/the-balancing-act",
+    "datePublished": "2023-08-18",
+    "publication": "The Blueprint",
+    "description": "A proposal for separating model training from generated outputs, giving publishers more control over their content while exploring a middle ground for AI and creative rights.",
+    "image": "/images/writing/article-27.webp",
+    "imageSource": "https://substackcdn.com/image/fetch/$s_!kmhq!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff8eb9c0f-3f99-4e7d-a32c-644d01cc0696_1456x816.png",
+    "imageAlt": "A futuristic figure sitting in a chair against a dark background.",
+    "imagePosition": "center center"
   }
 ];
 

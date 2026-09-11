@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { personSchema, websiteSchema, PERSON_ID, WEBSITE_ID, SITE_URL, pageUrl } from '../data/siteIdentity';
 
 export const SITE_NAME = 'Sean Betts';
-export const SITE_URL = 'https://www.seanbetts.com';
 const DEFAULT_IMAGE_PATH = '/images/sean-betts-profile.png';
 const DEFAULT_TWITTER_SITE = '@seanbetts';
 
@@ -45,14 +45,27 @@ const Seo = ({
   twitterTitle,
   twitterDescription,
 }) => {
-  const canonical = canonicalUrl || (canonicalPath ? toAbsoluteUrl(canonicalPath) : SITE_URL);
+  const canonical = canonicalUrl || pageUrl(canonicalPath || '/');
   const image = imageUrl || toAbsoluteUrl(imagePath);
   const metaKeywords = normalizeKeywords(keywords);
   const resolvedOgTitle = ogTitle || title;
   const resolvedOgDescription = ogDescription || description;
   const resolvedTwitterTitle = twitterTitle || title;
   const resolvedTwitterDescription = twitterDescription || description;
-  const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+  const supplied = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+  const pageType = canonicalPath === '/about' ? 'ProfilePage'
+    : ['/writing', '/building', '/speaking'].includes(canonicalPath) ? 'CollectionPage'
+    : canonicalPath === '/contact' ? 'ContactPage' : 'WebPage';
+  const entities = supplied.map(entry => ({ ...entry, '@id': entry['@id'] || `${canonical}#${entry['@type'] === 'ItemList' ? 'items' : 'work'}` }));
+  const pageSchema = {
+    '@context': 'https://schema.org', '@type': pageType, '@id': `${canonical}#webpage`,
+    url: canonical, name: title, description,
+    isPartOf: { '@id': WEBSITE_ID }, about: { '@id': PERSON_ID },
+    ...(['ProfilePage', 'ContactPage'].includes(pageType) ? { mainEntity: { '@id': PERSON_ID } }
+      : entities.length ? { mainEntity: { '@id': entities[0]['@id'] } } : {}),
+  };
+  const jsonLdItems = noindex ? [] : [personSchema, websiteSchema, pageSchema,
+    ...entities];
 
   return (
     <Helmet>
@@ -67,8 +80,9 @@ const Seo = ({
       {resolvedOgDescription ? <meta property="og:description" content={resolvedOgDescription} /> : null}
       <meta property="og:type" content={ogType} />
       {image ? <meta property="og:image" content={image} /> : null}
-      {image ? <meta property="og:image:width" content="800" /> : null}
-      {image ? <meta property="og:image:height" content="800" /> : null}
+      {image === toAbsoluteUrl(DEFAULT_IMAGE_PATH) ? <meta property="og:image:width" content="1024" /> : null}
+      {image === toAbsoluteUrl(DEFAULT_IMAGE_PATH) ? <meta property="og:image:height" content="1024" /> : null}
+      <link rel="describedby" href={`${SITE_URL}/llms.txt`} type="text/plain" />
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:site" content={twitterSite} />
       {resolvedTwitterTitle ? <meta name="twitter:title" content={resolvedTwitterTitle} /> : null}
@@ -76,7 +90,7 @@ const Seo = ({
       {image ? <meta name="twitter:image" content={image} /> : null}
       {jsonLdItems.map((entry, index) => (
         <script key={index} type="application/ld+json">
-          {JSON.stringify(entry)}
+          {JSON.stringify(entry).replace(/</g, '\\u003c')}
         </script>
       ))}
     </Helmet>

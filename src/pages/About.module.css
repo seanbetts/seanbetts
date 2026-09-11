@@ -1,214 +1,79 @@
-/* src/pages/About.module.css */
-.about {
-  padding: 1rem 0;
+.chapter { composes: surface from "../game/Frame.module.css"; }
+.hero { composes: surface from "../game/Frame.module.css"; }
+.about{max-width:1440px;margin:auto;padding-bottom:40px}
+.back { composes: back from "../components/Page.module.css"; }
+.hero{display:grid;grid-template-columns:42% 58%;position:relative;background:var(--game-surface);border:var(--game-frame) solid var(--game-ink);overflow:hidden}
+.portrait{position:relative;min-height:650px;border-right:var(--game-frame) solid var(--game-ink);overflow:hidden}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%}
+.heroCopy{padding:44px clamp(24px,3.7vw,56px);align-self:center}
+.eyebrow{display:block;font:600 15px/1.4 var(--game-ui);text-transform:uppercase;letter-spacing:.1em;color:var(--game-accent-text)}
+.about .heroCopy h1{font-size:clamp(56px,6.5vw,94px);line-height:.95;text-transform:uppercase;margin:16px 0 28px}
+.about .heroCopy h1 span,.about .sectionHeader h2 span{color:var(--game-accent)}
+.about .intro p{font-size:16px;line-height:1.7;color:var(--game-body);margin-top:16px}
+.about .intro p:first-child{margin-top:0}
+.chapters{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:30px;border-top:1px solid var(--game-border);padding-top:18px}
+.about .chapters a{display:flex;align-items:center;gap:9px;min-height:44px;color:var(--game-accent);font:600 16px var(--game-ui)}
+.about .chapters a span{color:var(--game-text)}
+.about .chapters a:hover span{color:var(--game-accent-text)}
+.chapter{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);background:var(--game-surface-alt);border:var(--game-frame) solid var(--game-ink);border-top:0;scroll-margin-top:18px}
+.chapter:focus{outline:none}
+.chapter:focus-visible{outline:3px solid var(--game-accent);outline-offset:3px}
+.chapterArt{grid-column:2;grid-row:1;position:relative;min-height:450px;border-left:var(--game-frame) solid var(--game-ink);overflow:hidden;isolation:isolate}
+.chapterImage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.researchImage{object-position:center bottom}
+.chapterArt>span{position:absolute;bottom:28px;left:28px;right:24px;z-index:2;font:600 22px var(--game-ui);text-transform:uppercase;letter-spacing:.02em}
+.chapterCopy{grid-column:1;grid-row:1;padding:42px clamp(24px,3.7vw,56px);min-width:0}
+.sectionHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:24px}
+.about .sectionHeader h2{font-size:clamp(34px,3.4vw,49px);text-transform:uppercase;margin-top:0}
+.sectionHeader .socialLink{display:grid;place-items:center;min-width:44px;min-height:44px;color:var(--game-accent);flex-shrink:0}
+.sectionHeader .socialLink:hover,.sectionHeader .socialLink:focus-visible{color:var(--game-text)}
+.about .chapterCopy h3{font-size:24px;line-height:1.2;margin-bottom:20px}
+.about .chapterCopy h3 span{display:block;font-size:18px;color:var(--game-accent-text);margin-top:6px}
+.chapterCopy p,.chapterCopy li{font-size:16px;line-height:1.75;color:var(--game-body)}
+.chapterCopy p+p{margin-top:18px}
+.chapterCopy p a{color:var(--game-accent-text);font-weight:600;text-decoration:var(--game-inline-link-decoration);text-underline-offset:.15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.chapterCopy p a:hover,.chapterCopy p a:focus-visible{color:var(--game-text);background-color:color-mix(in srgb,var(--game-accent) 14%,transparent)}
+.chapterCopy ul{padding-left:20px;margin:12px 0 0}
+.chapterCopy li{padding-left:6px;margin-top:8px;font-size:15px}
+.chapterCopy li::marker{color:var(--game-accent)}
+.chapterCopy .action{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--game-border);margin-top:30px;padding-top:18px;min-height:44px;font:600 20px var(--game-ui);color:var(--game-accent-text)}
+.action:hover{color:var(--game-text)}
+.reverse{grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);background:var(--game-surface-deep)}
+.reverse .chapterArt{grid-column:1;border-left:0;border-right:var(--game-frame) solid var(--game-ink)}
+.reverse .chapterCopy{grid-column:2}
+@media(max-width:1000px){.hero{grid-template-columns:38% 62%}.heroCopy{padding:32px 26px}.about .heroCopy h1{font-size:64px}.about .intro p{font-size:15px}.chapter,.reverse{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}.reverse .chapterArt{grid-column:2;border-left:var(--game-frame) solid var(--game-ink);border-right:0}.reverse .chapterCopy{grid-column:1}.chapterCopy{padding:32px 26px}.chapterCopy p,.chapterCopy li{font-size:15px}.chapterArt>span{left:20px;font-size:19px}}
+@media(max-width:700px){.hero,.chapter,.reverse{display:flex;flex-direction:column}.portrait{min-height:390px;border-right:0;border-bottom:var(--game-frame) solid var(--game-ink)}.portrait img{object-position:50% 25%}.heroCopy{padding:28px 22px}.about .heroCopy h1{font-size:clamp(48px,16vw,64px);margin-bottom:24px}.about .intro p{font-size:16px}.chapters{margin-top:22px;gap:0 18px}.chapterArt,.reverse .chapterArt{min-height:clamp(300px,90vw,420px);border:0;border-bottom:var(--game-frame) solid var(--game-ink)}.researchImage{object-position:center 65%}.chapterArt [data-art]{inset:-30% 0}.chapterArt>span{bottom:20px;font-size:21px}.chapterCopy{padding:28px 22px 34px}.about .sectionHeader h2{font-size:clamp(30px,9.5vw,37px)}.about .chapterCopy h3{font-size:23px}.chapterCopy p,.chapterCopy li{font-size:16px}}
+@media(prefers-reduced-motion:no-preference){.socialLink,.action,.chapterCopy p a{transition:color .2s,background .2s}}
+
+/* One continuous ink canvas owns the outside frame and the shared row gutters.
+   Image masks cut the diagonal seam from that same ink, without skewed borders. */
+.panels { composes: canvas from "../game/Frame.module.css"; --image-slant:36px; }
+.hero,.chapter{border:0;overflow:hidden;position:relative}
+.chapter{margin-top:var(--game-frame)}
+.heroCopy,.chapterCopy{transform:skewY(var(--content-angle))}
+.heroCopy,.reverse .chapterCopy{padding-left:calc(clamp(24px,3.7vw,56px) + var(--image-slant))}
+.chapter:not(.reverse) .chapterCopy{padding-right:calc(clamp(24px,3.7vw,56px) + var(--image-slant))}
+.portrait,.chapterArt,.reverse .chapterArt{width:calc(100% + var(--image-slant));border:0;background:var(--game-ink);isolation:isolate}
+.chapterArt{margin-left:calc(-1 * var(--image-slant));clip-path:polygon(var(--image-slant) 0,100% 0,100% 100%,0 100%)}
+.portrait,.reverse .chapterArt{margin-left:0;margin-right:calc(-1 * var(--image-slant));clip-path:polygon(0 0,calc(100% - var(--image-slant)) 0,100% 100%,0 100%)}
+.imageWindow{position:absolute;inset:0;overflow:hidden;clip-path:polygon(calc(var(--image-slant) + var(--game-frame)) 0,100% 0,100% 100%,var(--game-frame) 100%)}
+.portrait .imageWindow,.reverse .imageWindow{clip-path:polygon(0 0,calc(100% - var(--image-slant) - var(--game-frame)) 0,calc(100% - var(--game-frame)) 100%,0 100%)}
+.imageWindow img,.imageWindow [data-art]{transform:skewY(var(--content-angle)) scale(1.08)}
+.chapterArt .imageWindow::after{content:'';position:absolute;inset:auto 0 0;height:140px;background:var(--frame-caption-fade);pointer-events:none}
+.chapterArt>span{left:calc(var(--game-frame) + 28px);right:28px;transform:skewY(var(--content-angle));color:#fffaf4;text-shadow:var(--frame-caption-shadow)}
+.reverse .chapterArt>span{left:28px;right:calc(var(--game-frame) + 28px)}
+@media(max-width:1000px) and (min-width:701px){
+ .panels{--image-slant:24px}
+ .heroCopy{padding-left:50px}
+ .chapterCopy,.reverse .chapterCopy{padding-left:26px;padding-right:50px}
+ .reverse .chapterArt{margin-right:0;margin-left:calc(-1 * var(--image-slant));clip-path:polygon(var(--image-slant) 0,100% 0,100% 100%,0 100%)}
+ .reverse .imageWindow{clip-path:polygon(calc(var(--image-slant) + var(--game-frame)) 0,100% 0,100% 100%,var(--game-frame) 100%)}
+ .reverse .chapterArt>span{left:calc(var(--game-frame) + 28px);right:28px}
 }
+@media(max-width:700px){
 
-.about h1 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.intro {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 2rem 0;
-}
-
-.divider {
-  border: none;
-  border-top: 1px solid var(--color-secondary);
-  margin: 2rem 0;
-}
-
-.sectionHeader {
-  display: flex;
-  align-items: center;
-  /* flex-wrap: wrap; */
-  gap: 1rem;
-}
-
-.sectionHeader h2 {
-  margin-bottom: 1.2rem  ;
- }
-
-.sectionHeader h3 {
-  margin: 0;
-  margin-top: 0;
-  flex: 0 0 auto;
-}
-
-.section h4 {
-  font-size: 1.5rem;
-}
-
-.sectionHeader a {
-  flex: 0 0 auto;
-}
-
-.experience, .webinars {
-  margin-bottom: 3rem;
-}
-
-.experience h2 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.experience h2 svg {
-  margin-right: 0.5rem;
-}
-
-.experience ul {
-  list-style-type: none;
-  padding-left: 1rem;
-}
-
-.experience li {
-  margin-bottom: 0.5rem;
-  position: relative;
-}
-
-.experience li::before {
-  content: '•';
-  color: var(--color-primary);
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
-
-.experience a {
-  color: var(--color-secondary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.experience a:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
-}
-
-.header {
-  display: flex;
-  align-items: center; /* Changed from flex-start to center */
-  margin-bottom: 2rem;
-}
-
-.profileImage {
-  width: 350px; /* Adjust as needed */
-  height: 350px; /* Set a fixed height to match the width */
-  margin-right: 2rem;
-  border-radius: 10px; /* Optional: if you want rounded corners */
-  object-fit: cover; /* This ensures the image covers the area without distortion */
-}
-
-.headerContent {
-  flex: 1;
-}
-
-.headerContent h1 {
-  margin-top: 0; /* Removes any top margin from the heading */
-}
-
-@media (max-width: 768px) {
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .divider {
-    margin: 0;
-  }
-
-  .profileImage {
-    margin: 0;
-    margin-bottom: 1rem;
-  }
-
-  .headerContent h1 {
-    margin-top: 1rem;
-    margin-bottom: 0;
-  }
-
-  .sectionHeader {
-    flex-direction: row;
-  }
-
-  .sectionHeader h3 {
-    font-size: 1.5rem;
-  }
-
-  .section h4 {
-    font-size: 1.2rem;
-  }
-
-  .intro {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .intro p {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 400px) {
-  /* .about {
-    margin: 0;
-    padding: 0;
-  } */
-
-  .profileImage {
-    width: 200px;
-    height: 200px;
-    margin: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  .headerContent h1 {
-    font-size: 2rem;
-  }
-
-  .sectionHeader h2 {
-    font-size: 1rem; 
-    margin-bottom: 0.2rem;
-  }
-
-  .sectionHeader h3 {
-    margin-top: 1rem; 
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
-    max-width: 60%;
-  }
-
-  .section h4 {
-    font-size: 1rem;
-  }
-
-  .section p {
-    font-size: 1rem;
-  }
-
-  .sectionHeader a {
-    margin-top: 1rem;
-    margin-left: auto; 
-  }
-
-  .intro p {
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-  }
-
-  .experience h3 {
-    font-size: 1.2rem;
-  }
-
-  .experienceHeader h2 {
-    font-size: 1.5rem;
-    flex-wrap: nowrap;
-  }
+ .portrait,.chapterArt,.reverse .chapterArt{width:100%;margin:0;clip-path:none;border:0;border-bottom:var(--game-frame) solid var(--game-ink)}
+ .imageWindow,.portrait .imageWindow,.reverse .imageWindow{clip-path:none}
+ .heroCopy,.chapterCopy,.reverse .chapterCopy,.chapter:not(.reverse) .chapterCopy{padding-left:22px;padding-right:22px}
+ .chapterArt>span,.reverse .chapterArt>span{left:20px;right:20px}
 }

@@ -1,71 +1,42 @@
+import { SOCIAL_URLS } from '../data/siteIdentity';
+import ResponsiveImage from '../components/ResponsiveImage';
+import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
-import { Newspaper, LinkedinLogo, Butterfly, GithubLogo } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowUpRight, Newspaper, LinkedinLogo, Butterfly, GithubLogo } from '@phosphor-icons/react';
 import styles from './Contact.module.css';
-import profileImage from '../assets/sean-betts-profile.png';
 
-const Contact = () => {
+const channels = [
+  { name: 'LinkedIn', description: 'Speaking, AI and collaboration enquiries', href: SOCIAL_URLS.linkedin, Icon: LinkedinLogo },
+  { name: 'The Blueprint', description: 'Occasional thought leadership and opinions', href: SOCIAL_URLS.blueprint + '/', Icon: Newspaper },
+  { name: 'GitHub', description: 'Code, projects and experiments', href: SOCIAL_URLS.github, Icon: GithubLogo },
+  { name: 'Bluesky', description: 'Mostly Aston Villa thoughts and updates', href: SOCIAL_URLS.bluesky, Icon: Butterfly },
+];
 
-  const contactPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact Sean Betts",
-    "description": "Get in touch with Sean Betts for insights on AI, marketing, and technology.",
-    "url": "https://www.seanbetts.com/contact",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Sean Betts",
-      "sameAs": [
-        "https://www.linkedin.com/in/seanbetts/",
-        "https://github.com/seanbetts",
-        "https://twitter.com/seanbetts",
-        "https://bsky.app/profile/seanbetts.com"
-      ]
-    }
-  };
+export default function Contact() {
 
-  return (
-    <div className={styles.contact}>
-      <Seo
-        title="Contact Sean Betts | Newsletter, Socials and Collaboration"
-        description="Get in touch with Sean Betts via The Blueprint, social profiles or direct contact to discuss AI, marketing, technology and collaboration."
-        keywords={[
-          'contact Sean Betts',
-          'newsletter',
-          'LinkedIn',
-          'GitHub',
-          'Bluesky',
-          'AI collaboration'
-        ]}
-        canonicalPath="/contact"
-        imagePath="/images/sean-betts-profile.png"
-        ogType="website"
-        jsonLd={contactPageSchema}
-      />
-
-      <div className={styles.lockup}>
-        <img src={profileImage} alt="Sean Betts" className={styles.logo} />
-        <h1>Contact Me</h1>
-      </div>
-
-      <section className={styles.socialMedia}>
-        <p>You can subscribe to my newsletter, connect with me on social media, or check out my work using the links below:</p>
-        <div className={styles.socialLinks}>
-          <a href="https://www.the-blueprint.ai/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-            <Newspaper size={24} /> <span>The Blueprint</span>
-          </a>
-          <a href="https://www.linkedin.com/in/seanbetts/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-            <LinkedinLogo size={24} /> <span>LinkedIn</span>
-          </a>
-          <a href="https://github.com/seanbetts" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-            <GithubLogo size={24} /> <span>GitHub</span>
-          </a>
-          <a href="https://bsky.app/profile/seanbetts.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-            <Butterfly size={24} /> <span>Bluesky</span>
-          </a>
+  return <div className={styles.contact}>
+    <Seo
+      title="Contact Sean Betts | Writing, Socials and Collaboration"
+      description="Connect with Sean Betts on LinkedIn to discuss AI, speaking and collaboration, or explore The Blueprint, GitHub and Bluesky."
+      keywords={['contact Sean Betts', 'The Blueprint', 'LinkedIn', 'GitHub', 'Bluesky', 'AI collaboration']}
+      canonicalPath="/contact" imagePath="/images/sean-betts-profile.png" ogType="website"
+    />
+    <Link to="/" className={styles.back}><ArrowLeft size={17} aria-hidden="true" />Home</Link>
+    <div className={styles.cover}>
+      <div className={styles.copy}>
+        <div className={styles.upright}>
+          <h1>Contact<span>.</span></h1>
+          <p className={styles.intro}>For speaking, AI and collaboration enquiries, contact me on LinkedIn.</p>
+          <nav className={styles.channels} aria-label="Connect with Sean">
+            {channels.map(({ name, description, href, Icon }) => <a key={name} href={href} target="_blank" rel="noopener noreferrer" className={styles.channel}>
+              <Icon className={styles.icon} size={36} aria-hidden="true" />
+              <span className={styles.channelCopy}><span className={styles.name}>{name}</span><span className={styles.description}>{description}</span></span>
+              <ArrowUpRight className={styles.arrow} size={22} aria-hidden="true" />
+            </a>)}
+          </nav>
         </div>
-      </section>
+      </div>
+      <div className={styles.art}><ResponsiveImage src="/images/game/contact/phone-box-v2-colour.png" alt="Illustrated red London telephone box in colourful afternoon sunlight" width="1024" height="1536" decoding="async" /></div>
     </div>
-  );
-};
-
-export default Contact;
+  </div>;
+}

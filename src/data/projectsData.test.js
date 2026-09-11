@@ -1,3 +1,13 @@
+import fs from 'fs';
+import path from 'path';
+import projectsData from './projectsData';
+
+test('project hero images point to real local assets when supplied', () => {
+  const missing = projectsData.flatMap(project => [project.heroImage, ...(project.heroGallery || []).map(image => image.src), ...(project.heroAnimations || []).flatMap(image => [image.src, image.poster])]
+    .filter(src => src && !fs.existsSync(path.join(__dirname, '../../public', src))));
+  expect(missing).toEqual([]);
+});
+
 test('projects data module loads project definitions without React warnings', () => {
   const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
   let projectsData;

@@ -1,36 +1,38 @@
-import { Video, Ruler, Clock, ChatCircleDots, ChalkboardTeacher, Student, Lightbulb, Calendar, Globe, MagnifyingGlass, Brain } from "@phosphor-icons/react";
+import { Video, Ruler, Clock, ChatCircleDots, Globe, MagnifyingGlass, Brain, GameController, BookOpen, SquaresFour } from "@phosphor-icons/react";
 
 const projectsData = [
   {
     id: "sidebar",
     name: "sideBar",
-    description:
-      "A unified AI assistant for iPhone, iPad, Mac, and web that keeps your notes, tasks, files, and saved websites in one context-aware workspace, with chat, skills, and personalization woven throughout every surface.",
+    description: "A personal AI assistant that works with your notes, tasks, files and saved websites across iPhone, iPad, Mac and web.",
     icon: <Brain size={48} />,
     url: "https://trysidebar.ai",
     type: "cross-platform app",
-    date: "December 2025 onwards",
-    technologies: ["SvelteKit", "FastAPI", "TypeScript", "Python", "Supabase"],
+    role: "Sole developer",
+    date: "December 2025–present",
+    technologies: ["Swift", "SwiftUI", "SvelteKit", "FastAPI", "TypeScript", "Python", "Supabase"],
     features: [
-      "Streaming chat that surfaces skills, attachments, and the context from recent notes, tasks, and files.",
-      "Notes + tasks + projects that stay in sync with skills so sideBar can organise, search, and act on your content.",
-      "Websites + files ingestion with pinning, archiving, and indexed retrieval so saved pages and uploads are instantly available in conversation.",
-      "Skills system (required, standard, and installable store skills) that lets sideBar chain capabilities automatically while keeping availability visible in Settings."
+      "Discuss a note, saved article or file with an assistant that can see what you have open.",
+      "Ask it to research a topic, save a summary as a note and create follow-up tasks, with more capabilities available through installable skills.",
+      "Remember useful details between conversations, with memories you can review, edit or delete.",
+      "Choose models from OpenAI, Anthropic or Google using your own API key."
     ],
     challenges:
-      "Giving the assistant seamless access to everything you’ve created while honoring real-time sync, soft deletes, and your encrypted API keys across iPhone, iPad, Mac, and the browser.",
-    futureImprovements:
-      "Expand the Skills Store/OAuth coverage, harden the planned skill guard UI states, and keep building richer presets and automations while the interface stays minimal and readable.",
-    status: "Active",
-    heroImage: "/images/projects/overview.png"
+      "I built sideBar so an assistant could work with someone's notes, tasks and references without asking them to paste the same background into every conversation. I developed the apps and backend myself. The challenge is choosing useful context, keeping it current across devices and making it clear when the assistant has changed something.",
+    learnings: "Collecting context in one place risks creating another walled garden. That context is less useful if it cannot travel with you into other tools. Building sideBar has made me think more about how context moves between products, as well as how an assistant uses it within one.",
+    status: "In development",
+    heroImage: "/images/projects/sidebar-notes-ipad.png",
+    heroImageFrame: false,
+    heroImageAlt: "sideBar on iPad with a note created by the assistant beside the conversation"
   },
   {
     id: "pointilism",
     name: "Pointilism",
-    description: "A calm, monochrome surface to explore. Dots drift, breathe, snap, and drop to reveal different states—always readable, always minimal.",
+    description: "An interactive experiment with animated dots, motion controls and image export.",
     icon: <MagnifyingGlass size={48} />,
     url: "https://pointilism.seanbetts.com",
-    type: "website",
+    type: "creative experiment",
+    role: "Sole developer",
     date: "December 2025",
     technologies: ["HTML", "CSS", "Vanilla JavaScript", "Canvas 2D"],
     features: [
@@ -40,21 +42,27 @@ const projectsData = [
       "Freeze and export the dot field as a PNG"
     ],
     challenges: "Balancing a strict no-overlap layout with fluid motion and interactions across devices, while keeping the UI readable over a dynamic canvas layer.",
-    futureImprovements: "Add more curated presets/themes, refine mobile interactions, and expand the single-page into a richer interactive homepage while keeping the minimal aesthetic.",
+    learnings: "Beautiful design does not always translate into practical UX. An interface can be visually compelling and enjoyable to explore while still making everyday tasks harder than they need to be. Pointilism gave me room to explore that tension between an interesting visual idea and something people would want to use repeatedly.",
     status: "Completed",
     heroImage: "/images/projects/pointilism-hero.png"
   },
   {
     id: "llm-search-analysis",
+    heroImage: "/images/projects/llm-search-evidence.png",
+    heroImageAlt: "Recorded GPT-5.1 interaction from 1 December 2025: a question about the latest Steam Controller information produced the query Valve Steam Controller discontinued, with 20 search results and 9 cited sources. One saved case, not a current model benchmark.",
+    heroImageKind: "diagram",
     name: "LLM Search Analysis",
-    description: "A comparative analysis tool for evaluating web search capabilities across OpenAI, Google Gemini, and Anthropic Claude models with interactive testing and batch analysis.",
+    description: "A research tool for comparing how AI models search the web, which sources they find and what they cite in their answers.",
     icon: <MagnifyingGlass size={48} />,
     url: "https://github.com/seanbetts/llm-search-analysis",
-    type: "github",
+    type: "research tool",
+    role: "Sole developer",
     date: "November 2025",
     technologies: [
       "Python",
       "Streamlit",
+      "FastAPI",
+      "Playwright",
       "SQLite",
       "SQLAlchemy",
       "OpenAI API",
@@ -63,27 +71,24 @@ const projectsData = [
       "pandas"
     ],
     features: [
-      "Multi-provider support (OpenAI, Google Gemini, Anthropic Claude)",
-      "9 AI models with web search capabilities",
-      "3-tab interface (Interactive, Batch Analysis, Query History)",
-      "Database integration with full interaction persistence",
-      "Rank tracking for search result citations",
-      "CSV export for batch analysis results",
-      "Real-time search query and source analysis"
+      "Compare responses to the same question across OpenAI, Google Gemini and Anthropic Claude.",
+      "Inspect the search queries, returned sources and citations each provider exposes.",
+      "Investigate ChatGPT through browser captures to examine details beyond those available through the APIs.",
+      "Run batches of questions, revisit previous results and export the data for further analysis."
     ],
-    challenges: "Integrating three different provider APIs with varying search implementations, implementing accurate rank tracking for cited sources, and creating a unified interface for comparing search behaviors across models.",
-    futureImprovements: "Add visualization dashboards for search pattern analysis, implement A/B testing framework for prompt optimization, and expand to include more AI providers.",
+    challenges: "I wanted to understand what happens between asking an AI assistant a question and receiving an answer with sources. I built the interface, backend and data collection tools myself, combining provider APIs with browser captures of ChatGPT. Each exposes a different view of the search process. The difficult part was making useful comparisons while keeping gaps in the evidence visible.",
+    learnings: "This project changed how I think about visibility in AI search. In the examples I investigated, the sources selected for the answer appeared to reflect the meaning behind the original prompt more closely than a literal match to the search query. For brands, that shifts the question from which keywords their content targets to how well it answers what someone is actually trying to find out.",
     status: "Completed",
-    heroImage: "/images/projects/llm-search-analysis-hero.png"
   },
   {
     id: "genai-explorer",
     name: "Generative AI Explorer",
-    description: "An interactive web application that visualizes the landscape of generative AI companies, models, benchmarks, and capabilities.",
+    description: "An interactive guide to the generative AI landscape, bringing companies, model capabilities, pricing and benchmark results together for comparison.",
     icon: <Globe size={48} />,
     url: "https://explorer.the-blueprint.ai/",
-    type: "website",
-    date: "May 2025 onwards",
+    type: "web app",
+    role: "Sole developer",
+    date: "May 2025–present",
     technologies: [
       "React 19",
       "Next.js 15.3",
@@ -91,44 +96,171 @@ const projectsData = [
       "Tailwind CSS"
     ],
     features: [
-      "Model explorer by category",
-      "Benchmark comparisons",
-      "Rich media galleries",
-      "Company profiles",
-      "Model comparison tool"
+      "Explore companies and models across text, image, video and audio generation.",
+      "Compare up to four models side by side, including their capabilities, pricing and available benchmark results.",
+      "Browse benchmarks by the capabilities they test, with explanations and links to the original sources.",
+      "Explore company profiles connecting models with products, features and subscriptions."
     ],
-    challenges: "Creating a structured data model to represent the complex AI ecosystem and enabling meaningful comparisons across diverse model types.",
-    futureImprovements: "Chat interface for intuitive exploration, expanded benchmark database, and real-time data updates",
-    status: "Active",
-    heroImage: "/images/projects/xxx.jpg"
+    challenges: "I wanted to make the generative AI landscape easier to understand and compare. I built the Explorer myself, from the data structure to the interface. The difficult part was deciding how to organise it: a company can offer several models, the same model can support different products, and capabilities overlap across categories. The structure needed to make those relationships understandable while preserving the differences that matter when comparing options.",
+    learnings: "Organising the landscape became as much of the work as building the interface. Companies, models, products and capabilities do not fit neatly into separate boxes, and those boundaries keep shifting. Each decision about grouping or comparison shapes how someone understands the market. Building the Explorer made me more conscious of what a simple overview helps people see, and what it can hide.",
+    status: "Published",
+    projectNote: "Published version uses an August 2025 dataset.",
+    heroImage: "/images/projects/genai-explorer-comparison.png",
+    heroImageAlt: "Generative AI Explorer comparing GPT-5 and Claude-4.1 Opus using the published August 2025 dataset",
+  },
+  {
+    id: "plotter",
+    name: "Plotter",
+    heroImage: "/images/projects/plotter-europe-roadtrip.png",
+    heroImageAlt: "Plotter showing a European road-trip route with twelve stops and a nineteen-day itinerary",
+    description: "A trip-planning app and collection of agent skills for exploring destinations, planning routes and finding things to do along the way.",
+    icon: <Globe size={48} />,
+    url: null,
+    type: "web app",
+    date: "2026–present",
+    technologies: ["React", "TypeScript", "Node.js", "SQLite", "MapLibre GL", "Agent skills"],
+    features: [
+      "Plan a trip around the places you want to visit and the activities at each stop.",
+      "Explore destinations and the routes between them on an interactive map.",
+      "Keep research, links and images alongside each destination.",
+      "Use agent skills to research destinations and help shape a trip.",
+      "Export a map of your trip to use outside the app."
+    ],
+    challenges: "I started Plotter to explore the world and plan the kind of travelling I would like to do in retirement. It combines an app with agent skills for researching destinations, planning trips and finding things to do. The challenge is bringing that research into an itinerary that stays useful as plans change. I am still tinkering with how the app and skills work together.",
+    status: "In development"
+  },
+  {
+    id: "steam-hardware-watch",
+    heroImage: "/images/projects/steam-hardware-evidence.png",
+    heroImageAlt: "Archived monitoring report, 24 August 2026: 453 visual assets discovered, 396 retrieved and 57 blocked. No public Steam Frame launch-readiness movement was found in the available evidence; some sources were blocked or partial.",
+    heroImageKind: "diagram",
+    name: "Steam Hardware Watch",
+    description: "An agent-driven monitoring toolkit that tracks Valve hardware launch signals, compares evidence across sources and turns changes into readable reports.",
+    icon: <GameController size={48} />,
+    url: "https://github.com/seanbetts/steam-hardware-watch",
+    type: "research tool",
+    role: "Sole developer",
+    date: "April–July 2026",
+    projectNote: "Development ended in July; monitoring continued afterwards. The report shown is dated 24 August 2026.",
+    technologies: ["Python", "Shell", "Node.js", "SteamKit", "Playwright"],
+    features: [
+      "Checks Komodo, SteamDB, SteamTracking and Valve endpoints for hardware signals",
+      "Saves source snapshots and compares each run with the previous one",
+      "Produces evidence summaries and human-readable status reports",
+      "Tracks discovered, retrieved and blocked visual assets separately"
+    ],
+    challenges: "Reconciling incomplete signals across multiple sources, handling browser-dependent access and distinguishing meaningful changes from routine metadata updates.",
+    learnings: "The more people discover loopholes in digital systems, the more likely those gaps are to be closed. Komodo eventually shut off the backend access this project had been using. It was a practical reminder that a useful discovery can be temporary, and that tools built around that access need to account for its disappearance.",
+    status: "Completed"
+  },
+  {
+    id: "apple-hig-mirror",
+    heroImage: "/images/projects/apple-hig-workflow.png",
+    heroImageAlt: "Apple HIG Mirror workflow: discover guideline pages, extract and normalise their rendered content, then verify and update. A real Buttons Markdown excerpt shows its title, canonical path and rewritten internal links.",
+    heroImageKind: "diagram",
+    name: "Apple HIG Mirror",
+    description: "A developer tool that turns Apple's browser-rendered Human Interface Guidelines into structured Markdown, with repeatable extraction, verification and scheduled updates.",
+    icon: <BookOpen size={48} />,
+    url: "https://github.com/seanbetts/Apple-HIG",
+    type: "developer tool",
+    role: "Sole developer",
+    date: "March 2026",
+    technologies: ["TypeScript", "Node.js", "Playwright", "Markdown", "GitHub Actions"],
+    features: [
+      "Discovers guideline pages and extracts their rendered content",
+      "Normalises content into deterministic Markdown and frontmatter",
+      "Rewrites internal links and generates a Mintlify preview configuration",
+      "Verifies generated output and schedules incremental updates through GitHub Actions"
+    ],
+    challenges: "Extracting consistent content from a dynamic documentation site while preserving structure, keeping internal links useful and avoiding unnecessary changes in generated files.",
+    learnings: "AI agents have become much better at retrieving context directly from live websites, and much better versed in Swift and Apple’s developer ecosystem. That changes the value of maintaining a separate documentation mirror. A useful lesson here is to keep reassessing the workarounds I build as the underlying capabilities improve.",
+    status: "Completed"
+  },
+  {
+    id: "pixel-loader-lab",
+    heroImage: "/images/projects/pixel-loader-overview.png",
+    heroImageAlt: "Original solid and bordered pixel loader variants based on the sideBar icon.",
+    heroAnimations: [{"src": "/images/projects/pixel-loader-solid.gif", "poster": "/images/projects/pixel-loader-solid-still.png", "alt": "Original solid pixel loader animation"}, {"src": "/images/projects/pixel-loader-bordered.gif", "poster": "/images/projects/pixel-loader-bordered-still.png", "alt": "Original bordered pixel loader animation"}],
+    name: "Pixel Loader Lab",
+    description: "A small creative coding sandbox for turning an app icon into a pixelated animated loader, with a live preview and optimised GIF export.",
+    icon: <SquaresFour size={48} />,
+    url: "https://github.com/seanbetts/pixel-loader-lab",
+    type: "creative experiment",
+    role: "Sole developer",
+    date: "February 2026",
+    technologies: ["JavaScript", "CSS", "Vite", "Node.js", "ffmpeg", "gifsicle"],
+    features: [
+      "Builds a pixelated loader from a source app icon",
+      "Provides a browser preview for iterating on the animation",
+      "Exports optimised GIFs for use in other apps",
+      "Reports image dimensions and file sizes"
+    ],
+    challenges: "Keeping the source icon recognisable through pixelation and animation, while balancing crisp rendering with a compact exported file.",
+    learnings: "It is fun creating loading animations and animated logos. There is a lot of room for character in a small visual detail, and experimenting with movement can be rewarding in its own right. This was a reminder to leave space for playful projects alongside the more practical ones.",
+    status: "Completed"
+  },
+  {
+    id: "cains-jawbone",
+    heroImage: "/images/projects/cains-jawbone-workflow.png",
+    heroImageAlt: "One hundred source pages displayed in numeric order, followed by the research steps: extract clues, test hypotheses and check evidence. This is a page inventory, not a proposed solution.",
+    heroImageKind: "diagram",
+    name: "Cain’s Jawbone",
+    description: "An AI-assisted literary investigation into a murder mystery with 100 shuffled pages, combining clue indexing, historical research and systematic testing of possible page orders.",
+    icon: <MagnifyingGlass size={48} />,
+    url: "https://github.com/seanbetts/cains-jawbone",
+    type: "research experiment",
+    role: "Sole developer",
+    schemaType: "CreativeWork",
+    date: "December 2025–January 2026",
+    technologies: ["Python", "Markdown", "Git", "Agent skills"],
+    features: [
+      "Annotates pages and indexes people, places, quotations and recurring motifs",
+      "Uses modular agent workflows for research, wordplay and narrative analysis",
+      "Records ordering hypotheses alongside evidence and possible contradictions",
+      "Uses integrity checks to protect the original text during analysis"
+    ],
+    challenges: "Separating plausible interpretations from supported conclusions across 100 shuffled pages, while preserving the source text and checking hypotheses against contradictory evidence.",
+    learnings: "Even the strongest AI models I tried could not crack Cain’s Jawbone. Their ability to produce convincing interpretations did not translate into a complete, correct solution. Working through the puzzle was a useful reminder of the gap between a plausible explanation and sustained reasoning that holds together across the whole problem.",
+    status: "Experiment"
   },
   {
     id: "youtube-sdg-analysis",
+    heroImage: "/images/projects/youtube-sdg-workflow.png",
+    heroImageAlt: "YouTube SDG workflow: collect channel metadata, video information and transcripts; analyse content, mission and themes; then map directly evidenced themes to relevant Sustainable Development Goals. Structured results support channel-level analysis.",
+    heroImageKind: "diagram",
     name: "YouTube SDG Analysis",
-    description: "Developing AI techniques to map YouTube channels to the UN Sustainable Development Goals.",
+    description: "An LLM-based analysis system that scored 2.5 million YouTube videos against an ethical media framework based on the UN Sustainable Development Goals.",
     icon: <Video size={48} />,
-    url: "https://github.com/TheGoodNet/YouTube-Scripts",
-    type: "github",
-    date: "January 2025 to December 2025",
+    url: null,
+    type: "research tool",
+    role: "Sole developer",
+    date: "January–December 2025",
     technologies: [
         "Python",
         "YouTube Data API",
         "OpenAI API"
       ],
-    features: ["YouTube video transcription", "Channel analysis", "SDG mapping"],
-    challenges: "Developing an accurate model that can map SDGs to video content and scaling the analysis to over 2.5m videos.",
-    futureImprovements: "Develop visual reporting and more robust scaling methods",
-    status: "Completed",
-    heroImage: "/images/projects/xxx.jpg"
+    features: [
+      "Collect video transcripts and channel information for analysis.",
+      "Use LLMs to analyse video content against an existing ethical scoring framework.",
+      "Map relevant themes to the UN Sustainable Development Goals and produce structured scores.",
+      "Bring video-level results together to support channel analysis."
+    ],
+    challenges: "I worked with a startup that sources ethical media opportunities for brands and wanted to extend its offering to YouTube. I devised and built a way to use LLMs to analyse video transcripts against its existing ethical scoring framework, based on the UN Sustainable Development Goals. The work involved translating that framework into an automated analysis process and scaling it to 2.5 million videos.",
+    learnings: "We shut the project down after YouTube cut off the transcript API we were using. The system had reached scale, but losing access to its essential input made it no longer viable. It was a direct lesson in platform dependency: the ability to build and scale a product is only part of the picture when another company controls the data it needs.",
+    status: "Archived",
   },
   {
     id: "ai-brand-detection",
+    heroImage: "/images/projects/brand-detection-film.jpg",
+    heroImageAlt: "Original Brand Detection output showing a red detection box labelled pizza hut around the logo on a pizza box in a film frame.",
     name: "AI Brand Detection",
-    description: "Developing AI techniques to detect brands and products in videos.",
+    description: "An AI prototype for detecting brands and products in video, exploring how to automate the measurement of product placement and sports sponsorship.",
     icon: <Video size={48} />,
     url: "https://github.com/seanbetts/product-placement",
-    type: "github",
-    date: "August 2024 to December 2024",
+    type: "AI prototype",
+    role: "Sole developer",
+    date: "August–December 2024",
     technologies: [
         "React",
         "Python",
@@ -140,47 +272,25 @@ const projectsData = [
         "Google Cloud Vision API",
         "Segment Anything Model 2"
       ],
-    features: ["Brand and product detection", "Multi-brand support", "Integration with marketing analytics"],
-    challenges: "Developing an accurate model that can detect brands in various contexts and lighting conditions.",
-    futureImprovements: "Implement object tracking with SAM 2, expanding the database of recognizable brands and improving detection speeds and efficiency.",
-    status: "Completed",
-    heroImage: "/images/projects/xxx.jpg"
-  },
-  {
-    id: "beyond-chatbots",
-    name: "Beyond Chatbots",
-    description: "A comprehensive series exploring the future of Large Language Models (LLMs) and their transformation from simple chatbots into intuitive, indispensable digital companions.",
-    icon: <Lightbulb size={48} />,
-    url: "https://www.the-blueprint.ai/p/beyond-chatbots",
-    type: "blog",
-    date: "July - October 2024",
     features: [
-      "In-depth analysis of current LLM limitations",
-      "Vision for the future of digital companions",
-      "Discussion of ethical considerations and challenges",
-      "Practical insights for developers, researchers, and business leaders"
+      "Detect brands and products in video frames.",
+      "Identify multiple brands within the same video.",
+      "Mark detections with labelled bounding boxes so the results can be inspected."
     ],
-    topics: [
-      "Personalisation in AI",
-      "Integration with digital ecosystems",
-      "Proactive AI assistance",
-      "Adaptive AI personalities",
-      "Fact-checking and information verification",
-      "Human-AI collaboration"
-    ],
-    challenges: "Addressing technical hurdles in continuous learning and contextual understanding. Navigating ethical considerations such as privacy, data security, and the risk of over-reliance on AI. Balancing the benefits of AI assistance with the need to maintain human autonomy and critical thinking skills.",
-    futureImprovements: "Expand the series with practical case studies. Develop prototypes or proof-of-concepts for key features discussed. Create interactive demonstrations of potential digital companion functionalities.",
-    status: "Completed",
-    heroImage: "/images/projects/beyond-chatbots-hero.png"
+    challenges: "Product placement and sports sponsorship deals still rely heavily on manual measurement. I built this prototype to explore whether the latest AI models could automate that work by detecting brands and products in video. The challenge was recognising them across different scenes, lighting conditions and contexts, while making the process economical enough to be useful commercially.",
+    learnings: "I could build the detection system, but I could not make it commercially viable at the scale I was operating at. The project made the distinction between technical capability and a sustainable product very concrete. Producing useful detections was one part of the problem; delivering them at a viable cost was the constraint I could not resolve.",
+    status: "Archived",
   },
+
   {
     id: "genai-marketing-benchmarks",
     name: "GenAI Marketing Benchmarks",
-    description: "Developing comprehensive benchmarks to assess the marketing knowledge and capabilities of large language models.",
+    description: "A research project to assess and compare the marketing knowledge of large language models, addressing a gap in the benchmarks available at the time.",
     icon: <Ruler size={48} />,
     url: "https://github.com/seanbetts/genai-marketing-benchmarks",
-    type: "github",
-    date: "June 2024 to December 2024",
+    type: "research tool",
+    role: "Sole developer",
+    date: "June–December 2024",
     technologies: [
       "Python",
       "SQLite",
@@ -194,49 +304,30 @@ const projectsData = [
       "Flask"
     ],
     features: [
-      "Comprehensive marketing knowledge assessment",
-      "Comparative analysis of different LLMs",
-      "Customizable benchmarking criteria",
-      "Multiple-choice question database",
-      "Automated testing across various LLMs"
+      "Assess marketing knowledge through a database of multiple-choice questions.",
+      "Run automated evaluations across models from different providers.",
+      "Compare model results against a common set of marketing questions.",
+      "Adjust evaluation criteria as the benchmark develops."
     ],
-    challenges: "Creating a diverse and representative set of marketing questions that cover various aspects and difficulty levels. Ensuring the integrity of the benchmark by preventing the questions from being included in future LLM training datasets.",
-    futureImprovements: "Expand the question database, integrate with more LLMs as they become available, and develop phases for testing marketing understanding and capabilities.",
-    status: "Completed",
+    challenges: "There were benchmarks for many areas of knowledge, but I could not find a way to judge how well LLMs understood marketing. I started this project to fill that gap, building a question database and tools to test models against it. The challenge was deciding what a useful assessment of marketing knowledge should cover and getting wider industry participation in developing it.",
+    learnings: "The project ran out of steam when I could not get enough engagement from the wider UK marketing industry. Building the evaluation tools was only part of the work. A benchmark also needs people to help shape it, challenge its assumptions and use its results. I had underestimated how much the project's momentum would depend on that participation.",
+    status: "Archived",
     heroImage: "/images/projects/genai-marketing-benchmarks-hero.png"
   },
-  {
-    id: "genai-newsletter",
-    name: "Weekly GenAI Newsletter",
-    description: "A curated weekly newsletter covering the latest developments, breakthroughs, and applications in Generative AI.",
-    icon: <Calendar size={48} />,
-    url: "https://www.the-blueprint.ai",
-    type: "blog",
-    date: "July 2023 onwards",
-    features: [
-      "Weekly roundup of key GenAI news and developments",
-      "In-depth analysis of emerging GenAI trends and technologies",
-      "Curated list of must-read long-read articles",
-      "Spotlight on innovative AI applications across industries",
-      "Expert commentary on AI ethics and policy developments"
-    ],
-    challenges: "Staying up-to-date with the rapidly evolving GenAI landscape, distilling complex technical information into accessible insights, and maintaining a consistent publishing schedule while ensuring high-quality, relevant content.",
-    futureImprovements: "Implement personalized content recommendations based on reader interests, expand to include interactive elements such as polls or Q&A sessions, and develop a community platform for subscribers to discuss and share insights.",
-    status: "Ongoing",
-    heroImage: "/images/projects/genai-newsletter-hero.png"
-  },
+
   {
     id: "genai-timeline",
     name: "GenAI Timeline",
     description: "A timeline of GenAI developments and milestones, tracking the rapid progress in the field.",
     icon: <Clock size={48} />,
     url: "https://timeline.the-blueprint.ai",
-    type: "blog",
-    date: "May 2024 onwards",
+    type: "web app",
+    role: "Sole developer",
+    date: "May 2024–present",
     technologies: ["React", "D3.js", "Node.js"],
-    features: ["Interactive timeline visualization", "Filterable AI milestones", "Regular updates with new developments"],
+    features: ["Interactive timeline visualisation", "Filterable AI milestones", "Regular updates with new developments"],
     challenges: "Keeping the timeline up-to-date with the rapidly evolving field of GenAI.",
-    futureImprovements: "Implement user contributions and add more detailed information for each milestone.",
+    learnings: "A simple timeline of how GenAI technology has developed can be a great traffic driver. There is real value in helping people make sense of the pace of change through a clear chronological view. This project was a reminder that a straightforward, useful reference can give people a strong reason to visit.",
     status: "Ongoing",
     heroImage: "/images/projects/genai-timeline-hero.png"
   },
@@ -246,8 +337,9 @@ const projectsData = [
     description: "A GenAI personal assistant designed to learn from you and adapt to your unique needs. As you interact with 🐼 panda.ai, it evolves and grows, learning from your conversations, web browsing behaviour, social media activity, music preferences, and even your spending habits.",
     icon: <ChatCircleDots size={48} />,
     url: "https://github.com/the-blueprint-ai/panda.ai",
-    type: "github",
-    date: "March - June 2023",
+    type: "AI prototype",
+    role: "Sole developer",
+    date: "March–June 2023",
     technologies: [
       "Vue.js 3",
       "FastAPI",
@@ -262,7 +354,7 @@ const projectsData = [
       "SendGrid"
     ],
     features: [
-      "Personalized AI chat assistant",
+      "Personalised AI chat assistant",
       "User authentication and account management",
       "Subscription plans with different tiers",
       "Integration selection for enhanced AI capabilities",
@@ -271,90 +363,85 @@ const projectsData = [
       "Multiple API integrations (YouTube, Google Maps, Wikipedia, Spotify, etc.)"
     ],
     challenges: "Implementing an efficient and effective way to store and retrieve user memories without compromising privacy. Integrating multiple APIs and data sources to create a comprehensive user profile while ensuring data security and user privacy.",
-    futureImprovements: "Enhance the memory retrieval algorithm, implement more sophisticated personalization features, and expand the range of integrations to provide a more comprehensive personal assistant experience.",
+    learnings: "Three years on, I still do not think frontier AI companies have delivered a consumer experience that fulfils the promise of the technology. I expected the labs to focus much more on how people would actually use these capabilities. The gap between what the models can do and the experience of using them remains much wider than I anticipated, with a great deal of product and UX work still to do.",
     status: "Completed",
     heroVideo: "https://www.youtube.com/embed/Gs-oqqxsBMc?si=0SiQwmqSQG3typ6l"
   },
   {
-    id: "genai-webinar-series",
-    name: "Generative AI Webinar Series",
-    description: "A comprehensive series of 12 webinars introducing Generative AI, its applications in marketing, ethical considerations, and future implications.",
-    icon: <ChalkboardTeacher size={48} />,
-    url: "https://vimeo.com/user/61969948/folder/17042522?isPrivate=false",
-    type: "video",
-    date: "July 2023 - April 2024",
+    id: "nanimals",
+    name: "nAnimals",
+    heroImage: "/images/projects/nanimals-8.png",
+    heroImageAlt: "Original pink nAnimals dog with a red paint-splatter background",
+    heroGallery: [
+      { src: "/images/projects/nanimals-1.png", alt: "Green nAnimals cat with a hip-hop inscription on a blue background" },
+      { src: "/images/projects/nanimals-8.png", alt: "Pink nAnimals dog with a red paint-splatter background" },
+      { src: "/images/projects/nanimals-28.png", alt: "Grey skeletal nAnimals character on a blue background" },
+      { src: "/images/projects/nanimals-34.png", alt: "Pink nAnimals rabbit with a circular forehead marking and striped orange background" },
+      { src: "/images/projects/nanimals-12.png", alt: "Red nAnimals rabbit with purple cheek markings on a blue background" },
+      { src: "/images/projects/nanimals-60.png", alt: "Red nAnimals cat wearing sunglasses on a grey background" }
+    ],
+    description: "An experiment in generating collections of animal artwork through code and rules, with an NFT minting and hatching experience.",
+    icon: <GameController size={48} />,
+    url: "https://github.com/seanbetts/nAnimals",
+    type: "generative art experiment",
+    date: "2021",
+    technologies: ["Solidity", "OpenZeppelin", "React", "Redux", "Web3.js", "IPFS"],
     features: [
-      "Practical demonstrations of AI tools and techniques",
-      "Real-world examples and case studies in marketing",
-      "Exploration of ethical considerations in AI",
-      "Future predictions and implications for the marketing industry"
+      "Explore animal artwork generated through code and rules.",
+      "Connect a wallet to view its collection of digital animals.",
+      "Explore minting and hatching as part of a collectible experience.",
+      "View the artwork and details associated with each collectible.",
+      "Record ownership and hatching through transactions on the blockchain."
     ],
-    topics: [
-      "Introduction to Artificial Intelligence and Generative AI",
-      "The Impact of Generative AI on consumers, work, and society",
-      "Ethics of Generative AI",
-      "Future of AI explored through sci-fi film scenarios",
-      "The Future of Marketing with Generative AI (2-part series)",
-      "Omnicom's approach to integrating Generative AI",
-      "Prompt Engineering for Marketing (2-part series)",
-      "Creating Content with Generative AI",
-      "15 Months of Gen-AI Progress: A comprehensive review",
-      "Synthetic Data in Marketing"
-    ],
-    challenges: "Simplifying complex AI concepts for a diverse audience while keeping the content engaging and relevant. Balancing theoretical knowledge with practical applications in marketing. Staying up-to-date with rapidly evolving AI technologies and their implications.",
-    futureImprovements: "Create follow-up advanced courses focusing on specific AI applications in marketing. Provide hands-on workshops for practical skill development. Develop an online resource center with updated information on AI advancements and their marketing implications.",
-    status: "Completed",
-    heroImage: "/images/projects/genai-webinar-series-hero.png"
+    challenges: "nAnimals was my first and only attempt at procedural art. At the height of the NFT craze, I wanted to understand how code and rules could generate a collection of different artworks. The creative challenge was designing the system that produced the animals, then connecting the collection to a minting and hatching experience. The artwork was generated procedurally, without generative AI.",
+    learnings: "I enjoyed exploring how code could generate art, but came away deeply sceptical of the market around it. The promise of making money from NFTs felt much closer to gambling, dependent on someone else being willing to pay more. The creative experiment interested me; the economics gave me little reason to pursue it further.",
+    status: "Historical prototype"
   },
   {
-    id: "little-ai-lessons",
-    name: "Little AI Lessons",
-    description: "A series of 100 daily AI lessons published on LinkedIn over the last 100 days of 2023. Each lesson covers a different AI-related topic and is presented at 5 levels of difficulty, from beginner to expert.",
-    icon: <Student size={48} />,
-    url: "https://www.the-blueprint.ai/p/little-ai-lessons",
-    type: "blog",
-    date: "September - December 2023",
+    id: "mems",
+    name: "MEMs",
+    heroImage: "/images/projects/mems-logo.png",
+    heroImageAlt: "Original MEMs wordmark in white",
+    heroImageKind: "logo",
+    heroImageTone: "dark",
+    description: "A social network prototype exploring how shared memories, experiences and passions could connect people.",
+    icon: <Brain size={48} />,
+    url: null,
+    type: "social network prototype",
+    date: "2020",
+    technologies: ["React", "Apollo", "GraphQL", "Neo4j", "Material UI"],
     features: [
-      "100 daily AI lessons",
-      "5 difficulty levels per lesson (beginner to expert)",
-      "Interactive engagement with LinkedIn audience"
+      "Explore how memories connect through the people, places and interests they have in common.",
+      "Browse a personal collection through views of events, people and places.",
+      "Try a prototype interface for describing a memory with a date, image and associated details.",
+      "Explore music, films, television and games as part of the story around a memory."
     ],
-    topics: [
-      "Artificial Intelligence (AI)", "Machine Learning", "Data Ethics", "Neural Networks", 
-      "Deep Learning", "Generative Artificial Intelligence (GAI)", 
-      "Artificial General Intelligence (AGI)", "Bias in AI", "Explainable AI (XAI)", 
-      "Computer Vision", "Speech Recognition", "Natural Language Processing (NLP)", 
-      "Supervised Learning", "Unsupervised Learning", "Data Privacy", 
-      "Reinforcement Learning", "Multi-Agent Systems", 
-      "Reinforcement Learning from Human Feedback (RLHF)", "Fairness", "Reward Model", 
-      "Reward Gaming", "Regularisation Techniques", "Data Augmentation", 
-      "Feature Engineering", "Anomaly Detection", "Clustering", "Dimensionality Reduction", 
-      "Accountability", "Artificial Neuron", "Activation Functions", "Loss Functions", 
-      "Optimisation Algorithms", "Parameters", "Hyperparameters", "AutoML", 
-      "Model Architectures", "Dimensions in Neural Networks", "Model Evaluation Metrics", 
-      "Cross-Validation Techniques", "Outer Alignment", "Recurrent Neural Networks (RNNs)", 
-      "Generative Adversarial Networks (GANs)", "Variational Autoencoders (VAEs)", 
-      "Graph Neural Networks", "Inner Alignment", "Transformer Architecture", 
-      "Attention Mechanisms", "Sequence-to-Sequence Models", "Tokens in NLP", "Embeddings", 
-      "Large Language Model (LLM)", "Generative Pre-training Transformer (GPT)", 
-      "Ethical AI Design", "Swarm Intelligence", "Few-Shot Prompt", "One-Shot Prompt", 
-      "Zero-Shot Prompt", "Scaling Laws", "Scalability", "GPUs", "TPUs", 
-      "Other Accelerators", "AI Governance", "Hardware Optimisation Techniques", 
-      "Cloud Computing and AI", "Edge Computing in AI", "Federated Learning", "AI Safety", 
-      "Batch Learning", "Mini-Batch Learning", "Online Learning", "Transfer Learning", 
-      "Meta-Learning", "Ensemble Methods", "Human-In-The-Loop (HITL) AI", "Safeguards", 
-      "Diffusion Model", "Emergence", "Synthetic Data Generation", "Bayesian Networks", 
-      "Chain of Thought", "Tree of Thought", "Chaining", "Steerability", "Moderation Tools", 
-      "Red Teaming", "Regulatory Frameworks", "Disclosure Mechanism", "Finetuning", 
-      "Prompt Engineering", "Real-World Deployment", "Reflection", "Social Impact of AI", 
-      "Economic Impact of AI", "Conversational Agents", "Open-Source Software", 
-      "Interdisciplinary AI", "AI Policy", "Human-AI Collaboration", "AI for Social Good"
+    challenges: "I wanted to build a different kind of social network, connecting people through shared experiences, memories and passions. MEMs was my first experiment with graph networks. Inspired by the connections in the human brain, I wanted relationships between memories to reinforce and strengthen over time. I prototyped with my own life: photos, media I had consumed, people I knew and things that had happened to me. The ambition was to turn that personal history into connections with other people.",
+    learnings: "Trying to capture a whole life and build a social network around it was a huge undertaking, and I eventually ran out of steam. This was before coding agents, so I was learning as I went and building everything step by step. I think I would have got much further with tools like Claude Code, although the ambition of the project would still have needed careful limits.",
+    status: "Historical prototype"
+  },
+  {
+    id: "mihndbot",
+    name: "MiHNDbot",
+    heroImage: "/images/projects/mihndbot-logo.png",
+    heroImageAlt: "Original MiHNDbot robot logo inside a circular border",
+    heroImageKind: "logo",
+    description: "An early conversational agent for exploring mental health and neurodiversity information, built around publicly available NHS content and other online sources.",
+    icon: <ChatCircleDots size={48} />,
+    url: null,
+    type: "conversational prototype",
+    date: "2019",
+    technologies: ["JavaScript", "Node.js", "Microsoft Bot Framework", "QnA Maker", "Chart.js"],
+    features: [
+      "Ask questions about mental health and neurodiversity using a collection of NHS content and other public information.",
+      "Reflect on mood, sleep, exercise and everyday sources of stress through a guided check-in.",
+      "Answer follow-up questions that adapt to what you have already shared.",
+      "Explore conversation activity, common questions and themes through a companion analytics dashboard."
     ],
-    challenges: "Consistently producing high-quality, informative content daily while catering to different expertise levels. Simplifying complex AI concepts without losing depth or accuracy. Maintaining engagement and relevance across 100 consecutive days.",
-    futureImprovements: "Compile the lessons into an e-book or interactive online course. Create video content to complement the written lessons.",
-    status: "Completed",
-    heroImage: "/images/projects/little-ai-lessons-hero.png"
-  }
+    challenges: "I wanted to make a body of knowledge about mental health and neurodiversity accessible through conversation. I was an early adopter of Microsoft's frameworks for rules-based chat, using publicly available NHS content and other online sources as the foundation. The challenge was turning that material into useful interactions with technology that depended heavily on predefined questions and dialogue paths.",
+    learnings: "The technology was not quite there yet. The interactions were too brittle, and it was difficult to make the agent useful beyond the paths I had anticipated. Looking back, I think the same idea would be much simpler to prototype with today's tools. It was an early encounter with the gap between an appealing conversational experience and what the technology could reliably support.",
+    status: "Historical prototype"
+  },
 ];
 
 export default projectsData;

@@ -1,0 +1,14 @@
+/* Shared metadata row, trigger and description for every information popover.
+   Pages can set --info-available-width to the usable width of their card. */
+.root { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 0; text-shadow: none; }
+.details { min-width: 0; }
+.control { flex-shrink: 0; pointer-events: auto; }
+.button { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: var(--game-hover); color: var(--game-text); }
+.button:hover, .button[aria-expanded='true'] { color: var(--game-accent); background: var(--game-hover); }
+.root .button:focus-visible { outline: 3px solid var(--game-accent); outline-offset: 3px; }
+.content { position: absolute; bottom: 100%; left: max(0px, calc(100% - 340px)); width: min(340px, var(--info-available-width, 100%)); padding-bottom: 8px; }
+.root .content p { margin: 0; padding: 20px; background: var(--game-surface); color: var(--game-text); font-size: 15px; line-height: 1.65; border-top: 3px solid var(--game-accent); box-shadow: 0 6px 20px #10071866; }
+@media (max-width: 700px) {
+ .content { left: 0; width: var(--info-available-width, 100%); }
+ .root .content p { font-size: 14px; padding: 16px; }
+}

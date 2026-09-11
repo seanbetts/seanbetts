@@ -1,18 +1,19 @@
 # Sean Betts
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ce515832-0750-4747-af9c-159c739384e9/deploy-status)](https://app.netlify.com/sites/seanbetts/deploys)
 
 Hi, I'm Sean Betts. I work at the intersection of AI strategy, transformation, product innovation, and business change.
 
+This repository contains my personal portfolio website: a GTA-inspired illustrated design showcasing my projects, writing, speaking and professional experience. It supports mobile and desktop layouts, light and dark themes, and keyboard navigation.
+
 ## 🚀 About Me
 
-- 🧠 Chief AI & Innovation Officer at Omnicom Media Group UK
+- 🧠 Chief AI & Innovation Officer at Omnicom Media UK
 - 🤖 Independent AI Researcher and Builder
 - 🛠️ Focused on AI Strategy, Transformation, and Product Innovation
 - 🗣️ Neurodiversity and Mental Health Speaker
 
-With more than 20 years of experience in marketing and innovation, I focus on turning fast-moving advances in AI into practical tools, products, and capabilities that create real value for people and organisations. Alongside my role at Omnicom Media Group UK, I design and build independent AI products, benchmarks, and applied systems to better understand how emerging technologies are reshaping products, knowledge work, and consumer experiences.
+With more than 20 years of experience in marketing and innovation, I focus on turning fast-moving advances in AI into practical tools, products, and capabilities that create real value for people and organisations. Alongside my role at Omnicom Media UK, I design and build independent AI products, benchmarks, and applied systems to better understand how emerging technologies are reshaping products, knowledge work, and consumer experiences.
 
-## 🔭 Current Projects
+## 🔭 Selected Work
 
 ### sideBar
 
@@ -52,9 +53,9 @@ AI techniques for detecting brands and products in video content using multimoda
 
 ### The Blueprint
 
-A weekly newsletter covering AI developments, product shifts, and the broader implications of generative AI.
+Occasional thought leadership and opinions on AI developments, product shifts, and the broader implications of generative AI.
 
-- ✍️ Weekly writing on AI, technology, and industry change
+- ✍️ Writing on AI, technology, and industry change
 - 🔎 Analysis of new models, tools, and platform moves
 - 🧭 Commentary on how AI is reshaping products and knowledge work
 
@@ -78,8 +79,28 @@ An interactive timeline tracking key milestones and developments across the hist
 - GitHub: [github.com/seanbetts](https://github.com/seanbetts)
 - Bluesky: [bsky.app/profile/seanbetts.com](https://bsky.app/profile/seanbetts.com)
 
-Feel free to reach out if you'd like to collaborate on AI products, discuss AI strategy and transformation, or talk about neurodiversity and mental health in tech.
+For speaking, AI and collaboration enquiries, [contact me on LinkedIn](https://www.linkedin.com/in/seanbetts/).
 
 ---
 
 "The future is already here – it's just not evenly distributed." - William Gibson
+
+## Development
+
+The site uses React and React Router, with prerendered HTML and responsive image exports. The production build is prepared for Cloudflare Pages.
+
+```sh
+npm ci
+npm start
+```
+
+To run the tests and validate the production output:
+
+```sh
+CI=true npm test -- --watchAll=false --runInBand
+npm run build
+```
+
+The build generates `build/` and checks the exported pages and images. A local build does not deploy the site.
+
+See the [development guide](docs/development.md) for code structure and content conventions, the [responsive image guide](docs/responsive-images.md) for image handling, and the [search and AI discovery notes](docs/search-and-ai.md) for publishing checks.

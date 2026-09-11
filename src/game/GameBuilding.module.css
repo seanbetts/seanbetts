@@ -1,0 +1,99 @@
+.project { composes: surface from "./Frame.module.css"; }
+.secondaryCard { composes: surface from "./Frame.module.css"; }
+.primary { composes: surface from "./Frame.module.css"; }
+.introCopy { composes: surface from "./Frame.module.css"; }
+.page { max-width: 1440px; margin: auto; padding-bottom: 40px; }
+.back { composes: back from "../components/Page.module.css"; }
+/* The shared ink canvas creates both the outer frame and every connecting seam.
+   Counter-skew the artwork and copy so the composition tilts, not the content. */
+.panels { composes: canvas from "./Frame.module.css"; --seam-slant: 16px; --panel-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.upright, .primaryTop, .primaryCaption, .secondaryTop, .secondaryCaption, .projectInner { transform: skewY(var(--content-angle)); }
+.hero { display: grid; grid-template-columns: var(--panel-columns); }
+.introCopy { grid-column: 2; grid-row: 1; display: flex; align-items: center; padding: 42px 30px 42px calc(30px + var(--game-frame)); background: var(--game-surface); clip-path: polygon(calc(var(--game-frame) - var(--seam-slant)) 0, 100% 0, 100% 100%, var(--game-frame) 100%); }
+.eyebrow, .primaryTop, .secondaryTop, .cta, .projectMeta, .projectFooter { font: 600 13px/1.5 var(--game-ui); letter-spacing: .08em; text-transform: uppercase; }
+.eyebrow { color: var(--game-accent-text); }
+.page .introCopy h1 { font-size: clamp(60px, 6vw, 84px); line-height: .95; margin: 18px 0 20px; text-transform: uppercase; }
+.introCopy h1 span { color: var(--game-accent); }
+.introCopy p { max-width: 430px; font-size: 18px; line-height: 1.6; color: var(--game-body); margin: 0; }
+.introCopy p + p { margin-top: 20px; }
+.introCopy .introLead { color: var(--game-text); }
+.featured { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: var(--game-frame); }
+.primary, .secondaryCard { position: relative; display: flex; flex-direction: column; overflow: hidden; isolation: isolate; color: #fffaf4; text-decoration: none; background: #38233a; }
+.primary { grid-column: 1; grid-row: 1; padding-right: var(--seam-slant); clip-path: polygon(0 0, calc(100% - var(--seam-slant)) 0, 100% 100%, 0 100%); }
+.scene { position: absolute; inset: -5%; transform: skewY(var(--content-angle)); z-index: -2; }
+.scene img { width: 100%; height: 100%; object-fit: cover; }
+.primaryWash { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.primaryWash { background: var(--frame-top-fade), var(--frame-copy-fade); }
+.primaryTop, .primaryCaption { text-shadow: var(--frame-caption-shadow); }
+.primaryTop, .secondaryTop { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 30px; }
+.status { color: var(--game-accent); }
+.deviceStage { position: relative; height: 300px; margin: 0 26px; transform: skewY(var(--content-angle)); }
+.device { width: 100%; height: 100%; object-fit: contain; transform: rotate(-4deg); filter: drop-shadow(8px 14px 12px #11081888); transition: transform 180ms ease; }
+.primary:hover .device { transform: rotate(-2deg) translateY(-4px); }
+.primaryCaption { padding: 22px 32px 36px; margin-top: auto; }
+.page .primaryCaption h2 { font-size: clamp(58px, 6vw, 84px); line-height: 1; margin: 8px 0 18px; }
+.primaryCaption p { max-width: 580px; font-size: 16px; line-height: 1.65; color: #eee3ef; margin: 0 0 24px; }
+.cta { display: inline-flex; align-items: center; gap: 28px; min-height: 46px; padding: 12px 20px; background: var(--game-accent); color: var(--game-button-text); font-size: 16px; }
+.secondaryCard { min-height: 300px; background: var(--game-surface); color: var(--game-text); transition: background 160ms ease; }
+.secondaryCard:hover { background: var(--game-hover); }
+/* Neighbouring masks expose the shared ink canvas, as on Thought Leadership. */
+.firstFeature { grid-column: 1; padding-right: var(--seam-slant); clip-path: polygon(0 0, 100% 0, calc(100% - var(--seam-slant)) 100%, 0 100%); }
+.lastFeature { grid-column: 2; padding-left: var(--game-frame); clip-path: polygon(var(--game-frame) 0, 100% 0, 100% 100%, calc(var(--game-frame) - var(--seam-slant)) 100%); }
+.secondaryTop { font-size: 12px; color: var(--game-muted); }
+.secondaryTop > svg { color: var(--game-accent); flex-shrink: 0; }
+.secondaryCaption { display: flex; flex: 1; flex-direction: column; padding: 8px 30px 34px; }
+.page .secondaryCaption h2 { font-size: clamp(34px, 3.2vw, 48px); line-height: 1.08; margin: 0 0 16px; text-wrap: balance; }
+.secondaryCaption p { font-size: 15px; line-height: 1.6; margin: 0 0 28px; color: var(--game-body); }
+.archive { margin-top: var(--game-frame); }
+.projectGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--game-frame); }
+.project { display: flex; padding: 32px; background: var(--game-surface); color: var(--game-text); text-decoration: none; transition: background 160ms ease; }
+.project:nth-child(odd) { padding-right: calc(32px + var(--seam-slant)); }
+.project:nth-child(even) { padding-left: calc(32px + var(--game-frame)); }
+.project:nth-child(4n + 1) { clip-path: polygon(0 0, 100% 0, calc(100% - var(--seam-slant)) 100%, 0 100%); }
+.project:nth-child(4n + 2) { clip-path: polygon(var(--game-frame) 0, 100% 0, 100% 100%, calc(var(--game-frame) - var(--seam-slant)) 100%); }
+.project:nth-child(4n + 3) { clip-path: polygon(0 0, calc(100% - var(--seam-slant)) 0, 100% 100%, 0 100%); }
+.project:nth-child(4n + 4) { clip-path: polygon(calc(var(--game-frame) - var(--seam-slant)) 0, 100% 0, 100% 100%, var(--game-frame) 100%); }
+.project:nth-child(4n + 3), .project:nth-child(4n + 4) { background: var(--game-surface-alt); }
+.project:last-child:nth-child(odd) { grid-column: 1 / -1; clip-path: none; padding-right: 32px; }
+.project:hover { background: var(--game-hover); }
+.projectInner { display: flex; flex-direction: column; width: 100%; min-width: 0; }
+.projectMeta, .projectFooter { display: flex; justify-content: space-between; gap: 20px; color: var(--game-muted); font-size: 12px; }
+.projectMeta > svg { color: var(--game-accent); flex-shrink: 0; }
+.page .project h2 { font-size: clamp(28px, 2.6vw, 36px); line-height: 1.15; margin: 20px 0 16px; }
+.project p { font-size: 16px; line-height: 1.65; color: var(--game-body); margin: 0 0 28px; }
+.projectFooter { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--game-border); }
+.page a:focus-visible { outline: 3px solid var(--game-accent); outline-offset: 4px; }
+/* Inset outlines remain visible inside the clipped cover panels. */
+.panels a:focus-visible { outline: 3px solid var(--game-accent); outline-offset: -8px; }
+.primary:focus-visible, .secondaryCard:focus-visible { outline: 0; box-shadow: inset 0 0 0 8px var(--game-accent); }
+@media (max-width: 1000px) {
+ .introCopy { padding: 28px 24px 28px calc(22px + var(--game-frame)); }
+ .introCopy p { font-size: 18px; }
+ .primaryCaption, .primaryTop { padding-left: 24px; padding-right: 24px; }
+ .deviceStage { height: 260px; margin: 0 18px; }
+ .secondaryCaption, .secondaryTop { padding-left: 18px; padding-right: 22px; }
+ .secondaryCaption p { font-size: 14px; }
+ .project { padding-top: 28px; padding-bottom: 28px; }
+}
+@media (max-width: 700px) {
+
+ .hero, .featured { display: flex; flex-direction: column; gap: var(--game-frame); }
+ .introCopy { padding: 30px 22px 36px; clip-path: none; }
+ .page .introCopy h1 { font-size: clamp(54px, 16vw, 78px); margin: 16px 0 20px; }
+ .eyebrow { font-size: 12px; }
+ .introCopy p { font-size: 18px; }
+ .primary { clip-path: none; padding-right: 0; }
+ .primaryTop { padding: 22px; font-size: 12px; }
+ .deviceStage { height: 230px; margin: 0 16px; }
+ .primaryCaption { padding: 20px 22px 32px; }
+ .page .primaryCaption h2 { font-size: 64px; }
+ .primaryCaption p, .secondaryCaption p { font-size: 16px; }
+ .secondaryCard { min-height: 0; padding-left: 0; padding-right: 0; clip-path: none; }
+ .secondaryTop { padding: 22px; }
+ .secondaryCaption { padding: 8px 22px 28px; }
+ .page .secondaryCaption h2 { font-size: 36px; }
+ .projectGrid { grid-template-columns: 1fr; }
+ .project:nth-child(n), .project:last-child:nth-child(odd) { padding: 28px 22px; clip-path: none; }
+ .projectFooter { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) { .device, .project, .secondaryCard { transition: none; } .primary:hover .device { transform: rotate(-4deg); } }

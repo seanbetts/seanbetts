@@ -1,6 +1,6 @@
-# Redirect old Projects URLs to Building
-/projects /building 301
-/projects/* /building/:splat 301
-
-# Handle client-side routing
-/* /index.html 200
+# Preserve legacy URLs. Cloudflare serves page directories and 404.html directly.
+/map / 301
+/projects /building/ 301
+/projects/ /building/ 301
+/projects/:project /building/:project/ 301
+/projects/:project/ /building/:project/ 301

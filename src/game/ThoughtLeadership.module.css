@@ -1,0 +1,46 @@
+.brandCredits { composes: surface from "./Frame.module.css"; }
+.portrait { composes: surface from "./Frame.module.css"; }
+.copy { composes: surface from "./Frame.module.css"; }
+.perspective { composes: surface from "./Frame.module.css"; }
+.page{max-width:1440px;margin:0 auto;padding-bottom:40px}
+.back { composes: back from "../components/Page.module.css"; }
+.introduction{display:grid;grid-template-columns:7fr 3fr;background:var(--game-ink)}
+.copy{display:flex;align-items:center;padding:48px 64px 48px 48px;background:var(--game-surface);clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%)}
+.copyInner{transform:skewY(var(--counter-angle));min-width:0}
+.page .introduction h1{font-size:clamp(44px,6.2vw,88px);line-height:1.02;text-transform:uppercase;margin:0 0 30px;text-wrap:balance}
+.titleLine{display:block}
+.period{color:var(--game-accent)}
+.introduction p{margin:0;max-width:660px;color:var(--game-body);font-size:18px;line-height:1.7}
+.portrait{position:relative;aspect-ratio:2/3;min-height:100%;margin:0;overflow:hidden;clip-path:polygon(var(--game-frame) 0,100% 0,100% 100%,calc(var(--game-frame) - 16px) 100%)}
+.portraitArt{position:absolute;left:0;right:0;top:50%;aspect-ratio:2/3;transform:translateY(-50%) skewY(var(--counter-angle)) scale(1.05)}
+.portraitImage{display:block;width:100%;height:auto}
+/* Title, portrait and brand collage all share one ink canvas and connected seams. */
+.cover { composes: canvas from "./Frame.module.css";  }
+.perspective{margin-top:var(--game-frame);padding:36px 48px;background:var(--game-surface)}
+.perspectiveInner{transform:skewY(var(--counter-angle))}
+.perspective h2{margin:0 0 16px;color:var(--game-text);font-size:clamp(26px,3vw,38px);line-height:1.15;text-transform:uppercase}
+.perspective p{margin:0;max-width:1080px;color:var(--game-body);font-size:18px;line-height:1.7}
+.brandCredits{margin-top:var(--game-frame);padding:28px 44px;background:var(--game-surface);text-align:center}
+.creditsInner{transform:skewY(var(--counter-angle))}
+.creditsLabel{margin:0 0 12px;color:var(--game-accent-text);font:600 13px var(--game-ui);letter-spacing:2px;text-transform:uppercase}
+.brandNames{list-style:none;margin:0 auto;padding:0;max-width:1080px;color:var(--game-text);font:600 clamp(18px,1.6vw,23px)/1.8 var(--game-ui);text-transform:uppercase;text-wrap:balance}
+.brandNames li{display:inline-block;white-space:nowrap}
+.brandNames li:not(:last-child)::after{content:'·';display:inline-block;margin:0 14px;color:var(--game-accent)}
+@media(max-width:1000px){
+ .introduction{grid-template-columns:3fr 2fr}
+ .copy{padding:32px 40px 32px 28px}
+ .perspective{padding:32px 28px}
+ .page .introduction h1{font-size:clamp(40px,5.6vw,60px)}
+}
+@media(max-width:700px){
+ .introduction{display:flex;flex-direction:column;gap:var(--game-frame)}
+ .copy{padding:30px 22px;clip-path:none}
+ .page .introduction h1{font-size:clamp(38px,10.5vw,64px)}
+ .introduction p{font-size:16px}
+ .perspective{padding:28px 22px}
+ .perspective p{font-size:16px}
+ .portrait{clip-path:none;min-height:0}
+
+ .brandCredits{padding:24px 18px}
+ .brandNames li:not(:last-child)::after{margin:0 10px}
+}

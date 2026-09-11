@@ -1,72 +1,103 @@
-/* src/pages/Blog.module.css */
-.blog {
-  padding: 2rem 0;
+.archive { composes: surface from "../game/Frame.module.css"; }
+.introduction { composes: surface from "../game/Frame.module.css"; }
+.page { max-width: 1440px; margin: 0 auto; padding-bottom: 40px; }
+.back { composes: back from "../components/Page.module.css"; }
+/* One ink canvas forms the outer frame and the seams, as on About and Thought Leadership. */
+.panels { composes: canvas from "../game/Frame.module.css"; --seam-slant: 16px; }
+.upright { transform: skewY(var(--content-angle)); }
+.hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.introduction { display: flex; align-items: center; background: var(--game-surface); padding: 48px 64px 54px 44px; clip-path: polygon(0 0, 100% 0, calc(100% - var(--seam-slant)) 100%, 0 100%); }
+.page .introduction h1 { margin: 0 0 24px; font-size: clamp(68px, 7.5vw, 110px); line-height: .95; text-transform: uppercase; }
+.introduction h1 span { color: var(--game-accent); }
+.page .standfirst { max-width: 570px; font-size: 21px; line-height: 1.6; color: var(--game-body); }
+.blueprint { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--game-border); }
+.page .blueprint h2 { margin: 0 0 12px; font-size: 28px; text-transform: uppercase; }
+.page .blueprint p { max-width: 530px; margin: 0 0 24px; font-size: 16px; line-height: 1.65; color: var(--game-body); }
+.page .cta { display: inline-flex; align-items: center; gap: 28px; min-height: 48px; padding: 12px 20px; font: 600 17px/1.4 var(--game-ui); text-transform: uppercase; background: var(--game-accent); color: var(--game-button-text); }
+.cta:hover { filter: brightness(1.1); }
+.featured { margin-top: var(--game-frame); }
+.featureGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--game-frame); }
+/* Article artwork is a supporting thumbnail; the copy sits on a reading surface. */
+.feature { position: relative; min-width: 0; min-height: 320px; display: flex; flex-direction: column; background: var(--game-ink); isolation: isolate; }
+.featureGrid .feature:nth-of-type(odd) { --frame-window: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%); }
+.featureGrid .feature:nth-of-type(even) { --frame-window: polygon(var(--game-frame) 0, 100% 0, 100% 100%, calc(var(--game-frame) - 12px) 100%); }
+.heroArtwork { composes: surface from "../game/Frame.module.css"; min-width: 0; min-height: 540px; clip-path: polygon(var(--game-frame) 0, 100% 0, 100% 100%, calc(var(--game-frame) - var(--seam-slant)) 100%); }
+.heroArtwork img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; transform: skewY(var(--content-angle)) scale(1.045); }
+.articleContent { display: grid; grid-template-columns: minmax(0, 1fr) minmax(140px, 43%); align-items: center; gap: 26px; flex: 1; padding: 36px 30px; min-width: 0; }
+.featureGrid .feature:nth-of-type(even) .articleContent { padding-left: 44px; }
+.articleCopy { position: relative; z-index: 2; min-width: 0; transform: skewY(var(--content-angle)); pointer-events: none; }
+.articleDetails { --info-available-width: calc(100cqw - 88px); }
+.featureLink { position: absolute; inset: 0; z-index: 1; }
+.photo { overflow: hidden; aspect-ratio: 1; border-radius: 12px; background: var(--game-surface-deep); transform: skewY(var(--content-angle)); }
+.photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+.page .feature h3, .page .feature h2 { color: var(--game-text); font-size: clamp(27px, 2.5vw, 36px); line-height: 1.1; text-transform: uppercase; margin: 0 0 20px; text-wrap: pretty; overflow-wrap: anywhere; hyphens: auto; }
+.page .feature .publication { color: var(--game-accent-text); font: 600 18px/1.3 var(--game-ui); margin-bottom: 6px; }
+.metadata { display: flex; flex-direction: column; align-items: flex-start; gap: 0; color: var(--game-muted); font-size: 13px; line-height: 1.5; }
+.featureGrid .feature:last-child:nth-of-type(odd) { grid-column: 1 / -1; --frame-window: none; }
+.featureGrid .feature:last-child:nth-of-type(odd) .articleContent { grid-template-columns: minmax(0, 1fr) 280px; }
+.page .featureLink:hover + .articleContent h3, .page .featureLink:hover + .articleContent h2 { color: var(--game-accent); }
+.page .featureLink:focus-visible { outline: 3px solid var(--game-accent); outline-offset: -10px; }
+.archive { margin-top: var(--game-frame); padding: 40px 44px; background: var(--game-surface); }
+.page .archive h2 { font-size: clamp(34px, 3.5vw, 48px); text-transform: uppercase; margin-bottom: 28px; }
+.archive h2 span { color: var(--game-accent); }
+.archiveEntry { display: grid; grid-template-columns: 150px minmax(0, 1fr) 24px; align-items: start; gap: 28px; padding: 28px 0; border-top: 1px solid var(--game-border); }
+.entryMeta { color: var(--game-muted); font-size: 13px; line-height: 1.6; }
+.page .entryMeta p { color: var(--game-accent-text); font: 600 16px/1.5 var(--game-ui); margin-bottom: 8px; }
+.page .entryCopy h3 { font-size: 28px; line-height: 1.15; }
+.page .entryCopy p { color: var(--game-body); font-size: 15px; line-height: 1.7; margin-top: 12px; }
+.archiveEntry > svg { color: var(--game-accent); }
+.archiveEntry:hover h3 { color: var(--game-accent); }
+.page .cta:focus-visible { outline: 3px solid var(--game-text); outline-offset: 5px; }
+/* Switch to a single column before the lead headline becomes too narrow. */
+@media (max-width: 1000px) {
+ .hero { display: flex; flex-direction: column; gap: var(--game-frame); }
+ .introduction { padding: 32px; clip-path: none; }
+ .page .standfirst { font-size: 18px; }
+ .featureGrid { grid-template-columns: minmax(0, 1fr); }
+ .feature { min-height: 0; }
+ .heroArtwork { min-height: 0; height: 300px; clip-path: none; }
+ .feature .panelWindow { clip-path: none; }
+ .articleContent, .featureGrid .feature:nth-of-type(even) .articleContent,
+ .featureGrid .feature:last-child:nth-of-type(odd) .articleContent { grid-template-columns: minmax(0, 1fr) 220px; gap: 28px; padding: 32px; }
+ .page .feature h3 { font-size: 32px; }
+ .articleDetails { --info-available-width: calc(100cqw - 64px); }
+ .archive { padding: 32px; }
+ .archiveEntry { grid-template-columns: 120px minmax(0, 1fr) 24px; gap: 20px; }
+}
+@media (max-width: 700px) {
+ .introduction { padding: 24px 22px; }
+ .heroArtwork { height: 240px; }
+ .page .introduction h1 { font-size: clamp(52px, 14vw, 64px); margin-bottom: 16px; }
+ .page .standfirst { font-size: 17px; line-height: 1.5; }
+ .blueprint { margin-top: 18px; padding-top: 18px; }
+ .page .blueprint h2 { font-size: 25px; margin-bottom: 8px; }
+ .page .blueprint p { font-size: 15px; line-height: 1.5; margin-bottom: 16px; }
+ .articleContent, .featureGrid .feature:nth-of-type(even) .articleContent,
+ .featureGrid .feature:last-child:nth-of-type(odd) .articleContent { grid-template-columns: minmax(0, 1fr) 132px; gap: 18px 16px; padding: 24px 22px; }
+ /* Let the metadata span both columns without duplicating accessible content. */
+ .articleCopy { display: contents; }
+ .page .feature h3, .page .feature h2 { grid-column: 1; grid-row: 1; position: relative; z-index: 2; transform: skewY(var(--content-angle)); margin: 0; pointer-events: none; }
+ .page .feature h3 { font-size: 27px; }
+ .photo { grid-column: 2; grid-row: 1; }
+ .articleDetails { grid-column: 1 / -1; grid-row: 2; z-index: 2; transform: skewY(var(--content-angle)); pointer-events: none; }
+ .articleDetails { --info-available-width: calc(100cqw - 44px); }
+ .page .featureLink:focus-visible { outline-offset: -8px; }
+ .metadata { font-size: 12px; }
+ .archive { padding: 32px 24px; }
+ .archiveEntry { grid-template-columns: minmax(0, 1fr) 24px; gap: 10px 12px; padding: 24px 0; }
+ .entryMeta { grid-column: 1; }
+ .entryCopy { grid-column: 1; grid-row: 2; }
+ .archiveEntry > svg { grid-column: 2; grid-row: 1; }
+ .page .entryCopy h3 { font-size: 25px; }
 }
 
-.featuredArticles, .blueprint, .aiLessons {
-  margin-bottom: 3rem;
-}
+.panelWindow { composes: window from "../game/Frame.module.css"; display:flex;flex-direction:column;flex:1; container-type: inline-size; background: var(--game-surface); }
 
-.articleList {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.article {
-  background-color: var(--color-box-bg);
-  border: 2px solid var(--color-primary);
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  align-items: center;
-}
-
-.article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(234, 0, 217, 0.3);
-}
-
-.icon {
-  margin-right: 1rem;
-  color: var(--color-secondary);
-}
-
-.article a {
-  color: var(--color-text);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.article a:hover {
-  color: var(--color-primary);
-}
-
-.blueprintLink, .aiLessonsLink {
-  display: inline-flex;
-  align-items: baseline;
-  background-color: var(--color-primary);
-  color: var(--color-background);
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.blueprintLink:hover, .aiLessonsLink:hover {
-  background-color: var(--color-secondary);
-}
-
-.blueprintLink .icon {
-  margin-right: 0.5rem;
-  color: var(--color-background);
-}
-
-@media (max-width: 768px) {
-  .articleList {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 360px) {
+ .articleContent,
+ .featureGrid .feature:nth-of-type(even) .articleContent,
+ .featureGrid .feature:last-child:nth-of-type(odd) .articleContent { grid-template-columns: minmax(0, 1fr); }
+ .photo { grid-column: 1; grid-row: 1; aspect-ratio: 16 / 9; }
+ .page .feature h3, .page .feature h2 { grid-row: 2; }
+ .articleDetails { grid-row: 3; }
 }
