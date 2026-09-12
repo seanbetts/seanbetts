@@ -3,6 +3,7 @@ import { Video, Ruler, Clock, ChatCircleDots, Globe, MagnifyingGlass, Brain, Gam
 const projectsData = [
   {
     id: "sidebar",
+    startDate: "2025-12",
     name: "sideBar",
     description: "A personal AI assistant that works with your notes, tasks, files and saved websites across iPhone, iPad, Mac and web.",
     icon: <Brain size={48} />,
@@ -27,6 +28,7 @@ const projectsData = [
   },
   {
     id: "pointilism",
+    startDate: "2025-12",
     name: "Pointilism",
     description: "An interactive experiment with animated dots, motion controls and image export.",
     icon: <MagnifyingGlass size={48} />,
@@ -48,6 +50,7 @@ const projectsData = [
   },
   {
     id: "llm-search-analysis",
+    startDate: "2025-11",
     heroImage: "/images/projects/llm-search-evidence.png",
     heroImageAlt: "Recorded GPT-5.1 interaction from 1 December 2025: a question about the latest Steam Controller information produced the query Valve Steam Controller discontinued, with 20 search results and 9 cited sources. One saved case, not a current model benchmark.",
     heroImageKind: "diagram",
@@ -82,13 +85,14 @@ const projectsData = [
   },
   {
     id: "genai-explorer",
+    startDate: "2025-05",
     name: "Generative AI Explorer",
     description: "An interactive guide to the generative AI landscape, bringing companies, model capabilities, pricing and benchmark results together for comparison.",
     icon: <Globe size={48} />,
     url: "https://explorer.the-blueprint.ai/",
     type: "web app",
     role: "Sole developer",
-    date: "May 2025–present",
+    date: "May–August 2025",
     technologies: [
       "React 19",
       "Next.js 15.3",
@@ -103,13 +107,15 @@ const projectsData = [
     ],
     challenges: "I wanted to make the generative AI landscape easier to understand and compare. I built the Explorer myself, from the data structure to the interface. The difficult part was deciding how to organise it: a company can offer several models, the same model can support different products, and capabilities overlap across categories. The structure needed to make those relationships understandable while preserving the differences that matter when comparing options.",
     learnings: "Organising the landscape became as much of the work as building the interface. Companies, models, products and capabilities do not fit neatly into separate boxes, and those boundaries keep shifting. Each decision about grouping or comparison shapes how someone understands the market. Building the Explorer made me more conscious of what a simple overview helps people see, and what it can hide.",
-    status: "Published",
+    status: "Archived",
     projectNote: "Published version uses an August 2025 dataset.",
     heroImage: "/images/projects/genai-explorer-comparison.png",
     heroImageAlt: "Generative AI Explorer comparing GPT-5 and Claude-4.1 Opus using the published August 2025 dataset",
   },
   {
     id: "plotter",
+    // First recorded work: https://github.com/seanbetts/plotter/commit/bc754705c2d7b3eb8cdffb51d50e4cddc31772ce
+    startDate: "2026-06",
     name: "Plotter",
     heroImage: "/images/projects/plotter-europe-roadtrip.png",
     heroImageAlt: "Plotter showing a European road-trip route with twelve stops and a nineteen-day itinerary",
@@ -117,7 +123,7 @@ const projectsData = [
     icon: <Globe size={48} />,
     url: null,
     type: "web app",
-    date: "2026–present",
+    date: "June 2026–present",
     technologies: ["React", "TypeScript", "Node.js", "SQLite", "MapLibre GL", "Agent skills"],
     features: [
       "Plan a trip around the places you want to visit and the activities at each stop.",
@@ -131,6 +137,7 @@ const projectsData = [
   },
   {
     id: "steam-hardware-watch",
+    startDate: "2026-04",
     heroImage: "/images/projects/steam-hardware-evidence.png",
     heroImageAlt: "Archived monitoring report, 24 August 2026: 453 visual assets discovered, 396 retrieved and 57 blocked. No public Steam Frame launch-readiness movement was found in the available evidence; some sources were blocked or partial.",
     heroImageKind: "diagram",
@@ -155,6 +162,7 @@ const projectsData = [
   },
   {
     id: "apple-hig-mirror",
+    startDate: "2026-03",
     heroImage: "/images/projects/apple-hig-workflow.png",
     heroImageAlt: "Apple HIG Mirror workflow: discover guideline pages, extract and normalise their rendered content, then verify and update. A real Buttons Markdown excerpt shows its title, canonical path and rewritten internal links.",
     heroImageKind: "diagram",
@@ -178,6 +186,7 @@ const projectsData = [
   },
   {
     id: "pixel-loader-lab",
+    startDate: "2026-02",
     heroImage: "/images/projects/pixel-loader-overview.png",
     heroImageAlt: "Original solid and bordered pixel loader variants based on the sideBar icon.",
     heroAnimations: [{"src": "/images/projects/pixel-loader-solid.gif", "poster": "/images/projects/pixel-loader-solid-still.png", "alt": "Original solid pixel loader animation"}, {"src": "/images/projects/pixel-loader-bordered.gif", "poster": "/images/projects/pixel-loader-bordered-still.png", "alt": "Original bordered pixel loader animation"}],
@@ -201,6 +210,7 @@ const projectsData = [
   },
   {
     id: "cains-jawbone",
+    startDate: "2025-12",
     heroImage: "/images/projects/cains-jawbone-workflow.png",
     heroImageAlt: "One hundred source pages displayed in numeric order, followed by the research steps: extract clues, test hypotheses and check evidence. This is a page inventory, not a proposed solution.",
     heroImageKind: "diagram",
@@ -225,6 +235,7 @@ const projectsData = [
   },
   {
     id: "youtube-sdg-analysis",
+    startDate: "2025-01",
     heroImage: "/images/projects/youtube-sdg-workflow.png",
     heroImageAlt: "YouTube SDG workflow: collect channel metadata, video information and transcripts; analyse content, mission and themes; then map directly evidenced themes to relevant Sustainable Development Goals. Structured results support channel-level analysis.",
     heroImageKind: "diagram",
@@ -252,6 +263,7 @@ const projectsData = [
   },
   {
     id: "ai-brand-detection",
+    startDate: "2024-08",
     heroImage: "/images/projects/brand-detection-film.jpg",
     heroImageAlt: "Original Brand Detection output showing a red detection box labelled pizza hut around the logo on a pizza box in a film frame.",
     name: "AI Brand Detection",
@@ -284,6 +296,7 @@ const projectsData = [
 
   {
     id: "genai-marketing-benchmarks",
+    startDate: "2024-06",
     name: "GenAI Marketing Benchmarks",
     description: "A research project to assess and compare the marketing knowledge of large language models, addressing a gap in the benchmarks available at the time.",
     icon: <Ruler size={48} />,
@@ -317,6 +330,7 @@ const projectsData = [
 
   {
     id: "genai-timeline",
+    startDate: "2024-05",
     name: "GenAI Timeline",
     description: "A timeline of GenAI developments and milestones, tracking the rapid progress in the field.",
     icon: <Clock size={48} />,
@@ -333,6 +347,7 @@ const projectsData = [
   },
   {
     id: "ai-chat-experience",
+    startDate: "2023-03",
     name: "🐼 panda.ai",
     description: "A GenAI personal assistant designed to learn from you and adapt to your unique needs. As you interact with 🐼 panda.ai, it evolves and grows, learning from your conversations, web browsing behaviour, social media activity, music preferences, and even your spending habits.",
     icon: <ChatCircleDots size={48} />,
@@ -369,6 +384,8 @@ const projectsData = [
   },
   {
     id: "nanimals",
+    // First recorded work: https://github.com/seanbetts/nAnimals/commit/723b867d83704678b05bc583d6f524bc3426bb09
+    startDate: "2021-10",
     name: "nAnimals",
     heroImage: "/images/projects/nanimals-8.png",
     heroImageAlt: "Original pink nAnimals dog with a red paint-splatter background",
@@ -384,7 +401,7 @@ const projectsData = [
     icon: <GameController size={48} />,
     url: "https://github.com/seanbetts/nAnimals",
     type: "generative art experiment",
-    date: "2021",
+    date: "October 2021",
     technologies: ["Solidity", "OpenZeppelin", "React", "Redux", "Web3.js", "IPFS"],
     features: [
       "Explore animal artwork generated through code and rules.",
@@ -395,10 +412,12 @@ const projectsData = [
     ],
     challenges: "nAnimals was my first and only attempt at procedural art. At the height of the NFT craze, I wanted to understand how code and rules could generate a collection of different artworks. The creative challenge was designing the system that produced the animals, then connecting the collection to a minting and hatching experience. The artwork was generated procedurally, without generative AI.",
     learnings: "I enjoyed exploring how code could generate art, but came away deeply sceptical of the market around it. The promise of making money from NFTs felt much closer to gambling, dependent on someone else being willing to pay more. The creative experiment interested me; the economics gave me little reason to pursue it further.",
-    status: "Historical prototype"
+    status: "Archived"
   },
   {
     id: "mems",
+    // First recorded work: https://github.com/seanbetts/MEMs-v0/commit/dbf8da0c606b81ff9a28a001d62eb46aba2f85d5
+    startDate: "2020-06",
     name: "MEMs",
     heroImage: "/images/projects/mems-logo.png",
     heroImageAlt: "Original MEMs wordmark in white",
@@ -408,7 +427,7 @@ const projectsData = [
     icon: <Brain size={48} />,
     url: null,
     type: "social network prototype",
-    date: "2020",
+    date: "June 2020",
     technologies: ["React", "Apollo", "GraphQL", "Neo4j", "Material UI"],
     features: [
       "Explore how memories connect through the people, places and interests they have in common.",
@@ -418,10 +437,12 @@ const projectsData = [
     ],
     challenges: "I wanted to build a different kind of social network, connecting people through shared experiences, memories and passions. MEMs was my first experiment with graph networks. Inspired by the connections in the human brain, I wanted relationships between memories to reinforce and strengthen over time. I prototyped with my own life: photos, media I had consumed, people I knew and things that had happened to me. The ambition was to turn that personal history into connections with other people.",
     learnings: "Trying to capture a whole life and build a social network around it was a huge undertaking, and I eventually ran out of steam. This was before coding agents, so I was learning as I went and building everything step by step. I think I would have got much further with tools like Claude Code, although the ambition of the project would still have needed careful limits.",
-    status: "Historical prototype"
+    status: "Archived"
   },
   {
     id: "mihndbot",
+    // First recorded work: https://github.com/seanbetts/MiHNDbot/commit/2ab69f1533f99cdcf06e0197d08571b5006af10b
+    startDate: "2019-06",
     name: "MiHNDbot",
     heroImage: "/images/projects/mihndbot-logo.png",
     heroImageAlt: "Original MiHNDbot robot logo inside a circular border",
@@ -430,7 +451,7 @@ const projectsData = [
     icon: <ChatCircleDots size={48} />,
     url: null,
     type: "conversational prototype",
-    date: "2019",
+    date: "June 2019",
     technologies: ["JavaScript", "Node.js", "Microsoft Bot Framework", "QnA Maker", "Chart.js"],
     features: [
       "Ask questions about mental health and neurodiversity using a collection of NHS content and other public information.",
@@ -440,8 +461,12 @@ const projectsData = [
     ],
     challenges: "I wanted to make a body of knowledge about mental health and neurodiversity accessible through conversation. I was an early adopter of Microsoft's frameworks for rules-based chat, using publicly available NHS content and other online sources as the foundation. The challenge was turning that material into useful interactions with technology that depended heavily on predefined questions and dialogue paths.",
     learnings: "The technology was not quite there yet. The interactions were too brittle, and it was difficult to make the agent useful beyond the paths I had anticipated. Looking back, I think the same idea would be much simpler to prototype with today's tools. It was an early encounter with the gap between an appealing conversational experience and what the technology could reliably support.",
-    status: "Historical prototype"
+    status: "Archived"
   },
 ];
+
+// Partial ISO dates preserve known precision: year-only dates follow dated months
+// in that year. Equal start dates retain their existing relative order.
+export const projectsByStartDate = [...projectsData].sort((a, b) => b.startDate.localeCompare(a.startDate));
 
 export default projectsData;

@@ -40,7 +40,7 @@ export default function GameHome() {
     />
     <div className={`${styles.cover} game-art`}>
       <div className={`${styles.panel} ${styles.portrait}`}>
-        <ResponsiveImage className={styles.portraitImage} sizes="(max-width: 700px) max(440px, calc(100vw - 52px)), (max-width: 1000px) 500px, (max-width: 1800px) max(500px, 37vw), 680px" src="/images/game/portrait-sean-london-v2-colour.png" alt="" fetchpriority="high" width="1024" height="1536" />
+        <ResponsiveImage className={styles.portraitImage} sizes="(max-width: 700px) max(440px, calc(100vw - 52px)), (max-width: 1000px) 500px, (max-width: 1800px) max(500px, 37vw), 680px" src="/images/game/portrait-sean-london-v1-colour.png" alt="" fetchpriority="high" width="1024" height="1536" />
         <div className={styles.identity}>
           <h1><span className="sr-only">Sean Betts</span><ResponsiveImage src="/images/game/sean-betts.svg" alt="" aria-hidden="true" width="610" height="360" /></h1>
           <p className={styles.role}>Hands-on AI Leader</p>

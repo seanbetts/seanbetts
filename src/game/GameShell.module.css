@@ -22,7 +22,7 @@
 @media(min-width:1800px){.header,.main,.footer{max-width:1860px;margin-left:auto;margin-right:auto}}
 @media(max-width:650px){.header{height:58px;margin:0 12px}.brand,.brand img{width:113px}.main{padding:8px 10px 0}.menu{top:52px;right:0}.footer{padding:10px 10px;gap:4px;align-items:center}.footer span{white-space:nowrap}}
 
-.credit{justify-self:center;text-align:center;white-space:nowrap;font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--game-muted)}
+.credit{justify-self:center;text-align:center;white-space:nowrap;font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit}
 .heart{color:var(--game-accent);vertical-align:-.125em}
 @media(max-width:650px){.footer{grid-template-columns:1fr;gap:8px;padding-top:18px;padding-bottom:18px}.footer .credit{grid-column:1;grid-row:3}.footer .socials{grid-column:1;grid-row:2;justify-self:center;flex-wrap:nowrap;gap:6px}.footer>span:first-child{grid-column:1;grid-row:1;justify-self:center}}
 @media(max-width:380px){.brand,.brand img{width:100px}.brandGroup{gap:8px}}
