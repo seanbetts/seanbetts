@@ -138,7 +138,7 @@ test('Explorer shows its real comparison screenshot and dataset date beside the 
 test('Building keeps sideBar as the flagship and orders the collection by start date', () => {
   renderProject('/building');
   const names = screen.getAllByRole('heading', { level: 2 }).map(heading => heading.textContent);
-  expect(names.slice(0, 6)).toEqual(['sideBar', 'Plotter', 'Steam Hardware Watch', 'Apple HIG Mirror', 'Pixel Loader Lab', 'Pointilism']);
+  expect(names.slice(0, 6)).toEqual(['sideBar', 'Local Web', 'Plotter', 'Steam Hardware Watch', 'Apple HIG Mirror', 'Pixel Loader Lab']);
   expect(names).toHaveLength(projectsData.length);
   expect(new Set(names).size).toBe(projectsData.length);
   const explorer = names.indexOf('Generative AI Explorer');
