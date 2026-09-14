@@ -27,6 +27,32 @@ const projectsData = [
     heroImageAlt: "sideBar on iPad with a note created by the assistant beside the conversation"
   },
   {
+    id: "local-web-server",
+    // Original local history begins with design commit 12f740f on 25 July 2026.
+    // Public GitHub history starts with the September publication commit.
+    startDate: "2026-07",
+    name: "Local Web",
+    description: "A framework for running my web applications as a connected private collection, with shared navigation and styling, managed updates, and portable exports.",
+    icon: <SquaresFour size={48} />,
+    url: "https://github.com/seanbetts/local-web-server",
+    type: "application platform",
+    role: "Sole developer",
+    date: "July 2026–present",
+    technologies: ["Python", "TypeScript", "React", "Vite", "Caddy", "macOS LaunchAgents"],
+    features: [
+      "Bring independently built applications together in one private catalogue on a Mac.",
+      "Provide shared navigation, light and dark modes, and reusable interface components.",
+      "Build and deploy versioned releases, check their health, and support rollback when an update fails.",
+      "Export application context and self-contained interactive snapshots for use outside the hosted app."
+    ],
+    challenges: "I wanted to develop web apps quickly with AI and have them running and ready to use with as little setup as possible. I had found myself running multiple individual web servers, each with its own setup to manage. I built Local Web to give new apps a shared starting point and a consistent way to launch and maintain them. I also built skills so coding agents could work within that framework.",
+    learnings: "I learned that a shared framework needs to make the repeated work easier while leaving room for different kinds of app. Plotter needed a full-screen map; dashboards and trackers needed different layouts. Using the apps also exposed limits in my original idea: access from home was too restrictive, so I added Tailscale, and I wanted to take their information into AI conversations, so I added exports. Those practical needs helped me decide what belonged in the framework. It has made me think more about the foundations that help an AI-built app become something I can keep using and developing.",
+    status: "In development",
+    projectNote: "Open source. The catalogue screenshot uses fictional example applications.",
+    heroImage: "/images/projects/local-web-system-index.png",
+    heroImageAlt: "Local Web System Index in light mode, showing fictional Archive, Notes and Tasks applications with status indicators and colour-mode controls"
+  },
+  {
     id: "pointilism",
     startDate: "2025-12",
     name: "Pointilism",

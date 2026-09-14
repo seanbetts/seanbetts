@@ -1,4 +1,5 @@
 const projectArtwork = {
+  'local-web-server': { background: '/images/game/backgrounds/electronics-workshop-v1-colour.png' },
   sidebar: { background: '/images/game/backgrounds/canalside-workspace-v1-colour.png' },
   pointilism: { background: '/images/game/backgrounds/radiohead-mural-v2-colour.png' },
   'llm-search-analysis': { background: '/images/game/backgrounds/daytime-rooftop-v2-colour.png' },
