@@ -7,7 +7,7 @@ const projectsData = [
     name: "sideBar",
     description: "A personal AI assistant that works with your notes, tasks, files and saved websites across iPhone, iPad, Mac and web.",
     icon: <Brain size={48} />,
-    url: "https://trysidebar.ai",
+    url: "https://github.com/seanbetts/sidebar",
     type: "cross-platform app",
     role: "Sole developer",
     date: "December 2025–present",
