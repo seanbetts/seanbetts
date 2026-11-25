@@ -23,7 +23,7 @@ A unified AI assistant for iPhone, iPad, Mac, and web that keeps notes, tasks, f
 - 📂 Notes, tasks, files, and saved websites in one system
 - 🔧 Skills, attachments, and personalisation across every surface
 
-[View Project](https://trysidebar.ai)
+[View Project](https://github.com/seanbetts/sidebar)
 
 ### Local Web
 
